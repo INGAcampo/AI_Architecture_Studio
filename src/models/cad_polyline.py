@@ -2,9 +2,10 @@
 AI Architecture Studio
 CAD Polyline Object
 
-CAD Professional Sprint 1
+Foundation 4.1
 """
 
+from engines.geometry.point import Point
 from models.base_object import BaseObject
 
 
@@ -33,6 +34,23 @@ class CadPolyline(BaseObject):
             return len(self.points)
 
         return len(self.points) - 1
+
+    def clone(self):
+        cloned_polyline = CadPolyline()
+
+        for point in self.points:
+            cloned_polyline.add_point(
+                Point(
+                    point.x,
+                    point.y,
+                    point.z,
+                )
+            )
+
+        if self.closed:
+            cloned_polyline.close()
+
+        return cloned_polyline
 
     def info(self):
         data = super().info()

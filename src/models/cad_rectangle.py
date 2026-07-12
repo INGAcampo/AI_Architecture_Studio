@@ -2,7 +2,7 @@
 AI Architecture Studio
 CAD Rectangle Object
 
-CAD Professional Sprint 1
+Foundation 4.1
 """
 
 from models.base_object import BaseObject
@@ -18,5 +18,22 @@ class CadRectangle(BaseObject):
         self.polyline = polyline
         self.geometry = polyline
 
-        self.set_property("Puntos", len(polyline.points))
-        self.set_property("Cerrado", True)
+        self._update_properties()
+
+    def _update_properties(self):
+        self.properties.clear()
+
+        self.set_property(
+            "Puntos",
+            len(self.polyline.points)
+        )
+
+        self.set_property(
+            "Cerrado",
+            self.polyline.closed
+        )
+
+    def clone(self):
+        return CadRectangle(
+            self.polyline.clone()
+        )
