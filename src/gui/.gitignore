@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Pruebas y cachés
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# VS Code local
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+
+# Logs
+logs/
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+~$*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Datos sensibles
+.env
+*.key
+
+# Builds
+build/
+dist/
+*.egg-info/

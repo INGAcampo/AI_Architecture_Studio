@@ -1,0 +1,19 @@
+{
+    "application": {
+        "name": "AI Architecture Studio",
+        "version": "0.0.1 Alpha",
+        "language": "es",
+        "theme": "dark"
+    },
+    "paths": {
+        "projects": "projects",
+        "library": "biblioteca",
+        "templates": "templates"
+    },
+    "modules": {
+        "architecture": true,
+        "structure": false,
+        "bim": false,
+        "ai": false
+    }
+}
