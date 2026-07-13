@@ -2,7 +2,7 @@
 AI Architecture Studio
 Main Window
 
-Foundation 3.0
+Foundation 4.2
 """
 
 from PySide6.QtCore import Qt
@@ -19,14 +19,16 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
+from commands.cad.circle_command import CircleCommand
+from commands.cad.copy_command import CopyCommand
 from commands.cad.line_command import LineCommand
+from commands.cad.move_command import MoveCommand
 from commands.cad.polyline_command import PolylineCommand
 from commands.cad.rectangle_command import RectangleCommand
+from commands.cad.rotate_command import RotateCommand
 from gui.dialogs.new_project_dialog import NewProjectDialog
 from gui.ribbon import Ribbon
 from gui.workspace import Workspace
-from commands.cad.circle_command import CircleCommand
-from commands.cad.move_command import MoveCommand
 
 
 class MainWindow(QMainWindow):
@@ -37,7 +39,7 @@ class MainWindow(QMainWindow):
         self.app_core = app_core
 
         self.setWindowTitle(
-            "AI Architecture Studio - Foundation 3.0"
+            "AI Architecture Studio - Foundation 4.2"
         )
         self.resize(1600, 900)
 
@@ -63,7 +65,9 @@ class MainWindow(QMainWindow):
         archivo = menu.addMenu("Archivo")
 
         nuevo = archivo.addAction("Nuevo Proyecto")
-        nuevo.triggered.connect(self.open_new_project_dialog)
+        nuevo.triggered.connect(
+            self.open_new_project_dialog
+        )
 
         archivo.addAction("Abrir Proyecto")
         archivo.addAction("Guardar Proyecto")
@@ -88,6 +92,7 @@ class MainWindow(QMainWindow):
 
     def create_central_area(self):
         container = QWidget()
+
         layout = QVBoxLayout(container)
         layout.setContentsMargins(0, 0, 0, 0)
 
@@ -96,26 +101,38 @@ class MainWindow(QMainWindow):
         self.ribbon.new_project_btn.clicked.connect(
             self.open_new_project_dialog
         )
+
         self.ribbon.line_btn.clicked.connect(
             self.activate_line_command
         )
+
         self.ribbon.polyline_btn.clicked.connect(
             self.activate_polyline_command
         )
+
         self.ribbon.rectangle_btn.clicked.connect(
             self.activate_rectangle_command
         )
+
         self.ribbon.circle_btn.clicked.connect(
-        self.activate_circle_command
+            self.activate_circle_command
         )
 
         self.ribbon.move_btn.clicked.connect(
-    self.activate_move_command
+            self.activate_move_command
+        )
+
+        self.ribbon.copy_btn.clicked.connect(
+            self.activate_copy_command
+        )
+
+        self.ribbon.rotate_btn.clicked.connect(
+            self.activate_rotate_command
         )
 
         self.workspace = Workspace(
             scene=self.app_core.scene
-    )
+        )
 
         layout.addWidget(self.ribbon)
         layout.addWidget(self.workspace)
@@ -128,7 +145,11 @@ class MainWindow(QMainWindow):
         if canvas is None:
             return
 
-        if getattr(canvas, "_properties_signal_connected", False):
+        if getattr(
+            canvas,
+            "_properties_signal_connected",
+            False,
+        ):
             return
 
         canvas.element_selected.connect(
@@ -146,7 +167,9 @@ class MainWindow(QMainWindow):
 
         if canvas:
             canvas.tool_manager.activate(
-                LineCommand(app_core=self.app_core)
+                LineCommand(
+                    app_core=self.app_core
+                )
             )
 
             self.statusBar().showMessage(
@@ -158,7 +181,9 @@ class MainWindow(QMainWindow):
 
         if canvas:
             canvas.tool_manager.activate(
-                PolylineCommand(app_core=self.app_core)
+                PolylineCommand(
+                    app_core=self.app_core
+                )
             )
 
             self.statusBar().showMessage(
@@ -170,7 +195,9 @@ class MainWindow(QMainWindow):
 
         if canvas:
             canvas.tool_manager.activate(
-                RectangleCommand(app_core=self.app_core)
+                RectangleCommand(
+                    app_core=self.app_core
+                )
             )
 
             self.statusBar().showMessage(
@@ -182,24 +209,59 @@ class MainWindow(QMainWindow):
 
         if canvas:
             canvas.tool_manager.activate(
-                CircleCommand(app_core=self.app_core)
-           )
+                CircleCommand(
+                    app_core=self.app_core
+                )
+            )
 
             self.statusBar().showMessage(
-               "CIRCLE activo: selecciona centro y radio"
-        )
-            
+                "CIRCLE activo: selecciona centro y radio"
+            )
+
     def activate_move_command(self):
         canvas = self.workspace.current_canvas()
 
         if canvas:
             canvas.tool_manager.activate(
-                MoveCommand(app_core=self.app_core)
+                MoveCommand(
+                    app_core=self.app_core
+                )
             )
 
             self.statusBar().showMessage(
-            "MOVE activo: selecciona un objeto, luego punto base y destino"
-            )        
+                "MOVE activo: selecciona un objeto, "
+                "luego punto base y destino"
+            )
+
+    def activate_copy_command(self):
+        canvas = self.workspace.current_canvas()
+
+        if canvas:
+            canvas.tool_manager.activate(
+                CopyCommand(
+                    app_core=self.app_core
+                )
+            )
+
+            self.statusBar().showMessage(
+                "COPY activo: selecciona un objeto, "
+                "luego punto base y destino"
+            )
+
+    def activate_rotate_command(self):
+        canvas = self.workspace.current_canvas()
+
+        if canvas:
+            canvas.tool_manager.activate(
+                RotateCommand(
+                    app_core=self.app_core
+                )
+            )
+
+            self.statusBar().showMessage(
+                "ROTATE activo: selecciona un objeto, "
+                "luego punto base y ángulo"
+            )
 
     # ---------------------------------------------------------
     # PROYECTOS
@@ -233,7 +295,7 @@ class MainWindow(QMainWindow):
     def create_project_explorer(self):
         dock = QDockWidget(
             "Explorador del Proyecto",
-            self
+            self,
         )
 
         self.project_tree = QTreeWidget()
@@ -243,7 +305,7 @@ class MainWindow(QMainWindow):
 
         self.addDockWidget(
             Qt.LeftDockWidgetArea,
-            dock
+            dock,
         )
 
     def refresh_project_tree(self):
@@ -256,17 +318,33 @@ class MainWindow(QMainWindow):
             return
 
         root_node = self.app_core.scene.root
-        root_item = self.create_tree_item(root_node)
+        root_item = self.create_tree_item(
+            root_node
+        )
 
-        self.project_tree.addTopLevelItem(root_item)
+        self.project_tree.addTopLevelItem(
+            root_item
+        )
+
         root_item.setExpanded(True)
 
-        for index in range(root_item.childCount()):
-            root_item.child(index).setExpanded(True)
+        for index in range(
+            root_item.childCount()
+        ):
+            root_item.child(index).setExpanded(
+                True
+            )
 
     def create_tree_item(self, scene_node):
-        item = QTreeWidgetItem([scene_node.name])
-        item.setData(0, Qt.UserRole, scene_node)
+        item = QTreeWidgetItem(
+            [scene_node.name]
+        )
+
+        item.setData(
+            0,
+            Qt.UserRole,
+            scene_node,
+        )
 
         for child in scene_node.children:
             item.addChild(
@@ -282,16 +360,18 @@ class MainWindow(QMainWindow):
     def create_properties_panel(self):
         dock = QDockWidget(
             "Propiedades",
-            self
+            self,
         )
 
         self.properties_list = QListWidget()
 
-        dock.setWidget(self.properties_list)
+        dock.setWidget(
+            self.properties_list
+        )
 
         self.addDockWidget(
             Qt.RightDockWidgetArea,
-            dock
+            dock,
         )
 
     def clear_properties(self):
@@ -307,6 +387,7 @@ class MainWindow(QMainWindow):
 
         if element is None:
             self.clear_properties()
+
             self.statusBar().showMessage(
                 "Ningún objeto seleccionado"
             )
@@ -315,14 +396,21 @@ class MainWindow(QMainWindow):
         information = element.info()
 
         for key, value in information.items():
-            if key == "Propiedades" and isinstance(value, dict):
+            if (
+                key == "Propiedades"
+                and isinstance(value, dict)
+            ):
                 self.properties_list.addItem(
                     "── Propiedades ──"
                 )
 
-                for property_name, property_value in value.items():
+                for (
+                    property_name,
+                    property_value,
+                ) in value.items():
                     self.properties_list.addItem(
-                        f"{property_name}: {property_value}"
+                        f"{property_name}: "
+                        f"{property_value}"
                     )
             else:
                 self.properties_list.addItem(
@@ -340,10 +428,11 @@ class MainWindow(QMainWindow):
     def create_ai_panel(self):
         dock = QDockWidget(
             "Asistente IA",
-            self
+            self,
         )
 
         texto = QTextEdit()
+
         texto.setPlaceholderText(
             "Describe lo que deseas diseñar..."
         )
@@ -352,7 +441,7 @@ class MainWindow(QMainWindow):
 
         self.addDockWidget(
             Qt.BottomDockWidgetArea,
-            dock
+            dock,
         )
 
     # ---------------------------------------------------------
@@ -363,7 +452,7 @@ class MainWindow(QMainWindow):
         barra = QStatusBar()
 
         barra.showMessage(
-            "AIAS Foundation 3.0 listo"
+            "AIAS Foundation 4.2 listo"
         )
 
         self.setStatusBar(barra)

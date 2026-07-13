@@ -2,7 +2,7 @@
 AI Architecture Studio
 Ribbon
 
-Foundation 3.5
+Foundation 4.2
 """
 
 from PySide6.QtWidgets import (
@@ -37,6 +37,8 @@ class Ribbon(QWidget):
         self.rectangle_btn = QPushButton("RECTANGLE")
         self.circle_btn = QPushButton("CIRCLE")
         self.move_btn = QPushButton("MOVE")
+        self.copy_btn = QPushButton("COPY")
+        self.rotate_btn = QPushButton("ROTATE")
 
         self.wall_btn = QPushButton("Muro")
         self.column_btn = QPushButton("Columna")
@@ -51,6 +53,8 @@ class Ribbon(QWidget):
             self.rectangle_btn,
             self.circle_btn,
             self.move_btn,
+            self.copy_btn,
+            self.rotate_btn,
             self.wall_btn,
             self.column_btn,
             self.beam_btn,
