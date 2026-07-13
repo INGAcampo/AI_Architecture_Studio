@@ -26,6 +26,7 @@ from commands.cad.move_command import MoveCommand
 from commands.cad.polyline_command import PolylineCommand
 from commands.cad.rectangle_command import RectangleCommand
 from commands.cad.rotate_command import RotateCommand
+from commands.cad.scale_command import ScaleCommand
 from gui.dialogs.new_project_dialog import NewProjectDialog
 from gui.ribbon import Ribbon
 from gui.workspace import Workspace
@@ -128,6 +129,10 @@ class MainWindow(QMainWindow):
 
         self.ribbon.rotate_btn.clicked.connect(
             self.activate_rotate_command
+        )
+
+        self.ribbon.scale_btn.clicked.connect(
+            self.activate_scale_command
         )
 
         self.workspace = Workspace(
@@ -261,6 +266,21 @@ class MainWindow(QMainWindow):
             self.statusBar().showMessage(
                 "ROTATE activo: selecciona un objeto, "
                 "luego punto base y ángulo"
+            )
+
+    def activate_scale_command(self):
+        canvas = self.workspace.current_canvas()
+
+        if canvas:
+            canvas.tool_manager.activate(
+                ScaleCommand(
+                    app_core=self.app_core
+                )
+            )
+
+            self.statusBar().showMessage(
+                "SCALE activo: selecciona un objeto, "
+                "luego punto base, referencia y final"
             )
 
     # ---------------------------------------------------------

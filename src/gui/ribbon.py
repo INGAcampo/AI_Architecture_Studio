@@ -39,6 +39,7 @@ class Ribbon(QWidget):
         self.move_btn = QPushButton("MOVE")
         self.copy_btn = QPushButton("COPY")
         self.rotate_btn = QPushButton("ROTATE")
+        self.scale_btn = QPushButton("SCALE")
 
         self.wall_btn = QPushButton("Muro")
         self.column_btn = QPushButton("Columna")
@@ -55,6 +56,7 @@ class Ribbon(QWidget):
             self.move_btn,
             self.copy_btn,
             self.rotate_btn,
+            self.scale_btn,
             self.wall_btn,
             self.column_btn,
             self.beam_btn,

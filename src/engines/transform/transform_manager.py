@@ -208,3 +208,52 @@ class TransformManager:
             return True
 
         return False
+
+    @staticmethod
+    def scale_point(point, scale, cx=0.0, cy=0.0, cz=0.0):
+        dx = point.x - cx
+        dy = point.y - cy
+        dz = point.z - cz
+
+        point.x = cx + dx * scale
+        point.y = cy + dy * scale
+        point.z = cz + dz * scale
+
+    @staticmethod
+    def scale_line(line, scale, cx=0.0, cy=0.0, cz=0.0):
+        TransformManager.scale_point(line.start, scale, cx, cy, cz)
+        TransformManager.scale_point(line.end, scale, cx, cy, cz)
+
+    @staticmethod
+    def scale_polyline(polyline, scale, cx=0.0, cy=0.0, cz=0.0):
+        for point in polyline.points:
+            TransformManager.scale_point(point, scale, cx, cy, cz)
+
+    @staticmethod
+    def scale_circle(circle, scale, cx=0.0, cy=0.0, cz=0.0):
+        TransformManager.scale_point(circle.center, scale, cx, cy, cz)
+        circle.radius *= scale
+
+    @staticmethod
+    def scale_element(element, scale, cx=0.0, cy=0.0, cz=0.0):
+        geometry = getattr(element, "geometry", None)
+
+        if geometry is not None and geometry.__class__.__name__ == "Line":
+            TransformManager.scale_line(geometry, scale, cx, cy, cz)
+            return True
+
+        element_type = element.__class__.__name__
+
+        if element_type == "CadPolyline":
+            TransformManager.scale_polyline(element, scale, cx, cy, cz)
+            return True
+
+        if element_type == "CadRectangle":
+            TransformManager.scale_polyline(element.polyline, scale, cx, cy, cz)
+            return True
+
+        if element_type == "CadCircle":
+            TransformManager.scale_circle(element, scale, cx, cy, cz)
+            return True
+
+        return False
