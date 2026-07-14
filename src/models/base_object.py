@@ -15,6 +15,7 @@ class BaseObject:
         self.object_type = object_type
         self.geometry = None
         self.properties = {}
+        self.layer_name = "0"
 
     def set_property(self, key, value):
         self.properties[key] = value
@@ -27,5 +28,6 @@ class BaseObject:
             "ID": self.id,
             "Nombre": self.name,
             "Tipo": self.object_type,
+            "Capa": self.layer_name,
             "Propiedades": self.properties,
         }

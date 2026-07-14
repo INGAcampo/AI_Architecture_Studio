@@ -27,6 +27,12 @@ class SceneManager:
         self.elements = []
 
     def add_element(self, element, discipline="Arquitectura"):
+        layer_manager = self.kernel.services.get("layer_manager") if self.kernel else None
+        if layer_manager is not None:
+            current_layer = layer_manager.current_layer
+            if current_layer is not None:
+                element.layer_name = current_layer.name
+
         self.elements.append(element)
 
         if self.kernel:

@@ -14,9 +14,12 @@ from PySide6.QtWidgets import (
     QStatusBar,
     QTextEdit,
     QTreeWidget,
+    QListWidgetItem,
     QTreeWidgetItem,
     QVBoxLayout,
     QWidget,
+    QPushButton,
+    QHBoxLayout,
 )
 
 from commands.cad.circle_command import CircleCommand
@@ -48,6 +51,7 @@ class MainWindow(QMainWindow):
         self.create_central_area()
         self.create_project_explorer()
         self.create_properties_panel()
+        self.create_layers_panel()
         self.create_ai_panel()
         self.create_status_bar()
         self.apply_dark_theme()
@@ -444,6 +448,196 @@ class MainWindow(QMainWindow):
     # ---------------------------------------------------------
     # ASISTENTE IA
     # ---------------------------------------------------------
+
+    def create_layers_panel(self):
+        dock = QDockWidget(
+            "Capas",
+            self,
+        )
+
+        container = QWidget()
+        layout = QVBoxLayout(container)
+
+        self.layers_list = QListWidget()
+        layout.addWidget(self.layers_list)
+
+        buttons_layout = QHBoxLayout()
+        self.new_layer_btn = QPushButton("Nueva capa")
+        self.activate_layer_btn = QPushButton("Activar")
+        self.toggle_visibility_btn = QPushButton("Mostrar/Ocultar")
+        self.toggle_lock_btn = QPushButton("Bloquear/Desbloq.")
+
+        buttons_layout.addWidget(self.new_layer_btn)
+        buttons_layout.addWidget(self.activate_layer_btn)
+        buttons_layout.addWidget(self.toggle_visibility_btn)
+        buttons_layout.addWidget(self.toggle_lock_btn)
+
+        layout.addLayout(buttons_layout)
+
+        self.new_layer_btn.clicked.connect(self.create_new_layer)
+        self.activate_layer_btn.clicked.connect(self.activate_selected_layer)
+        self.toggle_visibility_btn.clicked.connect(self.toggle_selected_layer_visibility)
+        self.toggle_lock_btn.clicked.connect(self.toggle_selected_layer_lock)
+
+        dock.setWidget(container)
+
+        self.addDockWidget(
+            Qt.RightDockWidgetArea,
+            dock,
+        )
+
+        self.refresh_layers_panel()
+
+    def refresh_layers_panel(self):
+        if not hasattr(self, "layers_list"):
+            return
+
+        self.layers_list.clear()
+
+        if self.app_core is None:
+            return
+
+        layer_manager = None
+        if self.app_core is not None and getattr(self.app_core, "kernel", None) is not None:
+            layer_manager = self.app_core.kernel.services.get("layer_manager")
+        if layer_manager is None:
+            return
+
+        for layer in layer_manager.all_layers():
+            status = []
+            if layer.visible:
+                status.append("V")
+            else:
+                status.append("H")
+            if layer.locked:
+                status.append("L")
+            else:
+                status.append("U")
+            if layer_manager.current_layer and layer.name == layer_manager.current_layer.name:
+                status.append("A")
+
+            item = QListWidgetItem(
+                f"{layer.name} [{' '.join(status)}]"
+            )
+            item.setData(Qt.UserRole, layer.name)
+            self.layers_list.addItem(item)
+
+    def create_new_layer(self):
+        if self.app_core is None:
+            return
+
+        layer_manager = None
+        if self.app_core is not None and getattr(self.app_core, "kernel", None) is not None:
+            layer_manager = self.app_core.kernel.services.get("layer_manager")
+        if layer_manager is None:
+            return
+
+        name = f"Layer{len(layer_manager.all_layers()) + 1}"
+        layer_manager.create_layer(name)
+        self.refresh_layers_panel()
+
+    def activate_selected_layer(self):
+        if self.app_core is None:
+            return
+
+        selected = self.layers_list.currentItem()
+        if selected is None:
+            return
+
+        layer_name = selected.data(Qt.UserRole)
+        if not layer_name:
+            layer_name = selected.text().split(" ")[0]
+
+        layer_manager = None
+        if self.app_core is not None and getattr(self.app_core, "kernel", None) is not None:
+            layer_manager = self.app_core.kernel.services.get("layer_manager")
+        if layer_manager is None:
+            return
+
+        layer_manager.set_current_layer(layer_name)
+        self.refresh_layers_panel()
+
+    def toggle_selected_layer_visibility(self):
+        if self.app_core is None:
+            return
+
+        selected = self.layers_list.currentItem()
+        if selected is None:
+            return
+
+        layer_name = selected.data(Qt.UserRole)
+        if not layer_name:
+            layer_name = selected.text().split(" ")[0]
+
+        layer_manager = None
+        if self.app_core is not None and getattr(self.app_core, "kernel", None) is not None:
+            layer_manager = self.app_core.kernel.services.get("layer_manager")
+        if layer_manager is None:
+            return
+
+        layer = layer_manager.get_layer(layer_name)
+        if layer is not None:
+            layer_manager.set_visibility(layer_name, not layer.visible)
+            if layer.visible:
+                self.statusBar().showMessage(f"Capa {layer_name} visible")
+            else:
+                self.statusBar().showMessage(f"Capa {layer_name} oculta")
+
+            canvas = self.workspace.current_canvas()
+            if canvas is not None:
+                canvas.highlight.clear()
+                canvas.selection_manager.clear()
+                canvas.element_selected.emit(None)
+                canvas.update()
+
+            self.refresh_layers_panel()
+            self._restore_layer_selection(layer_name)
+
+    def toggle_selected_layer_lock(self):
+        if self.app_core is None:
+            return
+
+        selected = self.layers_list.currentItem()
+        if selected is None:
+            return
+
+        layer_name = selected.data(Qt.UserRole)
+        if not layer_name:
+            layer_name = selected.text().split(" ")[0]
+
+        layer_manager = None
+        if self.app_core is not None and getattr(self.app_core, "kernel", None) is not None:
+            layer_manager = self.app_core.kernel.services.get("layer_manager")
+        if layer_manager is None:
+            return
+
+        layer = layer_manager.get_layer(layer_name)
+        if layer is not None:
+            layer_manager.set_locked(layer_name, not layer.locked)
+            if layer.locked:
+                self.statusBar().showMessage(f"Capa {layer_name} bloqueada")
+            else:
+                self.statusBar().showMessage(f"Capa {layer_name} desbloqueada")
+
+            canvas = self.workspace.current_canvas()
+            if canvas is not None:
+                canvas.highlight.clear()
+                canvas.selection_manager.clear()
+                canvas.element_selected.emit(None)
+                canvas.update()
+
+            self.refresh_layers_panel()
+            self._restore_layer_selection(layer_name)
+
+    def _restore_layer_selection(self, layer_name):
+        if not hasattr(self, "layers_list"):
+            return
+
+        for index in range(self.layers_list.count()):
+            item = self.layers_list.item(index)
+            if item.data(Qt.UserRole) == layer_name:
+                self.layers_list.setCurrentItem(item)
+                break
 
     def create_ai_panel(self):
         dock = QDockWidget(

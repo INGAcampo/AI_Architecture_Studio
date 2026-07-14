@@ -135,10 +135,22 @@ class HitTest:
         if scene is None:
             return None
 
+        layer_manager = None
+        if scene is not None and getattr(scene, "kernel", None) is not None:
+            layer_manager = scene.kernel.services.get("layer_manager")
+
         nearest_element = None
         nearest_distance = None
 
         for element in scene.get_elements():
+            layer_name = getattr(element, "layer_name", "0")
+            layer = None
+            if layer_manager is not None:
+                layer = layer_manager.get_layer(layer_name)
+            if layer is not None:
+                if not layer.visible or layer.locked:
+                    continue
+
             distance = HitTest.element_distance(
                 point,
                 element

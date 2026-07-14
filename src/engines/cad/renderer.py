@@ -189,7 +189,17 @@ class Renderer:
         if scene is None:
             return
 
+        layer_manager = None
+        if scene is not None and getattr(scene, "kernel", None) is not None:
+            layer_manager = scene.kernel.services.get("layer_manager")
+
         for element in scene.get_elements():
+            layer_name = getattr(element, "layer_name", "0")
+            layer = None
+            if layer_manager is not None:
+                layer = layer_manager.get_layer(layer_name)
+            if layer is not None and not layer.visible:
+                continue
 
             geometry = getattr(
                 element,
