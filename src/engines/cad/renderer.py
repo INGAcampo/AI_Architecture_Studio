@@ -2,10 +2,11 @@
 AI Architecture Studio
 CAD Renderer
 
-SNAP Professional v2
+Professional Selection v1
 """
 
-from PySide6.QtGui import QColor, QPen
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QColor, QBrush, QPen
 
 from engines.cad.coordinates import CoordinateSystem
 
@@ -28,12 +29,62 @@ class Renderer:
             3,
         )
 
+        self.selection_pen = QPen(
+            QColor(0, 170, 255),
+            3,
+        )
+
         self.snap_pen = QPen(
             QColor(0, 255, 255),
             2,
         )
 
+        self.window_pen = QPen(
+            QColor(60, 150, 255),
+            1,
+        )
+
+        self.crossing_pen = QPen(
+            QColor(70, 220, 120),
+            1,
+        )
+
         self.coordinates = CoordinateSystem()
+
+    # ---------------------------------------------------------
+    # CONFIGURACIÓN DE PLUMAS
+    # ---------------------------------------------------------
+
+    def _set_entity_pen(
+        self,
+        painter,
+        preview=False,
+        highlighted=False,
+        selected=False,
+    ):
+        if selected:
+            painter.setPen(
+                self.selection_pen
+            )
+
+        elif highlighted:
+            painter.setPen(
+                self.highlight_pen
+            )
+
+        elif preview:
+            painter.setPen(
+                self.preview_pen
+            )
+
+        else:
+            painter.setPen(
+                self.default_pen
+            )
+
+    # ---------------------------------------------------------
+    # LINE
+    # ---------------------------------------------------------
 
     def draw_line(
         self,
@@ -42,19 +93,14 @@ class Renderer:
         line,
         preview=False,
         highlighted=False,
+        selected=False,
     ):
-        if highlighted:
-            painter.setPen(
-                self.highlight_pen
-            )
-        elif preview:
-            painter.setPen(
-                self.preview_pen
-            )
-        else:
-            painter.setPen(
-                self.default_pen
-            )
+        self._set_entity_pen(
+            painter,
+            preview=preview,
+            highlighted=highlighted,
+            selected=selected,
+        )
 
         x1, y1 = (
             self.coordinates.world_to_screen(
@@ -79,17 +125,22 @@ class Renderer:
             int(y2),
         )
 
+    # ---------------------------------------------------------
+    # POLYLINE / RECTANGLE
+    # ---------------------------------------------------------
+
     def draw_polyline(
         self,
         painter,
         camera,
         polyline,
         highlighted=False,
+        selected=False,
     ):
-        painter.setPen(
-            self.highlight_pen
-            if highlighted
-            else self.default_pen
+        self._set_entity_pen(
+            painter,
+            highlighted=highlighted,
+            selected=selected,
         )
 
         points = polyline.points
@@ -156,6 +207,10 @@ class Renderer:
                 int(y2),
             )
 
+    # ---------------------------------------------------------
+    # CIRCLE
+    # ---------------------------------------------------------
+
     def draw_circle(
         self,
         painter,
@@ -163,19 +218,14 @@ class Renderer:
         circle,
         preview=False,
         highlighted=False,
+        selected=False,
     ):
-        if highlighted:
-            painter.setPen(
-                self.highlight_pen
-            )
-        elif preview:
-            painter.setPen(
-                self.preview_pen
-            )
-        else:
-            painter.setPen(
-                self.default_pen
-            )
+        self._set_entity_pen(
+            painter,
+            preview=preview,
+            highlighted=highlighted,
+            selected=selected,
+        )
 
         center_x, center_y = (
             self.coordinates.world_to_screen(
@@ -192,21 +242,15 @@ class Renderer:
         )
 
         painter.drawEllipse(
-            int(
-                center_x
-                - radius_pixels
-            ),
-            int(
-                center_y
-                - radius_pixels
-            ),
-            int(
-                radius_pixels * 2
-            ),
-            int(
-                radius_pixels * 2
-            ),
+            int(center_x - radius_pixels),
+            int(center_y - radius_pixels),
+            int(radius_pixels * 2),
+            int(radius_pixels * 2),
         )
+
+    # ---------------------------------------------------------
+    # SNAP
+    # ---------------------------------------------------------
 
     def draw_snap_marker(
         self,
@@ -333,6 +377,105 @@ class Renderer:
             snap_type,
         )
 
+    # ---------------------------------------------------------
+    # VENTANA DE SELECCIÓN
+    # ---------------------------------------------------------
+
+    def draw_selection_window(
+        self,
+        painter,
+        camera,
+        first_point,
+        second_point,
+        crossing=False,
+    ):
+        if (
+            first_point is None
+            or second_point is None
+        ):
+            return
+
+        x1, y1 = (
+            self.coordinates.world_to_screen(
+                first_point.x,
+                first_point.y,
+                camera,
+            )
+        )
+
+        x2, y2 = (
+            self.coordinates.world_to_screen(
+                second_point.x,
+                second_point.y,
+                camera,
+            )
+        )
+
+        left = int(
+            min(x1, x2)
+        )
+
+        top = int(
+            min(y1, y2)
+        )
+
+        width = max(
+            1,
+            int(abs(x2 - x1)),
+        )
+
+        height = max(
+            1,
+            int(abs(y2 - y1)),
+        )
+
+        if crossing:
+            painter.setPen(
+                self.crossing_pen
+            )
+
+            painter.setBrush(
+                QBrush(
+                    QColor(
+                        50,
+                        180,
+                        90,
+                        45,
+                    )
+                )
+            )
+
+        else:
+            painter.setPen(
+                self.window_pen
+            )
+
+            painter.setBrush(
+                QBrush(
+                    QColor(
+                        50,
+                        120,
+                        230,
+                        45,
+                    )
+                )
+            )
+
+        painter.drawRect(
+            left,
+            top,
+            width,
+            height,
+        )
+
+        painter.setBrush(
+            QBrush(Qt.NoBrush)
+        )
+
+    # ---------------------------------------------------------
+    # PREVIEW
+    # ---------------------------------------------------------
+
     def draw_preview(
         self,
         painter,
@@ -363,17 +506,27 @@ class Renderer:
                 preview=True,
             )
 
+    # ---------------------------------------------------------
+    # ESCENA
+    # ---------------------------------------------------------
+
     def draw_scene(
         self,
         painter,
         camera,
         scene,
         highlighted=None,
+        selected_elements=None,
     ):
         if scene is None:
             return
 
+        selected_elements = set(
+            selected_elements or []
+        )
+
         layer_manager = None
+
         kernel = getattr(
             scene,
             "kernel",
@@ -415,8 +568,13 @@ class Renderer:
                 None,
             )
 
+            is_selected = (
+                element in selected_elements
+            )
+
             is_highlighted = (
-                highlighted is not None
+                not is_selected
+                and highlighted is not None
                 and highlighted == element
             )
 
@@ -430,6 +588,7 @@ class Renderer:
                     camera,
                     geometry,
                     highlighted=is_highlighted,
+                    selected=is_selected,
                 )
 
             elif (
@@ -441,6 +600,7 @@ class Renderer:
                     camera,
                     element,
                     highlighted=is_highlighted,
+                    selected=is_selected,
                 )
 
             elif (
@@ -452,6 +612,7 @@ class Renderer:
                     camera,
                     element.polyline,
                     highlighted=is_highlighted,
+                    selected=is_selected,
                 )
 
             elif (
@@ -463,4 +624,5 @@ class Renderer:
                     camera,
                     element,
                     highlighted=is_highlighted,
+                    selected=is_selected,
                 )
