@@ -2,7 +2,7 @@
 AI Architecture Studio
 CAD Engine - Canvas
 
-Foundation 4.3
+SNAP Professional v2
 """
 
 from PySide6.QtCore import Qt, Signal
@@ -26,7 +26,11 @@ class CadCanvas(QWidget):
 
     element_selected = Signal(object)
 
-    def __init__(self, scene=None, parent=None):
+    def __init__(
+        self,
+        scene=None,
+        parent=None,
+    ):
         super().__init__(parent)
 
         self.scene = scene
@@ -40,24 +44,48 @@ class CadCanvas(QWidget):
 
         self.coordinates = CoordinateSystem()
 
-        self.selection_manager = SelectionManager()
+        self.selection_manager = (
+            SelectionManager()
+        )
+
         self.highlight = Highlight()
 
-        self.cursor_position = (0.0, 0.0)
+        self.cursor_position = (
+            0.0,
+            0.0,
+        )
+
+        self.snapped_cursor_position = (
+            0.0,
+            0.0,
+        )
+
+        self.current_snap_point = None
+        self.current_snap_type = None
+
         self.preview_geometry = None
 
         self.is_panning = False
         self.last_pan_position = None
 
-        self.setMinimumSize(800, 500)
+        self.setMinimumSize(
+            800,
+            500,
+        )
+
         self.setMouseTracking(True)
-        self.setFocusPolicy(Qt.StrongFocus)
+        self.setFocusPolicy(
+            Qt.StrongFocus
+        )
 
     # ---------------------------------------------------------
     # SERVICIOS
     # ---------------------------------------------------------
 
-    def get_kernel_service(self, service_name):
+    def get_kernel_service(
+        self,
+        service_name,
+    ):
         kernel = getattr(
             self.scene,
             "kernel",
@@ -79,6 +107,73 @@ class CadCanvas(QWidget):
     def get_ortho_manager(self):
         return self.get_kernel_service(
             "ortho_manager"
+        )
+
+    def get_snap_engine(self):
+        return self.get_kernel_service(
+            "snap_engine"
+        )
+
+    # ---------------------------------------------------------
+    # CURSOR CAD
+    # ---------------------------------------------------------
+
+    def update_snap(self):
+        x, y = self.cursor_position
+
+        cursor_point = Point(
+            x,
+            y,
+            0.0,
+        )
+
+        snap_engine = (
+            self.get_snap_engine()
+        )
+
+        if snap_engine is None:
+            self.current_snap_point = None
+            self.current_snap_type = None
+            self.snapped_cursor_position = (
+                x,
+                y,
+            )
+            return
+
+        snapped_point, snap_type = (
+            snap_engine.snap_point(
+                cursor_point,
+                self.scene,
+            )
+        )
+
+        self.current_snap_point = (
+            snapped_point
+            if snap_type is not None
+            else None
+        )
+
+        self.current_snap_type = snap_type
+
+        self.snapped_cursor_position = (
+            snapped_point.x,
+            snapped_point.y,
+        )
+
+    def get_input_point(self):
+        if self.current_snap_point is not None:
+            return Point(
+                self.current_snap_point.x,
+                self.current_snap_point.y,
+                self.current_snap_point.z,
+            )
+
+        x, y = self.cursor_position
+
+        return Point(
+            x,
+            y,
+            0.0,
         )
 
     # ---------------------------------------------------------
@@ -104,7 +199,9 @@ class CadCanvas(QWidget):
             painter=painter,
             camera=self.camera,
             scene=self.scene,
-            highlighted=self.highlight.current(),
+            highlighted=(
+                self.highlight.current()
+            ),
         )
 
         if self.preview_geometry is not None:
@@ -114,49 +211,84 @@ class CadCanvas(QWidget):
                 self.preview_geometry,
             )
 
+        self.renderer.draw_snap_marker(
+            painter,
+            self.camera,
+            self.current_snap_point,
+            self.current_snap_type,
+        )
+
         painter.setPen(
             QColor(200, 200, 200)
         )
 
-        x, y = self.cursor_position
+        x, y = (
+            self.snapped_cursor_position
+        )
 
         painter.drawText(
             20,
             30,
-            f"X: {x:.2f} m   Y: {y:.2f} m",
+            f"X: {x:.2f} m   "
+            f"Y: {y:.2f} m",
         )
 
-        highlighted = self.highlight.current()
+        highlighted = (
+            self.highlight.current()
+        )
 
         if highlighted is not None:
             painter.drawText(
                 20,
                 50,
-                f"Objeto: {highlighted.name}",
+                f"Objeto: "
+                f"{highlighted.name}",
             )
 
-        ortho_manager = self.get_ortho_manager()
+        ortho_manager = (
+            self.get_ortho_manager()
+        )
+
+        snap_engine = (
+            self.get_snap_engine()
+        )
+
+        status_items = []
 
         if (
             ortho_manager is not None
             and ortho_manager.enabled
         ):
+            status_items.append(
+                "ORTHO: ON"
+            )
+
+        if (
+            snap_engine is not None
+            and snap_engine.enabled
+        ):
+            status_items.append(
+                "SNAP: ON"
+            )
+
+        if status_items:
             painter.drawText(
                 20,
                 70,
-                "ORTHO: ON",
+                " | ".join(status_items),
             )
 
         painter.end()
 
     # ---------------------------------------------------------
-    # MOVIMIENTO DEL RATÓN
+    # RATÓN
     # ---------------------------------------------------------
 
     def mouseMoveEvent(self, event):
         if (
             self.is_panning
-            and self.last_pan_position is not None
+            and self.last_pan_position
+            is not None
         ):
             dx = (
                 event.position().x()
@@ -188,12 +320,10 @@ class CadCanvas(QWidget):
             )
         )
 
-        x, y = self.cursor_position
+        self.update_snap()
 
-        mouse_point = Point(
-            x,
-            y,
-            0,
+        mouse_point = (
+            self.get_input_point()
         )
 
         element = HitTest.pick(
@@ -216,10 +346,6 @@ class CadCanvas(QWidget):
 
         self.update()
 
-    # ---------------------------------------------------------
-    # CLIC DEL RATÓN
-    # ---------------------------------------------------------
-
     def mousePressEvent(self, event):
         self.setFocus()
 
@@ -230,12 +356,10 @@ class CadCanvas(QWidget):
             )
             return
 
-        x, y = self.cursor_position
+        self.update_snap()
 
-        mouse_point = Point(
-            x,
-            y,
-            0,
+        mouse_point = (
+            self.get_input_point()
         )
 
         selected = HitTest.pick(
@@ -253,7 +377,8 @@ class CadCanvas(QWidget):
             )
 
             print(
-                f"Seleccionado: {selected.name}"
+                f"Seleccionado: "
+                f"{selected.name}"
             )
         else:
             self.selection_manager.clear()
@@ -283,6 +408,43 @@ class CadCanvas(QWidget):
     # ---------------------------------------------------------
 
     def keyPressEvent(self, event):
+        # SNAP F3
+        if event.key() == Qt.Key_F3:
+            snap_engine = (
+                self.get_snap_engine()
+            )
+
+            if snap_engine is None:
+                print(
+                    "SNAP: servicio no disponible"
+                )
+                return
+
+            enabled = snap_engine.toggle()
+
+            state = (
+                "ACTIVADO"
+                if enabled
+                else "DESACTIVADO"
+            )
+
+            if not enabled:
+                self.current_snap_point = None
+                self.current_snap_type = None
+
+            main_window = self.window()
+
+            if hasattr(
+                main_window,
+                "statusBar",
+            ):
+                main_window.statusBar().showMessage(
+                    f"SNAP {state}"
+                )
+
+            self.update()
+            return
+
         # ORTHO F8
         if event.key() == Qt.Key_F8:
             ortho_manager = (
@@ -313,14 +475,9 @@ class CadCanvas(QWidget):
                     f"ORTHO {state}"
                 )
 
-            print(
-                f"ORTHO {state}"
-            )
-
             self.update()
             return
 
-        # UNDO
         if event.matches(
             QKeySequence.Undo
         ):
@@ -334,13 +491,11 @@ class CadCanvas(QWidget):
             self.selection_manager.clear()
             self.highlight.clear()
             self.element_selected.emit(None)
-
             self.update()
 
             print("UNDO ejecutado")
             return
 
-        # REDO
         if event.matches(
             QKeySequence.Redo
         ):
@@ -354,13 +509,11 @@ class CadCanvas(QWidget):
             self.selection_manager.clear()
             self.highlight.clear()
             self.element_selected.emit(None)
-
             self.update()
 
             print("REDO ejecutado")
             return
 
-        # DELETE
         if event.key() == Qt.Key_Delete:
             delete_command = DeleteCommand()
             delete_command.execute(self)
@@ -369,7 +522,6 @@ class CadCanvas(QWidget):
             self.update()
             return
 
-        # ESCAPE
         if event.key() == Qt.Key_Escape:
             self.tool_manager.cancel(self)
             self.command_manager.cancel(self)
@@ -379,11 +531,12 @@ class CadCanvas(QWidget):
             self.element_selected.emit(None)
 
             self.preview_geometry = None
+            self.current_snap_point = None
+            self.current_snap_type = None
 
             self.update()
             return
 
-        # COMANDO ACTIVO
         if self.tool_manager.current_tool:
             self.tool_manager.current_tool.key_press(
                 event,

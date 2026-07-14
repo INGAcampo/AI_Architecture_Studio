@@ -1,4 +1,11 @@
-from PySide6.QtGui import QPen, QColor
+"""
+AI Architecture Studio
+CAD Renderer
+
+SNAP Professional v2
+"""
+
+from PySide6.QtGui import QColor, QPen
 
 from engines.cad.coordinates import CoordinateSystem
 
@@ -6,10 +13,25 @@ from engines.cad.coordinates import CoordinateSystem
 class Renderer:
 
     def __init__(self):
+        self.default_pen = QPen(
+            QColor(220, 220, 220),
+            2,
+        )
 
-        self.default_pen = QPen(QColor(220, 220, 220), 2)
-        self.preview_pen = QPen(QColor(80, 220, 120), 1)
-        self.highlight_pen = QPen(QColor(255, 210, 0), 3)
+        self.preview_pen = QPen(
+            QColor(80, 220, 120),
+            1,
+        )
+
+        self.highlight_pen = QPen(
+            QColor(255, 210, 0),
+            3,
+        )
+
+        self.snap_pen = QPen(
+            QColor(0, 255, 255),
+            2,
+        )
 
         self.coordinates = CoordinateSystem()
 
@@ -19,33 +41,42 @@ class Renderer:
         camera,
         line,
         preview=False,
-        highlighted=False
+        highlighted=False,
     ):
-
         if highlighted:
-            painter.setPen(self.highlight_pen)
+            painter.setPen(
+                self.highlight_pen
+            )
         elif preview:
-            painter.setPen(self.preview_pen)
+            painter.setPen(
+                self.preview_pen
+            )
         else:
-            painter.setPen(self.default_pen)
+            painter.setPen(
+                self.default_pen
+            )
 
-        x1, y1 = self.coordinates.world_to_screen(
-            line.start.x,
-            line.start.y,
-            camera
+        x1, y1 = (
+            self.coordinates.world_to_screen(
+                line.start.x,
+                line.start.y,
+                camera,
+            )
         )
 
-        x2, y2 = self.coordinates.world_to_screen(
-            line.end.x,
-            line.end.y,
-            camera
+        x2, y2 = (
+            self.coordinates.world_to_screen(
+                line.end.x,
+                line.end.y,
+                camera,
+            )
         )
 
         painter.drawLine(
             int(x1),
             int(y1),
             int(x2),
-            int(y2)
+            int(y2),
         )
 
     def draw_polyline(
@@ -53,9 +84,8 @@ class Renderer:
         painter,
         camera,
         polyline,
-        highlighted=False
+        highlighted=False,
     ):
-
         painter.setPen(
             self.highlight_pen
             if highlighted
@@ -67,52 +97,63 @@ class Renderer:
         if len(points) < 2:
             return
 
-        for index in range(len(points) - 1):
-
+        for index in range(
+            len(points) - 1
+        ):
             point_1 = points[index]
             point_2 = points[index + 1]
 
-            x1, y1 = self.coordinates.world_to_screen(
-                point_1.x,
-                point_1.y,
-                camera
+            x1, y1 = (
+                self.coordinates.world_to_screen(
+                    point_1.x,
+                    point_1.y,
+                    camera,
+                )
             )
 
-            x2, y2 = self.coordinates.world_to_screen(
-                point_2.x,
-                point_2.y,
-                camera
+            x2, y2 = (
+                self.coordinates.world_to_screen(
+                    point_2.x,
+                    point_2.y,
+                    camera,
+                )
             )
 
             painter.drawLine(
                 int(x1),
                 int(y1),
                 int(x2),
-                int(y2)
+                int(y2),
             )
 
-        if polyline.closed and len(points) > 2:
-
+        if (
+            polyline.closed
+            and len(points) > 2
+        ):
             point_1 = points[-1]
             point_2 = points[0]
 
-            x1, y1 = self.coordinates.world_to_screen(
-                point_1.x,
-                point_1.y,
-                camera
+            x1, y1 = (
+                self.coordinates.world_to_screen(
+                    point_1.x,
+                    point_1.y,
+                    camera,
+                )
             )
 
-            x2, y2 = self.coordinates.world_to_screen(
-                point_2.x,
-                point_2.y,
-                camera
+            x2, y2 = (
+                self.coordinates.world_to_screen(
+                    point_2.x,
+                    point_2.y,
+                    camera,
+                )
             )
 
             painter.drawLine(
                 int(x1),
                 int(y1),
                 int(x2),
-                int(y2)
+                int(y2),
             )
 
     def draw_circle(
@@ -121,20 +162,27 @@ class Renderer:
         camera,
         circle,
         preview=False,
-        highlighted=False
+        highlighted=False,
     ):
-
         if highlighted:
-            painter.setPen(self.highlight_pen)
+            painter.setPen(
+                self.highlight_pen
+            )
         elif preview:
-            painter.setPen(self.preview_pen)
+            painter.setPen(
+                self.preview_pen
+            )
         else:
-            painter.setPen(self.default_pen)
+            painter.setPen(
+                self.default_pen
+            )
 
-        center_x, center_y = self.coordinates.world_to_screen(
-            circle.center.x,
-            circle.center.y,
-            camera
+        center_x, center_y = (
+            self.coordinates.world_to_screen(
+                circle.center.x,
+                circle.center.y,
+                camera,
+            )
         )
 
         radius_pixels = (
@@ -144,30 +192,167 @@ class Renderer:
         )
 
         painter.drawEllipse(
-            int(center_x - radius_pixels),
-            int(center_y - radius_pixels),
-            int(radius_pixels * 2),
-            int(radius_pixels * 2)
+            int(
+                center_x
+                - radius_pixels
+            ),
+            int(
+                center_y
+                - radius_pixels
+            ),
+            int(
+                radius_pixels * 2
+            ),
+            int(
+                radius_pixels * 2
+            ),
+        )
+
+    def draw_snap_marker(
+        self,
+        painter,
+        camera,
+        point,
+        snap_type,
+    ):
+        if (
+            point is None
+            or snap_type is None
+        ):
+            return
+
+        screen_x, screen_y = (
+            self.coordinates.world_to_screen(
+                point.x,
+                point.y,
+                camera,
+            )
+        )
+
+        x = int(screen_x)
+        y = int(screen_y)
+        size = 7
+
+        painter.setPen(
+            self.snap_pen
+        )
+
+        if snap_type == "Endpoint":
+            painter.drawRect(
+                x - size,
+                y - size,
+                size * 2,
+                size * 2,
+            )
+
+        elif snap_type == "Midpoint":
+            painter.drawLine(
+                x,
+                y - size,
+                x - size,
+                y + size,
+            )
+
+            painter.drawLine(
+                x - size,
+                y + size,
+                x + size,
+                y + size,
+            )
+
+            painter.drawLine(
+                x + size,
+                y + size,
+                x,
+                y - size,
+            )
+
+        elif snap_type == "Center":
+            painter.drawEllipse(
+                x - size,
+                y - size,
+                size * 2,
+                size * 2,
+            )
+
+            painter.drawLine(
+                x - size,
+                y,
+                x + size,
+                y,
+            )
+
+            painter.drawLine(
+                x,
+                y - size,
+                x,
+                y + size,
+            )
+
+        elif snap_type == "Intersection":
+            painter.drawLine(
+                x - size,
+                y - size,
+                x + size,
+                y + size,
+            )
+
+            painter.drawLine(
+                x - size,
+                y + size,
+                x + size,
+                y - size,
+            )
+
+        elif snap_type == "Nearest":
+            painter.drawEllipse(
+                x - 4,
+                y - 4,
+                8,
+                8,
+            )
+
+        elif snap_type == "Grid":
+            painter.drawLine(
+                x - size,
+                y,
+                x + size,
+                y,
+            )
+
+            painter.drawLine(
+                x,
+                y - size,
+                x,
+                y + size,
+            )
+
+        painter.drawText(
+            x + 12,
+            y - 10,
+            snap_type,
         )
 
     def draw_preview(
         self,
         painter,
         camera,
-        preview_geometry
+        preview_geometry,
     ):
-
         if preview_geometry is None:
             return
 
-        preview_type = preview_geometry.__class__.__name__
+        preview_type = (
+            preview_geometry
+            .__class__.__name__
+        )
 
         if preview_type == "Line":
             self.draw_line(
                 painter,
                 camera,
                 preview_geometry,
-                preview=True
+                preview=True,
             )
 
         elif preview_type == "CadCircle":
@@ -175,7 +360,7 @@ class Renderer:
                 painter,
                 camera,
                 preview_geometry,
-                preview=True
+                preview=True,
             )
 
     def draw_scene(
@@ -183,28 +368,51 @@ class Renderer:
         painter,
         camera,
         scene,
-        highlighted=None
+        highlighted=None,
     ):
-
         if scene is None:
             return
 
         layer_manager = None
-        if scene is not None and getattr(scene, "kernel", None) is not None:
-            layer_manager = scene.kernel.services.get("layer_manager")
+        kernel = getattr(
+            scene,
+            "kernel",
+            None,
+        )
+
+        if kernel is not None:
+            layer_manager = (
+                kernel.services.get(
+                    "layer_manager"
+                )
+            )
 
         for element in scene.get_elements():
-            layer_name = getattr(element, "layer_name", "0")
+            layer_name = getattr(
+                element,
+                "layer_name",
+                "0",
+            )
+
             layer = None
+
             if layer_manager is not None:
-                layer = layer_manager.get_layer(layer_name)
-            if layer is not None and not layer.visible:
+                layer = (
+                    layer_manager.get_layer(
+                        layer_name
+                    )
+                )
+
+            if (
+                layer is not None
+                and not layer.visible
+            ):
                 continue
 
             geometry = getattr(
                 element,
                 "geometry",
-                None
+                None,
             )
 
             is_highlighted = (
@@ -213,40 +421,46 @@ class Renderer:
             )
 
             if (
-                geometry
-                and geometry.__class__.__name__ == "Line"
+                geometry is not None
+                and geometry.__class__.__name__
+                == "Line"
             ):
-
                 self.draw_line(
                     painter,
                     camera,
                     geometry,
-                    highlighted=is_highlighted
+                    highlighted=is_highlighted,
                 )
 
-            elif element.__class__.__name__ == "CadPolyline":
-
+            elif (
+                element.__class__.__name__
+                == "CadPolyline"
+            ):
                 self.draw_polyline(
                     painter,
                     camera,
                     element,
-                    highlighted=is_highlighted
+                    highlighted=is_highlighted,
                 )
 
-            elif element.__class__.__name__ == "CadRectangle":
-
+            elif (
+                element.__class__.__name__
+                == "CadRectangle"
+            ):
                 self.draw_polyline(
                     painter,
                     camera,
                     element.polyline,
-                    highlighted=is_highlighted
+                    highlighted=is_highlighted,
                 )
 
-            elif element.__class__.__name__ == "CadCircle":
-
+            elif (
+                element.__class__.__name__
+                == "CadCircle"
+            ):
                 self.draw_circle(
                     painter,
                     camera,
                     element,
-                    highlighted=is_highlighted
+                    highlighted=is_highlighted,
                 )

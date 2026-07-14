@@ -2,7 +2,7 @@
 AI Architecture Studio
 CAD Command - Line Profesional
 
-Foundation 4.3
+SNAP Professional v2
 """
 
 from commands.base_command import BaseCommand
@@ -21,19 +21,56 @@ class LineCommand(BaseCommand):
         self.first_point = None
 
     def get_ortho_manager(self, canvas):
-        scene = getattr(canvas, "scene", None)
-        kernel = getattr(scene, "kernel", None)
+        scene = getattr(
+            canvas,
+            "scene",
+            None,
+        )
+
+        kernel = getattr(
+            scene,
+            "kernel",
+            None,
+        )
 
         if kernel is None:
             return None
 
-        return kernel.services.get("ortho_manager")
+        return kernel.services.get(
+            "ortho_manager"
+        )
 
-    def apply_ortho(self, canvas, point):
+    def get_canvas_point(self, canvas):
+        get_input_point = getattr(
+            canvas,
+            "get_input_point",
+            None,
+        )
+
+        if callable(get_input_point):
+            return get_input_point()
+
+        x, y = canvas.cursor_position
+
+        return Point(
+            x,
+            y,
+            0.0,
+        )
+
+    def apply_ortho(
+        self,
+        canvas,
+        point,
+    ):
         if self.first_point is None:
             return point
 
-        ortho_manager = self.get_ortho_manager(canvas)
+        ortho_manager = (
+            self.get_ortho_manager(
+                canvas
+            )
+        )
 
         if ortho_manager is None:
             return point
@@ -43,18 +80,20 @@ class LineCommand(BaseCommand):
             point,
         )
 
-    def mouse_move(self, event, canvas):
+    def mouse_move(
+        self,
+        event,
+        canvas,
+    ):
         if self.first_point is None:
             canvas.preview_geometry = None
             canvas.update()
             return
 
-        x, y = canvas.cursor_position
-
-        current_point = Point(
-            x,
-            y,
-            0,
+        current_point = (
+            self.get_canvas_point(
+                canvas
+            )
         )
 
         current_point = self.apply_ortho(
@@ -62,27 +101,30 @@ class LineCommand(BaseCommand):
             current_point,
         )
 
-        canvas.preview_geometry = GeometryBuilder.create_line(
-            self.first_point,
-            current_point,
+        canvas.preview_geometry = (
+            GeometryBuilder.create_line(
+                self.first_point,
+                current_point,
+            )
         )
 
         canvas.update()
 
-    def mouse_press(self, event, canvas):
-        x, y = canvas.cursor_position
-
-        point = Point(
-            x,
-            y,
-            0,
+    def mouse_press(
+        self,
+        event,
+        canvas,
+    ):
+        point = self.get_canvas_point(
+            canvas
         )
 
         if self.first_point is None:
             self.first_point = point
 
             print(
-                f"LINE: Primer punto {point}"
+                f"LINE: Primer punto "
+                f"{point}"
             )
 
             return
@@ -92,21 +134,30 @@ class LineCommand(BaseCommand):
             point,
         )
 
-        if point.distance_to(self.first_point) <= 1e-9:
+        if (
+            point.distance_to(
+                self.first_point
+            )
+            <= 1e-9
+        ):
             print(
-                "LINE: El segundo punto debe ser "
-                "distinto del primero"
+                "LINE: El segundo punto debe "
+                "ser distinto del primero"
             )
             return
 
-        line = GeometryBuilder.create_line(
-            self.first_point,
-            point,
+        line = (
+            GeometryBuilder.create_line(
+                self.first_point,
+                point,
+            )
         )
 
         cad_line = CadLine(line)
 
-        canvas.scene.add_element(cad_line)
+        canvas.scene.add_element(
+            cad_line
+        )
 
         if self.app_core:
             self.app_core.history.push(
@@ -122,6 +173,8 @@ class LineCommand(BaseCommand):
 
         self.first_point = None
         canvas.preview_geometry = None
+        canvas.current_snap_point = None
+        canvas.current_snap_type = None
         canvas.update()
 
     def cancel(self, canvas=None):
@@ -129,6 +182,8 @@ class LineCommand(BaseCommand):
 
         if canvas:
             canvas.preview_geometry = None
+            canvas.current_snap_point = None
+            canvas.current_snap_type = None
             canvas.update()
 
         print("LINE cancelada")
