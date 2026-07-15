@@ -37,6 +37,18 @@ class CadCanvas(QWidget):
         self.tool_manager = ToolManager()
         self.coordinates = CoordinateSystem()
         self.selection_manager = SelectionManager()
+        kernel = getattr(
+            self.scene,
+            "kernel",
+            None,
+        )
+
+        if kernel is not None:
+
+            kernel.services.register(
+                "selection_manager",
+                self.selection_manager,
+            )
         self.highlight = Highlight()
 
         self.cursor_position = (0.0, 0.0)
@@ -326,6 +338,15 @@ class CadCanvas(QWidget):
             return
 
         mouse_point = self.get_input_point()
+        grip = self.selection_manager.pick_grip(
+            mouse_point
+        )
+
+        self.selection_manager.set_hovered_grip(
+
+            grip
+        )
+        grip
         element = HitTest.pick(mouse_point, self.scene)
         self.highlight.set(element)
 
