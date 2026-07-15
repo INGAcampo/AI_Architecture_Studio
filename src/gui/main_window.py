@@ -2,7 +2,7 @@
 AI Architecture Studio
 Main Window
 
-Foundation 4.2
+Dynamic Input v1
 """
 
 from PySide6.QtCore import Qt
@@ -30,6 +30,7 @@ from commands.cad.polyline_command import PolylineCommand
 from commands.cad.rectangle_command import RectangleCommand
 from commands.cad.rotate_command import RotateCommand
 from commands.cad.scale_command import ScaleCommand
+from gui.command_line import CommandLine
 from gui.dialogs.new_project_dialog import NewProjectDialog
 from gui.ribbon import Ribbon
 from gui.workspace import Workspace
@@ -43,7 +44,7 @@ class MainWindow(QMainWindow):
         self.app_core = app_core
 
         self.setWindowTitle(
-            "AI Architecture Studio - Foundation 4.2"
+            "AI Architecture Studio - Dynamic Input v1"
         )
         self.resize(1600, 900)
 
@@ -143,8 +144,20 @@ class MainWindow(QMainWindow):
             scene=self.app_core.scene
         )
 
+        self.command_line = CommandLine(self)
+        self.command_line.command_submitted.connect(
+            self.handle_command_line_submit
+        )
+        self.command_line.escape_requested.connect(
+            self.handle_command_line_escape
+        )
+        self.command_line.tab_requested.connect(
+            self.handle_dynamic_input_tab
+   )
+
         layout.addWidget(self.ribbon)
         layout.addWidget(self.workspace)
+        layout.addWidget(self.command_line)
 
         self.setCentralWidget(container)
 
@@ -182,8 +195,13 @@ class MainWindow(QMainWindow):
             )
 
             self.statusBar().showMessage(
-                "LINE activo: selecciona dos puntos"
+                "LINE activo: especifica el primer punto"
             )
+
+            self.command_line.set_prompt(
+                "Especifique primer punto:"
+            )
+            self.command_line.focus_input()
 
     def activate_polyline_command(self):
         canvas = self.workspace.current_canvas()
@@ -286,6 +304,124 @@ class MainWindow(QMainWindow):
                 "SCALE activo: selecciona un objeto, "
                 "luego punto base, referencia y final"
             )
+
+    # ---------------------------------------------------------
+    # LÍNEA DE COMANDOS
+    # ---------------------------------------------------------
+
+    def handle_command_line_submit(self, text):
+        value = str(text).strip()
+
+        if not value:
+            return
+
+        command_name = value.upper()
+
+        if command_name in ("LINE", "L"):
+            self.activate_line_command()
+            return
+
+        if command_name in ("ESC", "CANCEL", "CANCELAR"):
+            self.handle_command_line_escape()
+            return
+
+        canvas = self.workspace.current_canvas()
+
+        if canvas is None:
+            self.statusBar().showMessage(
+                "No hay un lienzo activo"
+            )
+            return
+
+        current_tool = getattr(
+            canvas.tool_manager,
+            "current_tool",
+            None,
+        )
+
+        if current_tool is None:
+            self.command_line.reset_prompt()
+            self.statusBar().showMessage(
+                f"Comando no reconocido: {value}"
+            )
+            return
+
+        text_handler = getattr(
+            current_tool,
+            "handle_text_input",
+            None,
+        )
+
+        if not callable(text_handler):
+            self.statusBar().showMessage(
+                "El comando activo aún no admite entrada numérica"
+            )
+            return
+
+        accepted = text_handler(
+            value,
+            canvas,
+        )
+
+        if accepted is False:
+            self.command_line.focus_input()
+
+    def handle_command_line_escape(self):
+        canvas = self.workspace.current_canvas()
+
+        if canvas is not None:
+            canvas.tool_manager.cancel(canvas)
+            canvas.command_manager.cancel(canvas)
+
+            canvas.preview_geometry = None
+            canvas.current_snap_point = None
+            canvas.current_snap_type = None
+
+            canvas.highlight.clear()
+            canvas.selection_manager.clear()
+            canvas.element_selected.emit(None)
+            canvas.update()
+            canvas.setFocus()
+
+        self.command_line.clear_input()
+        self.command_line.reset_prompt()
+
+        self.statusBar().showMessage(
+            "Comando cancelado"
+        )
+
+    def set_command_prompt(self, text):
+        self.command_line.set_prompt(text)
+
+    def focus_command_line(self):
+        self.command_line.focus_input()
+
+    def handle_dynamic_input_tab(self):
+        canvas = self.workspace.current_canvas()
+
+        if canvas is None:
+            return
+
+        manager = canvas.get_dynamic_input_manager()
+
+        if (
+            manager is None
+            or not manager.enabled
+            or not manager.visible
+        ):
+            return
+
+        mode = manager.toggle_mode()
+
+        print(
+            f"DYNAMIC INPUT MODE: {mode}"
+        )
+
+        self.statusBar().showMessage(
+            f"Dynamic Input: {mode}"
+        )
+
+        canvas.update()
 
     # ---------------------------------------------------------
     # PROYECTOS
@@ -666,7 +802,7 @@ class MainWindow(QMainWindow):
         barra = QStatusBar()
 
         barra.showMessage(
-            "AIAS Foundation 4.2 listo"
+            "AIAS Dynamic Input v1 listo"
         )
 
         self.setStatusBar(barra)
