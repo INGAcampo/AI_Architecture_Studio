@@ -20,6 +20,8 @@ from engines.geometry.point import Point
 from engines.selection.highlight import Highlight
 from engines.selection.hit_test import HitTest
 from engines.selection.selection_manager import SelectionManager
+from engines.selection.grip_editor import GripEditor
+from core.history.grip_edit_action import GripEditAction
 
 
 class CadCanvas(QWidget):
@@ -37,6 +39,7 @@ class CadCanvas(QWidget):
         self.tool_manager = ToolManager()
         self.coordinates = CoordinateSystem()
         self.selection_manager = SelectionManager()
+        self.grip_editor = GripEditor()
         kernel = getattr(
             self.scene,
             "kernel",
@@ -211,6 +214,61 @@ class CadCanvas(QWidget):
         self.selection_window_end = None
         self.selection_window_additive = False
 
+        def begin_grip_drag(self, grip):
+            if not self.grip_editor.begin(grip):
+                return False
+
+            self.selection_manager.activate_grip(grip)
+
+            print("Grip activado")
+
+            self.update()
+
+            return True
+
+
+        def update_grip_drag(self):
+            if not self.grip_editor.dragging:
+                return
+
+            point = self.get_input_point()
+
+            if self.grip_editor.update(point):
+                self.selection_manager.rebuild_grips()
+                self.update()
+
+
+        def finish_grip_drag(self):
+            result = self.grip_editor.finish()
+
+            if result is None:
+                return
+
+            history = self.get_history_manager()
+
+            if history is not None:
+                history.push(
+                    GripEditAction(
+                        result["owner"],
+                        result["before"],
+                        result["after"],
+                    )
+                )
+
+            self.selection_manager.deactivate_grip()
+            self.selection_manager.rebuild_grips()
+
+            self.update()
+
+
+        def cancel_grip_drag(self):
+            self.grip_editor.cancel()
+
+            self.selection_manager.deactivate_grip()
+            self.selection_manager.rebuild_grips()
+
+            self.update()
+
     # ---------------------------------------------------------
     # RENDERIZADO
     # ---------------------------------------------------------
@@ -331,6 +389,10 @@ class CadCanvas(QWidget):
         self.update_snap()
         self.update_dynamic_input(event)
 
+        if self.grip_editor.dragging:
+            self.update_grip_drag()
+            return
+
         if self.is_window_selecting:
             self.selection_window_end = self.get_raw_cursor_point()
             self.highlight.clear()
@@ -342,12 +404,13 @@ class CadCanvas(QWidget):
             mouse_point
         )
 
-        self.selection_manager.set_hovered_grip(
-
-            grip
+        if grip is not None:
+            if self.begin_grip_drag(grip):
+                return
+        grip = self.selection_manager.pick_grip(
+            mouse_point
         )
-        grip
-        element = HitTest.pick(mouse_point, self.scene)
+       
         self.highlight.set(element)
 
         if self.tool_manager.current_tool:
@@ -410,6 +473,12 @@ class CadCanvas(QWidget):
         self.update()
 
     def mouseReleaseEvent(self, event):
+        if (
+            event.button() == Qt.LeftButton
+            and self.grip_editor.dragging
+        ):
+            self.finish_grip_drag()
+            return
         if event.button() == Qt.MiddleButton:
             self.is_panning = False
             self.last_pan_position = None
@@ -567,6 +636,9 @@ class CadCanvas(QWidget):
 
         # ESCAPE
         if event.key() == Qt.Key_Escape:
+            if self.grip_editor.dragging:
+                self.cancel_grip_drag()
+                return
             self.clear_selection_window()
 
             manager = self.get_dynamic_input_manager()

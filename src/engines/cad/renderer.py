@@ -430,6 +430,11 @@ class Renderer:
     ):
         if not grips:
             return
+        if not isinstance(grips, (list, tuple)):
+            return
+
+        if not grips:
+            return
 
         for grip in grips:
 
@@ -673,12 +678,20 @@ class Renderer:
         selection_manager = None
 
         if kernel is not None:
-            selection_manager = kernel.services.get(
+            candidate = kernel.services.get(
                 "selection_manager"
-           )
+            )
+
+            if (
+                candidate is not None
+                and hasattr(
+                    candidate,
+                    "all_grips",
+                )
+            ):
+                selection_manager = candidate
 
         if selection_manager is not None:
-
             self.draw_grips(
                 painter,
                 camera,
