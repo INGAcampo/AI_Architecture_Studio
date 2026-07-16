@@ -45,6 +45,14 @@ class DynamicInputManager:
         self.prompt = ""
         self.typed_value = ""
 
+        self.input_buffer = ""
+
+        self.editing = False
+
+        self.confirmed = False
+
+        self.last_confirmed_value = None
+
     # ---------------------------------------------------------
     # ESTADO GENERAL
     # ---------------------------------------------------------
@@ -227,42 +235,93 @@ class DynamicInputManager:
         )
 
     def primary_text(self):
-        if (
-            self.active_mode
-            == self.MODE_ANGLE
-        ):
-            return self.formatted_angle()
 
-        return self.formatted_distance()
+        if self.editing:
 
-    def secondary_text(self):
-        if (
-            self.active_mode
-            == self.MODE_ANGLE
-        ):
-            return self.formatted_distance()
+            label = (
+                "Distancia"
+                if self.active_mode
+                == self.MODE_DISTANCE
+                else "Ángulo"
+            )
 
-        return self.formatted_angle()
+            value = self.input_buffer
 
-    def snapshot(self):
-        return {
-            "enabled": self.enabled,
-            "visible": self.visible,
-            "base_point": self.base_point,
-            "current_point": self.current_point,
-            "distance": self.distance,
-            "angle_degrees": (
-                self.angle_degrees
-            ),
-            "active_mode": (
-                self.active_mode
-            ),
-            "screen_position": (
-                self.screen_x,
-                self.screen_y,
-            ),
-            "prompt": self.prompt,
-            "typed_value": (
-                self.typed_value
-            ),
-        }
+            if value == "":
+                value = "_"
+
+            return f"{label}: {value}"
+
+        if self.active_mode == self.MODE_DISTANCE:
+
+            return (
+                f"Distancia: "
+                f"{self.formatted_distance()}"
+            )
+
+        return (
+            f"Ángulo: "
+            f"{self.formatted_angle()}"
+        )
+    
+    
+    
+# ---------------------------------------------------------
+# EDICIÓN
+# ---------------------------------------------------------
+
+def begin_edit(self):
+    self.editing = True
+    self.confirmed = False
+    self.input_buffer = ""
+
+def append_character(self, character):
+    allowed = "0123456789.-"
+
+    if character not in allowed:
+        return
+
+    if character == "." and "." in self.input_buffer:
+        return
+
+    if (
+        character == "-"
+        and len(self.input_buffer) > 0
+    ):
+        return
+
+    self.input_buffer += character
+
+def backspace(self):
+    self.input_buffer = self.input_buffer[:-1]
+
+def confirm(self):
+    text = self.input_buffer.strip()
+
+    if not text:
+        return None
+
+    try:
+        value = float(text)
+
+    except ValueError:
+        return None
+
+    self.confirmed = True
+    self.last_confirmed_value = value
+    self.editing = False
+
+    return value
+
+def cancel_edit(self):
+    self.editing = False
+    self.confirmed = False
+    self.input_buffer = ""
+
+def consume_confirmed_value(self):
+    value = self.last_confirmed_value
+
+    self.last_confirmed_value = None
+    self.confirmed = False
+
+    return value

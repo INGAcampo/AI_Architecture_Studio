@@ -180,7 +180,7 @@ class LineCommand(BaseCommand):
             "LINE: especifique el siguiente punto",
         )
 
-        self.focus_command_line(canvas)
+        canvas.setFocus()
 
     def _create_line(
         self,
@@ -246,7 +246,7 @@ class LineCommand(BaseCommand):
             "LINE creada. Especifique el primer punto de la siguiente línea",
         )
 
-        self.focus_command_line(canvas)
+        canvas.setFocus()
 
         return True
 
