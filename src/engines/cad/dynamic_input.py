@@ -24,8 +24,22 @@ class DynamicField:
         self.value = ""
 
     def numeric_value(self):
+        text = str(self.value or "").strip()
+
+        if not text:
+            return None
+
+        # En los campos Distancia/Ángulo, la coma del teclado
+        # numérico se interpreta como separador decimal.
+        if (
+            "," in text
+            and "@" not in text
+            and "<" not in text
+        ):
+            text = text.replace(",", ".")
+
         try:
-            return float(self.value)
+            return float(text)
         except (TypeError, ValueError):
             return None
 
@@ -278,6 +292,18 @@ class DynamicInputManager:
     def cancel_edit(self):
         self.clear_all_values()
 
+    def _normalize_decimal_field(self, text):
+        value = str(text or "").strip()
+
+        if (
+            "," in value
+            and "@" not in value
+            and "<" not in value
+        ):
+            value = value.replace(",", ".")
+
+        return value
+
     def confirmation_text(self):
         distance_text = self.distance_field.value.strip()
         angle_text = self.angle_field.value.strip()
@@ -286,8 +312,17 @@ class DynamicInputManager:
             if not distance_text:
                 distance_text = f"{self.distance:.6f}"
 
+            distance_text = self._normalize_decimal_field(
+                distance_text
+            )
+            angle_text = self._normalize_decimal_field(
+                angle_text
+            )
+
             return f"@{distance_text}<{angle_text}"
 
+        # Sin campo de ángulo se conservan los formatos históricos:
+        # 12.5, 10,10, @10,5, @10<45 y 10<45.
         return distance_text
 
     def confirm(self):
