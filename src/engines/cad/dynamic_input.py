@@ -1,61 +1,69 @@
 """
 AI Architecture Studio
-CAD Engine - Dynamic Input
-
-Dynamic Input v2
+CAD Engine - Dynamic Input Professional
+Package 2
 """
 
 import math
 
+from engines.geometry.point import Point
+
+
+class DynamicField:
+    DISTANCE = "distance"
+    ANGLE = "angle"
+
+    def __init__(self, field_type, label):
+        self.field_type = field_type
+        self.label = label
+        self.value = ""
+        self.active = False
+        self.visible = True
+
+    def clear(self):
+        self.value = ""
+
+    def numeric_value(self):
+        try:
+            return float(self.value)
+        except (TypeError, ValueError):
+            return None
+
 
 class DynamicInputManager:
-    """
-    Mantiene el estado del panel flotante de entrada dinámica.
-
-    En esta primera etapa no procesa teclado directamente.
-    Solo calcula y expone:
-
-    - punto base;
-    - punto actual;
-    - distancia;
-    - ángulo;
-    - texto de estado;
-    - posición del panel;
-    - activación con F12.
-    """
-
-    MODE_DISTANCE = "distance"
-    MODE_ANGLE = "angle"
+    MODE_DISTANCE = DynamicField.DISTANCE
+    MODE_ANGLE = DynamicField.ANGLE
 
     def __init__(self):
         self.enabled = True
         self.visible = False
-
         self.base_point = None
         self.current_point = None
-
         self.distance = 0.0
         self.angle_degrees = 0.0
 
+        self.distance_field = DynamicField(
+            DynamicField.DISTANCE,
+            "Distancia",
+        )
+        self.angle_field = DynamicField(
+            DynamicField.ANGLE,
+            "Ángulo",
+        )
+
         self.active_mode = self.MODE_DISTANCE
+        self.distance_field.active = True
 
         self.screen_x = 0
         self.screen_y = 0
-
         self.prompt = ""
+
+        # Compatibilidad.
         self.typed_value = ""
-
         self.input_buffer = ""
-
         self.editing = False
-
         self.confirmed = False
-
         self.last_confirmed_value = None
-
-    # ---------------------------------------------------------
-    # ESTADO GENERAL
-    # ---------------------------------------------------------
 
     def toggle(self):
         self.enabled = not self.enabled
@@ -63,16 +71,8 @@ class DynamicInputManager:
         if not self.enabled:
             self.hide()
 
-        state = (
-            "ACTIVADO"
-            if self.enabled
-            else "DESACTIVADO"
-        )
-
-        print(
-            f"DYNAMIC INPUT {state}"
-        )
-
+        state = "ACTIVADO" if self.enabled else "DESACTIVADO"
+        print(f"DYNAMIC INPUT {state}")
         return self.enabled
 
     def set_enabled(self, enabled):
@@ -87,77 +87,59 @@ class DynamicInputManager:
 
     def hide(self):
         self.visible = False
-        self.typed_value = ""
+        self.editing = False
+
+    def reset_fields(self):
+        self.distance_field.clear()
+        self.angle_field.clear()
+        self.editing = False
+        self.activate_distance()
 
     def reset(self):
         self.visible = False
-
         self.base_point = None
         self.current_point = None
-
         self.distance = 0.0
         self.angle_degrees = 0.0
-
-        self.active_mode = self.MODE_DISTANCE
-
         self.prompt = ""
-        self.typed_value = ""
-
-    # ---------------------------------------------------------
-    # PUNTOS Y MEDICIONES
-    # ---------------------------------------------------------
+        self.confirmed = False
+        self.last_confirmed_value = None
+        self.reset_fields()
 
     def set_base_point(self, point):
-        self.base_point = point
-
         if point is None:
+            self.base_point = None
             self.hide()
             return
+
+        changed = (
+            self.base_point is None
+            or self.base_point.distance_to(point) > 1e-9
+        )
+
+        self.base_point = point
+
+        if changed:
+            self.reset_fields()
 
         self.show()
 
     def update_point(self, point):
         self.current_point = point
 
-        if (
-            not self.enabled
-            or self.base_point is None
-            or point is None
-        ):
+        if self.base_point is None or point is None:
             self.distance = 0.0
             self.angle_degrees = 0.0
             return
 
-        dx = (
-            point.x
-            - self.base_point.x
-        )
+        dx = point.x - self.base_point.x
+        dy = point.y - self.base_point.y
 
-        dy = (
-            point.y
-            - self.base_point.y
-        )
-
-        self.distance = math.hypot(
-            dx,
-            dy,
-        )
-
+        self.distance = math.hypot(dx, dy)
         self.angle_degrees = (
-            math.degrees(
-                math.atan2(
-                    dy,
-                    dx,
-                )
-            )
-            % 360.0
+            math.degrees(math.atan2(dy, dx)) % 360.0
         )
-
         self.show()
-
-    # ---------------------------------------------------------
-    # POSICIÓN EN PANTALLA
-    # ---------------------------------------------------------
 
     def set_screen_position(
         self,
@@ -166,162 +148,225 @@ class DynamicInputManager:
         offset_x=18,
         offset_y=-28,
     ):
-        self.screen_x = int(
-            x + offset_x
-        )
+        self.screen_x = int(x + offset_x)
+        self.screen_y = int(y + offset_y)
 
-        self.screen_y = int(
-            y + offset_y
-        )
+    def set_cursor_position(self, x, y):
+        self.set_screen_position(x, y)
 
-    # ---------------------------------------------------------
-    # MODOS
-    # ---------------------------------------------------------
+    def active_field(self):
+        if self.active_mode == self.MODE_ANGLE:
+            return self.angle_field
 
-    def toggle_mode(self):
-        if (
-            self.active_mode
-            == self.MODE_DISTANCE
-        ):
-            self.active_mode = (
-                self.MODE_ANGLE
-            )
-        else:
-            self.active_mode = (
-                self.MODE_DISTANCE
-            )
+        return self.distance_field
 
+    def _sync_text(self):
+        self.typed_value = self.active_field().value
+        self.input_buffer = self.typed_value
+
+    def activate_distance(self):
+        self.active_mode = self.MODE_DISTANCE
+        self.distance_field.active = True
+        self.angle_field.active = False
+        self._sync_text()
         return self.active_mode
 
+    def activate_angle(self):
+        self.active_mode = self.MODE_ANGLE
+        self.distance_field.active = False
+        self.angle_field.active = True
+        self._sync_text()
+        return self.active_mode
+
+    def next_field(self):
+        if self.active_mode == self.MODE_DISTANCE:
+            return self.activate_angle()
+
+        return self.activate_distance()
+
+    def previous_field(self):
+        return self.next_field()
+
+    def toggle_mode(self):
+        return self.next_field()
+
     def set_mode(self, mode):
-        if mode not in (
-            self.MODE_DISTANCE,
-            self.MODE_ANGLE,
-        ):
+        if mode == self.MODE_DISTANCE:
+            self.activate_distance()
+        elif mode == self.MODE_ANGLE:
+            self.activate_angle()
+        else:
             raise ValueError(
-                f"Modo de entrada dinámica "
-                f"no válido: {mode}"
+                f"Modo Dynamic Input inválido: {mode}"
             )
 
-        self.active_mode = mode
-
-    # ---------------------------------------------------------
-    # TEXTO
-    # ---------------------------------------------------------
-
     def set_prompt(self, prompt):
-        self.prompt = str(
-            prompt or ""
-        )
+        self.prompt = str(prompt or "")
 
     def set_typed_value(self, value):
-        self.typed_value = str(
-            value or ""
-        )
+        self.active_field().value = str(value or "")
+        self._sync_text()
+        self.editing = bool(self.typed_value)
 
     def clear_typed_value(self):
-        self.typed_value = ""
+        self.active_field().clear()
+        self._sync_text()
 
-    # ---------------------------------------------------------
-    # FORMATO
-    # ---------------------------------------------------------
+    def clear_all_values(self):
+        self.distance_field.clear()
+        self.angle_field.clear()
+        self._sync_text()
+        self.editing = False
+
+    def begin_edit(self):
+        self.editing = True
+        self.show()
+
+    def append_character(self, character):
+        if character == ";":
+            character = ","
+
+        field = self.active_field()
+        current = field.value
+
+        if self.active_mode == self.MODE_ANGLE:
+            if character not in "0123456789.+-":
+                return False
+
+            if character == "." and "." in current:
+                return True
+
+            if character in "+-" and current:
+                return True
+        else:
+            if character not in "0123456789.,@<+-":
+                return False
+
+            if character == "@" and current:
+                return True
+
+            if character == "," and (
+                "," in current or "<" in current
+            ):
+                return True
+
+            if character == "<" and (
+                "<" in current or "," in current
+            ):
+                return True
+
+        field.value = current + character
+        self._sync_text()
+        self.editing = True
+        self.show()
+        return True
+
+    def backspace(self):
+        field = self.active_field()
+
+        if not field.value:
+            return False
+
+        field.value = field.value[:-1]
+        self._sync_text()
+        self.editing = bool(
+            self.distance_field.value
+            or self.angle_field.value
+        )
+        return True
+
+    def cancel_edit(self):
+        self.clear_all_values()
+
+    def confirmation_text(self):
+        distance_text = self.distance_field.value.strip()
+        angle_text = self.angle_field.value.strip()
+
+        if angle_text:
+            if not distance_text:
+                distance_text = f"{self.distance:.6f}"
+
+            return f"@{distance_text}<{angle_text}"
+
+        return distance_text
+
+    def confirm(self):
+        text = self.confirmation_text().strip()
+
+        if not text:
+            return None
+
+        self.confirmed = True
+        self.last_confirmed_value = text
+        self.editing = False
+        return text
+
+    def consume_confirmed_value(self):
+        value = self.last_confirmed_value
+        self.last_confirmed_value = None
+        self.confirmed = False
+        return value
+
+    def constrained_values(self):
+        distance = self.distance_field.numeric_value()
+        angle = self.angle_field.numeric_value()
+
+        if distance is None:
+            distance = self.distance
+
+        if angle is None:
+            angle = self.angle_degrees
+
+        return distance, angle
+
+    def constrained_point(self, base_point=None):
+        origin = base_point or self.base_point
+
+        if origin is None:
+            return self.current_point
+
+        distance, angle = self.constrained_values()
+        radians = math.radians(angle)
+
+        return Point(
+            origin.x + distance * math.cos(radians),
+            origin.y + distance * math.sin(radians),
+            origin.z,
+        )
 
     def formatted_distance(self):
         return f"{self.distance:.3f}"
 
     def formatted_angle(self):
+        return f"{self.angle_degrees:.2f}°"
+
+    def distance_display_text(self):
         return (
-            f"{self.angle_degrees:.2f}°"
+            self.distance_field.value
+            or self.formatted_distance()
+        )
+
+    def angle_display_text(self):
+        return (
+            self.angle_field.value
+            or self.formatted_angle()
         )
 
     def primary_text(self):
+        return self.distance_display_text()
 
-        if self.editing:
+    def secondary_text(self):
+        return self.angle_display_text()
 
-            label = (
-                "Distancia"
-                if self.active_mode
-                == self.MODE_DISTANCE
-                else "Ángulo"
-            )
-
-            value = self.input_buffer
-
-            if value == "":
-                value = "_"
-
-            return f"{label}: {value}"
-
-        if self.active_mode == self.MODE_DISTANCE:
-
-            return (
-                f"Distancia: "
-                f"{self.formatted_distance()}"
-            )
-
-        return (
-            f"Ángulo: "
-            f"{self.formatted_angle()}"
-        )
-    
-    
-    
-# ---------------------------------------------------------
-# EDICIÓN
-# ---------------------------------------------------------
-
-def begin_edit(self):
-    self.editing = True
-    self.confirmed = False
-    self.input_buffer = ""
-
-def append_character(self, character):
-    allowed = "0123456789.-"
-
-    if character not in allowed:
-        return
-
-    if character == "." and "." in self.input_buffer:
-        return
-
-    if (
-        character == "-"
-        and len(self.input_buffer) > 0
-    ):
-        return
-
-    self.input_buffer += character
-
-def backspace(self):
-    self.input_buffer = self.input_buffer[:-1]
-
-def confirm(self):
-    text = self.input_buffer.strip()
-
-    if not text:
-        return None
-
-    try:
-        value = float(text)
-
-    except ValueError:
-        return None
-
-    self.confirmed = True
-    self.last_confirmed_value = value
-    self.editing = False
-
-    return value
-
-def cancel_edit(self):
-    self.editing = False
-    self.confirmed = False
-    self.input_buffer = ""
-
-def consume_confirmed_value(self):
-    value = self.last_confirmed_value
-
-    self.last_confirmed_value = None
-    self.confirmed = False
-
-    return value
+    def snapshot(self):
+        return {
+            "enabled": self.enabled,
+            "visible": self.visible,
+            "distance": self.distance,
+            "angle_degrees": self.angle_degrees,
+            "active_mode": self.active_mode,
+            "distance_text": self.distance_field.value,
+            "angle_text": self.angle_field.value,
+            "screen_x": self.screen_x,
+            "screen_y": self.screen_y,
+        }

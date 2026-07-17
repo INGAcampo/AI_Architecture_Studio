@@ -5,8 +5,8 @@ CAD Engine - Canvas
 Dynamic Input v3 - Package 2
 """
 
-from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QColor, QKeySequence, QPainter
+from PySide6.QtCore import QRectF, Qt, Signal
+from PySide6.QtGui import QColor, QKeySequence, QPainter, QPen
 from PySide6.QtWidgets import QWidget
 
 from commands.cad.delete_command import DeleteCommand
@@ -291,18 +291,6 @@ class CadCanvas(QWidget):
         self,
         character,
     ):
-        """
-        Agrega caracteres al búfer de Dynamic Input.
-
-        Caracteres admitidos:
-            0-9  números
-            .    separador decimal
-            ,    separador cartesiano
-            @    coordenada relativa
-            <    separador polar
-            -    signo negativo
-            +    signo positivo
-        """
         manager = self.get_dynamic_input_manager()
 
         if manager is None:
@@ -311,68 +299,15 @@ class CadCanvas(QWidget):
         if not self.begin_dynamic_input_edit():
             return False
 
-        if character not in "0123456789.,;@<+-":
-            return False
-
-        if character == ";":
-            character = ","
-
-        current_value = str(
-            getattr(
-                manager,
-                "typed_value",
-                "",
-            )
+        accepted = manager.append_character(
+            character
         )
 
-        # @ solamente puede aparecer al inicio.
-        if character == "@":
-            if current_value:
-                return True
+        if accepted:
+            self.update_dynamic_input()
+            self.update()
 
-        # Solo se admite un separador cartesiano o polar.
-        if character == "," and (
-            "," in current_value
-            or "<" in current_value
-        ):
-            return True
-
-        if character == "<" and (
-            "<" in current_value
-            or "," in current_value
-        ):
-            return True
-
-        # Los signos solo pueden comenzar un componente.
-        if character in "+-":
-            if current_value and current_value[-1] not in ",<":
-                return True
-
-        # Evita dos puntos decimales dentro del mismo componente.
-        if character == ".":
-            component = current_value
-
-            if "," in component:
-                component = component.rsplit(
-                    ",",
-                    1,
-                )[1]
-
-            if "<" in component:
-                component = component.rsplit(
-                    "<",
-                    1,
-                )[1]
-
-            if "." in component:
-                return True
-
-        manager.set_typed_value(
-            current_value + character
-        )
-
-        self.update()
-        return True
+        return accepted
 
     def backspace_dynamic_input(self):
         manager = self.get_dynamic_input_manager()
@@ -380,102 +315,64 @@ class CadCanvas(QWidget):
         if manager is None:
             return False
 
-        current_value = str(
-            getattr(
-                manager,
-                "typed_value",
-                "",
-            )
-        )
+        accepted = manager.backspace()
 
-        if not current_value:
-            return False
+        if accepted:
+            self.update_dynamic_input()
+            self.update()
 
-        manager.set_typed_value(
-            current_value[:-1]
-        )
-
-        self.update()
-        return True
+        return accepted
 
     def confirm_dynamic_input(self):
-        """
-        Envía el valor escrito al comando activo.
-
-        Para LINE, handle_text_input convierte una distancia como 12.5
-        en el segundo punto usando el primer punto y la dirección actual
-        del cursor.
-        """
         manager = self.get_dynamic_input_manager()
 
         if manager is None:
             return False
 
-        typed_value = str(
-            getattr(
-                manager,
-                "typed_value",
-                "",
-            )
-        ).strip()
+        value = manager.confirm()
 
-        if not typed_value:
+        if not value:
             return False
 
         active_handler = self.get_active_cad_handler()
 
         if active_handler is None:
-            manager.clear_typed_value()
-            manager.hide()
+            manager.reset()
+            self.update()
             return True
 
-        handle_text_input = getattr(
+        handler = getattr(
             active_handler,
             "handle_text_input",
             None,
         )
 
-        if not callable(handle_text_input):
-            manager.clear_typed_value()
-            manager.hide()
+        if not callable(handler):
+            manager.reset()
+            self.update()
             return True
 
-        accepted = handle_text_input(
-            typed_value,
-            self,
-        )
+        accepted = handler(value, self)
 
         if accepted:
             print(
                 "DYNAMIC INPUT CONFIRMED:",
-                getattr(
-                    manager,
-                    "active_mode",
-                    "distance",
-                ),
-                typed_value,
+                value,
             )
 
-            manager.clear_typed_value()
-
-            # LINE deja first_point en None después de crear la línea.
-            next_base_point = getattr(
+            next_base = getattr(
                 active_handler,
                 "first_point",
                 None,
             )
 
-            if next_base_point is None:
+            if next_base is None:
                 manager.reset()
             else:
-                manager.set_base_point(
-                    next_base_point
-                )
+                manager.set_base_point(next_base)
+                manager.reset_fields()
+                manager.show()
 
-            self.update()
-            return True
-
-        # La entrada fue consumida aunque el comando la rechazara.
         self.update()
         return True
 
@@ -485,33 +382,15 @@ class CadCanvas(QWidget):
         if manager is None:
             return False
 
-        cancel_edit = getattr(
-            manager,
-            "cancel_edit",
-            None,
+        has_values = bool(
+            manager.distance_field.value
+            or manager.angle_field.value
         )
 
-        if not callable(cancel_edit):
+        if not has_values:
             return False
 
-        if not getattr(
-            manager,
-            "editing",
-            False,
-        ):
-            return False
-
-        cancel_edit()
-
-        clear_typed_value = getattr(
-            manager,
-            "clear_typed_value",
-            None,
-        )
-
-        if callable(clear_typed_value):
-            clear_typed_value()
-
+        manager.cancel_edit()
         self.update()
         return True
 
@@ -706,6 +585,137 @@ class CadCanvas(QWidget):
     # RENDERIZADO
     # ---------------------------------------------------------
 
+    def draw_dynamic_input_panel(
+        self,
+        painter,
+        manager,
+    ):
+        if (
+            manager is None
+            or not manager.enabled
+            or not manager.visible
+            or manager.base_point is None
+        ):
+            return
+
+        x = float(manager.screen_x)
+        y = float(manager.screen_y)
+        height = 25
+        gap = 4
+        padding = 9
+
+        distance_text = (
+            manager.distance_display_text()
+        )
+        angle_text = (
+            manager.angle_display_text()
+        )
+
+        metrics = painter.fontMetrics()
+        distance_width = max(
+            76,
+            metrics.horizontalAdvance(
+                distance_text
+            ) + padding * 2,
+        )
+        angle_width = max(
+            66,
+            metrics.horizontalAdvance(
+                angle_text
+            ) + padding * 2,
+        )
+
+        distance_rect = QRectF(
+            x,
+            y,
+            distance_width,
+            height,
+        )
+        angle_rect = QRectF(
+            x + distance_width + gap,
+            y,
+            angle_width,
+            height,
+        )
+
+        background = QColor(
+            48,
+            48,
+            48,
+            235,
+        )
+        inactive = QColor(
+            135,
+            135,
+            135,
+        )
+        active = QColor(
+            255,
+            210,
+            70,
+        )
+
+        painter.fillRect(
+            distance_rect,
+            background,
+        )
+        painter.fillRect(
+            angle_rect,
+            background,
+        )
+
+        distance_pen = QPen(
+            active
+            if manager.active_mode
+            == manager.MODE_DISTANCE
+            else inactive
+        )
+        distance_pen.setWidth(2)
+
+        angle_pen = QPen(
+            active
+            if manager.active_mode
+            == manager.MODE_ANGLE
+            else inactive
+        )
+        angle_pen.setWidth(2)
+
+        painter.setPen(distance_pen)
+        painter.drawRect(distance_rect)
+
+        painter.setPen(angle_pen)
+        painter.drawRect(angle_rect)
+
+        painter.setPen(
+            QColor(
+                245,
+                245,
+                245,
+            )
+        )
+        painter.drawText(
+            distance_rect.adjusted(
+                padding,
+                0,
+                -padding,
+                0,
+            ),
+            Qt.AlignLeft
+            | Qt.AlignVCenter,
+            distance_text,
+        )
+        painter.drawText(
+            angle_rect.adjusted(
+                padding,
+                0,
+                -padding,
+                0,
+            ),
+            Qt.AlignLeft
+            | Qt.AlignVCenter,
+            angle_text,
+        )
+
     def paintEvent(self, event):
         painter = QPainter(self)
 
@@ -858,6 +868,11 @@ class CadCanvas(QWidget):
                 70,
                 " | ".join(status_items),
             )
+
+        self.draw_dynamic_input_panel(
+            painter,
+            dynamic_input_manager,
+        )
 
         painter.end()
 
@@ -1237,31 +1252,21 @@ class CadCanvas(QWidget):
             self.update()
             return
 
-        # TAB alterna distancia / ángulo sin borrar el texto.
+        # TAB cambia entre Distancia y Ángulo.
         if event.key() == Qt.Key_Tab:
             if (
                 manager is not None
                 and manager.enabled
                 and manager.visible
+                and self.dynamic_input_is_available()
             ):
-                typed_value = str(
-                    getattr(
-                        manager,
-                        "typed_value",
-                        "",
-                    )
-                )
-
-                mode = manager.toggle_mode()
-
-                manager.set_typed_value(
-                    typed_value
-                )
+                mode = manager.next_field()
 
                 print(
-                    f"DYNAMIC INPUT MODE: {mode}"
+                    f"DYNAMIC INPUT FIELD: {mode}"
                 )
 
+                self.update_dynamic_input()
                 self.update()
                 return
 

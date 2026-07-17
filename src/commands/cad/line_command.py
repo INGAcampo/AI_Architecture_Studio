@@ -31,6 +31,28 @@ class LineCommand(BaseCommand):
     # SERVICIOS Y UI
     # ---------------------------------------------------------
 
+    def get_dynamic_input_manager(
+        self,
+        canvas,
+    ):
+        scene = getattr(
+            canvas,
+            "scene",
+            None,
+        )
+        kernel = getattr(
+            scene,
+            "kernel",
+            None,
+        )
+
+        if kernel is None:
+            return None
+
+        return kernel.services.get(
+            "dynamic_input_manager"
+        )
+
     def get_ortho_manager(self, canvas):
         scene = getattr(
             canvas,
@@ -166,6 +188,18 @@ class LineCommand(BaseCommand):
     ):
         self.first_point = point
 
+        manager = self.get_dynamic_input_manager(
+            canvas
+        )
+
+        if manager is not None:
+            manager.set_base_point(point)
+            manager.reset_fields()
+            manager.set_prompt(
+                "Distancia / Ángulo"
+            )
+            manager.show()
+
         print(
             f"LINE: Primer punto {point}"
         )
@@ -231,6 +265,14 @@ class LineCommand(BaseCommand):
         )
 
         self.first_point = None
+
+        manager = self.get_dynamic_input_manager(
+            canvas
+        )
+
+        if manager is not None:
+            manager.reset()
+
         canvas.preview_geometry = None
         canvas.current_snap_point = None
         canvas.current_snap_type = None
@@ -281,16 +323,31 @@ class LineCommand(BaseCommand):
             canvas.update()
             return
 
-        current_point = (
-            self.get_canvas_point(
-                canvas
-            )
+        current_point = self.get_canvas_point(
+            canvas
         )
 
         current_point = self.apply_ortho(
             canvas,
             current_point,
         )
+
+        manager = self.get_dynamic_input_manager(
+            canvas
+        )
+
+        if manager is not None:
+            manager.set_base_point(
+                self.first_point
+            )
+            manager.update_point(
+                current_point
+            )
+            current_point = (
+                manager.constrained_point(
+                    self.first_point
+                )
+            )
 
         canvas.preview_geometry = (
             GeometryBuilder.create_line(
@@ -392,6 +449,13 @@ class LineCommand(BaseCommand):
         self.first_point = None
 
         if canvas:
+            manager = self.get_dynamic_input_manager(
+                canvas
+            )
+
+            if manager is not None:
+                manager.reset()
+
             canvas.preview_geometry = None
             canvas.current_snap_point = None
             canvas.current_snap_type = None
