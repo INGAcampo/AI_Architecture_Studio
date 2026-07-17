@@ -1,8 +1,15 @@
 """
 AI Architecture Studio
-Coordinate Parser
+Coordinate Parser Professional
 
-Dynamic Input v1
+Dynamic Input - Package 1
+
+Formatos compatibles:
+    12.5        -> distancia directa según la dirección del cursor
+    10,25       -> coordenada cartesiana absoluta
+    @10,5       -> coordenada cartesiana relativa
+    @10<45      -> coordenada polar relativa
+    10<45       -> coordenada polar absoluta desde el origen
 """
 
 import math
@@ -12,26 +19,64 @@ from engines.geometry.point import Point
 
 
 class CoordinateParseError(Exception):
-    pass
+    """Error producido al interpretar una entrada de coordenadas."""
 
 
 class CoordinateParser:
+    """
+    Convierte texto de Dynamic Input o Command Line en objetos Point.
+    """
+
+    NUMBER = r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)"
 
     ABSOLUTE_PATTERN = re.compile(
-        r"^\s*(-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?)\s*$"
+        rf"^\s*({NUMBER})\s*,\s*({NUMBER})\s*$"
     )
 
     RELATIVE_PATTERN = re.compile(
-        r"^\s*@\s*(-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?)\s*$"
+        rf"^\s*@\s*({NUMBER})\s*,\s*({NUMBER})\s*$"
     )
 
-    POLAR_PATTERN = re.compile(
-        r"^\s*@\s*(\d+(\.\d+)?)\s*<\s*(-?\d+(\.\d+)?)\s*$"
+    RELATIVE_POLAR_PATTERN = re.compile(
+        rf"^\s*@\s*({NUMBER})\s*<\s*({NUMBER})\s*$"
     )
+
+    ABSOLUTE_POLAR_PATTERN = re.compile(
+        rf"^\s*({NUMBER})\s*<\s*({NUMBER})\s*$"
+    )
+
+    # Alias conservado para no romper código existente.
+    POLAR_PATTERN = RELATIVE_POLAR_PATTERN
 
     DISTANCE_PATTERN = re.compile(
-        r"^\s*(\d+(\.\d+)?)\s*$"
+        rf"^\s*({NUMBER})\s*$"
     )
+
+    @staticmethod
+    def _polar_point(origin, distance, angle_degrees):
+        """
+        Calcula un punto polar desde un origen.
+        """
+        if distance < 0.0:
+            raise CoordinateParseError(
+                "La distancia polar no puede ser negativa."
+            )
+
+        angle_radians = math.radians(
+            angle_degrees
+        )
+
+        return Point(
+            origin.x
+            + distance * math.cos(
+                angle_radians
+            ),
+            origin.y
+            + distance * math.sin(
+                angle_radians
+            ),
+            origin.z,
+        )
 
     @classmethod
     def parse(
@@ -40,35 +85,30 @@ class CoordinateParser:
         base_point=None,
         direction_point=None,
     ):
+        """
+        Interpreta una entrada CAD y devuelve un Point.
 
-        value = text.strip()
+        Orden de evaluación:
+            1. Cartesiana relativa: @x,y
+            2. Polar relativa: @distancia<ángulo
+            3. Cartesiana absoluta: x,y
+            4. Polar absoluta: distancia<ángulo
+            5. Distancia directa
+        """
+        value = str(text).strip().replace(";", ",")
 
-        absolute_match = cls.ABSOLUTE_PATTERN.match(
-            value
-        )
-
-        if absolute_match:
-
-            x = float(
-                absolute_match.group(1)
+        if not value:
+            raise CoordinateParseError(
+                "La entrada está vacía."
             )
 
-            y = float(
-                absolute_match.group(3)
+        relative_match = (
+            cls.RELATIVE_PATTERN.fullmatch(
+                value
             )
-
-            return Point(
-                x,
-                y,
-                0.0,
-            )
-
-        relative_match = cls.RELATIVE_PATTERN.match(
-            value
         )
 
         if relative_match:
-
             if base_point is None:
                 raise CoordinateParseError(
                     "No existe punto base."
@@ -77,56 +117,88 @@ class CoordinateParser:
             dx = float(
                 relative_match.group(1)
             )
-
             dy = float(
-                relative_match.group(3)
+                relative_match.group(2)
             )
 
             return Point(
                 base_point.x + dx,
                 base_point.y + dy,
-                0.0,
+                base_point.z,
             )
 
-        polar_match = cls.POLAR_PATTERN.match(
-            value
+        relative_polar_match = (
+            cls.RELATIVE_POLAR_PATTERN.fullmatch(
+                value
+            )
         )
 
-        if polar_match:
-
+        if relative_polar_match:
             if base_point is None:
                 raise CoordinateParseError(
                     "No existe punto base."
                 )
 
             distance = float(
-                polar_match.group(1)
+                relative_polar_match.group(1)
+            )
+            angle_degrees = float(
+                relative_polar_match.group(2)
             )
 
-            angle_deg = float(
-                polar_match.group(3)
+            return cls._polar_point(
+                base_point,
+                distance,
+                angle_degrees,
             )
 
-            angle_rad = math.radians(
-                angle_deg
+        absolute_match = (
+            cls.ABSOLUTE_PATTERN.fullmatch(
+                value
+            )
+        )
+
+        if absolute_match:
+            x = float(
+                absolute_match.group(1)
+            )
+            y = float(
+                absolute_match.group(2)
             )
 
             return Point(
-                base_point.x
-                + distance * math.cos(angle_rad),
-
-                base_point.y
-                + distance * math.sin(angle_rad),
-
+                x,
+                y,
                 0.0,
             )
 
-        distance_match = cls.DISTANCE_PATTERN.match(
-            value
+        absolute_polar_match = (
+            cls.ABSOLUTE_POLAR_PATTERN.fullmatch(
+                value
+            )
+        )
+
+        if absolute_polar_match:
+            distance = float(
+                absolute_polar_match.group(1)
+            )
+            angle_degrees = float(
+                absolute_polar_match.group(2)
+            )
+
+            return cls._polar_point(
+                Point(0.0, 0.0, 0.0),
+                distance,
+                angle_degrees,
+            )
+
+        distance_match = (
+            cls.DISTANCE_PATTERN.fullmatch(
+                value
+            )
         )
 
         if distance_match:
-
             if base_point is None:
                 raise CoordinateParseError(
                     "No existe punto base."
@@ -141,19 +213,23 @@ class CoordinateParser:
                 distance_match.group(1)
             )
 
+            if distance < 0.0:
+                raise CoordinateParseError(
+                    "La distancia no puede ser negativa."
+                )
+
             dx = (
                 direction_point.x
                 - base_point.x
             )
-
             dy = (
                 direction_point.y
                 - base_point.y
             )
 
-            length = math.sqrt(
-                dx * dx
-                + dy * dy
+            length = math.hypot(
+                dx,
+                dy,
             )
 
             if length <= 1e-9:
@@ -161,19 +237,18 @@ class CoordinateParser:
                     "Dirección inválida."
                 )
 
-            ux = dx / length
-            uy = dy / length
+            unit_x = dx / length
+            unit_y = dy / length
 
             return Point(
                 base_point.x
-                + ux * distance,
-
+                + unit_x * distance,
                 base_point.y
-                + uy * distance,
-
-                0.0,
+                + unit_y * distance,
+                base_point.z,
             )
 
         raise CoordinateParseError(
-            f"Formato inválido: {text}"
+            "Formato inválido. Use: distancia, x,y, "
+            "@x,y, @distancia<ángulo o distancia<ángulo."
         )

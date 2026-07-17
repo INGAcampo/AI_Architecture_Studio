@@ -291,6 +291,18 @@ class CadCanvas(QWidget):
         self,
         character,
     ):
+        """
+        Agrega caracteres al búfer de Dynamic Input.
+
+        Caracteres admitidos:
+            0-9  números
+            .    separador decimal
+            ,    separador cartesiano
+            @    coordenada relativa
+            <    separador polar
+            -    signo negativo
+            +    signo positivo
+        """
         manager = self.get_dynamic_input_manager()
 
         if manager is None:
@@ -299,8 +311,11 @@ class CadCanvas(QWidget):
         if not self.begin_dynamic_input_edit():
             return False
 
-        if character == ",":
-            character = "."
+        if character not in "0123456789.,;@<+-":
+            return False
+
+        if character == ";":
+            character = ","
 
         current_value = str(
             getattr(
@@ -310,19 +325,47 @@ class CadCanvas(QWidget):
             )
         )
 
-        # Evita más de un separador decimal.
-        if (
-            character == "."
-            and "." in current_value
+        # @ solamente puede aparecer al inicio.
+        if character == "@":
+            if current_value:
+                return True
+
+        # Solo se admite un separador cartesiano o polar.
+        if character == "," and (
+            "," in current_value
+            or "<" in current_value
         ):
             return True
 
-        # El signo negativo solo se permite al principio.
-        if (
-            character == "-"
-            and current_value
+        if character == "<" and (
+            "<" in current_value
+            or "," in current_value
         ):
             return True
+
+        # Los signos solo pueden comenzar un componente.
+        if character in "+-":
+            if current_value and current_value[-1] not in ",<":
+                return True
+
+        # Evita dos puntos decimales dentro del mismo componente.
+        if character == ".":
+            component = current_value
+
+            if "," in component:
+                component = component.rsplit(
+                    ",",
+                    1,
+                )[1]
+
+            if "<" in component:
+                component = component.rsplit(
+                    "<",
+                    1,
+                )[1]
+
+            if "." in component:
+                return True
 
         manager.set_typed_value(
             current_value + character
@@ -1056,40 +1099,19 @@ class CadCanvas(QWidget):
 
     def get_dynamic_input_character(self, event):
         """
-        Captura la fila numérica y el teclado numérico.
+        Captura la fila numérica, símbolos CAD y teclado numérico.
 
-        Mientras LINE espera el segundo punto, Qt.Key_Delete se trata
-        como decimal. Esto evita que la tecla decimal del teclado
-        numérico ejecute DELETE cuando Num Lock está desactivado.
+        Regla profesional de entrada:
+            - Punto de la fila principal: decimal.
+            - Coma de la fila principal: separador cartesiano.
+            - Tecla decimal del teclado numérico: separador cartesiano.
+
+        El teclado numérico se detecta antes de event.text(), porque
+        Windows puede entregar su tecla decimal como "." aunque deba
+        utilizarse como separador de coordenadas.
         """
-        text = event.text()
-
-        if text in "0123456789.,-":
-            return text
-
         if not self.dynamic_input_is_available():
             return None
-
-        keypad_map = {
-            Qt.Key_Insert: "0",
-            Qt.Key_End: "1",
-            Qt.Key_Down: "2",
-            Qt.Key_PageDown: "3",
-            Qt.Key_Left: "4",
-            Qt.Key_Clear: "5",
-            Qt.Key_Right: "6",
-            Qt.Key_Home: "7",
-            Qt.Key_Up: "8",
-            Qt.Key_PageUp: "9",
-            Qt.Key_Delete: ".",
-        }
-
-        mapped = keypad_map.get(
-            event.key()
-        )
-
-        if mapped is not None:
-            return mapped
 
         native_scan_code = getattr(
             event,
@@ -1097,6 +1119,8 @@ class CadCanvas(QWidget):
             lambda: 0,
         )()
 
+        # Scan codes estándar del bloque numérico en Windows.
+        # Se evalúan antes de event.text().
         windows_keypad_scan_map = {
             82: "0",
             79: "1",
@@ -1108,13 +1132,48 @@ class CadCanvas(QWidget):
             71: "7",
             72: "8",
             73: "9",
-            83: ".",
+            83: ",",
             74: "-",
+            78: "+",
         }
 
-        return windows_keypad_scan_map.get(
-            native_scan_code
+        keypad_character = (
+            windows_keypad_scan_map.get(
+                native_scan_code
+            )
         )
+
+        if keypad_character is not None:
+            return keypad_character
+
+        # Respaldo Qt para Num Lock desactivado.
+        qt_keypad_map = {
+            Qt.Key_Insert: "0",
+            Qt.Key_End: "1",
+            Qt.Key_Down: "2",
+            Qt.Key_PageDown: "3",
+            Qt.Key_Left: "4",
+            Qt.Key_Clear: "5",
+            Qt.Key_Right: "6",
+            Qt.Key_Home: "7",
+            Qt.Key_Up: "8",
+            Qt.Key_PageUp: "9",
+            Qt.Key_Delete: ",",
+        }
+
+        keypad_character = qt_keypad_map.get(
+            event.key()
+        )
+
+        if keypad_character is not None:
+            return keypad_character
+
+        text = event.text()
+
+        if text in "0123456789.,;@<+-":
+            return text
+
+        return None
 
     def keyPressEvent(self, event):
         manager = self.get_dynamic_input_manager()
@@ -1178,38 +1237,26 @@ class CadCanvas(QWidget):
             self.update()
             return
 
-        # TAB alterna distancia / ángulo.
+        # TAB alterna distancia / ángulo sin borrar el texto.
         if event.key() == Qt.Key_Tab:
             if (
                 manager is not None
                 and manager.enabled
                 and manager.visible
             ):
-                if getattr(
-                    manager,
-                    "editing",
-                    False,
-                ):
-                    # Conserva el buffer al cambiar de campo.
-                    input_buffer = getattr(
+                typed_value = str(
+                    getattr(
                         manager,
-                        "input_buffer",
+                        "typed_value",
                         "",
                     )
-                else:
-                    input_buffer = ""
+                )
 
                 mode = manager.toggle_mode()
 
-                if getattr(
-                    manager,
-                    "editing",
-                    False,
-                ):
-                    manager.input_buffer = (
-                        input_buffer
-                    )
-                    self.sync_dynamic_input_text()
+                manager.set_typed_value(
+                    typed_value
+                )
 
                 print(
                     f"DYNAMIC INPUT MODE: {mode}"
