@@ -1,0 +1,17 @@
+{
+  "protocol_id": "AIAS-W2-07-USABILITY-001",
+  "version": "1.0.0",
+  "status": "APPROVED_FOR_EXECUTION_NO_SESSIONS_CLAIMED",
+  "minimum_participants": 5,
+  "required_roles": ["architect or BIM modeler", "structural engineer", "project coordinator"],
+  "required_tasks": [
+    {"task_id":"T01","outcome":"open or recover the lighthouse project","target_seconds":180},
+    {"task_id":"T02","outcome":"find and inspect a structural member","target_seconds":120},
+    {"task_id":"T03","outcome":"locate analysis assumptions and normative status","target_seconds":180},
+    {"task_id":"T04","outcome":"open a drawing schedule and descriptive memory","target_seconds":240},
+    {"task_id":"T05","outcome":"identify a blocking coordination issue and its evidence","target_seconds":180},
+    {"task_id":"T06","outcome":"open contextual learning without confusing it with professional approval","target_seconds":120}
+  ],
+  "acceptance": {"task_completion_rate_minimum":0.9,"critical_errors":0,"median_sus_score_minimum":80,"keyboard_completion_required":true,"scaling_200_percent_required":true,"spanish_and_english_review_required":true},
+  "evidence_policy": "Only observed, consented, timestamped sessions may populate the ledger. Synthetic or agent-only sessions do not count as representative usability evidence."
+}

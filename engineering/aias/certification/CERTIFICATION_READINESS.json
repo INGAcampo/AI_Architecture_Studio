@@ -1,0 +1,110 @@
+{
+  "assessment_id": "CERT-READINESS-AIAS",
+  "classification": "INTERNAL_READINESS_NOT_CERTIFICATION",
+  "frameworks": [
+    {
+      "framework_id": "CMMI-DEV-V3-ML5",
+      "role": "PRIMARY_ORGANIZATIONAL_MATURITY_OBJECTIVE",
+      "internal_evidence_available": true,
+      "evidence": [
+        {
+          "path": "engineering/aias/level5/LEVEL5_ASSURANCE_POLICY.json",
+          "exists": true
+        },
+        {
+          "path": "engineering/aias/roadmap/LEVEL5_EVIDENCE_CAMPAIGN.json",
+          "exists": true
+        }
+      ],
+      "externally_certified_or_rated": false,
+      "external_assessment_required": true
+    },
+    {
+      "framework_id": "CMMI-AIM",
+      "role": "MANDATORY_AI_MATURITY_EXTENSION",
+      "internal_evidence_available": true,
+      "evidence": [
+        {
+          "path": "src/aias_engineering_intelligence",
+          "exists": true
+        },
+        {
+          "path": "src/aias_enterprise_offices/ai_office.py",
+          "exists": true
+        }
+      ],
+      "externally_certified_or_rated": false,
+      "external_assessment_required": true
+    },
+    {
+      "framework_id": "ISO-9001",
+      "role": "QUALITY_MANAGEMENT_CERTIFICATION",
+      "internal_evidence_available": true,
+      "evidence": [
+        {
+          "path": "engineering/aeps/05_SDD/ASDD-000002-formal-sdd.yaml",
+          "exists": true
+        },
+        {
+          "path": "src/aias_governance_assurance",
+          "exists": true
+        }
+      ],
+      "externally_certified_or_rated": false,
+      "external_assessment_required": true
+    },
+    {
+      "framework_id": "ISO-IEC-27001",
+      "role": "INFORMATION_SECURITY_CERTIFICATION",
+      "internal_evidence_available": true,
+      "evidence": [
+        {
+          "path": "src/aias_security_recovery",
+          "exists": true
+        },
+        {
+          "path": "engineering/security_recovery001/compliance/QUALITY_GATES.json",
+          "exists": true
+        }
+      ],
+      "externally_certified_or_rated": false,
+      "external_assessment_required": true
+    },
+    {
+      "framework_id": "ISO-IEC-42001",
+      "role": "AI_MANAGEMENT_CERTIFICATION",
+      "internal_evidence_available": true,
+      "evidence": [
+        {
+          "path": "src/aias_engineering_intelligence",
+          "exists": true
+        },
+        {
+          "path": "src/aias_virtual_organization",
+          "exists": true
+        }
+      ],
+      "externally_certified_or_rated": false,
+      "external_assessment_required": true
+    },
+    {
+      "framework_id": "ISO-22301",
+      "role": "BUSINESS_CONTINUITY_CERTIFICATION",
+      "internal_evidence_available": true,
+      "evidence": [
+        {
+          "path": "src/aias_security_recovery",
+          "exists": true
+        },
+        {
+          "path": "src/aias_engineering_os",
+          "exists": true
+        }
+      ],
+      "externally_certified_or_rated": false,
+      "external_assessment_required": true
+    }
+  ],
+  "certification_claim_permitted": false,
+  "evidence_sha256": "646d7d49b8b68821e649b6d4c848af8e0a2c79881153d04da23e67a27c35b575"
+}

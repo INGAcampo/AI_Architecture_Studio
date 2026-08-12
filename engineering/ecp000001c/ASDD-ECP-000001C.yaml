@@ -1,0 +1,12 @@
+id: ASDD-ECP-000001C
+title: Foundation Code Check Framework
+version: 1.0.0
+status: ACTIVE
+architecture: PARAMETER_DRIVEN_AEKS_CODE_PACKS
+included_pack:
+  id: AIAS-GENERIC-RC-FOUNDATION-1.0
+  legal_status: REFERENCE_ONLY
+regulated_use:
+  verified_official_pack_required: true
+  professional_review_required: true
+immediate_consumer: ECP-000001D-FOUNDATION-DETAILING-AND-DOCUMENTATION

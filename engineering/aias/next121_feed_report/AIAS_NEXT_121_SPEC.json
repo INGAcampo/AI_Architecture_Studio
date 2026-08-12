@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-121",
+  "title": "Feed readiness report",
+  "status": "VALIDATED",
+  "scope": "Report local feed release readiness while preserving separate publication authorization",
+  "safety": ["Readiness is not publication approval", "Authorization remains false"]
+}

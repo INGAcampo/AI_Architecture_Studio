@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-200002",
+  "title": "Foundation Coordination and Delivery Framework",
+  "version": "1.0.0",
+  "purpose": "Coordinate, verify, revise and transmit the technical foundation package produced by ECP-000001D.",
+  "scope": "Deliverable completeness, revision manifests, issue register, approval controls, checksums and transmittal packaging.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-200101",
+      "title": "ECP-D consumption",
+      "statement": "ECP-000001E shall consume the complete technical package produced by ECP-000001D.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Maintain an immediate real consumer for detailing outputs.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_delivery/engine.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001e_foundation_delivery.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200102",
+      "title": "Completeness validation",
+      "statement": "The system shall verify required drawings, schedules, reports and QA evidence before delivery.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent incomplete technical transmittals.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_delivery/validation.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001e_foundation_delivery.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200103",
+      "title": "Revision control",
+      "statement": "The system shall create immutable revision manifests with file checksums.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide reproducible delivery history.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_delivery/revisions.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001e_foundation_delivery.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200104",
+      "title": "Issue register",
+      "statement": "The system shall maintain traceable coordination issues and resolution status.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support multidisciplinary review.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_delivery/issues.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001e_foundation_delivery.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200105",
+      "title": "Transmittal package",
+      "statement": "The system shall generate a versioned transmittal archive and machine-readable manifest.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create a tangible downstream delivery asset.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_delivery/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001e_foundation_delivery.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200106",
+      "title": "Approval control",
+      "statement": "The system shall prevent construction-approved status without verified official code status and professional approval evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve regulatory and professional responsibility.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_delivery/validation.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001e_foundation_delivery.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-ECP-000001E"
+  ],
+  "adr_refs": [
+    "ADR-ECP-000001E"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

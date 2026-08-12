@@ -1,26 +1,55 @@
-# Python
+# Python bytecode and caches
 __pycache__/
 *.py[cod]
-
-# VS Code
-.vscode/
-
-# Logs
-logs/
-*.log
-
-# Cachés
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-# Entornos virtuales
+# Virtual environments
 .venv/
 venv/
+env/
 
-# Sistema
-Thumbs.db
-.DS_Store
-# Builds
+# IDEs
+.vscode/
+.idea/
+
+# Logs and runtime files
+logs/
+*.log
+*.tmp
+*.autosave
+
+# Builds and packaging
 build/
 dist/
 *.egg-info/
+
+# Local backups and releases
+backup/
+backups/
+releases/
+
+# Operating systems
+Thumbs.db
+.DS_Store
+AIAS_TITAN_*_PROGRAM_PACK/
+AIAS_TITAN_T7_BLOCKS_*/
+*.zip
+
+# Generated AIAS execution workspaces and reference outputs
+*_outputs/
+*_output/
+adf_generated/
+*_cli_build/
+*_demo/
+
+# Generated ACE history (the current context remains reviewable)
+ACKC/snapshots/
+
+# Local installer/run backups
+*.s2_03c_1_backup
+*.backup
+*.bak

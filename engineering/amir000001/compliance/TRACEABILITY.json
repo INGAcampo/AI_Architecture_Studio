@@ -1,0 +1,50 @@
+{
+  "REQ-920001": {
+    "implemented_by": [
+      "src/aias_master_inventory/catalog.py"
+    ],
+    "tested_by": [
+      "tests/test_amir000001_master_inventory.py"
+    ]
+  },
+  "REQ-920002": {
+    "implemented_by": [
+      "src/aias_master_inventory/validator.py"
+    ],
+    "tested_by": [
+      "tests/test_amir000001_master_inventory.py"
+    ]
+  },
+  "REQ-920003": {
+    "implemented_by": [
+      "src/aias_master_inventory/roadmap.py"
+    ],
+    "tested_by": [
+      "tests/test_amir000001_master_inventory.py"
+    ]
+  },
+  "REQ-920004": {
+    "implemented_by": [
+      "src/aias_master_inventory/evidence.py"
+    ],
+    "tested_by": [
+      "tests/test_amir000001_master_inventory.py"
+    ]
+  },
+  "REQ-920005": {
+    "implemented_by": [
+      "src/aias_master_inventory/lighthouse.py"
+    ],
+    "tested_by": [
+      "tests/test_amir000001_master_inventory.py"
+    ]
+  },
+  "REQ-920006": {
+    "implemented_by": [
+      "src/aias_master_inventory/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_amir000001_master_inventory.py"
+    ]
+  }
+}

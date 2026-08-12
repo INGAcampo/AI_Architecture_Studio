@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-008","version":"1.0.0","status":"CONTRACT_ACTIVATED","gates":["selected artifact hashes","baseline digest","immutable reference","clean tree","external gates closed"],"promotion_rule":"No release promotion without frozen baseline, clean source state and closed applicable external gates.","current_status":"CANDIDATE_NOT_PROMOTED"}

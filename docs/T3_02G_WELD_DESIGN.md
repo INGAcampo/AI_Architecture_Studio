@@ -1,0 +1,1 @@
+# T3.02G — WELD_DESIGN

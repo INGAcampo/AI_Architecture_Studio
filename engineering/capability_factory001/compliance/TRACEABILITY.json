@@ -1,0 +1,50 @@
+{
+  "REQ-993801": {
+    "implemented_by": [
+      "src/aias_capability_factory/models.py"
+    ],
+    "tested_by": [
+      "tests/test_capability_factory001.py"
+    ]
+  },
+  "REQ-993802": {
+    "implemented_by": [
+      "src/aias_capability_factory/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_capability_factory001.py"
+    ]
+  },
+  "REQ-993803": {
+    "implemented_by": [
+      "src/aias_capability_factory/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_capability_factory001.py"
+    ]
+  },
+  "REQ-993804": {
+    "implemented_by": [
+      "src/aias_capability_factory/factory.py"
+    ],
+    "tested_by": [
+      "tests/test_capability_factory001.py"
+    ]
+  },
+  "REQ-993805": {
+    "implemented_by": [
+      "src/aias_capability_factory/factory.py"
+    ],
+    "tested_by": [
+      "tests/test_capability_factory001.py"
+    ]
+  },
+  "REQ-993806": {
+    "implemented_by": [
+      "scripts/build_capability_factory001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_capability_factory001.py"
+    ]
+  }
+}

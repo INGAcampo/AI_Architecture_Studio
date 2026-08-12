@@ -1,0 +1,10 @@
+{
+  "modules": 425,
+  "documented_modules": 425,
+  "module_coverage": 1.0,
+  "public_symbols": 1188,
+  "documented_public_symbols": 1188,
+  "public_symbol_coverage": 1.0,
+  "complete": true,
+  "missing": []
+}

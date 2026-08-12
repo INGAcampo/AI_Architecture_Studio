@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-144",
+  "title": "Bundle manifest verification",
+  "status": "VALIDATED",
+  "scope": "Verify unique manifest paths and non-empty local hashes.",
+  "safety": {
+    "external_attestation": false,
+    "certification_claim": false
+  }
+}

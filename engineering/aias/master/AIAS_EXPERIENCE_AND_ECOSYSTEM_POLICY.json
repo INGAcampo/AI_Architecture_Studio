@@ -1,0 +1,106 @@
+{
+  "policy_id": "AEC-000052",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "approved_on": "2026-08-04",
+  "approved_by": "AIAS Project Director",
+  "purpose": "Convert maximum technical stewardship and exceptional product experience into a permanent, testable AIAS rule.",
+  "historical_authorities": [
+    "engineering/aias/history/chat01/AIAS_GENESIS_CHAT01.md",
+    "engineering/aias/history/chat01/CHAT01_DECISION_REGISTER.json",
+    "engineering/aias/master/HISTORICAL_DECISION_MATRIX.json",
+    "ACKC/MASTER_CONTEXT.json"
+  ],
+  "agent_commitments": [
+    "Use maximum available analysis and implementation capability within authorized scope",
+    "Continue approved macrodeliveries without avoidable waiting",
+    "Communicate material recommendations, risks and accelerators immediately under AEC-000050",
+    "Prefer complete vertical value over disconnected module counts",
+    "Preserve legal, professional, safety, normative and evidence boundaries",
+    "Never claim a channel, feature, maturity level or installation artifact exists without evidence"
+  ],
+  "experience_principle": "Every user-facing AIAS surface must make advanced engineering understandable, fast and trustworthy while presenting a coherent world-class identity.",
+  "surface_portfolio": [
+    {
+      "id": "EXP-DESKTOP",
+      "surface": "AIAS desktop platform",
+      "target": "Integrated professional workspace with role/discipline layouts, command line, model browser, properties, dashboards, contextual knowledge and accessible interaction",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "EXP-INSTALLER",
+      "surface": "Professional installer and updater",
+      "target": "Signed, recoverable, version-aware installation with dependency checks, rollback, offline option and integrity verification",
+      "status": "FOUNDATION_VALIDATED_PUBLISHER_SIGNATURE_PENDING"
+    },
+    {
+      "id": "EXP-ISO",
+      "surface": "Installation ISO image",
+      "target": "Reproducible offline installation media containing verified installers, recovery, documentation and checksums when distribution architecture justifies ISO packaging",
+      "status": "PLANNED",
+      "implementation_status_detail": "OFFLINE_MEDIA_VALIDATED_ISO_IMAGE_NOT_CREATED"
+    },
+    {
+      "id": "EXP-WEB",
+      "surface": "Official website",
+      "target": "Product, documentation, downloads, roadmap, trust center, learning and developer portal with truthful capability status",
+      "status": "PLANNED",
+      "implementation_status_detail": "LOCAL_BUILD_VALIDATED_DEPLOYMENT_APPROVAL_PENDING"
+    },
+    {
+      "id": "EXP-APPS",
+      "surface": "Desktop, web and companion applications",
+      "target": "Governed applications sharing identity, accounts, project contracts and security without fragmenting the engineering source of truth",
+      "status": "SHARED_CONTRACT_FOUNDATION_VALIDATED"
+    },
+    {
+      "id": "EXP-SOCIAL",
+      "surface": "Official social channels",
+      "target": "Governed public communication, releases, engineering education and community feedback with approval and evidence controls",
+      "status": "DEFERRED_BY_PROJECT_DIRECTOR"
+    },
+    {
+      "id": "EXP-LEARNING",
+      "surface": "Learning channel",
+      "target": "AIAS University courses, demonstrations, project workflows, jurisdiction-aware manuals and contextual tutor content",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "EXP-BRAND",
+      "surface": "Brand and design system",
+      "target": "Approved logo, iconography, typography, color, motion, voice, document templates and accessible UI tokens",
+      "status": "PARTIAL"
+    }
+  ],
+  "mandatory_release_evidence": [
+    "Functional acceptance against a real user journey",
+    "Visual regression or rendered review for user-facing surfaces",
+    "Accessibility and internationalization checks",
+    "Performance budget and failure-state review",
+    "Security and privacy review proportional to exposure",
+    "Truthful capability and maturity labeling",
+    "Installer or deployment integrity record",
+    "Documentation, learning and support update",
+    "Dashboard and continuity update"
+  ],
+  "experience_kpis": [
+    "time_to_first_value",
+    "task_completion_rate",
+    "professional_time_saved",
+    "accessibility_conformance",
+    "localization_coverage",
+    "installation_success_rate",
+    "crash_free_sessions",
+    "documentation_task_success",
+    "user_trust_and_verified_claim_accuracy"
+  ],
+  "immediate_sequence": [
+    "Create AIAS Design System and product-experience specification",
+    "Audit the current desktop interface against complete professional journeys",
+    "Define signed installer, updater, recovery and offline ISO architecture",
+    "Define official web information architecture and truthful capability registry",
+    "Define application portfolio and shared platform contracts",
+    "Define governed social and learning-channel operating model",
+    "Connect experience KPIs to AIAS Productivity Dashboard"
+  ]
+}

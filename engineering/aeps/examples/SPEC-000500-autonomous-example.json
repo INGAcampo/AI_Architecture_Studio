@@ -1,0 +1,23 @@
+{
+  "id": "SPEC-000500",
+  "title": "Autonomous BIM Room Program",
+  "module_name": "aias_autonomous_bim_room",
+  "domain": "BIM",
+  "capability": "modeling",
+  "version": "1.0.0",
+  "requirements": [
+    {
+      "id": "REQ-001000",
+      "statement": "The system shall generate a BIM room program.",
+      "acceptance_criteria": [
+        "Generated tests pass."
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-000001"
+  ],
+  "adr_refs": [
+    "ADR-000005"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-098",
+  "title": "Release verification report",
+  "status": "VALIDATED",
+  "scope": "Report local release verification results without external publication",
+  "safety": ["Verification is not certification", "Publication remains disabled"]
+}

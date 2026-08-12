@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-128",
+  "title": "Feed bundle release gate",
+  "status": "VALIDATED",
+  "scope": "Evaluate bundle release readiness from validity, uniqueness, and checksums",
+  "safety": ["External publication remains unauthorized", "Missing checksums block readiness"]
+}

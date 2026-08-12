@@ -1,0 +1,50 @@
+{
+  "REQ-999801": {
+    "implemented_by": [
+      "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml"
+    ],
+    "tested_by": [
+      "tests/test_aec000051_continuity_rule.py"
+    ]
+  },
+  "REQ-999802": {
+    "implemented_by": [
+      "src/aias_context_engine/continuity.py"
+    ],
+    "tested_by": [
+      "tests/test_aec000051_continuity_rule.py"
+    ]
+  },
+  "REQ-999803": {
+    "implemented_by": [
+      "src/aias_context_engine/continuity.py"
+    ],
+    "tested_by": [
+      "tests/test_aec000051_continuity_rule.py"
+    ]
+  },
+  "REQ-999804": {
+    "implemented_by": [
+      "engineering/aias/master/CONVERSATION_CONTINUITY_POLICY.json"
+    ],
+    "tested_by": [
+      "tests/test_aec000051_continuity_rule.py"
+    ]
+  },
+  "REQ-999805": {
+    "implemented_by": [
+      "src/aias_context_engine/cli.py"
+    ],
+    "tested_by": [
+      "tests/test_aec000051_continuity_rule.py"
+    ]
+  },
+  "REQ-999806": {
+    "implemented_by": [
+      "scripts/build_gov_continuity001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_aec000051_continuity_rule.py"
+    ]
+  }
+}

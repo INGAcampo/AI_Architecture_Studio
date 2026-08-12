@@ -1,0 +1,50 @@
+{
+  "REQ-200101": {
+    "implemented_by": [
+      "src/aias_foundation_delivery/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001e_foundation_delivery.py"
+    ]
+  },
+  "REQ-200102": {
+    "implemented_by": [
+      "src/aias_foundation_delivery/validation.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001e_foundation_delivery.py"
+    ]
+  },
+  "REQ-200103": {
+    "implemented_by": [
+      "src/aias_foundation_delivery/revisions.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001e_foundation_delivery.py"
+    ]
+  },
+  "REQ-200104": {
+    "implemented_by": [
+      "src/aias_foundation_delivery/issues.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001e_foundation_delivery.py"
+    ]
+  },
+  "REQ-200105": {
+    "implemented_by": [
+      "src/aias_foundation_delivery/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001e_foundation_delivery.py"
+    ]
+  },
+  "REQ-200106": {
+    "implemented_by": [
+      "src/aias_foundation_delivery/validation.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001e_foundation_delivery.py"
+    ]
+  }
+}

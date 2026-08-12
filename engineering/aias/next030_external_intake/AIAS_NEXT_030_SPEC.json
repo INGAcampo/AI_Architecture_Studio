@@ -1,0 +1,1 @@
+{"id":"AIAS-NEXT-030","title":"External approval evidence intake","status":"VALIDATED","required_fields":["authority_id","document_reference","document_sha256","issued_at"],"authenticity_auto_accepted":false}

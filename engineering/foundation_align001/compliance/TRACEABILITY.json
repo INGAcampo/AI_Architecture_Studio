@@ -1,0 +1,50 @@
+{
+  "REQ-940001": {
+    "implemented_by": [
+      "engineering/aias/foundation/AIAS_CHARTER.json"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align001.py"
+    ]
+  },
+  "REQ-940002": {
+    "implemented_by": [
+      "engineering/aias/foundation/AIAS_ARCHITECTURE_HANDBOOK.json"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align001.py"
+    ]
+  },
+  "REQ-940003": {
+    "implemented_by": [
+      "src/aias_foundation_governance/hierarchy.py"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align001.py"
+    ]
+  },
+  "REQ-940004": {
+    "implemented_by": [
+      "src/aias_foundation_governance/validator.py"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align001.py"
+    ]
+  },
+  "REQ-940005": {
+    "implemented_by": [
+      "src/aias_foundation_governance/validator.py"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align001.py"
+    ]
+  },
+  "REQ-940006": {
+    "implemented_by": [
+      "src/aias_foundation_governance/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align001.py"
+    ]
+  }
+}

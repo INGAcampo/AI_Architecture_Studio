@@ -1,0 +1,10 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-W2-06",
+  "version": "0.6.0",
+  "status": "IMPLEMENTED_VALIDATED",
+  "title": "Coordination Evidence and Contextual Learning",
+  "requirements": ["coordination blockers retain evidence locators", "evidence is repository-confined and SHA-256 verified", "each blocker receives a capability-linked course lesson", "learning resources must exist", "internal competency is never represented as professional license", "contextual learning never clears release gates", "responsive combined panel is generated"],
+  "reference_consumer": "LIGHTHOUSE-000001",
+  "validation_evidence": {"tests_passed_with_coordination_university_and_lighthouse_suites": 15, "panel": "workspace2_w2_06_outputs/COORDINATION_LEARNING.html", "snapshot": "workspace2_w2_06_outputs/COORDINATION_LEARNING.json", "installer": "AIAS_WORKSPACE2_W2_06_COORDINATION_LEARNING_INSTALLER"},
+  "next_increment": "W2-07 Rendered Accessibility Performance and Usability Validation"
+}

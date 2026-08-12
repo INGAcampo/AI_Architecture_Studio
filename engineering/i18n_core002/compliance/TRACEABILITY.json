@@ -1,0 +1,1 @@
+{"requirements":{"catalog_parity":["resources/i18n","test_catalogs_have_exact_key_parity"],"priority_consumers":["localized GUI files","test_priority_surfaces_use_keys_not_previous_literals"],"stable_ids":["core_command_catalog","test_locale_changes_titles_not_command_identity"],"coverage_improvement":["I18nCoverageAuditor","test_coverage_improves_without_full_coverage_claim"]}}

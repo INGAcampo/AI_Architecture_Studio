@@ -2,13 +2,14 @@
 AI Architecture Studio
 CAD Renderer
 
-Dynamic Input v2 - Package 3
+Dynamic Input v2 - Package 3 / UI 2.4
 """
 
-from PySide6.QtCore import Qt, QRectF
-from PySide6.QtGui import QColor, QBrush, QFont, QPen
+from PySide6.QtCore import Qt, QRectF, QPointF
+from PySide6.QtGui import QColor, QBrush, QFont, QPainterPath, QPen, QPolygonF, QRegion
 
 from engines.cad.coordinates import CoordinateSystem
+from engines.architectural.wall_network import WallNetwork
 
 
 class Renderer:
@@ -89,43 +90,72 @@ class Renderer:
             selected=selected,
         )
 
+        getter = getattr(polyline, "get_segments", None)
+
+        if callable(getter):
+            segments = getter()
+        else:
+            segments = []
+
+        if segments:
+            for segment in segments:
+                kind = segment.__class__.__name__
+
+                if kind == "Line":
+                    self.draw_line(
+                        painter,
+                        camera,
+                        segment,
+                        highlighted=highlighted,
+                        selected=selected,
+                    )
+                elif kind == "CadArc":
+                    self.draw_arc(
+                        painter,
+                        camera,
+                        segment,
+                        highlighted=highlighted,
+                        selected=selected,
+                    )
+
+            return
+
         points = polyline.points
+
         if len(points) < 2:
             return
 
         for index in range(len(points) - 1):
-            point_1 = points[index]
-            point_2 = points[index + 1]
-
-            x1, y1 = self.coordinates.world_to_screen(
-                point_1.x,
-                point_1.y,
+            self.draw_line(
+                painter,
                 camera,
+                type(
+                    "_PreviewLine",
+                    (),
+                    {
+                        "start": points[index],
+                        "end": points[index + 1],
+                    },
+                )(),
+                highlighted=highlighted,
+                selected=selected,
             )
-            x2, y2 = self.coordinates.world_to_screen(
-                point_2.x,
-                point_2.y,
-                camera,
-            )
-
-            painter.drawLine(int(x1), int(y1), int(x2), int(y2))
 
         if polyline.closed and len(points) > 2:
-            point_1 = points[-1]
-            point_2 = points[0]
-
-            x1, y1 = self.coordinates.world_to_screen(
-                point_1.x,
-                point_1.y,
+            self.draw_line(
+                painter,
                 camera,
+                type(
+                    "_PreviewLine",
+                    (),
+                    {
+                        "start": points[-1],
+                        "end": points[0],
+                    },
+                )(),
+                highlighted=highlighted,
+                selected=selected,
             )
-            x2, y2 = self.coordinates.world_to_screen(
-                point_2.x,
-                point_2.y,
-                camera,
-            )
-
-            painter.drawLine(int(x1), int(y1), int(x2), int(y2))
 
     def draw_circle(
         self,
@@ -162,12 +192,302 @@ class Renderer:
             int(radius_pixels * 2),
         )
 
+
+    def draw_arc(
+        self,
+        painter,
+        camera,
+        arc,
+        preview=False,
+        highlighted=False,
+        selected=False,
+    ):
+        self._set_entity_pen(
+            painter,
+            preview=preview,
+            highlighted=highlighted,
+            selected=selected,
+        )
+
+        segments = max(
+            12,
+            int(abs(arc.sweep_angle) * 24),
+        )
+
+        polygon = QPolygonF()
+
+        for index in range(segments + 1):
+            point = arc.point_at(index / segments)
+            screen_x, screen_y = (
+                self.coordinates.world_to_screen(
+                    point.x,
+                    point.y,
+                    camera,
+                )
+            )
+            polygon.append(
+                QPointF(screen_x, screen_y)
+            )
+
+        painter.drawPolyline(polygon)
+
+
+    def _wall_polygon_to_path(self,camera,points):
+        polygon=QPolygonF()
+        for point in points:
+            x,y=self.coordinates.world_to_screen(point.x,point.y,camera)
+            polygon.append(QPointF(x,y))
+        path=QPainterPath(); path.addPolygon(polygon); path.closeSubpath(); return path
+
+    def wall_path(self,camera,wall,use_segment_union=False):
+        from engines.architectural.wall_engine import WallEngine
+        from engines.architectural.opening_engine import OpeningEngine
+
+        polygons=(
+            WallEngine.build_segment_polygons(wall)
+            if use_segment_union
+            else WallEngine.build_wall_geometry(wall)
+        )
+        result=QPainterPath()
+        for points in polygons:
+            candidate=self._wall_polygon_to_path(camera,points)
+            result=candidate if result.isEmpty() else result.united(candidate)
+
+        # OPENING CORE 5.0.5.1: sustrae huecos paramétricos.
+        for opening in list(getattr(wall,"openings",[]) or []):
+            if not getattr(opening,"visible",True):
+                continue
+            cutter_points=OpeningEngine.cutter_polygon(opening)
+            if not cutter_points:
+                continue
+            cutter=self._wall_polygon_to_path(camera,cutter_points)
+            result=result.subtracted(cutter)
+
+        return result
+
+    def draw_door(self,painter,camera,door):
+        from engines.architectural.door_engine import DoorEngine
+
+        if door is None or not getattr(door,"visible",True):
+            return
+
+        painter.save()
+        painter.setBrush(QBrush(Qt.NoBrush))
+
+        # Marco.
+        painter.setPen(QPen(QColor(235,235,235,235),2))
+        for first,second in DoorEngine.frame_lines(door):
+            x1,y1=self.coordinates.world_to_screen(first.x,first.y,camera)
+            x2,y2=self.coordinates.world_to_screen(second.x,second.y,camera)
+            painter.drawLine(int(x1),int(y1),int(x2),int(y2))
+
+        # Hoja abierta.
+        leaf=DoorEngine.leaf_line(door)
+        if leaf is not None:
+            first,second=leaf
+            x1,y1=self.coordinates.world_to_screen(first.x,first.y,camera)
+            x2,y2=self.coordinates.world_to_screen(second.x,second.y,camera)
+            painter.setPen(QPen(QColor(255,205,70,245),2))
+            painter.drawLine(int(x1),int(y1),int(x2),int(y2))
+
+        # Arco de giro.
+        arc_points=DoorEngine.swing_arc_points(door)
+        if len(arc_points)>=2:
+            polygon=QPolygonF()
+            for point in arc_points:
+                x,y=self.coordinates.world_to_screen(point.x,point.y,camera)
+                polygon.append(QPointF(x,y))
+            painter.setPen(QPen(QColor(255,205,70,210),1,Qt.DashLine))
+            painter.drawPolyline(polygon)
+
+        painter.restore()
+
+    def draw_window(self,painter,camera,window):
+        from engines.architectural.window_engine import WindowEngine
+        geometry=WindowEngine.plan_geometry(window)
+        if geometry is None:return
+        painter.save();painter.setBrush(QBrush(Qt.NoBrush));painter.setPen(QPen(QColor(100,210,255,245),2))
+        for first,second in geometry["frame"]:
+            x1,y1=self.coordinates.world_to_screen(first.x,first.y,camera);x2,y2=self.coordinates.world_to_screen(second.x,second.y,camera);painter.drawLine(int(x1),int(y1),int(x2),int(y2))
+        first,second=geometry["mullion"];x1,y1=self.coordinates.world_to_screen(first.x,first.y,camera);x2,y2=self.coordinates.world_to_screen(second.x,second.y,camera);painter.drawLine(int(x1),int(y1),int(x2),int(y2));painter.restore()
+
+    def draw_wall_hosted_elements(self,painter,camera,walls):
+        for wall in walls:
+            for opening in list(getattr(wall,"openings",[]) or []):
+                door=getattr(opening,"door",None)
+                if door is not None:self.draw_door(painter,camera,door)
+                window=getattr(opening,"window",None)
+                if window is not None:self.draw_window(painter,camera,window)
+
+
+
+    def draw_slab(self,painter,camera,slab,highlighted=False,selected=False):
+        if slab is None or not getattr(slab,"visible",True):
+            return
+        if not getattr(slab,"valid",False):
+            return
+
+        boundary=list(getattr(slab,"boundary",[]) or [])
+        if len(boundary)<3:
+            return
+
+        polygon=QPolygonF()
+        screen_points=[]
+        for point in boundary:
+            x,y=self.coordinates.world_to_screen(point.x,point.y,camera)
+            polygon.append(QPointF(x,y))
+            screen_points.append((x,y))
+
+        painter.save()
+        if selected:
+            pen=self.selection_pen
+        elif highlighted:
+            pen=self.highlight_pen
+        else:
+            pen=QPen(QColor(210,170,90,210),2,Qt.DashDotLine)
+
+        painter.setPen(pen)
+        painter.setBrush(QBrush(QColor(210,170,90,22)))
+        painter.drawPolygon(polygon)
+
+        # Trama diagonal ligera para distinguir la losa del ROOM.
+        if screen_points:
+            min_x=min(point[0] for point in screen_points)
+            max_x=max(point[0] for point in screen_points)
+            min_y=min(point[1] for point in screen_points)
+            max_y=max(point[1] for point in screen_points)
+            painter.setClipRegion(QRegion(polygon.toPolygon()))
+            painter.setPen(QPen(QColor(210,170,90,75),1))
+            spacing=18
+            start=int(min_x-(max_y-min_y))-spacing
+            end=int(max_x+(max_y-min_y))+spacing
+            for offset in range(start,end,spacing):
+                painter.drawLine(
+                    int(offset),int(max_y),
+                    int(offset+(max_y-min_y)),int(min_y),
+                )
+        painter.restore()
+
+    def draw_room(self,painter,camera,room,highlighted=False,selected=False):
+        if room is None or not getattr(room,"visible",True):
+            return
+        if not getattr(room,"valid",False):
+            return
+
+        boundary=list(getattr(room,"boundary",[]) or [])
+        if len(boundary)<3:
+            return
+
+        polygon=QPolygonF()
+        for point in boundary:
+            x,y=self.coordinates.world_to_screen(point.x,point.y,camera)
+            polygon.append(QPointF(x,y))
+
+        painter.save()
+        if selected:
+            pen=self.selection_pen
+            fill=QColor(0,170,255,55)
+        elif highlighted:
+            pen=self.highlight_pen
+            fill=QColor(255,210,0,45)
+        else:
+            pen=QPen(QColor(90,190,255,170),1,Qt.DashLine)
+            category=getattr(room,"category","generic")
+            category_colors={
+                "generic":QColor(70,150,220,30),
+                "living":QColor(230,180,70,38),
+                "bedroom":QColor(120,150,235,38),
+                "kitchen":QColor(235,135,70,38),
+                "bathroom":QColor(80,190,210,38),
+                "service":QColor(155,155,155,38),
+                "circulation":QColor(190,170,110,34),
+                "exterior":QColor(90,190,110,34),
+            }
+            fill=category_colors.get(
+                category,
+                category_colors["generic"],
+            )
+
+        painter.setPen(pen)
+        painter.setBrush(QBrush(fill))
+        painter.drawPolygon(polygon)
+
+        label=getattr(room,"label_position",None)
+        if label is not None:
+            x,y=self.coordinates.world_to_screen(label.x,label.y,camera)
+            painter.setPen(QPen(QColor(225,235,245,240),1))
+            painter.setBrush(QBrush(QColor(30,36,44,210)))
+            font=QFont(painter.font())
+            font.setPointSize(9)
+            painter.setFont(font)
+            number=str(getattr(room,"number","") or "").strip()
+            room_name=str(getattr(room,"name","Ambiente"))
+            line1=f"{number} - {room_name}" if number else room_name
+            line2=f"{getattr(room,'area',0.0):.2f} m²"
+            width=max(96,len(line1)*7,len(line2)*7)
+            rect=QRectF(x-width/2,y-23,width,42)
+            painter.drawRoundedRect(rect,4,4)
+            painter.drawText(
+                QRectF(rect.x()+4,rect.y()+3,rect.width()-8,17),
+                Qt.AlignCenter,
+                line1,
+            )
+            painter.drawText(
+                QRectF(rect.x()+4,rect.y()+20,rect.width()-8,17),
+                Qt.AlignCenter,
+                line2,
+            )
+        painter.restore()
+
+    def draw_wall_network(self,painter,camera,walls):
+        path=QPainterPath()
+        for wall in walls:
+            candidate=self.wall_path(camera,wall,True)
+            if candidate.isEmpty(): continue
+            path=candidate if path.isEmpty() else path.united(candidate)
+        if not path.isEmpty():
+            painter.save()
+            painter.setPen(self.default_pen)
+            painter.setBrush(QBrush(QColor(145,150,158,105)))
+            painter.drawPath(path)
+            painter.restore()
+
+        # DOOR 5.0.5.2.1: los elementos alojados se dibujan
+        # después de la unión booleana de todos los muros.
+        self.draw_wall_hosted_elements(painter,camera,walls)
+
+    def draw_wall(self,painter,camera,wall,preview=False,highlighted=False,selected=False):
+        path=self.wall_path(camera,wall,preview)
+        if path.isEmpty(): return
+        painter.save()
+        if selected: pen,fill=self.selection_pen,QColor(0,170,255,85)
+        elif highlighted: pen,fill=self.highlight_pen,QColor(255,210,0,80)
+        elif preview: pen,fill=self.preview_pen,QColor(80,220,120,70)
+        else: pen,fill=self.default_pen,QColor(145,150,158,105)
+        painter.setPen(pen); painter.setBrush(QBrush(fill)); painter.drawPath(path)
+        painter.setPen(QPen(QColor(185,190,198,150),1,Qt.DashLine)); painter.setBrush(QBrush(Qt.NoBrush))
+        for i in range(len(wall.path)-1):
+            a,b=wall.path[i],wall.path[i+1]
+            x1,y1=self.coordinates.world_to_screen(a.x,a.y,camera); x2,y2=self.coordinates.world_to_screen(b.x,b.y,camera)
+            painter.drawLine(int(x1),int(y1),int(x2),int(y2))
+
+        # Jambas del hueco en planta.
+        from engines.architectural.opening_engine import OpeningEngine
+        painter.setPen(QPen(QColor(230,235,240,220),1))
+        for opening in list(getattr(wall,"openings",[]) or []):
+            for first,second in OpeningEngine.jamb_lines(opening):
+                x1,y1=self.coordinates.world_to_screen(first.x,first.y,camera)
+                x2,y2=self.coordinates.world_to_screen(second.x,second.y,camera)
+                painter.drawLine(int(x1),int(y1),int(x2),int(y2))
+        painter.restore()
+
     def draw_snap_marker(
         self,
         painter,
         camera,
         point,
         snap_type,
+        show_label=True,
     ):
         if point is None or snap_type is None:
             return
@@ -213,7 +533,8 @@ class Renderer:
             painter.drawLine(x - size, y, x + size, y)
             painter.drawLine(x, y - size, x, y + size)
 
-        painter.drawText(x + 12, y - 10, snap_type)
+        if show_label:
+            painter.drawText(x + 12, y - 10, snap_type)
 
     def draw_selection_window(
         self,
@@ -551,6 +872,41 @@ class Renderer:
                 preview_geometry,
                 preview=True,
             )
+        elif preview_type == "CadArc":
+            self.draw_arc(
+                painter,
+                camera,
+                preview_geometry,
+                preview=True,
+            )
+        elif preview_type == "Wall":
+            self.draw_wall(
+                painter,
+                camera,
+                preview_geometry,
+                preview=True,
+            )
+
+
+    def draw_wall_nodes(self, painter, camera, network, active_node_id=None):
+        if network is None:
+            return
+        painter.save()
+        for node in network.nodes:
+            x, y = self.coordinates.world_to_screen(
+                node.position.x, node.position.y, camera
+            )
+            x, y = int(x), int(y)
+            active = node.node_id == active_node_id
+            size = 7 if active else 5
+            if active:
+                painter.setPen(QPen(QColor(255, 210, 0), 2))
+                painter.setBrush(QBrush(QColor(255, 210, 0, 170)))
+            else:
+                painter.setPen(QPen(QColor(0, 190, 255), 1))
+                painter.setBrush(QBrush(QColor(0, 190, 255, 125)))
+            painter.drawEllipse(x-size, y-size, size*2, size*2)
+        painter.restore()
 
     def draw_scene(
         self,
@@ -562,6 +918,25 @@ class Renderer:
     ):
         if scene is None:
             return
+
+        # WALL NETWORK 5.0.4.3: mantiene la topología sincronizada
+        # después de crear, mover, borrar, deshacer o rehacer muros.
+        wall_network = WallNetwork.ensure_scene(scene)
+
+        # ROOM 5.0.7.3: actualiza automáticamente los recintos
+        # cuando cambia la geometría de WALL / WNODE.
+        from engines.architectural.room_engine import RoomEngine
+        RoomEngine.update_scene_rooms(scene)
+        from engines.architectural.slab_engine import SlabEngine
+        SlabEngine.update_scene_slabs(scene)
+
+        if getattr(scene, "show_wall_nodes", False):
+            self.draw_wall_nodes(
+                painter,
+                camera,
+                wall_network,
+                getattr(scene, "active_wall_node_id", None),
+            )
 
         selected_elements = set(
             selected_elements or []
@@ -592,6 +967,15 @@ class Renderer:
            )
         ):
            dynamic_input_manager = candidate
+
+        visible_walls=[]
+        for candidate in scene.get_elements():
+            if candidate.__class__.__name__ != "Wall": continue
+            layer=None
+            if layer_manager is not None: layer=layer_manager.get_layer(getattr(candidate,"layer_name","0"))
+            if layer is not None and not layer.visible: continue
+            if getattr(candidate,"visible",True): visible_walls.append(candidate)
+        self.draw_wall_network(painter,camera,visible_walls)
 
         for element in scene.get_elements():
             layer_name = getattr(
@@ -626,7 +1010,29 @@ class Renderer:
                 and highlighted == element
             )
 
-            if (
+            if element.__class__.__name__ == "Slab":
+                self.draw_slab(
+                    painter,
+                    camera,
+                    element,
+                    highlighted=is_highlighted,
+                    selected=is_selected,
+                )
+
+            elif element.__class__.__name__ == "Room":
+                self.draw_room(
+                    painter,
+                    camera,
+                    element,
+                    highlighted=is_highlighted,
+                    selected=is_selected,
+                )
+
+            elif element.__class__.__name__ == "Wall":
+                if is_selected or is_highlighted:
+                    self.draw_wall(painter,camera,element,highlighted=is_highlighted,selected=is_selected)
+
+            elif (
                 geometry is not None
                 and geometry.__class__.__name__
                 == "Line"
@@ -668,6 +1074,18 @@ class Renderer:
                 == "CadCircle"
             ):
                 self.draw_circle(
+                    painter,
+                    camera,
+                    element,
+                    highlighted=is_highlighted,
+                    selected=is_selected,
+                )
+
+            elif (
+                element.__class__.__name__
+                == "CadArc"
+            ):
+                self.draw_arc(
                     painter,
                     camera,
                     element,

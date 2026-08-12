@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-133",
+  "title": "Bundle release evidence",
+  "status": "VALIDATED",
+  "scope": "Bundle local release reports into deterministic metadata for traceability.",
+  "safety": {
+    "external_publication": false,
+    "certification_claim": false
+  }
+}

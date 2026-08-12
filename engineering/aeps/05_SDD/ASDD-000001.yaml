@@ -1,0 +1,9 @@
+id: ASDD-000001
+title: Specification Driven Development Standard
+type: DevelopmentStandard
+version: 0.1.0
+status: DRAFT
+owner: AIAS Core Engineering
+purpose: Definir el ciclo SDD.
+scope: Todos los programas.
+history: []

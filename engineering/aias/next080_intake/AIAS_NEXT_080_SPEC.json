@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-080",
+  "title": "External evidence intake contract",
+  "status": "VALIDATED",
+  "scope": "Validate minimum fields for externally supplied evidence before review",
+  "safety": ["Intake is not approval", "Missing provenance remains invalid"]
+}

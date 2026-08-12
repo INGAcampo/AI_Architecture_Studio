@@ -1,0 +1,8 @@
+id: ASDD-000003
+status: ACTIVE
+development_mode: specification_driven
+anti_analysis_paralysis: mandatory
+tangible_progress_each_cycle: mandatory
+minimum_time_reduction: 0.45
+macro_deliverables: mandatory
+technical_file_from_level_1: mandatory

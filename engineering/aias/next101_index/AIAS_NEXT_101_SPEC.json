@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-101",
+  "title": "Release artifact index",
+  "status": "VALIDATED",
+  "scope": "Build a sorted unique index of local release artifacts",
+  "safety": ["Index is read-only metadata", "No external publication occurs"]
+}

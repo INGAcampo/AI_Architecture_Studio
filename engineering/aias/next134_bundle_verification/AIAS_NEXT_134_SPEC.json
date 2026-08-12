@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-134",
+  "title": "Bundle verification",
+  "status": "VALIDATED",
+  "scope": "Verify local bundle report identifiers for uniqueness and non-empty values.",
+  "safety": {
+    "external_claim": false,
+    "certification_claim": false
+  }
+}

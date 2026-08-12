@@ -1,0 +1,1 @@
+# T3.02E — WELD_GROUP

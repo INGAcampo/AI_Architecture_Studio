@@ -1,0 +1,11 @@
+from __future__ import annotations
+import hashlib,json,shutil
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];TARGET=ROOT/"AIAS_ROADMAP_AUDIT001_INTEGRAL_COMPLETION_INSTALLER";PAYLOAD=TARGET/"payload"
+def main():
+ if TARGET.exists():shutil.rmtree(TARGET)
+ (PAYLOAD/"src").mkdir(parents=True);(PAYLOAD/"tests").mkdir();(PAYLOAD/"engineering/aias/roadmap").mkdir(parents=True)
+ shutil.copytree(ROOT/"src/aias_roadmap_audit",PAYLOAD/"src/aias_roadmap_audit",ignore=shutil.ignore_patterns("__pycache__","*.pyc"));shutil.copy2(ROOT/"tests/test_integral_roadmap_audit001.py",PAYLOAD/"tests");shutil.copy2(ROOT/"tests/test_external_gates001.py",PAYLOAD/"tests");shutil.copy2(ROOT/"tests/test_external_evidence_ledger001.py",PAYLOAD/"tests");shutil.copy2(ROOT/"tests/test_external_gates_cli001.py",PAYLOAD/"tests");shutil.copy2(ROOT/"engineering/aias/roadmap/ROADMAP-AUDIT-001_SPEC.json",PAYLOAD/"engineering/aias/roadmap");shutil.copy2(ROOT/"engineering/aias/roadmap/EXTERNAL-GATES-001_SPEC.json",PAYLOAD/"engineering/aias/roadmap");shutil.copy2(ROOT/"engineering/aias/roadmap/EXTERNAL-EVIDENCE-LEDGER-001_SPEC.json",PAYLOAD/"engineering/aias/roadmap");shutil.copy2(ROOT/"engineering/aias/roadmap/EXTERNAL-GATES-CLI-001_SPEC.json",PAYLOAD/"engineering/aias/roadmap");shutil.copy2(ROOT/"engineering/aias/roadmap/EXTERNAL_GATE_EVIDENCE.json",PAYLOAD/"engineering/aias/roadmap");shutil.copy2(ROOT/"engineering/aias/roadmap/EXTERNAL_EVIDENCE_LEDGER.json",PAYLOAD/"engineering/aias/roadmap");shutil.copy2(ROOT/"engineering/aias/roadmap/EXTERNAL_AUTHORITY_REGISTRY.json",PAYLOAD/"engineering/aias/roadmap")
+ (TARGET/"manifest.json").write_text(json.dumps({"pack_id":"ROADMAP-AUDIT-001","version":"1.4.0","status":"IMPLEMENTED_WAITING_EXTERNAL_AUTHORITIES","outputs":["INTEGRAL_COMPLETION_AUDIT","EXTERNAL_GATE_SEPARATION","ACTIONABLE_EXTERNAL_GATE_PORTFOLIO","HASH_CHAINED_EXTERNAL_EVIDENCE_LEDGER","TRUSTED_AUTHORITY_EVALUATION","EXTERNAL_GATE_CLI"]},indent=2)+"\n",encoding="utf-8")
+ files=sorted(p for p in TARGET.rglob("*") if p.is_file() and p.name!="checksums.sha256");(TARGET/"checksums.sha256").write_text("\n".join(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(TARGET).as_posix()}" for p in files)+"\n",encoding="utf-8");print({"target":str(TARGET),"files":len(files)})
+if __name__=="__main__":main()

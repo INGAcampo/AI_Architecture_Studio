@@ -1,0 +1,59 @@
+id: AEC-000002
+title: Executable Constitution Core
+type: Constitution
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+purpose: Definir artículos constitucionales ejecutables para AEPS.
+scope: Todo desarrollo futuro de AIAS.
+articles:
+  - id: AEC-000024
+    title: Anti-Burocracia
+    mandatory: true
+    statement: Toda regla, documento, proceso o validación deberá aportar un beneficio medible; de lo contrario deberá simplificarse o eliminarse.
+    validators: [VAL-LEAN-000024]
+  - id: AEC-ART-000001
+    title: Engineering before implementation
+    mandatory: true
+    validators: [VAL-SPEC-000001]
+  - id: AEC-ART-000002
+    title: Traceability
+    mandatory: true
+    validators: [VAL-TRACE-000001]
+  - id: AEC-ART-000003
+    title: Reusable-first
+    mandatory: true
+    validators: [VAL-REUSE-000001]
+  - id: AEC-ART-000004
+    title: Sustainable acceleration
+    mandatory: true
+    target_time_reduction: 0.45
+    validators: [VAL-KPI-000001]
+  - id: AEC-000049
+    title: Materialización Inmediata del Valor
+    mandatory: true
+    statement: Toda capacidad técnicamente correcta, verificable, mantenible y legalmente compatible deberá incorporarse desde el nivel de madurez más temprano posible.
+    validators: [VAL-VALUE-000049]
+  - id: AEC-000050
+    title: Comunicación Inmediata de Recomendaciones Estratégicas
+    mandatory: true
+    statement: Toda oportunidad, riesgo, simplificación o avance tecnológico con impacto material deberá comunicarse oportunamente al Director del proyecto con evidencia y una acción recomendada.
+    validators: [VAL-RECOMMEND-000050]
+    anti_bureaucracy:
+      report_when: [material_impact, constitutional_risk, safety_risk, reusable_giant_step, roadmap_change]
+      suppress_when: [minor_style_preference, duplicate_observation, no_actionable_evidence]
+  - id: AEC-000051
+    title: Continuidad Verificable de Conversaciones
+    mandatory: true
+    statement: Antes de migrar, bifurcar o reemplazar una conversación principal de AIAS deberá generarse y validarse un paquete de continuidad actualizado desde la evidencia vigente del repositorio, suficiente para reanudar el proyecto sin depender de capturas históricas.
+    validators: [VAL-CONTINUITY-000051]
+    required_evidence: [MASTER_CONTEXT, PROJECT_STATE, NEXT_TASK, CONTINUE_PROMPT, EXECUTIVE_ORDERS, integrity_manifest]
+  - id: AEC-000052
+    title: Custodia Integral y Experiencia Extraordinaria de AIAS
+    mandatory: true
+    statement: El agente técnico deberá aplicar su máxima iniciativa, capacidad de análisis, acompañamiento y comunicación dentro de la autoridad concedida; conservar y consultar la planificación verificable desde el nacimiento de AIAS; proponer inmediatamente mejoras materiales; y asegurar que cada superficie del ecosistema exprese la magnitud profesional del proyecto mediante una experiencia coherente, accesible, mantenible, segura y verificable.
+    validators: [VAL-STEWARDSHIP-000052, VAL-EXPERIENCE-000052]
+    historical_authority: engineering/aias/history/chat01
+    required_surfaces: [desktop_platform, installer, installation_iso, website, applications, social_channels, learning_channel, documentation, knowledge_center, university, dashboards]
+    quality_attributes: [coherence, usability, accessibility, performance, security, internationalization, traceability, visual_excellence, measurable_value]
+    prohibitions: [style_without_function, fragmented_brand, inaccessible_interface, unverified_marketing_claims, undocumented_historical_override]

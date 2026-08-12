@@ -1,0 +1,1 @@
+{"component_id":"EXP-APPS-001","specification":"engineering/aias/experience/EXP_APPS_001_SPEC.json","architecture":"shared contract broker and immutable manifests","implementation":"src/aias_application_platform","verification":"tests/test_exp_apps001.py","release":"AIAS_EXP_APPS001_SHARED_PLATFORM_CONTRACTS_INSTALLER"}

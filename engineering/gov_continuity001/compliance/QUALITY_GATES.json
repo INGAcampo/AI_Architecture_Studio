@@ -1,0 +1,52 @@
+{
+  "component_id": "GOV-CONTINUITY-001",
+  "constitution": "AEC-000002",
+  "articles": [
+    "AEC-ART-000001",
+    "AEC-ART-000002",
+    "AEC-ART-000003",
+    "AEC-ART-000004",
+    "AEC-000049",
+    "AEC-000050",
+    "AEC-000051"
+  ],
+  "gates": [
+    {
+      "gate_id": "QG-SPEC",
+      "passed": true,
+      "message": "Specification valid"
+    },
+    {
+      "gate_id": "QG-TRACE",
+      "passed": true,
+      "message": "Traceability coverage=100.00%"
+    },
+    {
+      "gate_id": "QG-ADR",
+      "passed": true,
+      "message": "ADR linked"
+    },
+    {
+      "gate_id": "QG-ARCH",
+      "passed": true,
+      "message": "Architecture linked"
+    },
+    {
+      "gate_id": "QG-VALUE",
+      "passed": true,
+      "message": "Immediate value path linked"
+    }
+  ],
+  "all_passed": true,
+  "kpi": {
+    "classification": "REFERENCE_ENGINEERING_ESTIMATE",
+    "baseline_hours": 18.0,
+    "actual_hours": 5.5,
+    "time_reduction": 0.6944444444444444,
+    "automation_ratio": 0.7272727272727273,
+    "reuse_ratio": 0.8333333333333334,
+    "meets_45_percent_target": true,
+    "warning": "The mechanism is validated; a handoff package must still be regenerated immediately before each actual conversation transition."
+  },
+  "validator_issues": []
+}

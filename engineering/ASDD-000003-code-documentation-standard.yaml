@@ -1,0 +1,26 @@
+id: ASDD-000003
+title: AIAS Code and Capability Documentation Standard
+type: DevelopmentStandard
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+governing_articles: [AEC-000024, AEC-000049]
+principle: Documentation depth follows public risk and reuse; generated repetition is automated.
+mandatory_for_new_code:
+  - package purpose and public contract
+  - module responsibility and dependencies
+  - public class and function behavior
+  - parameters, return values, units and exceptions where applicable
+  - engineering assumptions, legal status and human-review boundaries
+  - requirement, architecture, ADR and test traceability
+  - executable example for externally consumed capabilities
+legacy_alignment:
+  policy: progressive_risk_prioritized
+  order: [active_engineering_packages, public_apis, regulated_calculations, shared_kernels, remaining_legacy]
+quality_gates:
+  new_or_modified_public_symbols_documented: required
+  package_technical_document: required
+  global_legacy_coverage: measured_not_falsified
+anti_bureaucracy:
+  prohibit: [line_by_line_narration, duplicated_comments, documentation_without_consumer_value]
+  automate: [coverage_inventory, traceability_tables, manifests, API_reference_generation]

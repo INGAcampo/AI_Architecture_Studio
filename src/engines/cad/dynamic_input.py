@@ -1,7 +1,17 @@
 """
 AI Architecture Studio
 CAD Engine - Dynamic Input Professional
-Package 2
+
+Package 2.5.1
+Corrección compatible de begin_edit(character=None)
+
+Compatibilidad:
+- Llamadas antiguas: begin_edit()
+- Entrada directa: begin_edit(character)
+- Alias: input_character(character)
+- Alias: handle_character(character)
+- Punto decimal y coma decimal
+- Teclado numérico con ";" convertido a ","
 """
 
 import math
@@ -29,8 +39,8 @@ class DynamicField:
         if not text:
             return None
 
-        # En los campos Distancia/Ángulo, la coma del teclado
-        # numérico se interpreta como separador decimal.
+        # En campos simples de distancia o ángulo, la coma funciona
+        # como separador decimal.
         if (
             "," in text
             and "@" not in text
@@ -72,7 +82,7 @@ class DynamicInputManager:
         self.screen_y = 0
         self.prompt = ""
 
-        # Compatibilidad.
+        # Compatibilidad con versiones anteriores.
         self.typed_value = ""
         self.input_buffer = ""
         self.editing = False
@@ -128,7 +138,7 @@ class DynamicInputManager:
 
         changed = (
             self.base_point is None
-            or self.base_point.distance_to(point) > 1e-9
+            or self.base_point.distance_to(point) > 1.0e-9
         )
 
         self.base_point = point
@@ -232,11 +242,30 @@ class DynamicInputManager:
         self._sync_text()
         self.editing = False
 
-    def begin_edit(self):
+    def begin_edit(self, character=None):
+        """
+        Inicia el modo de edición.
+
+        Es compatible con las dos formas usadas por versiones anteriores:
+
+            begin_edit()
+            begin_edit(character)
+
+        Cuando no se recibe un carácter, solamente activa la edición.
+        Cuando se recibe un carácter, lo valida y lo agrega al campo activo.
+        """
         self.editing = True
         self.show()
 
-    def append_character(self, character):
+        if character is None:
+            return True
+
+        character = str(character)
+
+        if not character:
+            return False
+
+        # Algunos teclados numéricos entregan ";" en lugar de coma.
         if character == ";":
             character = ","
 
@@ -244,36 +273,63 @@ class DynamicInputManager:
         current = field.value
 
         if self.active_mode == self.MODE_ANGLE:
-            if character not in "0123456789.+-":
+            if character not in "0123456789.,+-":
                 return False
 
-            if character == "." and "." in current:
-                return True
+            # En el campo de ángulo, coma y punto son decimales.
+            if character in ".,":
+                if "." in current or "," in current:
+                    return True
 
             if character in "+-" and current:
                 return True
+
         else:
             if character not in "0123456789.,@<+-":
                 return False
 
+            # "@" solo puede aparecer al principio.
             if character == "@" and current:
                 return True
 
-            if character == "," and (
-                "," in current or "<" in current
-            ):
+            # No permitir más de un marcador polar.
+            if character == "<" and "<" in current:
                 return True
 
-            if character == "<" and (
-                "<" in current or "," in current
-            ):
-                return True
+            # Después de "<", la coma se interpreta como decimal
+            # del ángulo; antes de "<" puede representar decimal o
+            # separador cartesiano según CoordinateParser.
+            if character == "," and "<" in current:
+                angle_part = current.split("<", 1)[1]
+                if "," in angle_part or "." in angle_part:
+                    return True
+
+            # Solo un signo inicial o un signo después de "<".
+            if character in "+-":
+                if not current:
+                    pass
+                elif current.endswith("<"):
+                    pass
+                else:
+                    return True
 
         field.value = current + character
         self._sync_text()
         self.editing = True
         self.show()
         return True
+
+    def input_character(self, character):
+        """Alias estable para introducir un carácter."""
+        return self.begin_edit(character)
+
+    def handle_character(self, character):
+        """Alias compatible con otros controladores de teclado."""
+        return self.begin_edit(character)
+
+    def append_character(self, character):
+        """Alias adicional para integraciones antiguas."""
+        return self.begin_edit(character)
 
     def backspace(self):
         field = self.active_field()
@@ -321,8 +377,8 @@ class DynamicInputManager:
 
             return f"@{distance_text}<{angle_text}"
 
-        # Sin campo de ángulo se conservan los formatos históricos:
-        # 12.5, 10,10, @10,5, @10<45 y 10<45.
+        # Conserva los formatos históricos:
+        # 12.5, 12,5, 10,10, @10,5, @10<45 y 10<45.
         return distance_text
 
     def confirm(self):
@@ -373,7 +429,7 @@ class DynamicInputManager:
         return f"{self.distance:.3f}"
 
     def formatted_angle(self):
-        return f"{self.angle_degrees:.2f}°"
+        return f"{self.angle_degrees:.1f}°"
 
     def distance_display_text(self):
         return (

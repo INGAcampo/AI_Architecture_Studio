@@ -1,0 +1,26 @@
+id: ASDD-000002
+title: Formal Specification-Driven Development Lifecycle
+type: DevelopmentStandard
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+stages:
+  - Constitution Check
+  - Specification
+  - Engineering Review
+  - Architecture
+  - ADR
+  - Generation
+  - Implementation
+  - Validation
+  - Certification
+  - Packaging
+  - Release
+mandatory_outputs:
+  - requirements
+  - acceptance_criteria
+  - traceability_matrix
+  - architecture_reference
+  - adr_reference
+  - tests
+  - quality_gate_report

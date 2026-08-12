@@ -1,0 +1,29 @@
+{
+  "spec_id": "AIAS-DESIGN-SYSTEM-001",
+  "version": "0.1.0",
+  "status": "FOUNDATION_IMPLEMENTED_FIRST_DESKTOP_CONSUMER_RENDERED_APPROVAL_PENDING",
+  "governing_article": "AEC-000052",
+  "historical_source": "engineering/aias/history/chat01/AIAS_GENESIS_CHAT01.md",
+  "objective": "Create one coherent, accessible and implementation-ready experience language for every AIAS surface.",
+  "consumers": ["desktop", "installer", "installation_iso", "website", "apps", "documents", "dashboards", "knowledge_center", "university", "social_and_learning_media"],
+  "principles": [
+    "Engineering clarity before decoration",
+    "Progressive disclosure for complex professional workflows",
+    "One semantic token system across surfaces",
+    "Keyboard-first efficiency with visible focus",
+    "Internationalization and Unicode by design",
+    "Failure states explain cause, impact and recovery",
+    "Every public claim is linked to verified capability status",
+    "Visual excellence never compromises accessibility or performance"
+  ],
+  "desktop_shell": {
+    "regions": ["command_and_search", "discipline_ribbon", "project_browser", "central_document_tabs", "properties_and_inspector", "contextual_knowledge", "status_and_coordinates", "productivity_dashboard"],
+    "workspaces": ["Architecture", "Structure", "Geotechnics", "Civil and Survey", "MEP", "Coordination", "Construction", "Learning"],
+    "interaction_contracts": ["undoable mutations", "transaction preview", "explicit commit", "non-destructive cancel", "provenance visibility", "professional review status"]
+  },
+  "component_families": ["application_shell", "navigation", "commanding", "inputs", "data_tables", "model_tree", "property_inspector", "canvas_overlays", "engineering_results", "evidence_and_status", "dialogs", "notifications", "learning_cards", "dashboards"],
+  "approval_gates": ["token validation", "rendered dark and light review", "WCAG contrast audit", "keyboard navigation audit", "200 percent scaling review", "Spanish and English pseudo-localization", "representative engineering workflow usability test", "performance budget", "Project Director visual approval"],
+  "current_boundary": "This foundation defines and renders design tokens; it does not claim that the legacy interface has already migrated.",
+  "materialized_consumers": ["Workspace 2.0 W2-01 application shell"],
+  "next_macrodelivery": "AIAS-WORKSPACE-2.0 W2-02 Unified Document and Panel Orchestration"
+}

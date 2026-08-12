@@ -1,0 +1,1 @@
+# T6.07R — SOFTENING_LAW

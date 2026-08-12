@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-999501",
+  "title": "AIAS End-to-End Project Production",
+  "version": "1.0.0",
+  "purpose": "Demonstrate the complete governed AIAS project chain from planning through operating custody on Lighthouse.",
+  "scope": "PMO plan, virtual assignment, technical file, independent review, AEOS, CNS, signed recovery, cloud-neutral custody, release and professional boundary.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-999501",
+      "title": "Complete chain",
+      "statement": "Production shall connect planning, assignment, generation, review, release, handover, operation, recovery and custody.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prove system integration across the digital company.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_end_to_end/producer.py"
+      ],
+      "tested_by": [
+        "tests/test_end_to_end001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999502",
+      "title": "Independent review",
+      "statement": "Author and virtual reviewer shall be different identities and regulated authority shall remain human.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve professional maker-checker control.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_end_to_end/producer.py"
+      ],
+      "tested_by": [
+        "tests/test_end_to_end001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999503",
+      "title": "Operating evidence",
+      "statement": "Lighthouse shall reach AEOS OPERATING with seven durable CNS lifecycle events.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prove the operational lifecycle.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_end_to_end/producer.py"
+      ],
+      "tested_by": [
+        "tests/test_end_to_end001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999504",
+      "title": "Resilience and custody",
+      "statement": "The final technical release shall pass a signed recovery drill and tenant-isolated cloud-neutral custody.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect project continuity and artifacts.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_end_to_end/producer.py"
+      ],
+      "tested_by": [
+        "tests/test_end_to_end001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999505",
+      "title": "Honest status",
+      "statement": "The output shall remain reference-for-review and shall not claim professional approval or audited organizational Level 5.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsupported completion claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/end_to_end/END_TO_END_CONTRACT.json"
+      ],
+      "tested_by": [
+        "tests/test_end_to_end001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999506",
+      "title": "Reproducible delivery",
+      "statement": "End-to-end production shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep complete project production deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_end_to_end001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_end_to_end001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-END-TO-END-001"
+  ],
+  "adr_refs": [
+    "ADR-END-TO-END-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

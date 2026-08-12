@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-136",
+  "title": "Bundle release gate",
+  "status": "VALIDATED",
+  "scope": "Gate local progression on valid bundle verification evidence.",
+  "safety": {
+    "external_approval": false,
+    "certification_claim": false
+  }
+}

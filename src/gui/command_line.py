@@ -86,28 +86,7 @@ class CommandLine(QWidget):
             self.tab_requested.emit
     )
 
-        self.setStyleSheet("""
-            QWidget {
-                background-color: #202020;
-            }
-
-            QLabel {
-                color: white;
-                font-weight: bold;
-            }
-
-            QLineEdit {
-                background-color: #111111;
-                color: white;
-                border: 1px solid #555555;
-                padding: 6px;
-                selection-background-color: #2f6ea5;
-            }
-
-            QLineEdit:focus {
-                border: 1px solid #2f9be8;
-            }
-        """)
+        # Styling is inherited from the governed AIAS semantic QSS.
 
     def set_prompt(self, text):
         prompt = str(text).strip()

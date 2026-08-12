@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-940002",
+  "title": "AIAS Engineering System and AES Standards Registry",
+  "version": "1.0.0",
+  "purpose": "Complete the institutional production system and make the initial AIAS Engineering Standards machine-verifiable.",
+  "scope": "Operating loop, accountable offices, engineering-asset lifecycle, mandatory evidence, professional boundary, normative standards, verification and review cycles.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-941001",
+      "title": "Engineering operating system",
+      "statement": "The system shall define the observe-to-learn production loop, accountable offices and asset lifecycle.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create a durable digital engineering company operating model.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-941002",
+      "title": "Mandatory evidence",
+      "statement": "Every engineering asset lifecycle shall require specification, design, verification, release and feedback evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsupported completion claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-941003",
+      "title": "AES registry",
+      "statement": "The system shall maintain versioned standards with owners, normative rules, verification and review cycles.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make standards governable and auditable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/AIAS_AES_STANDARDS_REGISTRY.json"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-941004",
+      "title": "Executable validation",
+      "statement": "The system shall reject incomplete, duplicated, unowned or unverifiable standards.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Turn governance into an executable control.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_system/validator.py"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-941005",
+      "title": "Professional boundary",
+      "statement": "The system shall reserve regulated approval for the responsible licensed professional.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve legal responsibility.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-941006",
+      "title": "Reproducible distribution",
+      "statement": "The system shall provide tests, documentation, manifest, checksums and installer.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the foundation deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_foundation_align002_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align002.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-FOUNDATION-ALIGN-002"
+  ],
+  "adr_refs": [
+    "ADR-FOUNDATION-ALIGN-002"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

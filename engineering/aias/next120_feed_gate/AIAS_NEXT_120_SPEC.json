@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-120",
+  "title": "Feed release readiness gate",
+  "status": "VALIDATED",
+  "scope": "Evaluate feed release readiness from verification and checksum presence",
+  "safety": ["External publication remains unauthorized", "Missing checksums block readiness"]
+}

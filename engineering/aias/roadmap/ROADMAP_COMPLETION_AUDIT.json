@@ -1,0 +1,144 @@
+{
+  "audit_id": "ROADMAP-AUDIT-001",
+  "materialization": {
+    "total": 66,
+    "operational": 65,
+    "specified": [
+      {
+        "id": "FUTURE-000002",
+        "name": "AIAS Level 5 Mature Organization",
+        "state": "SPECIFIED"
+      }
+    ],
+    "pending": []
+  },
+  "structural": {
+    "total": 20,
+    "implemented": 20,
+    "pending": []
+  },
+  "giant_steps": [
+    {
+      "id": "G1",
+      "title": "Complete structural building",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_structural_codes_program/building.py",
+        "src/aias_structural_codes_program/analysis.py",
+        "src/aias_structural_codes_program/design.py",
+        "src/aias_structural_codes_program/reporting.py"
+      ],
+      "external_gate": null
+    },
+    {
+      "id": "G2",
+      "title": "Normative structural system",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_structural_codes_program/normative.py",
+        "src/aias_structural_codes_program/material_codes.py"
+      ],
+      "external_gate": "licensed jurisdictional standards"
+    },
+    {
+      "id": "G3",
+      "title": "Professional validation",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_structural_codes_program/benchmarking.py",
+        "src/aias_structural_codes_program/release.py"
+      ],
+      "external_gate": "independent professional benchmark acceptance"
+    },
+    {
+      "id": "G4",
+      "title": "Unified BIM/CAE",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_cad_bim_integration/ifc_sync.py",
+        "src/aias_structural_codes_program/int02.py",
+        "src/aias_cad_bim_integration/design_adapters.py"
+      ],
+      "external_gate": "licensed vendor runtimes and production APIs"
+    },
+    {
+      "id": "G5",
+      "title": "Advanced geotechnics",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_structural_codes_program/geo01.py",
+        "src/aias_structural_codes_program/geo02.py"
+      ],
+      "external_gate": null
+    },
+    {
+      "id": "G6",
+      "title": "Civil and hydraulic platform",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_structural_codes_program/mdp02.py",
+        "src/aias_structural_codes_program/mdp03.py",
+        "src/aias_structural_codes_program/hyd01.py"
+      ],
+      "external_gate": null
+    },
+    {
+      "id": "G7",
+      "title": "Engineering Brain",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_engineering_intelligence",
+        "src/aias_structural_codes_program/plt01.py"
+      ],
+      "external_gate": null
+    },
+    {
+      "id": "G8",
+      "title": "Professional product experience",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_productivity_dashboard",
+        "src/aias_structural_codes_program/coord01.py",
+        "src/aias_documentation_program"
+      ],
+      "external_gate": null
+    },
+    {
+      "id": "G9",
+      "title": "Enterprise scale",
+      "status": "TECHNICALLY_EVIDENCED",
+      "evidence": [
+        "src/aias_structural_codes_program/plt01.py",
+        "src/aias_security_recovery",
+        "src/aias_level5_assurance"
+      ],
+      "external_gate": "longitudinal production evidence and independent maturity audit"
+    }
+  ],
+  "installers": {
+    "count": 91,
+    "entries": 2109,
+    "all_valid": true
+  },
+  "technical_issues": [],
+  "external_gates": [
+    {
+      "macrodelivery": "G2",
+      "condition": "licensed jurisdictional standards"
+    },
+    {
+      "macrodelivery": "G3",
+      "condition": "independent professional benchmark acceptance"
+    },
+    {
+      "macrodelivery": "G4",
+      "condition": "licensed vendor runtimes and production APIs"
+    },
+    {
+      "macrodelivery": "G9",
+      "condition": "longitudinal production evidence and independent maturity audit"
+    }
+  ],
+  "technical_macrodeliveries_complete": true,
+  "audit_sha256": "20188e2e8c546abf2ae0adde287d3e91979771be44f6487537fae7e11da537ca"
+}

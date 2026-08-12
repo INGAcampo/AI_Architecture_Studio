@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-138",
+  "title": "Bundle artifact index",
+  "status": "VALIDATED",
+  "scope": "Index local bundle artifacts deterministically for traceability.",
+  "safety": {
+    "local_only": true,
+    "certification_claim": false
+  }
+}

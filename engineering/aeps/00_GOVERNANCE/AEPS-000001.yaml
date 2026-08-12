@@ -1,0 +1,9 @@
+id: AEPS-000001
+title: AIAS Engineering Production System Foundation
+type: EngineeringSystem
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+purpose: Gobernar la producción de activos de ingeniería.
+scope: Todo AIAS.
+history: []

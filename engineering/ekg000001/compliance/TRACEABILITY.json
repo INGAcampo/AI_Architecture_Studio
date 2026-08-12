@@ -1,0 +1,50 @@
+{
+  "REQ-993101": {
+    "implemented_by": [
+      "engineering/aias/ekg/EKG_SCHEMA.json"
+    ],
+    "tested_by": [
+      "tests/test_ekg000001.py"
+    ]
+  },
+  "REQ-993102": {
+    "implemented_by": [
+      "src/aias_enterprise_knowledge_graph/graph.py"
+    ],
+    "tested_by": [
+      "tests/test_ekg000001.py"
+    ]
+  },
+  "REQ-993103": {
+    "implemented_by": [
+      "src/aias_enterprise_knowledge_graph/graph.py"
+    ],
+    "tested_by": [
+      "tests/test_ekg000001.py"
+    ]
+  },
+  "REQ-993104": {
+    "implemented_by": [
+      "src/aias_enterprise_knowledge_graph/rules.py"
+    ],
+    "tested_by": [
+      "tests/test_ekg000001.py"
+    ]
+  },
+  "REQ-993105": {
+    "implemented_by": [
+      "src/aias_enterprise_knowledge_graph/bootstrap.py"
+    ],
+    "tested_by": [
+      "tests/test_ekg000001.py"
+    ]
+  },
+  "REQ-993106": {
+    "implemented_by": [
+      "scripts/build_ekg000001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_ekg000001.py"
+    ]
+  }
+}

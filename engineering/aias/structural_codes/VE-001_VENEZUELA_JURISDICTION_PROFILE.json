@@ -1,0 +1,80 @@
+{
+  "profile_id": "VE-001",
+  "version": "1.0.0",
+  "country": "Venezuela",
+  "jurisdiction_code": "VE",
+  "decision": {
+    "status": "FORMALLY_APPROVED_BY_PROJECT_DIRECTOR",
+    "date": "2026-08-04",
+    "authority": "AIAS Project Director",
+    "scope": "Initial design jurisdiction"
+  },
+  "implementation_status": "OFFICIAL_QUOTATION_AND_ACQUISITION_DOSSIER_AUTHORIZED",
+  "authorization": {
+    "authorized_by": "AIAS Project Director",
+    "authorized_on": "2026-08-04",
+    "authorized_scope": "Official verification, quotation preparation and controlled acquisition workflow",
+    "payment_status": "PENDING_FINAL_PRICE_LICENSE_AND_BILLING_APPROVAL"
+  },
+  "construction_approved": false,
+  "normative_compliance_claimed": false,
+  "official_ecosystem": {
+    "national_standard_designation": "Norma Venezolana COVENIN (NVC)",
+    "normalization_body": "FONDONORMA",
+    "metrology_and_accreditation_body": "SENCAMER",
+    "catalog_entry_point": "https://fondonorma.org.ve/productos/",
+    "recent_official_activity_evidence": "https://fondonorma.org.ve/wp-content/uploads/2025/05/BOLETIN-DE-ABRIL-2025.pdf"
+  },
+  "candidate_structural_inventory": [
+    {
+      "family": "LOADS_AND_ACTIONS",
+      "candidate_reference": "COVENIN 2002",
+      "candidate_title": "Criterios y acciones minimas para el proyecto de edificaciones",
+      "edition": "TO_BE_VERIFIED_WITH_OFFICIAL_CATALOG",
+      "status": "CANDIDATE_NOT_AUTHORIZED_FOR_CALCULATION"
+    },
+    {
+      "family": "SEISMIC_DESIGN",
+      "candidate_reference": "COVENIN 1756",
+      "candidate_title": "Edificaciones sismorresistentes",
+      "edition": "TO_BE_VERIFIED_WITH_OFFICIAL_CATALOG_AND_COMPETENT_AUTHORITY",
+      "status": "CANDIDATE_NOT_AUTHORIZED_FOR_CALCULATION"
+    },
+    {
+      "family": "STRUCTURAL_CONCRETE",
+      "candidate_reference": "COVENIN 1753",
+      "candidate_title": "Proyecto y construccion de obras en concreto estructural",
+      "edition": "TO_BE_VERIFIED_WITH_OFFICIAL_CATALOG",
+      "status": "CANDIDATE_NOT_AUTHORIZED_FOR_CALCULATION"
+    },
+    {
+      "family": "STRUCTURAL_STEEL",
+      "candidate_reference": "COVENIN 1618",
+      "candidate_title": "Estructuras de acero para edificaciones",
+      "edition": "TO_BE_VERIFIED_WITH_OFFICIAL_CATALOG",
+      "status": "CANDIDATE_NOT_AUTHORIZED_FOR_CALCULATION"
+    },
+    {
+      "family": "BIM_DELIVERABLES",
+      "candidate_reference": "NTF 4085:2024",
+      "candidate_title": "Edificaciones. Modelado de Informacion de la Construccion BIM. Entregables",
+      "edition": "2024_REPORTED_BY_FONDONORMA",
+      "status": "OFFICIAL_EXISTENCE_REPORTED_SCOPE_AND_LICENSE_PENDING"
+    }
+  ],
+  "mandatory_activation_gates": [
+    "Obtain each applicable document from its publisher or authorized distributor",
+    "Verify exact designation, edition, amendments, legal force and effective dates",
+    "Record license identifiers without embedding protected normative text",
+    "Map national, state, municipal and permitting-authority requirements",
+    "Implement traceable clauses as executable checks with unit and benchmark tests",
+    "Complete independent benchmark validation",
+    "Require a qualified Venezuelan professional review and project-specific approval"
+  ],
+  "next_authorized_action": "Submit official catalog inquiry after sender identity is confirmed; evaluate quotation before payment",
+  "prohibitions": [
+    "No edition is presumed current from historical references",
+    "No unlicensed normative text is copied into the repository",
+    "No compliance or construction approval is claimed from this profile alone"
+  ]
+}

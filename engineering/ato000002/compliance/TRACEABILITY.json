@@ -1,0 +1,50 @@
+{
+  "REQ-970201": {
+    "implemented_by": [
+      "engineering/aias/ato/ATO_CONTINUOUS_SOURCE_REGISTRY.json"
+    ],
+    "tested_by": [
+      "tests/test_ato000002_continuous_observatory.py"
+    ]
+  },
+  "REQ-970202": {
+    "implemented_by": [
+      "src/aias_continuous_observatory/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_ato000002_continuous_observatory.py"
+    ]
+  },
+  "REQ-970203": {
+    "implemented_by": [
+      "src/aias_continuous_observatory/models.py"
+    ],
+    "tested_by": [
+      "tests/test_ato000002_continuous_observatory.py"
+    ]
+  },
+  "REQ-970204": {
+    "implemented_by": [
+      "src/aias_continuous_observatory/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_ato000002_continuous_observatory.py"
+    ]
+  },
+  "REQ-970205": {
+    "implemented_by": [
+      "src/aias_continuous_observatory/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_ato000002_continuous_observatory.py"
+    ]
+  },
+  "REQ-970206": {
+    "implemented_by": [
+      "scripts/build_ato000002_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_ato000002_continuous_observatory.py"
+    ]
+  }
+}

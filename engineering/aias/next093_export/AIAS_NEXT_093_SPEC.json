@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-093",
+  "title": "Dashboard evidence export",
+  "status": "VALIDATED",
+  "scope": "Export Dashboard evidence payloads with deterministic SHA-256 integrity",
+  "safety": ["Export does not certify evidence", "Source payload is not mutated"]
+}

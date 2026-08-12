@@ -1,0 +1,10 @@
+{
+  "policy_id": "SECURITY-RECOVERY-001",
+  "version": "1.0.0",
+  "rpo_minutes": 60,
+  "rto_minutes": 120,
+  "retention_count": 10,
+  "controls": ["secret_exclusion", "symlink_exclusion", "per_file_sha256", "manifest_hmac_sha256", "safe_empty_destination_restore", "automated_restore_drill", "non_destructive_retention_plan"],
+  "key_management_boundary": "Signing keys are caller-supplied and shall be managed outside backup archives through an approved secrets system.",
+  "limitations": "This release provides integrity, authenticity and recoverability. Confidentiality at rest requires approved storage encryption or a future cryptographic provider integration."
+}

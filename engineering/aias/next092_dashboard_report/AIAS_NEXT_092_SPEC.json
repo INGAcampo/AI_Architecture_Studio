@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-092",
+  "title": "Dashboard validation report",
+  "status": "VALIDATED",
+  "scope": "Produce a stable report for evidence-review Dashboard validation",
+  "safety": ["Report is not certification", "Validation state is preserved"]
+}

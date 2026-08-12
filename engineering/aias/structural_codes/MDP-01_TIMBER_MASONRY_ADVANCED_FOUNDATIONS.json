@@ -1,0 +1,16 @@
+{
+  "specification_id": "MDP-01",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_CONTENT_REQUIRED",
+  "domains": ["TIMBER", "MASONRY", "ADVANCED_FOUNDATION"],
+  "objective": "Provide governed, traceable demand-capacity design contracts for timber, masonry and advanced foundation systems.",
+  "systems": {
+    "TIMBER": ["BEAM", "COLUMN", "TRUSS", "PANEL", "CONNECTION"],
+    "MASONRY": ["BEARING_WALL", "SHEAR_WALL", "INFILL", "PIER", "LINTEL"],
+    "ADVANCED_FOUNDATION": ["PILE", "PILE_CAP", "RAFT", "CAISSON", "DIAPHRAGM_WALL", "ANCHOR"]
+  },
+  "implementation": ["src/aias_structural_codes_program/material_codes.py", "src/aias_structural_codes_program/multidisciplinary.py"],
+  "verification": "tests/test_multidisciplinary_mdp01.py",
+  "external_completion_conditions": ["Licensed jurisdictional rules", "Independent benchmark evidence", "Qualified professional acceptance"],
+  "construction_claim": false
+}

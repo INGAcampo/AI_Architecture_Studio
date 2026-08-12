@@ -1,0 +1,1 @@
+# T6.03K — ELASTICITY_3D

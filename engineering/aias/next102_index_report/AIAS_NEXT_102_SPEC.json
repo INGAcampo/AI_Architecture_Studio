@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-102",
+  "title": "Artifact index report",
+  "status": "VALIDATED",
+  "scope": "Report local release artifact index contents and count",
+  "safety": ["Report is local metadata", "No publication or certification is inferred"]
+}

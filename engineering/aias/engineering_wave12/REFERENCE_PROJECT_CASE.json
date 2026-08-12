@@ -1,0 +1,1 @@
+{"case_id":"REF-FOUND-001","domain":"FOUNDATION","version":"1.0.0","license_id":"AIAS-INTERNAL","provenance":"ECP-000001B authored reference case","inputs":{"vertical_load_kn":800.0,"area_m2":5.0},"expected":{"bearing_pressure_kpa":160.0},"anonymized":true}

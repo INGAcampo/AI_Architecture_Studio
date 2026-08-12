@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-126",
+  "title": "Feed bundle verification",
+  "status": "VALIDATED",
+  "scope": "Verify uniqueness and validity metadata of the feed evidence bundle",
+  "safety": ["Duplicates are flagged", "Verification is not certification"]
+}

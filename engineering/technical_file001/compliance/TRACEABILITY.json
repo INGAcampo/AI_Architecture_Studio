@@ -1,0 +1,50 @@
+{
+  "REQ-996001": {
+    "implemented_by": [
+      "src/aias_technical_file/generator.py"
+    ],
+    "tested_by": [
+      "tests/test_technical_file001.py"
+    ]
+  },
+  "REQ-996002": {
+    "implemented_by": [
+      "src/aias_technical_file/memory.py"
+    ],
+    "tested_by": [
+      "tests/test_technical_file001.py"
+    ]
+  },
+  "REQ-996003": {
+    "implemented_by": [
+      "src/aias_technical_file/generator.py"
+    ],
+    "tested_by": [
+      "tests/test_technical_file001.py"
+    ]
+  },
+  "REQ-996004": {
+    "implemented_by": [
+      "src/aias_technical_file/generator.py"
+    ],
+    "tested_by": [
+      "tests/test_technical_file001.py"
+    ]
+  },
+  "REQ-996005": {
+    "implemented_by": [
+      "engineering/aias/technical_file/TECHNICAL_FILE_SCHEMA.json"
+    ],
+    "tested_by": [
+      "tests/test_technical_file001.py"
+    ]
+  },
+  "REQ-996006": {
+    "implemented_by": [
+      "scripts/build_technical_file001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_technical_file001.py"
+    ]
+  }
+}

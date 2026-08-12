@@ -1,0 +1,33 @@
+{
+  "assessment_id": "L5-AIAS-2026-08-03T00:00:00+00:00",
+  "reference_capability_level": 5,
+  "level_5_reference": true,
+  "audited_organizational_level": null,
+  "level_5_organizationally_audited": false,
+  "systems_missing": [],
+  "reference_criteria_missing": [],
+  "production_criteria_missing": [
+    "continuous_improvement",
+    "governance",
+    "professional_compliance",
+    "quantitative_management",
+    "repeatability",
+    "resilience"
+  ],
+  "observation_window_days": 0,
+  "completed_projects": 1,
+  "metric_failures": {},
+  "audit_present": false,
+  "gaps": [
+    "observation_window_days:0<365",
+    "completed_projects:1<10",
+    "production_evidence_missing:continuous_improvement",
+    "production_evidence_missing:governance",
+    "production_evidence_missing:professional_compliance",
+    "production_evidence_missing:quantitative_management",
+    "production_evidence_missing:repeatability",
+    "production_evidence_missing:resilience",
+    "independent_audit_missing"
+  ],
+  "warning": "Level 5 organizational maturity is not established without longitudinal production evidence and an independent conformant audit."
+}

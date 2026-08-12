@@ -1,10 +1,3 @@
-"""
-AI Architecture Studio
-CAD Command - Rotate
-
-Foundation 4.2
-"""
-
 import math
 
 from commands.base_command import BaseCommand
@@ -21,58 +14,71 @@ class RotateCommand(BaseCommand):
         self.name = "ROTATE"
         self.elements = []
         self.base_point = None
+        self.first_point = None
 
     def activate(self):
         super().activate()
-
         print(
-            "ROTATE activo: selecciona objetos antes de activar "
-            "y luego indica un punto base y un ángulo"
+            "ROTATE activo: selecciona objetos, "
+            "indica el centro y escribe el ángulo"
         )
 
-    def mouse_press(self, event, canvas):
-        if not self.elements:
-            self.elements = (
-                canvas.selection_manager.selected_elements()
-            )
+    def get_canvas_point(self, canvas):
+        getter = getattr(
+            canvas,
+            "get_input_point",
+            None,
+        )
 
-            if not self.elements:
-                print("ROTATE: No hay objetos seleccionados")
-                canvas.tool_manager.cancel(canvas)
-                return
+        if callable(getter):
+            return getter()
 
         x, y = canvas.cursor_position
-        point = Point(x, y, 0)
+        return Point(x, y, 0.0)
 
-        if self.base_point is None:
-            self.base_point = point
-            print(f"ROTATE: Punto base {point}")
+    def mouse_press(self, event, canvas):
+
+        if not self.elements:
+            self.elements = [
+                e for e in
+                canvas.selection_manager.selected_elements()
+                if TransformManager.can_rotate_element(e)
+            ]
+
+        if not self.elements:
+            print("ROTATE: no hay selección")
             return
 
-        angle = math.atan2(
-            point.y - self.base_point.y,
-            point.x - self.base_point.x,
-        )
+        if self.base_point is None:
+            self.base_point = self.get_canvas_point(canvas)
+            self.first_point = self.base_point
 
-        rotated_elements = []
-
-        for element in self.elements:
-            rotated = TransformManager.rotate_element(
-                element,
-                angle,
-                self.base_point.x,
-                self.base_point.y,
-                self.base_point.z,
+            print(
+                f"ROTATE: Centro {self.base_point}"
             )
 
-            if rotated:
-                rotated_elements.append(element)
+    def handle_text_input(self, text, canvas):
 
-        if rotated_elements and self.app_core:
+        if self.base_point is None:
+            return False
+
+        angle_degrees = float(
+            str(text).replace(",", ".")
+        )
+
+        rotated = TransformManager.rotate_elements(
+            self.elements,
+            math.radians(angle_degrees),
+            self.base_point.x,
+            self.base_point.y,
+            self.base_point.z,
+        )
+
+        if rotated and self.app_core is not None:
             self.app_core.history.push(
                 RotateAction(
-                    rotated_elements,
-                    angle,
+                    rotated,
+                    angle_degrees,
                     self.base_point.x,
                     self.base_point.y,
                     self.base_point.z,
@@ -80,26 +86,20 @@ class RotateCommand(BaseCommand):
             )
 
         print(
-            f"ROTATE: {len(rotated_elements)} objeto(s) rotados "
-            f"angle={angle:.3f}"
+            f"ROTATE completado: "
+            f"{len(rotated)} objeto(s), "
+            f"ángulo={angle_degrees}°"
         )
 
-        canvas.selection_manager.clear()
-        canvas.highlight.clear()
-        canvas.element_selected.emit(None)
         canvas.update()
 
-        self.elements = []
-        self.base_point = None
+        tool_manager = getattr(
+            canvas,
+            "tool_manager",
+            None,
+        )
 
-        canvas.tool_manager.cancel(canvas)
+        if tool_manager is not None:
+            tool_manager.cancel(canvas)
 
-    def cancel(self, canvas=None):
-        self.elements = []
-        self.base_point = None
-
-        if canvas:
-            canvas.preview_geometry = None
-            canvas.update()
-
-        print("ROTATE finalizado")
+        return True

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-111",
+  "title": "Release evidence dashboard feed",
+  "status": "VALIDATED",
+  "scope": "Expose local bundle verification to Dashboard as operational data",
+  "safety": ["Feed is not an audit", "No external publication occurs"]
+}

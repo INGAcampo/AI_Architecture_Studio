@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-999701",
+  "title": "AIAS Certification Master Plan",
+  "version": "1.0.0",
+  "purpose": "Establish the official external maturity and certification architecture for AIAS without unsupported claims.",
+  "scope": "CMMI-DEV V3.0 ML5, CMMI AIM, ISO 9001, ISO/IEC 27001, ISO/IEC 42001, ISO 22301, authorities, sequencing, version monitoring, evidence readiness and professional boundaries.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-999701",
+      "title": "Official maturity objective",
+      "statement": "The program shall designate CMMI-DEV V3.0 Maturity Level 5 as the sole primary organizational maturity objective.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent ambiguous or competing Level 5 claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_certification_program/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_certification_master_plan001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999702",
+      "title": "AI maturity and management",
+      "statement": "CMMI AIM shall be mandatory and ISO/IEC 42001 shall govern the certifiable AI management system.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Cover both AI maturity and responsible AI management.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/certification/AIAS_CERTIFICATION_MASTER_PLAN.json"
+      ],
+      "tested_by": [
+        "tests/test_certification_master_plan001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999703",
+      "title": "Integrated management system",
+      "statement": "The plan shall target quality, information security, AI management and business continuity through ISO 9001, ISO/IEC 27001, ISO/IEC 42001 and ISO 22301.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create a coherent certification portfolio.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_certification_program/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_certification_master_plan001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999704",
+      "title": "External authority boundary",
+      "statement": "AIAS shall not self-issue CMMI ratings, ISO certificates or professional engineering approvals.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve legal and certification credibility.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/certification/AIAS_CERTIFICATION_MASTER_PLAN.json"
+      ],
+      "tested_by": [
+        "tests/test_certification_master_plan001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999705",
+      "title": "Honest readiness",
+      "statement": "Internal evidence assessment shall never claim external conformity, certification or appraisal rating.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Separate preparation from independent decisions.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_certification_program/assessment.py"
+      ],
+      "tested_by": [
+        "tests/test_certification_master_plan001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999706",
+      "title": "Version and copyright governance",
+      "statement": "The plan shall monitor normative revisions and shall not reproduce unlicensed standards or model content.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the program current and lawful.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "docs/CERTIFICATION_MASTER_PLAN001.md"
+      ],
+      "tested_by": [
+        "tests/test_certification_master_plan001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-CERTIFICATION-MASTER-PLAN-001"
+  ],
+  "adr_refs": [
+    "ADR-CERTIFICATION-MASTER-PLAN-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

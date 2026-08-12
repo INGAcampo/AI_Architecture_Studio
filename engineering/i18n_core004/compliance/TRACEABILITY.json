@@ -1,0 +1,1 @@
+{"delivery":"I18N-CORE-004","requirements":["GEN-009","AEC-000049"],"implementation":["src/gui/bim_workspace","src/gui/inspector","src/gui/project_browser/model.py","src/gui/workspace","src/gui/property_palette/adapter.py","resources/i18n"],"verification":["tests/test_i18n_core004.py","engineering/aias/internationalization/I18N_CORE_001_COVERAGE.json"]}

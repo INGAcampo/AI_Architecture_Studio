@@ -1,0 +1,9 @@
+{"topology_id":"AEOS-000001","version":"1.0.0","services":[
+{"service_id":"CNS","name":"Central Nervous System","version":"1.0.0","capabilities":["events"],"dependencies":[],"health":"READY"},
+{"service_id":"PMO","name":"Portfolio Management Office","version":"1.0.0","capabilities":["planning"],"dependencies":["CNS"],"health":"READY"},
+{"service_id":"VIRTUAL_ORG","name":"Virtual Engineering Organization","version":"1.0.0","capabilities":["assignment","review"],"dependencies":["PMO"],"health":"READY"},
+{"service_id":"DEV_PLATFORM","name":"Development Platform","version":"1.0.0","capabilities":["production"],"dependencies":["CNS"],"health":"READY"},
+{"service_id":"TECHNICAL_FILE","name":"Technical File Generator","version":"1.0.0","capabilities":["dossier","release"],"dependencies":["DEV_PLATFORM"],"health":"READY"},
+{"service_id":"SECURITY_RECOVERY","name":"Security and Recovery","version":"1.0.0","capabilities":["security","recovery"],"dependencies":["CNS"],"health":"READY"},
+{"service_id":"INTELLIGENCE","name":"Engineering Intelligence Core","version":"1.0.0","capabilities":["recommendation","abstention"],"dependencies":["CNS"],"health":"READY"}
+]}

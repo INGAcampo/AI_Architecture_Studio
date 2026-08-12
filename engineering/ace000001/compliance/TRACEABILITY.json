@@ -1,0 +1,42 @@
+{
+  "REQ-100001": {
+    "implemented_by": [
+      "src/aias_context_engine/builder.py"
+    ],
+    "tested_by": [
+      "tests/test_ace_context_engine.py"
+    ]
+  },
+  "REQ-100002": {
+    "implemented_by": [
+      "src/aias_context_engine/storage.py"
+    ],
+    "tested_by": [
+      "tests/test_ace_context_engine.py"
+    ]
+  },
+  "REQ-100003": {
+    "implemented_by": [
+      "src/aias_context_engine/validator.py"
+    ],
+    "tested_by": [
+      "tests/test_ace_context_engine.py"
+    ]
+  },
+  "REQ-100004": {
+    "implemented_by": [
+      "src/aias_context_engine/scanner.py"
+    ],
+    "tested_by": [
+      "tests/test_ace_context_engine.py"
+    ]
+  },
+  "REQ-100005": {
+    "implemented_by": [
+      "src/aias_context_engine/storage.py"
+    ],
+    "tested_by": [
+      "tests/test_ace_context_engine.py"
+    ]
+  }
+}

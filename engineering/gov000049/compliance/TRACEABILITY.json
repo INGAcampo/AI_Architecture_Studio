@@ -1,0 +1,50 @@
+{
+  "REQ-900401": {
+    "implemented_by": [
+      "src/aias_governance_assurance/decisions.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  },
+  "REQ-900402": {
+    "implemented_by": [
+      "src/aias_governance_assurance/sdd.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  },
+  "REQ-900403": {
+    "implemented_by": [
+      "src/aias_governance_assurance/documentation.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  },
+  "REQ-900404": {
+    "implemented_by": [
+      "src/aias_governance_assurance/assets.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  },
+  "REQ-900405": {
+    "implemented_by": [
+      "src/aias_governance_assurance/dod.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  },
+  "REQ-900406": {
+    "implemented_by": [
+      "src/aias_governance_assurance/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  }
+}

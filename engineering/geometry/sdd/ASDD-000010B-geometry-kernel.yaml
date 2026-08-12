@@ -1,0 +1,13 @@
+id: ASDD-000010B
+title: AIAS Geometry Kernel
+version: 1.0.0
+status: ACTIVE
+domain_independent: true
+consumers:
+  - ECF
+  - CAD
+  - BIM
+  - Engineering Capability Packs
+reference_cases_required: true
+minimum_time_reduction: 0.45
+human_review_for_regulated_deliverables: true

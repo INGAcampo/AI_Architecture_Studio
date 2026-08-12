@@ -1,0 +1,9 @@
+id: AEO-000002
+title: Relationship Model
+type: Ontology
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+purpose: Definir relaciones tipificadas.
+scope: Engineering Graph.
+history: []

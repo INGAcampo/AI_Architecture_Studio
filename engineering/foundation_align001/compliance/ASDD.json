@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-940001",
+  "title": "AIAS Charter and Executable Architecture Handbook",
+  "version": "1.0.0",
+  "purpose": "Complete the missing institutional foundations with a canonical Charter and machine-verifiable architecture rules aligned to the Constitution and SDD.",
+  "scope": "Mission, identity, values, authority, professional boundaries, architectural layers, dependency rules, public contracts, modularity, reversibility, evidence and contradiction validation.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-940001",
+      "title": "Canonical Charter",
+      "statement": "The system shall define why AIAS exists, its mission, scope, values, stakeholders, authority and professional boundaries.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Close the first missing foundational document.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/AIAS_CHARTER.json"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-940002",
+      "title": "Architecture Handbook",
+      "statement": "The system shall define executable layers, dependency direction, contracts, modularity, reversibility and integration rules.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Close the architecture-governance foundation.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/AIAS_ARCHITECTURE_HANDBOOK.json"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-940003",
+      "title": "Hierarchy",
+      "statement": "The system shall enforce Charter, Constitution, SDD, Handbook, program specification and generated-artifact authority order.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent conflicting project truth.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_governance/hierarchy.py"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-940004",
+      "title": "Architecture validation",
+      "statement": "The system shall reject forbidden inward/outward dependencies and missing public contracts.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the handbook executable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_governance/validator.py"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-940005",
+      "title": "Professional boundary",
+      "statement": "The foundations shall preserve legal, jurisdictional and licensed-professional responsibility.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect safe engineering use.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_governance/validator.py"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-940006",
+      "title": "Reproducible release",
+      "statement": "The system shall provide CLI, tests, documentation, installer, manifests and checksum-protected release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep foundations deployable and auditable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_governance/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_foundation_align001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-FOUNDATION-ALIGN-001"
+  ],
+  "adr_refs": [
+    "ADR-FOUNDATION-ALIGN-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

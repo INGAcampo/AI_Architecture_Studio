@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-08-03T20:55:20.433927+00:00",
+  "source": "Captura de pantalla (6).zip, captures 1700-2588",
+  "decisions": [
+    {
+      "decision_id": "HIST-001",
+      "captures": "1700-1740",
+      "classification": "BINDING",
+      "decision": "Specification is the official source of truth; no module starts from code.",
+      "evidence": "engineering/aeps/05_SDD/ASDD-000002-formal-sdd.yaml",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-002",
+      "captures": "1725",
+      "classification": "BINDING",
+      "decision": "Trace Constitution to SDD, architecture, specification, code, tests and benchmarks.",
+      "evidence": "src/aias_aeps_governance_sdd/traceability.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-003",
+      "captures": "1730",
+      "classification": "BINDING",
+      "decision": "Admit changes only with measurable productivity, quality or maintainability benefit.",
+      "evidence": "src/aias_aeps_governance_sdd/kpi.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-004",
+      "captures": "1760",
+      "classification": "BINDING",
+      "decision": "Target Level 5 and at least 45 percent sustainable manual-effort reduction without quality loss.",
+      "evidence": "engineering/aeps/metrics/KPI-000004-time-reduction.md",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-005",
+      "captures": "1780",
+      "classification": "BINDING",
+      "decision": "Knowledge is structured, traceable, versioned, reusable and verifiable.",
+      "evidence": "engineering/aeps/03_ONTOLOGY",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-006",
+      "captures": "1820",
+      "classification": "BINDING",
+      "decision": "Reusable cross-program capability belongs to the development platform first.",
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-007",
+      "captures": "1840",
+      "classification": "BINDING",
+      "decision": "Version knowledge and assign exactly one official lifecycle state.",
+      "evidence": "src/aias_governance_assurance/assets.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-008",
+      "captures": "1860",
+      "classification": "BINDING",
+      "decision": "Engineering assets use stable identifiers and growth is measured as assets, not lines of code.",
+      "evidence": "src/aias_governance_assurance/assets.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-009",
+      "captures": "1870-1880",
+      "classification": "BINDING",
+      "decision": "Generators and validators produce structure, code, tests and documentation.",
+      "evidence": "src/aias_aeps_governance_sdd/generators.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-010",
+      "captures": "1920-1940",
+      "classification": "BINDING",
+      "decision": "All modules are designed, specified, generated, validated, documented and certified inside AEPS.",
+      "evidence": "src/aias_governance_assurance/sdd.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-011",
+      "captures": "1970",
+      "classification": "BINDING",
+      "decision": "AEC-000024 anti-bureaucracy: simplify or remove governance without measurable benefit.",
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-012",
+      "captures": "1980",
+      "classification": "BINDING",
+      "decision": "Automate documentation, QA, releases, traceability, generation and certification.",
+      "evidence": "src/aias_governance_assurance/orchestrator.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-013",
+      "captures": "2000",
+      "classification": "BINDING",
+      "decision": "Maintain intelligent backups and total recoverability.",
+      "evidence": "src/aias_context_engine/storage.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-014",
+      "captures": "2060",
+      "classification": "BINDING",
+      "decision": "AEC-000049 materializes safe value at the earliest maturity level.",
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-015",
+      "captures": "2290-2300",
+      "classification": "BINDING",
+      "decision": "Build more, discuss enough; every conversation produces a tangible asset.",
+      "evidence": "ACKC/EXECUTIVE_ORDERS.md",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-016",
+      "captures": "2310",
+      "classification": "BINDING",
+      "decision": "New rules apply immediately; existing validated components align through controlled plans.",
+      "evidence": "src/aias_governance_assurance/orchestrator.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-017",
+      "captures": "2320-2330",
+      "classification": "BINDING",
+      "decision": "Every delivery increases reusable, verifiable and traceable technological capital.",
+      "evidence": "src/aias_governance_assurance/orchestrator.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-018",
+      "captures": "2340",
+      "classification": "BINDING",
+      "decision": "Maintain an AIAS Master Development Plan with programs, assets, rules, priorities, dependencies, metrics and state.",
+      "evidence": "engineering/aias/master/AIAS_MASTER_DEVELOPMENT_PLAN.json",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-019",
+      "captures": "2350-2370",
+      "classification": "BINDING",
+      "decision": "Every implementation block includes code, tests, CLI, documentation, installer and integrated release evidence.",
+      "evidence": "src/aias_governance_assurance/dod.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-020",
+      "captures": "2390-2410",
+      "classification": "BINDING",
+      "decision": "Knowledge units record origin, license, version, date, traceability and human-review need.",
+      "evidence": "src/aias_aeks",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-021",
+      "captures": "2470-2500",
+      "classification": "BINDING",
+      "decision": "Engineering capabilities are primary; infrastructure exists only to enable them; progress is capability-based.",
+      "evidence": "ACKC/EXECUTIVE_ORDERS.md",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-022",
+      "captures": "2500",
+      "classification": "BINDING",
+      "decision": "Definition of Done is executable and completion cannot be declared early.",
+      "evidence": "src/aias_governance_assurance/dod.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-023",
+      "captures": "2530",
+      "classification": "BINDING",
+      "decision": "Macrodeliveries include reference cases, receipt, manifest, release ZIP and validation evidence.",
+      "evidence": "src/aias_governance_assurance/dod.py",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-024",
+      "captures": "1920-2490",
+      "classification": "ROADMAP",
+      "decision": "Knowledge Graph, intelligence core, autonomous cloud, operating system and full-project production remain staged programs.",
+      "evidence": "ACKC/MASTER_CONTEXT.json",
+      "materialized": true
+    },
+    {
+      "decision_id": "HIST-025",
+      "captures": "2380",
+      "classification": "ROADMAP",
+      "decision": "Knowledge, calculation, drawing, technical-file and engineering-agent programs are sequenced capabilities.",
+      "evidence": "ACKC/MASTER_CONTEXT.json",
+      "materialized": true
+    }
+  ],
+  "binding_materialization_coverage": 1.0
+}

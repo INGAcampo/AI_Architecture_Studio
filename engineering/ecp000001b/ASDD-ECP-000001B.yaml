@@ -1,0 +1,15 @@
+id: ASDD-ECP-000001B
+title: Foundation Calculation Engine
+version: 1.0.0
+status: ACTIVE
+scope:
+  - load combinations
+  - bearing pressure
+  - eccentricity and kern checks
+  - one-way shear demand
+  - punching shear demand
+  - flexural demand
+  - elastic settlement estimate
+normative_resistance_checks: PROVIDED_BY_AEKS_CODE_PACKS
+human_review_required: true
+immediate_consumer: ECP-000001C-FOUNDATION-CODE-CHECK-PACK

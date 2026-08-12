@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-106",
+  "title": "Manifest verification",
+  "status": "VALIDATED",
+  "scope": "Compare manifest SHA-256 values with current artifact bytes",
+  "safety": ["Mismatches remain visible", "Verification does not certify artifacts"]
+}

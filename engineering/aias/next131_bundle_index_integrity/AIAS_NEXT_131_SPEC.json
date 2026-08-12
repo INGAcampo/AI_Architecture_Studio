@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-131",
+  "title": "Bundle index integrity",
+  "status": "VALIDATED",
+  "scope": "Verify sorted uniqueness and canonical digest of the bundle artifact index",
+  "safety": ["Integrity is not external validity", "Index input is not mutated"]
+}

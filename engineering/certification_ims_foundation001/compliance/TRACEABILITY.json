@@ -1,0 +1,50 @@
+{
+  "REQ-999901": {
+    "implemented_by": [
+      "src/aias_integrated_management/system.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_ims_foundation001.py"
+    ]
+  },
+  "REQ-999902": {
+    "implemented_by": [
+      "src/aias_integrated_management/models.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_ims_foundation001.py"
+    ]
+  },
+  "REQ-999903": {
+    "implemented_by": [
+      "src/aias_integrated_management/system.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_ims_foundation001.py"
+    ]
+  },
+  "REQ-999904": {
+    "implemented_by": [
+      "src/aias_integrated_management/system.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_ims_foundation001.py"
+    ]
+  },
+  "REQ-999905": {
+    "implemented_by": [
+      "engineering/aias/certification/IMS_FOUNDATION_POLICY.json"
+    ],
+    "tested_by": [
+      "tests/test_certification_ims_foundation001.py"
+    ]
+  },
+  "REQ-999906": {
+    "implemented_by": [
+      "scripts/generate_ims_foundation_reference.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_ims_foundation001.py"
+    ]
+  }
+}

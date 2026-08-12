@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-116",
+  "title": "Feed integrity report",
+  "status": "VALIDATED",
+  "scope": "Report feed export digest verification results",
+  "safety": ["Digest status is not certification", "External validity remains false"]
+}

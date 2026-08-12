@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-900049",
+  "title": "Historical Decision Materialization and SDD Assurance",
+  "version": "1.0.0",
+  "purpose": "Recover approved AIAS development decisions, distinguish binding rules from future programs, audit their repository evidence and materialize missing governance controls immediately.",
+  "scope": "Decision registry, SDD enforcement, documentation coverage, asset state/version controls, Definition of Done, anti-bureaucracy, executive metrics and master development plan evidence.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-900401",
+      "title": "Decision registry",
+      "statement": "The system shall preserve every recovered binding decision with capture provenance, classification and evidence links.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent historical governance loss.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/decisions.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-900402",
+      "title": "SDD assurance",
+      "statement": "The system shall verify specification, architecture, ADR, implementation, tests and traceability before a capability is validated.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make specification-driven development executable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/sdd.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-900403",
+      "title": "Documentation audit",
+      "statement": "The system shall measure package, module and public-symbol documentation coverage without claiming undocumented code is complete.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create an honest documentation baseline and backlog.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/documentation.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-900404",
+      "title": "Asset lifecycle",
+      "statement": "The system shall enforce stable identifiers, semantic versions and one official lifecycle state per engineering asset.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Version knowledge as well as code.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/assets.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-900405",
+      "title": "Executable Definition of Done",
+      "statement": "The system shall evaluate code, tests, integration, documentation, CLI, receipt, manifest, example, installer, release and validation evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent premature completion claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/dod.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-900406",
+      "title": "Master evidence",
+      "statement": "The system shall generate a master plan, compliance matrix, executive metrics and prioritized alignment backlog from repository evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Turn recovered decisions into immediate, low-bureaucracy value.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-GOV-000049"
+  ],
+  "adr_refs": [
+    "ADR-GOV-000049"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

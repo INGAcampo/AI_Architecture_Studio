@@ -1,0 +1,301 @@
+{
+  "audit_id": "ROADMAP-RECONCILIATION-002",
+  "status": "VALID",
+  "approved_decisions_assessed": 19,
+  "counts": {
+    "EVIDENCED": 9,
+    "EXTERNAL_DEPENDENCY": 0,
+    "NOT_EVIDENCED": 1,
+    "PARTIAL": 9
+  },
+  "items": [
+    {
+      "decision_id": "GEN-001",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "engineering/aias/master/GIANT_STEPS_WORK_PLAN.json",
+        "src/aias_master_inventory"
+      ],
+      "verified_evidence": [
+        "engineering/aias/master/GIANT_STEPS_WORK_PLAN.json",
+        "src/aias_master_inventory"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-002",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "engineering/aeps/02_CONSTITUTION",
+        "engineering/aias/master/CONVERSATION_CONTINUITY_POLICY.json"
+      ],
+      "verified_evidence": [
+        "engineering/aeps/02_CONSTITUTION",
+        "engineering/aias/master/CONVERSATION_CONTINUITY_POLICY.json"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-003",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "src/aias_geometry_kernel",
+        "src/engines/geometry",
+        "src/aias_cad_bim_integration"
+      ],
+      "verified_evidence": [
+        "src/aias_geometry_kernel",
+        "src/engines/geometry",
+        "src/aias_cad_bim_integration"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-004",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/aias_structural_codes_program/normative.py",
+        "src/aias_engineering_wave12/jurisdictions.py",
+        "engineering/aias/structural_codes/VE-001_VENEZUELA_JURISDICTION_PROFILE.json"
+      ],
+      "verified_evidence": [
+        "src/aias_structural_codes_program/normative.py",
+        "src/aias_engineering_wave12/jurisdictions.py",
+        "engineering/aias/structural_codes/VE-001_VENEZUELA_JURISDICTION_PROFILE.json"
+      ],
+      "missing_evidence": [],
+      "gap": "Licensed executable Venezuela rules remain external"
+    },
+    {
+      "decision_id": "GEN-005",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "src/aias_structural_codes_program/release.py",
+        "engineering/aias/roadmap/EXTERNAL_GATE_ACTION_PORTFOLIO.json"
+      ],
+      "verified_evidence": [
+        "src/aias_structural_codes_program/release.py",
+        "engineering/aias/roadmap/EXTERNAL_GATE_ACTION_PORTFOLIO.json"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-006",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "src/aias_aeps_governance_sdd",
+        "engineering/ace000001/compliance/QUALITY_GATES.json"
+      ],
+      "verified_evidence": [
+        "src/aias_aeps_governance_sdd",
+        "engineering/ace000001/compliance/QUALITY_GATES.json"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-007",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "engineering/aias/sdd",
+        "engineering/aias/master/SDD_ASSURANCE.json",
+        "ACKC/MASTER_CONTEXT.json"
+      ],
+      "verified_evidence": [
+        "engineering/aias/sdd",
+        "engineering/aias/master/SDD_ASSURANCE.json",
+        "ACKC/MASTER_CONTEXT.json"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-008",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+        "src/aias_productivity_dashboard"
+      ],
+      "verified_evidence": [
+        "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+        "src/aias_productivity_dashboard"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-009",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/aias_i18n",
+        "resources/i18n",
+        "engineering/aias/internationalization/I18N_CORE_001_COVERAGE.json",
+        "engineering/aias/internationalization/I18N_CORE_003_SPEC.json"
+      ],
+      "verified_evidence": [
+        "src/aias_i18n",
+        "resources/i18n",
+        "engineering/aias/internationalization/I18N_CORE_001_COVERAGE.json",
+        "engineering/aias/internationalization/I18N_CORE_003_SPEC.json"
+      ],
+      "missing_evidence": [],
+      "gap": "Main window and project dialog localized; 163 hard-coded GUI candidates remain before full coverage can be claimed"
+    },
+    {
+      "decision_id": "GEN-010",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/aias_executable_knowledge",
+        "src/aias_enterprise_knowledge_graph"
+      ],
+      "verified_evidence": [
+        "src/aias_executable_knowledge",
+        "src/aias_enterprise_knowledge_graph"
+      ],
+      "missing_evidence": [],
+      "gap": "Dynamic country manuals and offline multi-format generation are not proven end-to-end"
+    },
+    {
+      "decision_id": "GEN-011",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "src/aias_university",
+        "engineering/aias/university/AIAS_UNIVERSITY_CATALOG.json"
+      ],
+      "verified_evidence": [
+        "src/aias_university",
+        "engineering/aias/university/AIAS_UNIVERSITY_CATALOG.json"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-012",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/engines/civil/terrain",
+        "src/aias_structural_codes_program/mdp03.py"
+      ],
+      "verified_evidence": [
+        "src/engines/civil/terrain",
+        "src/aias_structural_codes_program/mdp03.py"
+      ],
+      "missing_evidence": [],
+      "gap": "Professional survey ingestion, CRS workflows, TIN, contours, profiles and field-data validation need one integrated reference consumer"
+    },
+    {
+      "decision_id": "GEN-013",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/aias_cad_bim_integration",
+        "src/aias_structural_codes_program"
+      ],
+      "verified_evidence": [
+        "src/aias_cad_bim_integration",
+        "src/aias_structural_codes_program"
+      ],
+      "missing_evidence": [],
+      "gap": "Cross-discipline shared terrain/project object identity needs integral validation"
+    },
+    {
+      "decision_id": "GEN-014",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/ai_kernel",
+        "src/aias_engineering_intelligence",
+        "src/aias_executable_knowledge"
+      ],
+      "verified_evidence": [
+        "src/ai_kernel",
+        "src/aias_engineering_intelligence",
+        "src/aias_executable_knowledge"
+      ],
+      "missing_evidence": [],
+      "gap": "One user intent to fully governed multi-discipline production remains a staged capability"
+    },
+    {
+      "decision_id": "GEN-015",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/engines/structural",
+        "src/engines/civil",
+        "src/engines/mep"
+      ],
+      "verified_evidence": [
+        "src/engines/structural",
+        "src/engines/civil",
+        "src/engines/mep"
+      ],
+      "missing_evidence": [],
+      "gap": "Several domains remain frameworks or reference engines rather than validated production systems"
+    },
+    {
+      "decision_id": "GEN-016",
+      "status": "EVIDENCED",
+      "declared_evidence": [
+        "src/aias_aeps_governance_sdd",
+        "engineering/aeps/05_SDD"
+      ],
+      "verified_evidence": [
+        "src/aias_aeps_governance_sdd",
+        "engineering/aeps/05_SDD"
+      ],
+      "missing_evidence": [],
+      "gap": null
+    },
+    {
+      "decision_id": "GEN-017",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "src/models/digital_twin",
+        "src/engines/digital_twin"
+      ],
+      "verified_evidence": [
+        "src/models/digital_twin",
+        "src/engines/digital_twin"
+      ],
+      "missing_evidence": [],
+      "gap": "Production sensor, asset and lifecycle integrations require external systems and evidence"
+    },
+    {
+      "decision_id": "GEN-018",
+      "status": "PARTIAL",
+      "declared_evidence": [
+        "docs",
+        "src/gui"
+      ],
+      "verified_evidence": [
+        "docs",
+        "src/gui"
+      ],
+      "missing_evidence": [],
+      "gap": "A formally approved brand kit and comprehensive icon system are not evidenced"
+    },
+    {
+      "decision_id": "GEN-019",
+      "status": "NOT_EVIDENCED",
+      "declared_evidence": [],
+      "verified_evidence": [],
+      "missing_evidence": [],
+      "gap": "Installable, signed and updateable country Knowledge Packs require a governed package specification and reference pack"
+    }
+  ],
+  "technical_priority_queue": [
+    "GEN-009",
+    "GEN-019",
+    "GEN-012",
+    "GEN-010",
+    "GEN-018"
+  ],
+  "external_dependencies": [],
+  "deferred_macrodeliveries": [
+    "EXP-COMMS-001"
+  ],
+  "issues": [],
+  "next": "I18N-CORE-005 BIM Browser Tree and Remaining Workspace Controls Localization",
+  "sha256": "d312346cccb31e775db7492d2e43cabd8f6eca8224dc6510d98a1868a7a4dd2d"
+}

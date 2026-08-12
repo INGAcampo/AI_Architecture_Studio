@@ -1,0 +1,7 @@
+id: ADP-000001
+title: AIAS AEPS Automation Platform V3 Enterprise
+type: DevelopmentPlatform
+version: 3.0.0
+status: IMPLEMENTED
+owner: AIAS Core Engineering
+motors: [M01 Engineering Compiler, M02 Dependency Graph, M03 Specification Compiler, M04 Code Generator, M05 Test Generator, M06 Documentation Generator, M07 Validation Engine, M08 Certification Engine, M09 Release Builder, M10 Automation Orchestrator]

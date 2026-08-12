@@ -1,0 +1,50 @@
+{
+  "REQ-998001": {
+    "implemented_by": [
+      "src/aias_engineering_os/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_aeos000001.py"
+    ]
+  },
+  "REQ-998002": {
+    "implemented_by": [
+      "src/aias_engineering_os/kernel.py"
+    ],
+    "tested_by": [
+      "tests/test_aeos000001.py"
+    ]
+  },
+  "REQ-998003": {
+    "implemented_by": [
+      "src/aias_engineering_os/kernel.py"
+    ],
+    "tested_by": [
+      "tests/test_aeos000001.py"
+    ]
+  },
+  "REQ-998004": {
+    "implemented_by": [
+      "src/aias_engineering_os/kernel.py"
+    ],
+    "tested_by": [
+      "tests/test_aeos000001.py"
+    ]
+  },
+  "REQ-998005": {
+    "implemented_by": [
+      "tests/test_aeos000001.py"
+    ],
+    "tested_by": [
+      "tests/test_aeos000001.py"
+    ]
+  },
+  "REQ-998006": {
+    "implemented_by": [
+      "scripts/build_aeos000001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_aeos000001.py"
+    ]
+  }
+}

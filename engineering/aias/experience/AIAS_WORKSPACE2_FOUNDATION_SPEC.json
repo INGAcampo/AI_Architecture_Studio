@@ -1,0 +1,15 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-FOUNDATION",
+  "version": "0.1.0",
+  "status": "W2_01_IMPLEMENTED_RENDERED_VALIDATION_PENDING",
+  "implements": ["W2-01 semantic shell and theme adapter"],
+  "decisions": [
+    "legacy MainWindow behavior remains compatible",
+    "hardcoded MainWindow palette is replaced by governed semantic QSS",
+    "dark and light themes are supported by the same token source",
+    "workspace profiles and shell regions have a framework-neutral state contract",
+    "initial jurisdiction defaults to Venezuela but remains explicit state"
+  ],
+  "validation_boundary": "Code and unit tests are complete for W2-01; rendered visual, keyboard, scaling and representative-user approval remain pending.",
+  "next_increment": "W2-02 unified document and panel orchestration"
+}

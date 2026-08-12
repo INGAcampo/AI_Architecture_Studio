@@ -1,0 +1,37 @@
+{
+  "spec_id": "EXP-PLATFORM-GUI-001",
+  "version": "1.0.0",
+  "status": "VALIDATED_APPLICATION_VISIBLE_FOUNDATION",
+  "historical_authority": "EARLY-010",
+  "objective": "Integrate package, installer, update, test and capability-factory infrastructure into an observable professional AIAS product surface instead of terminal-only utilities.",
+  "dependencies": [
+    "EXP-APPS-001",
+    "AIAS-WORKSPACE-2.0-W2-04",
+    "CAPABILITY-FACTORY-001",
+    "EXP-INSTALLER-ISO-001"
+  ],
+  "planned_vertical": [
+    "Repository-derived capability inventory",
+    "Installer integrity and signature-state presentation",
+    "Test and quality-gate status",
+    "Evidence-gated lifecycle actions",
+    "Update readiness and recovery status",
+    "Workspace command integration"
+  ],
+  "prohibited_behavior": [
+    "Executing unverified installers",
+    "Representing unsigned packages as signed",
+    "Bypassing evidence gates",
+    "Duplicating the canonical registries",
+    "Claiming public deployment"
+  ],
+  "evidence": {
+    "implementation": "src/gui/workspace2/capability_center.py",
+    "workspace_command": "CAPABILITY-CENTER",
+    "rendered_view": "exp_platform_gui001_outputs/CAPABILITY_CENTER.html",
+    "snapshot": "exp_platform_gui001_outputs/CAPABILITY_CENTER_SNAPSHOT.json",
+    "tests": "tests/test_exp_platform_gui001.py",
+    "installer": "AIAS_EXP_PLATFORM_GUI001_CAPABILITY_CENTER_INSTALLER"
+  },
+  "next": "GOV-VERTICAL-ENFORCEMENT-001 Complete Vertical Delivery Gate"
+}

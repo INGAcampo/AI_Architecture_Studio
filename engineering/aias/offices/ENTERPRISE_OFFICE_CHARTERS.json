@@ -1,0 +1,17 @@
+{
+  "charter_set_id": "OFFICES-FOUNDATION-001",
+  "version": "1.0.0",
+  "offices": [
+    {"office_id":"OFFICE-000001","name":"Architecture Office","mandate":["govern architecture and ADR coherence"],"accountable_for":["architecture"],"decision_rights":["CHIEF_ARCHITECT"],"required_evidence":["specification","adr"],"kpis":["architecture_compliance"],"escalation_to":"EXECUTIVE_COUNCIL","dependencies":["FOUND-000005"]},
+    {"office_id":"OFFICE-000002","name":"Engineering Office","mandate":["govern engineering methods and professional boundaries"],"accountable_for":["engineering"],"decision_rights":["CHIEF_ENGINEER"],"required_evidence":["calculation","review"],"kpis":["engineering_validation_rate"],"escalation_to":"EXECUTIVE_COUNCIL","dependencies":["FOUND-000003"]},
+    {"office_id":"OFFICE-000003","name":"Quality Office","mandate":["govern quality gates and nonconformities"],"accountable_for":["quality"],"decision_rights":["QUALITY_DIRECTOR"],"required_evidence":["test_report","traceability"],"kpis":["first_pass_yield"],"escalation_to":"EXECUTIVE_COUNCIL","dependencies":["FOUND-000004"]},
+    {"office_id":"OFFICE-000004","name":"Productivity Office","mandate":["measure classified productivity and benefits"],"accountable_for":["productivity"],"decision_rights":["PRODUCTIVITY_DIRECTOR"],"required_evidence":["baseline","measurement"],"kpis":["sustainable_time_reduction"],"escalation_to":"PMO","dependencies":["SYS-000002"]},
+    {"office_id":"OFFICE-000006","name":"Risk Office","mandate":["maintain enterprise risk treatment"],"accountable_for":["risk"],"decision_rights":["RISK_DIRECTOR"],"required_evidence":["risk_assessment","treatment"],"kpis":["residual_risk"],"escalation_to":"EXECUTIVE_COUNCIL","dependencies":["FOUND-000002"]},
+    {"office_id":"OFFICE-000007","name":"Resource Office","mandate":["govern capacity and reusable assets"],"accountable_for":["resources"],"decision_rights":["RESOURCE_DIRECTOR"],"required_evidence":["demand","capacity"],"kpis":["capacity_utilization"],"escalation_to":"PMO","dependencies":["SYS-000001"]},
+    {"office_id":"OFFICE-000008","name":"Technology Office","mandate":["govern technology adoption from ATO evidence"],"accountable_for":["technology"],"decision_rights":["TECHNOLOGY_DIRECTOR"],"required_evidence":["observation","assessment"],"kpis":["adoption_value"],"escalation_to":"ARCHITECTURE_OFFICE","dependencies":["SYS-000010"]},
+    {"office_id":"OFFICE-000009","name":"Automation Office","mandate":["govern automation and capability reuse"],"accountable_for":["automation"],"decision_rights":["AUTOMATION_DIRECTOR"],"required_evidence":["blueprint","validation"],"kpis":["automation_reuse_rate"],"escalation_to":"PMO","dependencies":["SYS-000008"]},
+    {"office_id":"OFFICE-000010","name":"Roadmap Office","mandate":["maintain dependency-safe roadmap sequencing"],"accountable_for":["roadmap"],"decision_rights":["ROADMAP_DIRECTOR"],"required_evidence":["inventory","dependencies"],"kpis":["roadmap_readiness"],"escalation_to":"PMO","dependencies":["SYS-000001"]},
+    {"office_id":"OFFICE-000011","name":"Security Office","mandate":["govern security privacy recovery and supply chain"],"accountable_for":["security"],"decision_rights":["SECURITY_DIRECTOR"],"required_evidence":["threat_assessment","control_evidence"],"kpis":["verified_recovery_rate"],"escalation_to":"EXECUTIVE_COUNCIL","dependencies":["SYS-000009"]}
+  ],
+  "deferred": [{"office_id":"OFFICE-000005","name":"AI Office","reason":"Dependency SYS-000012 Engineering Intelligence Core is not operational."}]
+}

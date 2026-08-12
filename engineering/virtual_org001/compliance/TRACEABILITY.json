@@ -1,0 +1,50 @@
+{
+  "REQ-996501": {
+    "implemented_by": [
+      "engineering/aias/virtual_organization/VIRTUAL_ENGINEER_ROSTER.json"
+    ],
+    "tested_by": [
+      "tests/test_virtual_org001.py"
+    ]
+  },
+  "REQ-996502": {
+    "implemented_by": [
+      "src/aias_virtual_organization/models.py"
+    ],
+    "tested_by": [
+      "tests/test_virtual_org001.py"
+    ]
+  },
+  "REQ-996503": {
+    "implemented_by": [
+      "src/aias_virtual_organization/organization.py"
+    ],
+    "tested_by": [
+      "tests/test_virtual_org001.py"
+    ]
+  },
+  "REQ-996504": {
+    "implemented_by": [
+      "src/aias_virtual_organization/organization.py"
+    ],
+    "tested_by": [
+      "tests/test_virtual_org001.py"
+    ]
+  },
+  "REQ-996505": {
+    "implemented_by": [
+      "src/aias_virtual_organization/organization.py"
+    ],
+    "tested_by": [
+      "tests/test_virtual_org001.py"
+    ]
+  },
+  "REQ-996506": {
+    "implemented_by": [
+      "scripts/build_virtual_org001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_virtual_org001.py"
+    ]
+  }
+}

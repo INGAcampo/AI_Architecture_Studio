@@ -1,0 +1,63 @@
+{
+  "portfolio_id": "EXTERNAL-GATES-001",
+  "gates": [
+    {
+      "gate_id": "EXT-NORMATIVE",
+      "name": "Licensed jurisdictional standards",
+      "authority": "Authorized publishers and project jurisdiction",
+      "owner_role": "Project Director / Legal",
+      "required_evidence": [
+        "purchase authorization",
+        "license record",
+        "applicable jurisdiction decision",
+        "version record"
+      ],
+      "next_action": "Approve jurisdiction, budget and licensed acquisition",
+      "status": "WAITING_EXTERNAL_AUTHORITY"
+    },
+    {
+      "gate_id": "EXT-BENCHMARK",
+      "name": "Independent benchmark acceptance",
+      "authority": "Qualified independent engineering reviewer",
+      "owner_role": "Engineering Director",
+      "required_evidence": [
+        "independent dataset",
+        "method statement",
+        "signed review",
+        "accepted deviations"
+      ],
+      "next_action": "Appoint an independent reviewer and approve benchmark scope",
+      "status": "WAITING_EXTERNAL_AUTHORITY"
+    },
+    {
+      "gate_id": "EXT-VENDOR",
+      "name": "Licensed engineering application runtimes",
+      "authority": "Autodesk, CSI and Autodesk Robot licensing authorities",
+      "owner_role": "Technology Director",
+      "required_evidence": [
+        "license entitlement",
+        "supported API version",
+        "test environment",
+        "vendor execution evidence"
+      ],
+      "next_action": "Approve products, versions, seats and integration environment",
+      "status": "WAITING_EXTERNAL_AUTHORITY"
+    },
+    {
+      "gate_id": "EXT-MATURITY",
+      "name": "Longitudinal maturity evidence and audit",
+      "authority": "Real clients, jurisdictions and independent appraiser",
+      "owner_role": "Executive Management / Quality",
+      "required_evidence": [
+        "365 observation days",
+        "10 completed production projects",
+        "professional acceptance",
+        "independent conformant audit"
+      ],
+      "next_action": "Continue authenticated evidence campaign until thresholds are real",
+      "status": "WAITING_EXTERNAL_AUTHORITY"
+    }
+  ],
+  "status": "WAITING_EXTERNAL_AUTHORITIES",
+  "sha256": "0c28467a74a7ef05f74a3d8edd87742de750289701b9b86af250c80ab7087d87"
+}

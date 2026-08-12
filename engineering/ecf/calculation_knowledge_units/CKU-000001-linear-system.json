@@ -1,0 +1,26 @@
+{
+  "cku_id": "CKU-000001",
+  "title": "Linear System Ax=b",
+  "method": "gaussian_elimination_with_partial_pivoting",
+  "inputs": [
+    "matrix_A",
+    "vector_b"
+  ],
+  "outputs": [
+    "vector_x",
+    "residual_norm"
+  ],
+  "constraints": [
+    "A must be square",
+    "A must be nonsingular"
+  ],
+  "validation": [
+    "finite_output",
+    "residual_below_tolerance"
+  ],
+  "traceability": {
+    "sdd": "ASDD-000010",
+    "case": "MC-000001"
+  },
+  "human_review_required": true
+}

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-115",
+  "title": "Feed export integrity verification",
+  "status": "VALIDATED",
+  "scope": "Compare canonical Dashboard feed export digest against expected SHA-256",
+  "safety": ["Digest match is not certification", "Serialized source remains unchanged"]
+}

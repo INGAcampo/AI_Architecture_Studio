@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-095",
+  "title": "Integrity verification report",
+  "status": "VALIDATED",
+  "scope": "Report digest verification results without asserting external validity",
+  "safety": ["Discrepancies remain visible", "Report is not certification"]
+}

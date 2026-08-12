@@ -2,10 +2,10 @@
 AI Architecture Studio
 CAD Engine - Canvas
 
-Dynamic Input v3 - Package 2
+Dynamic Input v3 - Universal RECTANGLE 3.2.2 / Windows Alt Codes
 """
 
-from PySide6.QtCore import QRectF, Qt, Signal
+from PySide6.QtCore import QRectF, Qt, Signal, QTimer
 from PySide6.QtGui import QColor, QKeySequence, QPainter, QPen
 from PySide6.QtWidgets import QWidget
 
@@ -76,6 +76,31 @@ class CadCanvas(QWidget):
         self.setMinimumSize(800, 500)
         self.setMouseTracking(True)
         self.setFocusPolicy(Qt.StrongFocus)
+
+        # Cursor de edición del Dynamic Input.
+        self.dynamic_caret_visible = True
+        self.dynamic_caret_timer = QTimer(self)
+        self.dynamic_caret_timer.setInterval(500)
+        self.dynamic_caret_timer.timeout.connect(
+            self._toggle_dynamic_caret
+        )
+        self.dynamic_caret_timer.start()
+
+    def _toggle_dynamic_caret(self):
+        manager = self.get_dynamic_input_manager()
+
+        if (
+            manager is not None
+            and manager.enabled
+            and manager.visible
+            and getattr(manager, "editing", False)
+        ):
+            self.dynamic_caret_visible = (
+                not self.dynamic_caret_visible
+            )
+            self.update()
+        else:
+            self.dynamic_caret_visible = True
 
     # ---------------------------------------------------------
     # SERVICIOS
@@ -329,12 +354,26 @@ class CadCanvas(QWidget):
         if manager is None:
             return False
 
-        value = manager.confirm()
+        active_handler = self.get_active_cad_handler()
+
+        custom_value_builder = getattr(
+            active_handler,
+            "dynamic_input_value",
+            None,
+        )
+
+        if callable(custom_value_builder):
+            value = custom_value_builder(manager)
+
+            if value:
+                manager.confirmed = True
+                manager.last_confirmed_value = value
+                manager.editing = False
+        else:
+            value = manager.confirm()
 
         if not value:
             return False
-
-        active_handler = self.get_active_cad_handler()
 
         if active_handler is None:
             manager.reset()
@@ -598,32 +637,60 @@ class CadCanvas(QWidget):
         ):
             return
 
-        x = float(manager.screen_x)
-        y = float(manager.screen_y)
-        height = 25
-        gap = 4
-        padding = 9
+        height = 27
+        gap = 5
+        padding = 10
+
+        distance_value = manager.distance_display_text()
+        angle_value = manager.angle_display_text()
 
         distance_text = (
-            manager.distance_display_text()
+            f"{manager.distance_field.label}: "
+            f"{distance_value}"
         )
         angle_text = (
-            manager.angle_display_text()
+            f"{manager.angle_field.label}: "
+            f"{angle_value}"
         )
 
         metrics = painter.fontMetrics()
+
         distance_width = max(
-            76,
+            150,
             metrics.horizontalAdvance(
                 distance_text
             ) + padding * 2,
         )
         angle_width = max(
-            66,
+            120,
             metrics.horizontalAdvance(
                 angle_text
             ) + padding * 2,
         )
+
+        total_width = (
+            distance_width
+            + gap
+            + angle_width
+        )
+
+        x = float(manager.screen_x)
+        y = float(manager.screen_y)
+
+        # Posicionamiento inteligente dentro del Canvas.
+        margin = 8
+
+        if x + total_width > self.width() - margin:
+            x = self.width() - total_width - margin
+
+        if x < margin:
+            x = margin
+
+        if y < margin:
+            y = margin
+
+        if y + height > self.height() - margin:
+            y = self.height() - height - margin
 
         distance_rect = QRectF(
             x,
@@ -642,7 +709,7 @@ class CadCanvas(QWidget):
             48,
             48,
             48,
-            235,
+            240,
         )
         inactive = QColor(
             135,
@@ -654,6 +721,13 @@ class CadCanvas(QWidget):
             210,
             70,
         )
+        text_color = QColor(
+            245,
+            245,
+            245,
+        )
+
+        painter.save()
 
         painter.fillRect(
             distance_rect,
@@ -664,19 +738,22 @@ class CadCanvas(QWidget):
             background,
         )
 
-        distance_pen = QPen(
-            active
-            if manager.active_mode
+        distance_active = (
+            manager.active_mode
             == manager.MODE_DISTANCE
-            else inactive
+        )
+        angle_active = (
+            manager.active_mode
+            == manager.MODE_ANGLE
+        )
+
+        distance_pen = QPen(
+            active if distance_active else inactive
         )
         distance_pen.setWidth(2)
 
         angle_pen = QPen(
-            active
-            if manager.active_mode
-            == manager.MODE_ANGLE
-            else inactive
+            active if angle_active else inactive
         )
         angle_pen.setWidth(2)
 
@@ -686,13 +763,8 @@ class CadCanvas(QWidget):
         painter.setPen(angle_pen)
         painter.drawRect(angle_rect)
 
-        painter.setPen(
-            QColor(
-                245,
-                245,
-                245,
-            )
-        )
+        painter.setPen(text_color)
+
         painter.drawText(
             distance_rect.adjusted(
                 padding,
@@ -700,10 +772,11 @@ class CadCanvas(QWidget):
                 -padding,
                 0,
             ),
-            Qt.AlignLeft
+            Qt.AlignCenter
             | Qt.AlignVCenter,
             distance_text,
         )
+
         painter.drawText(
             angle_rect.adjusted(
                 padding,
@@ -711,10 +784,52 @@ class CadCanvas(QWidget):
                 -padding,
                 0,
             ),
-            Qt.AlignLeft
+            Qt.AlignCenter
             | Qt.AlignVCenter,
             angle_text,
         )
+
+        # Cursor parpadeante en el campo activo.
+        if (
+            getattr(manager, "editing", False)
+            and self.dynamic_caret_visible
+        ):
+            active_rect = (
+                distance_rect
+                if distance_active
+                else angle_rect
+            )
+            active_text = (
+                distance_text
+                if distance_active
+                else angle_text
+            )
+
+            text_width = metrics.horizontalAdvance(
+                active_text
+            )
+            caret_x = (
+                active_rect.center().x()
+                + text_width / 2
+                + 2
+            )
+
+            caret_x = min(
+                caret_x,
+                active_rect.right() - 7,
+            )
+
+            painter.setPen(
+                QPen(active, 1)
+            )
+            painter.drawLine(
+                int(caret_x),
+                int(active_rect.top() + 5),
+                int(caret_x),
+                int(active_rect.bottom() - 5),
+            )
+
+        painter.restore()
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -771,11 +886,22 @@ class CadCanvas(QWidget):
                 crossing=crossing,
             )
 
+        dynamic_input_manager = (
+            self.get_dynamic_input_manager()
+        )
+
+        dynamic_panel_visible = bool(
+            dynamic_input_manager is not None
+            and dynamic_input_manager.enabled
+            and dynamic_input_manager.visible
+        )
+
         self.renderer.draw_snap_marker(
             painter,
             self.camera,
             self.current_snap_point,
             self.current_snap_type,
+            show_label=not dynamic_panel_visible,
         )
 
         painter.setPen(
@@ -822,10 +948,6 @@ class CadCanvas(QWidget):
             status_items.append(
                 "SNAP: ON"
             )
-
-        dynamic_input_manager = (
-            self.get_dynamic_input_manager()
-        )
 
         if (
             dynamic_input_manager is not None
@@ -1133,6 +1255,35 @@ class CadCanvas(QWidget):
             "nativeScanCode",
             lambda: 0,
         )()
+
+        # Windows Alt Codes:
+        #
+        # Al escribir Alt+60, Qt envía primero las teclas 6 y 0
+        # al QWidget y, al soltar Alt, entrega el carácter final "<".
+        # El panel Dynamic Input no es un QLineEdit, por lo que sin
+        # este filtro terminaría almacenando "60<".
+        #
+        # Ignoramos únicamente los dígitos del teclado numérico
+        # mientras Alt está presionado. El carácter compuesto final
+        # seguirá llegando mediante event.text().
+        modifiers = event.modifiers()
+
+        if modifiers & Qt.AltModifier:
+            alt_code_scan_codes = {
+                82,  # 0
+                79,  # 1
+                80,  # 2
+                81,  # 3
+                75,  # 4
+                76,  # 5
+                77,  # 6
+                71,  # 7
+                72,  # 8
+                73,  # 9
+            }
+
+            if native_scan_code in alt_code_scan_codes:
+                return None
 
         # Scan codes estándar del bloque numérico en Windows.
         # Se evalúan antes de event.text().

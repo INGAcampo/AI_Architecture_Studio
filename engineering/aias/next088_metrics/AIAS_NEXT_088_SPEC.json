@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-088",
+  "title": "Evidence review metrics",
+  "status": "VALIDATED",
+  "scope": "Count accepted, rejected, and pending review records",
+  "safety": ["Metrics do not certify maturity", "Unknown approvals are not inferred"]
+}

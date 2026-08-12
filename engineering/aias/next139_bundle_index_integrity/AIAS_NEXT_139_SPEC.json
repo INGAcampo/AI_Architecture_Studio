@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-139",
+  "title": "Bundle index integrity",
+  "status": "VALIDATED",
+  "scope": "Check contiguous ordinals and unique paths in the local artifact index.",
+  "safety": {
+    "external_attestation": false,
+    "certification_claim": false
+  }
+}

@@ -1,0 +1,1 @@
+{"specification_id":"EXTERNAL-GATES-CLI-001","version":"1.0.0","status":"IMPLEMENTED","implementation":"src/aias_roadmap_audit/cli.py","verification":"tests/test_external_gates_cli001.py","commands":["append","validate","status"],"rule":"The CLI never synthesizes evidence or registers an authority automatically."}

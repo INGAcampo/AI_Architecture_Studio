@@ -1,0 +1,1 @@
+{"delivery":"MEGABLOCK-STRUCTURAL-1","status":"CONFORMANT","specification":"engineering/aias/structural_platform1/STRUCTURAL_PLATFORM_1_SPEC.json","implementation":"src/aias_structural_platform1/contracts.py","tests":"tests/test_structural_platform1.py"}

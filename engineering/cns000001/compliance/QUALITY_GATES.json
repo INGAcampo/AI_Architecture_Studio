@@ -1,0 +1,52 @@
+{
+  "component_id": "CNS-000001",
+  "constitution": "AEC-000002",
+  "articles": [
+    "AEC-ART-000001",
+    "AEC-ART-000002",
+    "AEC-ART-000003",
+    "AEC-ART-000004",
+    "AEC-000049",
+    "AEC-000050",
+    "AEC-000051"
+  ],
+  "gates": [
+    {
+      "gate_id": "QG-SPEC",
+      "passed": true,
+      "message": "Specification valid"
+    },
+    {
+      "gate_id": "QG-TRACE",
+      "passed": true,
+      "message": "Traceability coverage=100.00%"
+    },
+    {
+      "gate_id": "QG-ADR",
+      "passed": true,
+      "message": "ADR linked"
+    },
+    {
+      "gate_id": "QG-ARCH",
+      "passed": true,
+      "message": "Architecture linked"
+    },
+    {
+      "gate_id": "QG-VALUE",
+      "passed": true,
+      "message": "Immediate value path linked"
+    }
+  ],
+  "all_passed": true,
+  "kpi": {
+    "classification": "REFERENCE_ENGINEERING_ESTIMATE",
+    "baseline_hours": 24.0,
+    "actual_hours": 10.0,
+    "time_reduction": 0.5833333333333333,
+    "automation_ratio": 0.75,
+    "reuse_ratio": 0.8333333333333334,
+    "meets_45_percent_target": true,
+    "warning": "Post-validation reference estimate; distributed production throughput requires future operational evidence."
+  },
+  "validator_issues": []
+}

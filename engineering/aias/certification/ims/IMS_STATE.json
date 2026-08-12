@@ -1,0 +1,225 @@
+{
+  "system_id": "AIAS-IMS-001",
+  "organization": "AIAS",
+  "status": "IMPLEMENTED_FOUNDATION_NOT_CERTIFIED",
+  "scope": "AIAS digital engineering company, platform, engineering production and AI-enabled services",
+  "framework_targets": [
+    "ISO-9001",
+    "ISO-IEC-27001",
+    "ISO-IEC-42001",
+    "ISO-22301"
+  ],
+  "certification_claim_permitted": false,
+  "control_families": [
+    {
+      "id": "IMS-CONTEXT",
+      "name": "Context and interested parties",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    },
+    {
+      "id": "IMS-LEADERSHIP",
+      "name": "Leadership, policy and accountability",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    },
+    {
+      "id": "IMS-RISK",
+      "name": "Risk and opportunity management",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    },
+    {
+      "id": "IMS-SUPPORT",
+      "name": "Resources, competence, communication and documented information",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    },
+    {
+      "id": "IMS-OPERATION",
+      "name": "Operational planning and controlled delivery",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    },
+    {
+      "id": "IMS-PERFORMANCE",
+      "name": "Monitoring, internal audit and management review",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    },
+    {
+      "id": "IMS-IMPROVEMENT",
+      "name": "Nonconformity, corrective action and continual improvement",
+      "domains": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "IMSR-001",
+      "domain": "QUALITY",
+      "statement": "Untraced requirement affects an engineering deliverable",
+      "likelihood": 2,
+      "impact": 5,
+      "owner": "Quality Office",
+      "treatment": "Enforce SDD traceability gates",
+      "status": "OPEN",
+      "score": 10
+    },
+    {
+      "risk_id": "IMSR-002",
+      "domain": "INFORMATION_SECURITY",
+      "statement": "Evidence loses confidentiality, integrity or availability",
+      "likelihood": 3,
+      "impact": 5,
+      "owner": "Security Office",
+      "treatment": "Apply access, integrity and recovery controls",
+      "status": "OPEN",
+      "score": 15
+    },
+    {
+      "risk_id": "IMSR-003",
+      "domain": "AI_MANAGEMENT",
+      "statement": "AI recommendation bypasses accountable professional review",
+      "likelihood": 3,
+      "impact": 5,
+      "owner": "AI Office",
+      "treatment": "Enforce human maker-checker and final-authority boundaries",
+      "status": "OPEN",
+      "score": 15
+    },
+    {
+      "risk_id": "IMSR-004",
+      "domain": "BUSINESS_CONTINUITY",
+      "statement": "Critical engineering service cannot recover within its objective",
+      "likelihood": 3,
+      "impact": 5,
+      "owner": "Security Office",
+      "treatment": "Maintain tested backups and recovery exercises",
+      "status": "OPEN",
+      "score": 15
+    }
+  ],
+  "objectives": [
+    {
+      "objective_id": "IMSO-001",
+      "domain": "QUALITY",
+      "statement": "Maintain governed requirements traceability",
+      "metric": "traceability_coverage",
+      "baseline": 0.0,
+      "target": 0.95,
+      "due_date": "2027-08-03",
+      "owner": "Quality Office",
+      "observed_value": null,
+      "target_achieved": null
+    },
+    {
+      "objective_id": "IMSO-002",
+      "domain": "INFORMATION_SECURITY",
+      "statement": "Verify recoverability of governed evidence",
+      "metric": "verified_recovery_rate",
+      "baseline": 0.0,
+      "target": 0.95,
+      "due_date": "2027-08-03",
+      "owner": "Security Office",
+      "observed_value": null,
+      "target_achieved": null
+    },
+    {
+      "objective_id": "IMSO-003",
+      "domain": "AI_MANAGEMENT",
+      "statement": "Require professional review for regulated AI-assisted outputs",
+      "metric": "professional_review_compliance",
+      "baseline": 0.0,
+      "target": 1.0,
+      "due_date": "2027-08-03",
+      "owner": "AI Office",
+      "observed_value": null,
+      "target_achieved": null
+    },
+    {
+      "objective_id": "IMSO-004",
+      "domain": "BUSINESS_CONTINUITY",
+      "statement": "Exercise critical-service recovery plans",
+      "metric": "continuity_exercise_completion",
+      "baseline": 0.0,
+      "target": 1.0,
+      "due_date": "2027-08-03",
+      "owner": "Security Office",
+      "observed_value": null,
+      "target_achieved": null
+    }
+  ],
+  "corrective_actions": [
+    {
+      "action_id": "IMSCA-001",
+      "source": "CERTIFICATION-MASTER-PLAN-001",
+      "finding": "Clause-level crosswalk unavailable",
+      "root_cause": "Licensed normative texts not yet acquired",
+      "action": "Acquire legitimate normative access and confirm certification scope",
+      "owner": "Compliance Office",
+      "due_date": "2026-12-31",
+      "status": "OPEN"
+    }
+  ],
+  "audit_program": [
+    {
+      "audit_id": "IMS-AUD-001",
+      "scope": [
+        "QUALITY",
+        "INFORMATION_SECURITY",
+        "AI_MANAGEMENT",
+        "BUSINESS_CONTINUITY"
+      ],
+      "planned_date": "2026-11-03T00:00:00+00:00",
+      "lead": "AIAS Independent Internal Audit Function",
+      "classification": "INTERNAL_AUDIT_NOT_CERTIFICATION",
+      "status": "PLANNED"
+    }
+  ],
+  "management_reviews": [
+    {
+      "review_id": "IMS-MR-001",
+      "inputs": {
+        "certification_master_plan": "VALIDATED",
+        "external_certification": false,
+        "normative_copies": "REQUIRED_FOR_CLAUSE_CROSSWALK"
+      },
+      "decisions": [
+        "Fund legitimate normative access",
+        "Execute internal audit program",
+        "Retain external certification authority"
+      ],
+      "reviewed_at": "2026-08-03T00:00:00+00:00",
+      "evidence_sha256": "fd56727499b73252650830cf68cbb385b689d0c7ed1f58f6ed291582d1394988"
+    }
+  ]
+}

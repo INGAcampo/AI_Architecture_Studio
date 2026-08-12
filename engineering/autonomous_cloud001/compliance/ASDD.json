@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-998501",
+  "title": "AIAS Cloud-Neutral Autonomous Engineering Control Plane",
+  "version": "1.0.0",
+  "purpose": "Materialize secure, recoverable and tenant-isolated autonomous engineering job control without unauthorized external provisioning.",
+  "scope": "Tenants, principals, quotas, jobs, fair scheduling, trusted workers, leases, recovery, content-addressed artifacts, integrity and audit chain.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-998501",
+      "title": "Tenant isolation",
+      "statement": "Jobs and artifacts shall require tenant-scoped principal authorization and namespaces.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent cross-tenant access.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_autonomous_cloud/control_plane.py"
+      ],
+      "tested_by": [
+        "tests/test_autonomous_cloud001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998502",
+      "title": "Resource governance",
+      "statement": "Queued, running and artifact consumption shall respect explicit tenant quotas.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Bound cost and resource exhaustion.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_autonomous_cloud/models.py"
+      ],
+      "tested_by": [
+        "tests/test_autonomous_cloud001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998503",
+      "title": "Reliable scheduling",
+      "statement": "Compatible jobs shall be fairly scheduled through trusted expiring worker leases and recoverable attempts.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support autonomous resilient execution.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_autonomous_cloud/control_plane.py"
+      ],
+      "tested_by": [
+        "tests/test_autonomous_cloud001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998504",
+      "title": "Artifact integrity",
+      "statement": "Artifacts shall be immutable, content-addressed, quota-bound and tenant-isolated.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect engineering output custody.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_autonomous_cloud/artifacts.py"
+      ],
+      "tested_by": [
+        "tests/test_autonomous_cloud001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998505",
+      "title": "Immediate consumer",
+      "statement": "A Lighthouse AEOS operating job shall lease, store evidence and complete through the cloud-neutral control plane.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize future value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "tests/test_autonomous_cloud001.py"
+      ],
+      "tested_by": [
+        "tests/test_autonomous_cloud001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998506",
+      "title": "Reproducible delivery",
+      "statement": "Cloud control plane shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep autonomous execution deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_autonomous_cloud001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_autonomous_cloud001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-AUTONOMOUS-CLOUD-001"
+  ],
+  "adr_refs": [
+    "ADR-AUTONOMOUS-CLOUD-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

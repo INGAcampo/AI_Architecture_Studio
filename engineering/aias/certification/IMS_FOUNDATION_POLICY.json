@@ -1,0 +1,11 @@
+{
+  "policy_id": "CERTIFICATION-IMS-FOUNDATION-001",
+  "version": "1.0.0",
+  "status": "ACTIVE_IMPLEMENTATION",
+  "scope": "AIAS digital engineering company, platform, engineering production and AI-enabled services",
+  "domains": ["QUALITY", "INFORMATION_SECURITY", "AI_MANAGEMENT", "BUSINESS_CONTINUITY"],
+  "framework_targets": ["ISO 9001", "ISO/IEC 27001", "ISO/IEC 42001", "ISO 22301"],
+  "common_system": true,
+  "principles": ["evidence_based", "risk_based", "process_integrated", "human_accountability", "continual_improvement", "no_self_certification"],
+  "licensed_content_boundary": "Only high-level control families are materialized until legitimate normative copies are acquired for clause-level crosswalks."
+}

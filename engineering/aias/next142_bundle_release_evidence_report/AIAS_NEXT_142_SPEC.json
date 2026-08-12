@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-142",
+  "title": "Bundle release evidence report",
+  "status": "VALIDATED",
+  "scope": "Expose consolidated local release evidence for internal traceability.",
+  "safety": {
+    "external_authority": false,
+    "certification_claim": false
+  }
+}

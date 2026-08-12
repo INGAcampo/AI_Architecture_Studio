@@ -1,0 +1,27 @@
+{
+  "id": "ARCH-HANDBOOK-000001",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "layers": [
+    {"id": "L0", "name": "governance", "may_depend_on": []},
+    {"id": "L1", "name": "knowledge_and_specification", "may_depend_on": ["L0"]},
+    {"id": "L2", "name": "shared_kernels", "may_depend_on": ["L0", "L1"]},
+    {"id": "L3", "name": "engineering_capabilities", "may_depend_on": ["L0", "L1", "L2"]},
+    {"id": "L4", "name": "orchestration_and_agents", "may_depend_on": ["L0", "L1", "L2", "L3"]},
+    {"id": "L5", "name": "interfaces_and_deliverables", "may_depend_on": ["L0", "L1", "L2", "L3", "L4"]}
+  ],
+  "mandatory_rules": [
+    "stable public contract",
+    "explicit units and coordinate systems",
+    "dependency injection at external boundaries",
+    "reversible integration",
+    "deterministic core where technically possible",
+    "versioned schemas",
+    "traceable requirements and tests",
+    "human review boundary for regulated outputs",
+    "no hidden global mutable state",
+    "no circular package dependencies"
+  ],
+  "component_contract_required_fields": ["component_id", "version", "layer", "purpose", "inputs", "outputs", "dependencies", "requirements", "tests", "legal_status"],
+  "change_policy": {"breaking_change": "major version and migration plan", "behavior_change": "differential validation", "integration_change": "rollback evidence"}
+}

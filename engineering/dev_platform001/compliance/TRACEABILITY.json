@@ -1,0 +1,50 @@
+{
+  "REQ-993501": {
+    "implemented_by": [
+      "src/aias_development_platform/contracts.py"
+    ],
+    "tested_by": [
+      "tests/test_dev_platform001.py"
+    ]
+  },
+  "REQ-993502": {
+    "implemented_by": [
+      "src/aias_development_platform/policy.py"
+    ],
+    "tested_by": [
+      "tests/test_dev_platform001.py"
+    ]
+  },
+  "REQ-993503": {
+    "implemented_by": [
+      "src/aias_development_platform/policy.py"
+    ],
+    "tested_by": [
+      "tests/test_dev_platform001.py"
+    ]
+  },
+  "REQ-993504": {
+    "implemented_by": [
+      "src/aias_development_platform/platform.py"
+    ],
+    "tested_by": [
+      "tests/test_dev_platform001.py"
+    ]
+  },
+  "REQ-993505": {
+    "implemented_by": [
+      "src/aias_development_platform/adapters.py"
+    ],
+    "tested_by": [
+      "tests/test_dev_platform001.py"
+    ]
+  },
+  "REQ-993506": {
+    "implemented_by": [
+      "scripts/build_dev_platform001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_dev_platform001.py"
+    ]
+  }
+}

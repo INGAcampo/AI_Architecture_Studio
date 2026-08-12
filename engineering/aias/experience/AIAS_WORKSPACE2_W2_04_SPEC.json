@@ -1,0 +1,26 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-W2-04",
+  "version": "0.4.0",
+  "status": "IMPLEMENTED_VALIDATED_RENDERED_BASELINE",
+  "title": "Professional Command Search and Status Model",
+  "requirements": [
+    "commands have stable identifiers aliases disciplines and capability identifiers",
+    "search ranks exact and prefix matches deterministically",
+    "alias conflicts and duplicate command identifiers fail closed",
+    "availability distinguishes available reference-only and unavailable capabilities",
+    "reference-only and unavailable capabilities cannot execute",
+    "professional status exposes jurisdiction units normative acquisition validation and review",
+    "engineering release is authorized only with validated norms approved review and named reviewer",
+    "Qt command palette projects the same headless registry",
+    "legacy command line inherits governed semantic styling"
+  ],
+  "initial_jurisdiction": "Venezuela",
+  "claims_boundary": "Command discovery never upgrades a capability status or professional authority.",
+  "validation_evidence": {
+    "logical_tests": 22,
+    "rendered_capture": "workspace2_w2_04_outputs/COMMAND_PALETTE_DARK.png",
+    "visual_result": "LEGIBLE_FUNCTIONAL_BASELINE_NOT_FINAL_VISUAL_APPROVAL",
+    "installer": "AIAS_WORKSPACE2_W2_04_COMMAND_STATUS_INSTALLER"
+  },
+  "next_increment": "W2-05 Venezuelan Structural Lighthouse Journey"
+}

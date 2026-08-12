@@ -1,0 +1,1 @@
+{"specification_id":"EXTERNAL-EVIDENCE-LEDGER-001","version":"1.0.0","status":"IMPLEMENTED_EMPTY_LEDGER","implementation":"src/aias_roadmap_audit/evidence.py","verification":"tests/test_external_evidence_ledger001.py","controls":["SHA-256 artifact identity","Hash-chained records","External authority verification reference","No synthetic evidence"]}

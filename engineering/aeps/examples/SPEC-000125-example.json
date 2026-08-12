@@ -1,0 +1,29 @@
+{
+  "id": "SPEC-000125",
+  "title": "Generated Beam Utility",
+  "module_name": "aias_generated_beam_utility",
+  "version": "1.0.0",
+  "requirements": [
+    {
+      "id": "REQ-000501",
+      "statement": "The system shall create a generated beam utility service.",
+      "acceptance_criteria": [
+        "Generated service imports successfully."
+      ]
+    },
+    {
+      "id": "REQ-000502",
+      "statement": "The system shall provide generated traceability documentation.",
+      "acceptance_criteria": [
+        "Traceability JSON exists."
+      ]
+    }
+  ],
+  "dependencies": [],
+  "architecture_refs": [
+    "ARCH-000001"
+  ],
+  "adr_refs": [
+    "ADR-000003"
+  ]
+}

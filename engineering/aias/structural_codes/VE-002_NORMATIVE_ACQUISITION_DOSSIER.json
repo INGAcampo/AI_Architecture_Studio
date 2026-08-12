@@ -1,0 +1,70 @@
+{
+  "dossier_id": "VE-002",
+  "version": "1.0.0",
+  "created_on": "2026-08-04",
+  "status": "READY_FOR_SEND_EMAIL_CHANNEL_NOT_CONNECTED",
+  "jurisdiction": "Venezuela",
+  "authorization": {
+    "project_director_authorized": true,
+    "authorized_on": "2026-08-04",
+    "quotation_authorized": true,
+    "purchase_authorized_up_to_amount": null,
+    "payment_authorized": false,
+    "reason_payment_is_pending": "Official price, license terms, billing identity and final amount are not yet available"
+  },
+  "applicant": {
+    "legal_or_personal_name": "ALFREDO CAMPO",
+    "tax_or_identity_number": "20278895",
+    "responsible_person": "ALFREDO CAMPO",
+    "role": "PRESIDENTE",
+    "email": "CAMPOALFREDO7@GMAIL.COM",
+    "telephone_as_provided": "04121425322",
+    "telephone_international": "+58 412 1425322",
+    "provided_by_project_director_on": "2026-08-04"
+  },
+  "official_recipient": {
+    "organization": "FONDONORMA",
+    "channel": "Customer service / technical information / sales",
+    "email": "atencionalcliente@fondonorma.org.ve",
+    "telephone": ["+58 212 2017711", "+58 212 2144525", "+58 212 7500016"],
+    "source": "https://fondonorma.org.ve/productos/",
+    "verification_status": "PUBLISHED_BY_FONDONORMA"
+  },
+  "outbound_communication": {
+    "artifact": "docs/outbound/VE-002_FONDONORMA_CATALOG_INQUIRY.eml",
+    "status": "PREPARED_NOT_SENT",
+    "prepared_on": "2026-08-04",
+    "delivery_blocker": "No authorized Gmail or Outlook connector is available in the current Codex session",
+    "payment_or_contract_created": false
+  },
+  "requested_verification": [
+    "Exact current designation, title and edition",
+    "Whether the document is current, confirmed, superseded or withdrawn",
+    "Applicable amendments, errata and complementary documents",
+    "Whether it is mandatory by regulation or adopted contractually",
+    "Official price, taxes, delivery format and payment method",
+    "License conditions for one legal entity and controlled computational implementation",
+    "Permission boundaries for clause metadata, executable checks and internal traceability without redistributing protected text"
+  ],
+  "requested_candidates": [
+    {"reference": "COVENIN 2002", "domain": "Minimum criteria, loads and actions for buildings"},
+    {"reference": "COVENIN 1756", "domain": "Earthquake-resistant buildings"},
+    {"reference": "COVENIN 1753", "domain": "Structural concrete"},
+    {"reference": "COVENIN 1618", "domain": "Structural steel buildings"},
+    {"reference": "NTF 4085:2024", "domain": "BIM deliverables"}
+  ],
+  "additional_catalog_request": [
+    "Masonry and timber structural design",
+    "Foundations, geotechnics and soil-structure interaction",
+    "Wind, fire, accessibility and construction safety",
+    "Structural drawings, materials, testing, inspection and quality control",
+    "State, municipal and permitting-authority supplements applicable in Venezuela"
+  ],
+  "acceptance_criteria": [
+    "Response is attributable to the publisher or competent authority",
+    "Each edition and legal status is explicit",
+    "Commercial and license conditions are documented",
+    "No protected text is ingested before legitimate access exists",
+    "Final payment receives explicit approval against the quoted total"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-146",
+  "title": "Bundle release readiness gate",
+  "status": "VALIDATED",
+  "scope": "Evaluate internal readiness from a valid manifest verification report.",
+  "safety": {
+    "external_release": false,
+    "certification_claim": false
+  }
+}

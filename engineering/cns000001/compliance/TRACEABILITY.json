@@ -1,0 +1,50 @@
+{
+  "REQ-990101": {
+    "implemented_by": [
+      "engineering/aias/cns/AIAS_CNS_TOPOLOGY.json"
+    ],
+    "tested_by": [
+      "tests/test_cns000001.py"
+    ]
+  },
+  "REQ-990102": {
+    "implemented_by": [
+      "src/aias_central_nervous_system/models.py"
+    ],
+    "tested_by": [
+      "tests/test_cns000001.py"
+    ]
+  },
+  "REQ-990103": {
+    "implemented_by": [
+      "src/aias_central_nervous_system/journal.py"
+    ],
+    "tested_by": [
+      "tests/test_cns000001.py"
+    ]
+  },
+  "REQ-990104": {
+    "implemented_by": [
+      "src/aias_central_nervous_system/bus.py"
+    ],
+    "tested_by": [
+      "tests/test_cns000001.py"
+    ]
+  },
+  "REQ-990105": {
+    "implemented_by": [
+      "src/aias_central_nervous_system/projection.py"
+    ],
+    "tested_by": [
+      "tests/test_cns000001.py"
+    ]
+  },
+  "REQ-990106": {
+    "implemented_by": [
+      "scripts/build_cns000001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_cns000001.py"
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-994001",
+  "title": "AIAS Security and Recovery System",
+  "version": "1.0.0",
+  "purpose": "Protect governed AIAS assets and prove that verified backups can be safely restored within declared recovery objectives.",
+  "scope": "Secret detection and exclusion, signed manifests, per-file integrity, safe restoration, automated recovery drills, RPO/RTO measurement and non-destructive retention planning.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-994001",
+      "title": "Security exclusion",
+      "statement": "Backups shall exclude forbidden secrets, key files, symbolic links and detected embedded credentials without disclosing values.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent sensitive-data propagation.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_security_recovery/scanner.py"
+      ],
+      "tested_by": [
+        "tests/test_security_recovery001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994002",
+      "title": "Signed integrity",
+      "statement": "Every snapshot shall carry a caller-keyed HMAC manifest and SHA-256 digest for every included file.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prove authenticity and integrity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_security_recovery/backup.py"
+      ],
+      "tested_by": [
+        "tests/test_security_recovery001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994003",
+      "title": "Safe restoration",
+      "statement": "Only verified safe members shall restore into an empty destination.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent traversal and destructive overwrite.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_security_recovery/backup.py"
+      ],
+      "tested_by": [
+        "tests/test_security_recovery001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994004",
+      "title": "Recovery objectives",
+      "statement": "RPO and RTO shall be explicit and evaluated from measured evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make recoverability operationally measurable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_security_recovery/policy.py"
+      ],
+      "tested_by": [
+        "tests/test_security_recovery001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994005",
+      "title": "Immediate consumer",
+      "statement": "A complete signed snapshot and automated restore drill shall recover reference AIAS project data.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize HIST-013 and AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_security_recovery/backup.py"
+      ],
+      "tested_by": [
+        "tests/test_security_recovery001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994006",
+      "title": "Reproducible delivery",
+      "statement": "Security and recovery shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep recoverability deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_security_recovery001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_security_recovery001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-SECURITY-RECOVERY-001"
+  ],
+  "adr_refs": [
+    "ADR-SECURITY-RECOVERY-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

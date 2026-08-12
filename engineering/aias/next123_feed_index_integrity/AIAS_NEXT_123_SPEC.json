@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-123",
+  "title": "Feed index integrity",
+  "status": "VALIDATED",
+  "scope": "Verify sorted uniqueness and canonical digest of the feed artifact index",
+  "safety": ["Integrity is not external validity", "Index input is not mutated"]
+}

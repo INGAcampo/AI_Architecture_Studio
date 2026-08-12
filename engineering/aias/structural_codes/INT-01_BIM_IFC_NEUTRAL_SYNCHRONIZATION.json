@@ -1,0 +1,10 @@
+{
+  "specification_id": "INT-01",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_NEUTRAL_EXCHANGE",
+  "capabilities": ["IFC4.3_NEUTRAL_IMPORT", "IFC4.3_NEUTRAL_EXPORT", "STABLE_GLOBAL_ID", "THREE_WAY_PROPERTY_SYNC", "CONFLICT_DETECTION", "LOSS_REPORTING"],
+  "requirements": ["Global identity remains stable", "Unsupported semantics are disclosed", "Only allowlisted properties synchronize", "Divergent edits create conflicts", "Every update requires explicit transaction commit and professional review"],
+  "implementation": "src/aias_cad_bim_integration/ifc_sync.py",
+  "verification": "tests/test_bim_ifc_neutral_sync_int01.py",
+  "boundary": "Neutral IFC 4.3 exchange is implemented; certification by buildingSMART or vendor-native fidelity is not claimed."
+}

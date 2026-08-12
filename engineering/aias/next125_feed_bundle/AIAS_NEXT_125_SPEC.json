@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-125",
+  "title": "Feed release evidence bundle",
+  "status": "VALIDATED",
+  "scope": "Bundle local feed release reports into deterministic metadata",
+  "safety": ["Bundle is local metadata", "No external publication occurs"]
+}

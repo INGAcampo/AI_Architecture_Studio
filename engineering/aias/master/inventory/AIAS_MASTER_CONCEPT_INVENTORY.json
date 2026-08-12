@@ -1,0 +1,896 @@
+{
+  "inventory_id": "AMIR-000001",
+  "version": "1.0.0",
+  "concept_count": 68,
+  "state_counts": {
+    "DUPLICATE": 2,
+    "OPERATIONAL": 65,
+    "SPECIFIED": 1
+  },
+  "unsupported_declarations": [],
+  "concepts": [
+    {
+      "id": "RULE-000001",
+      "name": "Specification is source of truth",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aeps/05_SDD/ASDD-000002-formal-sdd.yaml",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000002",
+      "name": "Constitution-driven engineering",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "depends_on": [
+        "RULE-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000003",
+      "name": "Mandatory traceability",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "src/aias_aeps_governance_sdd/traceability.py",
+      "depends_on": [
+        "RULE-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000004",
+      "name": "Reusable-first platform capability",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000005",
+      "name": "Sustainable acceleration at least 45 percent",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aeps/metrics/KPI-000004-time-reduction.md",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000006",
+      "name": "AEC-000024 Anti-Bureaucracy",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000007",
+      "name": "AEC-000049 Immediate Value",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000008",
+      "name": "AEC-000050 Strategic Recommendation",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "engineering/aias/master/STRATEGIC_RECOMMENDATION_POLICY.json",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000009",
+      "name": "Executable Definition of Done",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "src/aias_governance_assurance/dod.py",
+      "depends_on": [
+        "RULE-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000010",
+      "name": "Build More Discuss Enough",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "ACKC/EXECUTIVE_ORDERS.md",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000011",
+      "name": "No premature completion claims",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "ACKC/EXECUTIVE_ORDERS.md",
+      "depends_on": [
+        "RULE-000009"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000012",
+      "name": "Professional and legal review boundaries",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "src/aias_foundation_delivery/validation.py",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "RULE-000013",
+      "name": "AEC-000051 Verifiable Conversation Continuity",
+      "kind": "RULE",
+      "declared_state": "OPERATIONAL",
+      "wave": 0,
+      "evidence": "src/aias_context_engine/continuity.py",
+      "depends_on": [
+        "SYS-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000001",
+      "name": "AIAS Charter",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 1,
+      "evidence": "engineering/aias/foundation/AIAS_CHARTER.json",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000002",
+      "name": "AIAS Constitution",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 1,
+      "evidence": "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml",
+      "depends_on": [],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000003",
+      "name": "AIAS Engineering System",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 1,
+      "evidence": "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json",
+      "depends_on": [
+        "FOUND-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000004",
+      "name": "AIAS SDD",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 1,
+      "evidence": "engineering/aeps/05_SDD/ASDD-000002-formal-sdd.yaml",
+      "depends_on": [
+        "FOUND-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000005",
+      "name": "Architecture Handbook",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 1,
+      "evidence": "engineering/aias/foundation/AIAS_ARCHITECTURE_HANDBOOK.json",
+      "depends_on": [
+        "FOUND-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000006",
+      "name": "Engineering Standards AES",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 1,
+      "evidence": "engineering/aias/foundation/AIAS_AES_STANDARDS_REGISTRY.json",
+      "depends_on": [
+        "FOUND-000004"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000007",
+      "name": "Universal Engineering Object Model",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 2,
+      "evidence": "src/aias_engineering_object",
+      "depends_on": [
+        "FOUND-000004"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000008",
+      "name": "Stable Identifier System",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 2,
+      "evidence": "src/aias_governance_assurance/assets.py",
+      "depends_on": [
+        "FOUND-000004"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000009",
+      "name": "Engineering Asset Registry",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 2,
+      "evidence": "src/aias_asset_registry",
+      "depends_on": [
+        "FOUND-000008"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000010",
+      "name": "Knowledge versioning and lifecycle states",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 2,
+      "evidence": "src/aias_governance_assurance/assets.py",
+      "depends_on": [
+        "FOUND-000008"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FOUND-000011",
+      "name": "Risk-Prioritized Documentation Alignment",
+      "kind": "FOUNDATION",
+      "declared_state": "OPERATIONAL",
+      "wave": 3,
+      "evidence": "docs/DOC_ALIGN_002_COMPLETE_PUBLIC_API.md",
+      "depends_on": [
+        "FOUND-000004"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000001",
+      "name": "AIAS Master Development Plan",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 4,
+      "evidence": "engineering/aias/master/AIAS_MASTER_DEVELOPMENT_PLAN.json",
+      "depends_on": [
+        "FOUND-000009"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000002",
+      "name": "AIAS Productivity Dashboard",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 5,
+      "evidence": "src/aias_productivity_dashboard",
+      "depends_on": [
+        "SYS-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000003",
+      "name": "AIAS Context Engine",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 6,
+      "evidence": "src/aias_context_engine",
+      "depends_on": [
+        "FOUND-000009"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000004",
+      "name": "AIAS Central Nervous System",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 6,
+      "evidence": "src/aias_central_nervous_system",
+      "depends_on": [
+        "SYS-000002",
+        "SYS-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000005",
+      "name": "AEKS Executable Knowledge System",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 7,
+      "evidence": "src/aias_executable_knowledge",
+      "depends_on": [
+        "FOUND-000007",
+        "FOUND-000010"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000006",
+      "name": "Enterprise Knowledge Graph",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 8,
+      "evidence": "src/aias_enterprise_knowledge_graph",
+      "depends_on": [
+        "SYS-000005",
+        "RULE-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000007",
+      "name": "AIAS Development Platform",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 9,
+      "evidence": "src/aias_development_platform",
+      "depends_on": [
+        "FOUND-000004",
+        "SYS-000006"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000008",
+      "name": "Capability Factory",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 9,
+      "evidence": "src/aias_capability_factory",
+      "depends_on": [
+        "SYS-000007"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000009",
+      "name": "Security and Recovery System",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 10,
+      "evidence": "src/aias_security_recovery",
+      "depends_on": [
+        "SYS-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000010",
+      "name": "AIAS Technology Observatory",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 17,
+      "evidence": "src/aias_continuous_observatory",
+      "depends_on": [
+        "SYS-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000011",
+      "name": "AIAS University",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 18,
+      "evidence": "src/aias_university",
+      "depends_on": [
+        "FOUND-000004"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000012",
+      "name": "Engineering Intelligence Core",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 19,
+      "evidence": "src/aias_engineering_intelligence",
+      "depends_on": [
+        "SYS-000005",
+        "SYS-000006"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000013",
+      "name": "AIAS Engineering Operating System",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 20,
+      "evidence": "src/aias_engineering_os",
+      "depends_on": [
+        "SYS-000004",
+        "SYS-000007",
+        "SYS-000012"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000014",
+      "name": "AIAS Certification Master Program",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 21,
+      "evidence": "src/aias_certification_program",
+      "depends_on": [
+        "SYS-000001",
+        "SYS-000009",
+        "SYS-000013"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000015",
+      "name": "AIAS Integrated Management System Foundation",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 21,
+      "evidence": "src/aias_integrated_management",
+      "depends_on": [
+        "SYS-000014",
+        "OFFICE-000003",
+        "OFFICE-000011"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000016",
+      "name": "AIAS Normative Access and External Assessment Readiness",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 21,
+      "evidence": "src/aias_normative_access",
+      "depends_on": [
+        "SYS-000015"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "SYS-000017",
+      "name": "AIAS Structural Codes Program",
+      "kind": "SYSTEM",
+      "declared_state": "OPERATIONAL",
+      "wave": 22,
+      "evidence": "src/aias_structural_codes_program",
+      "depends_on": [
+        "SYS-000016",
+        "ENG-000001",
+        "ENG-000005"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000001",
+      "name": "Architecture Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "FOUND-000005"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000002",
+      "name": "Engineering Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "FOUND-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000003",
+      "name": "Quality Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "FOUND-000004"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000004",
+      "name": "Productivity Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "SYS-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000005",
+      "name": "AI Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices/ai_office.py",
+      "depends_on": [
+        "SYS-000012"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000006",
+      "name": "Risk Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "FOUND-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000007",
+      "name": "Resource Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "SYS-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000008",
+      "name": "Technology Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "SYS-000010"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000009",
+      "name": "Automation Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "SYS-000008"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000010",
+      "name": "Roadmap Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "SYS-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000011",
+      "name": "Security Office",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 11,
+      "evidence": "src/aias_enterprise_offices",
+      "depends_on": [
+        "SYS-000009"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "OFFICE-000012",
+      "name": "PMO",
+      "kind": "OFFICE",
+      "declared_state": "OPERATIONAL",
+      "wave": 4,
+      "evidence": "src/aias_pmo",
+      "depends_on": [
+        "SYS-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000001",
+      "name": "Enterprise Calculation Framework",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 13,
+      "evidence": "src/aias_ecf",
+      "depends_on": [
+        "FOUND-000007",
+        "SYS-000005"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000002",
+      "name": "Enterprise Drawing Framework",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 14,
+      "evidence": "src/aias_drawing_framework",
+      "depends_on": [
+        "FOUND-000007"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000003",
+      "name": "Enterprise Technical File Generator",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 15,
+      "evidence": "src/aias_technical_file",
+      "depends_on": [
+        "ENG-000001",
+        "ENG-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000004",
+      "name": "Foundation Professional Engine",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 12,
+      "evidence": "src/aias_engineering_wave12",
+      "depends_on": [
+        "ENG-000001"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000005",
+      "name": "CAD/BIM Integration",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 12,
+      "evidence": "src/aias_cad_bim_integration",
+      "depends_on": [
+        "ENG-000002"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000006",
+      "name": "Virtual Engineering Organization",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 16,
+      "evidence": "src/aias_virtual_organization",
+      "depends_on": [
+        "SYS-000005",
+        "SYS-000008",
+        "SYS-000009"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000007",
+      "name": "Jurisdiction Packs",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 12,
+      "evidence": "src/aias_engineering_wave12",
+      "depends_on": [
+        "SYS-000005"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000008",
+      "name": "Engineering Evidence Ledger",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 12,
+      "evidence": "src/aias_engineering_wave12",
+      "depends_on": [
+        "RULE-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000009",
+      "name": "Differential Validation",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 12,
+      "evidence": "src/aias_engineering_wave12",
+      "depends_on": [
+        "ENG-000008"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ENG-000010",
+      "name": "Project Reference Library",
+      "kind": "ENGINEERING_CAPABILITY",
+      "declared_state": "OPERATIONAL",
+      "wave": 12,
+      "evidence": "src/aias_engineering_wave12",
+      "depends_on": [
+        "RULE-000009"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FUTURE-000001",
+      "name": "Autonomous Engineering Cloud",
+      "kind": "FUTURE_VISION",
+      "declared_state": "OPERATIONAL",
+      "wave": 20,
+      "evidence": "src/aias_autonomous_cloud",
+      "depends_on": [
+        "SYS-000013"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FUTURE-000002",
+      "name": "AIAS Level 5 Mature Organization",
+      "kind": "FUTURE_VISION",
+      "declared_state": "SPECIFIED",
+      "wave": 21,
+      "evidence": "src/aias_level5_assurance",
+      "depends_on": [
+        "SYS-000013"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "FUTURE-000003",
+      "name": "End-to-End Project Production",
+      "kind": "FUTURE_VISION",
+      "declared_state": "OPERATIONAL",
+      "wave": 21,
+      "evidence": "src/aias_end_to_end",
+      "depends_on": [
+        "ENG-000001",
+        "ENG-000002",
+        "ENG-000003"
+      ],
+      "evidence_exists": true,
+      "supported": true
+    },
+    {
+      "id": "ALIAS-000001",
+      "name": "AEOS name",
+      "kind": "DUPLICATE",
+      "declared_state": "DUPLICATE",
+      "wave": 20,
+      "evidence": null,
+      "depends_on": [
+        "SYS-000013"
+      ],
+      "evidence_exists": false,
+      "supported": true
+    },
+    {
+      "id": "ALIAS-000002",
+      "name": "AES Engineering System name",
+      "kind": "DUPLICATE",
+      "declared_state": "DUPLICATE",
+      "wave": 1,
+      "evidence": null,
+      "depends_on": [
+        "FOUND-000003"
+      ],
+      "evidence_exists": false,
+      "supported": true
+    }
+  ]
+}

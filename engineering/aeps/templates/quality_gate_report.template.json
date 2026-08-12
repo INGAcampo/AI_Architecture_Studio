@@ -1,0 +1,25 @@
+{
+  "specification_id": "SPEC-000000",
+  "gates": [
+    {
+      "id": "QG-SPEC",
+      "passed": false,
+      "message": ""
+    },
+    {
+      "id": "QG-TRACE",
+      "passed": false,
+      "message": ""
+    },
+    {
+      "id": "QG-ADR",
+      "passed": false,
+      "message": ""
+    },
+    {
+      "id": "QG-ARCH",
+      "passed": false,
+      "message": ""
+    }
+  ]
+}

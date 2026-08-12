@@ -1,0 +1,11 @@
+{
+  "specification_id": "HYD-01",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+  "network_types": ["WATER", "SANITARY", "STORMWATER"],
+  "requirements": ["Every node satisfies mass continuity", "Every link satisfies capacity and velocity limits", "Network topology and sources are traceable", "Unknown nodes and sources fail closed", "Normative claims require authorized criteria and accepted review"],
+  "implementation": "src/aias_structural_codes_program/hyd01.py",
+  "verification": "tests/test_hydraulic_networks_hyd01.py",
+  "external_completion_conditions": ["Calibrated demand and rainfall data", "Authorized network criteria", "Field topology", "Independent hydraulic review"],
+  "construction_claim": false
+}

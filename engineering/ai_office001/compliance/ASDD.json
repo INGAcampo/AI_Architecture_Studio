@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-997501",
+  "title": "AIAS AI Office Activation",
+  "version": "1.0.0",
+  "purpose": "Activate accountable AI governance only after the Engineering Intelligence Core dependency is operational.",
+  "scope": "Dependency gate, charter, intelligence-case routing, decision rights, model cards, evaluation, risk, oversight and KPI accountability.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-997501",
+      "title": "Dependency gate",
+      "statement": "AI Office shall activate only when SYS-000012 is operational.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve institutional dependency integrity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/ai_office.py"
+      ],
+      "tested_by": [
+        "tests/test_ai_office001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997502",
+      "title": "Complete charter",
+      "statement": "AI Office shall declare mandate, accountability, decision rights, evidence, KPIs and escalation.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make AI governance executable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/offices/AI_OFFICE_CHARTER.json"
+      ],
+      "tested_by": [
+        "tests/test_ai_office001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997503",
+      "title": "Case ownership",
+      "statement": "Engineering-intelligence governance cases shall route uniquely to AI Office.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Establish accountable oversight.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/ai_office.py"
+      ],
+      "tested_by": [
+        "tests/test_ai_office001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997504",
+      "title": "Decision evidence",
+      "statement": "AI governance decisions shall require model card, evaluation, risk assessment and human oversight plan.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent incomplete model approvals.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_ai_office001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997505",
+      "title": "Professional boundary",
+      "statement": "AI Office shall not grant licensed professional engineering approval.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve human legal authority.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "docs/AI_OFFICE001.md"
+      ],
+      "tested_by": [
+        "tests/test_ai_office001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997506",
+      "title": "Reproducible delivery",
+      "statement": "AI Office activation shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep governance deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_ai_office001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_ai_office001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-AI-OFFICE-001"
+  ],
+  "adr_refs": [
+    "ADR-AI-OFFICE-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

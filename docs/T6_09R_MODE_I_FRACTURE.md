@@ -1,0 +1,1 @@
+# T6.09R — MODE_I_FRACTURE

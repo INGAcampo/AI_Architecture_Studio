@@ -1,0 +1,22 @@
+{
+  "spec_id": "AIAS-UX-AUDIT-001",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EVIDENCE_BASELINE_USABILITY_PENDING",
+  "governing_articles": ["AEC-000049", "AEC-000050", "AEC-000052"],
+  "objective": "Turn the existing desktop capabilities into measurable professional journeys and a controlled Workspace 2.0 migration.",
+  "journeys": ["J01 project lifecycle", "J02 BIM modeling", "J03 structural design", "J04 coordination", "J05 review and release", "J06 contextual learning"],
+  "measurement": {
+    "repository_evidence": "automated and reproducible",
+    "task_completion": "requires rendered representative-user sessions",
+    "metrics": ["completion rate", "time on task", "recoverable errors", "command count", "context switches", "evidence completeness"]
+  },
+  "claims_boundary": "Code evidence is not a usability certification and does not authorize professional engineering output.",
+  "acceptance": ["all journeys defined", "evidence audit executable", "Workspace 2.0 target architecture versioned", "tests pass", "installer checksums valid"],
+  "completion_evidence": {
+    "tests_passed_with_design_system_and_w2_foundation": 10,
+    "installer": "AIAS_UX_AUDIT001_WORKSPACE2_BASELINE_INSTALLER",
+    "checksum_files_verified": 9,
+    "repository_evidence_score_percent": 65
+  },
+  "next_macrodelivery": "AIAS-WORKSPACE-2.0 W2-02 Unified Document and Panel Orchestration"
+}

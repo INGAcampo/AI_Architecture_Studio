@@ -1,0 +1,38 @@
+{
+  "catalog_id": "AIAS-UNIVERSITY-000001",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "credential_policy": {"type":"AIAS_INTERNAL_COMPETENCY","not_a_professional_license":true,"minimum_score":0.8,"identity_verification_required_for_issuance":true},
+  "courses": [
+    {
+      "course_id":"COURSE-AIAS-FOUNDATIONS-001","title":"AIAS Foundations, Constitution and SDD","version":"1.0.0","level":"FOUNDATION","owner":"KNOWLEDGE_OFFICE","language":"es","prerequisites":[],
+      "capability_assets":["FOUND-000001","FOUND-000002","FOUND-000004","FOUND-000005","FOUND-000006"],
+      "modules":[
+        {"module_id":"MOD-001","title":"Charter and Constitution","lessons":[{"lesson_id":"LESSON-001","title":"Purpose, authority and professional boundary","resource":"docs/FOUNDATION_ALIGN001_CHARTER_HANDBOOK.md","kind":"MANUAL"}]},
+        {"module_id":"MOD-002","title":"Specification-Driven Development","lessons":[{"lesson_id":"LESSON-002","title":"Requirements, traceability and quality gates","resource":"engineering/aeps/05_SDD/ASDD-000002-formal-sdd.yaml","kind":"GUIDE"}]},
+        {"module_id":"MOD-003","title":"Engineering System and AES","lessons":[{"lesson_id":"LESSON-003","title":"Operating loop, lifecycle and standards","resource":"docs/FOUNDATION_ALIGN002_ENGINEERING_SYSTEM_AES.md","kind":"TUTORIAL"}]}
+      ],
+      "assessment":{"assessment_id":"EXAM-FOUNDATIONS-001","minimum_score":0.8,"questions":[
+        {"question_id":"Q-001","prompt":"What is the primary source of implementation truth?","choices":["Specification","Generated code","Chat history"],"correct_index":0},
+        {"question_id":"Q-002","prompt":"Who approves regulated engineering deliverables?","choices":["Any AI agent","Responsible licensed professional","The build server"],"correct_index":1},
+        {"question_id":"Q-003","prompt":"What minimum sustainable time reduction does AIAS target?","choices":["10%","25%","45%"],"correct_index":2},
+        {"question_id":"Q-004","prompt":"What must every approved requirement link to?","choices":["Implementation and tests","A color theme","Only a meeting note"],"correct_index":0},
+        {"question_id":"Q-005","prompt":"What does AEC-000049 require?","choices":["Delay value until Level 5","Materialize safe verifiable value early","Remove professional review"],"correct_index":1}
+      ]}
+    },
+    {
+      "course_id":"COURSE-AIAS-LIGHTHOUSE-COORD-001","title":"Coordinación y evidencia del edificio faro","version":"1.0.0","level":"PROFESSIONAL_REFERENCE","owner":"KNOWLEDGE_OFFICE","language":"es","prerequisites":["COURSE-AIAS-FOUNDATIONS-001"],
+      "capability_assets":["SYS-000011","SYS-000017"],
+      "modules":[
+        {"module_id":"MOD-LH-001","title":"Modelo, análisis y diseño referencial","lessons":[{"lesson_id":"LESSON-LH-001","title":"Recorrido estructural y trazabilidad","resource":"docs/AIAS_WORKSPACE2_W2_05.md","kind":"GUIDED_WORKFLOW"}]},
+        {"module_id":"MOD-LH-002","title":"Coordinación y evidencia","lessons":[{"lesson_id":"LESSON-LH-002","title":"Resolver interfaces mediante evidencia verificable","resource":"engineering/aias/structural_codes/COORD-01_MULTIDISCIPLINARY_DASHBOARD.json","kind":"GOVERNED_SPECIFICATION"}]},
+        {"module_id":"MOD-LH-003","title":"Límites normativos y profesionales","lessons":[{"lesson_id":"LESSON-LH-003","title":"Referencia, cumplimiento y autorización profesional","resource":"engineering/aias/structural_codes/VE-001_VENEZUELA_JURISDICTION_PROFILE.json","kind":"GOVERNED_REFERENCE"}]}
+      ],
+      "assessment":{"assessment_id":"EXAM-LIGHTHOUSE-COORD-001","minimum_score":0.8,"questions":[
+        {"question_id":"QLH-001","prompt":"¿Un resultado REFERENCE_ONLY demuestra cumplimiento COVENIN?","choices":["Sí","No","Solo si tiene planos"],"correct_index":1},
+        {"question_id":"QLH-002","prompt":"¿Qué debe acompañar una incidencia resuelta?","choices":["Evidencia verificable","Solo un comentario","Un cambio de color"],"correct_index":0},
+        {"question_id":"QLH-003","prompt":"¿Quién autoriza el producto regulado final?","choices":["El dashboard","El profesional habilitado","El instalador"],"correct_index":1}
+      ]}
+    }
+  ]
+}

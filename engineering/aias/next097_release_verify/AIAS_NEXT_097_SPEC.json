@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-097",
+  "title": "Release package verification",
+  "status": "VALIDATED",
+  "scope": "Verify release artifact uniqueness and reproducibility metadata",
+  "safety": ["Duplicate artifacts are flagged", "No external publication is performed"]
+}

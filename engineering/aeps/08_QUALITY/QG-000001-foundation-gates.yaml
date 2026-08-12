@@ -1,0 +1,11 @@
+id: QG-000001
+title: AEPS Foundation Quality Gates
+type: QualityGateSet
+version: 1.0.0
+status: APPROVED
+gates:
+  - QG-SPEC
+  - QG-TRACE
+  - QG-ADR
+  - QG-ARCH
+release_rule: all_pass

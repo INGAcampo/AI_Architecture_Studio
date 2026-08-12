@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-132",
+  "title": "Bundle index integrity report",
+  "status": "VALIDATED",
+  "scope": "Report bundle artifact index integrity and canonical digest",
+  "safety": ["Internal integrity is not external validity", "Digest state remains visible"]
+}

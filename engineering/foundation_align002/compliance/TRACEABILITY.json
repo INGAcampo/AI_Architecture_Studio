@@ -1,0 +1,50 @@
+{
+  "REQ-941001": {
+    "implemented_by": [
+      "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align002.py"
+    ]
+  },
+  "REQ-941002": {
+    "implemented_by": [
+      "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align002.py"
+    ]
+  },
+  "REQ-941003": {
+    "implemented_by": [
+      "engineering/aias/foundation/AIAS_AES_STANDARDS_REGISTRY.json"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align002.py"
+    ]
+  },
+  "REQ-941004": {
+    "implemented_by": [
+      "src/aias_engineering_system/validator.py"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align002.py"
+    ]
+  },
+  "REQ-941005": {
+    "implemented_by": [
+      "engineering/aias/foundation/AIAS_ENGINEERING_SYSTEM.json"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align002.py"
+    ]
+  },
+  "REQ-941006": {
+    "implemented_by": [
+      "scripts/build_foundation_align002_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_foundation_align002.py"
+    ]
+  }
+}

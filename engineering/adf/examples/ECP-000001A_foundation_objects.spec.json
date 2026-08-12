@@ -1,0 +1,16 @@
+{
+  "module_id": "ECP-000001A",
+  "package_name": "aias_foundation_objects",
+  "display_name": "AIAS Foundation Object Library",
+  "module_type": "ECP",
+  "capabilities": [
+    "isolated_footing",
+    "combined_footing",
+    "strip_footing",
+    "mat_foundation",
+    "pedestal",
+    "foundation_beam"
+  ],
+  "required_tests": 200,
+  "version": "1.0.0"
+}

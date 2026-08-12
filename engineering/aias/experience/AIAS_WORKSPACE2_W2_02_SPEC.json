@@ -1,0 +1,22 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-W2-02",
+  "version": "0.2.0",
+  "status": "IMPLEMENTED_VALIDATED",
+  "title": "Unified Document and Panel Orchestration",
+  "governing_articles": ["AEC-000049", "AEC-000051", "AEC-000052"],
+  "problem": "The legacy workspace persisted layouts but did not bind documents and panels to theme, professional profile, jurisdiction and review state as one recoverable session.",
+  "contracts": [
+    "WorkspaceManager remains the internal document and panel engine",
+    "Workspace2SessionAuthority is the single public session authority",
+    "recovery envelopes include shell, panel descriptors and workspace state",
+    "every envelope is protected by canonical SHA-256",
+    "restoration validates the complete candidate before committing state",
+    "writes are atomic through same-directory temporary replacement",
+    "unsaved-document close protection remains enforced",
+    "session save and restore publish observable events"
+  ],
+  "reference_consumer": "Workspace 2.0 desktop shell",
+  "acceptance": ["multi-document recovery", "panel recovery", "profile recovery", "tamper rejection", "failed restoration does not mutate active state", "legacy tests remain green"],
+  "professional_boundary": "Session recovery preserves application evidence; it does not validate engineering calculations or professional approval.",
+  "next_increment": "W2-03 project/BIM browser plus property inspector integration"
+}

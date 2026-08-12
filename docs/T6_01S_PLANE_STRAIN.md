@@ -1,0 +1,1 @@
+# T6.01S — PLANE_STRAIN

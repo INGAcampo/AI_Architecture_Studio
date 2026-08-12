@@ -1,0 +1,11 @@
+# `aias_foundation_documentation.cli`
+
+Source module: `src/aias_foundation_documentation/cli.py`
+
+## Public API
+
+### `main`
+
+- Kind: `FunctionDef`
+- Qualified name: `aias_foundation_documentation.cli.main`
+- Source: `src/aias_foundation_documentation/cli.py`

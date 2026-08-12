@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-091",
+  "title": "Dashboard integration validation",
+  "status": "VALIDATED",
+  "scope": "Validate the evidence-review Dashboard component contract",
+  "safety": ["Invalid components are rejected", "Validation does not create audit evidence"]
+}

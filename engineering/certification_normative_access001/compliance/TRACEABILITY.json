@@ -1,0 +1,50 @@
+{
+  "REQ-999911": {
+    "implemented_by": [
+      "src/aias_normative_access/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_normative_access001.py"
+    ]
+  },
+  "REQ-999912": {
+    "implemented_by": [
+      "src/aias_normative_access/scoping.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_normative_access001.py"
+    ]
+  },
+  "REQ-999913": {
+    "implemented_by": [
+      "src/aias_normative_access/vendors.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_normative_access001.py"
+    ]
+  },
+  "REQ-999914": {
+    "implemented_by": [
+      "src/aias_normative_access/vendors.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_normative_access001.py"
+    ]
+  },
+  "REQ-999915": {
+    "implemented_by": [
+      "engineering/aias/certification/NORMATIVE_ACCESS_PLAN.json"
+    ],
+    "tested_by": [
+      "tests/test_certification_normative_access001.py"
+    ]
+  },
+  "REQ-999916": {
+    "implemented_by": [
+      "scripts/build_certification_normative_access001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_normative_access001.py"
+    ]
+  }
+}

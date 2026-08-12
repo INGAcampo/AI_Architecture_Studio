@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-073",
+  "title": "Historical publication monitor",
+  "status": "VALIDATED",
+  "scope": "Read-only detection of an approved historical publication and SHA-256 change state",
+  "safety": ["No external evidence is fabricated", "No artifact is modified"]
+}

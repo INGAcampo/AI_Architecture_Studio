@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-994501",
+  "title": "Dependency-Ready AIAS Enterprise Offices",
+  "version": "1.0.0",
+  "purpose": "Institutionalize accountable enterprise offices as executable charters without claiming offices whose dependencies are unavailable.",
+  "scope": "Ten dependency-ready office charters, atomic registry, unique accountability routing, decision authorization, evidence gates, KPIs, escalation and explicit AI Office deferral.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-994501",
+      "title": "Complete charters",
+      "statement": "Each active office shall declare mandate, accountability, decision rights, evidence, KPIs and escalation.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make organizational authority executable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/offices/ENTERPRISE_OFFICE_CHARTERS.json"
+      ],
+      "tested_by": [
+        "tests/test_offices_foundation001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994502",
+      "title": "Dependency honesty",
+      "statement": "Offices with unavailable dependencies shall remain explicitly deferred.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent false organizational maturity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/bootstrap.py"
+      ],
+      "tested_by": [
+        "tests/test_offices_foundation001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994503",
+      "title": "Unique accountability",
+      "statement": "Work items shall route to exactly one accountable office.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Eliminate ownership ambiguity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_offices_foundation001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994504",
+      "title": "Decision control",
+      "statement": "The registry shall allow only charter-authorized roles with complete evidence to decide an assigned work item.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve separation of duties and auditability.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_offices_foundation001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994505",
+      "title": "Immediate consumers",
+      "statement": "Security recovery and capability automation work shall route through their real accountable offices.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize institutional value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_offices/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_offices_foundation001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-994506",
+      "title": "Reproducible delivery",
+      "statement": "Office foundation shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep organizational governance deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_offices_foundation001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_offices_foundation001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-OFFICES-FOUNDATION-001"
+  ],
+  "adr_refs": [
+    "ADR-OFFICES-FOUNDATION-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

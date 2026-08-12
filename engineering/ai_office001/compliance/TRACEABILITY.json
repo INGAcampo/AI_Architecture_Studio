@@ -1,0 +1,50 @@
+{
+  "REQ-997501": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/ai_office.py"
+    ],
+    "tested_by": [
+      "tests/test_ai_office001.py"
+    ]
+  },
+  "REQ-997502": {
+    "implemented_by": [
+      "engineering/aias/offices/AI_OFFICE_CHARTER.json"
+    ],
+    "tested_by": [
+      "tests/test_ai_office001.py"
+    ]
+  },
+  "REQ-997503": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/ai_office.py"
+    ],
+    "tested_by": [
+      "tests/test_ai_office001.py"
+    ]
+  },
+  "REQ-997504": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_ai_office001.py"
+    ]
+  },
+  "REQ-997505": {
+    "implemented_by": [
+      "docs/AI_OFFICE001.md"
+    ],
+    "tested_by": [
+      "tests/test_ai_office001.py"
+    ]
+  },
+  "REQ-997506": {
+    "implemented_by": [
+      "scripts/build_ai_office001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_ai_office001.py"
+    ]
+  }
+}

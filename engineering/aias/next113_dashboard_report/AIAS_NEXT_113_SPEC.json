@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-113",
+  "title": "Dashboard feed validation report",
+  "status": "VALIDATED",
+  "scope": "Report Dashboard feed validation without certification claims",
+  "safety": ["Feed validation remains operational", "Certification stays false"]
+}

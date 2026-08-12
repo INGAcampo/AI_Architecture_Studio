@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-147",
+  "title": "Bundle release readiness report",
+  "status": "VALIDATED",
+  "scope": "Expose internal bundle release readiness for traceability.",
+  "safety": {
+    "external_approval": false,
+    "certification_claim": false
+  }
+}

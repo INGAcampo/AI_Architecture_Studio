@@ -1,0 +1,1 @@
+# T6.03AJ — SOLID_SOLVER

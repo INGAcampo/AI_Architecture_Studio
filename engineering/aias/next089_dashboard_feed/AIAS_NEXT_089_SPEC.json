@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-089",
+  "title": "Review metrics dashboard feed",
+  "status": "VALIDATED",
+  "scope": "Expose review metrics to the Dashboard with explicit operational classification",
+  "safety": ["Feed is not an audit", "Source metrics remain unchanged"]
+}

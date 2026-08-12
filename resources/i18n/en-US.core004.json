@@ -1,0 +1,15 @@
+{
+  "locale": "en-US",
+  "version": "1.0.0",
+  "messages": {
+    "property.name": "Name",
+    "property.group.identity": "Identity",
+    "property.height": "Height",
+    "property.group.dimensions": "Dimensions",
+    "property.thickness": "Thickness",
+    "property.group.constraints": "Constraints",
+    "property.length": "Length",
+    "property.group.quantities": "Quantities",
+    "property.volume": "Volume"
+  }
+}

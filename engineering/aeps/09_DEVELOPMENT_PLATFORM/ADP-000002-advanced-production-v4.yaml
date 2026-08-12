@@ -1,0 +1,20 @@
+id: ADP-000002
+title: AIAS AEPS Advanced Production Platform V4 Enterprise
+type: DevelopmentPlatform
+version: 4.0.0
+status: IMPLEMENTED
+owner: AIAS Core Engineering
+purpose: Produce tested, measured and constitutionally certified modules from reusable domain templates.
+scope: Entire AIAS Development Platform.
+capabilities:
+  - Domain Template Engine
+  - Contract and Interface Generator
+  - Advanced Test Generator
+  - Generated Test Executor
+  - Migration and Rollback Engine
+  - Transactional File Operations
+  - Engineering Asset Catalog
+  - Productivity Measurement
+  - Full Constitution Validation
+  - Advanced Certification
+  - Advanced Production Orchestrator

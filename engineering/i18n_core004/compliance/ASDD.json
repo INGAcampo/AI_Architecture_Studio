@@ -1,0 +1,1 @@
+{"delivery":"I18N-CORE-004","status":"CONFORMANT","constitution":{"preserved":true},"sdd":{"specification":"engineering/aias/internationalization/I18N_CORE_004_SPEC.json","tests":"tests/test_i18n_core004.py","documentation":"docs/I18N_CORE_004.md"}}

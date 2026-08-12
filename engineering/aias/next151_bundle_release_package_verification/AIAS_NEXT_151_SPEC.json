@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-151",
+  "title": "Bundle release package verification",
+  "status": "VALIDATED",
+  "scope": "Verify coherence between local package artifacts and declared count.",
+  "safety": {
+    "external_attestation": false,
+    "certification_claim": false
+  }
+}

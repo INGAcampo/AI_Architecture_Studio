@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-992001",
+  "title": "Executable Engineering Knowledge System Completion",
+  "version": "1.0.0",
+  "purpose": "Complete AEKS with safely executable, licensed, attributable and evidence-producing engineering knowledge.",
+  "scope": "Admission, licenses, provenance, declarative expressions, AST allowlist, exact inputs, validation rules, units, hashes and professional review boundaries.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-992101",
+      "title": "Knowledge admission",
+      "statement": "Approved executable knowledge shall include license, provenance, deterministic mode and review boundary.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect lawful and safe knowledge use.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_executable_knowledge/admission.py"
+      ],
+      "tested_by": [
+        "tests/test_aeks_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-992102",
+      "title": "Safe execution",
+      "statement": "The executor shall allow arithmetic and comparisons while rejecting calls, attributes and unknown names.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent knowledge payloads from executing arbitrary code.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_executable_knowledge/executor.py"
+      ],
+      "tested_by": [
+        "tests/test_aeks_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-992103",
+      "title": "Input contract",
+      "statement": "Inputs shall exactly match declared names, be finite and pass validation rules.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make calculations deterministic and auditable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_executable_knowledge/executor.py"
+      ],
+      "tested_by": [
+        "tests/test_aeks_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-992104",
+      "title": "Execution evidence",
+      "statement": "Results shall record knowledge version, units, jurisdiction, review status and integrity hashes.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve the engineering golden thread.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_executable_knowledge/executor.py"
+      ],
+      "tested_by": [
+        "tests/test_aeks_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-992105",
+      "title": "Immediate consumer",
+      "statement": "A reference bearing-pressure EKU shall execute through the new boundary.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/aeks/EKU-000002-bearing-pressure.json"
+      ],
+      "tested_by": [
+        "tests/test_aeks_align001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-992106",
+      "title": "Reproducible delivery",
+      "statement": "AEKS alignment shall include tests, documentation, installer, manifest, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep executable knowledge deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_aeks_align001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_aeks_align001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-AEKS-ALIGN-001"
+  ],
+  "adr_refs": [
+    "ADR-AEKS-ALIGN-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

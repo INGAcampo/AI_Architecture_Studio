@@ -1,0 +1,52 @@
+{
+  "component_id": "EKG-000001",
+  "constitution": "AEC-000002",
+  "articles": [
+    "AEC-ART-000001",
+    "AEC-ART-000002",
+    "AEC-ART-000003",
+    "AEC-ART-000004",
+    "AEC-000049",
+    "AEC-000050",
+    "AEC-000051"
+  ],
+  "gates": [
+    {
+      "gate_id": "QG-SPEC",
+      "passed": true,
+      "message": "Specification valid"
+    },
+    {
+      "gate_id": "QG-TRACE",
+      "passed": true,
+      "message": "Traceability coverage=100.00%"
+    },
+    {
+      "gate_id": "QG-ADR",
+      "passed": true,
+      "message": "ADR linked"
+    },
+    {
+      "gate_id": "QG-ARCH",
+      "passed": true,
+      "message": "Architecture linked"
+    },
+    {
+      "gate_id": "QG-VALUE",
+      "passed": true,
+      "message": "Immediate value path linked"
+    }
+  ],
+  "all_passed": true,
+  "kpi": {
+    "classification": "REFERENCE_ENGINEERING_ESTIMATE",
+    "baseline_hours": 24.0,
+    "actual_hours": 9.0,
+    "time_reduction": 0.625,
+    "automation_ratio": 0.7222222222222222,
+    "reuse_ratio": 0.8461538461538461,
+    "meets_45_percent_target": true,
+    "warning": "Post-validation reference estimate; production graph scale and query latency require operational telemetry."
+  },
+  "validator_issues": []
+}

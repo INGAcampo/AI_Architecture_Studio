@@ -1,0 +1,9 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-W2-07",
+  "version": "0.7.0",
+  "status": "AUTOMATED_VALIDATION_IMPLEMENTED_REPRESENTATIVE_SESSIONS_PENDING",
+  "automated_scope": ["WCAG contrast policy", "HTML semantics", "responsive declarations", "artifact size budget", "QSS generation performance", "professional-boundary visibility"],
+  "human_scope": ["keyboard-only completion", "200 percent scaling", "Spanish and English comprehension", "six task-based journeys", "SUS score", "critical error observation"],
+  "claims_boundary": "Automated accessibility checks and developer rendering do not equal representative usability validation.",
+  "completion_gate": "Five or more consented representative sessions satisfying the versioned acceptance thresholds."
+}

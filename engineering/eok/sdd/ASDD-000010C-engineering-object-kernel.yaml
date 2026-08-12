@@ -1,0 +1,13 @@
+id: ASDD-000010C
+title: AIAS Engineering Object Kernel
+version: 1.0.0
+status: ACTIVE
+integrates:
+  - AEKS
+  - ECF
+  - Geometry Kernel
+  - Enterprise Registry
+consumer_required_next_cycle: true
+first_consumer: ECP-000001-CIMENTACIONES-SUPERFICIALES
+minimum_time_reduction: 0.45
+human_review_for_regulated_deliverables: true

@@ -1,0 +1,9 @@
+id: AEO-000003
+title: Identifier System
+type: Ontology
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+purpose: Garantizar IDs únicos.
+scope: Todo AIAS.
+history: []

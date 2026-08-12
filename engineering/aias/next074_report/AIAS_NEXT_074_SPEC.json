@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-074",
+  "title": "Historical publication report",
+  "status": "VALIDATED",
+  "scope": "Produce a deterministic report from the read-only publication monitor",
+  "safety": ["No approval is inferred", "No external evidence is fabricated"]
+}

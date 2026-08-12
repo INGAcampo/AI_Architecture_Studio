@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-082",
+  "title": "Evidence intake queue",
+  "status": "VALIDATED",
+  "scope": "Maintain deterministic ordering of evidence awaiting review",
+  "safety": ["Items remain pending", "Queue does not mutate source evidence"]
+}

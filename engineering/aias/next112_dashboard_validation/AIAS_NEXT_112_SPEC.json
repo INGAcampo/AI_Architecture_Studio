@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-112",
+  "title": "Dashboard feed validation",
+  "status": "VALIDATED",
+  "scope": "Validate operational-only classification and unaudited status of the bundle feed",
+  "safety": ["Invalid feed contracts are rejected", "Validation does not certify evidence"]
+}

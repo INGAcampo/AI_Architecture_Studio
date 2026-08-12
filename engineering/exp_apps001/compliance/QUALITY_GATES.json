@@ -1,0 +1,1 @@
+{"component_id":"EXP-APPS-001","all_passed":true,"gates":[{"gate_id":"SDD","passed":true},{"gate_id":"TESTS","passed":true},{"gate_id":"SECURITY_BOUNDARIES","passed":true},{"gate_id":"TRUTHFUL_PORTFOLIO","passed":true},{"gate_id":"INSTALLER_INTEGRITY","passed":true}]}

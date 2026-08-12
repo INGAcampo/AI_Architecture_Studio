@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-155",
+  "title": "Bundle package readiness report",
+  "status": "VALIDATED",
+  "scope": "Expose internal package readiness for downstream traceability.",
+  "safety": {
+    "external_approval": false,
+    "certification_claim": false
+  }
+}

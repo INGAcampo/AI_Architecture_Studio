@@ -1,0 +1,38 @@
+import json
+from pathlib import Path
+from datetime import date
+from aias_structural_codes_program import AnalysisRequest,AnalysisResult,BatchMemberDesigner,BuildingNode,CodeCheckRule,DesignRulePack,LoadCase,LoadCombination,MaterialCodePack,MemberDemand,NormativeSource,REQUIRED_COVERAGE,SectionCapacity,SeismicParameters,StructuralBuilding,StructuralCodePack,StructuralMember,consolidated_report,knowledge_baseline,program_roadmap,validate_program
+ROOT=Path(__file__).resolve().parents[1]
+def test_program_has_complete_vertical_consumer_and_safe_dependencies():
+ data=program_roadmap();assert validate_program(data)==[];assert len(data["stages"])==20;assert data["construction_claim"] is False
+ assert {"SCP-04","SCP-05","SCP-06","SCP-07","INT-02","INT-03"}<={x["id"] for x in data["stages"]}
+def test_living_knowledge_is_versioned_and_integrity_protected():
+ data=knowledge_baseline(ROOT);assert data["root_sha256"];assert {"architecture","decisions","modules","tests","standards"}=={x["kind"] for x in data["groups"]};assert all(x["file_count"]>0 for x in data["groups"])
+def test_program_policy_preserves_normative_boundary():
+ payload=json.loads((ROOT/"engineering/aias/structural_codes/STRUCTURAL_CODES_PROGRAM.json").read_text(encoding="utf-8"));assert "licensed, versioned" in payload["normative_policy"];assert payload["initial_jurisdiction"]=="Venezuela";assert payload["normative_pack_status"]=="PENDING_OFFICIAL_EDITION_VERIFICATION_AND_LICENSED_ACQUISITION"
+def test_canonical_building_is_shared_bim_cae_contract():
+ nodes=(BuildingNode("N1",0,0,0),BuildingNode("N2",0,0,3),BuildingNode("N3",5,0,3));members=(StructuralMember("C1","COLUMN","N1","N2","CONC30","C400"),StructuralMember("B1","BEAM","N2","N3","CONC30","B300X500"));b=StructuralBuilding("P1","BLDG1","R00","LOCAL_PROJECT_SI","SI",nodes,members)
+ assert b.validate()==[];x=b.exchange();assert x["schema"]=="AIAS-STRUCTURAL-BUILDING-1.0";assert x["normative_status"]=="JURISDICTION_PACK_REQUIRED";assert x["construction_approved"] is False
+def test_whole_building_analysis_contract_preserves_solver_and_load_provenance():
+ nodes=(BuildingNode("N1",0,0,0),BuildingNode("N2",0,0,3));members=(StructuralMember("C1","COLUMN","N1","N2","S355","W310"),);b=StructuralBuilding("P1","B1","R00","LOCAL_SI","SI",nodes,members)
+ q=AnalysisRequest("A1",b,(LoadCase("D","DEAD","Self weight","PROJECT_MODEL"),),"AIAS-REFERENCE-SOLVER","1.0.0",("STATIC_LINEAR",));assert q.validate()==[];assert q.exchange()["normative_compliance_claimed"] is False
+ r=AnalysisResult("A1","AIAS-REFERENCE-SOLVER","1.0.0","COMPLETED",(MemberDemand("C1","D",100,5,0,0,0,12),));assert r.validate_against(q)==[]
+def test_analysis_contract_rejects_untraceable_loads_and_foreign_results():
+ b=StructuralBuilding("P","B","R","LOCAL","SI",(BuildingNode("N1",0,0,0),BuildingNode("N2",0,0,1)),(StructuralMember("M","BEAM","N1","N2","M","S"),));q=AnalysisRequest("A",b,(LoadCase("L","LIVE","Live",""),),"S","1",("STATIC_LINEAR",));assert "L:source_required" in q.validate();r=AnalysisResult("OTHER","S","1","COMPLETED",(MemberDemand("X","Z",0,0,0,0,0,0),));assert len(r.validate_against(q))==3
+def test_batch_design_consumes_complete_building_demands_and_selects_lightest_adequate_sections():
+ nodes=(BuildingNode("N1",0,0,0),BuildingNode("N2",0,0,3),BuildingNode("N3",5,0,3));members=(StructuralMember("C1","COLUMN","N1","N2","S355","OLD-C"),StructuralMember("B1","BEAM","N2","N3","S355","OLD-B"));b=StructuralBuilding("P","B","R","LOCAL","SI",nodes,members);q=AnalysisRequest("A",b,(LoadCase("D","DEAD","Dead","MODEL"),),"SOL","1",("STATIC_LINEAR",));r=AnalysisResult("A","SOL","1","COMPLETED",(MemberDemand("C1","D",400,20,0,0,50,0),MemberDemand("B1","D",10,80,0,0,150,0)))
+ pack=DesignRulePack("REF-STEEL","1.0.0","REFERENCE_ONLY","GENERIC",(SectionCapacity("C-LIGHT","COLUMN",500,100,100,30),SectionCapacity("C-HEAVY","COLUMN",1000,200,300,60),SectionCapacity("B-LIGHT","BEAM",100,100,180,25),SectionCapacity("B-HEAVY","BEAM",200,200,400,50)),"AIAS_TEST_REFERENCE")
+ out=BatchMemberDesigner().design(q,r,pack);assert out.issues==();assert [x.selected_section_id for x in out.designs]==["C-LIGHT","B-LIGHT"];assert all(x.status=="PASS_REFERENCE" for x in out.designs);assert out.construction_approved is False
+def test_batch_design_fails_closed_on_invalid_pack_or_analysis():
+ b=StructuralBuilding("P","B","R","LOCAL","SI",(BuildingNode("N1",0,0,0),BuildingNode("N2",0,0,1)),(StructuralMember("M","BEAM","N1","N2","M","S"),));q=AnalysisRequest("A",b,(LoadCase("D","DEAD","Dead","MODEL"),),"S","1",("STATIC_LINEAR",));r=AnalysisResult("A","S","1","PARTIAL",());p=DesignRulePack("","1","REFERENCE_ONLY","GENERIC",(),"");out=BatchMemberDesigner().design(q,r,p);assert out.designs==();assert "analysis_not_completed" in out.issues;assert "rule_pack_identity_incomplete" in out.issues
+def test_consolidated_report_closes_reference_structural_vertical():
+ b=StructuralBuilding("P","B","R00","LOCAL","SI",(BuildingNode("N1",0,0,0),BuildingNode("N2",3,0,0)),(StructuralMember("B1","BEAM","N1","N2","M","OLD"),));q=AnalysisRequest("A",b,(LoadCase("D","DEAD","Dead","MODEL"),),"S","1",("STATIC_LINEAR",));a=AnalysisResult("A","S","1","COMPLETED",(MemberDemand("B1","D",0,10,0,0,20,0),));p=DesignRulePack("REF","1","REFERENCE_ONLY","GENERIC",(SectionCapacity("B","BEAM",100,100,100,10),),"TEST");d=BatchMemberDesigner().design(q,a,p);report=consolidated_report(q,a,d,p);assert report["status"]=="FOR_PROFESSIONAL_REVIEW";assert report["optimization"]["estimated_selected_weight_kg"]==30;assert report["optimization"]["global_optimum_claimed"] is False;assert report["construction_approved"] is False
+def test_normative_pack_requires_license_jurisdiction_and_effective_date():
+ src=NormativeSource("N1","Authorized structural standard","2026","Authority","LIC-1","https://authority.invalid/record");comb=LoadCombination("U1",(("D",1.2),("L",1.6)),"ULTIMATE");seismic=SeismicParameters("OFFICIAL_HAZARD","C",1.0,5.0,.05);pack=StructuralCodePack("JUR-BO-001","1.0.0","BO",date(2026,1,1),None,"OFFICIAL_VERIFIED",(src,),(comb,),seismic)
+ assert pack.validate()==[];assert pack.applicable("BO",date(2026,8,3));assert not pack.applicable("OTHER",date(2026,8,3));assert pack.normative_claim_allowed("BO",date(2026,8,3));assert comb.evaluate({"D":10,"L":5})==20
+def test_demo_or_unlicensed_pack_cannot_authorize_normative_claim():
+ src=NormativeSource("N","Demo","1","AIAS","DEMO","internal");pack=StructuralCodePack("DEMO","1","GENERIC",date(2026,1,1),None,"REFERENCE_ONLY",(src,),(),None);assert pack.validate()==[];assert pack.normative_claim_allowed("GENERIC",date(2026,8,3)) is False
+def test_material_pack_requires_complete_traceable_domain_coverage():
+ src=NormativeSource("N","Official","2026","Authority","LIC","https://authority.invalid");parent=StructuralCodePack("J","1","BO",date(2026,1,1),None,"OFFICIAL_VERIFIED",(src,),(),None);rules=tuple(CodeCheckRule(f"R-{x}",x,"N",f"authorized:{x}",f"impl:{x}",f"test:{x}","SI") for x in REQUIRED_COVERAGE["CONCRETE"]);pack=MaterialCodePack("CONC","1","CONCRETE",parent,rules,("benchmark:independent",),"ACCEPTED");assert pack.validate()==[];assert pack.coverage()["complete"];assert pack.normative_claim_allowed("BO",date(2026,8,3))
+def test_incomplete_material_pack_fails_closed():
+ src=NormativeSource("N","Demo","1","AIAS","DEMO","internal");parent=StructuralCodePack("D","1","GENERIC",date(2026,1,1),None,"REFERENCE_ONLY",(src,),(),None);pack=MaterialCodePack("P","1","STEEL",parent,(CodeCheckRule("R","FLEXURE","N","x","i","t","SI"),),(),"PENDING");assert not pack.coverage()["complete"];assert any(x.startswith("missing_coverage") for x in pack.validate());assert not pack.normative_claim_allowed("GENERIC",date(2026,8,3))

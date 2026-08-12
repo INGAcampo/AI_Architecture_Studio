@@ -1,0 +1,50 @@
+{
+  "REQ-200201": {
+    "implemented_by": [
+      "src/aias_foundation_handover/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001f_foundation_handover.py"
+    ]
+  },
+  "REQ-200202": {
+    "implemented_by": [
+      "src/aias_foundation_handover/custody.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001f_foundation_handover.py"
+    ]
+  },
+  "REQ-200203": {
+    "implemented_by": [
+      "src/aias_foundation_handover/acceptance.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001f_foundation_handover.py"
+    ]
+  },
+  "REQ-200204": {
+    "implemented_by": [
+      "src/aias_foundation_handover/maturity.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001f_foundation_handover.py"
+    ]
+  },
+  "REQ-200205": {
+    "implemented_by": [
+      "src/aias_foundation_handover/kpi.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001f_foundation_handover.py"
+    ]
+  },
+  "REQ-200206": {
+    "implemented_by": [
+      "src/aias_foundation_handover/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001f_foundation_handover.py"
+    ]
+  }
+}

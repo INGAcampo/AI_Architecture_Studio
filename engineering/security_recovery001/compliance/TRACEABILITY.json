@@ -1,0 +1,50 @@
+{
+  "REQ-994001": {
+    "implemented_by": [
+      "src/aias_security_recovery/scanner.py"
+    ],
+    "tested_by": [
+      "tests/test_security_recovery001.py"
+    ]
+  },
+  "REQ-994002": {
+    "implemented_by": [
+      "src/aias_security_recovery/backup.py"
+    ],
+    "tested_by": [
+      "tests/test_security_recovery001.py"
+    ]
+  },
+  "REQ-994003": {
+    "implemented_by": [
+      "src/aias_security_recovery/backup.py"
+    ],
+    "tested_by": [
+      "tests/test_security_recovery001.py"
+    ]
+  },
+  "REQ-994004": {
+    "implemented_by": [
+      "src/aias_security_recovery/policy.py"
+    ],
+    "tested_by": [
+      "tests/test_security_recovery001.py"
+    ]
+  },
+  "REQ-994005": {
+    "implemented_by": [
+      "src/aias_security_recovery/backup.py"
+    ],
+    "tested_by": [
+      "tests/test_security_recovery001.py"
+    ]
+  },
+  "REQ-994006": {
+    "implemented_by": [
+      "scripts/build_security_recovery001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_security_recovery001.py"
+    ]
+  }
+}

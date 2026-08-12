@@ -1,0 +1,1 @@
+# T6.01AJ — MESH_QUALITY

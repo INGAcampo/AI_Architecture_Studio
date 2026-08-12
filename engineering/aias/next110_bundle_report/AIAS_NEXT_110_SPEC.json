@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-110",
+  "title": "Bundle verification report",
+  "status": "VALIDATED",
+  "scope": "Report evidence bundle verification results",
+  "safety": ["Bundle status is not certification", "External validity remains false"]
+}

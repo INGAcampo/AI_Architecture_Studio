@@ -1,0 +1,50 @@
+{
+  "REQ-999601": {
+    "implemented_by": [
+      "src/aias_level5_assurance/ledger.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_evidence_campaign001.py"
+    ]
+  },
+  "REQ-999602": {
+    "implemented_by": [
+      "src/aias_level5_assurance/ledger.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_evidence_campaign001.py"
+    ]
+  },
+  "REQ-999603": {
+    "implemented_by": [
+      "src/aias_level5_assurance/ledger.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_evidence_campaign001.py"
+    ]
+  },
+  "REQ-999604": {
+    "implemented_by": [
+      "src/aias_level5_assurance/ledger.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_evidence_campaign001.py"
+    ]
+  },
+  "REQ-999605": {
+    "implemented_by": [
+      "src/aias_level5_assurance/cli.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_evidence_campaign001.py"
+    ]
+  },
+  "REQ-999606": {
+    "implemented_by": [
+      "scripts/build_level5_evidence_campaign001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_evidence_campaign001.py"
+    ]
+  }
+}

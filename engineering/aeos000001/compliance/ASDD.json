@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-998001",
+  "title": "AIAS Engineering Operating System",
+  "version": "1.0.0",
+  "purpose": "Coordinate operational AIAS services through a dependency-aware, evidence-gated and event-driven project lifecycle.",
+  "scope": "Service topology, health, project lifecycle, sequential gates, idempotent commands, correlation, evidence, audit hashes and CNS event integration.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-998001",
+      "title": "Service topology",
+      "statement": "AEOS shall register versioned capabilities, dependencies and explicit service health.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the digital company operationally observable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_os/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_aeos000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998002",
+      "title": "Lifecycle kernel",
+      "statement": "Projects shall advance sequentially from INITIATED through OPERATING.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide one governed operating lifecycle.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_os/kernel.py"
+      ],
+      "tested_by": [
+        "tests/test_aeos000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998003",
+      "title": "Evidence gates",
+      "statement": "Every target state shall require its service readiness and mandatory evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsupported operational claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_os/kernel.py"
+      ],
+      "tested_by": [
+        "tests/test_aeos000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998004",
+      "title": "Reliable commands",
+      "statement": "Commands shall be correlated, idempotent, atomically persisted and hash-audited.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support safe retry and continuity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_os/kernel.py"
+      ],
+      "tested_by": [
+        "tests/test_aeos000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998005",
+      "title": "Immediate consumer",
+      "statement": "The full Lighthouse lifecycle shall reach OPERATING and publish real CNS journal events.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize operating-system value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "tests/test_aeos000001.py"
+      ],
+      "tested_by": [
+        "tests/test_aeos000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-998006",
+      "title": "Reproducible delivery",
+      "statement": "AEOS shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the operating system deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_aeos000001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_aeos000001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-AEOS-000001"
+  ],
+  "adr_refs": [
+    "ADR-AEOS-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

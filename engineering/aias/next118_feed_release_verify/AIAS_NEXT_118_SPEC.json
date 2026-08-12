@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-118",
+  "title": "Feed release verification",
+  "status": "VALIDATED",
+  "scope": "Verify uniqueness and reproducibility metadata of feed release artifacts",
+  "safety": ["Duplicates are flagged", "No external publication is performed"]
+}

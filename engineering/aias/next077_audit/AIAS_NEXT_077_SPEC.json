@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-077",
+  "title": "Evidence ledger audit report",
+  "status": "VALIDATED",
+  "scope": "Generate an auditable internal report from ledger reconciliation",
+  "safety": ["No external certification is claimed", "Source records remain unchanged"]
+}

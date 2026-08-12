@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-103",
+  "title": "Artifact index integrity",
+  "status": "VALIDATED",
+  "scope": "Verify sorted uniqueness and canonical digest of an artifact index",
+  "safety": ["Integrity is not certification", "Input index is not mutated"]
+}

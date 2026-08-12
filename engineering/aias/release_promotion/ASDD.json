@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-008","status":"CONFORMANT","specification":"engineering/aias/release_promotion/AIAS_NEXT_008_SPEC.json","implementation":"src/aias_release_promotion/promotion.py","tests":"tests/test_aias_next008_promotion.py"}

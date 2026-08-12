@@ -1,0 +1,21 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-W2-03",
+  "version": "0.3.0",
+  "status": "IMPLEMENTED_VALIDATED",
+  "title": "Project/BIM Browser and Property Inspector Integration",
+  "objective": "Make browser, canvas and typed property inspection behave as one professional modeling workspace.",
+  "requirements": [
+    "stable engineering object identifiers are mandatory",
+    "duplicate identifiers fail closed",
+    "browser and canvas selections share WorkspaceManager state",
+    "selection resolves to real objects before reaching the property palette",
+    "missing objects remain visible in synchronization evidence without fabricating properties",
+    "group selection clears object properties",
+    "standard project browser and inspector panels are registered idempotently",
+    "typed property editing and undo remain delegated to the existing validated controller"
+  ],
+  "reference_consumer": "Architecture and Structure workspace profiles",
+  "boundary": "This increment integrates headless professional interaction contracts; rendered Qt composition is a later acceptance gate.",
+  "validation_evidence": {"tests_passed_with_legacy_suites": 48, "installer": "AIAS_WORKSPACE2_W2_03_BIM_INSPECTOR_INSTALLER"},
+  "next_increment": "W2-04 Professional Command Search and Status Model"
+}

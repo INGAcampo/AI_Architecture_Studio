@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-150",
+  "title": "Bundle release package",
+  "status": "VALIDATED",
+  "scope": "Assemble a local deterministic release package descriptor.",
+  "safety": {
+    "published": false,
+    "certification_claim": false
+  }
+}

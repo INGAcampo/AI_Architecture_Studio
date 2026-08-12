@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-099",
+  "title": "Release readiness gate",
+  "status": "VALIDATED",
+  "scope": "Evaluate local release readiness from verification and checksum presence",
+  "safety": ["External publication remains unauthorized", "Missing checksums block readiness"]
+}

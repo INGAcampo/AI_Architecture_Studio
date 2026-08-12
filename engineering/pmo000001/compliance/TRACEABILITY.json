@@ -1,0 +1,50 @@
+{
+  "REQ-991101": {
+    "implemented_by": [
+      "engineering/aias/pmo/PMO_POLICY.json"
+    ],
+    "tested_by": [
+      "tests/test_pmo000001.py"
+    ]
+  },
+  "REQ-991102": {
+    "implemented_by": [
+      "src/aias_pmo/portfolio.py"
+    ],
+    "tested_by": [
+      "tests/test_pmo000001.py"
+    ]
+  },
+  "REQ-991103": {
+    "implemented_by": [
+      "src/aias_pmo/portfolio.py"
+    ],
+    "tested_by": [
+      "tests/test_pmo000001.py"
+    ]
+  },
+  "REQ-991104": {
+    "implemented_by": [
+      "src/aias_pmo/portfolio.py"
+    ],
+    "tested_by": [
+      "tests/test_pmo000001.py"
+    ]
+  },
+  "REQ-991105": {
+    "implemented_by": [
+      "src/aias_pmo/portfolio.py"
+    ],
+    "tested_by": [
+      "tests/test_pmo000001.py"
+    ]
+  },
+  "REQ-991106": {
+    "implemented_by": [
+      "scripts/build_pmo000001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_pmo000001.py"
+    ]
+  }
+}

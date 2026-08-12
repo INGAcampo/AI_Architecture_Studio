@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-200003",
+  "title": "Foundation Digital Handover and Lifecycle Assurance Framework",
+  "version": "1.0.0",
+  "purpose": "Convert the controlled ECP-000001E transmittal into an auditable digital handover with custody, acceptance, KPI and continuous-improvement evidence.",
+  "scope": "Transmittal ingestion, checksum verification, custody ledger, acceptance gates, maturity assessment, KPI evidence, findings and lifecycle dossier packaging.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-200201",
+      "title": "ECP-E consumption",
+      "statement": "ECP-000001F shall consume and identify a complete ECP-000001E transmittal.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve the real vertical consumer chain.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_handover/engine.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001f_foundation_handover.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200202",
+      "title": "Custody integrity",
+      "statement": "The system shall independently verify every transmitted file and record an append-only custody event.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Detect corruption and preserve delivery provenance.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_handover/custody.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001f_foundation_handover.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200203",
+      "title": "Acceptance controls",
+      "statement": "The system shall evaluate completeness, integrity, issue and professional-approval acceptance gates.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsafe or incomplete lifecycle acceptance.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_handover/acceptance.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001f_foundation_handover.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200204",
+      "title": "Maturity evidence",
+      "statement": "The system shall calculate a reproducible five-level capability assessment from explicit gate evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide measurable progress toward AIAS Level 5.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_handover/maturity.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001f_foundation_handover.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200205",
+      "title": "Sustainable acceleration",
+      "statement": "The system shall record baseline, actual, automation and reuse evidence and distinguish estimates from audited measurements.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enforce the constitutional 45 percent target without unsupported claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_handover/kpi.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001f_foundation_handover.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200206",
+      "title": "Lifecycle dossier",
+      "statement": "The system shall generate a versioned machine-readable dossier, findings register and checksum-protected release archive.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create a tangible reusable handover asset.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_handover/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001f_foundation_handover.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-ECP-000001F"
+  ],
+  "adr_refs": [
+    "ADR-ECP-000001F"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

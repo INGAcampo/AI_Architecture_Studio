@@ -1,0 +1,28 @@
+{
+  "id": "SPEC-000250",
+  "title": "Generated BIM Slab Service",
+  "module_name": "aias_generated_bim_slab",
+  "class_name": "BimSlab",
+  "domain": "BIM",
+  "version": "1.0.0",
+  "template_id": "TPL-000001",
+  "requirements": [
+    {
+      "id": "REQ-000701",
+      "statement": "The system shall generate a BIM slab domain service.",
+      "acceptance_criteria": [
+        "Service executes successfully."
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-000001"
+  ],
+  "adr_refs": [
+    "ADR-000004"
+  ],
+  "baseline_hours": 100,
+  "manual_hours": 40,
+  "automation_hours_saved": 45,
+  "reuse_hours_saved": 15
+}

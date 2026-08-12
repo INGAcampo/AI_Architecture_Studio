@@ -2,7 +2,7 @@
 AI Architecture Studio
 Ribbon
 
-Foundation 4.2
+Foundation 4.3 / JOIN Professional 4.3
 """
 
 from PySide6.QtWidgets import (
@@ -40,6 +40,13 @@ class Ribbon(QWidget):
         self.copy_btn = QPushButton("COPY")
         self.rotate_btn = QPushButton("ROTATE")
         self.scale_btn = QPushButton("SCALE")
+        self.mirror_btn = QPushButton("MIRROR")
+        self.offset_btn = QPushButton("OFFSET")
+        self.trim_btn = QPushButton("TRIM")
+        self.extend_btn = QPushButton("EXTEND")
+        self.fillet_btn = QPushButton("FILLET")
+        self.chamfer_btn = QPushButton("CHAMFER")
+        self.join_btn = QPushButton("JOIN")
 
         self.wall_btn = QPushButton("Muro")
         self.column_btn = QPushButton("Columna")
@@ -57,6 +64,13 @@ class Ribbon(QWidget):
             self.copy_btn,
             self.rotate_btn,
             self.scale_btn,
+            self.mirror_btn,
+            self.offset_btn,
+            self.trim_btn,
+            self.extend_btn,
+            self.fillet_btn,
+            self.chamfer_btn,
+            self.join_btn,
             self.wall_btn,
             self.column_btn,
             self.beam_btn,

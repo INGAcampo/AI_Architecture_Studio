@@ -1,0 +1,50 @@
+{
+  "REQ-995001": {
+    "implemented_by": [
+      "src/aias_engineering_wave12/workflow.py"
+    ],
+    "tested_by": [
+      "tests/test_engineering_wave12_001.py"
+    ]
+  },
+  "REQ-995002": {
+    "implemented_by": [
+      "src/aias_engineering_wave12/jurisdictions.py"
+    ],
+    "tested_by": [
+      "tests/test_engineering_wave12_001.py"
+    ]
+  },
+  "REQ-995003": {
+    "implemented_by": [
+      "src/aias_engineering_wave12/evidence.py"
+    ],
+    "tested_by": [
+      "tests/test_engineering_wave12_001.py"
+    ]
+  },
+  "REQ-995004": {
+    "implemented_by": [
+      "src/aias_engineering_wave12/differential.py"
+    ],
+    "tested_by": [
+      "tests/test_engineering_wave12_001.py"
+    ]
+  },
+  "REQ-995005": {
+    "implemented_by": [
+      "src/aias_engineering_wave12/references.py"
+    ],
+    "tested_by": [
+      "tests/test_engineering_wave12_001.py"
+    ]
+  },
+  "REQ-995006": {
+    "implemented_by": [
+      "scripts/build_engineering_wave12_001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_engineering_wave12_001.py"
+    ]
+  }
+}

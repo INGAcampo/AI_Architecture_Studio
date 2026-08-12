@@ -1,0 +1,18 @@
+{
+  "spec_id":"EXP-APPS-001",
+  "version":"1.0.0",
+  "status":"SHARED_CONTRACT_FOUNDATION_VALIDATED",
+  "requirements":[
+    "All applications use canonical AIAS project identifiers and URIs",
+    "Applications expose projections and proposals but never own the engineering source of truth",
+    "Every operation requires an explicit scope and validated application lifecycle",
+    "Regulated project data is denied at the public edge",
+    "Mutating operations reject stale revisions",
+    "Offline behavior must be declared per application",
+    "Secrets are forbidden in project envelope metadata",
+    "Public deployment and account availability are never inferred from source code"
+  ],
+  "evidence":{"implementation":"src/aias_application_platform","portfolio":"engineering/aias/experience/AIAS_APPLICATION_PORTFOLIO.json","tests":"tests/test_exp_apps001.py","public_apps_deployed":false},
+  "next":"EXP-PLATFORM-GUI-001 Application-visible Platform Services and Capability Center",
+  "deferred_parallel":"EXP-COMMS-001"
+}

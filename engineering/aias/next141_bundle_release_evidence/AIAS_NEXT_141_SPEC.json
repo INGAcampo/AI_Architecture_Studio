@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-141",
+  "title": "Bundle release evidence",
+  "status": "VALIDATED",
+  "scope": "Consolidate local bundle reports into a release evidence envelope.",
+  "safety": {
+    "external_release": false,
+    "certification_claim": false
+  }
+}

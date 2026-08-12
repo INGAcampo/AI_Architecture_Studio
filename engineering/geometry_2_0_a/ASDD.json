@@ -1,0 +1,1 @@
+{"delivery":"MEGABLOCK-GEOMETRY-2.0-A","status":"CONFORMANT","specification":"engineering/aias/roadmap/MEGABLOCK_GEOMETRY_2_0_A_SPEC.json","principles":["semantic ownership remains AIAS","external kernel isolated","fail closed when runtime unavailable","no BIM responsibility leakage"]}
