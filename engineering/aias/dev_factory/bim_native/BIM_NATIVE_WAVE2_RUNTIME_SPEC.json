@@ -1,0 +1,9 @@
+﻿{
+  "schema": "aias.dev_factory.bim_native.wave2_runtime_spec.v1",
+  "worker": "BIM_NATIVE",
+  "scope": "src/engines/bim/native_ifc/",
+  "runtime": "ifcopenshell",
+  "policy": "lazy import; fail closed when runtime unavailable",
+  "operations": ["create_minimal_project", "add_spatial_hierarchy", "add_wall", "write", "open"],
+  "canonical_integration_authorized": false
+}
