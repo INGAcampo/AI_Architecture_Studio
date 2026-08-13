@@ -1,0 +1,9 @@
+﻿{
+  "schema": "aias.dev_factory.geometry_occt.wave2_runtime_spec.v1",
+  "worker": "GEOMETRY_OCCT",
+  "scope": "src/engines/geometry/occt/",
+  "runtime": "OCP",
+  "policy": "lazy import; fail closed when runtime unavailable",
+  "operations": ["make_box", "fuse", "cut", "common", "mesh"],
+  "canonical_integration_authorized": false
+}
