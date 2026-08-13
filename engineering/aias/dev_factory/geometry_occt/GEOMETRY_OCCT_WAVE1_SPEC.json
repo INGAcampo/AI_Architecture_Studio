@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "aias.dev_factory.geometry_occt.wave1.v1",
+    "run_id":  "f6832e418e27465698dae4a7d7bf0bd6",
+    "status":  "IMPLEMENTED_TARGETED",
+    "purpose":  "Optional OCCT bootstrap, runtime probe and stable adapter boundary",
+    "dependency_installed":  false,
+    "replaces_production_geometry_backend":  false,
+    "reserved_namespace_only":  true,
+    "next_gate":  "OCCT_DEPENDENCY_BOOTSTRAP_AND_GOLDEN_CASE_GATE"
+}

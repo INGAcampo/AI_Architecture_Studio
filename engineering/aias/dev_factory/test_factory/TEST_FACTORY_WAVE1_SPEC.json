@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "aias.dev_factory.test_factory.wave1.v1",
+    "run_id":  "f6832e418e27465698dae4a7d7bf0bd6",
+    "status":  "IMPLEMENTED_TARGETED",
+    "purpose":  "Deterministic changed-path to targeted-test routing",
+    "production_source_modified":  false,
+    "global_regression_run":  false,
+    "reserved_namespace_only":  true,
+    "next_gate":  "TARGETED_TEST_ROUTING_INTEGRATION_GATE"
+}
