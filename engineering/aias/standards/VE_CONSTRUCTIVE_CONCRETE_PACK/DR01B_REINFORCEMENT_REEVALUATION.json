@@ -1,0 +1,35 @@
+{
+  "pack_version": "1.0",
+  "validation_errors": [],
+  "coverage": {
+    "beam": "PARTIAL",
+    "column": "PARTIAL",
+    "slab": "INSUFFICIENT_EVIDENCE",
+    "foundation": "INSUFFICIENT_EVIDENCE"
+  },
+  "reinforcement_statuses": [
+    "PRELIMINARY"
+  ],
+  "bar_sets": 7,
+  "findings": [
+    {
+      "element_id": "wall-7ca1f34b0eb4",
+      "status": "BLOCKED",
+      "message": "detail rule unavailable for wall"
+    }
+  ],
+  "residual_blockers": [
+    {
+      "scope": "ND2/ND3 confinement and nodes",
+      "reason": "Chapter 18 text/equations not yet transcribed and independently validated"
+    },
+    {
+      "scope": "slab/plate reinforcement complete detailing",
+      "reason": "pilot lacks complete geometry/load/detail inputs"
+    },
+    {
+      "scope": "foundation reinforcement complete detailing",
+      "reason": "geotechnical and design parameters incomplete"
+    }
+  ]
+}
