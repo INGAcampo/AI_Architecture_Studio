@@ -1,0 +1,1 @@
+{"id":"VE-PILOT-STANDARDS-001","version":"VE-PILOT-001.0","jurisdiction":"VE","rules":["VE-ARCH-DIM-001","VE-LOAD-001","VE-SEISMIC-001","VE-WIND-001","VE-CONCRETE-001","VE-FOUNDATION-001"],"fail_closed":true,"status":"MINIMUM_CERTIFIED_PACK"}

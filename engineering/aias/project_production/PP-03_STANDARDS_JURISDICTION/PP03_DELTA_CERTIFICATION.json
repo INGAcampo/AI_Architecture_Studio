@@ -1,0 +1,1 @@
+{"schema":"aias.pp03.standards_jurisdiction.delta_certification.v1","phase":"PP-03","pilot":"PILOT-BUILDING-001","status":"MINIMUM_PACK_CERTIFIED","targeted_tests":2,"pytest_pass":true,"fail_closed":true,"evidence_binding":"SHA256","consumable_by":"PP-04","shadow_modified":false,"limitations":["No claim of legal certification","Parameters require project evidence before PASS"]}
