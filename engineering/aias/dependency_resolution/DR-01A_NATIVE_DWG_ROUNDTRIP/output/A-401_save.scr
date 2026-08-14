@@ -1,0 +1,2 @@
+(vla-saveas (vla-get-ActiveDocument (vlax-get-acad-object)) "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_NATIVE_DWG_ROUNDTRIP/output/A-401.dwg")
+_.QUIT
