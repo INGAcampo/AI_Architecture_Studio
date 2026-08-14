@@ -1,0 +1,1 @@
+{"schema":"aias.pp04.structural_analysis_design.delta_certification.v1","phase":"PP-04","pilot":"PILOT-BUILDING-001","status":"ANALYSIS_DESIGN_V0_CERTIFIED","targeted_tests":2,"pytest_pass":true,"fail_closed":true,"evidence_binding":"SHA256","limitations":["Deterministic linear educational solver","No external solver dependency","Professional engineering review still required"]}
