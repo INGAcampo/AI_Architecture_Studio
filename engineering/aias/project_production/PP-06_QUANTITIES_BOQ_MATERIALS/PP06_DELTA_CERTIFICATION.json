@@ -1,0 +1,1 @@
+{"schema":"aias.pp06.quantities_boq_materials.delta_certification.v1","phase":"PP-06","pilot":"PILOT-BUILDING-001","status":"QUANTITIES_V0_CERTIFIED","targeted_tests":2,"pytest_pass":true,"evidence_binding":"SHA256","fail_closed":true,"limitations":["CSV export only","Rebar quantities require explicit reinforcement properties","No pricing database"]}
