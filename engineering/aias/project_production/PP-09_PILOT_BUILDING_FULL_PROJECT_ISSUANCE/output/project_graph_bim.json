@@ -1,0 +1,169 @@
+{
+  "name": "Edificaci\u00f3n piloto AIAS Venezuela",
+  "nodes": [
+    {
+      "id": "site-b0566f7fb948",
+      "name": "Pilot Site",
+      "properties": {
+        "jurisdiction": "VE",
+        "units": "SI"
+      },
+      "type": "site"
+    },
+    {
+      "id": "level-d08e888decc8",
+      "name": "Level 1",
+      "properties": {
+        "elevation": 0.0
+      },
+      "type": "level"
+    },
+    {
+      "id": "grid-42a86eeb2ae2",
+      "name": "Grid A",
+      "properties": {
+        "axis": "A"
+      },
+      "type": "grid"
+    },
+    {
+      "id": "material-7a6eb947a177",
+      "name": "Concrete C25",
+      "properties": {
+        "grade": "C25/30"
+      },
+      "type": "material"
+    },
+    {
+      "id": "space-e03b222fe372",
+      "name": "Main Space",
+      "properties": {
+        "area_m2": 25.0
+      },
+      "type": "space"
+    },
+    {
+      "id": "wall-90ce7dd56933",
+      "name": "Wall W1",
+      "properties": {
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "door-da1afa13700b",
+      "name": "Door D1",
+      "properties": {
+        "width_m": 0.9
+      },
+      "type": "door"
+    },
+    {
+      "id": "window-9d770e2eefff",
+      "name": "Window WN1",
+      "properties": {
+        "width_m": 1.2
+      },
+      "type": "window"
+    },
+    {
+      "id": "slab-a869da461aef",
+      "name": "Slab S1",
+      "properties": {
+        "thickness_m": 0.15
+      },
+      "type": "slab"
+    },
+    {
+      "id": "foundation-e8b38ad4fbed",
+      "name": "Foundation F1",
+      "properties": {
+        "system": "isolated"
+      },
+      "type": "foundation"
+    },
+    {
+      "id": "level-75c2c51ceb80",
+      "name": "Level 2",
+      "properties": {
+        "elevation": 3.0
+      },
+      "type": "level"
+    }
+  ],
+  "project_id": "PILOT-BUILDING-001",
+  "relationships": [
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-b0566f7fb948",
+      "target": "level-d08e888decc8"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-b0566f7fb948",
+      "target": "grid-42a86eeb2ae2"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-b0566f7fb948",
+      "target": "space-e03b222fe372"
+    },
+    {
+      "properties": {},
+      "relation": "hosts",
+      "source": "level-d08e888decc8",
+      "target": "wall-90ce7dd56933"
+    },
+    {
+      "properties": {},
+      "relation": "hosts",
+      "source": "level-d08e888decc8",
+      "target": "slab-a869da461aef"
+    },
+    {
+      "properties": {},
+      "relation": "hosts",
+      "source": "level-d08e888decc8",
+      "target": "foundation-e8b38ad4fbed"
+    },
+    {
+      "properties": {
+        "opening_ids": [
+          "door-da1afa13700b",
+          "window-9d770e2eefff"
+        ]
+      },
+      "relation": "bounded_by",
+      "source": "space-e03b222fe372",
+      "target": "wall-90ce7dd56933"
+    },
+    {
+      "properties": {},
+      "relation": "has_opening",
+      "source": "wall-90ce7dd56933",
+      "target": "door-da1afa13700b"
+    },
+    {
+      "properties": {},
+      "relation": "has_opening",
+      "source": "wall-90ce7dd56933",
+      "target": "window-9d770e2eefff"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "slab-a869da461aef",
+      "target": "material-7a6eb947a177"
+    },
+    {
+      "properties": {},
+      "relation": "supports",
+      "source": "foundation-e8b38ad4fbed",
+      "target": "slab-a869da461aef"
+    }
+  ],
+  "schema": "aias.project_graph.building.v1"
+}

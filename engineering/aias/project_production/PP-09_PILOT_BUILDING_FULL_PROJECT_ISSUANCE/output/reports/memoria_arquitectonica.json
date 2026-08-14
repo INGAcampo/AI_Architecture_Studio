@@ -1,0 +1,26 @@
+{
+  "document": {
+    "evidence_sha256": "2c39de8cfc353ebe5d7c0a899f8cd0c489ff1edc76a15057ef014fcbeecdacca",
+    "sections": {
+      "levels": [
+        "Level 1",
+        "Level 2"
+      ],
+      "openings": [
+        "door-da1afa13700b",
+        "window-9d770e2eefff"
+      ],
+      "spaces": {
+        "Main Space": 25.0
+      }
+    },
+    "title": "Memoria arquitectónica"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}

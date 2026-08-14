@@ -1,0 +1,31 @@
+{
+  "document": {
+    "evidence_sha256": "acd5aa60f3a41619c38c1102fb79cd4b89c95a6d6490121b6a57b9befc53bede",
+    "sections": {
+      "analysis_sha256": "f2ef30e84c97fdb7113c3aad471bdc1c2e137c0046b5d78e3f15b7c3eaba993a",
+      "drawing_sheets": [
+        "A-101",
+        "S-101",
+        "S-201",
+        "A-301",
+        "A-401"
+      ],
+      "quantity_sha256": "1ad622bce711854ac115ef0630bb65b4090b47727e9f2c9a511ab8da81123996",
+      "source_of_truth": [
+        "ProjectGraph/BIM",
+        "Standards",
+        "Analysis",
+        "Drawings",
+        "Quantities"
+      ]
+    },
+    "title": "Trazabilidad y evidencia"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}

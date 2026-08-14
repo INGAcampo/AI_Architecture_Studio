@@ -1,0 +1,37 @@
+{
+  "document": {
+    "evidence_sha256": "b4ca67e78af9fe0b69a2d756a6406cb377898aa0c0e5b8e8ef588f8717bbfe7d",
+    "sections": {
+      "displacements": {
+        "foundation-e8b38ad4fbed": 0.0015,
+        "level-75c2c51ceb80": 0.0015,
+        "level-d08e888decc8": 0.0015,
+        "slab-a869da461aef": 0.0015,
+        "wall-90ce7dd56933": 0.0015
+      },
+      "drifts": {
+        "foundation-e8b38ad4fbed": 0.0005,
+        "level-75c2c51ceb80": 0.0005,
+        "level-d08e888decc8": 0.0005,
+        "slab-a869da461aef": 0.0005,
+        "wall-90ce7dd56933": 0.0005
+      },
+      "internal_forces": {
+        "foundation-e8b38ad4fbed": 50.0,
+        "slab-a869da461aef": 50.0,
+        "wall-90ce7dd56933": 50.0
+      },
+      "reactions": {
+        "foundation-e8b38ad4fbed": 150.0
+      }
+    },
+    "title": "Memoria de cálculo V0"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}

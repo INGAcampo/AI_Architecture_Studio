@@ -1,0 +1,6 @@
+element_id,category,rule,measurement,waste_factor,quantity,unit,material
+wall-90ce7dd56933,wall,wall.measurement.v1,0.6000000000000001,0.0,0.6000000000000001,m3,masonry
+door-da1afa13700b,door,door.measurement.v1,1.0,0.0,1.0,unit,door
+window-9d770e2eefff,window,window.measurement.v1,1.0,0.0,1.0,unit,window
+slab-a869da461aef,slab,slab.measurement.v1,3.75,0.0,3.75,m3,concrete
+foundation-e8b38ad4fbed,foundation,foundation.measurement.v1,1.0,0.0,1.0,m3,concrete

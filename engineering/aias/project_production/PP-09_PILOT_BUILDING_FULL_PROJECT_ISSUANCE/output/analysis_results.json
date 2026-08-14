@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "reactions": {
+    "foundation-e8b38ad4fbed": 150.0
+  },
+  "displacements": {
+    "level-d08e888decc8": 0.0015,
+    "wall-90ce7dd56933": 0.0015,
+    "slab-a869da461aef": 0.0015,
+    "foundation-e8b38ad4fbed": 0.0015,
+    "level-75c2c51ceb80": 0.0015
+  },
+  "drifts": {
+    "level-d08e888decc8": 0.0005,
+    "wall-90ce7dd56933": 0.0005,
+    "slab-a869da461aef": 0.0005,
+    "foundation-e8b38ad4fbed": 0.0005,
+    "level-75c2c51ceb80": 0.0005
+  },
+  "internal_forces": {
+    "wall-90ce7dd56933": 50.0,
+    "slab-a869da461aef": 50.0,
+    "foundation-e8b38ad4fbed": 50.0
+  },
+  "code_checks": {
+    "wall-90ce7dd56933": "PASS",
+    "slab-a869da461aef": "PASS",
+    "foundation-e8b38ad4fbed": "PASS"
+  },
+  "evidence_sha256": "f2ef30e84c97fdb7113c3aad471bdc1c2e137c0046b5d78e3f15b7c3eaba993a"
+}

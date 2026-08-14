@@ -1,0 +1,190 @@
+{
+  "project_id": "PILOT-BUILDING-001",
+  "inputs": {
+    "project_id": "PILOT-BUILDING-001",
+    "name": "Edificación piloto AIAS Venezuela",
+    "jurisdiction": "VE",
+    "levels": 2,
+    "structural_system": "reinforced_concrete_conventional",
+    "geometry": "orthogonal_low_medium_complexity",
+    "foundation": "shallow",
+    "units": "SI",
+    "version": "1.0"
+  },
+  "gate": "READY_FOR_PILOT_ISSUANCE",
+  "score": {
+    "total_checks": 8,
+    "findings": 0,
+    "critical_blockers": 0,
+    "percent": 100.0
+  },
+  "artifacts": [
+    {
+      "path": "analysis_model.json",
+      "sha256": "ce2697aba1ec864c275e486864b3fa0ef687f2d88c2d4aa396dcee2293c07842",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "analysis_results.json",
+      "sha256": "9f7061b7516737b8d4480f8036e2355ff8a7d3f9bd7ae0659825d3d2a25d273d",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "boq.csv",
+      "sha256": "65ed52f42b222de3d51a4b9c5edf763dcc3bfcace145895cf6fb76d3230561ff",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "drawing_model.json",
+      "sha256": "a64cbc0b5b3ff51c2bf7e359947cdbb665341d0052fbfee834494df2a55bd0d5",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "project_graph_bim.json",
+      "sha256": "d0b3dcbb1c44aceaad5b47452d98623c8633e2e144e61fa2fea3c47b4829e729",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "qa_qc_report.json",
+      "sha256": "f03428aa7164305dc2715727e98fb11d9a2f2a2724399c9a760d2c974c80dd65",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "quantities.json",
+      "sha256": "7a493d12ac856e4a72caa3233f3c0f0d5a766705fe26f59123cb0cfd603af68b",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/cuadro_de_areas.json",
+      "sha256": "be7c8968423d53f48fc2a004dcc3aca085da5aecf57ec04ea24f350210affdaf",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/cuadro_de_areas.md",
+      "sha256": "c8f2fc7acbcdead114d2a6ca231a595885f24ddbf0448d0eb152bab9aa97cab9",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/especificaciones_tecnicas.json",
+      "sha256": "29e171a00365d01a8815726299522130ae56d339bce3209b118afdf72408868e",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/especificaciones_tecnicas.md",
+      "sha256": "234bb7bbf0c9cd274dc6c7375c1e3c73bcc42a406c7e37636363ba513a284774",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/memoria_arquitectonica.json",
+      "sha256": "cd56593b282f5f99dfd75df4b10a74f946bae29923270b62101d87779eeb5ec7",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/memoria_arquitectonica.md",
+      "sha256": "5904ab73772db16a82a2a8c51d98a90a764bb88ca73a03cac44bca9f741611fc",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/memoria_calculo_v0.json",
+      "sha256": "0bc2814c0847db8e0b68ccdf1e41e4af668e91c2ff735f9e0a881ea4af14c117",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/memoria_calculo_v0.md",
+      "sha256": "a9780a123b9dce41f6f9f610a436a578f9dd50d4e6baf18c834284169c86c164",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/memoria_descriptiva.json",
+      "sha256": "ff21336713ab5e19f81cbf49eaef7dfe05bacf18ea94b4597180f84b6b2a588e",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/memoria_descriptiva.md",
+      "sha256": "b8c80eb1525e0a8db79a15044f45b8da56f898c71489249767a36f8838a445d1",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/memoria_estructural.json",
+      "sha256": "69572bc621e9f47b144ccf26ebde04121fdf7e6907e41bab032ee0b6a79abd84",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/memoria_estructural.md",
+      "sha256": "f7eaa5518a5c9957296ca0a20f4aab7fa65fa8fe5ddf381089b8fd9f4179dde7",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/reporte_limitaciones.json",
+      "sha256": "b5505fc64a243a6f1b6668f42afb21e5b2fe9ac65831cd97f9b6a176c9977254",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/reporte_limitaciones.md",
+      "sha256": "34053e5087c6d7004cffdf8605342760c9f9f839811362152ada7c1c26116808",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/reporte_normativo.json",
+      "sha256": "ffb396fcd07e37b9e7fdd4188b09ca69721a872076cfcb59165619243c324ef5",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/reporte_normativo.md",
+      "sha256": "666456e3cd217ef273efc9c481c4ae63f8fcfd538325984cabbcebdb56354e7a",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/reporte_trazabilidad_evidencia.json",
+      "sha256": "e2cc28c98c52cb45bb37a1551cc4f1546161822c7a33bd6fa9f15ce54b2ae380",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/reporte_trazabilidad_evidencia.md",
+      "sha256": "f638928354fb989cb2ece1f803813a2eb4ec9ba0cee4e74b9990fc1d90f742cb",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/resumen_boq.json",
+      "sha256": "1ecb73a3a621cc03a8ea9e1391f46bf8d19b7c355d83d3d0a2118a39db1332cc",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/resumen_boq.md",
+      "sha256": "ee985cb96bd34b3cf5d85312b26efe51ac3bdf4a59566c2f3da6975586ec5199",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "reports/resumen_materiales.json",
+      "sha256": "52343a43f9d998d6bf4a8d0aac3aa4b75a3f524ade4c1132eb9b69c7eba1062f",
+      "classification": "PRODUCTION_READY"
+    },
+    {
+      "path": "reports/resumen_materiales.md",
+      "sha256": "c5ca39785c74efc63fff8c6cc768d78680cc0d9ab64cb9f5e250f3e342f4d27b",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "sheets_v0.pdf",
+      "sha256": "4ec1d2afa80004ec041e6fa095b7730201c693897e59a4e6c82a3e51b0c2052e",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "standards_verification.json",
+      "sha256": "99f09f1a3c6f1dcce779d0d2520a6eac9df74024aa1d90f28f5d16e7dbc6d25e",
+      "classification": "PRODUCTION_READY"
+    }
+  ],
+  "blocked_outputs": [
+    "DWG real",
+    "XLSX",
+    "detailed reinforcement",
+    "professional maquetado PDF"
+  ],
+  "limitations": [
+    "V0 deterministic solver",
+    "PDF payload initial",
+    "professional sign-off required"
+  ],
+  "traceability": "Input → BIM → Standards → Analysis → Drawing → Quantity → Report → QA/QC"
+}

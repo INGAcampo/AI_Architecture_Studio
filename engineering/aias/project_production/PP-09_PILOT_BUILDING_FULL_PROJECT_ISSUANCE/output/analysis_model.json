@@ -1,0 +1,71 @@
+{
+  "project_id": "PILOT-BUILDING-001",
+  "nodes": [
+    {
+      "id": "level-d08e888decc8",
+      "support": false
+    },
+    {
+      "id": "wall-90ce7dd56933",
+      "support": false
+    },
+    {
+      "id": "slab-a869da461aef",
+      "support": false
+    },
+    {
+      "id": "foundation-e8b38ad4fbed",
+      "support": true
+    },
+    {
+      "id": "level-75c2c51ceb80",
+      "support": false
+    }
+  ],
+  "members": [
+    {
+      "id": "wall-90ce7dd56933",
+      "type": "wall",
+      "material": "concrete"
+    },
+    {
+      "id": "slab-a869da461aef",
+      "type": "slab",
+      "material": "concrete"
+    },
+    {
+      "id": "foundation-e8b38ad4fbed",
+      "type": "foundation",
+      "material": "concrete"
+    }
+  ],
+  "loads": [
+    {
+      "case": "dead",
+      "magnitude": 100,
+      "direction": "Z"
+    },
+    {
+      "case": "live",
+      "magnitude": 50,
+      "direction": "Z"
+    }
+  ],
+  "combinations": [
+    {
+      "id": "VE-ULS-1",
+      "factors": {
+        "dead": 1.2,
+        "live": 1.6
+      }
+    },
+    {
+      "id": "VE-SLS-1",
+      "factors": {
+        "dead": 1.0,
+        "live": 1.0
+      }
+    }
+  ],
+  "schema": "aias.analysis_model.structural.v1"
+}

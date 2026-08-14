@@ -1,0 +1,23 @@
+{
+  "document": {
+    "evidence_sha256": "a78631eab532624199b2e61051d2fc24080d6b022bae106dfe196053828aa94d",
+    "sections": {
+      "code_checks": {
+        "foundation-e8b38ad4fbed": "PASS",
+        "slab-a869da461aef": "PASS",
+        "wall-90ce7dd56933": "PASS"
+      },
+      "evidence_sha256": "f2ef30e84c97fdb7113c3aad471bdc1c2e137c0046b5d78e3f15b7c3eaba993a",
+      "members": 3,
+      "status": "PASS"
+    },
+    "title": "Memoria estructural"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}

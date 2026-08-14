@@ -1,0 +1,23 @@
+# Resumen de materiales
+
+```json
+{
+  "document": {
+    "evidence_sha256": "ca46e9ab9809954af271a422937a6bbded3c370846c395cbd29d30a72678e624",
+    "sections": {
+      "concrete": 4.75,
+      "door": 1.0,
+      "masonry": 0.6000000000000001,
+      "window": 1.0
+    },
+    "title": "Resumen de materiales"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}
+```
