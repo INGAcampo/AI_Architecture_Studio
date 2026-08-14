@@ -1,0 +1,1 @@
+{"gate":"PP07-MEMORIES-SPECIFICATIONS-REPORTS-V0","targeted_tests":"tests/project_production/test_reports_core.py","pytest":{"passed":2,"failed":0},"traceability":true,"fail_closed":true,"certified":true,"limitations":["V0 exports JSON/Markdown; PDF layout and signed issuance deferred","content requires professional review","normative evidence completeness is not asserted"]}

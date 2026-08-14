@@ -1,0 +1,9 @@
+{
+  "installer": "PP07_MEMORIES_SPECIFICATIONS_REPORTS_V0_INSTALLER",
+  "files": [
+    "src/aias_reports_core/__init__.py",
+    "src/aias_reports_core/reports.py",
+    "tests/project_production/test_reports_core.py"
+  ],
+  "status": "READY"
+}
