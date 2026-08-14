@@ -1,0 +1,1 @@
+{"id":"PP-02","title":"Building Design Core","status":"V0_IMPLEMENTED","pilot":"PILOT-BUILDING-001","source_of_truth":"Project Graph/BIM","downstream":["Analysis Model","Drawings","Quantities","Reports","QA/QC"]}
