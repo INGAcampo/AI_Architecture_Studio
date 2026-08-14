@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "aias.shadow.structural.008.spec.v1",
+    "megablock":  "STRUCTURAL-008",
+    "dependency":  "STRUCTURAL-007",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Explicit deterministic unit normalization for structural result exchange.",
+    "scope":  [
+                  "kN to N",
+                  "kN*m to N*m",
+                  "mm to m",
+                  "Unsupported conversion fail-closed"
+              ],
+    "integration_authorized":  false
+}

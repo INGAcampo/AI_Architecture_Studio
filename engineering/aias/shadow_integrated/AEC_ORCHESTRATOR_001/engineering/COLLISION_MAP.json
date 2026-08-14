@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.collision_map.v1",
+    "megablock":  "AEC-ORCHESTRATOR-001",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "observation_only":  true,
+    "intended_additive_roots":  [
+                                    "src/aias_aec_orchestrator/workers/",
+                                    "tests/devfactory/aec_orchestrator/",
+                                    "engineering/aias/dev_factory/aec_orchestrator/"
+                                ],
+    "direct_canonical_collisions_detected":  false,
+    "note":  "Canonical already contains AEC orchestrator concepts; reconciliation must inspect current interfaces before integration."
+}

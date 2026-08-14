@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.009.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-009",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-008",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed patch authorization and deterministic patch-plan fingerprinting.",
+    "integration_authorized":  false
+}

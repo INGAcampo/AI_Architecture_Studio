@@ -1,0 +1,75 @@
+﻿{
+    "schema":  "aias.shadow.wave7.package_manifest.v1",
+    "run_id":  "7e61772616ab4e9f84a8628318328d2d",
+    "generated_utc":  "2026-08-13T22:01:20.6761310Z",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-006",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  12,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  213,
+                      "sha256":  "2499e819167c4e2ff418788433eb5dfeb0bf1318828ae542a65eb38ac544ecfa"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  303,
+                      "sha256":  "c94c5f6b4549a6f8ed8513411caa85fe1093ee6f4dae5fdb522e6b568da13012"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  638,
+                      "sha256":  "f9c67a9ff3eb2258615108831a059f44613f375a2c9a91c68aac52170f47783c"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_diff/__init__.py",
+                      "bytes":  175,
+                      "sha256":  "686d24ec67b0d6d40a8562267ca7cd5293da8eb5cb24f788a44d0ccfbcfc6ee1"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_diff/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  394,
+                      "sha256":  "86a1558fa42a5fe80cf55d79fbe619683b8806e6af37daa7839f0dccb660262e"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_diff/__pycache__/diff.cpython-311.pyc",
+                      "bytes":  3722,
+                      "sha256":  "e37ec971d6d4504026faa25c14d61d03402d5f239f3c8c1345267c9479b7929b"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_diff/diff.py",
+                      "bytes":  2199,
+                      "sha256":  "4529c2d1d854ad774b0bd44858761464c6bd9dbcd2b09021217798288fee912f"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_scene_diff.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  7348,
+                      "sha256":  "b5d2accd534ecbe81bb68a521da9a1a6f6734a5fd66070de6096c5af90be23a0"
+                  },
+                  {
+                      "path":  "tests/test_scene_diff.py",
+                      "bytes":  1186,
+                      "sha256":  "c2c8d921ef561b5581f0a75daf7e5ed4f5345402cf9ae03730067a438ec54ab8"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

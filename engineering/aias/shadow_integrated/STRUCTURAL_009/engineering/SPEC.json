@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.structural.009.spec.v1",
+    "megablock":  "STRUCTURAL-009",
+    "dependency":  "STRUCTURAL-008",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic tolerance-based comparison of structural scalar results.",
+    "integration_authorized":  false
+}

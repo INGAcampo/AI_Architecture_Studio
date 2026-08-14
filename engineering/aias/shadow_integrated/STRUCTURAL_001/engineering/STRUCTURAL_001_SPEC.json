@@ -1,0 +1,29 @@
+﻿{
+    "schema":  "aias.shadow.structural.001.spec.v1",
+    "megablock":  "STRUCTURAL-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic structural-domain foundation with SI contracts, load cases, combinations, and a closed-form-validated simply-supported beam solver.",
+    "scope":  [
+                  "Material and section contracts",
+                  "SI unit helpers",
+                  "Uniform and point load contracts",
+                  "Load cases and combinations",
+                  "Simply supported beam statics",
+                  "Bending moment sampling",
+                  "Elastic deflection for full-span UDL and point loads",
+                  "Closed-form golden tests"
+              ],
+    "exclusions":  [
+                       "No code/standard compliance claims",
+                       "No nonlinear analysis",
+                       "No frame stiffness solver yet",
+                       "No vendor runtime dependency",
+                       "No canonical integration"
+                   ],
+    "intended_future_roots":  [
+                                  "src/engines/structural/platform/",
+                                  "tests/devfactory/structural/",
+                                  "engineering/aias/dev_factory/structural/"
+                              ],
+    "integration_authorized":  false
+}

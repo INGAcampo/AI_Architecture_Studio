@@ -1,0 +1,96 @@
+﻿{
+    "schema":  "aias.shadow.wave4.package_manifest.v1",
+    "run_id":  "cdf4075c773b4f0d88843255822f2a1d",
+    "generated_utc":  "2026-08-13T21:16:33.6750237Z",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-003",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "isolated_runtime_tests_pass":  true,
+    "file_count":  16,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  365,
+                      "sha256":  "3c0a69d1d5aff1ed1952fc9f57a47cbfdace93d7dc3d207019bb66c6e4e1d32a"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  303,
+                      "sha256":  "703ab392cd46c9aa21f72a353c67136c682b7cc3ff4be96d0d143cb19b40b7ad"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  814,
+                      "sha256":  "96682d3266beee69046a1e25898e4cdd3c97608cd3ca5f6524b554d3a6f18a1a"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_xform/__init__.py",
+                      "bytes":  372,
+                      "sha256":  "949697353213aa054d8f1a455af618c5be6534bc386985b0bc3f815423f8ab73"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_xform/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  598,
+                      "sha256":  "8462d8cc7712c42964f0fc631e2bd41cbf73d25df808f6753722f7b263e7100a"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_xform/__pycache__/roundtrip.cpython-311.pyc",
+                      "bytes":  1525,
+                      "sha256":  "faa767e43dfd8cb6685d7416110935cae60528d0419d33cbb23052ee323ad70d"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_xform/__pycache__/transform.cpython-311.pyc",
+                      "bytes":  4005,
+                      "sha256":  "b2249292c14cc64dea2ea9c7ca9124f5e1d27cfc75faa1bbb8e92429073a8ffb"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_xform/roundtrip.py",
+                      "bytes":  816,
+                      "sha256":  "a130d87ba9bf42121c789f592e46127eb9d545b30ffb471e79776158aec75a48"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_xform/transform.py",
+                      "bytes":  1685,
+                      "sha256":  "7a2f52e2b35778fb5ea982b73b56258a91638c441793f5ffd6c3c0ab98e6cab0"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_runtime_transform.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  5701,
+                      "sha256":  "0e93595cf1518ea7c9a00d424feeb92b88c30218bd6e93e3bbce61d2cefe0ccd"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_transform_roundtrip.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  11912,
+                      "sha256":  "06ef44fd600293675e141ef11cf320df2cb38b8ba5ba730a8ef5233ef31d5187"
+                  },
+                  {
+                      "path":  "tests/test_runtime_transform.py",
+                      "bytes":  1094,
+                      "sha256":  "96c9f1c04adf7e8b57c14745adca16c5bf43ea0b39d7200607166ebb69f11fd1"
+                  },
+                  {
+                      "path":  "tests/test_transform_roundtrip.py",
+                      "bytes":  2112,
+                      "sha256":  "e5b97dfcfb3ae846db75c729f9b451079810c72547f2057ecd2dda67085c1cb7"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

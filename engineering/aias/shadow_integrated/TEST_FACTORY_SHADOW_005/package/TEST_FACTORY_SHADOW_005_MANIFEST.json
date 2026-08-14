@@ -1,0 +1,68 @@
+﻿{
+    "schema":  "aias.shadow.wave9.package_manifest.v1",
+    "run_id":  "a3deded9a98748808787911677dba432",
+    "megablock":  "TEST-FACTORY-SHADOW-005",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  158,
+                      "sha256":  "0d6b87ab6f6b5af4c133f8a8d5328ca1f845ca9263d2e11b6b74390d38a610ed"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  329,
+                      "sha256":  "be034c3cd7ec59a6c8dddd6579d1f8886c60157bd4f84bbbfda6bbf83d85eb56"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_reconcile_map/__init__.py",
+                      "bytes":  138,
+                      "sha256":  "a40250543cdd31caef672281b94ea6c3f1773e0dfd0fa6792e197692f1d4eda6"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_reconcile_map/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  381,
+                      "sha256":  "fdfbdcb30ed890d73d23aa80dae989b475841fb932800456f3f1bb1f9be620fd"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_reconcile_map/__pycache__/mapping.cpython-311.pyc",
+                      "bytes":  1470,
+                      "sha256":  "d41bff309de38b3c21ddbeb34eb64d4a1f98f56a45b4051fe56b41c71a3d98a6"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_reconcile_map/mapping.py",
+                      "bytes":  684,
+                      "sha256":  "ac92b0df7106f8c4146784e5f253654908f038d9b1cb9f180ab5039c0c769f9f"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_mapping.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  2530,
+                      "sha256":  "4ebc4bd7256d385e4afa107839793c2d7744dd6a154eff63860458f98b22907d"
+                  },
+                  {
+                      "path":  "tests/test_mapping.py",
+                      "bytes":  445,
+                      "sha256":  "910e76f93c5c77111c80a3eab0149bb2750af7dbe3fd5e26020d71b1a886b074"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

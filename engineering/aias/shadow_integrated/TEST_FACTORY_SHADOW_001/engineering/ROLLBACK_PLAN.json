@@ -1,0 +1,6 @@
+﻿{
+    "schema":  "aias.shadow.rollback_plan.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-001",
+    "shadow_rollback":  "Delete this megablock directory; canonical remains untouched.",
+    "future_integration_rollback":  "Integrate through a dedicated commit and revert only that commit if necessary."
+}

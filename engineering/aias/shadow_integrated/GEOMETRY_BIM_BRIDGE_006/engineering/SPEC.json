@@ -1,0 +1,16 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.006.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-006",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-005",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic scene change-set contract for incremental BIM/Canvas synchronization.",
+    "scope":  [
+                  "Added instances",
+                  "Removed instances",
+                  "Geometry changes",
+                  "Metadata changes",
+                  "Unchanged instances",
+                  "Duplicate-ID fail-closed behavior"
+              ],
+    "integration_authorized":  false
+}

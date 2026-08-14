@@ -1,0 +1,15 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.005.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-005",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-004",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Renderer-neutral scene batching and deterministic BIM visibility filtering.",
+    "scope":  [
+                  "Scene batches",
+                  "Vertex/triangle totals",
+                  "Entity-type filtering",
+                  "GlobalId filtering",
+                  "Explicit hidden rule"
+              ],
+    "integration_authorized":  false
+}

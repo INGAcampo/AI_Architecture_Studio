@@ -1,0 +1,19 @@
+﻿{
+    "schema":  "aias.shadow.structural.005.spec.v1",
+    "megablock":  "STRUCTURAL-005",
+    "dependency":  "STRUCTURAL-004",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic structural result combinations and governing envelopes.",
+    "scope":  [
+                  "Scalar load/result combination",
+                  "Minimum result envelope",
+                  "Maximum result envelope",
+                  "Absolute governing result",
+                  "Fail-closed missing case behavior"
+              ],
+    "exclusions":  [
+                       "No design-code compliance claim",
+                       "No canonical integration"
+                   ],
+    "integration_authorized":  false
+}

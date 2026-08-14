@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.003.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-003",
+    "dependency":  "TEST-FACTORY-SHADOW-002",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Reusable SHA256 manifest verification and integration dependency-order validation.",
+    "integration_authorized":  false
+}

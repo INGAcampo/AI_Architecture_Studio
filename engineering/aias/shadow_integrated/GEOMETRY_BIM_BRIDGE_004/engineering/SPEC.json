@@ -1,0 +1,19 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.004.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-004",
+    "dependencies":  [
+                         "GEOMETRY-BIM-BRIDGE-001",
+                         "GEOMETRY-BIM-BRIDGE-002",
+                         "GEOMETRY-BIM-BRIDGE-003"
+                     ],
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic spatial placement composition and scene-instance transform chains for IFC-to-Canvas integration.",
+    "scope":  [
+                  "Nested spatial placements",
+                  "Parent-child transform composition",
+                  "Scene instance identity",
+                  "Sequential transform chains",
+                  "Renderer-neutral output"
+              ],
+    "integration_authorized":  false
+}

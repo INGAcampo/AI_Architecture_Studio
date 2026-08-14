@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.structural.013.spec.v1",
+    "megablock":  "STRUCTURAL-013",
+    "dependency":  "STRUCTURAL-012",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Evidence-bound structural acceptance verdict for future solver reconciliation.",
+    "integration_authorized":  false
+}

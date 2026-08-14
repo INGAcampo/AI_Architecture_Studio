@@ -1,0 +1,6 @@
+﻿{
+    "schema":  "aias.shadow.rollback_plan.v1",
+    "megablock":  "AEC-ORCHESTRATOR-001",
+    "shadow_rollback":  "Delete this megablock directory; canonical remains untouched.",
+    "future_integration_rollback":  "Integrate through an isolated commit after reconciliation; revert that commit if needed."
+}

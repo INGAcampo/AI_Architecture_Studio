@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.standards_engine.002.spec.v1",
+    "megablock":  "STANDARDS-ENGINE-002",
+    "dependency":  "STANDARDS-ENGINE-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Versioned rule-pack registry with provenance and deterministic content hashing.",
+    "critical_boundary":  [
+                              "No real code provisions are embedded.",
+                              "No compliance claim is made.",
+                              "Future rule packs require verified source ingestion."
+                          ],
+    "integration_authorized":  false
+}

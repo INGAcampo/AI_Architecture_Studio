@@ -1,0 +1,145 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.001.package_manifest.v1",
+    "run_id":  "494cf9c70a714ccbadf1e99aa723e5d8",
+    "generated_utc":  "2026-08-13T19:23:28.4125950Z",
+    "megablock":  "AEC-ORCHESTRATOR-001",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  26,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  788,
+                      "sha256":  "31218bb617344c03f7151be21a5233ce2c34b33fc78cb15dfa7db9337d789e0c"
+                  },
+                  {
+                      "path":  "engineering/AEC_ORCHESTRATOR_001_SPEC.json",
+                      "bytes":  1666,
+                      "sha256":  "4d1e9037f10a1858b3c9faf62f1f597038de28edb26b2f49c4f37c3354f45298"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  706,
+                      "sha256":  "9901533c5878961d06269f4cb9dce7e2f74a6b28c15a4f686cd3b8148e817726"
+                  },
+                  {
+                      "path":  "engineering/ROLLBACK_PLAN.json",
+                      "bytes":  318,
+                      "sha256":  "ecb974704a87ad530c0c6d38aa9ee97235d62f195f6f284e96c3f840587b29b3"
+                  },
+                  {
+                      "path":  "MEGABLOCK_STATE.json",
+                      "bytes":  535,
+                      "sha256":  "913cf146953e419a7d6be7d60f386997980ae19674813d66f14764de7cc94933"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__init__.py",
+                      "bytes":  452,
+                      "sha256":  "ebef186b530f11cbd1366adf63fa93ecd6aabc2ca3284b8db5fbf47e9c97235d"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  711,
+                      "sha256":  "eea1e4d4e3fe06f956e8c2c7ab5555852bd4ba145c8a4597c79d9c27cec25d4d"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__pycache__/contracts.cpython-311.pyc",
+                      "bytes":  4272,
+                      "sha256":  "86876c6ec89801976573523b8a47ce9d8cef3773543f75e9460e9ac9d24d8ebe"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__pycache__/orchestrator.cpython-311.pyc",
+                      "bytes":  3080,
+                      "sha256":  "523ef9f47fe43ded30c7fe5961739e15f508a962f5a6463d10fe0ad9424c2582"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__pycache__/profiles.cpython-311.pyc",
+                      "bytes":  1194,
+                      "sha256":  "b055d6980b07a27615a6bcde535984d3c90416b23ac4b19f1819194b7ed0dbb8"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__pycache__/serialization.cpython-311.pyc",
+                      "bytes":  2524,
+                      "sha256":  "d40a54efe7a2f4c1eee023e16816fb0365a5a7bfb1e95b82b52c3695a574e71c"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/__pycache__/worker.cpython-311.pyc",
+                      "bytes":  4224,
+                      "sha256":  "c69687661ce33616d065f71b8d152399bb289a8198ac4599f2ba118440b25b06"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/contracts.py",
+                      "bytes":  1744,
+                      "sha256":  "1234510fcea72f3eed47e8743d7cfd61c400d8d7bca2593dc499c3c90b92ae95"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/orchestrator.py",
+                      "bytes":  1642,
+                      "sha256":  "8d930ed165c316c93914472da4c03f8de85068767b6c7750f814a5577ecfc72c"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/profiles.py",
+                      "bytes":  1621,
+                      "sha256":  "e725f9d03622b968b0e9746370b80c7dfac6a5659bf96d5edfc153dfb3de61fb"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/serialization.py",
+                      "bytes":  945,
+                      "sha256":  "0f1dbd797d463670c6af514289b904a4ba7769c832dea0751123b7c16ed35a1a"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator/worker.py",
+                      "bytes":  3076,
+                      "sha256":  "847f47b6df32005e92b2b1b05f80bf7c68c68b4b1e69be2ad9a109aba5071c84"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_contracts_and_serialization.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  7647,
+                      "sha256":  "568f1e8ae3908e24ab76e46f648ac232fdb868f719fd9d506a75ab2a4d01a7c4"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_orchestrator.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  13798,
+                      "sha256":  "336888206da2f41344fc12222a3e60afeafa4a3861f2d0a8cdfe0a5a5ca43e99"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_profiles.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  5025,
+                      "sha256":  "f17effc3fc5b665324e484fc970f41c73368677d60e32e716b59d30791cf6a38"
+                  },
+                  {
+                      "path":  "tests/test_contracts_and_serialization.py",
+                      "bytes":  1669,
+                      "sha256":  "0bdb12bc02c0bdcd6f912d10c21cc2de34b7cd436adc17105d6bb3ab1d7228ab"
+                  },
+                  {
+                      "path":  "tests/test_orchestrator.py",
+                      "bytes":  3399,
+                      "sha256":  "7fedb9feda8af1877ec3f1da61ff2071d68195a309403cbd1680404721f30fa9"
+                  },
+                  {
+                      "path":  "tests/test_profiles.py",
+                      "bytes":  523,
+                      "sha256":  "2595a722f2d545b63df830f120ab039f24da41ace7682abaecab6a847aa4d72b"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

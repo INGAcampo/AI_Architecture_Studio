@@ -1,0 +1,69 @@
+﻿{
+    "schema":  "aias.shadow.wave11.package_manifest.v1",
+    "run_id":  "5a09ccfc26204cbeb9a13beb6144f8fe",
+    "generated_utc":  "2026-08-13T22:53:44.9377312Z",
+    "megablock":  "TEST-FACTORY-SHADOW-006",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  205,
+                      "sha256":  "d34b141b46427347920c507b500e76cb0ba502d29a155f9d0440715be3628eba"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  339,
+                      "sha256":  "614c87a4ba977649bd9518af115938e9e96fdb108dbd325f95d9023d745fedbf"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_closure/__init__.py",
+                      "bytes":  134,
+                      "sha256":  "6e10d525132810201bc85375409043be19a548375dce033e87dde0d10e059e3b"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_closure/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  373,
+                      "sha256":  "8c75ff16c6dc5c67a3011c9d9c3aea2d09372b913b053415ea78ee9c25f08b54"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_closure/__pycache__/closure.cpython-311.pyc",
+                      "bytes":  2128,
+                      "sha256":  "6482a14eacc7160b4f4e3ba34ad1966a29a82bc26edc93483702c78b14fbddab"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_closure/closure.py",
+                      "bytes":  927,
+                      "sha256":  "b8518fe74ef93d828c769ae426645def71de4ac7a6923c2580b850e2eca890f3"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_closure.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  4886,
+                      "sha256":  "0013d127db98652c797ba5624a64e566db93d2ce3db22171c3763b7758e6b3be"
+                  },
+                  {
+                      "path":  "tests/test_closure.py",
+                      "bytes":  864,
+                      "sha256":  "a0244f90d8e79bca7c31d14f262638134ce03469484e16c67339f2a75061b4e8"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

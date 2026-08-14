@@ -1,0 +1,29 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.001.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Contract-first bridge between IFC semantics, OCCT B-Rep/topology, tessellation, and future AIAS render payloads.",
+    "architecture":  [
+                         "BridgeEntityRef preserves semantic identity.",
+                         "IfcOpenShell remains optional and lazy.",
+                         "OCP/OCCT remains optional and lazy.",
+                         "OCCT shape topology is summarized deterministically.",
+                         "OCCT shapes are triangulated into renderer-neutral BridgeMesh.",
+                         "BridgeGeometryPayload carries semantic identity, topology, mesh, native shape, and metadata."
+                     ],
+    "canonical_assumptions":  [
+                                  "Future canonical integration should prefer a new additive root: src/engines/geometry_bim_bridge/.",
+                                  "Canvas should consume renderer-neutral tessellation rather than direct OCCT objects.",
+                                  "Existing Wave 2 OCCT and native IFC runtime backends remain independent and may be adapted at reconciliation time."
+                              ],
+    "dependencies":  {
+                         "base_python":  [
+                                             "pytest"
+                                         ],
+                         "optional_runtime":  [
+                                                  "ifcopenshell==0.8.5",
+                                                  "cadquery-ocp-novtk==7.9.3.1.1"
+                                              ]
+                     },
+    "integration_authorized":  false
+}

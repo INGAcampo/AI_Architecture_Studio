@@ -1,0 +1,15 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.003.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-003",
+    "dependency":  "AEC-ORCHESTRATOR-002",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic worker lease, timeout-budget, and cancellation contracts.",
+    "scope":  [
+                  "Worker lease TTL",
+                  "Expiry fail-closed behavior",
+                  "Timeout budget accounting",
+                  "Idempotent cancellation"
+              ],
+    "external_vendor_runtime_launched":  false,
+    "integration_authorized":  false
+}

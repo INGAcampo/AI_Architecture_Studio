@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.007.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-007",
+    "dependency":  "TEST-FACTORY-SHADOW-006",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Reusable file-level SHA256 integrity verification for Shadow reconciliation evidence.",
+    "integration_authorized":  false
+}

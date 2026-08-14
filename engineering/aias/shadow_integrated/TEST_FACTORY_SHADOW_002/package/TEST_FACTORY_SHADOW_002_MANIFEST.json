@@ -1,0 +1,85 @@
+﻿{
+    "schema":  "aias.shadow.wave3.package_manifest.v1",
+    "run_id":  "2025e884e9ac4f629fbbafe10bf095ae",
+    "generated_utc":  "2026-08-13T21:04:49.0856677Z",
+    "megablock":  "TEST-FACTORY-SHADOW-002",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  14,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  374,
+                      "sha256":  "ff0f625b496f3e0e1b915d8248dadc4e01e37619f4574ab7b06fe79ec7072ed4"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  303,
+                      "sha256":  "e3d3c3e23b40427d7e68f4a19c410cfc79854feeb56f75f32ebb0936257f178b"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  632,
+                      "sha256":  "b97e0d699271f3681bea893f55a12fc26f303ecda66baedfbdba5cd25dfd962e"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_ext/__init__.py",
+                      "bytes":  249,
+                      "sha256":  "7b818a22f766b56dfbbe06cb21d127cd4e116a4ebfa9d512e3338be55e9ba718"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_ext/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  479,
+                      "sha256":  "72968bd6559b2a16e367480cb022ba35464d477fa4d50f5ce354da23263da084"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_ext/__pycache__/delta.cpython-311.pyc",
+                      "bytes":  2407,
+                      "sha256":  "7ae5ad81a2e8aacbf0d440c389a6aba6b5247a5adc2cdfa94303bcecd8f495fb"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_ext/__pycache__/invariants.cpython-311.pyc",
+                      "bytes":  1881,
+                      "sha256":  "f96455e63bc6ca659b1046b269be300c120ce64dae15faa9241eb51f22ba2546"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_ext/delta.py",
+                      "bytes":  918,
+                      "sha256":  "70c9f3d88839ffb39648bd48644168cc660dc48f93c2dd0f9a2366e3218bc09a"
+                  },
+                  {
+                      "path":  "src/shadow_test_factory_ext/invariants.py",
+                      "bytes":  926,
+                      "sha256":  "a29a6ad8f5a85e0f2766d1cea081e9b3337937422613c86ce341b85dba926b70"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_delta_invariants.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  7950,
+                      "sha256":  "01e026182ae867ed91c9224f25f82bb8d87645a7c72a5e9bd33af877f89e4f0d"
+                  },
+                  {
+                      "path":  "tests/test_delta_invariants.py",
+                      "bytes":  1412,
+                      "sha256":  "7501f15a1b0ccefc5e8229c9391049dd40e4dbaefb824836812efdd595c20414"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

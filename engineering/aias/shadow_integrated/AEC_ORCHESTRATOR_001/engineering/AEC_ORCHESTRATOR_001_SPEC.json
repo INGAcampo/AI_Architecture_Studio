@@ -1,0 +1,37 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.001.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Vendor-neutral deterministic orchestration contracts for external AEC application workers.",
+    "applications":  [
+                         "AUTOCAD",
+                         "REVIT",
+                         "ETABS",
+                         "SAP2000",
+                         "SAFE",
+                         "GEO5"
+                     ],
+    "scope":  [
+                  "Job envelope contract",
+                  "Explicit application routing",
+                  "Worker capability declaration",
+                  "Deterministic canonical serialization",
+                  "SHA256 job fingerprint",
+                  "Idempotency contract",
+                  "Fail-closed dispatch",
+                  "Vendor-neutral worker abstraction",
+                  "Default application capability profiles"
+              ],
+    "exclusions":  [
+                       "No vendor automation is executed in this shadow block",
+                       "No external application is launched",
+                       "No save/publish/release operation is authorized",
+                       "No canonical integration"
+                   ],
+    "intended_future_roots":  [
+                                  "src/aias_aec_orchestrator/workers/",
+                                  "tests/devfactory/aec_orchestrator/",
+                                  "engineering/aias/dev_factory/aec_orchestrator/"
+                              ],
+    "integration_authorized":  false
+}

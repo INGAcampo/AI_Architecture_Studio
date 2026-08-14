@@ -1,0 +1,96 @@
+﻿{
+    "schema":  "aias.shadow.wave4.package_manifest.v1",
+    "run_id":  "cdf4075c773b4f0d88843255822f2a1d",
+    "generated_utc":  "2026-08-13T21:16:40.3424804Z",
+    "megablock":  "AEC-ORCHESTRATOR-003",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "isolated_runtime_tests_pass":  false,
+    "file_count":  16,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  310,
+                      "sha256":  "cd4010d91c7a9f9a5414a51ad5dd9ad1102d03bbd8673650482ee976f78a9f9e"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  300,
+                      "sha256":  "5ab79d243e8f3fa4f56fceefaac2ec9c9946f9a1c198c756e54a575f600e3db4"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  595,
+                      "sha256":  "36ba82cec65b66540896fa165fdc1d3ec11d4533bb2bcc9dca0ed7f5ff42397b"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/__init__.py",
+                      "bytes":  307,
+                      "sha256":  "9e57cec284f8f62427f48327de009e8d3ac86a158fa017a7daf78713eea9d77a"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  561,
+                      "sha256":  "6f633c295c007697c4def19d9392b8c75742a9cce4d34497db48f609e053f853"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/__pycache__/budget.cpython-311.pyc",
+                      "bytes":  1786,
+                      "sha256":  "26cf6f030a6ff34bd1c8d84c297efd1a50dd6e26227c7cf9971fad68a1f020b9"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/__pycache__/cancel.cpython-311.pyc",
+                      "bytes":  1613,
+                      "sha256":  "b8b618a53efd19901d2abbeabcd48b3f8a301e4e89d4b801b72237e7f59435a5"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/__pycache__/lease.cpython-311.pyc",
+                      "bytes":  2295,
+                      "sha256":  "ec3b1c01af907d9b9fb48198defbcdeea9d941de3c1f600ba3e7a59be6f96231"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/budget.py",
+                      "bytes":  756,
+                      "sha256":  "959b4a38f156ba5abb1ed9ac61b7908cb0b0866923c6f10c795968368ee8dbce"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/cancel.py",
+                      "bytes":  570,
+                      "sha256":  "4bc982417e173394f470f7a00d9827fd9da6ffd4a88edb6d2f86de40fac92661"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_runtime/lease.py",
+                      "bytes":  931,
+                      "sha256":  "713335127b0037410aec264cc005295dc7d6c20a7111ed56de2a4a9e3e0daf3c"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_runtime_contracts.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  7640,
+                      "sha256":  "9f205e34835c76043901ec4e810246f317c2fcd689924d7f2cf7e15966934dc0"
+                  },
+                  {
+                      "path":  "tests/test_runtime_contracts.py",
+                      "bytes":  1020,
+                      "sha256":  "679eae62b2f00d6ce4dbb048f4bc95cc098cca073d822b55548bb1c06d2c1160"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "aias.shadow.standards_engine.005.spec.v1",
+    "megablock":  "STANDARDS-ENGINE-005",
+    "dependency":  "STANDARDS-ENGINE-004",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Admit standards source evidence only when identity, publisher, version, hash, and independent verification are present.",
+    "critical_boundary":  [
+                              "No real standards content is embedded.",
+                              "No legal or engineering compliance claim is made."
+                          ],
+    "integration_authorized":  false
+}

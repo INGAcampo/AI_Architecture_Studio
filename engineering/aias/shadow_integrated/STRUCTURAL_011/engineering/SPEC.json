@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.structural.011.spec.v1",
+    "megablock":  "STRUCTURAL-011",
+    "dependency":  "STRUCTURAL-010",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed acceptance gate for structural result comparison matrices.",
+    "integration_authorized":  false
+}

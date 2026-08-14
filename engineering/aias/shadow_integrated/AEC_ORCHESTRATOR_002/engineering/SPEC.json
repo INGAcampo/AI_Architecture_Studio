@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.002.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-002",
+    "dependency":  "AEC-ORCHESTRATOR-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic multi-job scheduling, bounded retry policy, and append-only audit contracts.",
+    "scope":  [
+                  "Dependency graph validation",
+                  "Parallel dispatch waves",
+                  "Cycle detection",
+                  "Explicit bounded retry",
+                  "Nonretryable fail-closed behavior",
+                  "Monotonic audit sequence"
+              ],
+    "external_vendor_runtime_launched":  false,
+    "integration_authorized":  false
+}

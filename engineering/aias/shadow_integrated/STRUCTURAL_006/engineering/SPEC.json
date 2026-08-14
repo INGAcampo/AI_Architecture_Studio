@@ -1,0 +1,18 @@
+﻿{
+    "schema":  "aias.shadow.structural.006.spec.v1",
+    "megablock":  "STRUCTURAL-006",
+    "dependency":  "STRUCTURAL-005",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic structural result exchange envelope for future vendor adapters.",
+    "scope":  [
+                  "Versioned exchange schema",
+                  "Object-scoped result records",
+                  "Explicit units",
+                  "Explicit load/result case",
+                  "Canonical JSON",
+                  "SHA256 exchange fingerprint",
+                  "Lossless encode/decode roundtrip"
+              ],
+    "external_vendor_runtime_launched":  false,
+    "integration_authorized":  false
+}

@@ -1,0 +1,15 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.002.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-002",
+    "dependency":  "TEST-FACTORY-SHADOW-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Reusable delta-certification primitives and queue authority invariants.",
+    "scope":  [
+                  "Baseline/current failure-set comparison",
+                  "Introduced failure detection",
+                  "Resolved failure detection",
+                  "Unchanged failure detection",
+                  "Shadow queue authority invariant"
+              ],
+    "integration_authorized":  false
+}

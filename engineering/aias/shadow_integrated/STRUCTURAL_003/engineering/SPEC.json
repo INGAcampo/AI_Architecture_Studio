@@ -1,0 +1,24 @@
+﻿{
+    "schema":  "aias.shadow.structural.003.spec.v1",
+    "megablock":  "STRUCTURAL-003",
+    "dependency":  "STRUCTURAL-002",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Dependency-free deterministic 2D frame direct-stiffness solver with axial and bending DOFs.",
+    "scope":  [
+                  "Three DOF nodes",
+                  "Axial plus flexural frame elements",
+                  "Coordinate transformation",
+                  "Global stiffness assembly",
+                  "Boundary conditions",
+                  "Nodal force and moment loads",
+                  "Displacements and reactions",
+                  "Cantilever closed-form golden case"
+              ],
+    "exclusions":  [
+                       "No distributed member loads yet",
+                       "No nonlinear analysis",
+                       "No code-compliance claim",
+                       "No canonical integration"
+                   ],
+    "integration_authorized":  false
+}

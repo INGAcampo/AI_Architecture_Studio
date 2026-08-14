@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.standards_engine.003.spec.v1",
+    "megablock":  "STANDARDS-ENGINE-003",
+    "dependency":  "STANDARDS-ENGINE-002",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Applicability and traceable evaluation reporting without embedding real code provisions.",
+    "critical_boundary":  [
+                              "No real standards text is embedded.",
+                              "No compliance claim is made.",
+                              "Applicability logic is infrastructure only."
+                          ],
+    "integration_authorized":  false
+}

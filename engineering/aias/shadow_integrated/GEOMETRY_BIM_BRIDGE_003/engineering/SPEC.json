@@ -1,0 +1,20 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.003.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-003",
+    "dependencies":  [
+                         "GEOMETRY-BIM-BRIDGE-001",
+                         "GEOMETRY-BIM-BRIDGE-002"
+                     ],
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic rigid transforms for renderer-neutral geometry while preserving BIM semantic identity.",
+    "scope":  [
+                  "Rigid translation",
+                  "Z-axis rotation",
+                  "Mesh transform",
+                  "Bounds regeneration",
+                  "Geometry hash regeneration",
+                  "Semantic identity preservation",
+                  "Roundtrip identity guard"
+              ],
+    "integration_authorized":  false
+}

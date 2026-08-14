@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.structural.010.spec.v1",
+    "megablock":  "STRUCTURAL-010",
+    "dependency":  "STRUCTURAL-009",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic multi-result comparison matrix for AIAS versus external solver evidence.",
+    "integration_authorized":  false
+}

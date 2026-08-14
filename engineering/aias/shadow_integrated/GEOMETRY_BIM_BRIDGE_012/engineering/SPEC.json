@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.012.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-012",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-011",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed geometry transaction admission requiring patch guard, target snapshot, and full rollback reversibility.",
+    "integration_authorized":  false
+}

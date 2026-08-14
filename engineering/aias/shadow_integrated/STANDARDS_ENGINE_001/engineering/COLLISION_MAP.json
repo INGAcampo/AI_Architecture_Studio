@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.collision_map.v1",
+    "megablock":  "STANDARDS-ENGINE-001",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "observation_only":  true,
+    "direct_canonical_collisions_detected":  false,
+    "reconciliation_required":  true
+}

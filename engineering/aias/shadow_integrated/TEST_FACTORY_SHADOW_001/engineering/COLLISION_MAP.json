@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.collision_map.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-001",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "observation_only":  true,
+    "intended_additive_roots":  [
+                                    "tools/dev_factory/shadow_test_factory/",
+                                    "tests/devfactory/shadow_test_factory/",
+                                    "engineering/aias/dev_factory/shadow_test_factory/"
+                                ],
+    "direct_canonical_collisions_detected":  false,
+    "note":  "Recalculate collision status against then-current canonical before integration."
+}
