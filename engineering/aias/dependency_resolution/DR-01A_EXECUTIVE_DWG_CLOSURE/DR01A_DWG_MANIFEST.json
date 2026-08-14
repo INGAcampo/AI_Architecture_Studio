@@ -1,0 +1,30 @@
+{
+  "verdict": "BLOCKER_DWG_ROUNDTRIP_CERTIFICATION_FAILED",
+  "drawings": [
+    {
+      "filename": "A-101.dwg",
+      "sha256": "49fd36f809b281252b7c3aa496421e9a52896bd79b05e48943c9a4c478134233",
+      "bytes": 21137
+    },
+    {
+      "filename": "S-101.dwg",
+      "sha256": "c9e8ff1074379c4ad75b42c3dc56867f3263c0bcfda20ed415af2321f4ea9331",
+      "bytes": 21137
+    },
+    {
+      "filename": "S-201.dwg",
+      "sha256": "58ba305a24a6e01d877210efd22913142e888279835b3d1802b10e6580be459f",
+      "bytes": 21137
+    },
+    {
+      "filename": "A-301.dwg",
+      "sha256": "3312ec5de7564cbe89e93512de13e8c2a0fdf7a0c2b91b87a93fd3a838589aa1",
+      "bytes": 21105
+    },
+    {
+      "filename": "A-401.dwg",
+      "sha256": "6d3e1c28c130c119cd73673100a09d8e878448d9d97340c4dbcd1eaa0fa80a80",
+      "bytes": 21137
+    }
+  ]
+}

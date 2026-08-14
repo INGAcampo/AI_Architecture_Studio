@@ -1,0 +1,5 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_EXECUTIVE_DWG_CLOSURE/output/xdata_atomic/STEP_05_XDATA.txt" "w"))
+(setq e (entnext) d (entget e (list "AIAS")) x (assoc -3 d)) (write-line (if x "XDATA_FOUND" "XDATA_MISSING") f)
+(close f)
+(princ)
+_.QUIT

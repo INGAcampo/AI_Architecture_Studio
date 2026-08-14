@@ -1,0 +1,5 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_EXECUTIVE_DWG_CLOSURE/output/xdata_atomic/STEP_02_ENTITY_ITERATION.txt" "w"))
+(setq e (entnext) n 0) (while e (setq n (+ n 1)) (setq e (entnext e))) (write-line (itoa n) f)
+(close f)
+(princ)
+_.QUIT

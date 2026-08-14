@@ -1,0 +1,5 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_EXECUTIVE_DWG_CLOSURE/output/xdata_atomic/STEP_07_EXIT.txt" "w"))
+(write-line "EXIT_READY" f)
+(close f)
+(princ)
+_.QUIT
