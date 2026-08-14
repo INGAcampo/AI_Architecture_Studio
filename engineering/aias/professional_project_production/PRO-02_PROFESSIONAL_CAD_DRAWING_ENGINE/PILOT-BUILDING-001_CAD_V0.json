@@ -1,0 +1,510 @@
+{
+  "entities": [
+    {
+      "attributes": {
+        "elevation": 0.0
+      },
+      "geometry": [
+        -2,
+        0
+      ],
+      "id": "cad-0001",
+      "kind": "level",
+      "layer": "A-TEXT",
+      "sha256": "1ce863f8b87ff29832b7af7d7df942c62ae1c8313f44c25c0ba97725206d23b6",
+      "source_node_id": "level-f5ac59a65c07"
+    },
+    {
+      "attributes": {
+        "style": "TITLE",
+        "text": "Level 1"
+      },
+      "geometry": [
+        0,
+        0
+      ],
+      "id": "cad-0002",
+      "kind": "text",
+      "layer": "A-TEXT",
+      "sha256": "48ba435973bb97504bd9d48b030a81319a44ca4160cc1cba4356765f2b07b1a0",
+      "source_node_id": "level-f5ac59a65c07"
+    },
+    {
+      "attributes": {
+        "axis": "A"
+      },
+      "geometry": [
+        [
+          0,
+          -2
+        ],
+        [
+          0,
+          8
+        ]
+      ],
+      "id": "cad-0003",
+      "kind": "line",
+      "layer": "A-GRID",
+      "sha256": "a19760e7701364d6cb3e1ec048f28e7798d21a160513b3b8218bbb3607973fb3",
+      "source_node_id": "grid-ce83ca7d3473"
+    },
+    {
+      "attributes": {
+        "label": "A"
+      },
+      "geometry": [
+        0,
+        8
+      ],
+      "id": "cad-0004",
+      "kind": "bubble",
+      "layer": "A-GRID",
+      "sha256": "ac06b7f5a549020781b7a5a123b0dc1af9952af2872714fc677375d22b49ce83",
+      "source_node_id": "grid-ce83ca7d3473"
+    },
+    {
+      "attributes": {
+        "style": "ROOM_TAG",
+        "text": "Main Space"
+      },
+      "geometry": [
+        2,
+        2
+      ],
+      "id": "cad-0005",
+      "kind": "text",
+      "layer": "A-TEXT",
+      "sha256": "5eed428fe7f6b5c8489fb3dfc744b64cdfc3cc5faf29395de31efc77266c8620",
+      "source_node_id": "space-29f5edd21758"
+    },
+    {
+      "attributes": {
+        "closed": true
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          0.2
+        ],
+        [
+          0,
+          0.2
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "id": "cad-0006",
+      "kind": "polyline",
+      "layer": "A-WALL",
+      "sha256": "f41fa2cf68cbb2a34898bd4c1b9d4d8946ec3d7ef71674c62bc8f998316dbcfc",
+      "source_node_id": "wall-33fe7ac41fcf"
+    },
+    {
+      "attributes": {
+        "block_name": "DOOR_SINGLE"
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0.9,
+          0
+        ]
+      ],
+      "id": "cad-0007",
+      "kind": "block",
+      "layer": "A-DOOR",
+      "sha256": "b4657dc6df5bcb8c0b510866a8f1ad92ea72f70fda8d7ec0dcb7910181a2e365",
+      "source_node_id": "door-85a231239230"
+    },
+    {
+      "attributes": {
+        "block_name": "WINDOW"
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2,
+          0
+        ]
+      ],
+      "id": "cad-0008",
+      "kind": "block",
+      "layer": "A-DOOR",
+      "sha256": "e54225c29d7669e5d5b7a6771370a89ba5391aa4b151286005eb7b1891c555fd",
+      "source_node_id": "window-dbc12d038607"
+    },
+    {
+      "attributes": {
+        "structural_type": "slab"
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.3
+        ]
+      ],
+      "id": "cad-0009",
+      "kind": "rectangle",
+      "layer": "S-STRUCT",
+      "sha256": "8feb63b489b388c35e2dde729da0583d67f6cb0ec4d952fbfe13e9333f866714",
+      "source_node_id": "slab-fe4ca895b5a2"
+    },
+    {
+      "attributes": {
+        "structural_type": "foundation"
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.3
+        ]
+      ],
+      "id": "cad-0010",
+      "kind": "rectangle",
+      "layer": "S-STRUCT",
+      "sha256": "1df20ba148197b55434b0b9e1d98c54085793f37330c05f7494feb2d4c14915d",
+      "source_node_id": "foundation-7a9cd280d23a"
+    },
+    {
+      "attributes": {
+        "dimension_type": "linear",
+        "value": 4.0
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "id": "cad-0011",
+      "kind": "dimension",
+      "layer": "A-DIMS",
+      "sha256": "43f262503261b31c2d593fae82059f7b16464b5174960a9dfb7f533ad859d9b9",
+      "source_node_id": "wall-33fe7ac41fcf"
+    },
+    {
+      "attributes": {
+        "dimension_type": "linear",
+        "value": 4.0
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "id": "cad-0012",
+      "kind": "dimension",
+      "layer": "A-DIMS",
+      "sha256": "051df180fc03732bd6acb36b7bb1e1c8e6b0b6425e85a20453ac4a1e028f5949",
+      "source_node_id": "slab-fe4ca895b5a2"
+    },
+    {
+      "attributes": {
+        "dimension_type": "linear",
+        "value": 4.0
+      },
+      "geometry": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "id": "cad-0013",
+      "kind": "dimension",
+      "layer": "A-DIMS",
+      "sha256": "add0db438a2ad593a02ff3fc8eaf008722dd5f60ff3a2820488e6b5448051db9",
+      "source_node_id": "foundation-7a9cd280d23a"
+    }
+  ],
+  "layers": [
+    {
+      "color": 7,
+      "lineweight": 0.35,
+      "name": "A-WALL"
+    },
+    {
+      "color": 3,
+      "lineweight": 0.25,
+      "name": "A-DOOR"
+    },
+    {
+      "color": 1,
+      "lineweight": 0.5,
+      "name": "S-STRUCT"
+    },
+    {
+      "color": 2,
+      "lineweight": 0.18,
+      "name": "A-DIMS"
+    },
+    {
+      "color": 7,
+      "lineweight": 0.18,
+      "name": "A-TEXT"
+    },
+    {
+      "color": 8,
+      "lineweight": 0.13,
+      "name": "A-GRID"
+    }
+  ],
+  "project_id": "PILOT-BUILDING-001",
+  "schema": "aias.cad_intermediate.v1",
+  "sheets": [
+    {
+      "id": "sheet-A-101",
+      "number": "A-101",
+      "scale": "1:100",
+      "sha256": "ba2e657adc568bed89f43e77cab54852421b4ac81d6d951c51115aa9de8228b7",
+      "title": "Architectural Plan",
+      "title_block": {
+        "project_id": "PILOT-BUILDING-001",
+        "revision": "V0"
+      },
+      "view_id": "view-A-101"
+    },
+    {
+      "id": "sheet-S-101",
+      "number": "S-101",
+      "scale": "1:100",
+      "sha256": "710f310953448af4df6b55737a24982b49b34ef33f623dbd84e1353f7df0f33a",
+      "title": "Structural Plan",
+      "title_block": {
+        "project_id": "PILOT-BUILDING-001",
+        "revision": "V0"
+      },
+      "view_id": "view-S-101"
+    },
+    {
+      "id": "sheet-S-201",
+      "number": "S-201",
+      "scale": "1:100",
+      "sha256": "3220e421ca4e82050891eb594b3ae7042150a48df8052a92aa0df2d9cbae0170",
+      "title": "Foundation Plan",
+      "title_block": {
+        "project_id": "PILOT-BUILDING-001",
+        "revision": "V0"
+      },
+      "view_id": "view-S-201"
+    },
+    {
+      "id": "sheet-A-301",
+      "number": "A-301",
+      "scale": "1:100",
+      "sha256": "a6ca27a65376c3283a3376e84b3024f70226e3eec2506a29aecb3f33b2aa0726",
+      "title": "Building Section",
+      "title_block": {
+        "project_id": "PILOT-BUILDING-001",
+        "revision": "V0"
+      },
+      "view_id": "view-A-301"
+    },
+    {
+      "id": "sheet-A-401",
+      "number": "A-401",
+      "scale": "1:100",
+      "sha256": "c369ae3261a9d43038facaa354409c61f9106a70f22d6d57a0efac57a1ddc5d6",
+      "title": "Building Elevation",
+      "title_block": {
+        "project_id": "PILOT-BUILDING-001",
+        "revision": "V0"
+      },
+      "view_id": "view-A-401"
+    }
+  ],
+  "views": [
+    {
+      "entity_ids": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "id": "view-A-101",
+      "kind": "plan",
+      "number": "A-101",
+      "references": [
+        "ProjectGraph/BIM"
+      ],
+      "scale": "1:100",
+      "title": "Architectural Plan",
+      "viewport": {
+        "height": 210,
+        "width": 297,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "entity_ids": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "id": "view-S-101",
+      "kind": "plan",
+      "number": "S-101",
+      "references": [
+        "ProjectGraph/BIM"
+      ],
+      "scale": "1:100",
+      "title": "Structural Plan",
+      "viewport": {
+        "height": 210,
+        "width": 297,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "entity_ids": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "id": "view-S-201",
+      "kind": "foundation",
+      "number": "S-201",
+      "references": [
+        "ProjectGraph/BIM"
+      ],
+      "scale": "1:100",
+      "title": "Foundation Plan",
+      "viewport": {
+        "height": 210,
+        "width": 297,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "entity_ids": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "id": "view-A-301",
+      "kind": "section",
+      "number": "A-301",
+      "references": [
+        "ProjectGraph/BIM"
+      ],
+      "scale": "1:100",
+      "title": "Building Section",
+      "viewport": {
+        "height": 210,
+        "width": 297,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "entity_ids": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "id": "view-A-401",
+      "kind": "elevation",
+      "number": "A-401",
+      "references": [
+        "ProjectGraph/BIM"
+      ],
+      "scale": "1:100",
+      "title": "Building Elevation",
+      "viewport": {
+        "height": 210,
+        "width": 297,
+        "x": 0,
+        "y": 0
+      }
+    }
+  ]
+}
