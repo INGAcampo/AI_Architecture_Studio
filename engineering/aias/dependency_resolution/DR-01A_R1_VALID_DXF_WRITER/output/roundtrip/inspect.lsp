@@ -1,0 +1,1 @@
+(defun aias-log () (setq f (open "__LOG__" "w")) (setq e (entnext) n 0) (while e (setq d (entget e)) (write-line (strcat (cdr (assoc 0 d)) "|" (cdr (assoc 8 d)) "|" (cdr (assoc 5 d))) f) (setq n (+ n 1)) (setq e (entnext e))) (close f) (princ))
