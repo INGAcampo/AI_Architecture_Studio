@@ -1,0 +1,1 @@
+{"delivery":"PRO-03_DWG_PDF_PRODUCTION_V0","targeted_tests":{"passed":1,"failed":0},"pdf_pages":5,"dxf_outputs":5,"dwg_real_outputs":0,"status":"V0_LIMITED","blocked":["native DWG writer unavailable in environment"],"validated":["file existence","entity count","PDF signature","SHA-256 manifest"]}
