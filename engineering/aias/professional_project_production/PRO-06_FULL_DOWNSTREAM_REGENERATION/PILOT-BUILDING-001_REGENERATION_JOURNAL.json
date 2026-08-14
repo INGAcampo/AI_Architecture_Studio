@@ -1,0 +1,1274 @@
+{
+  "change": {
+    "element_id": "material-f85eb2bcdb24",
+    "property": "grade",
+    "before": "C25/30",
+    "after": "C30/37"
+  },
+  "plan": {
+    "graph_before": "79aecc9f0f920e33e426012b429c89b14a18abc538cfc6b772d216dbc6846ff4",
+    "graph_after": "ed844de1c7968c50283049b77cf0d4b68106bfa151c0700ac92a1311ac7c2eb1",
+    "changed": true,
+    "stale": [
+      "standards",
+      "analysis",
+      "reinforcement",
+      "cad",
+      "quantities",
+      "xlsx",
+      "reports",
+      "qa_qc",
+      "issuance_manifest"
+    ],
+    "order": [
+      "standards",
+      "analysis",
+      "reinforcement",
+      "cad",
+      "quantities",
+      "xlsx",
+      "reports",
+      "qa_qc",
+      "issuance_manifest"
+    ],
+    "prior_artifacts": {}
+  },
+  "result": {
+    "status": "PASS",
+    "artifacts": {
+      "standards": {
+        "sha256": "13274084d636329489d151762e515ca0503d20a805a4674abc7e0a4c9295bb39",
+        "value": {
+          "pack": "VE-PILOT-001.0"
+        }
+      },
+      "analysis": {
+        "sha256": "94fddf675ef9b94194e333079bf8782b511c8dc6750a032de62ff0e74ee86c7c",
+        "value": {
+          "status": "PASS",
+          "model": {
+            "project_id": "PILOT-BUILDING-001",
+            "nodes": [
+              {
+                "id": "level-91e9ca188bfa",
+                "support": false,
+                "dofs": [
+                  "UX",
+                  "UY",
+                  "UZ",
+                  "RX",
+                  "RY",
+                  "RZ"
+                ],
+                "xyz_m": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "support_conditions": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "id": "wall-76372a8d9c51",
+                "support": false,
+                "dofs": [
+                  "UX",
+                  "UY",
+                  "UZ",
+                  "RX",
+                  "RY",
+                  "RZ"
+                ],
+                "xyz_m": [
+                  4.0,
+                  0.0,
+                  0.0
+                ],
+                "support_conditions": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "id": "slab-cd35c6810d50",
+                "support": false,
+                "dofs": [
+                  "UX",
+                  "UY",
+                  "UZ",
+                  "RX",
+                  "RY",
+                  "RZ"
+                ],
+                "xyz_m": [
+                  8.0,
+                  0.0,
+                  0.0
+                ],
+                "support_conditions": [
+                  false,
+                  false,
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "id": "foundation-cc78e4761ea2",
+                "support": true,
+                "dofs": [
+                  "UX",
+                  "UY",
+                  "UZ",
+                  "RX",
+                  "RY",
+                  "RZ"
+                ],
+                "xyz_m": [
+                  0.0,
+                  4.0,
+                  0.0
+                ],
+                "support_conditions": [
+                  true,
+                  true,
+                  true,
+                  true,
+                  true,
+                  true
+                ]
+              }
+            ],
+            "members": [
+              {
+                "id": "wall-76372a8d9c51",
+                "type": "wall",
+                "material": "C25/30",
+                "section": {
+                  "width_m": 0.3,
+                  "depth_m": 0.5
+                },
+                "self_weight_kN_m": 3.75
+              },
+              {
+                "id": "slab-cd35c6810d50",
+                "type": "slab",
+                "material": "C25/30",
+                "section": {
+                  "width_m": 0.3,
+                  "depth_m": 0.5
+                },
+                "self_weight_kN_m": 3.75
+              },
+              {
+                "id": "foundation-cc78e4761ea2",
+                "type": "foundation",
+                "material": "C25/30",
+                "section": {
+                  "width_m": 0.3,
+                  "depth_m": 0.5
+                },
+                "self_weight_kN_m": 3.75
+              }
+            ],
+            "loads": [
+              {
+                "case": "dead",
+                "kind": "distributed",
+                "magnitude": 12.0,
+                "direction": "Z"
+              },
+              {
+                "case": "live",
+                "kind": "surface",
+                "magnitude": 5.0,
+                "direction": "Z"
+              },
+              {
+                "case": "wind",
+                "kind": "point",
+                "magnitude": 8.0,
+                "direction": "X"
+              },
+              {
+                "case": "seismic",
+                "kind": "tributary",
+                "magnitude": 10.0,
+                "direction": "Y"
+              }
+            ],
+            "combinations": [
+              {
+                "id": "VE-ULS-1",
+                "factors": {
+                  "dead": 1.2,
+                  "live": 1.6,
+                  "wind": 1.0,
+                  "seismic": 1.0
+                }
+              },
+              {
+                "id": "VE-SLS-1",
+                "factors": {
+                  "dead": 1.0,
+                  "live": 1.0,
+                  "wind": 0.7,
+                  "seismic": 0.7
+                }
+              }
+            ],
+            "schema": "aias.analysis_model.structural.v1"
+          },
+          "load_envelopes": {
+            "wall-76372a8d9c51": {
+              "N_kN": 11.666666666666666,
+              "V_kN": 5.833333333333333,
+              "M_kNm": 46.666666666666664,
+              "drift_ratio": 0.00011666666666666667
+            },
+            "slab-cd35c6810d50": {
+              "N_kN": 11.666666666666666,
+              "V_kN": 5.833333333333333,
+              "M_kNm": 46.666666666666664,
+              "drift_ratio": 0.00011666666666666667
+            },
+            "foundation-cc78e4761ea2": {
+              "N_kN": 11.666666666666666,
+              "V_kN": 5.833333333333333,
+              "M_kNm": 46.666666666666664,
+              "drift_ratio": 0.00011666666666666667
+            }
+          },
+          "design_checks": {
+            "wall-76372a8d9c51": {
+              "element_type": "wall",
+              "status": "PASS",
+              "demand_capacity_ratio": 0.466667,
+              "evidence_source": "VE-PILOT-001.0"
+            },
+            "slab-cd35c6810d50": {
+              "element_type": "slab",
+              "status": "PASS",
+              "demand_capacity_ratio": 0.583333,
+              "evidence_source": "VE-PILOT-001.0"
+            },
+            "foundation-cc78e4761ea2": {
+              "element_type": "foundation",
+              "status": "PASS",
+              "demand_capacity_ratio": 0.186667,
+              "evidence_source": "VE-PILOT-001.0"
+            }
+          },
+          "reinforcement": {
+            "wall-76372a8d9c51": {
+              "ast_mm2": 107.27969348659003,
+              "bars": "deterministic preliminary As"
+            },
+            "slab-cd35c6810d50": {
+              "ast_mm2": 107.27969348659003,
+              "bars": "deterministic preliminary As"
+            },
+            "foundation-cc78e4761ea2": {
+              "ast_mm2": 107.27969348659003,
+              "bars": "deterministic preliminary As"
+            }
+          },
+          "evidence_sha256": "efe8473fd6f0b090a6361407603be12a2d2497e72a9a9174777454e7093c7ee3",
+          "limitations": [
+            "V0 deterministic solver; professional sign-off and detailed bar detailing remain pending"
+          ]
+        }
+      },
+      "reinforcement": {
+        "sha256": "0ed4745ffa3985412541ed97ba2c474e964ad71d8c3d065f57b8230c9d3072fa",
+        "value": {
+          "project_id": "PILOT-BUILDING-001",
+          "bar_sets": [
+            {
+              "bar_mark": "slab-cd35c6810d50-LONG",
+              "role": "longitudinal",
+              "quantity": 2,
+              "length_m": 4.0,
+              "spacing_mm": 0,
+              "shape": "straight",
+              "position": "longitudinal",
+              "element_id": "slab-cd35c6810d50",
+              "element_type": "slab",
+              "status": "PRELIMINARY",
+              "diameter_mm": 10,
+              "cover_mm": 40,
+              "development_length_mm": 400,
+              "lap_length_mm": 500,
+              "hook": "90deg",
+              "rule": "VE-PILOT-001.0",
+              "calculated_as_mm2": 107.27969348659003,
+              "sha256": "b799ed62c990ea01111240e7e89b655d0b8726987593f1e990f5ba5be087a498"
+            },
+            {
+              "bar_mark": "slab-cd35c6810d50-TOP",
+              "role": "top",
+              "quantity": 2,
+              "length_m": 4.0,
+              "spacing_mm": 200,
+              "shape": "straight",
+              "position": "top",
+              "element_id": "slab-cd35c6810d50",
+              "element_type": "slab",
+              "status": "PRELIMINARY",
+              "diameter_mm": 10,
+              "cover_mm": 40,
+              "development_length_mm": 400,
+              "lap_length_mm": 500,
+              "hook": "90deg",
+              "rule": "VE-PILOT-001.0",
+              "calculated_as_mm2": 107.27969348659003,
+              "sha256": "16e7dba9b7cb89eed4523062585810a2fa6ad1c5bc32cde7e2c2bf9c47ac6b1c"
+            },
+            {
+              "bar_mark": "foundation-cc78e4761ea2-LONG",
+              "role": "longitudinal",
+              "quantity": 2,
+              "length_m": 2.0,
+              "spacing_mm": 0,
+              "shape": "straight",
+              "position": "longitudinal",
+              "element_id": "foundation-cc78e4761ea2",
+              "element_type": "foundation",
+              "status": "PRELIMINARY",
+              "diameter_mm": 16,
+              "cover_mm": 40,
+              "development_length_mm": 640,
+              "lap_length_mm": 800,
+              "hook": "90deg",
+              "rule": "VE-PILOT-001.0",
+              "calculated_as_mm2": 107.27969348659003,
+              "sha256": "d09bbac38c375a8781cdf0e174deae845eb9964d6f51d4e6ad81ce956ab74152"
+            }
+          ],
+          "schedules": [
+            {
+              "bar_mark": "slab-cd35c6810d50-LONG",
+              "element_id": "slab-cd35c6810d50",
+              "diameter_mm": 10,
+              "quantity": 2,
+              "length_m": 4.0,
+              "weight_kg": 4.938,
+              "status": "PRELIMINARY",
+              "sha256": "b799ed62c990ea01111240e7e89b655d0b8726987593f1e990f5ba5be087a498"
+            },
+            {
+              "bar_mark": "slab-cd35c6810d50-TOP",
+              "element_id": "slab-cd35c6810d50",
+              "diameter_mm": 10,
+              "quantity": 2,
+              "length_m": 4.0,
+              "weight_kg": 4.938,
+              "status": "PRELIMINARY",
+              "sha256": "16e7dba9b7cb89eed4523062585810a2fa6ad1c5bc32cde7e2c2bf9c47ac6b1c"
+            },
+            {
+              "bar_mark": "foundation-cc78e4761ea2-LONG",
+              "element_id": "foundation-cc78e4761ea2",
+              "diameter_mm": 16,
+              "quantity": 2,
+              "length_m": 2.0,
+              "weight_kg": 6.321,
+              "status": "PRELIMINARY",
+              "sha256": "d09bbac38c375a8781cdf0e174deae845eb9964d6f51d4e6ad81ce956ab74152"
+            }
+          ],
+          "findings": [
+            {
+              "element_id": "wall-76372a8d9c51",
+              "status": "BLOCKED",
+              "message": "detail rule unavailable for wall"
+            }
+          ],
+          "schema": "aias.reinforcement_model.v1"
+        }
+      },
+      "cad": {
+        "sha256": "54534c9dd2b7e356499c104c8b5b57df64a55bd5faeb1a2ae970edbdf51f577a",
+        "value": {
+          "project_id": "PILOT-BUILDING-001",
+          "layers": [
+            {
+              "name": "A-WALL",
+              "color": 7,
+              "lineweight": 0.35
+            },
+            {
+              "name": "A-DOOR",
+              "color": 3,
+              "lineweight": 0.25
+            },
+            {
+              "name": "S-STRUCT",
+              "color": 1,
+              "lineweight": 0.5
+            },
+            {
+              "name": "A-DIMS",
+              "color": 2,
+              "lineweight": 0.18
+            },
+            {
+              "name": "A-TEXT",
+              "color": 7,
+              "lineweight": 0.18
+            },
+            {
+              "name": "A-GRID",
+              "color": 8,
+              "lineweight": 0.13
+            }
+          ],
+          "entities": [
+            {
+              "id": "cad-0001",
+              "kind": "level",
+              "layer": "A-TEXT",
+              "source_node_id": "level-91e9ca188bfa",
+              "geometry": [
+                -2,
+                0
+              ],
+              "attributes": {
+                "elevation": 0.0
+              },
+              "sha256": "59bc4eeb98ea0d50a5b76569e50cba2fa458a12521650361b26bf79634aaf2e8"
+            },
+            {
+              "id": "cad-0002",
+              "kind": "text",
+              "layer": "A-TEXT",
+              "source_node_id": "level-91e9ca188bfa",
+              "geometry": [
+                0,
+                0
+              ],
+              "attributes": {
+                "text": "Level 1",
+                "style": "TITLE"
+              },
+              "sha256": "f324207120adaea16170600103278a3b47500f10677d98e015995c093aad867b"
+            },
+            {
+              "id": "cad-0003",
+              "kind": "line",
+              "layer": "A-GRID",
+              "source_node_id": "grid-2cfc4381ee75",
+              "geometry": [
+                [
+                  0,
+                  -2
+                ],
+                [
+                  0,
+                  8
+                ]
+              ],
+              "attributes": {
+                "axis": "A"
+              },
+              "sha256": "35c841f7b52b955c5df735bb380f01ec4bd414b89098a6572129e1affb075bc9"
+            },
+            {
+              "id": "cad-0004",
+              "kind": "bubble",
+              "layer": "A-GRID",
+              "source_node_id": "grid-2cfc4381ee75",
+              "geometry": [
+                0,
+                8
+              ],
+              "attributes": {
+                "label": "A"
+              },
+              "sha256": "31ad387162d9d1ea767886be2ae8faa43bfccb8385a2937fd519b998cbc5729f"
+            },
+            {
+              "id": "cad-0005",
+              "kind": "text",
+              "layer": "A-TEXT",
+              "source_node_id": "space-58fac3bf40f4",
+              "geometry": [
+                2,
+                2
+              ],
+              "attributes": {
+                "text": "Main Space",
+                "style": "ROOM_TAG"
+              },
+              "sha256": "5524d7f4b318a915ad949c665dc0001bc967da8290262df86b6f5b4660bb3904"
+            },
+            {
+              "id": "cad-0006",
+              "kind": "polyline",
+              "layer": "A-WALL",
+              "source_node_id": "wall-76372a8d9c51",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  0.2
+                ],
+                [
+                  0,
+                  0.2
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "attributes": {
+                "closed": true
+              },
+              "sha256": "07e7717bf55bc92171617064e5e3b887fa6347effb47b7043ce862cb590b7c4d"
+            },
+            {
+              "id": "cad-0007",
+              "kind": "block",
+              "layer": "A-DOOR",
+              "source_node_id": "door-331b5f5fc238",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.9,
+                  0
+                ]
+              ],
+              "attributes": {
+                "block_name": "DOOR_SINGLE"
+              },
+              "sha256": "2838885ec6c4f826e36854106a104ad27e055f7bd046117dfef44965f4ded35a"
+            },
+            {
+              "id": "cad-0008",
+              "kind": "block",
+              "layer": "A-DOOR",
+              "source_node_id": "window-310eecb73c46",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  1.2,
+                  0
+                ]
+              ],
+              "attributes": {
+                "block_name": "WINDOW"
+              },
+              "sha256": "44da4edf5b3a612ebeca4f7b87124e562fe05d06153e2f0494252f20099fdfa4"
+            },
+            {
+              "id": "cad-0009",
+              "kind": "rectangle",
+              "layer": "S-STRUCT",
+              "source_node_id": "slab-cd35c6810d50",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.3,
+                  0.3
+                ]
+              ],
+              "attributes": {
+                "structural_type": "slab"
+              },
+              "sha256": "24e98a6ab9796d709a14efceeee5edbb236a1ce80c0bf9ffb0deef874a25355b"
+            },
+            {
+              "id": "cad-0010",
+              "kind": "rectangle",
+              "layer": "S-STRUCT",
+              "source_node_id": "foundation-cc78e4761ea2",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.3,
+                  0.3
+                ]
+              ],
+              "attributes": {
+                "structural_type": "foundation"
+              },
+              "sha256": "8cb807a9aa18f12dc75bd036b0ceb11a40519263597e5c0981b1df194a8ccea0"
+            },
+            {
+              "id": "cad-0011",
+              "kind": "dimension",
+              "layer": "A-DIMS",
+              "source_node_id": "wall-76372a8d9c51",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ]
+              ],
+              "attributes": {
+                "value": 4.0,
+                "dimension_type": "linear"
+              },
+              "sha256": "8af4ef707f1750d1046d396e03f2e4205a23d4786c9e3a1c3be60366ca446ad9"
+            },
+            {
+              "id": "cad-0012",
+              "kind": "dimension",
+              "layer": "A-DIMS",
+              "source_node_id": "slab-cd35c6810d50",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ]
+              ],
+              "attributes": {
+                "value": 4.0,
+                "dimension_type": "linear"
+              },
+              "sha256": "59249205e0b8890865346a06fa7f8b749e111f18d58282344f61e05bd3466a02"
+            },
+            {
+              "id": "cad-0013",
+              "kind": "dimension",
+              "layer": "A-DIMS",
+              "source_node_id": "foundation-cc78e4761ea2",
+              "geometry": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  4,
+                  0
+                ]
+              ],
+              "attributes": {
+                "value": 4.0,
+                "dimension_type": "linear"
+              },
+              "sha256": "dcbb55339e5defec8b2766aa8405101c1c9179f1f56b83dbe9af78b93b7431b5"
+            }
+          ],
+          "views": [
+            {
+              "id": "view-A-101",
+              "number": "A-101",
+              "title": "Architectural Plan",
+              "kind": "plan",
+              "scale": "1:100",
+              "viewport": {
+                "x": 0,
+                "y": 0,
+                "width": 297,
+                "height": 210
+              },
+              "entity_ids": [
+                "cad-0001",
+                "cad-0002",
+                "cad-0003",
+                "cad-0004",
+                "cad-0005",
+                "cad-0006",
+                "cad-0007",
+                "cad-0008",
+                "cad-0009",
+                "cad-0010",
+                "cad-0011",
+                "cad-0012",
+                "cad-0013"
+              ],
+              "references": [
+                "ProjectGraph/BIM"
+              ]
+            },
+            {
+              "id": "view-S-101",
+              "number": "S-101",
+              "title": "Structural Plan",
+              "kind": "plan",
+              "scale": "1:100",
+              "viewport": {
+                "x": 0,
+                "y": 0,
+                "width": 297,
+                "height": 210
+              },
+              "entity_ids": [
+                "cad-0001",
+                "cad-0002",
+                "cad-0003",
+                "cad-0004",
+                "cad-0005",
+                "cad-0006",
+                "cad-0007",
+                "cad-0008",
+                "cad-0009",
+                "cad-0010",
+                "cad-0011",
+                "cad-0012",
+                "cad-0013"
+              ],
+              "references": [
+                "ProjectGraph/BIM"
+              ]
+            },
+            {
+              "id": "view-S-201",
+              "number": "S-201",
+              "title": "Foundation Plan",
+              "kind": "foundation",
+              "scale": "1:100",
+              "viewport": {
+                "x": 0,
+                "y": 0,
+                "width": 297,
+                "height": 210
+              },
+              "entity_ids": [
+                "cad-0001",
+                "cad-0002",
+                "cad-0003",
+                "cad-0004",
+                "cad-0005",
+                "cad-0006",
+                "cad-0007",
+                "cad-0008",
+                "cad-0009",
+                "cad-0010",
+                "cad-0011",
+                "cad-0012",
+                "cad-0013"
+              ],
+              "references": [
+                "ProjectGraph/BIM"
+              ]
+            },
+            {
+              "id": "view-A-301",
+              "number": "A-301",
+              "title": "Building Section",
+              "kind": "section",
+              "scale": "1:100",
+              "viewport": {
+                "x": 0,
+                "y": 0,
+                "width": 297,
+                "height": 210
+              },
+              "entity_ids": [
+                "cad-0001",
+                "cad-0002",
+                "cad-0003",
+                "cad-0004",
+                "cad-0005",
+                "cad-0006",
+                "cad-0007",
+                "cad-0008",
+                "cad-0009",
+                "cad-0010",
+                "cad-0011",
+                "cad-0012",
+                "cad-0013"
+              ],
+              "references": [
+                "ProjectGraph/BIM"
+              ]
+            },
+            {
+              "id": "view-A-401",
+              "number": "A-401",
+              "title": "Building Elevation",
+              "kind": "elevation",
+              "scale": "1:100",
+              "viewport": {
+                "x": 0,
+                "y": 0,
+                "width": 297,
+                "height": 210
+              },
+              "entity_ids": [
+                "cad-0001",
+                "cad-0002",
+                "cad-0003",
+                "cad-0004",
+                "cad-0005",
+                "cad-0006",
+                "cad-0007",
+                "cad-0008",
+                "cad-0009",
+                "cad-0010",
+                "cad-0011",
+                "cad-0012",
+                "cad-0013"
+              ],
+              "references": [
+                "ProjectGraph/BIM"
+              ]
+            }
+          ],
+          "sheets": [
+            {
+              "id": "sheet-A-101",
+              "number": "A-101",
+              "title": "Architectural Plan",
+              "view_id": "view-A-101",
+              "scale": "1:100",
+              "title_block": {
+                "project_id": "PILOT-BUILDING-001",
+                "revision": "V0"
+              },
+              "sha256": "ba2e657adc568bed89f43e77cab54852421b4ac81d6d951c51115aa9de8228b7"
+            },
+            {
+              "id": "sheet-S-101",
+              "number": "S-101",
+              "title": "Structural Plan",
+              "view_id": "view-S-101",
+              "scale": "1:100",
+              "title_block": {
+                "project_id": "PILOT-BUILDING-001",
+                "revision": "V0"
+              },
+              "sha256": "710f310953448af4df6b55737a24982b49b34ef33f623dbd84e1353f7df0f33a"
+            },
+            {
+              "id": "sheet-S-201",
+              "number": "S-201",
+              "title": "Foundation Plan",
+              "view_id": "view-S-201",
+              "scale": "1:100",
+              "title_block": {
+                "project_id": "PILOT-BUILDING-001",
+                "revision": "V0"
+              },
+              "sha256": "3220e421ca4e82050891eb594b3ae7042150a48df8052a92aa0df2d9cbae0170"
+            },
+            {
+              "id": "sheet-A-301",
+              "number": "A-301",
+              "title": "Building Section",
+              "view_id": "view-A-301",
+              "scale": "1:100",
+              "title_block": {
+                "project_id": "PILOT-BUILDING-001",
+                "revision": "V0"
+              },
+              "sha256": "a6ca27a65376c3283a3376e84b3024f70226e3eec2506a29aecb3f33b2aa0726"
+            },
+            {
+              "id": "sheet-A-401",
+              "number": "A-401",
+              "title": "Building Elevation",
+              "view_id": "view-A-401",
+              "scale": "1:100",
+              "title_block": {
+                "project_id": "PILOT-BUILDING-001",
+                "revision": "V0"
+              },
+              "sha256": "c369ae3261a9d43038facaa354409c61f9106a70f22d6d57a0efac57a1ddc5d6"
+            }
+          ],
+          "schema": "aias.cad_intermediate.v1"
+        }
+      },
+      "quantities": {
+        "sha256": "b96e242756e9639f75949269b72d79057ba7e3cd9cccd8611a160f76a1bad323",
+        "value": {
+          "project_id": "PILOT-BUILDING-001",
+          "items": [
+            {
+              "element_id": "wall-76372a8d9c51",
+              "category": "wall",
+              "rule": "wall.measurement.v1",
+              "measurement": 0.6000000000000001,
+              "waste_factor": 0.0,
+              "quantity": 0.6000000000000001,
+              "unit": "m3",
+              "material": "masonry"
+            },
+            {
+              "element_id": "door-331b5f5fc238",
+              "category": "door",
+              "rule": "door.measurement.v1",
+              "measurement": 1.0,
+              "waste_factor": 0.0,
+              "quantity": 1.0,
+              "unit": "unit",
+              "material": "door"
+            },
+            {
+              "element_id": "window-310eecb73c46",
+              "category": "window",
+              "rule": "window.measurement.v1",
+              "measurement": 1.0,
+              "waste_factor": 0.0,
+              "quantity": 1.0,
+              "unit": "unit",
+              "material": "window"
+            },
+            {
+              "element_id": "slab-cd35c6810d50",
+              "category": "slab",
+              "rule": "slab.measurement.v1",
+              "measurement": 3.75,
+              "waste_factor": 0.0,
+              "quantity": 3.75,
+              "unit": "m3",
+              "material": "concrete"
+            },
+            {
+              "element_id": "foundation-cc78e4761ea2",
+              "category": "foundation",
+              "rule": "foundation.measurement.v1",
+              "measurement": 1.0,
+              "waste_factor": 0.0,
+              "quantity": 1.0,
+              "unit": "m3",
+              "material": "concrete"
+            }
+          ],
+          "schema": "aias.quantity_package.v1"
+        }
+      },
+      "xlsx": {
+        "sha256": "dea249ba8e79c0b04c8ead45d83ab3c067145e8caa4b5325558c467677eaf2b5",
+        "value": {
+          "regenerated_by": "PRO05 workbook pipeline",
+          "input_graph_sha": "ed844de1c7968c50283049b77cf0d4b68106bfa151c0700ac92a1311ac7c2eb1"
+        }
+      },
+      "reports": {
+        "sha256": "49154e4ce25524e8a0668c9134ee1445a8aeeca58f07bb63ab2aa17ff213fb40",
+        "value": {
+          "project_id": "PILOT-BUILDING-001",
+          "metadata": {
+            "project_id": "PILOT-BUILDING-001",
+            "project_name": "Edificaci\u00f3n piloto AIAS Venezuela",
+            "jurisdiction": "VE",
+            "standards_pack": "VE-PILOT-001.0",
+            "revision": "V0"
+          },
+          "documents": {
+            "memoria_descriptiva": {
+              "title": "Memoria descriptiva",
+              "sections": {
+                "project": {
+                  "project_id": "PILOT-BUILDING-001",
+                  "project_name": "Edificaci\u00f3n piloto AIAS Venezuela",
+                  "jurisdiction": "VE",
+                  "standards_pack": "VE-PILOT-001.0",
+                  "revision": "V0"
+                },
+                "elements": 10,
+                "relationships": 11
+              },
+              "evidence_sha256": "ba730896de12b46d56ead678093dfa0eac4423c26ca8fb4f0728c6e48979a24f"
+            },
+            "memoria_arquitectonica": {
+              "title": "Memoria arquitect\u00f3nica",
+              "sections": {
+                "spaces": {
+                  "Main Space": 25.0
+                },
+                "levels": [
+                  "Level 1"
+                ],
+                "openings": [
+                  "door-331b5f5fc238",
+                  "window-310eecb73c46"
+                ]
+              },
+              "evidence_sha256": "e4e40061e7272f4cd0e138390215f0b2ed21e1772cf34788424a333481c0aeb1"
+            },
+            "memoria_estructural": {
+              "title": "Memoria estructural",
+              "sections": {
+                "status": "PASS",
+                "members": 3,
+                "code_checks": {
+                  "wall-76372a8d9c51": "PASS",
+                  "slab-cd35c6810d50": "PASS",
+                  "foundation-cc78e4761ea2": "PASS"
+                },
+                "evidence_sha256": "efe8473fd6f0b090a6361407603be12a2d2497e72a9a9174777454e7093c7ee3"
+              },
+              "evidence_sha256": "d11a14007ad0790ed8b8bf7766441501f61b18518495bb97b64f73014c271d95"
+            },
+            "memoria_calculo_v0": {
+              "title": "Memoria de c\u00e1lculo V0",
+              "sections": {
+                "reactions": {},
+                "displacements": {},
+                "drifts": {
+                  "wall-76372a8d9c51": 0.00011666666666666667,
+                  "slab-cd35c6810d50": 0.00011666666666666667,
+                  "foundation-cc78e4761ea2": 0.00011666666666666667
+                },
+                "internal_forces": {
+                  "wall-76372a8d9c51": 46.666666666666664,
+                  "slab-cd35c6810d50": 46.666666666666664,
+                  "foundation-cc78e4761ea2": 46.666666666666664
+                }
+              },
+              "evidence_sha256": "cbef82265e29a9796f6e136f77af466682b5c1377d7d8dbb99879bedf33baef4"
+            },
+            "especificaciones_tecnicas": {
+              "title": "Especificaciones t\u00e9cnicas",
+              "sections": {
+                "materials": [
+                  {
+                    "grade": "C30/37"
+                  }
+                ],
+                "source": "ProjectGraph/BIM"
+              },
+              "evidence_sha256": "f5a399665520043412419a7aaa26b1e83cad6ac1d93e126862581012548340ef"
+            },
+            "resumen_materiales": {
+              "title": "Resumen de materiales",
+              "sections": {
+                "masonry": 0.6000000000000001,
+                "door": 1.0,
+                "window": 1.0,
+                "concrete": 4.75
+              },
+              "evidence_sha256": "ca46e9ab9809954af271a422937a6bbded3c370846c395cbd29d30a72678e624"
+            },
+            "resumen_boq": {
+              "title": "Resumen de cantidades/BOQ",
+              "sections": {
+                "items": [
+                  {
+                    "element_id": "wall-76372a8d9c51",
+                    "category": "wall",
+                    "rule": "wall.measurement.v1",
+                    "measurement": 0.6000000000000001,
+                    "waste_factor": 0.0,
+                    "quantity": 0.6000000000000001,
+                    "unit": "m3",
+                    "material": "masonry"
+                  },
+                  {
+                    "element_id": "door-331b5f5fc238",
+                    "category": "door",
+                    "rule": "door.measurement.v1",
+                    "measurement": 1.0,
+                    "waste_factor": 0.0,
+                    "quantity": 1.0,
+                    "unit": "unit",
+                    "material": "door"
+                  },
+                  {
+                    "element_id": "window-310eecb73c46",
+                    "category": "window",
+                    "rule": "window.measurement.v1",
+                    "measurement": 1.0,
+                    "waste_factor": 0.0,
+                    "quantity": 1.0,
+                    "unit": "unit",
+                    "material": "window"
+                  },
+                  {
+                    "element_id": "slab-cd35c6810d50",
+                    "category": "slab",
+                    "rule": "slab.measurement.v1",
+                    "measurement": 3.75,
+                    "waste_factor": 0.0,
+                    "quantity": 3.75,
+                    "unit": "m3",
+                    "material": "concrete"
+                  },
+                  {
+                    "element_id": "foundation-cc78e4761ea2",
+                    "category": "foundation",
+                    "rule": "foundation.measurement.v1",
+                    "measurement": 1.0,
+                    "waste_factor": 0.0,
+                    "quantity": 1.0,
+                    "unit": "m3",
+                    "material": "concrete"
+                  }
+                ],
+                "evidence_sha256": "b96e242756e9639f75949269b72d79057ba7e3cd9cccd8611a160f76a1bad323"
+              },
+              "evidence_sha256": "91043094335025165d9bac20d917af42d86d2285bd6782046d883fd858901b16"
+            },
+            "cuadro_de_areas": {
+              "title": "Cuadro de \u00e1reas",
+              "sections": {
+                "Main Space": 25.0
+              },
+              "evidence_sha256": "aa727745e92af13dc3ee51b524dd48dbcc241cf53e2fe95e85134dbbf914e206"
+            },
+            "reporte_normativo": {
+              "title": "Reporte normativo",
+              "sections": {
+                "pack": "VE-PILOT-001.0",
+                "rules": [
+                  "VE-ARCH-DIM-001",
+                  "VE-LOAD-001",
+                  "VE-SEISMIC-001",
+                  "VE-WIND-001",
+                  "VE-CONCRETE-001",
+                  "VE-FOUNDATION-001"
+                ],
+                "status": "TRACEABLE"
+              },
+              "evidence_sha256": "89e70831dadbcacbc22ea605a4179e315890a98c20f98fa41873324e6ab7b93f"
+            },
+            "reporte_trazabilidad_evidencia": {
+              "title": "Trazabilidad y evidencia",
+              "sections": {
+                "source_of_truth": [
+                  "ProjectGraph/BIM",
+                  "Standards",
+                  "Analysis",
+                  "Drawings",
+                  "Quantities"
+                ],
+                "drawing_sheets": [
+                  "A-101",
+                  "S-101",
+                  "S-201",
+                  "A-301",
+                  "A-401"
+                ],
+                "analysis_sha256": "efe8473fd6f0b090a6361407603be12a2d2497e72a9a9174777454e7093c7ee3",
+                "quantity_sha256": "b96e242756e9639f75949269b72d79057ba7e3cd9cccd8611a160f76a1bad323"
+              },
+              "evidence_sha256": "74f735e039c6536deb9e9ad216663a55f9421d6f408093b4052e4e728f8da5de"
+            },
+            "reporte_limitaciones": {
+              "title": "Limitaciones",
+              "sections": {
+                "insufficient_evidence": [],
+                "notes": [
+                  "V0 requiere revisi\u00f3n profesional y evidencia normativa completa antes de emitir planos ejecutivos."
+                ]
+              },
+              "evidence_sha256": "a7cb85680b0d10564b0c1f8c2c3c850354cb97e1bacd013c3ccca89c33b89536"
+            }
+          },
+          "schema": "aias.report_package.v1"
+        }
+      },
+      "qa_qc": {
+        "sha256": "41319ff5c4e9142be13d7390ebea597536a516c3a6126812baae12f6118c26ed",
+        "value": {
+          "project_id": "PILOT-BUILDING-001",
+          "findings": [],
+          "score": {
+            "total_checks": 8,
+            "findings": 0,
+            "critical_blockers": 0,
+            "percent": 100.0
+          },
+          "gate": "READY_FOR_PILOT_ISSUANCE",
+          "audit_trail": [
+            {
+              "event": "validation",
+              "finding_count": 0,
+              "gate": "READY_FOR_PILOT_ISSUANCE"
+            }
+          ]
+        }
+      },
+      "issuance_manifest": {
+        "sha256": "18a419c0ed7e88b8330620838f7f343e40ab172161e519d44e8a45bbc8fbc76e",
+        "value": {
+          "gate": "READY_FOR_PILOT_ISSUANCE",
+          "graph_sha": "ed844de1c7968c50283049b77cf0d4b68106bfa151c0700ac92a1311ac7c2eb1"
+        }
+      }
+    },
+    "journal": [
+      {
+        "artifact": "standards",
+        "status": "REGENERATED",
+        "sha256": "13274084d636329489d151762e515ca0503d20a805a4674abc7e0a4c9295bb39"
+      },
+      {
+        "artifact": "analysis",
+        "status": "REGENERATED",
+        "sha256": "94fddf675ef9b94194e333079bf8782b511c8dc6750a032de62ff0e74ee86c7c"
+      },
+      {
+        "artifact": "reinforcement",
+        "status": "REGENERATED",
+        "sha256": "0ed4745ffa3985412541ed97ba2c474e964ad71d8c3d065f57b8230c9d3072fa"
+      },
+      {
+        "artifact": "cad",
+        "status": "REGENERATED",
+        "sha256": "54534c9dd2b7e356499c104c8b5b57df64a55bd5faeb1a2ae970edbdf51f577a"
+      },
+      {
+        "artifact": "quantities",
+        "status": "REGENERATED",
+        "sha256": "b96e242756e9639f75949269b72d79057ba7e3cd9cccd8611a160f76a1bad323"
+      },
+      {
+        "artifact": "xlsx",
+        "status": "REGENERATED",
+        "sha256": "dea249ba8e79c0b04c8ead45d83ab3c067145e8caa4b5325558c467677eaf2b5"
+      },
+      {
+        "artifact": "reports",
+        "status": "REGENERATED",
+        "sha256": "49154e4ce25524e8a0668c9134ee1445a8aeeca58f07bb63ab2aa17ff213fb40"
+      },
+      {
+        "artifact": "qa_qc",
+        "status": "REGENERATED",
+        "sha256": "41319ff5c4e9142be13d7390ebea597536a516c3a6126812baae12f6118c26ed"
+      },
+      {
+        "artifact": "issuance_manifest",
+        "status": "REGENERATED",
+        "sha256": "18a419c0ed7e88b8330620838f7f343e40ab172161e519d44e8a45bbc8fbc76e"
+      }
+    ]
+  },
+  "qa_gate": "READY_FOR_PILOT_ISSUANCE",
+  "reinforcement_classification": "PRELIMINARY"
+}
