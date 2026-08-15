@@ -24,7 +24,7 @@ class NativeBimProjection:
         levels = {node['id']: float(node['properties'].get('elevation_m', node['properties'].get('elevation', 0.0))) for node in graph.nodes if node['type'] == 'level'}
         type_ = WallType('aias-concrete-wall-200', 'AIAS Concrete Wall 200', CompoundStructure((WallLayer('core', 'concrete', 0.20, 'core'),)))
         engine = NativeBimWallEngine(); engine.register_type(type_)
-        hosts = {rel['target']: rel['source'] for rel in graph.relationships if rel['relation'] == 'contains' and rel['source'] in levels}
+        hosts = {rel['target']: rel['source'] for rel in graph.relationships if rel['relation'] in {'contains', 'hosts'} and rel['source'] in levels}
         wall_results = {}
         for wall in (node for node in graph.nodes if node['type'] == 'wall'):
             props = wall['properties']; level_id = hosts.get(wall['id'])

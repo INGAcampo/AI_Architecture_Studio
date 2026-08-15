@@ -12,6 +12,7 @@ def test_pilot_graph_seeds_and_persists(tmp_path):
     graph.save(path)
     loaded = graph.load(path)
     assert loaded.to_dict() == graph.to_dict()
+    assert len(NativeBimProjection().materialize(graph)['walls']) == 1
 
 def test_native_bim_projection_is_derived_from_project_graph():
     from aias_project_intake.builders import ParametricProjectGraphBuilder

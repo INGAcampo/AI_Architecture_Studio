@@ -1,6 +1,8 @@
 from pathlib import Path
+import json
 
 from aias_building_design_core.core import BuildingDesignCore
+from aias_building_design_core.native_bim import NativeBimProjection
 from aias_structural_professional.engine import ProfessionalStructuralEngine
 
 from .adapters import (
@@ -37,6 +39,10 @@ class AIASProjectProductionOrchestrator:
         errors = core.validate(graph)
         if errors:
             return {"verdict": "BLOCKED_SOFTWARE", "errors": errors}
+        scenario_dir.mkdir(parents=True, exist_ok=True)
+        native_bim = NativeBimProjection().materialize(graph)
+        native_bim_path = scenario_dir / 'native_bim_projection.json'
+        native_bim_path.write_text(json.dumps(native_bim, indent=2, sort_keys=True), encoding='utf-8')
         structural = ProfessionalStructuralEngine()
         model = structural.generate_3d_model(graph)
         structural.add_loads(model)
@@ -55,6 +61,7 @@ class AIASProjectProductionOrchestrator:
             "project_id": project_id, "project_mode": mode,
             "SYNTHETIC_TEST_DATA": True,
             "NOT_FOR_CONSTRUCTION": True,
+            "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
             "V0_V1": "PASS", "V2": "PASS", "V3": result.status, "V4": "PASS",
             "V5": drawing["gate"], "V6": "PASS" if quantities["gate"] == reports["gate"] == "PASS" else "FAIL",
             "V7": qa["gate"], "V8": issuance["gate"], "qa": qa, "issuance": issuance,
