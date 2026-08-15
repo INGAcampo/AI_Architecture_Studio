@@ -98,7 +98,9 @@ class AIASProjectProductionOrchestrator:
         structural_path = scenario_dir / "structural_production_evidence.json"
         structural_path.write_text(json.dumps(structural_evidence, indent=2, sort_keys=True), encoding="utf-8")
         structural_sha256 = hashlib.sha256(structural_path.read_bytes()).hexdigest()
-        drawing = self.drawing.produce(graph, result, scenario_dir / "drawings")
+        drawing = self.drawing.produce(
+            graph, result, scenario_dir / "drawings", reinforcement_model=reinforcement
+        )
         quantities = self.quantities.produce(graph, scenario_dir / "quantities")
         quantities["reinforcement"] = {
             "bar_set_count": len(reinforcement.bar_sets),
@@ -124,6 +126,7 @@ class AIASProjectProductionOrchestrator:
         reports = self.reports.produce(graph, result, drawing["model"], quantities["package"], scenario_dir / "reports")
         qa = self.qa.evaluate(result, drawing, quantities, reports, scenario_id)
         qa["reinforcement"] = quantities["reinforcement"]
+        qa["drawing_trace"] = drawing["design_trace"]
         issuance = self.issuance.issue(scenario_id, scenario_dir, drawing, quantities, reports, qa)
         return {
             "scenario_id": scenario_id,
@@ -141,6 +144,7 @@ class AIASProjectProductionOrchestrator:
             "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
             "standards": {"path": str(standards_path), "pack": synthetic_standards_evidence["pack"], "sha256": reinforcement.standards_evidence_sha256, "verdicts": standards_verdicts},
             "reinforcement": {"path": str(reinforcement_path), "bar_set_count": len(reinforcement.bar_sets), "steel_kg": ReinforcementEngine().total_steel_kg(reinforcement), "analysis_evidence_sha256": reinforcement.analysis_evidence_sha256, "standards_evidence_sha256": reinforcement.standards_evidence_sha256, "design_evidence_sha256": reinforcement.design_evidence_sha256, "status": "PRELIMINARY"},
+            "drawings": {"model_path": drawing["model_path"], "model_sha256": drawing["model_sha256"], "pdf": drawing["pdf"], "pdf_sha256": drawing["pdf_sha256"], "pdf_file_sha256": drawing["pdf_file_sha256"], "annotation_count": drawing["annotation_count"], "design_trace": drawing["design_trace"], "native_backend": drawing["native_dwg"]["backend"]},
             "structural": {
                 "provider": "aias_structural_core.ProjectGraphStructuralAdapter",
                 "path": str(structural_path), "sha256": structural_sha256,

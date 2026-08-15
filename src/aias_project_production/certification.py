@@ -503,3 +503,164 @@ def certify_design_production_core(output_root: str | Path) -> dict:
         }
         _write(output_root / "DESIGN_PRODUCTION_CORE_MANIFEST.json", certification)
         return certification
+
+
+def certify_drawings_production_core(output_root: str | Path) -> dict:
+    """Certify design-bound sheets and annotations on two isolated projects."""
+    from dataclasses import asdict
+
+    from aias_building_design_core import ProjectGraph
+    from aias_drawing_core import DrawingCore
+    from aias_reinforcement_detailing import ReinforcementModel
+    from aias_structural_professional import ProfessionalStructuralResult
+
+    output_root = Path(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+    manifests = [
+        _manifest("DRAWINGS-CORE-CERT-A", 8.0, 9.0, 2),
+        _manifest("DRAWINGS-CORE-CERT-B", 11.0, 7.0, 3),
+    ]
+    with tempfile.TemporaryDirectory(prefix="aias-drawings-cert-") as temporary:
+        factory = ProjectProductionFactory(
+            Path(temporary), orchestrator_type=ArchitecturalCertificationOrchestrator
+        )
+        factory_result = factory.run(manifests)
+        projects = []
+        deterministic = []
+        fail_closed = []
+        for result in factory_result["new_results"]:
+            graph = ProjectGraph.load(result["project_graph"]["path"])
+            structural = json.loads(
+                Path(result["structural"]["path"]).read_text(encoding="utf-8")
+            )
+            reinforcement = json.loads(
+                Path(result["reinforcement"]["path"]).read_text(encoding="utf-8")
+            )
+            drawing_path = Path(result["drawings"]["model_path"])
+            drawing = json.loads(drawing_path.read_text(encoding="utf-8"))
+            analysis = ProfessionalStructuralResult(**structural["result"])
+            reinforcement_model = ReinforcementModel(**reinforcement)
+            repeated = DrawingCore().build(
+                graph,
+                {"status": analysis.status, "evidence_sha256": analysis.evidence_sha256},
+                reinforcement_model,
+            )
+            deterministic.append(asdict(repeated) == drawing)
+            try:
+                DrawingCore().build(
+                    graph,
+                    {"status": "PASS", "evidence_sha256": "0" * 64},
+                    reinforcement_model,
+                )
+                fail_closed.append(False)
+            except ValueError as exc:
+                fail_closed.append("EVIDENCE_MISMATCH" in str(exc))
+
+            issuance = json.loads(
+                Path(result["issuance"]["manifest"]).read_text(encoding="utf-8")
+            )
+            annotations = drawing["annotations"]
+            drawing_trace = drawing["design_trace"]
+            bar_marks = {item["bar_mark"] for item in reinforcement["bar_sets"]}
+            annotation_marks = {item["bar_mark"] for item in annotations}
+            linked_annotations = {
+                annotation_id
+                for sheet in drawing["sheets"]
+                for annotation_id in sheet.get("annotation_ids", [])
+            }
+            evidence = {
+                "schema": "aias.drawings_project_evidence.v1",
+                "project_id": result["project_id"],
+                "SYNTHETIC_TEST_DATA": True,
+                "NOT_FOR_CONSTRUCTION": True,
+                "classification": "PRELIMINARY_NOT_FOR_CONSTRUCTION",
+                "drawing_model": drawing,
+                "drawing_model_sha256": result["drawings"]["model_sha256"],
+                "pdf_file_sha256": result["drawings"]["pdf_file_sha256"],
+                "native_backend": result["drawings"]["native_backend"],
+                "qa_drawing_trace": result["qa"]["drawing_trace"],
+                "issuance_drawing_trace": issuance["artifacts"]["drawing_design_trace"],
+            }
+            filename = f"{result['project_id']}_DRAWINGS_EVIDENCE.json"
+            _write(output_root / filename, evidence)
+            projects.append({
+                "project_id": result["project_id"],
+                "evidence_file": filename,
+                "evidence_sha256": _sha256(evidence),
+                "drawing_model_sha256": result["drawings"]["model_sha256"],
+                "pdf_file_sha256": result["drawings"]["pdf_file_sha256"],
+                "analysis_evidence_sha256": drawing_trace["analysis_evidence_sha256"],
+                "standards_evidence_sha256": drawing_trace["standards_evidence_sha256"],
+                "design_evidence_sha256": drawing_trace["design_evidence_sha256"],
+                "annotation_count": len(annotations),
+                "bar_marks_complete": annotation_marks == bar_marks,
+                "sheet_links_complete": linked_annotations == {item["id"] for item in annotations},
+                "downstream_trace_valid": (
+                    drawing_trace == result["qa"]["drawing_trace"]
+                    == issuance["artifacts"]["drawing_design_trace"]
+                ),
+                "native_backend": result["drawings"]["native_backend"],
+                "model_file_hash_valid": (
+                    hashlib.sha256(drawing_path.read_bytes()).hexdigest()
+                    == result["drawings"]["model_sha256"]
+                ),
+                "pdf_file_hash_valid": (
+                    hashlib.sha256(Path(result["drawings"]["pdf"]).read_bytes()).hexdigest()
+                    == result["drawings"]["pdf_file_sha256"]
+                ),
+            })
+
+        synthetic_backend = SyntheticNativeDWGCertificationAdapter.provider
+        checks = {
+            "factory_reused": factory_result["verdict"] == "PROJECT_PRODUCTION_FACTORY_READY",
+            "two_isolated_projects": len(projects) == 2 and factory_result["isolation_verified"],
+            "analysis_standards_design_bound": all(
+                len(item[name]) == 64
+                for item in projects
+                for name in (
+                    "analysis_evidence_sha256",
+                    "standards_evidence_sha256",
+                    "design_evidence_sha256",
+                )
+            ),
+            "bar_marks_materialized": all(
+                item["annotation_count"] > 0 and item["bar_marks_complete"]
+                for item in projects
+            ),
+            "sheet_annotation_links_complete": all(
+                item["sheet_links_complete"] for item in projects
+            ),
+            "qa_and_issuance_bound": all(
+                item["downstream_trace_valid"] for item in projects
+            ),
+            "artifact_sha256_verified": all(
+                item["model_file_hash_valid"] and item["pdf_file_hash_valid"]
+                for item in projects
+            ),
+            "geometry_sensitive": len({item["drawing_model_sha256"] for item in projects}) == 2,
+            "deterministic_reproduction": all(deterministic),
+            "fail_closed_on_lineage_mismatch": all(fail_closed),
+            "synthetic_licensed_backend_boundary": all(
+                item["native_backend"] == synthetic_backend for item in projects
+            ),
+        }
+        certification = {
+            "schema": "aias.drawings_production_core_certification.v1",
+            "program": "PRODUCCION DE PROYECTOS AIAS",
+            "target": "DRAWINGS_PRODUCTION_CORE_READY",
+            "prerequisite_gate": "DESIGN_PRODUCTION_CORE_READY",
+            "SYNTHETIC_TEST_DATA": True,
+            "NOT_FOR_CONSTRUCTION": True,
+            "classification": "PRELIMINARY_NOT_FOR_CONSTRUCTION",
+            "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+            "licensed_backend_policy": "SYNTHETIC_TEST_DOUBLE_ONLY_FOR_CERTIFICATION",
+            "drawing_provider": "aias_drawing_core.DrawingCore",
+            "manual_touchpoint_baseline": 7,
+            "automated_touchpoints": 3,
+            "estimated_time_reduction_percent": 57.14,
+            "projects": projects,
+            "checks": checks,
+            "verdict": "DRAWINGS_PRODUCTION_CORE_READY" if all(checks.values()) else "NOT_READY",
+        }
+        _write(output_root / "DRAWINGS_PRODUCTION_CORE_MANIFEST.json", certification)
+        return certification

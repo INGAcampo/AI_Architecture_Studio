@@ -30,21 +30,30 @@ class DrawingProductionAdapter:
     def __init__(self, native_dwg_adapter=None):
         self.native_dwg_adapter = native_dwg_adapter or NativeDWGProductionAdapter()
 
-    def produce(self, graph, structural_result, output: Path) -> dict:
+    def produce(self, graph, structural_result, output: Path, reinforcement_model=None) -> dict:
         if structural_result is None or not structural_result.evidence_sha256:
             raise ValueError("drawing contract requires structural evidence")
         output.mkdir(parents=True, exist_ok=True)
-        model = DrawingCore().build(graph, {"status": structural_result.status, "evidence_sha256": structural_result.evidence_sha256})
+        model = DrawingCore().build(
+            graph,
+            {"status": structural_result.status, "evidence_sha256": structural_result.evidence_sha256},
+            reinforcement_model,
+        )
         errors = DrawingCore().validate(model)
         if errors: raise ValueError("drawing contract validation failed: " + "; ".join(errors))
+        model_path = output / "drawing_model.json"
+        model_path.write_text(json.dumps(asdict(model), indent=2, sort_keys=True), encoding="utf-8")
         pdf = output / "drawing_set.pdf"; digest = DrawingCore().export_pdf(model, pdf)
         cad = DrawingModelToCADDocumentAdapter().adapt(graph, model)
         dxf = output / "drawing_set.dxf"; ValidDxfWriter().write(cad, dxf)
         native = self.native_dwg_adapter.produce(cad, output / "native")
         return {"gate": "PASS", "model": model, "pdf": str(pdf), "pdf_sha256": _sha(pdf.read_bytes()), "drawing_sha256": digest,
+                "pdf_file_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest(),
+                "model_path": str(model_path), "model_sha256": hashlib.sha256(model_path.read_bytes()).hexdigest(),
+                "design_trace": model.design_trace, "annotation_count": len(model.annotations),
                 "cad_document": cad, "dxf": str(dxf), "dxf_sha256": _sha(dxf.read_bytes()),
                 "native_dwg": native,
-                "sheet_ids": [s["id"] for s in model.sheets], "provenance": "ProjectGraph/BIM+StructuralResult"}
+                "sheet_ids": [s["id"] for s in model.sheets], "provenance": "ProjectGraph/BIM+Analysis+Standards+Design" if reinforcement_model is not None else "ProjectGraph/BIM+StructuralResult"}
 
 
 class DrawingModelToCADDocumentAdapter:
@@ -150,6 +159,7 @@ class ProfessionalQAAdapter:
         design_status = "PRODUCTION_READY" if result.status == "PASS" else "V0_LIMITED"
         artifacts = [("Structural design", design_status, result.evidence_sha256, "Analysis", "Resolve design failure"),
                      ("PDF", "PRODUCTION_READY", drawing["pdf_sha256"], "Drawing", ""),
+                     ("Drawing model", "PRODUCTION_READY", drawing.get("model_sha256", drawing["drawing_sha256"]), "Design", ""),
                      ("BOQ CSV", "PRODUCTION_READY", quantities["sha256"], "Quantities", ""),
                      ("Reports", "PRODUCTION_READY", reports["sha256"], "Reports", "")]
         qa = ProfessionalQAGate().evaluate(artifacts)
@@ -163,7 +173,7 @@ class ProfessionalQAAdapter:
 class ExecutiveIssuanceAdapter:
     provider = "aias_project_production.adapters.ExecutiveIssuanceAdapter"
     def issue(self, scenario_id: str, output: Path, drawing: dict, quantities: dict, reports: dict, qa: dict) -> dict:
-        artifacts = {"pdf": drawing["pdf"], "boq_csv": quantities["csv"], "reports": reports["documents"], "qa": qa}
+        artifacts = {"pdf": drawing["pdf"], "drawing_model": drawing.get("model_path"), "drawing_model_sha256": drawing.get("model_sha256"), "drawing_design_trace": drawing.get("design_trace", {}), "boq_csv": quantities["csv"], "reports": reports["documents"], "qa": qa}
         manifest = {"schema": "aias.synthetic_executive_issuance.v1", "scenario_id": scenario_id,
             "SYNTHETIC_TEST_DATA": True, "NOT_FOR_CONSTRUCTION": True, "artifacts": artifacts,
             "sha256": _sha(artifacts), "verdict": "SYNTHETIC_ISSUANCE_PASS"}
