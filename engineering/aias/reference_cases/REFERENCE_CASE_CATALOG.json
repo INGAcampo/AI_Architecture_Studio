@@ -1,0 +1,19 @@
+{
+  "schema": "aias.reference_case_catalog.v1",
+  "purpose": "External technical references for validation only; never a construction baseline.",
+  "isolation": {"REFERENCE_CASE": "read-only support material", "PILOT_SYNTHETIC": "generated test data", "REAL_PROJECT": "authenticated project inputs only"},
+  "cases": [
+    {
+      "reference_id": "OPENSEES-EXAMPLES-MANUAL",
+      "title": "OpenSees Examples Manual",
+      "issuer": "Open System for Earthquake Engineering Simulation",
+      "url": "https://opensees.berkeley.edu/wiki/index.php/Examples_Manual",
+      "access_verified_utc": "2026-08-15T00:00:00Z",
+      "material_type": "public modelling examples",
+      "permitted_use_in_AIAS": "analytical benchmark and adapter validation",
+      "construction_status": "NOT_FOR_CONSTRUCTION",
+      "ingestion_status": "REFERENCE_CATALOGED_PENDING_LICENSE_SCOPE_REVIEW"
+    }
+  ],
+  "prohibitions": ["No copied geometry, load, material or design value may become a REAL_PROJECT input without authenticated project provenance.", "No reference case may be presented as Venezuelan code compliance."]
+}
