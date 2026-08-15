@@ -244,3 +244,126 @@ def certify_structural_production_core(output_root: str | Path) -> dict:
         }
         _write(output_root / "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json", certification)
         return certification
+
+
+def certify_analysis_production_core(output_root: str | Path) -> dict:
+    """Certify combination-driven, evidence-bound analysis on the canonical factory."""
+    from aias_project_intake.builders import ParametricProjectGraphBuilder
+    from aias_structural_professional import ProfessionalStructuralEngine
+
+    output_root = Path(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+    manifests = [
+        _manifest("ANALYSIS-CORE-CERT-A", 8.0, 9.0, 2),
+        _manifest("ANALYSIS-CORE-CERT-B", 11.0, 7.0, 3),
+    ]
+    with tempfile.TemporaryDirectory(prefix="aias-analysis-cert-") as temporary:
+        factory = ProjectProductionFactory(
+            Path(temporary), orchestrator_type=ArchitecturalCertificationOrchestrator
+        )
+        factory_result = factory.run(manifests)
+        projects = []
+        reproduced = []
+        for manifest, result in zip(manifests, factory_result["new_results"]):
+            structural = json.loads(
+                Path(result["structural"]["path"]).read_text(encoding="utf-8")
+            )
+            analysis = structural["result"]
+            evidence = {
+                "schema": "aias.analysis_project_evidence.v1",
+                "project_id": result["project_id"],
+                "SYNTHETIC_TEST_DATA": True,
+                "NOT_FOR_CONSTRUCTION": True,
+                "source_graph_sha256": structural["source_graph_sha256"],
+                "analysis_model": structural["analysis_model"],
+                "load_envelopes": analysis["load_envelopes"],
+                "combination_results": analysis["combination_results"],
+                "design_checks": analysis["design_checks"],
+                "analysis_trace": analysis["analysis_trace"],
+                "analysis_evidence_sha256": analysis["evidence_sha256"],
+                "status": analysis["status"],
+            }
+            filename = f"{result['project_id']}_ANALYSIS_EVIDENCE.json"
+            _write(output_root / filename, evidence)
+
+            graph = ParametricProjectGraphBuilder().build(manifest)
+            engine = ProfessionalStructuralEngine()
+            model = engine.generate_3d_model(graph)
+            engine.add_loads(model)
+            engine.apply_combinations(model)
+            standards = {
+                "pack": "AIAS-SYNTHETIC-ANALYSIS-001",
+                "scenario_id": manifest["scenario_id"],
+                "SYNTHETIC_TEST_DATA": True,
+                "NOT_FOR_CONSTRUCTION": True,
+            }
+            standards["pack_sha256"] = hashlib.sha256(
+                json.dumps(standards, sort_keys=True).encode()
+            ).hexdigest()
+            first = engine.analyze_and_design(model, standards)
+            second = engine.analyze_and_design(copy.deepcopy(model), copy.deepcopy(standards))
+            reproduced.append(first.evidence_sha256 == second.evidence_sha256 == analysis["evidence_sha256"])
+            projects.append({
+                "project_id": result["project_id"],
+                "evidence_file": filename,
+                "evidence_sha256": _sha256(evidence),
+                "source_graph_sha256": structural["source_graph_sha256"],
+                "analysis_model_sha256": analysis["analysis_trace"]["analysis_model_sha256"],
+                "analysis_evidence_sha256": analysis["evidence_sha256"],
+                "standards_evidence_sha256": analysis["analysis_trace"]["standards_evidence_sha256"],
+                "governing_combination": analysis["analysis_trace"]["governing_combination"],
+                "equilibrium_status": analysis["analysis_trace"]["equilibrium_status"],
+                "governing_total_kN": max(
+                    value["factored_total_kN"]
+                    for value in analysis["combination_results"].values()
+                ),
+                "analysis_status": analysis["status"],
+            })
+
+        fail_closed_engine = ProfessionalStructuralEngine()
+        fail_closed_model = fail_closed_engine.generate_3d_model(
+            ParametricProjectGraphBuilder().build(manifests[0])
+        )
+        fail_closed_engine.add_loads(fail_closed_model)
+        fail_closed_engine.apply_combinations(fail_closed_model)
+        missing_standards = fail_closed_engine.analyze_and_design(fail_closed_model, {})
+        checks = {
+            "factory_reused": factory_result["verdict"] == "PROJECT_PRODUCTION_FACTORY_READY",
+            "two_isolated_projects": len(projects) == 2 and factory_result["isolation_verified"],
+            "project_graph_bound": all(
+                item["source_graph_sha256"] and item["analysis_model_sha256"]
+                for item in projects
+            ),
+            "combination_results_materialized": all(
+                item["governing_combination"] == "VE-ULS-1" for item in projects
+            ),
+            "equilibrium_verified": all(
+                item["equilibrium_status"] == "PASS" for item in projects
+            ),
+            "standards_evidence_bound": all(
+                len(item["standards_evidence_sha256"]) == 64 for item in projects
+            ),
+            "geometry_sensitive": len({item["governing_total_kN"] for item in projects}) == 2,
+            "deterministic_reproduction": all(reproduced),
+            "fail_closed_without_standards": missing_standards.status == "INSUFFICIENT_EVIDENCE",
+            "analysis_pass": all(item["analysis_status"] == "PASS" for item in projects),
+        }
+        certification = {
+            "schema": "aias.analysis_production_core_certification.v1",
+            "program": "PRODUCCION DE PROYECTOS AIAS",
+            "target": "ANALYSIS_PRODUCTION_CORE_READY",
+            "prerequisite_gate": "STRUCTURAL_PRODUCTION_CORE_READY",
+            "SYNTHETIC_TEST_DATA": True,
+            "NOT_FOR_CONSTRUCTION": True,
+            "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+            "factory_provider": "aias_project_production.factory.ProjectProductionFactory",
+            "analysis_provider": "aias_structural_professional.ProfessionalStructuralEngine",
+            "manual_touchpoint_baseline": 6,
+            "automated_touchpoints": 2,
+            "estimated_time_reduction_percent": 66.67,
+            "projects": projects,
+            "checks": checks,
+            "verdict": "ANALYSIS_PRODUCTION_CORE_READY" if all(checks.values()) else "NOT_READY",
+        }
+        _write(output_root / "ANALYSIS_PRODUCTION_CORE_MANIFEST.json", certification)
+        return certification

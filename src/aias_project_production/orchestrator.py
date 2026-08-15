@@ -64,7 +64,16 @@ class AIASProjectProductionOrchestrator:
             for load in model.loads:
                 load["magnitude"] *= 30.0
         structural.apply_combinations(model)
-        result = structural.analyze_and_design(model, {"synthetic_test_data": True, "scenario_id": scenario_id})
+        synthetic_standards_evidence = {
+            "pack": "AIAS-SYNTHETIC-ANALYSIS-001",
+            "scenario_id": scenario_id,
+            "SYNTHETIC_TEST_DATA": True,
+            "NOT_FOR_CONSTRUCTION": True,
+        }
+        synthetic_standards_evidence["pack_sha256"] = hashlib.sha256(
+            json.dumps(synthetic_standards_evidence, sort_keys=True).encode()
+        ).hexdigest()
+        result = structural.analyze_and_design(model, synthetic_standards_evidence)
         structural_evidence = {
             "schema": "aias.structural_production_evidence.v1",
             "project_id": graph.project_id,
@@ -114,6 +123,11 @@ class AIASProjectProductionOrchestrator:
                 "projection": model.metadata.get("projection"),
                 "member_count": len(model.members), "node_count": len(model.nodes),
                 "geometry_backed_member_count": model.metadata.get("geometry_backed_member_count", 0),
+                "analysis_evidence_sha256": result.evidence_sha256,
+                "analysis_model_sha256": result.analysis_trace.get("analysis_model_sha256"),
+                "standards_evidence_sha256": result.analysis_trace.get("standards_evidence_sha256"),
+                "governing_combination": result.analysis_trace.get("governing_combination"),
+                "equilibrium_status": result.analysis_trace.get("equilibrium_status"),
                 "status": result.status,
             },
             "coherence": {

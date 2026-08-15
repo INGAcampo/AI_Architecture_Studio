@@ -1,0 +1,2893 @@
+{
+  "NOT_FOR_CONSTRUCTION": true,
+  "SYNTHETIC_TEST_DATA": true,
+  "analysis_evidence_sha256": "d0a3ed4bde284a1d457374ee3fa8d1782d8a0664c455cbebd204f934b0ca5195",
+  "analysis_model": {
+    "combinations": [
+      {
+        "factors": {
+          "dead": 1.2,
+          "live": 1.6,
+          "seismic": 1.0,
+          "wind": 1.0
+        },
+        "id": "VE-ULS-1"
+      },
+      {
+        "factors": {
+          "dead": 1.0,
+          "live": 1.0,
+          "seismic": 0.7,
+          "wind": 0.7
+        },
+        "id": "VE-SLS-1"
+      }
+    ],
+    "loads": [
+      {
+        "basis": "synthetic_dead_4kN_m2",
+        "case": "dead",
+        "direction": "Z",
+        "kind": "surface",
+        "magnitude": 576.0
+      },
+      {
+        "basis": "synthetic_live_2kN_m2",
+        "case": "live",
+        "direction": "Z",
+        "kind": "surface",
+        "magnitude": 288.0
+      },
+      {
+        "basis": "synthetic_wind_proxy",
+        "case": "wind",
+        "direction": "X",
+        "kind": "point",
+        "magnitude": 21.6
+      },
+      {
+        "basis": "synthetic_seismic_proxy",
+        "case": "seismic",
+        "direction": "Y",
+        "kind": "tributary",
+        "magnitude": 28.8
+      }
+    ],
+    "members": [
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:slab-01:end",
+          "start_node_id": "analysis-node:slab-01:start"
+        },
+        "geometry_sha256": "f79b702d86e1213530c318f580a9dbca48612e905e615fc212fb91cb9c83bb4f",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "slab-01",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:slab-01:start",
+          "analysis-node:slab-01:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "slab-01",
+        "tributary_area_m2": 72.0,
+        "type": "slab"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-01-north:end",
+          "start_node_id": "analysis-node:wall-01-north:start"
+        },
+        "geometry_sha256": "cd7dceeec22fe9d6c3ed365218cf6fe0f5be3b3e44c8a5b2126427263489ab34",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-01-north",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-01-north:start",
+          "analysis-node:wall-01-north:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-01-north",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-01-south:end",
+          "start_node_id": "analysis-node:wall-01-south:start"
+        },
+        "geometry_sha256": "9111ffab7f083058dfc6d88bcfbc2a25a211daea5d5de71a3bb4c4f964850e05",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-01-south",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-01-south:start",
+          "analysis-node:wall-01-south:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-01-south",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-01-east:end",
+          "start_node_id": "analysis-node:wall-01-east:start"
+        },
+        "geometry_sha256": "fb84b3655355d1dd3e2e2613e61bf6299934aa7390d173f40b8267cd5a43529d",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-01-east",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-01-east:start",
+          "analysis-node:wall-01-east:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-01-east",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-01-west:end",
+          "start_node_id": "analysis-node:wall-01-west:start"
+        },
+        "geometry_sha256": "30e35e9b251395d0d9c201e11b9c2659dbd3b784e2894827536e861969d0ba38",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-01-west",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-01-west:start",
+          "analysis-node:wall-01-west:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-01-west",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-01-A1:end",
+          "start_node_id": "analysis-node:column-01-A1:start"
+        },
+        "geometry_sha256": "fb9b9e6893a54c05f7b63c8583008276f6c00b2bc28d3c7319b0dfa83a16aa3f",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-01-A1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-01-A1:start",
+          "analysis-node:column-01-A1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-01-A1",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-01-A2:end",
+          "start_node_id": "analysis-node:column-01-A2:start"
+        },
+        "geometry_sha256": "0ad9e3de96df41f16d1677c483ecee4d5305b3523990b506e54a8f7cb78e9b82",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-01-A2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-01-A2:start",
+          "analysis-node:column-01-A2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-01-A2",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-01-B1:end",
+          "start_node_id": "analysis-node:column-01-B1:start"
+        },
+        "geometry_sha256": "8e7d126169ed36f5742a54c081e721f78654b9d751a74a746b68349b6a9dc4a1",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-01-B1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-01-B1:start",
+          "analysis-node:column-01-B1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-01-B1",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-01-B2:end",
+          "start_node_id": "analysis-node:column-01-B2:start"
+        },
+        "geometry_sha256": "1fa87c3efa8b64e06844ace697d2fcd29e30c8ad4a1df1e97548695768f17464",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-01-B2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-01-B2:start",
+          "analysis-node:column-01-B2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-01-B2",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-01-A:end",
+          "start_node_id": "analysis-node:beam-01-A:start"
+        },
+        "geometry_sha256": "0c5f30914a93982fb8b687647544aaba9936d209c18dab4ff6be7f52bbc7ad34",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-01-A",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-01-A:start",
+          "analysis-node:beam-01-A:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-01-A",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-01-B:end",
+          "start_node_id": "analysis-node:beam-01-B:start"
+        },
+        "geometry_sha256": "3b85a6a6917cd7da6d9db667cfa02afe7dc98390359691d93ad0b09bda5b8c3c",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-01-B",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-01-B:start",
+          "analysis-node:beam-01-B:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-01-B",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-01-1:end",
+          "start_node_id": "analysis-node:beam-01-1:start"
+        },
+        "geometry_sha256": "f27baceb9b99c9d816698f193d9e3629aa015d5f523242b6a446e64ac79853e6",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-01-1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-01-1:start",
+          "analysis-node:beam-01-1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-01-1",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-01-2:end",
+          "start_node_id": "analysis-node:beam-01-2:start"
+        },
+        "geometry_sha256": "0c5587ea9bced3e19980e844bb54e0ba29af58af584b222f6f33c316f77537b2",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-01-2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-01-2:start",
+          "analysis-node:beam-01-2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-01-2",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:slab-02:end",
+          "start_node_id": "analysis-node:slab-02:start"
+        },
+        "geometry_sha256": "091d5dd4e771f1940cb2439f3996043442f560633ecdbf41b21726925a3ac818",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "slab-02",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:slab-02:start",
+          "analysis-node:slab-02:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "slab-02",
+        "tributary_area_m2": 72.0,
+        "type": "slab"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-02-north:end",
+          "start_node_id": "analysis-node:wall-02-north:start"
+        },
+        "geometry_sha256": "748a8769dd38c53b742f7c3c9f41c5a1366b483b586d1e4cb29e31fc36085c7e",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-02-north",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-02-north:start",
+          "analysis-node:wall-02-north:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-02-north",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-02-south:end",
+          "start_node_id": "analysis-node:wall-02-south:start"
+        },
+        "geometry_sha256": "54e6543384f61e97f48d285415a66b648bfe83c19d90c4ab178549d23cf19d66",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-02-south",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-02-south:start",
+          "analysis-node:wall-02-south:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-02-south",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-02-east:end",
+          "start_node_id": "analysis-node:wall-02-east:start"
+        },
+        "geometry_sha256": "792976d16d454fd0949a3e5b6c922a38fc9742a532c7d662b39b7d66aa36a358",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-02-east",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-02-east:start",
+          "analysis-node:wall-02-east:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-02-east",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:wall-02-west:end",
+          "start_node_id": "analysis-node:wall-02-west:start"
+        },
+        "geometry_sha256": "64be7af72c3a036ed98482d175ecc9c51e4143cd00e0991d2d0651a561795d80",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "wall-02-west",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:wall-02-west:start",
+          "analysis-node:wall-02-west:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "wall-02-west",
+        "type": "wall"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-02-A1:end",
+          "start_node_id": "analysis-node:column-02-A1:start"
+        },
+        "geometry_sha256": "47a9e365701ee7719ae193c14c9cd194eeb0ddfe24b499107aefd0634f08b422",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-02-A1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-02-A1:start",
+          "analysis-node:column-02-A1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-02-A1",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-02-A2:end",
+          "start_node_id": "analysis-node:column-02-A2:start"
+        },
+        "geometry_sha256": "ca2a4b2c06328b04b91f64190a3abb2d37359ade5c867f65aa0b508e9200dd0f",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-02-A2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-02-A2:start",
+          "analysis-node:column-02-A2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-02-A2",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-02-B1:end",
+          "start_node_id": "analysis-node:column-02-B1:start"
+        },
+        "geometry_sha256": "77af37a4dd29b3be41d209da7e0c57b28cde20a529360001bf7081a1dfa6c89f",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-02-B1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-02-B1:start",
+          "analysis-node:column-02-B1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-02-B1",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:column-02-B2:end",
+          "start_node_id": "analysis-node:column-02-B2:start"
+        },
+        "geometry_sha256": "f56b22d3af71939fb28e7f637b38a92fbf64775d631d4165a56ce55bbd3aed51",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "column-02-B2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:column-02-B2:start",
+          "analysis-node:column-02-B2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "column-02-B2",
+        "type": "column"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-02-A:end",
+          "start_node_id": "analysis-node:beam-02-A:start"
+        },
+        "geometry_sha256": "50187bd2ef7f0c486036d92378a22f987bdf560419fd85a8ca672d01f861c4a1",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-02-A",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-02-A:start",
+          "analysis-node:beam-02-A:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-02-A",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-02-B:end",
+          "start_node_id": "analysis-node:beam-02-B:start"
+        },
+        "geometry_sha256": "bc624423a1b59872d962be1f63bb50f69128276b07ba4484c7239a52e7cf3a61",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-02-B",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-02-B:start",
+          "analysis-node:beam-02-B:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-02-B",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-02-1:end",
+          "start_node_id": "analysis-node:beam-02-1:start"
+        },
+        "geometry_sha256": "85a5f9d08539d69f935b6e6059898a63363d04a4a3b56c761590dd40cc2436aa",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-02-1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-02-1:start",
+          "analysis-node:beam-02-1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-02-1",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:beam-02-2:end",
+          "start_node_id": "analysis-node:beam-02-2:start"
+        },
+        "geometry_sha256": "487c9d96cf2c4c5cf27c1e165034fb4e06ff885855ee1ac42de7d418bd2f0dd5",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "beam-02-2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:beam-02-2:start",
+          "analysis-node:beam-02-2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "beam-02-2",
+        "type": "beam"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:foundation-A1:end",
+          "start_node_id": "analysis-node:foundation-A1:start"
+        },
+        "geometry_sha256": "98a367f6a20a67cf601e5d1f99cda0284f9469012578afebe6397df4532e7d17",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "foundation-A1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:foundation-A1:start",
+          "analysis-node:foundation-A1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "foundation-A1",
+        "type": "foundation"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:foundation-A2:end",
+          "start_node_id": "analysis-node:foundation-A2:start"
+        },
+        "geometry_sha256": "3269de20d09faf1cd0a24b50708b2b7d96b3f50c0f4438871f2be930a4a2476f",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "foundation-A2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:foundation-A2:start",
+          "analysis-node:foundation-A2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "foundation-A2",
+        "type": "foundation"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:foundation-B1:end",
+          "start_node_id": "analysis-node:foundation-B1:start"
+        },
+        "geometry_sha256": "13e08d762c4627515929ffa6b5ddea6395f24537397ceef59ac6e204690e9dc6",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "foundation-B1",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:foundation-B1:start",
+          "analysis-node:foundation-B1:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "foundation-B1",
+        "type": "foundation"
+      },
+      {
+        "connectivity": {
+          "end_node_id": "analysis-node:foundation-B2:end",
+          "start_node_id": "analysis-node:foundation-B2:start"
+        },
+        "geometry_sha256": "ecaac6efcd8f61a5eecf093ccc2ebf1c5b22cba13863b77118168c4b2520abfc",
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "foundation-B2",
+        "material": "C25/30",
+        "node_ids": [
+          "analysis-node:foundation-B2:start",
+          "analysis-node:foundation-B2:end"
+        ],
+        "section": {
+          "depth_m": 0.5,
+          "width_m": 0.3
+        },
+        "self_weight_kN_m": 3.75,
+        "source_node_id": "foundation-B2",
+        "type": "foundation"
+      }
+    ],
+    "metadata": {
+      "geometry_backed_member_count": 30,
+      "member_count": 30,
+      "node_count": 60,
+      "projection": "aias.project_graph_structural_adapter.v1",
+      "source": "ProjectGraph",
+      "source_graph_sha256": "f139964a1e7e188bb935e62aee67a5f11d1399128fbf41bcbbef985706f9757f"
+    },
+    "nodes": [
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:slab-01:start",
+        "role": "start",
+        "source_node_id": "slab-01",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          4.0,
+          4.5,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:slab-01:end",
+        "role": "end",
+        "source_node_id": "slab-01",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          4.0,
+          4.5,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-north:start",
+        "role": "start",
+        "source_node_id": "wall-01-north",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-north:end",
+        "role": "end",
+        "source_node_id": "wall-01-north",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-south:start",
+        "role": "start",
+        "source_node_id": "wall-01-south",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-south:end",
+        "role": "end",
+        "source_node_id": "wall-01-south",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-east:start",
+        "role": "start",
+        "source_node_id": "wall-01-east",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-east:end",
+        "role": "end",
+        "source_node_id": "wall-01-east",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-west:start",
+        "role": "start",
+        "source_node_id": "wall-01-west",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-01-west:end",
+        "role": "end",
+        "source_node_id": "wall-01-west",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-A1:start",
+        "role": "start",
+        "source_node_id": "column-01-A1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-A1:end",
+        "role": "end",
+        "source_node_id": "column-01-A1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-A2:start",
+        "role": "start",
+        "source_node_id": "column-01-A2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-A2:end",
+        "role": "end",
+        "source_node_id": "column-01-A2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-B1:start",
+        "role": "start",
+        "source_node_id": "column-01-B1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-B1:end",
+        "role": "end",
+        "source_node_id": "column-01-B1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-B2:start",
+        "role": "start",
+        "source_node_id": "column-01-B2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-01-B2:end",
+        "role": "end",
+        "source_node_id": "column-01-B2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-A:start",
+        "role": "start",
+        "source_node_id": "beam-01-A",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-A:end",
+        "role": "end",
+        "source_node_id": "beam-01-A",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-B:start",
+        "role": "start",
+        "source_node_id": "beam-01-B",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-B:end",
+        "role": "end",
+        "source_node_id": "beam-01-B",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-1:start",
+        "role": "start",
+        "source_node_id": "beam-01-1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-1:end",
+        "role": "end",
+        "source_node_id": "beam-01-1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-2:start",
+        "role": "start",
+        "source_node_id": "beam-01-2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-01-2:end",
+        "role": "end",
+        "source_node_id": "beam-01-2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:slab-02:start",
+        "role": "start",
+        "source_node_id": "slab-02",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          4.0,
+          4.5,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:slab-02:end",
+        "role": "end",
+        "source_node_id": "slab-02",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          4.0,
+          4.5,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-north:start",
+        "role": "start",
+        "source_node_id": "wall-02-north",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-north:end",
+        "role": "end",
+        "source_node_id": "wall-02-north",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-south:start",
+        "role": "start",
+        "source_node_id": "wall-02-south",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-south:end",
+        "role": "end",
+        "source_node_id": "wall-02-south",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-east:start",
+        "role": "start",
+        "source_node_id": "wall-02-east",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-east:end",
+        "role": "end",
+        "source_node_id": "wall-02-east",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-west:start",
+        "role": "start",
+        "source_node_id": "wall-02-west",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:wall-02-west:end",
+        "role": "end",
+        "source_node_id": "wall-02-west",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-A1:start",
+        "role": "start",
+        "source_node_id": "column-02-A1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-A1:end",
+        "role": "end",
+        "source_node_id": "column-02-A1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-A2:start",
+        "role": "start",
+        "source_node_id": "column-02-A2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-A2:end",
+        "role": "end",
+        "source_node_id": "column-02-A2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-B1:start",
+        "role": "start",
+        "source_node_id": "column-02-B1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-B1:end",
+        "role": "end",
+        "source_node_id": "column-02-B1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-B2:start",
+        "role": "start",
+        "source_node_id": "column-02-B2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          3.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:column-02-B2:end",
+        "role": "end",
+        "source_node_id": "column-02-B2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-A:start",
+        "role": "start",
+        "source_node_id": "beam-02-A",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-A:end",
+        "role": "end",
+        "source_node_id": "beam-02-A",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-B:start",
+        "role": "start",
+        "source_node_id": "beam-02-B",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-B:end",
+        "role": "end",
+        "source_node_id": "beam-02-B",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-1:start",
+        "role": "start",
+        "source_node_id": "beam-02-1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-1:end",
+        "role": "end",
+        "source_node_id": "beam-02-1",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-2:start",
+        "role": "start",
+        "source_node_id": "beam-02-2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:beam-02-2:end",
+        "role": "end",
+        "source_node_id": "beam-02-2",
+        "support": false,
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          6.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-A1:start",
+        "role": "start",
+        "source_node_id": "foundation-A1",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-A1:end",
+        "role": "end",
+        "source_node_id": "foundation-A1",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-A2:start",
+        "role": "start",
+        "source_node_id": "foundation-A2",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-A2:end",
+        "role": "end",
+        "source_node_id": "foundation-A2",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          0.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-B1:start",
+        "role": "start",
+        "source_node_id": "foundation-B1",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-B1:end",
+        "role": "end",
+        "source_node_id": "foundation-B1",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-B2:start",
+        "role": "start",
+        "source_node_id": "foundation-B2",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          0.0
+        ]
+      },
+      {
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "geometry_status": "PROJECT_GRAPH_GEOMETRY",
+        "id": "analysis-node:foundation-B2:end",
+        "role": "end",
+        "source_node_id": "foundation-B2",
+        "support": true,
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "xyz_m": [
+          8.0,
+          9.0,
+          0.0
+        ]
+      }
+    ],
+    "project_id": "ANALYSIS-CORE-CERT-A",
+    "schema": "aias.analysis_model.structural.v1"
+  },
+  "analysis_trace": {
+    "analysis_model_sha256": "4ad455ea60616a5859822fb2843dcee8d8881a36297c6390e594f620b94919b3",
+    "equilibrium_status": "PASS",
+    "governing_combination": "VE-ULS-1",
+    "schema": "aias.analysis_trace.v1",
+    "source_graph_sha256": "f139964a1e7e188bb935e62aee67a5f11d1399128fbf41bcbbef985706f9757f",
+    "standards_evidence_sha256": "f12297e9ee95dac8b2f313c4b8a444a021b53064de34acc55a5a8a0e84e1e0e0"
+  },
+  "combination_results": {
+    "VE-SLS-1": {
+      "equilibrium_imbalance_kN": 0.0,
+      "equilibrium_status": "PASS",
+      "factored_total_kN": 899.28,
+      "load_contributions_kN": {
+        "dead": 576.0,
+        "live": 288.0,
+        "seismic": 20.16,
+        "wind": 15.12
+      },
+      "support_reactions_kN": {
+        "analysis-node:foundation-A1:end": 112.41,
+        "analysis-node:foundation-A1:start": 112.41,
+        "analysis-node:foundation-A2:end": 112.41,
+        "analysis-node:foundation-A2:start": 112.41,
+        "analysis-node:foundation-B1:end": 112.41,
+        "analysis-node:foundation-B1:start": 112.41,
+        "analysis-node:foundation-B2:end": 112.41,
+        "analysis-node:foundation-B2:start": 112.41
+      }
+    },
+    "VE-ULS-1": {
+      "equilibrium_imbalance_kN": 0.0,
+      "equilibrium_status": "PASS",
+      "factored_total_kN": 1202.4,
+      "load_contributions_kN": {
+        "dead": 691.2,
+        "live": 460.8,
+        "seismic": 28.8,
+        "wind": 21.6
+      },
+      "support_reactions_kN": {
+        "analysis-node:foundation-A1:end": 150.3,
+        "analysis-node:foundation-A1:start": 150.3,
+        "analysis-node:foundation-A2:end": 150.3,
+        "analysis-node:foundation-A2:start": 150.3,
+        "analysis-node:foundation-B1:end": 150.3,
+        "analysis-node:foundation-B1:start": 150.3,
+        "analysis-node:foundation-B2:end": 150.3,
+        "analysis-node:foundation-B2:start": 150.3
+      }
+    }
+  },
+  "design_checks": {
+    "beam-01-1": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-01-2": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-01-A": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-01-B": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-02-1": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-02-2": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-02-A": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "beam-02-B": {
+      "demand_capacity_ratio": 0.1336,
+      "element_type": "beam",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-01-A1": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-01-A2": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-01-B1": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-01-B2": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-02-A1": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-02-A2": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-02-B1": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "column-02-B2": {
+      "demand_capacity_ratio": 0.089067,
+      "element_type": "column",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "foundation-A1": {
+      "demand_capacity_ratio": 0.064128,
+      "element_type": "foundation",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "foundation-A2": {
+      "demand_capacity_ratio": 0.064128,
+      "element_type": "foundation",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "foundation-B1": {
+      "demand_capacity_ratio": 0.064128,
+      "element_type": "foundation",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "foundation-B2": {
+      "demand_capacity_ratio": 0.064128,
+      "element_type": "foundation",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "slab-01": {
+      "demand_capacity_ratio": 0.2004,
+      "element_type": "slab",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "slab-02": {
+      "demand_capacity_ratio": 0.2004,
+      "element_type": "slab",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-01-east": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-01-north": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-01-south": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-01-west": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-02-east": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-02-north": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-02-south": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    },
+    "wall-02-west": {
+      "demand_capacity_ratio": 0.16032,
+      "element_type": "wall",
+      "evidence_source": "AIAS-SYNTHETIC-ANALYSIS-001",
+      "governing_combination": "VE-ULS-1",
+      "status": "PASS"
+    }
+  },
+  "load_envelopes": {
+    "beam-01-1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-01-1"
+    },
+    "beam-01-2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-01-2"
+    },
+    "beam-01-A": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-01-A"
+    },
+    "beam-01-B": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-01-B"
+    },
+    "beam-02-1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-02-1"
+    },
+    "beam-02-2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-02-2"
+    },
+    "beam-02-A": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-02-A"
+    },
+    "beam-02-B": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "beam-02-B"
+    },
+    "column-01-A1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-01-A1"
+    },
+    "column-01-A2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-01-A2"
+    },
+    "column-01-B1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-01-B1"
+    },
+    "column-01-B2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-01-B2"
+    },
+    "column-02-A1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-02-A1"
+    },
+    "column-02-A2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-02-A2"
+    },
+    "column-02-B1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-02-B1"
+    },
+    "column-02-B2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "column-02-B2"
+    },
+    "foundation-A1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "foundation-A1"
+    },
+    "foundation-A2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "foundation-A2"
+    },
+    "foundation-B1": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "foundation-B1"
+    },
+    "foundation-B2": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "foundation-B2"
+    },
+    "slab-01": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "slab-01"
+    },
+    "slab-02": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "slab-02"
+    },
+    "wall-01-east": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-01-east"
+    },
+    "wall-01-north": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-01-north"
+    },
+    "wall-01-south": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-01-south"
+    },
+    "wall-01-west": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-01-west"
+    },
+    "wall-02-east": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-02-east"
+    },
+    "wall-02-north": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-02-north"
+    },
+    "wall-02-south": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-02-south"
+    },
+    "wall-02-west": {
+      "M_kNm": 16.032,
+      "N_kN": 40.08,
+      "V_kN": 20.04,
+      "drift_ratio": 0.004008,
+      "governing_combination": "VE-ULS-1",
+      "source_member_id": "wall-02-west"
+    }
+  },
+  "project_id": "ANALYSIS-CORE-CERT-A",
+  "schema": "aias.analysis_project_evidence.v1",
+  "source_graph_sha256": "f139964a1e7e188bb935e62aee67a5f11d1399128fbf41bcbbef985706f9757f",
+  "status": "PASS"
+}

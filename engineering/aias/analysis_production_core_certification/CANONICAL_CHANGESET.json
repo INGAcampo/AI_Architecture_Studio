@@ -1,0 +1,34 @@
+{
+  "capability_id": "ANALYSIS_PRODUCTION_CORE_READY",
+  "baseline_head": "b2d95f7d3836d7ddb9f369210ec445f582f65bdb",
+  "allowed_paths": [
+    "src/aias_structural_professional/engine.py",
+    "src/aias_project_production/orchestrator.py",
+    "src/aias_project_production/certification.py",
+    "src/aias_autonomous_supervisor/supervisor.py",
+    "tests/project_production/test_analysis_production_core.py",
+    "tests/automation/test_autonomous_supervisor.py",
+    "pytest.ini",
+    "engineering/aias/professional_project_production/AIAS_PRODUCTION_CAPABILITY_REGISTRY.json",
+    "engineering/aias/analysis_production_core_certification"
+  ],
+  "protected_paths": [
+    "src/core/history/history_manager.py",
+    "AIAS_SHADOW_FACTORY"
+  ],
+  "certification_policy": {
+    "SYNTHETIC_TEST_DATA": true,
+    "NOT_FOR_CONSTRUCTION": true,
+    "real_project": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE"
+  },
+  "tests": [
+    "tests/project_production/test_analysis_production_core.py",
+    "tests/project_production/test_structural_professional.py",
+    "tests/project_production/test_project_graph_structural_adapter.py",
+    "tests/project_production/test_architectural_production_core.py",
+    "tests/project_production/test_project_factory.py",
+    "tests/automation/test_autonomous_supervisor.py"
+  ],
+  "evidence": "ANALYSIS_PRODUCTION_CORE_MANIFEST.json",
+  "staging": "EXPLICIT_ALLOWLIST_ONLY"
+}
