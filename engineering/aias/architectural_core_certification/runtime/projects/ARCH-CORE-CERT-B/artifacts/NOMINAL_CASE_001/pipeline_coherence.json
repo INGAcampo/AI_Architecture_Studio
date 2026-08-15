@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "analysis_geometry_binding": true,
+    "analysis_graph_binding": true,
+    "analysis_members": true,
+    "drawing_coverage": true,
+    "drawing_geometry_binding": true,
+    "drawing_graph_binding": true,
+    "geometry_traceability": true,
+    "project_identity": true,
+    "quantity_coverage": true,
+    "quantity_geometry_binding": true,
+    "quantity_graph_binding": true
+  },
+  "coverage": {
+    "analysis": 43,
+    "drawings": 62,
+    "graph": 62,
+    "quantities": 25
+  },
+  "project_id": "ARCH-CORE-CERT-B",
+  "schema": "aias.bim_analysis_drawings_quantities_coherence.v1",
+  "source_graph_sha256": "ba92f2a8ec7f98b7012cca3330a444f554262bfef9b9ba57b43e442cc189fa49",
+  "verdict": "ARCHITECTURAL_PIPELINE_COHERENT"
+}

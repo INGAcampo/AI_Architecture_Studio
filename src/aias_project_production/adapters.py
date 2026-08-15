@@ -27,6 +27,9 @@ def _sha(value) -> str:
 
 class DrawingProductionAdapter:
     provider = "aias_drawing_core.DrawingCore"
+    def __init__(self, native_dwg_adapter=None):
+        self.native_dwg_adapter = native_dwg_adapter or NativeDWGProductionAdapter()
+
     def produce(self, graph, structural_result, output: Path) -> dict:
         if structural_result is None or not structural_result.evidence_sha256:
             raise ValueError("drawing contract requires structural evidence")
@@ -37,7 +40,7 @@ class DrawingProductionAdapter:
         pdf = output / "drawing_set.pdf"; digest = DrawingCore().export_pdf(model, pdf)
         cad = DrawingModelToCADDocumentAdapter().adapt(graph, model)
         dxf = output / "drawing_set.dxf"; ValidDxfWriter().write(cad, dxf)
-        native = NativeDWGProductionAdapter().produce(cad, output / "native")
+        native = self.native_dwg_adapter.produce(cad, output / "native")
         return {"gate": "PASS", "model": model, "pdf": str(pdf), "pdf_sha256": _sha(pdf.read_bytes()), "drawing_sha256": digest,
                 "cad_document": cad, "dxf": str(dxf), "dxf_sha256": _sha(dxf.read_bytes()),
                 "native_dwg": native,
@@ -109,7 +112,7 @@ class XLSXProductionAdapter:
     """Dependency-free XLSX writer over QuantityPackage; zip/XML reopen validation is mandatory."""
     provider = "aias_project_production.adapters.XLSXProductionAdapter"
     def write(self, package, path: Path) -> str:
-        headers = ["element_id","category","rule","measurement","waste_factor","quantity","unit","material"]
+        headers = ["element_id","category","rule","measurement","waste_factor","quantity","unit","material","source_geometry_sha256","source_graph_sha256"]
         rows = [headers] + [[str(item.get(h, "")) for h in headers] for item in package.items]
         def cell(col, row, value): return f'<c r="{col}{row}" t="inlineStr"><is><t>{escape(value)}</t></is></c>'
         xml_rows=[]

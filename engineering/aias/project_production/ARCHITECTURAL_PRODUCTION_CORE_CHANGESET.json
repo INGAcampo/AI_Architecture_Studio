@@ -1,0 +1,52 @@
+{
+  "capability_id": "ARCHITECTURAL_PRODUCTION_CORE_READY",
+  "baseline_head": "add1295d541d7500d10da70ff090d23d62647677",
+  "allowed_paths": [
+    "engineering/aias/architectural_core_certification/ARCHITECTURAL_PRODUCTION_CORE_MANIFEST.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-A/artifacts/NOMINAL_CASE_001/architectural_model.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-A/artifacts/NOMINAL_CASE_001/native_bim_projection.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-A/artifacts/NOMINAL_CASE_001/pipeline_coherence.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-A/artifacts/NOMINAL_CASE_001/project_graph.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-B/artifacts/NOMINAL_CASE_001/architectural_model.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-B/artifacts/NOMINAL_CASE_001/native_bim_projection.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-B/artifacts/NOMINAL_CASE_001/pipeline_coherence.json",
+    "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-B/artifacts/NOMINAL_CASE_001/project_graph.json",
+    "engineering/aias/professional_project_production/AIAS_PRODUCTION_CAPABILITY_REGISTRY.json",
+    "engineering/aias/project_production/ARCHITECTURAL_PRODUCTION_CORE_CHANGESET.json",
+    "engineering/aias/project_production/ARCHITECTURAL_PRODUCTION_CORE_JOURNAL.jsonl",
+    "engineering/aias/project_production/ARCHITECTURAL_PRODUCTION_CORE_READY.md",
+    "scripts/certify_architectural_production_core.py",
+    "src/aias_building_design_core/__init__.py",
+    "src/aias_building_design_core/architectural.py",
+    "src/aias_building_design_core/native_bim.py",
+    "src/aias_drawing_core/drawing.py",
+    "src/aias_project_intake/builders/project_graph_builder.py",
+    "src/aias_project_production/adapters.py",
+    "src/aias_project_production/factory.py",
+    "src/aias_project_production/orchestrator.py",
+    "src/aias_project_production/runtime/factory_kernel.py",
+    "src/aias_quantities_core/quantities.py",
+    "src/aias_structural_core/analysis.py",
+    "tests/project_production/test_architectural_production_core.py"
+  ],
+  "tests": [
+    "tests/project_production/test_architectural_production_core.py",
+    "tests/project_production",
+    "tests/project_intake",
+    "tests/automation/test_autonomous_supervisor.py"
+  ],
+  "protected_paths": [
+    "src/core/history/history_manager.py"
+  ],
+  "default_policy": "DENY",
+  "certification_mode": "PILOT_SYNTHETIC",
+  "real_project_policy": "AUTHENTICATED_EXTERNAL_INPUT_REQUIRED",
+  "exclusions": [
+    ".aias/",
+    ".aias_automation/",
+    ".aias_programs/",
+    ".aias_recovery/",
+    "AIAS_BACKUP_",
+    "AIAS_NEXT"
+  ]
+}

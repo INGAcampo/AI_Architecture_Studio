@@ -52,6 +52,19 @@ class ProjectProductionFactory:
         (self.root/'PROJECT_PRODUCTION_FACTORY_MANIFEST.json').write_text(json.dumps(payload,indent=2,default=str),encoding='utf-8')
         return payload
 
+    def plan_selective_regeneration(self, project_id, updated_manifest):
+        """Persist an isolated regeneration plan; do not mutate the intake checkpoint."""
+        if not (self.kernel.projects/project_id).exists():
+            raise ValueError('unknown project_id')
+        current=self.kernel.manifest(project_id)
+        self.validate_manifest(updated_manifest); ProjectIntake().validate(updated_manifest)
+        if updated_manifest['project_id'] != project_id:
+            raise ValueError('selective regeneration cannot cross project boundaries')
+        plan=AIASProjectProductionOrchestrator.plan_selective_regeneration(current,updated_manifest)
+        path=self.kernel.projects/project_id/'manifests'/'SELECTIVE_REGENERATION_PLAN.json'
+        path.write_text(json.dumps(plan,indent=2,sort_keys=True),encoding='utf-8')
+        return plan
+
     @staticmethod
     def validate_manifest(manifest):
         required={'project_id','mode','project_name','scenario_id'}

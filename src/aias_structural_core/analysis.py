@@ -15,6 +15,7 @@ class AnalysisModel:
     members: list[dict[str, Any]] = field(default_factory=list)
     loads: list[dict[str, Any]] = field(default_factory=list)
     combinations: list[dict[str, Any]] = field(default_factory=list)
+    metadata: dict[str, Any] = field(default_factory=dict)
     schema: str = "aias.analysis_model.structural.v1"
 
 
@@ -33,10 +34,23 @@ class StructuralAnalysisCore:
     """Deterministic initial structural flow; not a substitute for professional sign-off."""
 
     def generate_model(self, graph: ProjectGraph) -> AnalysisModel:
+        from aias_building_design_core import evidence_sha256
+
         structural = {"wall", "column", "beam", "slab", "foundation"}
-        nodes = [{"id": n["id"], "support": n["type"] in {"foundation", "site"}} for n in graph.nodes if n["type"] in structural or n["type"] == "level"]
-        members = [{"id": n["id"], "type": n["type"], "material": "concrete"} for n in graph.nodes if n["type"] in structural]
-        return AnalysisModel(project_id=graph.project_id, nodes=nodes, members=members)
+        nodes = [{
+            "id": n["id"], "support": n["type"] in {"foundation", "site"},
+            "source_node_id": n["id"],
+            "geometry_sha256": evidence_sha256(n.get("properties", {}).get("geometry", {})),
+        } for n in graph.nodes if n["type"] in structural or n["type"] == "level"]
+        members = [{
+            "id": n["id"], "type": n["type"], "material": "concrete",
+            "source_node_id": n["id"],
+            "geometry_sha256": evidence_sha256(n.get("properties", {}).get("geometry", {})),
+        } for n in graph.nodes if n["type"] in structural]
+        return AnalysisModel(
+            project_id=graph.project_id, nodes=nodes, members=members,
+            metadata={"source": "ProjectGraph", "source_graph_sha256": evidence_sha256(graph.to_dict())},
+        )
 
     def add_load_case(self, model: AnalysisModel, case: str, magnitude: float, direction: str = "Z") -> None:
         if magnitude < 0: raise ValueError("load magnitude must be non-negative")

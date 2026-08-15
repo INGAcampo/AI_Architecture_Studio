@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 
+from aias_building_design_core import ArchitecturalProductionCore
 from aias_building_design_core.core import BuildingDesignCore
 from aias_building_design_core.native_bim import NativeBimProjection
 from aias_structural_professional.engine import ProfessionalStructuralEngine
@@ -28,9 +29,10 @@ class AIASProjectProductionOrchestrator:
     def run(self, scenario_id: str, project_id: str = "PILOT-BUILDING-001", mode: str = "PILOT_SYNTHETIC", project_name: str | None = None, manifest: dict | None = None) -> dict:
         if scenario_id not in {"BEST_CASE_001", "NOMINAL_CASE_001", "STRESS_CASE_001"}:
             raise ValueError("unknown synthetic scenario")
-        scenario_dir = self.output_root / scenario_id
         core = BuildingDesignCore()
         if mode not in {"PILOT_SYNTHETIC", "REAL_PROJECT"}: raise ValueError("invalid project mode")
+        if mode == "REAL_PROJECT" and not (manifest and manifest.get("authenticated_provenance_sha256")):
+            raise ValueError("AUTHENTICATED_EXTERNAL_INPUT_REQUIRED: REAL_PROJECT baseline is not authenticated")
         if manifest:
             from aias_project_intake.builders import ParametricProjectGraphBuilder
             graph = ParametricProjectGraphBuilder().build(manifest)
@@ -39,7 +41,17 @@ class AIASProjectProductionOrchestrator:
         errors = core.validate(graph)
         if errors:
             return {"verdict": "BLOCKED_SOFTWARE", "errors": errors}
+        scenario_dir = self.output_root / scenario_id
         scenario_dir.mkdir(parents=True, exist_ok=True)
+        graph_path = scenario_dir / "project_graph.json"
+        graph.save(graph_path)
+        architecture = None
+        architecture_path = None
+        architectural_core = ArchitecturalProductionCore()
+        if manifest:
+            architecture = architectural_core.materialize(graph)
+            architecture_path = scenario_dir / "architectural_model.json"
+            architecture_path.write_text(json.dumps(architecture, indent=2, sort_keys=True), encoding="utf-8")
         native_bim = NativeBimProjection().materialize(graph)
         native_bim_path = scenario_dir / 'native_bim_projection.json'
         native_bim_path.write_text(json.dumps(native_bim, indent=2, sort_keys=True), encoding='utf-8')
@@ -53,17 +65,51 @@ class AIASProjectProductionOrchestrator:
         result = structural.analyze_and_design(model, {"synthetic_test_data": True, "scenario_id": scenario_id})
         drawing = self.drawing.produce(graph, result, scenario_dir / "drawings")
         quantities = self.quantities.produce(graph, scenario_dir / "quantities")
+        coherence = None
+        coherence_path = None
+        if architecture is not None:
+            coherence = architectural_core.verify_coherence(
+                graph, architecture, model, drawing["model"], quantities["package"],
+                native_bim=native_bim,
+            )
+            if coherence["verdict"] != "ARCHITECTURAL_PIPELINE_COHERENT":
+                raise RuntimeError("BLOCKED_SOFTWARE: BIM/Analysis/Drawings/Quantities coherence failed")
+            coherence_path = scenario_dir / "pipeline_coherence.json"
+            coherence_path.write_text(json.dumps(coherence, indent=2, sort_keys=True), encoding="utf-8")
         reports = self.reports.produce(graph, result, drawing["model"], quantities["package"], scenario_dir / "reports")
         qa = self.qa.evaluate(result, drawing, quantities, reports, scenario_id)
         issuance = self.issuance.issue(scenario_id, scenario_dir, drawing, quantities, reports, qa)
         return {
             "scenario_id": scenario_id,
-            "project_id": project_id, "project_mode": mode,
+            "project_id": graph.project_id, "project_mode": mode,
             "SYNTHETIC_TEST_DATA": True,
             "NOT_FOR_CONSTRUCTION": True,
+            "project_graph": {"path": str(graph_path)},
+            "architecture": {
+                "provider": "aias_building_design_core.ArchitecturalProductionCore",
+                "path": str(architecture_path) if architecture_path else None,
+                "source_graph_sha256": architecture.get("source_graph_sha256") if architecture else None,
+                "level_count": len(architecture.get("levels", ())) if architecture else 0,
+                "geometry_count": len(architecture.get("geometry_index", {})) if architecture else 0,
+            },
             "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
+            "coherence": {
+                "path": str(coherence_path) if coherence_path else None,
+                "verdict": coherence.get("verdict") if coherence else None,
+                "checks": coherence.get("checks") if coherence else {},
+            },
             "V0_V1": "PASS", "V2": "PASS", "V3": result.status, "V4": "PASS",
             "V5": drawing["gate"], "V6": "PASS" if quantities["gate"] == reports["gate"] == "PASS" else "FAIL",
             "V7": qa["gate"], "V8": issuance["gate"], "qa": qa, "issuance": issuance,
             "verdict": issuance["verdict"],
         }
+
+    @staticmethod
+    def plan_selective_regeneration(before_manifest: dict, after_manifest: dict) -> dict:
+        """Plan downstream invalidation without executing or crossing projects."""
+        from aias_project_intake.builders import ParametricProjectGraphBuilder
+
+        builder = ParametricProjectGraphBuilder()
+        before = builder.build(before_manifest)
+        after = builder.build(after_manifest)
+        return ArchitecturalProductionCore().plan_selective_regeneration(before, after)

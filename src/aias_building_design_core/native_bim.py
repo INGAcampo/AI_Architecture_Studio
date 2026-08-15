@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from dataclasses import asdict
 
+from .architectural import evidence_sha256
+
 from bim_authoring.walls import (
     CompoundStructure, NativeBimWallEngine, WallInstance, WallLayer,
     WallLocationLine, WallOpening, WallProfile, WallType,
@@ -37,11 +39,20 @@ class NativeBimProjection:
             if rel['relation'] != 'has_opening' or rel['source'] not in engine.walls:
                 continue
             opening = nodes[rel['target']]; props = opening['properties']
-            engine.add_opening(WallOpening(opening['id'], rel['source'], offset=0.10, width=float(props['width_m']), sill_height=float(props.get('sill_height_m', 0.0)), height=float(props['height_m']), hosted_element_id=opening['id']))
+            engine.add_opening(WallOpening(opening['id'], rel['source'], offset=float(props.get('offset_m', 0.10)), width=float(props['width_m']), sill_height=float(props.get('sill_height_m', 0.0)), height=float(props['height_m']), hosted_element_id=opening['id']))
         for wall_id in sorted(engine.walls):
             result = engine.regenerate(wall_id)
             wall_results[wall_id] = {'geometry': asdict(result.geometry), 'quantities': asdict(result.quantities), 'issues': [asdict(issue) for issue in result.issues]}
-        return {'schema': 'aias.native_bim_projection.v1', 'project_id': graph.project_id, 'walls': wall_results, 'traceability': {'source': 'ProjectGraph', 'mapping': {wall_id: wall_id for wall_id in wall_results}}}
+        return {
+            'schema': 'aias.native_bim_projection.v1',
+            'project_id': graph.project_id,
+            'walls': wall_results,
+            'traceability': {
+                'source': 'ProjectGraph',
+                'source_graph_sha256': evidence_sha256(graph.to_dict()),
+                'mapping': {wall_id: wall_id for wall_id in wall_results},
+            },
+        }
 
     @staticmethod
     def _line(wall_id, width, length, fallback):

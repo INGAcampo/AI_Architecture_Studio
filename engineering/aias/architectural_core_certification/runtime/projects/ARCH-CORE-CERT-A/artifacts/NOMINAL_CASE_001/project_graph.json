@@ -1,0 +1,1658 @@
+{
+  "name": "Architectural Core Synthetic ARCH-CORE-CERT-A",
+  "nodes": [
+    {
+      "id": "site-001",
+      "name": "Site",
+      "properties": {
+        "geometry": {
+          "kind": "planar_rectangle",
+          "vertices_m": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              9.0,
+              0.0
+            ],
+            [
+              0.0,
+              9.0,
+              0.0
+            ]
+          ]
+        },
+        "length_m": 9.0,
+        "units": "SI",
+        "width_m": 8.0
+      },
+      "type": "site"
+    },
+    {
+      "id": "material-concrete",
+      "name": "Concrete",
+      "properties": {
+        "grade": "C25/30"
+      },
+      "type": "material"
+    },
+    {
+      "id": "grid-A",
+      "name": "Grid A",
+      "properties": {
+        "axis": "A",
+        "coordinate_m": 0.0,
+        "geometry": {
+          "end_m": [
+            0.0,
+            9.0,
+            0.0
+          ],
+          "kind": "line",
+          "start_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "type": "grid"
+    },
+    {
+      "id": "grid-B",
+      "name": "Grid B",
+      "properties": {
+        "axis": "B",
+        "coordinate_m": 8.0,
+        "geometry": {
+          "end_m": [
+            8.0,
+            9.0,
+            0.0
+          ],
+          "kind": "line",
+          "start_m": [
+            8.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "type": "grid"
+    },
+    {
+      "id": "grid-1",
+      "name": "Grid 1",
+      "properties": {
+        "axis": "1",
+        "coordinate_m": 0.0,
+        "geometry": {
+          "end_m": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "kind": "line",
+          "start_m": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "type": "grid"
+    },
+    {
+      "id": "grid-2",
+      "name": "Grid 2",
+      "properties": {
+        "axis": "2",
+        "coordinate_m": 9.0,
+        "geometry": {
+          "end_m": [
+            8.0,
+            9.0,
+            0.0
+          ],
+          "kind": "line",
+          "start_m": [
+            0.0,
+            9.0,
+            0.0
+          ]
+        }
+      },
+      "type": "grid"
+    },
+    {
+      "id": "level-01",
+      "name": "Level 1",
+      "properties": {
+        "elevation_m": 0.0,
+        "geometry": {
+          "elevation_m": 0.0,
+          "kind": "datum_plane",
+          "outline_m": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              9.0,
+              0.0
+            ],
+            [
+              0.0,
+              9.0,
+              0.0
+            ]
+          ]
+        },
+        "height_m": 3.0
+      },
+      "type": "level"
+    },
+    {
+      "id": "space-01",
+      "name": "Floor 1",
+      "properties": {
+        "area_m2": 72.0,
+        "geometry": {
+          "footprint_m": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              9.0,
+              0.0
+            ],
+            [
+              0.0,
+              9.0,
+              0.0
+            ]
+          ],
+          "height_m": 3.0,
+          "kind": "extruded_polygon"
+        },
+        "volume_m3": 216.0
+      },
+      "type": "space"
+    },
+    {
+      "id": "slab-01",
+      "name": "Slab 1",
+      "properties": {
+        "area_m2": 72.0,
+        "geometry": {
+          "footprint_m": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              0.0,
+              0.0
+            ],
+            [
+              8.0,
+              9.0,
+              0.0
+            ],
+            [
+              0.0,
+              9.0,
+              0.0
+            ]
+          ],
+          "kind": "slab_extrusion",
+          "thickness_m": 0.15
+        },
+        "thickness_m": 0.15
+      },
+      "type": "slab"
+    },
+    {
+      "id": "wall-01-north",
+      "name": "Wall 1 north",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            8.0,
+            9.0,
+            0.0
+          ],
+          "baseline_start_m": [
+            0.0,
+            9.0,
+            0.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 8.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "wall-01-south",
+      "name": "Wall 1 south",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "baseline_start_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 8.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "wall-01-east",
+      "name": "Wall 1 east",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            8.0,
+            9.0,
+            0.0
+          ],
+          "baseline_start_m": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 9.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "wall-01-west",
+      "name": "Wall 1 west",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            0.0,
+            9.0,
+            0.0
+          ],
+          "baseline_start_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 9.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "column-01-A1",
+      "name": "Column 1 A1",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "column-01-A2",
+      "name": "Column 1 A2",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            0.0,
+            9.0,
+            0.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "column-01-B1",
+      "name": "Column 1 B1",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            8.0,
+            0.0,
+            0.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "column-01-B2",
+      "name": "Column 1 B2",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            8.0,
+            9.0,
+            0.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "beam-01-A",
+      "name": "Beam 1 A",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            0.0,
+            9.0,
+            3.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 9.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "beam-01-B",
+      "name": "Beam 1 B",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            8.0,
+            9.0,
+            3.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            8.0,
+            0.0,
+            3.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 9.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "beam-01-1",
+      "name": "Beam 1 1",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            8.0,
+            0.0,
+            3.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 8.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "beam-01-2",
+      "name": "Beam 1 2",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            8.0,
+            9.0,
+            3.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            0.0,
+            9.0,
+            3.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 8.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "door-01-01",
+      "name": "Door 1",
+      "properties": {
+        "geometry": {
+          "height_m": 2.1,
+          "host_wall_id": "wall-01-south",
+          "kind": "hosted_opening",
+          "offset_m": 0.5,
+          "sill_height_m": 0.0,
+          "width_m": 0.9
+        },
+        "height_m": 2.1,
+        "offset_m": 0.5,
+        "sill_height_m": 0.0,
+        "width_m": 0.9
+      },
+      "type": "door"
+    },
+    {
+      "id": "window-01-01",
+      "name": "Window 1",
+      "properties": {
+        "geometry": {
+          "height_m": 1.2,
+          "host_wall_id": "wall-01-north",
+          "kind": "hosted_opening",
+          "offset_m": 3.4,
+          "sill_height_m": 0.9,
+          "width_m": 1.2
+        },
+        "height_m": 1.2,
+        "offset_m": 3.4,
+        "sill_height_m": 0.9,
+        "width_m": 1.2
+      },
+      "type": "window"
+    },
+    {
+      "id": "level-02",
+      "name": "Level 2",
+      "properties": {
+        "elevation_m": 3.0,
+        "geometry": {
+          "elevation_m": 3.0,
+          "kind": "datum_plane",
+          "outline_m": [
+            [
+              0.0,
+              0.0,
+              3.0
+            ],
+            [
+              8.0,
+              0.0,
+              3.0
+            ],
+            [
+              8.0,
+              9.0,
+              3.0
+            ],
+            [
+              0.0,
+              9.0,
+              3.0
+            ]
+          ]
+        },
+        "height_m": 3.0
+      },
+      "type": "level"
+    },
+    {
+      "id": "space-02",
+      "name": "Floor 2",
+      "properties": {
+        "area_m2": 72.0,
+        "geometry": {
+          "footprint_m": [
+            [
+              0.0,
+              0.0,
+              3.0
+            ],
+            [
+              8.0,
+              0.0,
+              3.0
+            ],
+            [
+              8.0,
+              9.0,
+              3.0
+            ],
+            [
+              0.0,
+              9.0,
+              3.0
+            ]
+          ],
+          "height_m": 3.0,
+          "kind": "extruded_polygon"
+        },
+        "volume_m3": 216.0
+      },
+      "type": "space"
+    },
+    {
+      "id": "slab-02",
+      "name": "Slab 2",
+      "properties": {
+        "area_m2": 72.0,
+        "geometry": {
+          "footprint_m": [
+            [
+              0.0,
+              0.0,
+              3.0
+            ],
+            [
+              8.0,
+              0.0,
+              3.0
+            ],
+            [
+              8.0,
+              9.0,
+              3.0
+            ],
+            [
+              0.0,
+              9.0,
+              3.0
+            ]
+          ],
+          "kind": "slab_extrusion",
+          "thickness_m": 0.15
+        },
+        "thickness_m": 0.15
+      },
+      "type": "slab"
+    },
+    {
+      "id": "wall-02-north",
+      "name": "Wall 2 north",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            8.0,
+            9.0,
+            3.0
+          ],
+          "baseline_start_m": [
+            0.0,
+            9.0,
+            3.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 8.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "wall-02-south",
+      "name": "Wall 2 south",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            8.0,
+            0.0,
+            3.0
+          ],
+          "baseline_start_m": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 8.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "wall-02-east",
+      "name": "Wall 2 east",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            8.0,
+            9.0,
+            3.0
+          ],
+          "baseline_start_m": [
+            8.0,
+            0.0,
+            3.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 9.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "wall-02-west",
+      "name": "Wall 2 west",
+      "properties": {
+        "exterior": true,
+        "geometry": {
+          "baseline_end_m": [
+            0.0,
+            9.0,
+            3.0
+          ],
+          "baseline_start_m": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "height_m": 3.0,
+          "kind": "wall_extrusion",
+          "thickness_m": 0.2
+        },
+        "height_m": 3.0,
+        "length_m": 9.0,
+        "thickness_m": 0.2
+      },
+      "type": "wall"
+    },
+    {
+      "id": "column-02-A1",
+      "name": "Column 2 A1",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            0.0,
+            0.0,
+            3.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "column-02-A2",
+      "name": "Column 2 A2",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            0.0,
+            9.0,
+            3.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "column-02-B1",
+      "name": "Column 2 B1",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            8.0,
+            0.0,
+            3.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "column-02-B2",
+      "name": "Column 2 B2",
+      "properties": {
+        "depth_m": 0.3,
+        "geometry": {
+          "base_point_m": [
+            8.0,
+            9.0,
+            3.0
+          ],
+          "depth_m": 0.3,
+          "height_m": 3.0,
+          "kind": "vertical_prism",
+          "width_m": 0.3
+        },
+        "height_m": 3.0,
+        "width_m": 0.3
+      },
+      "type": "column"
+    },
+    {
+      "id": "beam-02-A",
+      "name": "Beam 2 A",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            0.0,
+            9.0,
+            6.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            0.0,
+            0.0,
+            6.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 9.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "beam-02-B",
+      "name": "Beam 2 B",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            8.0,
+            9.0,
+            6.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            8.0,
+            0.0,
+            6.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 9.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "beam-02-1",
+      "name": "Beam 2 1",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            8.0,
+            0.0,
+            6.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            0.0,
+            0.0,
+            6.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 8.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "beam-02-2",
+      "name": "Beam 2 2",
+      "properties": {
+        "depth_m": 0.5,
+        "geometry": {
+          "depth_m": 0.5,
+          "end_m": [
+            8.0,
+            9.0,
+            6.0
+          ],
+          "kind": "linear_prism",
+          "start_m": [
+            0.0,
+            9.0,
+            6.0
+          ],
+          "width_m": 0.3
+        },
+        "length_m": 8.0,
+        "width_m": 0.3
+      },
+      "type": "beam"
+    },
+    {
+      "id": "door-02-01",
+      "name": "Door 2",
+      "properties": {
+        "geometry": {
+          "height_m": 2.1,
+          "host_wall_id": "wall-02-south",
+          "kind": "hosted_opening",
+          "offset_m": 0.5,
+          "sill_height_m": 0.0,
+          "width_m": 0.9
+        },
+        "height_m": 2.1,
+        "offset_m": 0.5,
+        "sill_height_m": 0.0,
+        "width_m": 0.9
+      },
+      "type": "door"
+    },
+    {
+      "id": "window-02-01",
+      "name": "Window 2",
+      "properties": {
+        "geometry": {
+          "height_m": 1.2,
+          "host_wall_id": "wall-02-north",
+          "kind": "hosted_opening",
+          "offset_m": 3.4,
+          "sill_height_m": 0.9,
+          "width_m": 1.2
+        },
+        "height_m": 1.2,
+        "offset_m": 3.4,
+        "sill_height_m": 0.9,
+        "width_m": 1.2
+      },
+      "type": "window"
+    },
+    {
+      "id": "foundation-A1",
+      "name": "Foundation A1",
+      "properties": {
+        "depth_m": 0.4,
+        "geometry": {
+          "center_m": [
+            0.0,
+            0.0,
+            -0.4
+          ],
+          "depth_m": 0.4,
+          "kind": "footing_prism",
+          "length_m": 1.2,
+          "width_m": 1.2
+        },
+        "length_m": 1.2,
+        "system": "isolated",
+        "width_m": 1.2
+      },
+      "type": "foundation"
+    },
+    {
+      "id": "foundation-A2",
+      "name": "Foundation A2",
+      "properties": {
+        "depth_m": 0.4,
+        "geometry": {
+          "center_m": [
+            0.0,
+            9.0,
+            -0.4
+          ],
+          "depth_m": 0.4,
+          "kind": "footing_prism",
+          "length_m": 1.2,
+          "width_m": 1.2
+        },
+        "length_m": 1.2,
+        "system": "isolated",
+        "width_m": 1.2
+      },
+      "type": "foundation"
+    },
+    {
+      "id": "foundation-B1",
+      "name": "Foundation B1",
+      "properties": {
+        "depth_m": 0.4,
+        "geometry": {
+          "center_m": [
+            8.0,
+            0.0,
+            -0.4
+          ],
+          "depth_m": 0.4,
+          "kind": "footing_prism",
+          "length_m": 1.2,
+          "width_m": 1.2
+        },
+        "length_m": 1.2,
+        "system": "isolated",
+        "width_m": 1.2
+      },
+      "type": "foundation"
+    },
+    {
+      "id": "foundation-B2",
+      "name": "Foundation B2",
+      "properties": {
+        "depth_m": 0.4,
+        "geometry": {
+          "center_m": [
+            8.0,
+            9.0,
+            -0.4
+          ],
+          "depth_m": 0.4,
+          "kind": "footing_prism",
+          "length_m": 1.2,
+          "width_m": 1.2
+        },
+        "length_m": 1.2,
+        "system": "isolated",
+        "width_m": 1.2
+      },
+      "type": "foundation"
+    },
+    {
+      "id": "roof-001",
+      "name": "Roof",
+      "properties": {
+        "area_m2": 72.0,
+        "geometry": {
+          "elevation_m": 6.0,
+          "kind": "roof_plane",
+          "outline_m": [
+            [
+              0.0,
+              0.0,
+              6.0
+            ],
+            [
+              8.0,
+              0.0,
+              6.0
+            ],
+            [
+              8.0,
+              9.0,
+              6.0
+            ],
+            [
+              0.0,
+              9.0,
+              6.0
+            ]
+          ]
+        }
+      },
+      "type": "roof"
+    }
+  ],
+  "project_id": "ARCH-CORE-CERT-A",
+  "relationships": [
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-001",
+      "target": "grid-A"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-001",
+      "target": "grid-B"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-001",
+      "target": "grid-1"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-001",
+      "target": "grid-2"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-001",
+      "target": "level-01"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "space-01"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "slab-01"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "slab-01",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "wall-01-north"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-01",
+      "target": "wall-01-north"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-01-north",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "wall-01-south"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-01",
+      "target": "wall-01-south"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-01-south",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "wall-01-east"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-01",
+      "target": "wall-01-east"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-01-east",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "wall-01-west"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-01",
+      "target": "wall-01-west"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-01-west",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "column-01-A1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-01-A1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "column-01-A2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-01-A2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "column-01-B1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-01-B1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "column-01-B2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-01-B2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "beam-01-A"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-01-A",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "beam-01-B"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-01-B",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "beam-01-1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-01-1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "beam-01-2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-01-2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "door-01-01"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-01",
+      "target": "window-01-01"
+    },
+    {
+      "properties": {},
+      "relation": "has_opening",
+      "source": "wall-01-south",
+      "target": "door-01-01"
+    },
+    {
+      "properties": {},
+      "relation": "has_opening",
+      "source": "wall-01-north",
+      "target": "window-01-01"
+    },
+    {
+      "properties": {},
+      "relation": "accessed_by",
+      "source": "space-01",
+      "target": "door-01-01"
+    },
+    {
+      "properties": {},
+      "relation": "daylit_by",
+      "source": "space-01",
+      "target": "window-01-01"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "site-001",
+      "target": "level-02"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "space-02"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "slab-02"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "slab-02",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "wall-02-north"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-02",
+      "target": "wall-02-north"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-02-north",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "wall-02-south"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-02",
+      "target": "wall-02-south"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-02-south",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "wall-02-east"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-02",
+      "target": "wall-02-east"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-02-east",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "wall-02-west"
+    },
+    {
+      "properties": {},
+      "relation": "bounded_by",
+      "source": "space-02",
+      "target": "wall-02-west"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "wall-02-west",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "column-02-A1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-02-A1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "column-02-A2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-02-A2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "column-02-B1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-02-B1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "column-02-B2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "column-02-B2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "beam-02-A"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-02-A",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "beam-02-B"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-02-B",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "beam-02-1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-02-1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "beam-02-2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "beam-02-2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "door-02-01"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "window-02-01"
+    },
+    {
+      "properties": {},
+      "relation": "has_opening",
+      "source": "wall-02-south",
+      "target": "door-02-01"
+    },
+    {
+      "properties": {},
+      "relation": "has_opening",
+      "source": "wall-02-north",
+      "target": "window-02-01"
+    },
+    {
+      "properties": {},
+      "relation": "accessed_by",
+      "source": "space-02",
+      "target": "door-02-01"
+    },
+    {
+      "properties": {},
+      "relation": "daylit_by",
+      "source": "space-02",
+      "target": "window-02-01"
+    },
+    {
+      "properties": {},
+      "relation": "supports",
+      "source": "site-001",
+      "target": "foundation-A1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "foundation-A1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "supports",
+      "source": "site-001",
+      "target": "foundation-A2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "foundation-A2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "supports",
+      "source": "site-001",
+      "target": "foundation-B1"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "foundation-B1",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "supports",
+      "source": "site-001",
+      "target": "foundation-B2"
+    },
+    {
+      "properties": {},
+      "relation": "uses_material",
+      "source": "foundation-B2",
+      "target": "material-concrete"
+    },
+    {
+      "properties": {},
+      "relation": "contains",
+      "source": "level-02",
+      "target": "roof-001"
+    }
+  ],
+  "schema": "aias.project_graph.building.v1"
+}
