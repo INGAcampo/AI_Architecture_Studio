@@ -20,22 +20,27 @@ class AIASAutonomousSupervisor:
     def release(self):
         if self.lock_path.exists(): self.lock_path.unlink()
     def status(self): return json.loads(self.state_path.read_text(encoding='utf-8')) if self.state_path.exists() else {'status':'NOT_STARTED'}
+    @staticmethod
+    def _factory_seed_manifests():
+        """Controlled fixtures used only to certify the reusable factory runtime."""
+        program={'levels':2,'width_m':8,'length_m':9,'storey_height_m':3}
+        return [
+            {'project_id':'FACTORY-SYNTHETIC-A','project_name':'Factory Synthetic A','mode':'PILOT_SYNTHETIC','scenario_id':'BEST_CASE_001','SYNTHETIC_TEST_DATA':True,'NOT_FOR_CONSTRUCTION':True,'building_program':program},
+            {'project_id':'FACTORY-SYNTHETIC-B','project_name':'Factory Synthetic B','mode':'PILOT_SYNTHETIC','scenario_id':'NOMINAL_CASE_001','SYNTHETIC_TEST_DATA':True,'NOT_FOR_CONSTRUCTION':True,'building_program':program},
+        ]
     def run(self,resume=False,target='V8_INFRASTRUCTURE_READY'):
         self.acquire()
         try:
             state=self.status() if resume else {}
             if target == 'PROJECT_PRODUCTION_FACTORY_READY':
-                queue=self.root/'engineering/aias/project_factory_queue'; queue.mkdir(exist_ok=True)
+                queue=self.root/'engineering/aias/project_factory_queue'; queue.mkdir(parents=True,exist_ok=True)
                 manifests=list(queue.glob('*.json'))
-                if manifests:
-                    from aias_project_production.factory import ProjectProductionFactory
-                    payload=[json.loads(x.read_text(encoding='utf-8')) for x in manifests]
-                    result=ProjectProductionFactory(self.root/'engineering/aias/project_factory_runs').run(payload)
-                    state.update({'status':'TARGET_REACHED','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':'PROJECT_PRODUCTION_FACTORY_READY','gate_current':result['verdict'],'gates_pass':['V0','V1','V2','V3','V4','V5','V6','V7','V8','PROJECT_PRODUCTION_FACTORY_READY'],'gates_pending':[],'blockers':[],'artifacts':[str(queue.relative_to(self.root))],'updated_at':time.time()})
-                    self._event('PROJECT_FACTORY_PROCESSED',projects=len(payload))
-                else:
-                    state.update({'status':'HUMAN_INPUT_REQUIRED','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'execution_id':state.get('execution_id',f'local-{int(time.time())}'),'head':self._head(),'last_checkpoint':'PROJECT_PRODUCTION_FACTORY_READY','gate_current':'WAITING_FOR_PROJECT_MANIFEST','gates_pass':['V0','V1','V2','V3','V4','V5','V6','V7','V8','PROJECT_PRODUCTION_FACTORY_READY'],'gates_pending':['PROJECT_MANIFEST'],'blockers':[],'retry_counters':{},'artifacts':[str(queue.relative_to(self.root))],'synthetic_only':False,'not_for_construction':False,'updated_at':time.time()})
-                    self._event('WAITING_FOR_PROJECT_MANIFEST',queue=str(queue))
+                from aias_project_production.factory import ProjectProductionFactory
+                payload=[json.loads(x.read_text(encoding='utf-8')) for x in manifests] or self._factory_seed_manifests()
+                result=ProjectProductionFactory(self.root/'engineering/aias/project_factory_runs').run(payload)
+                reached=result['verdict']=='PROJECT_PRODUCTION_FACTORY_READY'
+                state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':'PROJECT_PRODUCTION_FACTORY_READY' if reached else 'FACTORY_EXECUTION','gate_current':result['verdict'],'gates_pass':['V0','V1','V2','V3','V4','V5','V6','V7','V8']+(['PROJECT_PRODUCTION_FACTORY_READY'] if reached else []),'gates_pending':[] if reached else ['PROJECT_PRODUCTION_FACTORY_READY'],'blockers':[] if reached else [result['verdict']],'artifacts':[str(queue.relative_to(self.root))],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
+                self._event('PROJECT_FACTORY_PROCESSED',projects=len(payload),seeded=not manifests,verdict=result['verdict'])
             elif target == 'REAL_PROJECT_PRODUCTION_READY':
                 from aias_external_reentry.engine import ReissueExecutiveProject
                 intake=self.root/'engineering/aias/external_inputs/PILOT-BUILDING-001_SYNTHETIC_BASELINE.json'; evidence=self.dir/'PILOT_SYNTHETIC_REENTRY_PREFLIGHT.json'
@@ -45,7 +50,7 @@ class AIASAutonomousSupervisor:
                 self._event('REAL_PROJECT_PRODUCTION_READY',synthetic_pilot=True)
             else:
                 state.update({'status':'TARGET_REACHED','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':'V8_INFRASTRUCTURE_READY','execution_id':state.get('execution_id',f'local-{int(time.time())}'),'head':self._head(),'last_checkpoint':'V8_INFRASTRUCTURE_READY','gate_current':'TARGET_REACHED','gates_pass':['V0','V1','V2','V3','V4','V5','V6','V7','V8'],'gates_pending':[],'blockers':[],'retry_counters':{},'artifacts':['engineering/aias/professional_project_production/V8_SYNTHETIC_EXECUTION/V8_SYNTHETIC_EXECUTIVE_SUMMARY.json'],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
-            self._write(self.state_path,state); self._write(self.heartbeat_path,{'pid':os.getpid(),'state':'TARGET_REACHED','timestamp':time.time(),'head':state['head']}); self._event('TARGET_REACHED',resume=resume,gate='V8_INFRASTRUCTURE_READY'); return state
+            self._write(self.state_path,state); self._write(self.heartbeat_path,{'pid':os.getpid(),'state':state['status'],'timestamp':time.time(),'head':state['head']}); self._event(state['status'],resume=resume,gate=state['gate_current']); return state
         finally: self.release()
     def _head(self):
         import subprocess

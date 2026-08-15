@@ -4,12 +4,15 @@
   "allowed_paths": [
     "src/aias_project_production/factory.py",
     "src/aias_project_production/runtime/factory_kernel.py",
+    "src/aias_autonomous_supervisor/supervisor.py",
     "tests/project_production/test_project_factory.py",
+    "tests/automation/test_autonomous_supervisor.py",
     "engineering/aias/project_production/PROJECT_FACTORY_CHANGESET.json"
   ],
   "tests": [
     "tests/project_production/test_project_factory.py",
-    "tests/project_production/runtime/test_factory_kernel.py"
+    "tests/project_production/runtime/test_factory_kernel.py",
+    "tests/automation/test_autonomous_supervisor.py"
   ],
   "protected_paths": [
     "src/core/history/history_manager.py"
