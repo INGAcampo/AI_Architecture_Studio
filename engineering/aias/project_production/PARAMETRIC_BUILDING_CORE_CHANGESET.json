@@ -1,0 +1,16 @@
+{
+  "capability_id": "PARAMETRIC_BUILDING_CORE",
+  "baseline_head": "1ead2d4cce21356925a9d4a9ca8ae8977201c5b8",
+  "allowed_paths": [
+    "src/aias_project_intake/builders/project_graph_builder.py",
+    "tests/project_intake/test_project_intake.py",
+    "engineering/aias/project_production/PARAMETRIC_BUILDING_CORE_CHANGESET.json"
+  ],
+  "tests": [
+    "tests/project_intake/test_project_intake.py",
+    "tests/project_production/test_project_factory.py"
+  ],
+  "protected_paths": ["src/core/history/history_manager.py"],
+  "classification": "SYNTHETIC_AND_REAL_INTAKE_STRUCTURE_ONLY",
+  "not_for_construction_by_default": true
+}
