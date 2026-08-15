@@ -8,5 +8,5 @@
     {"capability":"V6_REPORTS","provider":"aias_reports_core.ReportCore","entry_points":["build","export"],"input":"Graph + Standards + Analysis + Drawings + Quantities","output":"ReportPackage + evidence hashes","tests":["tests/project_production/test_reports_core.py"],"readiness":"CONTRACTED"},
     {"capability":"V7_QA","provider":"aias_professional_qa.ProfessionalQAGate","entry_points":["evaluate"],"input":"normalized artifact tuples","output":"matrix + findings + verdict","tests":["tests/project_production/test_professional_qa.py"],"readiness":"CONTRACTED"}
   ],
-  "fail_closed_gaps":["DrawingCore does not emit aias_cad_professional.CADDocument; native DWG cannot be asserted for a newly generated DrawingModel until that connector is implemented.","No canonical XLSX writer API is exposed by the discovered tracked providers."]
+  "fail_closed_gaps":["The new DrawingModelToCADDocumentAdapter emits valid DXF, but the isolated AutoCAD/Core Console native-DWG reopen-and-XData invocation is not yet composed into the scenario runner."]
 }
