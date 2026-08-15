@@ -16,3 +16,27 @@ def test_factory_target_seeds_two_isolated_synthetic_projects(tmp_path, monkeypa
     assert state['status']=='TARGET_REACHED'
     assert [x['project_id'] for x in captured]==['FACTORY-SYNTHETIC-A','FACTORY-SYNTHETIC-B']
     assert all(x['SYNTHETIC_TEST_DATA'] and x['NOT_FOR_CONSTRUCTION'] for x in captured)
+
+def test_architectural_target_continues_from_factory_gate(tmp_path, monkeypatch):
+    def fake_certify(output):
+        return {
+            'verdict':'ARCHITECTURAL_PRODUCTION_CORE_READY',
+            'checks':{'two_projects':True},
+            'projects':[
+                {'evidence_file':'A.json'},
+                {'evidence_file':'B.json'},
+            ],
+        }
+    import aias_project_production.certification
+    monkeypatch.setattr(
+        aias_project_production.certification,
+        'certify_architectural_production_core',
+        fake_certify,
+    )
+    supervisor=AIASAutonomousSupervisor(tmp_path); supervisor._head=lambda:'abc'
+    state=supervisor.run(target='ARCHITECTURAL_PRODUCTION_CORE_READY')
+    assert state['status']=='TARGET_REACHED'
+    assert state['gates_pass'][-2:]==[
+        'PROJECT_PRODUCTION_FACTORY_READY',
+        'ARCHITECTURAL_PRODUCTION_CORE_READY',
+    ]

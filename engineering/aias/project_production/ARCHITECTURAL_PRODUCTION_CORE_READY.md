@@ -14,6 +14,7 @@ The canonical parametric Project Graph now carries:
 Certification policy:
 
 - evidence uses two distinct `PILOT_SYNTHETIC` projects through the existing `ProjectProductionFactory`;
+- the autonomous supervisor can reproduce the gate with the canonical orchestrator and an explicit synthetic test double only at the licensed native-DWG boundary;
 - every certification artifact is marked `SYNTHETIC_TEST_DATA=true` and `NOT_FOR_CONSTRUCTION=true`;
 - `REAL_PROJECT` execution without `authenticated_provenance_sha256` raises `AUTHENTICATED_EXTERNAL_INPUT_REQUIRED` before artifacts are created;
 - professional review, jurisdictional validation and construction authorization remain outside this synthetic gate.

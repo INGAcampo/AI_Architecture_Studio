@@ -41,6 +41,15 @@ class AIASAutonomousSupervisor:
                 reached=result['verdict']=='PROJECT_PRODUCTION_FACTORY_READY'
                 state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':'PROJECT_PRODUCTION_FACTORY_READY' if reached else 'FACTORY_EXECUTION','gate_current':result['verdict'],'gates_pass':['V0','V1','V2','V3','V4','V5','V6','V7','V8']+(['PROJECT_PRODUCTION_FACTORY_READY'] if reached else []),'gates_pending':[] if reached else ['PROJECT_PRODUCTION_FACTORY_READY'],'blockers':[] if reached else [result['verdict']],'artifacts':[str(queue.relative_to(self.root))],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
                 self._event('PROJECT_FACTORY_PROCESSED',projects=len(payload),seeded=not manifests,verdict=result['verdict'])
+            elif target == 'ARCHITECTURAL_PRODUCTION_CORE_READY':
+                from aias_project_production.certification import certify_architectural_production_core
+                evidence=self.root/'engineering/aias/architectural_production_core_certification'
+                result=certify_architectural_production_core(evidence)
+                reached=result['verdict']=='ARCHITECTURAL_PRODUCTION_CORE_READY'
+                previous=state.get('gates_pass',[])
+                gates=list(dict.fromkeys(previous+['PROJECT_PRODUCTION_FACTORY_READY']+([target] if reached else [])))
+                state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':target if reached else 'ARCHITECTURAL_CORE_CERTIFICATION','gate_current':result['verdict'],'gates_pass':gates,'gates_pending':[] if reached else [target],'blockers':[] if reached else [name for name,passed in result['checks'].items() if not passed],'artifacts':[str((evidence/'ARCHITECTURAL_PRODUCTION_CORE_MANIFEST.json').relative_to(self.root))]+[str((evidence/x['evidence_file']).relative_to(self.root)) for x in result['projects']],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
+                self._event('ARCHITECTURAL_CORE_PROCESSED',projects=len(result['projects']),verdict=result['verdict'])
             elif target == 'REAL_PROJECT_PRODUCTION_READY':
                 from aias_external_reentry.engine import ReissueExecutiveProject
                 intake=self.root/'engineering/aias/external_inputs/PILOT-BUILDING-001_SYNTHETIC_BASELINE.json'; evidence=self.dir/'PILOT_SYNTHETIC_REENTRY_PREFLIGHT.json'
