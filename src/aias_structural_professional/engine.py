@@ -17,8 +17,8 @@ class ProfessionalStructuralEngine:
     """Deterministic PRO-01 extension; preserves StructuralAnalysisCore API."""
     def generate_3d_model(self, graph) -> AnalysisModel:
         model = StructuralAnalysisCore().generate_model(graph)
-        for i, node in enumerate(model.nodes):
-            node.update({"dofs": ["UX","UY","UZ","RX","RY","RZ"], "xyz_m": [float(i % 3) * 4.0, float(i // 3) * 4.0, float(i // 6) * 3.0], "support_conditions": [True]*6 if node.get("support") else [False]*6})
+        for node in model.nodes:
+            node.update({"dofs": ["UX","UY","UZ","RX","RY","RZ"], "support_conditions": [True]*6 if node.get("support") else [False]*6})
         for member in model.members:
             member.update({"section": {"width_m": 0.30, "depth_m": 0.50}, "material": "C25/30", "self_weight_kN_m": 3.75})
         return model

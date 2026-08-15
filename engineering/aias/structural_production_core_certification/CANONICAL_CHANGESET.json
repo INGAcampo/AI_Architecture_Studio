@@ -1,0 +1,25 @@
+{
+  "capability_id": "STRUCTURAL_PRODUCTION_CORE_READY",
+  "baseline_head": "b612fcd6eb96b25358039b4c56176128f93110b1",
+  "allowed_paths": [
+    "src/aias_structural_core/project_graph_adapter.py",
+    "src/aias_structural_core/analysis.py",
+    "src/aias_structural_core/__init__.py",
+    "src/aias_structural_professional/engine.py",
+    "src/aias_project_production/orchestrator.py",
+    "src/aias_project_production/certification.py",
+    "tests/project_production/test_project_graph_structural_adapter.py",
+    "engineering/aias/professional_project_production/AIAS_PRODUCTION_CAPABILITY_REGISTRY.json",
+    "engineering/aias/structural_production_core_certification"
+  ],
+  "protected_paths": ["src/core/history/history_manager.py"],
+  "tests": [
+    "tests/project_production/test_structural_core.py",
+    "tests/project_production/test_structural_professional.py",
+    "tests/project_production/test_project_graph_structural_adapter.py",
+    "tests/project_production/test_architectural_production_core.py",
+    "tests/project_production/test_project_factory.py"
+  ],
+  "evidence": "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json",
+  "staging": "EXPLICIT_ALLOWLIST_ONLY"
+}

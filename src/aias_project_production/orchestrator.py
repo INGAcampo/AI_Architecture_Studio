@@ -1,5 +1,7 @@
 from pathlib import Path
 import json
+from dataclasses import asdict
+import hashlib
 
 from aias_building_design_core import ArchitecturalProductionCore
 from aias_building_design_core.core import BuildingDesignCore
@@ -63,6 +65,19 @@ class AIASProjectProductionOrchestrator:
                 load["magnitude"] *= 30.0
         structural.apply_combinations(model)
         result = structural.analyze_and_design(model, {"synthetic_test_data": True, "scenario_id": scenario_id})
+        structural_evidence = {
+            "schema": "aias.structural_production_evidence.v1",
+            "project_id": graph.project_id,
+            "SYNTHETIC_TEST_DATA": True,
+            "NOT_FOR_CONSTRUCTION": True,
+            "analysis_model": asdict(model),
+            "result": asdict(result),
+            "source_graph_sha256": model.metadata["source_graph_sha256"],
+            "projection": model.metadata.get("projection"),
+        }
+        structural_path = scenario_dir / "structural_production_evidence.json"
+        structural_path.write_text(json.dumps(structural_evidence, indent=2, sort_keys=True), encoding="utf-8")
+        structural_sha256 = hashlib.sha256(structural_path.read_bytes()).hexdigest()
         drawing = self.drawing.produce(graph, result, scenario_dir / "drawings")
         quantities = self.quantities.produce(graph, scenario_dir / "quantities")
         coherence = None
@@ -93,6 +108,14 @@ class AIASProjectProductionOrchestrator:
                 "geometry_count": len(architecture.get("geometry_index", {})) if architecture else 0,
             },
             "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
+            "structural": {
+                "provider": "aias_structural_core.ProjectGraphStructuralAdapter",
+                "path": str(structural_path), "sha256": structural_sha256,
+                "projection": model.metadata.get("projection"),
+                "member_count": len(model.members), "node_count": len(model.nodes),
+                "geometry_backed_member_count": model.metadata.get("geometry_backed_member_count", 0),
+                "status": result.status,
+            },
             "coherence": {
                 "path": str(coherence_path) if coherence_path else None,
                 "verdict": coherence.get("verdict") if coherence else None,

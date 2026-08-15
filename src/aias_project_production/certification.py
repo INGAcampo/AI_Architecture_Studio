@@ -179,3 +179,68 @@ def certify_architectural_production_core(output_root: str | Path) -> dict:
         }
         _write(output_root / "ARCHITECTURAL_PRODUCTION_CORE_MANIFEST.json", certification)
         return certification
+
+
+def certify_structural_production_core(output_root: str | Path) -> dict:
+    """Certify the geometry-backed structural projection in two isolated projects.
+
+    Native DWG is explicitly test-doubled here: this certification is for the
+    ProjectGraph-to-Analysis contract, not a construction issuance.
+    """
+    output_root = Path(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+    manifests = [
+        _manifest("STRUCT-CORE-CERT-A", 8.0, 9.0, 2),
+        _manifest("STRUCT-CORE-CERT-B", 11.0, 7.0, 3),
+    ]
+    with tempfile.TemporaryDirectory(prefix="aias-structural-cert-") as temporary:
+        factory = ProjectProductionFactory(
+            Path(temporary), orchestrator_type=ArchitecturalCertificationOrchestrator
+        )
+        factory_result = factory.run(manifests)
+        projects = []
+        for result in factory_result["new_results"]:
+            structural_path = Path(result["structural"]["path"])
+            structural = json.loads(structural_path.read_text(encoding="utf-8"))
+            evidence = {
+                "schema": "aias.structural_project_evidence.v1",
+                "project_id": result["project_id"],
+                "SYNTHETIC_TEST_DATA": True,
+                "NOT_FOR_CONSTRUCTION": True,
+                "structural": structural,
+                "source_graph_sha256": result["architecture"]["source_graph_sha256"],
+            }
+            filename = f"{result['project_id']}_STRUCTURAL_EVIDENCE.json"
+            _write(output_root / filename, evidence)
+            projects.append({
+                "project_id": result["project_id"], "evidence_file": filename,
+                "evidence_sha256": _sha256(evidence),
+                "source_graph_sha256": evidence["source_graph_sha256"],
+                "member_count": result["structural"]["member_count"],
+                "geometry_backed_member_count": result["structural"]["geometry_backed_member_count"],
+                "structural_status": result["structural"]["status"],
+            })
+        checks = {
+            "factory_reused": factory_result["verdict"] == "PROJECT_PRODUCTION_FACTORY_READY",
+            "two_isolated_projects": len(projects) == 2 and factory_result["isolation_verified"],
+            "distinct_source_graphs": len({item["source_graph_sha256"] for item in projects}) == 2,
+            "geometry_backed_connectivity": all(
+                item["member_count"] > 0 and item["member_count"] == item["geometry_backed_member_count"]
+                for item in projects
+            ),
+            "deterministic_results": all(item["structural_status"] == "PASS" for item in projects),
+        }
+        certification = {
+            "schema": "aias.structural_production_core_certification.v1",
+            "program": "PRODUCCION DE PROYECTOS AIAS",
+            "target": "STRUCTURAL_PRODUCTION_CORE_READY",
+            "SYNTHETIC_TEST_DATA": True,
+            "NOT_FOR_CONSTRUCTION": True,
+            "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+            "projection_provider": "aias_structural_core.ProjectGraphStructuralAdapter",
+            "projects": projects,
+            "checks": checks,
+            "verdict": "STRUCTURAL_PRODUCTION_CORE_READY" if all(checks.values()) else "NOT_READY",
+        }
+        _write(output_root / "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json", certification)
+        return certification

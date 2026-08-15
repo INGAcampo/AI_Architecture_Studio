@@ -1,0 +1,37 @@
+{
+  "NOT_FOR_CONSTRUCTION": true,
+  "SYNTHETIC_TEST_DATA": true,
+  "checks": {
+    "deterministic_results": true,
+    "distinct_source_graphs": true,
+    "factory_reused": true,
+    "geometry_backed_connectivity": true,
+    "two_isolated_projects": true
+  },
+  "program": "PRODUCCION DE PROYECTOS AIAS",
+  "projection_provider": "aias_structural_core.ProjectGraphStructuralAdapter",
+  "projects": [
+    {
+      "evidence_file": "STRUCT-CORE-CERT-A_STRUCTURAL_EVIDENCE.json",
+      "evidence_sha256": "eedc08b7d1a564a6cffd1d5a624ac3a83903eb25468bf276c0bb8af18f4f7866",
+      "geometry_backed_member_count": 30,
+      "member_count": 30,
+      "project_id": "STRUCT-CORE-CERT-A",
+      "source_graph_sha256": "57bd3618e3b4e69810c32d4fe81ebd5791a5e1fbaf12c93c309f534c53abd491",
+      "structural_status": "PASS"
+    },
+    {
+      "evidence_file": "STRUCT-CORE-CERT-B_STRUCTURAL_EVIDENCE.json",
+      "evidence_sha256": "1744432d6b96466cccf9e400f4fee920173972586058b9f6b9692439814c6423",
+      "geometry_backed_member_count": 43,
+      "member_count": 43,
+      "project_id": "STRUCT-CORE-CERT-B",
+      "source_graph_sha256": "552f85aceead359a85f5c835cd70f8b79c8942001d99eef8fb963e1551697220",
+      "structural_status": "PASS"
+    }
+  ],
+  "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+  "schema": "aias.structural_production_core_certification.v1",
+  "target": "STRUCTURAL_PRODUCTION_CORE_READY",
+  "verdict": "STRUCTURAL_PRODUCTION_CORE_READY"
+}
