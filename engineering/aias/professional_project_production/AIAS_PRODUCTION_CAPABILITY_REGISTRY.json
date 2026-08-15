@@ -1,0 +1,11 @@
+{
+  "schema":"aias.production_capability_registry.v1",
+  "capabilities":[
+    {"id":"V5_DRAWING_PDF","adapter":"aias_project_production.adapters.DrawingProductionAdapter","provider":"aias_drawing_core.DrawingCore","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V6_QUANTITIES","adapter":"aias_project_production.adapters.QuantityWorkbookAdapter","provider":"aias_quantities_core.QuantityTakeoffEngine","contract_version":"1.0","status":"AVAILABLE_CSV_ONLY"},
+    {"id":"V6_REPORTS","adapter":"aias_project_production.adapters.ReportProductionAdapter","provider":"aias_reports_core.ReportCore","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V7_QA","adapter":"aias_project_production.adapters.ProfessionalQAAdapter","provider":"aias_professional_qa.ProfessionalQAGate","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V8_ISSUANCE","adapter":"aias_project_production.adapters.ExecutiveIssuanceAdapter","provider":"aias_project_production.adapters","contract_version":"1.0","status":"SYNTHETIC_ONLY"}
+  ],
+  "protected_paths":["src/core/history/history_manager.py"]
+}
