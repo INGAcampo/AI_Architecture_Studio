@@ -100,6 +100,15 @@ class AIASProjectProductionOrchestrator:
         structural_sha256 = hashlib.sha256(structural_path.read_bytes()).hexdigest()
         drawing = self.drawing.produce(graph, result, scenario_dir / "drawings")
         quantities = self.quantities.produce(graph, scenario_dir / "quantities")
+        quantities["reinforcement"] = {
+            "bar_set_count": len(reinforcement.bar_sets),
+            "steel_kg": ReinforcementEngine().total_steel_kg(reinforcement),
+            "schedule_sha256": hashlib.sha256(json.dumps(reinforcement.schedules, sort_keys=True).encode()).hexdigest(),
+            "status": "PRELIMINARY",
+        }
+        (scenario_dir / "quantities" / "reinforcement_schedule.json").write_text(
+            json.dumps(quantities["reinforcement"], indent=2, sort_keys=True), encoding="utf-8"
+        )
         coherence = None
         coherence_path = None
         if architecture is not None:
@@ -113,6 +122,7 @@ class AIASProjectProductionOrchestrator:
             coherence_path.write_text(json.dumps(coherence, indent=2, sort_keys=True), encoding="utf-8")
         reports = self.reports.produce(graph, result, drawing["model"], quantities["package"], scenario_dir / "reports")
         qa = self.qa.evaluate(result, drawing, quantities, reports, scenario_id)
+        qa["reinforcement"] = quantities["reinforcement"]
         issuance = self.issuance.issue(scenario_id, scenario_dir, drawing, quantities, reports, qa)
         return {
             "scenario_id": scenario_id,
