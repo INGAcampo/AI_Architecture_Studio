@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import subprocess
 import zipfile
+import shutil
+import time
 from xml.sax.saxutils import escape
 from types import SimpleNamespace
 
@@ -35,8 +37,10 @@ class DrawingProductionAdapter:
         pdf = output / "drawing_set.pdf"; digest = DrawingCore().export_pdf(model, pdf)
         cad = DrawingModelToCADDocumentAdapter().adapt(graph, model)
         dxf = output / "drawing_set.dxf"; ValidDxfWriter().write(cad, dxf)
+        native = NativeDWGProductionAdapter().produce(cad, output / "native")
         return {"gate": "PASS", "model": model, "pdf": str(pdf), "pdf_sha256": _sha(pdf.read_bytes()), "drawing_sha256": digest,
                 "cad_document": cad, "dxf": str(dxf), "dxf_sha256": _sha(dxf.read_bytes()),
+                "native_dwg": native,
                 "sheet_ids": [s["id"] for s in model.sheets], "provenance": "ProjectGraph/BIM+StructuralResult"}
 
 
@@ -52,6 +56,41 @@ class DrawingModelToCADDocumentAdapter:
         if {s["number"] for s in cad.sheets} != {s["number"] for s in drawing_model.sheets}:
             raise ValueError("DrawingModel/CADDocument sheet mismatch")
         return cad
+
+
+class NativeDWGProductionAdapter:
+    """Adapter over DR-01A's certified Core Console invocation and XData inspector."""
+    provider = "scripts/run_dr01a_executive_dwg_closure.py"
+    autocad = Path(r"C:\Program Files\Autodesk\AutoCAD 2027\accoreconsole.exe")
+    def _invoke(self, drawing: Path, script: Path, timeout: int = 45) -> dict:
+        started=time.time(); process=subprocess.Popen([str(self.autocad), "/i", str(drawing), "/s", str(script)], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        try: stdout, stderr = process.communicate(timeout=timeout); timed=False
+        except subprocess.TimeoutExpired: process.kill(); stdout, stderr=process.communicate(); timed=True
+        return {"pid":process.pid,"exit_code":process.returncode,"timed_out":timed,"duration_seconds":round(time.time()-started,3),"stdout_tail":stdout[-1000:],"stderr_tail":stderr[-1000:]}
+    def produce(self, cad, output: Path) -> dict:
+        if not self.autocad.exists(): raise RuntimeError("BLOCKED_BACKEND_UNAVAILABLE")
+        output.mkdir(parents=True, exist_ok=True); source_ids={e["id"] for e in cad.entities}; layers={x["name"] for x in cad.layers}; writer=ValidDxfWriter(); rows=[]
+        for sheet in cad.sheets:
+            work=(output / sheet["number"]).resolve(); work.mkdir(parents=True, exist_ok=True); dxf=work / f'{sheet["number"]}.dxf'; writer.write(cad,dxf); dwg=work / f'{sheet["number"]}.dwg'
+            save=work / "save.scr"; save.write_text(f'_.SAVEAS\n2018\n"{str(dwg).replace(chr(92),"/")}"\n_.QUIT\n',encoding="ascii")
+            generation=self._invoke(dxf,save)
+            log=work / "inspect.txt"; inspect=work / "inspect.scr"; inspect.write_text(f'''(setq f (open "{str(log).replace(chr(92),"/")}" "w"))
+(setq e (entnext))
+(while e (setq d (entget e (list "AIAS")) x (cdr (assoc -3 d)) a (assoc "AIAS" x) i (if a (cdr (assoc 1000 (cdr a))) "")) (write-line (strcat "E|" i "|" (cdr (assoc 0 d)) "|" (if (assoc 8 d) (cdr (assoc 8 d)) "") "|" (cdr (assoc 5 d))) f) (setq e (entnext e)))
+(close f) (princ) _.QUIT
+''',encoding="ascii")
+            reopen=self._invoke(dwg,inspect) if dwg.exists() else {"exit_code":None,"timed_out":False,"pid":None}
+            recovered=[]
+            if log.exists():
+                for line in log.read_text(encoding="utf-8",errors="replace").splitlines():
+                    p=line.split("|")
+                    if len(p)==5 and p[0]=="E" and p[1]: recovered.append({"aias_id":p[1],"type":p[2],"layer":p[3],"handle":p[4]})
+            ids=[x["aias_id"] for x in recovered]; handles=[x["handle"] for x in recovered]; missing=sorted(source_ids-set(ids)); duplicate=sorted({x for x in ids if ids.count(x)>1}); critical=bool(missing or duplicate or set(x["layer"] for x in recovered)!=layers or generation["exit_code"]!=0 or reopen["exit_code"]!=0 or generation["timed_out"] or reopen["timed_out"])
+            rows.append({"drawing_id":sheet["id"],"dxf":str(dxf),"dwg":str(dwg),"dxf_sha256":_sha(dxf.read_bytes()),"dwg_sha256":_sha(dwg.read_bytes()) if dwg.exists() else None,"byte_size":dwg.stat().st_size if dwg.exists() else 0,"generation":generation,"reopen":reopen,"aias_ids":ids,"handles":handles,"layers":sorted({x["layer"] for x in recovered}),"missing":missing,"duplicates":duplicate,"roundtrip_verdict":"PASS" if not critical else "FAIL"})
+        audit = {"schema":"aias.native_dwg_roundtrip.v1","drawings":rows,"verdict":"PASS" if rows and all(x["roundtrip_verdict"] == "PASS" for x in rows) else "FAIL"}
+        (output / "native_roundtrip.json").write_text(json.dumps(audit, indent=2), encoding="utf-8")
+        if audit["verdict"] != "PASS": raise RuntimeError("BLOCKER_NATIVE_DWG_ROUNDTRIP_FAILED")
+        return {"gate":"V5_NATIVE_DWG_INTEGRATION_PASS","backend":"AutoCAD 2027 accoreconsole.exe","drawings":rows,"sha256":_sha(rows)}
 
 
 class QuantityWorkbookAdapter:
