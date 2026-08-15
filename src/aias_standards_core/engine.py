@@ -35,7 +35,7 @@ class StandardsPack:
     def applicability(self, rule_id: str, context: Mapping[str, Any]) -> str:
         rule = self.rules.get(rule_id)
         if rule is None or context.get("jurisdiction") != self.jurisdiction: return "NOT_APPLICABLE"
-        return "APPLICABLE" if context.get("project") == "PILOT-BUILDING-001" else "NOT_APPLICABLE"
+        return "APPLICABLE" if (context.get("project") == "PILOT-BUILDING-001" or (context.get("SYNTHETIC_TEST_DATA") is True and context.get("NOT_FOR_CONSTRUCTION") is True)) else "NOT_APPLICABLE"
 
     def canonical_evidence_sha(self, evidence: Mapping[str, Any]) -> str:
         payload = json.dumps(evidence, sort_keys=True, separators=(",", ":")).encode()

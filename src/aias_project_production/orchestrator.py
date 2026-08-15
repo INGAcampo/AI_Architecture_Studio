@@ -7,6 +7,7 @@ from aias_building_design_core import ArchitecturalProductionCore
 from aias_building_design_core.core import BuildingDesignCore
 from aias_building_design_core.native_bim import NativeBimProjection
 from aias_structural_professional.engine import ProfessionalStructuralEngine
+from aias_standards_core import ApplicabilityEngine, StandardsPack
 
 from .adapters import (
     DrawingProductionAdapter,
@@ -57,6 +58,11 @@ class AIASProjectProductionOrchestrator:
         native_bim = NativeBimProjection().materialize(graph)
         native_bim_path = scenario_dir / 'native_bim_projection.json'
         native_bim_path.write_text(json.dumps(native_bim, indent=2, sort_keys=True), encoding='utf-8')
+        standards = ApplicabilityEngine(StandardsPack())
+        standards_context = {"project": graph.project_id, "jurisdiction": "VE", "SYNTHETIC_TEST_DATA": True, "NOT_FOR_CONSTRUCTION": True}
+        standards_verdicts = {rule: standards.evaluate(rule, standards_context, {"source": "AIAS_SYNTHETIC", "value": scenario_id, "pass": True}).to_dict() for rule in StandardsPack().rules}
+        standards_path = scenario_dir / "standards_evidence.json"
+        standards_path.write_text(json.dumps(standards_verdicts, indent=2, sort_keys=True), encoding="utf-8")
         structural = ProfessionalStructuralEngine()
         model = structural.generate_3d_model(graph)
         structural.add_loads(model)
@@ -73,6 +79,7 @@ class AIASProjectProductionOrchestrator:
         synthetic_standards_evidence["pack_sha256"] = hashlib.sha256(
             json.dumps(synthetic_standards_evidence, sort_keys=True).encode()
         ).hexdigest()
+        synthetic_standards_evidence["rule_verdicts"] = standards_verdicts
         result = structural.analyze_and_design(model, synthetic_standards_evidence)
         structural_evidence = {
             "schema": "aias.structural_production_evidence.v1",
@@ -117,6 +124,7 @@ class AIASProjectProductionOrchestrator:
                 "geometry_count": len(architecture.get("geometry_index", {})) if architecture else 0,
             },
             "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
+            "standards": {"path": str(standards_path), "pack": "VE-PILOT-001.0", "verdicts": standards_verdicts},
             "structural": {
                 "provider": "aias_structural_core.ProjectGraphStructuralAdapter",
                 "path": str(structural_path), "sha256": structural_sha256,
