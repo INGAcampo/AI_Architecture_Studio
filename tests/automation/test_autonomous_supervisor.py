@@ -50,8 +50,8 @@ def test_chain_skips_certified_gates_and_starts_next_pending(monkeypatch, tmp_pa
     monkeypatch.setattr(supervisor, 'run', fake_run)
     supervisor._write(supervisor.state_path, {'gates_pass':['PROJECT_PRODUCTION_FACTORY_READY']})
     state=supervisor.run_chain()
-    assert calls==['ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY','ANALYSIS_PRODUCTION_CORE_READY']
-    assert state['next_target']=='STANDARDS_PRODUCTION_CORE_READY'
+    assert calls==['ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY','ANALYSIS_PRODUCTION_CORE_READY','STANDARDS_PRODUCTION_CORE_READY','DESIGN_PRODUCTION_CORE_READY']
+    assert state['next_target']=='DRAWINGS_PRODUCTION_CORE_READY'
 
 def test_analysis_target_continues_from_structural_gate(tmp_path, monkeypatch):
     def fake_certify(output):
@@ -75,4 +75,26 @@ def test_analysis_target_continues_from_structural_gate(tmp_path, monkeypatch):
     assert state['gates_pass'][-2:]==[
         'STRUCTURAL_PRODUCTION_CORE_READY',
         'ANALYSIS_PRODUCTION_CORE_READY',
+    ]
+
+def test_design_target_continues_from_analysis_and_standards(tmp_path, monkeypatch):
+    def fake_certify(output):
+        return {
+            'verdict':'DESIGN_PRODUCTION_CORE_READY',
+            'checks':{'analysis_bound':True},
+            'projects':[{'evidence_file':'A.json'},{'evidence_file':'B.json'}],
+        }
+    import aias_project_production.certification
+    monkeypatch.setattr(
+        aias_project_production.certification,
+        'certify_design_production_core',
+        fake_certify,
+    )
+    supervisor=AIASAutonomousSupervisor(tmp_path); supervisor._head=lambda:'abc'
+    state=supervisor.run(target='DESIGN_PRODUCTION_CORE_READY')
+    assert state['status']=='TARGET_REACHED'
+    assert state['gates_pass'][-3:]==[
+        'ANALYSIS_PRODUCTION_CORE_READY',
+        'STANDARDS_PRODUCTION_CORE_READY',
+        'DESIGN_PRODUCTION_CORE_READY',
     ]

@@ -62,8 +62,6 @@ class AIASProjectProductionOrchestrator:
         standards = ApplicabilityEngine(StandardsPack())
         standards_context = {"project": graph.project_id, "jurisdiction": "VE", "SYNTHETIC_TEST_DATA": True, "NOT_FOR_CONSTRUCTION": True}
         standards_verdicts = {rule: standards.evaluate(rule, standards_context, {"source": "AIAS_SYNTHETIC", "value": scenario_id, "pass": True}).to_dict() for rule in StandardsPack().rules}
-        standards_path = scenario_dir / "standards_evidence.json"
-        standards_path.write_text(json.dumps(standards_verdicts, indent=2, sort_keys=True), encoding="utf-8")
         structural = ProfessionalStructuralEngine()
         model = structural.generate_3d_model(graph)
         structural.add_loads(model)
@@ -81,10 +79,12 @@ class AIASProjectProductionOrchestrator:
             json.dumps(synthetic_standards_evidence, sort_keys=True).encode()
         ).hexdigest()
         synthetic_standards_evidence["rule_verdicts"] = standards_verdicts
+        standards_path = scenario_dir / "standards_evidence.json"
+        standards_path.write_text(json.dumps(synthetic_standards_evidence, indent=2, sort_keys=True), encoding="utf-8")
         result = structural.analyze_and_design(model, synthetic_standards_evidence)
         reinforcement = ReinforcementEngine().build(result, synthetic_standards_evidence, project_id=graph.project_id)
         reinforcement_path = scenario_dir / "reinforcement_model.json"
-        reinforcement_path.write_text(json.dumps({"bar_sets": reinforcement.bar_sets, "schedules": reinforcement.schedules, "findings": reinforcement.findings}, indent=2, sort_keys=True), encoding="utf-8")
+        reinforcement_path.write_text(json.dumps(asdict(reinforcement), indent=2, sort_keys=True), encoding="utf-8")
         structural_evidence = {
             "schema": "aias.structural_production_evidence.v1",
             "project_id": graph.project_id,
@@ -104,6 +104,7 @@ class AIASProjectProductionOrchestrator:
             "bar_set_count": len(reinforcement.bar_sets),
             "steel_kg": ReinforcementEngine().total_steel_kg(reinforcement),
             "schedule_sha256": hashlib.sha256(json.dumps(reinforcement.schedules, sort_keys=True).encode()).hexdigest(),
+            "design_evidence_sha256": reinforcement.design_evidence_sha256,
             "status": "PRELIMINARY",
         }
         (scenario_dir / "quantities" / "reinforcement_schedule.json").write_text(
@@ -138,8 +139,8 @@ class AIASProjectProductionOrchestrator:
                 "geometry_count": len(architecture.get("geometry_index", {})) if architecture else 0,
             },
             "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
-            "standards": {"path": str(standards_path), "pack": "VE-PILOT-001.0", "verdicts": standards_verdicts},
-            "reinforcement": {"path": str(reinforcement_path), "bar_set_count": len(reinforcement.bar_sets), "steel_kg": ReinforcementEngine().total_steel_kg(reinforcement), "status": "PRELIMINARY"},
+            "standards": {"path": str(standards_path), "pack": synthetic_standards_evidence["pack"], "sha256": reinforcement.standards_evidence_sha256, "verdicts": standards_verdicts},
+            "reinforcement": {"path": str(reinforcement_path), "bar_set_count": len(reinforcement.bar_sets), "steel_kg": ReinforcementEngine().total_steel_kg(reinforcement), "analysis_evidence_sha256": reinforcement.analysis_evidence_sha256, "standards_evidence_sha256": reinforcement.standards_evidence_sha256, "design_evidence_sha256": reinforcement.design_evidence_sha256, "status": "PRELIMINARY"},
             "structural": {
                 "provider": "aias_structural_core.ProjectGraphStructuralAdapter",
                 "path": str(structural_path), "sha256": structural_sha256,
@@ -160,7 +161,7 @@ class AIASProjectProductionOrchestrator:
             },
             "V0_V1": "PASS", "V2": "PASS", "V3": result.status, "V4": "PASS",
             "V5": drawing["gate"], "V6": "PASS" if quantities["gate"] == reports["gate"] == "PASS" else "FAIL",
-            "V7": qa["gate"], "V8": issuance["gate"], "qa": qa, "issuance": issuance,
+            "V7": qa["gate"], "V8": issuance["gate"], "quantities": {"reinforcement": quantities["reinforcement"]}, "qa": qa, "issuance": issuance,
             "verdict": issuance["verdict"],
         }
 

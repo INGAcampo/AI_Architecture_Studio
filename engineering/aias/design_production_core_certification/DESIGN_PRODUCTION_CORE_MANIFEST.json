@@ -1,0 +1,62 @@
+{
+  "NOT_FOR_CONSTRUCTION": true,
+  "SYNTHETIC_TEST_DATA": true,
+  "automated_touchpoints": 2,
+  "checks": {
+    "analysis_bound": true,
+    "bar_hashes_valid": true,
+    "bar_sets_materialized": true,
+    "deterministic_reproduction": true,
+    "explicit_preliminary_classification": true,
+    "factory_reused": true,
+    "fail_closed_without_analysis_and_standards": true,
+    "geometry_sensitive": true,
+    "quantities_and_qa_bound": true,
+    "schedule_trace_valid": true,
+    "standards_bound": true,
+    "two_isolated_projects": true
+  },
+  "classification": "PRELIMINARY_NOT_FOR_CONSTRUCTION",
+  "design_provider": "aias_reinforcement_detailing.ReinforcementEngine",
+  "estimated_time_reduction_percent": 60.0,
+  "manual_touchpoint_baseline": 5,
+  "prerequisite_gates": [
+    "ANALYSIS_PRODUCTION_CORE_READY",
+    "STANDARDS_PRODUCTION_CORE_READY"
+  ],
+  "program": "PRODUCCION DE PROYECTOS AIAS",
+  "projects": [
+    {
+      "analysis_evidence_sha256": "a1219bf610a8796c7967d33221ef7b14a24a7c4e574646a6a8bc092d21d4f8de",
+      "bar_hashes_valid": true,
+      "bar_set_count": 40,
+      "design_evidence_sha256": "d7a84f4f5052fd7fbca61136b4de0796cf66d41ddc1d5499cd298ecc12a0325b",
+      "downstream_trace_valid": true,
+      "evidence_file": "DESIGN-CORE-CERT-A_DESIGN_EVIDENCE.json",
+      "evidence_sha256": "5a7b4fd04380d9375be6d7e41577c02baecec5798952d604cc00a719444d755a",
+      "project_id": "DESIGN-CORE-CERT-A",
+      "schedule_trace_valid": true,
+      "standards_evidence_sha256": "8fdf56c830efc43ff15474cfc9061e21180e5c7cf41307196cbafe40f4e475ac",
+      "status": "PRELIMINARY",
+      "steel_kg": 1066.508
+    },
+    {
+      "analysis_evidence_sha256": "89fc17eaa7dfef29dffe9b6cdab9491b4b036de0fa433bc4ec5b83d17ebe39ba",
+      "bar_hashes_valid": true,
+      "bar_set_count": 58,
+      "design_evidence_sha256": "91c20efa0c404289f767f7ecdf54ebd3e85d72e5da5746c3a3612d2829956934",
+      "downstream_trace_valid": true,
+      "evidence_file": "DESIGN-CORE-CERT-B_DESIGN_EVIDENCE.json",
+      "evidence_sha256": "be4bad674c5bfe7fe0ccd654b500cf003c54464ccc84f1fcce1d46908fbe3c99",
+      "project_id": "DESIGN-CORE-CERT-B",
+      "schedule_trace_valid": true,
+      "standards_evidence_sha256": "8fdf56c830efc43ff15474cfc9061e21180e5c7cf41307196cbafe40f4e475ac",
+      "status": "PRELIMINARY",
+      "steel_kg": 1587.12
+    }
+  ],
+  "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+  "schema": "aias.design_production_core_certification.v1",
+  "target": "DESIGN_PRODUCTION_CORE_READY",
+  "verdict": "DESIGN_PRODUCTION_CORE_READY"
+}

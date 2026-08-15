@@ -388,3 +388,118 @@ def certify_analysis_production_core(output_root: str | Path) -> dict:
         }
         _write(output_root / "ANALYSIS_PRODUCTION_CORE_MANIFEST.json", certification)
         return certification
+
+
+def certify_design_production_core(output_root: str | Path) -> dict:
+    """Certify evidence-bound preliminary design across two isolated projects."""
+    from dataclasses import asdict
+
+    from aias_reinforcement_detailing import ReinforcementEngine
+    from aias_structural_professional import ProfessionalStructuralResult
+
+    output_root = Path(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+    manifests = [
+        _manifest("DESIGN-CORE-CERT-A", 8.0, 9.0, 2),
+        _manifest("DESIGN-CORE-CERT-B", 11.0, 7.0, 3),
+    ]
+    with tempfile.TemporaryDirectory(prefix="aias-design-cert-") as temporary:
+        factory = ProjectProductionFactory(
+            Path(temporary), orchestrator_type=ArchitecturalCertificationOrchestrator
+        )
+        factory_result = factory.run(manifests)
+        projects = []
+        deterministic = []
+        for result in factory_result["new_results"]:
+            reinforcement = json.loads(
+                Path(result["reinforcement"]["path"]).read_text(encoding="utf-8")
+            )
+            structural = json.loads(
+                Path(result["structural"]["path"]).read_text(encoding="utf-8")
+            )
+            standards = json.loads(
+                Path(result["standards"]["path"]).read_text(encoding="utf-8")
+            )
+            analysis = ProfessionalStructuralResult(**structural["result"])
+            repeated = ReinforcementEngine().build(
+                analysis, standards, project_id=result["project_id"]
+            )
+            deterministic.append(asdict(repeated) == reinforcement)
+            quantity_trace = result["quantities"]["reinforcement"]
+            evidence = {
+                "schema": "aias.design_project_evidence.v1",
+                "project_id": result["project_id"],
+                "SYNTHETIC_TEST_DATA": True,
+                "NOT_FOR_CONSTRUCTION": True,
+                "classification": "PRELIMINARY_NOT_FOR_CONSTRUCTION",
+                "reinforcement": reinforcement,
+                "analysis_evidence_sha256": result["structural"]["analysis_evidence_sha256"],
+                "standards_evidence_sha256": result["structural"]["standards_evidence_sha256"],
+                "quantity_trace": quantity_trace,
+                "qa_reinforcement_trace": result["qa"]["reinforcement"],
+            }
+            filename = f"{result['project_id']}_DESIGN_EVIDENCE.json"
+            _write(output_root / filename, evidence)
+            projects.append({
+                "project_id": result["project_id"],
+                "evidence_file": filename,
+                "evidence_sha256": _sha256(evidence),
+                "design_evidence_sha256": reinforcement["design_evidence_sha256"],
+                "analysis_evidence_sha256": reinforcement["analysis_evidence_sha256"],
+                "standards_evidence_sha256": reinforcement["standards_evidence_sha256"],
+                "bar_set_count": len(reinforcement["bar_sets"]),
+                "steel_kg": result["reinforcement"]["steel_kg"],
+                "status": result["reinforcement"]["status"],
+                "bar_hashes_valid": all(
+                    item["sha256"] == _sha256({k: v for k, v in item.items() if k != "sha256"})
+                    for item in reinforcement["bar_sets"]
+                ),
+                "schedule_trace_valid": all(
+                    item["bar_set_sha256"] in {bar["sha256"] for bar in reinforcement["bar_sets"]}
+                    for item in reinforcement["schedules"]
+                ),
+                "downstream_trace_valid": (
+                    quantity_trace["design_evidence_sha256"]
+                    == reinforcement["design_evidence_sha256"]
+                    and quantity_trace == result["qa"]["reinforcement"]
+                ),
+            })
+
+        try:
+            ReinforcementEngine().build(None, {})
+            fail_closed = False
+        except ValueError as exc:
+            fail_closed = "INSUFFICIENT_EVIDENCE" in str(exc)
+        checks = {
+            "factory_reused": factory_result["verdict"] == "PROJECT_PRODUCTION_FACTORY_READY",
+            "two_isolated_projects": len(projects) == 2 and factory_result["isolation_verified"],
+            "analysis_bound": all(len(item["analysis_evidence_sha256"]) == 64 for item in projects),
+            "standards_bound": all(len(item["standards_evidence_sha256"]) == 64 for item in projects),
+            "bar_sets_materialized": all(item["bar_set_count"] > 0 for item in projects),
+            "bar_hashes_valid": all(item["bar_hashes_valid"] for item in projects),
+            "schedule_trace_valid": all(item["schedule_trace_valid"] for item in projects),
+            "quantities_and_qa_bound": all(item["downstream_trace_valid"] for item in projects),
+            "geometry_sensitive": len({item["design_evidence_sha256"] for item in projects}) == 2,
+            "deterministic_reproduction": all(deterministic),
+            "explicit_preliminary_classification": all(item["status"] == "PRELIMINARY" for item in projects),
+            "fail_closed_without_analysis_and_standards": fail_closed,
+        }
+        certification = {
+            "schema": "aias.design_production_core_certification.v1",
+            "program": "PRODUCCION DE PROYECTOS AIAS",
+            "target": "DESIGN_PRODUCTION_CORE_READY",
+            "prerequisite_gates": ["ANALYSIS_PRODUCTION_CORE_READY", "STANDARDS_PRODUCTION_CORE_READY"],
+            "SYNTHETIC_TEST_DATA": True,
+            "NOT_FOR_CONSTRUCTION": True,
+            "classification": "PRELIMINARY_NOT_FOR_CONSTRUCTION",
+            "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+            "design_provider": "aias_reinforcement_detailing.ReinforcementEngine",
+            "manual_touchpoint_baseline": 5,
+            "automated_touchpoints": 2,
+            "estimated_time_reduction_percent": 60.0,
+            "projects": projects,
+            "checks": checks,
+            "verdict": "DESIGN_PRODUCTION_CORE_READY" if all(checks.values()) else "NOT_READY",
+        }
+        _write(output_root / "DESIGN_PRODUCTION_CORE_MANIFEST.json", certification)
+        return certification
