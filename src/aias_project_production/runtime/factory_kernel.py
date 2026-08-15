@@ -18,8 +18,26 @@ class ProjectFactoryKernel:
         queue=self._queue(); queue.append({'project_id':manifest['project_id'],'status':'QUEUED'}); self._write(self.queue_path,queue); self._event(project,'QUEUED')
     def next(self):
         return next((x for x in self._queue() if x['status']=='QUEUED'),None)
+    def manifest(self, project_id):
+        """Return the immutable intake document for one isolated project."""
+        return json.loads((self.projects/project_id/'PROJECT_MANIFEST.json').read_text(encoding='utf-8'))
+    def state(self, project_id):
+        return json.loads((self.projects/project_id/'PROJECT_STATE.json').read_text(encoding='utf-8'))
+    def artifact_root(self, project_id):
+        return self.projects/project_id/'artifacts'
+    def mark_running(self, project_id):
+        state=self.state(project_id)
+        if state['status'] in TERMINAL:
+            return state
+        state.update(status='RUNNING',updated_at=time.time())
+        self._state(self.projects/project_id,state)
+        queue=self._queue(); [x.update(status='RUNNING') for x in queue if x['project_id']==project_id]; self._write(self.queue_path,queue)
+        self._event(self.projects/project_id,'RUNNING')
+        return state
     def checkpoint(self, project_id, status, gate, artifacts=(), blockers=()):
-        project=self.projects/project_id; state=json.loads((project/'PROJECT_STATE.json').read_text()); state.update(status=status,last_gate=gate,completed_gates=state['completed_gates']+[gate],artifacts=list(artifacts),blockers=list(blockers),updated_at=time.time()); self._state(project,state)
+        project=self.projects/project_id; state=json.loads((project/'PROJECT_STATE.json').read_text())
+        completed=list(dict.fromkeys(state['completed_gates']+[gate]))
+        state.update(status=status,last_gate=gate,completed_gates=completed,artifacts=list(artifacts),blockers=list(blockers),updated_at=time.time()); self._state(project,state)
         queue=self._queue(); [x.update(status=status) for x in queue if x['project_id']==project_id]; self._write(self.queue_path,queue); self._event(project,status,gate=gate)
     def _queue(self): return json.loads(self.queue_path.read_text()) if self.queue_path.exists() else []
     def _state(self,p,v): self._write(p/'PROJECT_STATE.json',v)

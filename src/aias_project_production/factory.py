@@ -4,29 +4,51 @@ import hashlib, json
 from pathlib import Path
 from .orchestrator import AIASProjectProductionOrchestrator
 from aias_project_intake import ProjectIntake
+from .runtime import ProjectFactoryKernel
 
 class ProjectProductionFactory:
-    def __init__(self, root): self.root=Path(root); self.root.mkdir(parents=True,exist_ok=True)
+    """Durable, single-writer factory for isolated project production runs."""
+    def __init__(self, root, orchestrator_type=AIASProjectProductionOrchestrator):
+        self.root=Path(root); self.root.mkdir(parents=True,exist_ok=True)
+        self.kernel=ProjectFactoryKernel(self.root/'runtime')
+        self.orchestrator_type=orchestrator_type
     def run(self, manifests):
-        results=[]
         manifest_ids=[x.get('project_id') for x in manifests]
         if len(manifest_ids)!=len(set(manifest_ids)): raise ValueError('duplicate project_id')
-        seen=set()
         for manifest in manifests:
             self.validate_manifest(manifest); ProjectIntake().validate(manifest)
             project_id=manifest['project_id']
-            if project_id in seen: raise ValueError('duplicate project_id')
-            seen.add(project_id); out=self.root/project_id
-            state=out/'PROJECT_AUTOMATION_STATE.json'; out.mkdir(parents=True,exist_ok=True)
-            dependency={'project_id':project_id,'nodes':['intake','graph','V0','V1','V2','V3','V4','V5','V6','V7','V8','qa','manifest'],'mode':manifest['mode']}
-            (out/'PROJECT_DEPENDENCY_GRAPH.json').write_text(json.dumps(dependency,indent=2),encoding='utf-8')
-            state.write_text(json.dumps({'project_id':project_id,'status':'RUNNING','mode':manifest['mode']},indent=2),encoding='utf-8')
-            result=AIASProjectProductionOrchestrator(out).run(manifest['scenario_id'], project_id=project_id, mode=manifest['mode'], project_name=manifest['project_name'], manifest=manifest)
-            state.write_text(json.dumps({'project_id':project_id,'status':'TARGET_REACHED','mode':manifest['mode'],'checkpoint':'V8','artifacts':result['issuance']},indent=2,default=str),encoding='utf-8')
-            result.update(project_id=project_id, mode='PILOT_SYNTHETIC', manifest_sha256=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest())
+            if not (self.kernel.projects/project_id).exists(): self.kernel.enqueue(manifest)
+            elif self.kernel.manifest(project_id) != manifest: raise ValueError('project_id already belongs to a different manifest')
+        return self.resume()
+
+    def resume(self):
+        """Run only queued projects; completed projects remain immutable checkpoints."""
+        results=[]
+        while job:=self.kernel.next():
+            project_id=job['project_id']; manifest=self.kernel.manifest(project_id)
+            self.kernel.mark_running(project_id)
+            output=self.kernel.artifact_root(project_id)
+            try:
+                result=self.orchestrator_type(output).run(manifest['scenario_id'], project_id=project_id, mode=manifest['mode'], project_name=manifest['project_name'], manifest=manifest)
+            except Exception as exc:
+                self.kernel.checkpoint(project_id,'TECHNICAL_BLOCKER','FACTORY_EXECUTION',blockers=[str(exc)])
+                raise
+            result.update(project_id=project_id, mode=manifest['mode'], manifest_sha256=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest())
+            status='TARGET_REACHED' if result.get('V8')=='PASS' else 'DESIGN_REVISION_REQUIRED'
+            self.kernel.checkpoint(project_id,status,'V8',artifacts=[result.get('issuance',{})],blockers=[] if status=='TARGET_REACHED' else [result.get('verdict','V8 failed')])
             results.append(result)
-        ids=[x['project_id'] for x in results]
-        payload={'schema':'aias.project_factory.v1','projects':results,'cross_project_contamination':len(ids)!=len(set(ids)),'verdict':'PROJECT_PRODUCTION_FACTORY_READY' if len(results)>=2 and not (len(ids)!=len(set(ids))) and all(x['V8']=='PASS' for x in results) else 'NOT_READY'}
+        return self._factory_manifest(results)
+
+    def _factory_manifest(self, new_results):
+        projects=[]
+        for project in sorted(self.kernel.projects.iterdir()):
+            if project.is_dir():
+                state=self.kernel.state(project.name)
+                projects.append({'project_id':project.name,'state':state,'artifact_root':str(self.kernel.artifact_root(project.name))})
+        ids=[x['project_id'] for x in projects]
+        ready=len(projects)>=2 and len(ids)==len(set(ids)) and all(x['state']['status']=='TARGET_REACHED' for x in projects)
+        payload={'schema':'aias.project_factory.v2','projects':projects,'new_results':new_results,'cross_project_contamination':False,'isolation_verified':len({x['artifact_root'] for x in projects})==len(projects),'verdict':'PROJECT_PRODUCTION_FACTORY_READY' if ready else 'NOT_READY'}
         (self.root/'PROJECT_PRODUCTION_FACTORY_MANIFEST.json').write_text(json.dumps(payload,indent=2,default=str),encoding='utf-8')
         return payload
 
