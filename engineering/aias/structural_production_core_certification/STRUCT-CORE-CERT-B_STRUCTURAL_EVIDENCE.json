@@ -30,28 +30,32 @@
       ],
       "loads": [
         {
+          "basis": "synthetic_dead_4kN_m2",
           "case": "dead",
           "direction": "Z",
-          "kind": "distributed",
-          "magnitude": 12.0
+          "kind": "surface",
+          "magnitude": 924.0
         },
         {
+          "basis": "synthetic_live_2kN_m2",
           "case": "live",
           "direction": "Z",
           "kind": "surface",
-          "magnitude": 5.0
+          "magnitude": 462.0
         },
         {
+          "basis": "synthetic_wind_proxy",
           "case": "wind",
           "direction": "X",
           "kind": "point",
-          "magnitude": 8.0
+          "magnitude": 34.65
         },
         {
+          "basis": "synthetic_seismic_proxy",
           "case": "seismic",
           "direction": "Y",
           "kind": "tributary",
-          "magnitude": 10.0
+          "magnitude": 46.2
         }
       ],
       "members": [
@@ -74,6 +78,7 @@
           },
           "self_weight_kN_m": 3.75,
           "source_node_id": "slab-01",
+          "tributary_area_m2": 77.0,
           "type": "slab"
         },
         {
@@ -347,6 +352,7 @@
           },
           "self_weight_kN_m": 3.75,
           "source_node_id": "slab-02",
+          "tributary_area_m2": 77.0,
           "type": "slab"
         },
         {
@@ -620,6 +626,7 @@
           },
           "self_weight_kN_m": 3.75,
           "source_node_id": "slab-03",
+          "tributary_area_m2": 77.0,
           "type": "slab"
         },
         {
@@ -3385,526 +3392,526 @@
     "result": {
       "design_checks": {
         "beam-01-1": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-01-2": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-01-A": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-01-B": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-02-1": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-02-2": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-02-A": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-02-B": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-03-1": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-03-2": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-03-A": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "beam-03-B": {
-          "demand_capacity_ratio": 0.027132,
+          "demand_capacity_ratio": 0.113709,
           "element_type": "beam",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-01-A1": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-01-A2": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-01-B1": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-01-B2": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-02-A1": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-02-A2": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-02-B1": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-02-B2": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-03-A1": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-03-A2": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-03-B1": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "column-03-B2": {
-          "demand_capacity_ratio": 0.018088,
+          "demand_capacity_ratio": 0.075806,
           "element_type": "column",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "foundation-A1": {
-          "demand_capacity_ratio": 0.013023,
+          "demand_capacity_ratio": 0.05458,
           "element_type": "foundation",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "foundation-A2": {
-          "demand_capacity_ratio": 0.013023,
+          "demand_capacity_ratio": 0.05458,
           "element_type": "foundation",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "foundation-B1": {
-          "demand_capacity_ratio": 0.013023,
+          "demand_capacity_ratio": 0.05458,
           "element_type": "foundation",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "foundation-B2": {
-          "demand_capacity_ratio": 0.013023,
+          "demand_capacity_ratio": 0.05458,
           "element_type": "foundation",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "slab-01": {
-          "demand_capacity_ratio": 0.040698,
+          "demand_capacity_ratio": 0.170564,
           "element_type": "slab",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "slab-02": {
-          "demand_capacity_ratio": 0.040698,
+          "demand_capacity_ratio": 0.170564,
           "element_type": "slab",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "slab-03": {
-          "demand_capacity_ratio": 0.040698,
+          "demand_capacity_ratio": 0.170564,
           "element_type": "slab",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-01-east": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-01-north": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-01-south": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-01-west": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-02-east": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-02-north": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-02-south": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-02-west": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-03-east": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-03-north": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-03-south": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         },
         "wall-03-west": {
-          "demand_capacity_ratio": 0.032558,
+          "demand_capacity_ratio": 0.136451,
           "element_type": "wall",
           "evidence_source": "VE-PILOT-001.0",
           "status": "PASS"
         }
       },
-      "evidence_sha256": "88157120369ce2f21b211bac27fcece2f2469e47988a779374b89ee4499b6320",
+      "evidence_sha256": "afa6e5401e5f8a6dc7fe5380afe80c4f7c8c496a2a1fa5ae919c076f5db8075a",
       "limitations": [
         "V0 deterministic solver; professional sign-off and detailed bar detailing remain pending"
       ],
       "load_envelopes": {
         "beam-01-1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-01-2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-01-A": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-01-B": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-02-1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-02-2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-02-A": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-02-B": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-03-1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-03-2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-03-A": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "beam-03-B": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-01-A1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-01-A2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-01-B1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-01-B2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-02-A1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-02-A2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-02-B1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-02-B2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-03-A1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-03-A2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-03-B1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "column-03-B2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "foundation-A1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "foundation-A2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "foundation-B1": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "foundation-B2": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "slab-01": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "slab-02": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "slab-03": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-01-east": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-01-north": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-01-south": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-01-west": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-02-east": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-02-north": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-02-south": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-02-west": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-03-east": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-03-north": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-03-south": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         },
         "wall-03-west": {
-          "M_kNm": 3.255813953488372,
-          "N_kN": 0.813953488372093,
-          "V_kN": 0.4069767441860465,
-          "drift_ratio": 0.00011666666666666667
+          "M_kNm": 13.64511627906977,
+          "N_kN": 34.11279069767442,
+          "V_kN": 17.05639534883721,
+          "drift_ratio": 0.004889500000000001
         }
       },
       "model": {
@@ -3930,28 +3937,32 @@
         ],
         "loads": [
           {
+            "basis": "synthetic_dead_4kN_m2",
             "case": "dead",
             "direction": "Z",
-            "kind": "distributed",
-            "magnitude": 12.0
+            "kind": "surface",
+            "magnitude": 924.0
           },
           {
+            "basis": "synthetic_live_2kN_m2",
             "case": "live",
             "direction": "Z",
             "kind": "surface",
-            "magnitude": 5.0
+            "magnitude": 462.0
           },
           {
+            "basis": "synthetic_wind_proxy",
             "case": "wind",
             "direction": "X",
             "kind": "point",
-            "magnitude": 8.0
+            "magnitude": 34.65
           },
           {
+            "basis": "synthetic_seismic_proxy",
             "case": "seismic",
             "direction": "Y",
             "kind": "tributary",
-            "magnitude": 10.0
+            "magnitude": 46.2
           }
         ],
         "members": [
@@ -3974,6 +3985,7 @@
             },
             "self_weight_kN_m": 3.75,
             "source_node_id": "slab-01",
+            "tributary_area_m2": 77.0,
             "type": "slab"
           },
           {
@@ -4247,6 +4259,7 @@
             },
             "self_weight_kN_m": 3.75,
             "source_node_id": "slab-02",
+            "tributary_area_m2": 77.0,
             "type": "slab"
           },
           {
@@ -4520,6 +4533,7 @@
             },
             "self_weight_kN_m": 3.75,
             "source_node_id": "slab-03",
+            "tributary_area_m2": 77.0,
             "type": "slab"
           },
           {
@@ -7282,175 +7296,175 @@
       },
       "reinforcement": {
         "beam-01-1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-01-2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-01-A": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-01-B": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-02-1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-02-2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-02-A": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-02-B": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-03-1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-03-2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-03-A": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "beam-03-B": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-01-A1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-01-A2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-01-B1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-01-B2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-02-A1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-02-A2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-02-B1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-02-B2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-03-A1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-03-A2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-03-B1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "column-03-B2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "foundation-A1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "foundation-A2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "foundation-B1": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "foundation-B2": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "slab-01": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "slab-02": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "slab-03": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-01-east": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-01-north": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-01-south": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-01-west": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-02-east": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-02-north": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-02-south": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-02-west": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-03-east": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-03-north": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-03-south": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         },
         "wall-03-west": {
-          "ast_mm2": 7.484629778134189,
+          "ast_mm2": 31.368083400160387,
           "bars": "deterministic preliminary As"
         }
       },

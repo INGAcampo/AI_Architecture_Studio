@@ -86,6 +86,8 @@ class ProjectGraphStructuralAdapter:
                 "geometry_sha256": evidence_sha256(geometry),
                 "geometry_status": "PROJECT_GRAPH_GEOMETRY" if start is not None else "LEGACY_GEOMETRY_FALLBACK",
             })
+            if item["type"] == "slab":
+                members[-1]["tributary_area_m2"] = float(props.get("area_m2", 0.0))
 
         metadata = {
             "source": "ProjectGraph",

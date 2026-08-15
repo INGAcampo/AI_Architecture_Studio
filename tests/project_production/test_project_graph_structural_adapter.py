@@ -43,6 +43,17 @@ def test_structural_projection_is_project_isolated_and_geometry_sensitive():
     assert lookup(first, first_beam["node_ids"][1]) != lookup(second, second_beam["node_ids"][1])
 
 
+def test_synthetic_loads_are_geometry_derived_and_project_specific():
+    engine = ProfessionalStructuralEngine()
+    first = engine.generate_3d_model(ParametricProjectGraphBuilder().build(_manifest("LOAD-A", 8.0)))
+    second = engine.generate_3d_model(ParametricProjectGraphBuilder().build(_manifest("LOAD-B", 11.0)))
+    engine.add_loads(first)
+    engine.add_loads(second)
+    assert all("basis" in load for load in first.loads)
+    assert next(load for load in first.loads if load["case"] == "dead")["magnitude"] == 576.0
+    assert next(load for load in second.loads if load["case"] == "dead")["magnitude"] == 792.0
+
+
 def test_orchestrator_emits_traceable_structural_evidence(tmp_path, monkeypatch):
     monkeypatch.setattr(NativeDWGProductionAdapter, "produce", lambda self, cad, output: {
         "gate": "V5_NATIVE_DWG_INTEGRATION_PASS", "backend": "TEST", "drawings": [], "sha256": "0" * 64,
