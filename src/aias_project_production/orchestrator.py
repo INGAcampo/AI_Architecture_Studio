@@ -23,12 +23,13 @@ class AIASProjectProductionOrchestrator:
         self.qa = ProfessionalQAAdapter()
         self.issuance = ExecutiveIssuanceAdapter()
 
-    def run(self, scenario_id: str) -> dict:
+    def run(self, scenario_id: str, project_id: str = "PILOT-BUILDING-001", mode: str = "PILOT_SYNTHETIC") -> dict:
         if scenario_id not in {"BEST_CASE_001", "NOMINAL_CASE_001", "STRESS_CASE_001"}:
             raise ValueError("unknown synthetic scenario")
         scenario_dir = self.output_root / scenario_id
         core = BuildingDesignCore()
-        graph = core.seed_pilot(core.create_project(f"Synthetic {scenario_id}"))
+        if mode not in {"PILOT_SYNTHETIC", "REAL_PROJECT"}: raise ValueError("invalid project mode")
+        graph = core.seed_pilot(core.create_project(f"{mode} {scenario_id}", project_id=project_id))
         errors = core.validate(graph)
         if errors:
             return {"verdict": "BLOCKED_SOFTWARE", "errors": errors}
@@ -47,6 +48,7 @@ class AIASProjectProductionOrchestrator:
         issuance = self.issuance.issue(scenario_id, scenario_dir, drawing, quantities, reports, qa)
         return {
             "scenario_id": scenario_id,
+            "project_id": project_id, "project_mode": mode,
             "SYNTHETIC_TEST_DATA": True,
             "NOT_FOR_CONSTRUCTION": True,
             "V0_V1": "PASS", "V2": "PASS", "V3": result.status, "V4": "PASS",
