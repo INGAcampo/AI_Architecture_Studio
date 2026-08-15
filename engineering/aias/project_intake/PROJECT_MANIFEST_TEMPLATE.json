@@ -1,0 +1,1 @@
+{"project_id":"PROJECT-001","project_name":"Project name","mode":"PILOT_SYNTHETIC","scenario_id":"NOMINAL_CASE_001","SYNTHETIC_TEST_DATA":true,"NOT_FOR_CONSTRUCTION":true,"building_program":{"levels":2,"width_m":10.0,"length_m":12.0,"storey_height_m":3.0}}

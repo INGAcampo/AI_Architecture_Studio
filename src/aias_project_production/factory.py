@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib, json
 from pathlib import Path
 from .orchestrator import AIASProjectProductionOrchestrator
+from aias_project_intake import ProjectIntake
 
 class ProjectProductionFactory:
     def __init__(self, root): self.root=Path(root); self.root.mkdir(parents=True,exist_ok=True)
@@ -12,7 +13,7 @@ class ProjectProductionFactory:
         if len(manifest_ids)!=len(set(manifest_ids)): raise ValueError('duplicate project_id')
         seen=set()
         for manifest in manifests:
-            self.validate_manifest(manifest)
+            self.validate_manifest(manifest); ProjectIntake().validate(manifest)
             project_id=manifest['project_id']
             if project_id in seen: raise ValueError('duplicate project_id')
             seen.add(project_id); out=self.root/project_id
