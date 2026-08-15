@@ -51,6 +51,7 @@ def test_chain_skips_certified_gates_and_starts_next_pending(monkeypatch, tmp_pa
     supervisor._write(supervisor.state_path, {'gates_pass':['PROJECT_PRODUCTION_FACTORY_READY']})
     state=supervisor.run_chain()
     assert calls==['ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY','ANALYSIS_PRODUCTION_CORE_READY','STANDARDS_PRODUCTION_CORE_READY','DESIGN_PRODUCTION_CORE_READY']
+    assert state['head']=='abc'
     assert state['next_target']=='DRAWINGS_PRODUCTION_CORE_READY'
 
 def test_analysis_target_continues_from_structural_gate(tmp_path, monkeypatch):

@@ -21,5 +21,12 @@
     "tests/project_production/test_project_factory.py"
   ],
   "evidence": "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json",
+  "reconciled_head": "d1e3892324c072368637aa2912a13e0c8727dc66",
+  "reconciliation_reason": "Regenerated legacy structural evidence with the certified combination-driven analysis and standards-bound production path.",
+  "evidence_sha256": {
+    "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json": "18460f4bcfd879fb69a9eef1973ed5851d00a52281f74ec91c332c85f2063f89",
+    "STRUCT-CORE-CERT-A_STRUCTURAL_EVIDENCE.json": "11ba72310a84e5ac27853f1c320ca5dba18eb574d55043597cb12d249e9a61e4",
+    "STRUCT-CORE-CERT-B_STRUCTURAL_EVIDENCE.json": "82fa21ba6c92c42a1c612fd5f10297896486a56147f05b443933de298a4ab554"
+  },
   "staging": "EXPLICIT_ALLOWLIST_ONLY"
 }

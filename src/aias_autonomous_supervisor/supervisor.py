@@ -103,7 +103,7 @@ class AIASAutonomousSupervisor:
                 completed.add(target)
         # Never announce a target until its executor and certification gate are
         # physically registered in this supervisor.
-        state['next_target']='DRAWINGS_PRODUCTION_CORE_READY'; state['updated_at']=time.time()
+        state['head']=self._head(); state['next_target']='DRAWINGS_PRODUCTION_CORE_READY'; state['updated_at']=time.time()
         self._write(self.state_path,state); self._event('CHAIN_CHECKPOINT',next_target=state['next_target'])
         return state
     def _head(self):

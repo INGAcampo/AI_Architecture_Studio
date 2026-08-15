@@ -13,7 +13,7 @@
   "projects": [
     {
       "evidence_file": "STRUCT-CORE-CERT-A_STRUCTURAL_EVIDENCE.json",
-      "evidence_sha256": "6d97cdf7c2a06001fed26f80effbde416cc5d208926fd51ad502275e2ec92b4e",
+      "evidence_sha256": "9c51f6ac6e77fcb8b2d8bc3c0c374442ffc8efdbfe5e27806ff4e5d076b30bcb",
       "geometry_backed_member_count": 30,
       "member_count": 30,
       "project_id": "STRUCT-CORE-CERT-A",
@@ -22,7 +22,7 @@
     },
     {
       "evidence_file": "STRUCT-CORE-CERT-B_STRUCTURAL_EVIDENCE.json",
-      "evidence_sha256": "f4cac0ab8d2bb7a611d92d3404e25bd8462d3229c36ac8d6398e00b75cc0ad33",
+      "evidence_sha256": "09bb7ea7c8cda1ccc4f0fc49b35ed453f76670feefa72bcc55b426f5f8a0f627",
       "geometry_backed_member_count": 43,
       "member_count": 43,
       "project_id": "STRUCT-CORE-CERT-B",
