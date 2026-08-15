@@ -8,6 +8,7 @@ from aias_building_design_core.core import BuildingDesignCore
 from aias_building_design_core.native_bim import NativeBimProjection
 from aias_structural_professional.engine import ProfessionalStructuralEngine
 from aias_standards_core import ApplicabilityEngine, StandardsPack
+from aias_reinforcement_detailing import ReinforcementEngine
 
 from .adapters import (
     DrawingProductionAdapter,
@@ -81,6 +82,9 @@ class AIASProjectProductionOrchestrator:
         ).hexdigest()
         synthetic_standards_evidence["rule_verdicts"] = standards_verdicts
         result = structural.analyze_and_design(model, synthetic_standards_evidence)
+        reinforcement = ReinforcementEngine().build(result, synthetic_standards_evidence, project_id=graph.project_id)
+        reinforcement_path = scenario_dir / "reinforcement_model.json"
+        reinforcement_path.write_text(json.dumps({"bar_sets": reinforcement.bar_sets, "schedules": reinforcement.schedules, "findings": reinforcement.findings}, indent=2, sort_keys=True), encoding="utf-8")
         structural_evidence = {
             "schema": "aias.structural_production_evidence.v1",
             "project_id": graph.project_id,
@@ -125,6 +129,7 @@ class AIASProjectProductionOrchestrator:
             },
             "native_bim": {"path": str(native_bim_path), "wall_count": len(native_bim['walls'])},
             "standards": {"path": str(standards_path), "pack": "VE-PILOT-001.0", "verdicts": standards_verdicts},
+            "reinforcement": {"path": str(reinforcement_path), "bar_set_count": len(reinforcement.bar_sets), "steel_kg": ReinforcementEngine().total_steel_kg(reinforcement), "status": "PRELIMINARY"},
             "structural": {
                 "provider": "aias_structural_core.ProjectGraphStructuralAdapter",
                 "path": str(structural_path), "sha256": structural_sha256,
