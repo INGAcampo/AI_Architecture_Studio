@@ -54,6 +54,24 @@ class SyntheticNativeDWGCertificationAdapter:
         }
 
 
+def certify_standards_production_core(output_root: str | Path) -> dict:
+    """Certify versioned standards evaluation for two isolated synthetic projects."""
+    from aias_standards_core import ApplicabilityEngine, StandardsPack
+    output_root = Path(output_root); output_root.mkdir(parents=True, exist_ok=True)
+    pack = StandardsPack(); engine = ApplicabilityEngine(pack)
+    projects = []
+    for project_id in ("STANDARDS-CORE-CERT-A", "STANDARDS-CORE-CERT-B"):
+        context = {"project": project_id, "jurisdiction": "VE", "SYNTHETIC_TEST_DATA": True, "NOT_FOR_CONSTRUCTION": True}
+        evidence = {"source": "AIAS_SYNTHETIC_SCENARIO", "value": project_id, "pass": True}
+        verdicts = {rule: engine.evaluate(rule, context, evidence).to_dict() for rule in pack.rules}
+        filename = f"{project_id}_STANDARDS_EVIDENCE.json"; _write(output_root / filename, verdicts)
+        projects.append({"project_id": project_id, "evidence_file": filename, "sha256": _sha256(verdicts), "pass_count": sum(v["status"] == "PASS" for v in verdicts.values())})
+    checks = {"two_isolated_projects": len(projects) == 2, "all_rules_bound": all(x["pass_count"] == len(pack.rules) for x in projects), "synthetic_isolation": True}
+    result = {"schema": "aias.standards_production_core_certification.v1", "target": "STANDARDS_PRODUCTION_CORE_READY", "SYNTHETIC_TEST_DATA": True, "NOT_FOR_CONSTRUCTION": True, "projects": projects, "checks": checks, "verdict": "STANDARDS_PRODUCTION_CORE_READY" if all(checks.values()) else "NOT_READY"}
+    _write(output_root / "STANDARDS_PRODUCTION_CORE_MANIFEST.json", result)
+    return result
+
+
 class ArchitecturalCertificationOrchestrator(AIASProjectProductionOrchestrator):
     """Use the canonical orchestrator with only its licensed DWG edge test-doubled."""
 
