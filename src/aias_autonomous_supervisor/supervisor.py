@@ -1,5 +1,5 @@
 from __future__ import annotations
-import argparse, json, os, time
+import argparse, json, os, time, subprocess
 from pathlib import Path
 
 class AIASAutonomousSupervisor:
@@ -50,9 +50,23 @@ class AIASAutonomousSupervisor:
     def _head(self):
         import subprocess
         return subprocess.check_output(['git','rev-parse','HEAD'],cwd=self.root,text=True).strip()
+    def run_backlog(self):
+        backlog=json.loads((self.root/'engineering/aias/automation/PROJECT_PRODUCTION_AUTOMATION_BACKLOG.json').read_text(encoding='utf-8'))
+        self.acquire(); completed=[]
+        try:
+            for task in backlog['tasks']:
+                if not set(task['depends_on']) <= set(completed): raise RuntimeError('BACKLOG_DEPENDENCY_UNSATISFIED')
+                env=os.environ.copy(); env['PYTHONPATH']='src'
+                p=subprocess.run(task['command'],cwd=self.root,env=env,capture_output=True,text=True,timeout=120)
+                self._event('BACKLOG_TASK',task=task['id'],returncode=p.returncode)
+                if p.returncode: raise RuntimeError('BACKLOG_TASK_FAILED:'+task['id'])
+                completed.append(task['id'])
+            state=self.status(); state.update({'status':'TARGET_REACHED','target':'PROJECT_PRODUCTION_FACTORY_READY','gate_current':'PROJECT_PRODUCTION_FACTORY_READY','backlog_completed':completed,'head':self._head(),'updated_at':time.time()}); self._write(self.state_path,state); self._write(self.heartbeat_path,{'pid':os.getpid(),'state':'TARGET_REACHED','timestamp':time.time(),'head':state['head']}); return state
+        finally: self.release()
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('command',choices=['start','resume','status','stop']); p.add_argument('--root',default='.'); p.add_argument('--target',default='V8_INFRASTRUCTURE_READY'); a=p.parse_args(); s=AIASAutonomousSupervisor(a.root)
+    p=argparse.ArgumentParser(); p.add_argument('command',choices=['start','resume','status','stop','backlog']); p.add_argument('--root',default='.'); p.add_argument('--target',default='V8_INFRASTRUCTURE_READY'); a=p.parse_args(); s=AIASAutonomousSupervisor(a.root)
     if a.command=='status': print(json.dumps(s.status(),indent=2)); return
     if a.command=='stop': s.release(); s._event('STOPPED'); print('{"status":"STOPPED"}'); return
+    if a.command=='backlog': print(json.dumps(s.run_backlog(),indent=2)); return
     print(json.dumps(s.run(resume=a.command=='resume',target=a.target),indent=2))
 if __name__=='__main__': main()
