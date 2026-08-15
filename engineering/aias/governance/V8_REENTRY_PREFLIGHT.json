@@ -1,0 +1,23 @@
+{
+  "command": "ReissueExecutiveProject",
+  "input_sha256": "50a84b26dd46a65db60a4cadaae8b30e4571e9517d5af8568d5c790a62f747e0",
+  "missing": [
+    "GEO-001",
+    "GEO-002",
+    "GEO-003",
+    "GEO-004",
+    "PROJ-001",
+    "PROJ-002",
+    "PROJ-003",
+    "DOC-001",
+    "provenance.source_sha256"
+  ],
+  "pipeline": [
+    "Validate External Inputs",
+    "Update Graph",
+    "Selective Regeneration",
+    "QA/QC",
+    "Executive Manifest"
+  ],
+  "verdict": "WAITING_FOR_AUTHENTICATED_EXTERNAL_PROJECT_INPUTS"
+}
