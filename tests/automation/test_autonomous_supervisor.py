@@ -40,3 +40,15 @@ def test_architectural_target_continues_from_factory_gate(tmp_path, monkeypatch)
         'PROJECT_PRODUCTION_FACTORY_READY',
         'ARCHITECTURAL_PRODUCTION_CORE_READY',
     ]
+
+def test_chain_skips_certified_gates_and_starts_next_pending(monkeypatch, tmp_path):
+    supervisor=AIASAutonomousSupervisor(tmp_path); supervisor._head=lambda:'abc'
+    calls=[]
+    def fake_run(resume=False,target=''):
+        calls.append(target)
+        return {'status':'TARGET_REACHED','gates_pass':[target], 'head':'abc'}
+    monkeypatch.setattr(supervisor, 'run', fake_run)
+    supervisor._write(supervisor.state_path, {'gates_pass':['PROJECT_PRODUCTION_FACTORY_READY']})
+    state=supervisor.run_chain()
+    assert calls==['ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY']
+    assert state['next_target']=='NEXT_ENGINEERING_PRODUCTION_MACRO'

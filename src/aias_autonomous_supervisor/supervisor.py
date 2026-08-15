@@ -50,6 +50,15 @@ class AIASAutonomousSupervisor:
                 gates=list(dict.fromkeys(previous+['PROJECT_PRODUCTION_FACTORY_READY']+([target] if reached else [])))
                 state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':target if reached else 'ARCHITECTURAL_CORE_CERTIFICATION','gate_current':result['verdict'],'gates_pass':gates,'gates_pending':[] if reached else [target],'blockers':[] if reached else [name for name,passed in result['checks'].items() if not passed],'artifacts':[str((evidence/'ARCHITECTURAL_PRODUCTION_CORE_MANIFEST.json').relative_to(self.root))]+[str((evidence/x['evidence_file']).relative_to(self.root)) for x in result['projects']],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
                 self._event('ARCHITECTURAL_CORE_PROCESSED',projects=len(result['projects']),verdict=result['verdict'])
+            elif target == 'STRUCTURAL_PRODUCTION_CORE_READY':
+                from aias_project_production.certification import certify_structural_production_core
+                evidence=self.root/'engineering/aias/structural_production_core_certification'
+                result=certify_structural_production_core(evidence)
+                reached=result['verdict']=='STRUCTURAL_PRODUCTION_CORE_READY'
+                previous=state.get('gates_pass',[])
+                gates=list(dict.fromkeys(previous+['PROJECT_PRODUCTION_FACTORY_READY','ARCHITECTURAL_PRODUCTION_CORE_READY']+([target] if reached else [])))
+                state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':target if reached else 'STRUCTURAL_CORE_CERTIFICATION','gate_current':result['verdict'],'gates_pass':gates,'gates_pending':[] if reached else [target],'blockers':[] if reached else [name for name,passed in result['checks'].items() if not passed],'artifacts':[str((evidence/'STRUCTURAL_PRODUCTION_CORE_MANIFEST.json').relative_to(self.root))],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
+                self._event('STRUCTURAL_CORE_PROCESSED',projects=len(result['projects']),verdict=result['verdict'])
             elif target == 'REAL_PROJECT_PRODUCTION_READY':
                 from aias_external_reentry.engine import ReissueExecutiveProject
                 intake=self.root/'engineering/aias/external_inputs/PILOT-BUILDING-001_SYNTHETIC_BASELINE.json'; evidence=self.dir/'PILOT_SYNTHETIC_REENTRY_PREFLIGHT.json'
@@ -61,6 +70,19 @@ class AIASAutonomousSupervisor:
                 state.update({'status':'TARGET_REACHED','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':'V8_INFRASTRUCTURE_READY','execution_id':state.get('execution_id',f'local-{int(time.time())}'),'head':self._head(),'last_checkpoint':'V8_INFRASTRUCTURE_READY','gate_current':'TARGET_REACHED','gates_pass':['V0','V1','V2','V3','V4','V5','V6','V7','V8'],'gates_pending':[],'blockers':[],'retry_counters':{},'artifacts':['engineering/aias/professional_project_production/V8_SYNTHETIC_EXECUTION/V8_SYNTHETIC_EXECUTIVE_SUMMARY.json'],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
             self._write(self.state_path,state); self._write(self.heartbeat_path,{'pid':os.getpid(),'state':state['status'],'timestamp':time.time(),'head':state['head']}); self._event(state['status'],resume=resume,gate=state['gate_current']); return state
         finally: self.release()
+    def run_chain(self, resume=True):
+        """Advance every known internal macro-gate in one owned execution."""
+        state=self.status() if resume else {}
+        ordered=['PROJECT_PRODUCTION_FACTORY_READY','ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY']
+        completed=set(state.get('gates_pass',[]))
+        for target in ordered:
+            if target not in completed:
+                state=self.run(resume=True,target=target)
+                if state['status'] != 'TARGET_REACHED': return state
+                completed.add(target)
+        state['next_target']='NEXT_ENGINEERING_PRODUCTION_MACRO'; state['updated_at']=time.time()
+        self._write(self.state_path,state); self._event('CHAIN_CHECKPOINT',next_target=state['next_target'])
+        return state
     def _head(self):
         import subprocess
         return subprocess.check_output(['git','rev-parse','HEAD'],cwd=self.root,text=True).strip()
@@ -78,9 +100,10 @@ class AIASAutonomousSupervisor:
             state=self.status(); state.update({'status':'TARGET_REACHED','target':'PROJECT_PRODUCTION_FACTORY_READY','gate_current':'PROJECT_PRODUCTION_FACTORY_READY','backlog_completed':completed,'head':self._head(),'updated_at':time.time()}); self._write(self.state_path,state); self._write(self.heartbeat_path,{'pid':os.getpid(),'state':'TARGET_REACHED','timestamp':time.time(),'head':state['head']}); return state
         finally: self.release()
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('command',choices=['start','resume','status','stop','backlog']); p.add_argument('--root',default='.'); p.add_argument('--target',default='V8_INFRASTRUCTURE_READY'); a=p.parse_args(); s=AIASAutonomousSupervisor(a.root)
+    p=argparse.ArgumentParser(); p.add_argument('command',choices=['start','resume','status','stop','backlog','chain']); p.add_argument('--root',default='.'); p.add_argument('--target',default='V8_INFRASTRUCTURE_READY'); a=p.parse_args(); s=AIASAutonomousSupervisor(a.root)
     if a.command=='status': print(json.dumps(s.status(),indent=2)); return
     if a.command=='stop': s.release(); s._event('STOPPED'); print('{"status":"STOPPED"}'); return
     if a.command=='backlog': print(json.dumps(s.run_backlog(),indent=2)); return
+    if a.command=='chain': print(json.dumps(s.run_chain(),indent=2)); return
     print(json.dumps(s.run(resume=a.command=='resume',target=a.target),indent=2))
 if __name__=='__main__': main()
