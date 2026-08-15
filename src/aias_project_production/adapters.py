@@ -69,7 +69,7 @@ class NativeDWGProductionAdapter:
         return {"pid":process.pid,"exit_code":process.returncode,"timed_out":timed,"duration_seconds":round(time.time()-started,3),"stdout_tail":stdout[-1000:],"stderr_tail":stderr[-1000:]}
     def produce(self, cad, output: Path) -> dict:
         if not self.autocad.exists(): raise RuntimeError("BLOCKED_BACKEND_UNAVAILABLE")
-        output.mkdir(parents=True, exist_ok=True); source_ids={e["id"] for e in cad.entities}; layers={x["name"] for x in cad.layers}; writer=ValidDxfWriter(); rows=[]
+        output.mkdir(parents=True, exist_ok=True); source_ids={e["id"] for e in cad.entities}; layers={e["layer"] for e in cad.entities}; writer=ValidDxfWriter(); rows=[]
         for sheet in cad.sheets:
             work=(output / sheet["number"]).resolve(); work.mkdir(parents=True, exist_ok=True); dxf=work / f'{sheet["number"]}.dxf'; writer.write(cad,dxf); dwg=work / f'{sheet["number"]}.dwg'
             save=work / "save.scr"; save.write_text(f'_.SAVEAS\n2018\n"{str(dwg).replace(chr(92),"/")}"\n_.QUIT\n',encoding="ascii")

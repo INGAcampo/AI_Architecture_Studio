@@ -21,7 +21,7 @@ class ProjectProductionFactory:
             dependency={'project_id':project_id,'nodes':['intake','graph','V0','V1','V2','V3','V4','V5','V6','V7','V8','qa','manifest'],'mode':manifest['mode']}
             (out/'PROJECT_DEPENDENCY_GRAPH.json').write_text(json.dumps(dependency,indent=2),encoding='utf-8')
             state.write_text(json.dumps({'project_id':project_id,'status':'RUNNING','mode':manifest['mode']},indent=2),encoding='utf-8')
-            result=AIASProjectProductionOrchestrator(out).run(manifest['scenario_id'], project_id=project_id, mode=manifest['mode'], project_name=manifest['project_name'])
+            result=AIASProjectProductionOrchestrator(out).run(manifest['scenario_id'], project_id=project_id, mode=manifest['mode'], project_name=manifest['project_name'], manifest=manifest)
             state.write_text(json.dumps({'project_id':project_id,'status':'TARGET_REACHED','mode':manifest['mode'],'checkpoint':'V8','artifacts':result['issuance']},indent=2,default=str),encoding='utf-8')
             result.update(project_id=project_id, mode='PILOT_SYNTHETIC', manifest_sha256=hashlib.sha256(json.dumps(manifest,sort_keys=True).encode()).hexdigest())
             results.append(result)

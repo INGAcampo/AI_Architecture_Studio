@@ -14,3 +14,10 @@ def test_factory_requires_a_complete_manifest():
     try: ProjectProductionFactory.validate_manifest({'project_id':'X','mode':'PILOT_SYNTHETIC'})
     except ValueError as exc: assert 'missing' in str(exc); return
     raise AssertionError('incomplete manifest accepted')
+
+def test_orchestrator_accepts_parametric_manifest(tmp_path):
+ from aias_project_production.orchestrator import AIASProjectProductionOrchestrator
+ m={'project_id':'PARAM-X','project_name':'Param X','mode':'PILOT_SYNTHETIC','scenario_id':'NOMINAL_CASE_001','SYNTHETIC_TEST_DATA':True,'NOT_FOR_CONSTRUCTION':True,'building_program':{'levels':2,'width_m':8,'length_m':9,'storey_height_m':3}}
+ # V0/V2 graph construction is exercised before downstream production.
+ try: AIASProjectProductionOrchestrator(tmp_path).run('INVALID',manifest=m)
+ except ValueError as exc: assert 'unknown synthetic scenario' in str(exc)
