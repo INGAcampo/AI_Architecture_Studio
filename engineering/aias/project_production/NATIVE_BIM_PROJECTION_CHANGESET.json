@@ -1,0 +1,16 @@
+{
+  "capability_id": "NATIVE_BIM_PROJECTION",
+  "baseline_head": "239f5c364b4824aa54b77a617f6c48f6b07f5e5f",
+  "allowed_paths": [
+    "src/aias_building_design_core/native_bim.py",
+    "src/aias_building_design_core/__init__.py",
+    "tests/project_production/test_building_design_core.py",
+    "engineering/aias/project_production/NATIVE_BIM_PROJECTION_CHANGESET.json"
+  ],
+  "tests": [
+    "tests/project_production/test_building_design_core.py",
+    "tests/project_intake/test_project_intake.py"
+  ],
+  "protected_paths": ["src/core/history/history_manager.py"],
+  "invariant": "ProjectGraph remains the only authoring source of truth"
+}
