@@ -84,6 +84,11 @@ class NativeDWGProductionAdapter:
         output.mkdir(parents=True, exist_ok=True); source_ids={e["id"] for e in cad.entities}; layers={e["layer"] for e in cad.entities}; writer=ValidDxfWriter(); rows=[]
         for sheet in cad.sheets:
             work=(output / sheet["number"]).resolve(); work.mkdir(parents=True, exist_ok=True); dxf=work / f'{sheet["number"]}.dxf'; writer.write(cad,dxf); dwg=work / f'{sheet["number"]}.dwg'
+            # SAVEAS becomes interactive when an earlier generated artifact is
+            # present.  The DWG belongs exclusively to this deterministic job,
+            # so remove only that exact output before regenerating it.
+            if dwg.exists():
+                dwg.unlink()
             save=work / "save.scr"; save.write_text(f'_.SAVEAS\n2018\n"{str(dwg).replace(chr(92),"/")}"\n_.QUIT\n',encoding="ascii")
             generation=self._invoke(dxf,save)
             log=work / "inspect.txt"; inspect=work / "inspect.scr"; inspect.write_text(f'''(setq f (open "{str(log).replace(chr(92),"/")}" "w"))

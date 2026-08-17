@@ -87,6 +87,13 @@ class AIASAutonomousSupervisor:
                 gates=list(dict.fromkeys(previous+['DESIGN_PRODUCTION_CORE_READY']+([target] if reached else [])))
                 state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':target if reached else 'DRAWINGS_CORE_CERTIFICATION','gate_current':result['verdict'],'gates_pass':gates,'gates_pending':[] if reached else [target],'blockers':[] if reached else [name for name,passed in result['checks'].items() if not passed],'artifacts':[str((evidence/'DRAWINGS_PRODUCTION_CORE_MANIFEST.json').relative_to(self.root))]+[str((evidence/x['evidence_file']).relative_to(self.root)) for x in result['projects']],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
                 self._event('DRAWINGS_CORE_PROCESSED',projects=len(result['projects']),verdict=result['verdict'])
+            elif target == 'PROJECT_COMPILER_LAB_READY':
+                from aias_project_production.compiler import ProjectCompiler
+                baseline={'project_id':'PILOT-BUILDING-001','project_name':'AIAS Project Compiler Laboratory','mode':'PILOT_SYNTHETIC','scenario_id':'NOMINAL_CASE_001','SYNTHETIC_TEST_DATA':True,'NOT_FOR_CONSTRUCTION':True,'building_program':{'levels':2,'width_m':8,'length_m':9,'storey_height_m':3}}
+                evidence=self.root/'engineering/aias/project_compiler_lab'
+                result=ProjectCompiler(evidence).compile_matrix(baseline); reached=result['verdict']==target
+                state.update({'status':'TARGET_REACHED' if reached else 'TECHNICAL_BLOCKER','program':'PRODUCCIÓN DE PROYECTOS AIAS','target':target,'head':self._head(),'last_checkpoint':target if reached else 'PROJECT_COMPILER_LAB','gate_current':result['verdict'],'gates_pass':list(dict.fromkeys(state.get('gates_pass',[])+([target] if reached else []))),'gates_pending':[] if reached else [target],'blockers':result.get('software_blockers',[]),'artifacts':[x['manifest_path'] for x in result.get('builds',[])],'synthetic_only':True,'not_for_construction':True,'updated_at':time.time()})
+                self._event('PROJECT_COMPILER_LAB_PROCESSED',builds=len(result.get('builds',[])),verdict=result['verdict'])
             elif target == 'REAL_PROJECT_PRODUCTION_READY':
                 from aias_external_reentry.engine import ReissueExecutiveProject
                 intake=self.root/'engineering/aias/external_inputs/PILOT-BUILDING-001_SYNTHETIC_BASELINE.json'; evidence=self.dir/'PILOT_SYNTHETIC_REENTRY_PREFLIGHT.json'
@@ -101,7 +108,7 @@ class AIASAutonomousSupervisor:
     def run_chain(self, resume=True):
         """Advance every known internal macro-gate in one owned execution."""
         state=self.status() if resume else {}
-        ordered=['PROJECT_PRODUCTION_FACTORY_READY','ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY','ANALYSIS_PRODUCTION_CORE_READY','STANDARDS_PRODUCTION_CORE_READY','DESIGN_PRODUCTION_CORE_READY','DRAWINGS_PRODUCTION_CORE_READY']
+        ordered=['PROJECT_PRODUCTION_FACTORY_READY','ARCHITECTURAL_PRODUCTION_CORE_READY','STRUCTURAL_PRODUCTION_CORE_READY','ANALYSIS_PRODUCTION_CORE_READY','STANDARDS_PRODUCTION_CORE_READY','DESIGN_PRODUCTION_CORE_READY','DRAWINGS_PRODUCTION_CORE_READY','PROJECT_COMPILER_LAB_READY']
         completed=set(state.get('gates_pass',[]))
         for target in ordered:
             if target not in completed:
