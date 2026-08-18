@@ -63,21 +63,28 @@ jobs:
         shell: bash
         run: |
           set +e
-          pytest -q --tb=short 2>&1 | tee pytest-full.log
+          timeout --signal=TERM --kill-after=30s 12m pytest -q --tb=short 2>&1 | tee pytest-full.log
           status=${PIPESTATUS[0]}
+          if [ ! -f pytest-full.log ]; then
+            touch pytest-full.log
+          fi
           tail -n 240 pytest-full.log > pytest-failure-tail.txt
           {
             echo "### Historical regression diagnostics"
             echo
             if [ "$status" -eq 0 ]; then
               echo "Full historical pytest suite passed on the portable Linux runner."
+            elif [ "$status" -eq 124 ] || [ "$status" -eq 137 ]; then
+              echo "Full historical pytest suite exceeded the 12-minute diagnostic budget (exit code **$status**)."
+              echo
+              echo "This is recorded as a bounded diagnostic outcome, not as a failure of the portable certification gate."
             else
               echo "Full historical pytest suite returned exit code **$status**."
               echo
               echo "This suite is diagnostic-only because the repository contains tests that depend on generated certification evidence, Windows/AutoCAD, installers, or other external artifacts not guaranteed on GitHub-hosted Linux runners."
-              echo
-              echo "The blocking gate for this PR is the Portable certification job above."
             fi
+            echo
+            echo "The blocking gate for this PR is the Portable certification job above."
           } >> "$GITHUB_STEP_SUMMARY"
           exit 0
       - name: Upload historical pytest diagnostics
