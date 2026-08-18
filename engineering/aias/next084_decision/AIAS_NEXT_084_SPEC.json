@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-084",
+  "title": "Evidence review decision record",
+  "status": "VALIDATED",
+  "scope": "Record explicit evidence review decisions with a safe pending default",
+  "safety": ["Unknown decisions are rejected", "Approval requires explicit ACCEPTED decision"]
+}

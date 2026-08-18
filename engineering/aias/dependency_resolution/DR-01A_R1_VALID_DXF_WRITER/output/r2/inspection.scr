@@ -1,0 +1,7 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_R1_VALID_DXF_WRITER/output/r2/REOPEN_INSPECTION.txt" "w"))
+(setq e (entnext) n 0)
+(while e (setq d (entget e)) (write-line (strcat "ENTITY|" (cdr (assoc 0 d)) "|" (if (assoc 8 d) (cdr (assoc 8 d)) "") "|" (cdr (assoc 5 d))) f) (setq n (+ n 1)) (setq e (entnext e)))
+(write-line (strcat "COUNT|" (itoa n)) f)
+(close f)
+(princ)
+_.QUIT

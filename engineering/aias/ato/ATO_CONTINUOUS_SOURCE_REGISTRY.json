@@ -1,0 +1,13 @@
+{
+  "registry_id": "ATO-SOURCES-000002",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "sources": [
+    {"id":"SRC-NIST","publisher":"NIST","base_url":"https://www.nist.gov/","domains":["AI_GOVERNANCE","CYBERSECURITY"],"cadence_hours":168,"evidence_strength":1.0},
+    {"id":"SRC-ISO","publisher":"ISO","base_url":"https://www.iso.org/","domains":["STANDARDS","QUALITY"],"cadence_hours":336,"evidence_strength":1.0},
+    {"id":"SRC-BUILDINGSMART","publisher":"buildingSMART International","base_url":"https://www.buildingsmart.org/","domains":["BIM","OPEN_STANDARDS"],"cadence_hours":168,"evidence_strength":0.95},
+    {"id":"SRC-OSGEO","publisher":"OSGeo","base_url":"https://www.osgeo.org/","domains":["GEOSPATIAL","OPEN_SOURCE"],"cadence_hours":168,"evidence_strength":0.9},
+    {"id":"SRC-CNCF","publisher":"Cloud Native Computing Foundation","base_url":"https://www.cncf.io/","domains":["PLATFORM","OBSERVABILITY"],"cadence_hours":168,"evidence_strength":0.9}
+  ],
+  "security": {"https_only":true,"host_allowlist_required":true,"redirect_revalidation_required":true,"maximum_payload_bytes":2000000}
+}

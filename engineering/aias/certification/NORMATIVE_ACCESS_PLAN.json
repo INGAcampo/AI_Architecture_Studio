@@ -1,0 +1,27 @@
+{
+  "plan_id": "CERTIFICATION-NORMATIVE-ACCESS-001",
+  "version": "1.0.0",
+  "status": "READY_FOR_AUTHORIZED_PROCUREMENT",
+  "purchases_executed": false,
+  "providers_engaged": false,
+  "objectives": [
+    "Acquire legitimate access to the approved normative and appraisal content",
+    "Confirm a certifiable organizational scope",
+    "Obtain independent gap-assessment proposals",
+    "Preserve competition, competence, accreditation and independence"
+  ],
+  "authorization_gates": [
+    "Project Director approves budget ceiling",
+    "Legal entity and billing identity are confirmed",
+    "License terms are reviewed",
+    "At least two suitable proposals are compared when the market permits",
+    "Conflicts of interest are reviewed",
+    "Contract and payment are explicitly authorized"
+  ],
+  "prohibitions": [
+    "No unlicensed copying of ISO or CMMI content",
+    "No claim of accreditation based only on a provider statement",
+    "No consultant may certify work where prohibited independence conflicts exist",
+    "No purchase, contract or external message without authorized approval"
+  ]
+}

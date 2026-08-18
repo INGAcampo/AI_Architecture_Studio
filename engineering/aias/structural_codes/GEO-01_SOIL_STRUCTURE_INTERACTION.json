@@ -1,0 +1,12 @@
+{
+  "specification_id": "GEO-01",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+  "objective": "Couple structural interface displacements with traceable bounded soil reactions.",
+  "model": "Winkler spring reference contract with ultimate-reaction bounding and secant stiffness reporting",
+  "requirements": ["Every spring references geotechnical evidence", "Node and direction interfaces are unique", "Missing interface springs fail closed", "Yielded reactions are explicitly reported", "Normative claims require authorized evidence and review"],
+  "implementation": "src/aias_structural_codes_program/geo01.py",
+  "verification": "tests/test_soil_structure_interaction_geo01.py",
+  "external_completion_conditions": ["Project-specific investigation", "Calibrated constitutive parameters", "Independent benchmark", "Qualified geotechnical review"],
+  "construction_claim": false
+}

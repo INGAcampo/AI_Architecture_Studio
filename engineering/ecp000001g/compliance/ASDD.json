@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-200004",
+  "title": "AIAS Technology Observatory",
+  "version": "1.0.0",
+  "purpose": "Continuously identify and govern world knowledge capable of producing large, sustainable advances in AIAS and materialize safe value at the earliest maturity level.",
+  "scope": "Authoritative-source registry, observation evidence, relevance and impact scoring, constitutional filtering, opportunity portfolio, immediate-value actions and intelligence release packaging.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-200301",
+      "title": "Global evidence",
+      "statement": "ATO shall register dated, attributable and integrity-protected observations from authoritative world sources.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep technology intelligence verifiable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technology_observatory/sources.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001g_technology_observatory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200302",
+      "title": "Constitutional filter",
+      "statement": "ATO shall reject opportunities that lack verification, maintainability, compatibility or legal review status.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enforce AEC-000049 without compromising higher obligations.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technology_observatory/governance.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001g_technology_observatory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200303",
+      "title": "Giant-step scoring",
+      "statement": "ATO shall score relevance, impact, reuse, acceleration, risk and evidence strength reproducibly.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prioritize high-leverage opportunities.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technology_observatory/scoring.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001g_technology_observatory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200304",
+      "title": "ECP-F consumption",
+      "statement": "ATO shall consume ECP-000001F maturity, findings and KPI evidence when prioritizing opportunities.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create a real feedback consumer for lifecycle evidence.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technology_observatory/engine.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001g_technology_observatory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200305",
+      "title": "Immediate value",
+      "statement": "ATO shall emit a concrete earliest-maturity action for every accepted opportunity.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Execute AEC-000049 as an operational rule.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technology_observatory/materialization.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001g_technology_observatory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200306",
+      "title": "Intelligence release",
+      "statement": "ATO shall generate a versioned portfolio, source ledger, decision log and checksum-protected release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide reusable and auditable technology intelligence.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technology_observatory/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001g_technology_observatory.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-ECP-000001G-ATO"
+  ],
+  "adr_refs": [
+    "ADR-ECP-000001G-ATO"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

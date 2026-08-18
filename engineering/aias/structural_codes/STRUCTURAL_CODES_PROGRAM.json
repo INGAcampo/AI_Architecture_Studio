@@ -1,0 +1,16 @@
+{
+  "program_id": "STRUCTURAL-CODES-PROGRAM-001",
+  "version": "1.1.0",
+  "status": "ACTIVE_FOUNDATION",
+  "permanent_consumer": "Complete structural building",
+  "mandatory_outputs": ["whole-building analysis", "beam design", "column design", "system optimization", "consolidated technical report"],
+  "unified_bim_cae_scope": ["advanced geotechnics", "deep foundations", "diaphragm walls", "soil-structure interaction", "hydraulic sanitary and stormwater networks", "urban infrastructure", "earthworks", "GIS", "AI optimization", "document automation", "engineering software connectors", "executive and coordination dashboards"],
+  "knowledge_policy": "Architecture, ADRs, modules, standards, releases and sprint states are versioned with repository evidence.",
+  "normative_policy": "Regulated results require a licensed, versioned, effective-date-aware jurisdiction pack and professional approval.",
+  "initial_jurisdiction": "Venezuela",
+  "initial_jurisdiction_code": "VE",
+  "jurisdiction_decision_status": "FORMALLY_APPROVED_BY_PROJECT_DIRECTOR",
+  "jurisdiction_decision_date": "2026-08-04",
+  "normative_pack_status": "PENDING_OFFICIAL_EDITION_VERIFICATION_AND_LICENSED_ACQUISITION",
+  "prohibited_claims": ["all structural codes implemented", "jurisdictional compliance without an official pack", "approved for construction without licensed professional and authority"]
+}

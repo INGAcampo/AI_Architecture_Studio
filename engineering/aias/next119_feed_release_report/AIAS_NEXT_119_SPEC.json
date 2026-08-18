@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-119",
+  "title": "Feed release verification report",
+  "status": "VALIDATED",
+  "scope": "Report local feed release verification results",
+  "safety": ["Report is not publication approval", "External publication remains disabled"]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-130",
+  "title": "Feed release artifact index",
+  "status": "VALIDATED",
+  "scope": "Build sorted unique index of feed bundle release artifacts",
+  "safety": ["Index is local metadata", "No external publication occurs"]
+}

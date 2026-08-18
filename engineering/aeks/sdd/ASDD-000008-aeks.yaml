@@ -1,0 +1,9 @@
+id: ASDD-000008
+title: AIAS Engineering Knowledge System
+version: 1.0.0
+status: ACTIVE
+development_mode: specification_driven
+minimum_time_reduction: 0.45
+knowledge_requires_traceability: true
+human_review_for_professional_use: true
+licensed_content_only: true

@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.005.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-005",
+    "dependency":  "AEC-ORCHESTRATOR-004",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed reversible transaction planning for future external AEC workers.",
+    "scope":  [
+                  "Transaction identity",
+                  "Ordered steps",
+                  "Reversibility requirement",
+                  "Missing-handler failure",
+                  "Rollback state after partial execution"
+              ],
+    "external_vendor_runtime_launched":  false,
+    "publish_authorized":  false,
+    "integration_authorized":  false
+}

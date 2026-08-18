@@ -1,0 +1,18 @@
+{
+  "id": "AESYS-000001",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "purpose": "Govern the complete production lifecycle of reusable AIAS engineering assets.",
+  "operating_loop": ["observe", "specify", "design", "implement", "verify", "release", "operate", "learn"],
+  "offices": [
+    {"id":"ARCHITECTURE_OFFICE","accountable_for":["architecture","dependency_governance"]},
+    {"id":"ENGINEERING_OFFICE","accountable_for":["technical_correctness","calculation_and_design"]},
+    {"id":"QUALITY_OFFICE","accountable_for":["quality_gates","independent_verification"]},
+    {"id":"SECURITY_OFFICE","accountable_for":["security","privacy","supply_chain"]},
+    {"id":"PMO","accountable_for":["portfolio","benefits","delivery_evidence"]},
+    {"id":"KNOWLEDGE_OFFICE","accountable_for":["standards","knowledge","training"]}
+  ],
+  "asset_lifecycle": ["PROPOSED", "SPECIFIED", "IMPLEMENTED", "VALIDATED", "RELEASED", "OPERATED", "RETIRED"],
+  "mandatory_evidence": ["specification", "architecture", "adr", "traceability", "tests", "quality_gates", "documentation", "installer", "release", "operational_feedback"],
+  "professional_boundary": "Regulated deliverables require jurisdiction-aware checking and approval by the responsible licensed professional."
+}

@@ -1,0 +1,115 @@
+﻿{
+    "schema":  "aias.shadow.structural.001.package_manifest.v1",
+    "run_id":  "42a94b5e7d234bac868f33da225d478b",
+    "generated_utc":  "2026-08-13T19:20:29.1975171Z",
+    "megablock":  "STRUCTURAL-001",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  20,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  543,
+                      "sha256":  "67a30acdd7ed38ff14d7fb704fccc5ad307b4ba1dc0a097c5fab95321d16226d"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  659,
+                      "sha256":  "ea3c514d66f012c985b8f3483092178a241e8466d8f8374d060f44d2261b2753"
+                  },
+                  {
+                      "path":  "engineering/ROLLBACK_PLAN.json",
+                      "bytes":  323,
+                      "sha256":  "3c24e07da3f6615254863a331fddc5d9ac33eb619ecb7ece63112625fa6c7e61"
+                  },
+                  {
+                      "path":  "engineering/STRUCTURAL_001_SPEC.json",
+                      "bytes":  1400,
+                      "sha256":  "f8eafaefceaa154e11694dfa5412c51819f938b3bc4b76117b00fdf9d5f91307"
+                  },
+                  {
+                      "path":  "MEGABLOCK_STATE.json",
+                      "bytes":  523,
+                      "sha256":  "22a0fa076e731844e80f570c3321b3185192c490bbf27ec2c7a270187b1f56ab"
+                  },
+                  {
+                      "path":  "src/structural_platform/__init__.py",
+                      "bytes":  477,
+                      "sha256":  "07c4dad2a99f2d07d19d399c217cc2a083fbc89e57e454f72f6d6f4f425e960e"
+                  },
+                  {
+                      "path":  "src/structural_platform/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  711,
+                      "sha256":  "b409d5809c3c52fb7ddd93946a05e7f748a36b97c768a84611e955fe5dbcac1b"
+                  },
+                  {
+                      "path":  "src/structural_platform/__pycache__/combinations.cpython-311.pyc",
+                      "bytes":  1737,
+                      "sha256":  "9e3429237162d1f54374f800cbaef4d6113ce3be8ededa60b4ef894372903304"
+                  },
+                  {
+                      "path":  "src/structural_platform/__pycache__/contracts.cpython-311.pyc",
+                      "bytes":  4743,
+                      "sha256":  "a56b2d3c8f31f90bdc89c52813f881286266596d9b52784a37e44f2df4ff3276"
+                  },
+                  {
+                      "path":  "src/structural_platform/__pycache__/solver.cpython-311.pyc",
+                      "bytes":  6098,
+                      "sha256":  "03a4cc53a3890c677286e36d77027ba44cf3581cfcf62b032ac5b57fea351f7a"
+                  },
+                  {
+                      "path":  "src/structural_platform/__pycache__/units.cpython-311.pyc",
+                      "bytes":  1134,
+                      "sha256":  "bf620ab4158e6c0b0e853e556cf5c5c01a5a2e79e8accaa0f5e042026f7317f7"
+                  },
+                  {
+                      "path":  "src/structural_platform/combinations.py",
+                      "bytes":  1129,
+                      "sha256":  "2d073eecf8c6ff9e6e35511cee6eb75a31e52f0726ee87fd2b7664534f78d3db"
+                  },
+                  {
+                      "path":  "src/structural_platform/contracts.py",
+                      "bytes":  1757,
+                      "sha256":  "8b55d3f7559bdb244d6ee0769f2c86015f3650704ecb01026a1ad432076920ef"
+                  },
+                  {
+                      "path":  "src/structural_platform/solver.py",
+                      "bytes":  4344,
+                      "sha256":  "490db2936d242ec9f6deca5404ffdcc36ee3384c8c39fbff4a64b1652d222428"
+                  },
+                  {
+                      "path":  "src/structural_platform/units.py",
+                      "bytes":  401,
+                      "sha256":  "53bedba913317a1a2fceadef0d21f73734a4b01a17601b4611e7b4ca3acc63dc"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_structural_platform.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  21878,
+                      "sha256":  "c5b02b83edbd13bda24bfac79363ea730d34a50a562ae34f1a74e7fb404c1fe7"
+                  },
+                  {
+                      "path":  "tests/test_structural_platform.py",
+                      "bytes":  4304,
+                      "sha256":  "6c206bc55e4369b488ab3514b04e924543e12f2b0c98c945e13d92213add6189"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

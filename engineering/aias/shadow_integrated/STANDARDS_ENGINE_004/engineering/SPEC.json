@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.standards_engine.004.spec.v1",
+    "megablock":  "STANDARDS-ENGINE-004",
+    "dependency":  "STANDARDS-ENGINE-003",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed standards ingestion gate requiring provenance, applicability, and independently verified source.",
+    "critical_boundary":  [
+                              "No real standards text is embedded.",
+                              "No compliance claim is made.",
+                              "Unverified source data is always rejected."
+                          ],
+    "integration_authorized":  false
+}

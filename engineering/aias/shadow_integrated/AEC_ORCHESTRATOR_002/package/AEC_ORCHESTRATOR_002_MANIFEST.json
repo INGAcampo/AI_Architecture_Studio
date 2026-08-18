@@ -1,0 +1,95 @@
+﻿{
+    "schema":  "aias.shadow.wave3.package_manifest.v1",
+    "run_id":  "2025e884e9ac4f629fbbafe10bf095ae",
+    "generated_utc":  "2026-08-13T21:04:40.6722393Z",
+    "megablock":  "AEC-ORCHESTRATOR-002",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  16,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  394,
+                      "sha256":  "7813f94a105a790bddf0beae8035c1e247916712639b0b7a295a7d12cfcbcdc1"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  300,
+                      "sha256":  "019ebc5b98791c1f1eb95c4d8b945399eaea52a724244cfbcf08b79bd39c1866"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  713,
+                      "sha256":  "ad948af2d5f69024859d3eb835ce336081ead92a59023743e90c2049e8878273"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/__init__.py",
+                      "bytes":  371,
+                      "sha256":  "f027995c6d22dd03e9bbfc57f522b8cd4d9eb96dc958e46ab250bfbe29c85cb2"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  623,
+                      "sha256":  "a2f10f947695a078169d024eed072774b34a1278d4ccc7e2be56b9dd2b7b12a0"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/__pycache__/audit.cpython-311.pyc",
+                      "bytes":  2232,
+                      "sha256":  "0c93c4d05be67b2a866f5dda29ab1981ea370e91626502c5abc7162dcf0a48f2"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/__pycache__/retry.cpython-311.pyc",
+                      "bytes":  2318,
+                      "sha256":  "6fe92b9cae120dcf5883ba453c80bac4f313310541f3ce094b84e93c20aa2f3f"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/__pycache__/scheduler.cpython-311.pyc",
+                      "bytes":  3383,
+                      "sha256":  "05ae6d7f31dd29bfdf012f983b0a9bf2fee921326a35cb0fdb9de87d95e2d27f"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/audit.py",
+                      "bytes":  892,
+                      "sha256":  "c8bb804d6a6d72bffba495d4ea56352c8e5d7ff03a695bb8f9efc89192c3013b"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/retry.py",
+                      "bytes":  1110,
+                      "sha256":  "a9b2a286c5779ddf0b2cd3b4070112387f22540cce3be2208d3b1f7909d7a5a1"
+                  },
+                  {
+                      "path":  "src/aec_orchestrator_ext/scheduler.py",
+                      "bytes":  1452,
+                      "sha256":  "8fdb5158010a2eaa1a5100fdb31b59cafe33b3af129b90dfbe62705971d24c8c"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_scheduler_retry_audit.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  9757,
+                      "sha256":  "1e213763ec1a49866b179bc327aca84c6011f8185d7bdc3e1e3dc2701a426b27"
+                  },
+                  {
+                      "path":  "tests/test_scheduler_retry_audit.py",
+                      "bytes":  1916,
+                      "sha256":  "1266b3dfa001bd5d55933a6cd93b8f64b6834956c6f4e2f8345341a79b3a33ab"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-920001",
+  "title": "AIAS Master Inventory and Roadmap",
+  "version": "1.0.0",
+  "purpose": "Create the canonical, dependency-ordered inventory of all recovered AIAS rules, systems, offices, capabilities, programs and future visions before integral materialization continues.",
+  "scope": "Stable identifiers, classification, lifecycle state, evidence, dependencies, duplicate resolution, chronological waves, lighthouse-project contract and machine-readable release.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-920001",
+      "title": "Canonical catalog",
+      "statement": "The system shall register every recovered concept with a stable identifier, classification, state and evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent omissions and conceptual ambiguity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_master_inventory/catalog.py"
+      ],
+      "tested_by": [
+        "tests/test_amir000001_master_inventory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-920002",
+      "title": "State honesty",
+      "statement": "The system shall distinguish operational, partial, specified, planned, superseded and duplicate concepts.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent roadmap ideas from being represented as completed.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_master_inventory/validator.py"
+      ],
+      "tested_by": [
+        "tests/test_amir000001_master_inventory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-920003",
+      "title": "Dependency order",
+      "statement": "The system shall produce an acyclic dependency graph and chronological execution waves.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enable giant steps without unsafe sequencing.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_master_inventory/roadmap.py"
+      ],
+      "tested_by": [
+        "tests/test_amir000001_master_inventory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-920004",
+      "title": "Evidence reconciliation",
+      "statement": "The system shall reconcile declared states with repository paths and report unsupported declarations.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the repository as authority.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_master_inventory/evidence.py"
+      ],
+      "tested_by": [
+        "tests/test_amir000001_master_inventory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-920005",
+      "title": "Lighthouse contract",
+      "statement": "The system shall define Project Lighthouse 001 as the permanent real consumer of institutional and engineering capabilities.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent infrastructure without immediate engineering value.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_master_inventory/lighthouse.py"
+      ],
+      "tested_by": [
+        "tests/test_amir000001_master_inventory.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-920006",
+      "title": "Auditable release",
+      "statement": "The system shall generate JSON, Markdown, dependency, roadmap and checksum-protected release artifacts.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve the complete plan across conversations and decades.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_master_inventory/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_amir000001_master_inventory.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-AMIR-000001"
+  ],
+  "adr_refs": [
+    "ADR-AMIR-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

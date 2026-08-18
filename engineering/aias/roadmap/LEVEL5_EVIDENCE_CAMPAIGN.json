@@ -1,0 +1,31 @@
+{
+  "campaign_id": "LEVEL5-EVIDENCE-CAMPAIGN-001",
+  "start_date": "2026-08-03",
+  "minimum_observation_days": 365,
+  "minimum_production_projects": 10,
+  "status": "ACTIVE_EVIDENCE_COLLECTION",
+  "evidence_streams": [
+    "production_project_outcomes",
+    "requirements_traceability",
+    "independent_professional_reviews",
+    "quality_and_defect_metrics",
+    "delivery_time_and_45_percent_acceleration",
+    "security_incidents_and_recovery_drills",
+    "model_drift_and_corrective_actions",
+    "competency_and_certification_records",
+    "customer_acceptance_and_jurisdictional_approval"
+  ],
+  "controls": {
+    "no_synthetic_production_evidence": true,
+    "independent_auditor_required": true,
+    "organizational_level_5_claim_before_audit": false,
+    "reference_capability_may_operate_during_campaign": true
+  },
+  "next_actions": [
+    "Register every real project in the evidence ledger",
+    "Capture baselines and actuals before benefit calculations",
+    "Run periodic signed recovery drills",
+    "Review evidence quarterly",
+    "Commission an independent conformant audit after thresholds are met"
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-999001",
+  "title": "AIAS Level 5 Organizational Assurance System",
+  "version": "1.0.0",
+  "purpose": "Separate demonstrated reference capability from independently audited longitudinal organizational maturity.",
+  "scope": "Systems, six criteria, evidence classifications, metrics, observation windows, project counts, critical findings, independent audit and explicit gaps.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-999001",
+      "title": "Evidence classification",
+      "statement": "Assurance evidence shall distinguish reference validation, production observation and independent audit.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent test evidence from masquerading as production maturity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/models.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_assurance001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999002",
+      "title": "Reference capability",
+      "statement": "Reference Level 5 shall require all designated systems and criterion validation evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Measure technical mechanism availability honestly.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/assessment.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_assurance001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999003",
+      "title": "Longitudinal maturity",
+      "statement": "Organizational Level 5 shall require at least 365 days, ten projects, production evidence and threshold metrics.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Require sustained organizational outcomes.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/policy.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_assurance001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999004",
+      "title": "Independent audit",
+      "statement": "Organizational Level 5 shall require a conformant independent attestation with no critical findings.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prohibit self-certification.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/models.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_assurance001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999005",
+      "title": "Immediate consumer",
+      "statement": "Current AIAS evidence shall assess as reference Level 5 while organizational audited level remains null.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Publish an honest current maturity state.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/reference.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_assurance001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999006",
+      "title": "Reproducible delivery",
+      "statement": "Level 5 assurance shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep maturity assurance deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_level5_assurance001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_assurance001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-LEVEL5-ASSURANCE-001"
+  ],
+  "adr_refs": [
+    "ADR-LEVEL5-ASSURANCE-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

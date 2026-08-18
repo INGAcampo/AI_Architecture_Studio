@@ -1,0 +1,1 @@
+{"delivery":"ADF-002","status":"CONFORMANT","specification":"engineering/aias/development_factory/ADF_002_DEPENDENCY_GRAPH.json","implementation":"src/aias_adf2/graph.py","tests":"tests/test_adf002_dependency_graph.py"}

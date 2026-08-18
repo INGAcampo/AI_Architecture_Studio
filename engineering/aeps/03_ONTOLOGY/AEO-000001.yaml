@@ -1,0 +1,9 @@
+id: AEO-000001
+title: Engineering Object Model
+type: Ontology
+version: 1.0.0
+status: APPROVED
+owner: AIAS Core Engineering
+purpose: Definir el objeto raíz.
+scope: Todos los activos.
+history: []

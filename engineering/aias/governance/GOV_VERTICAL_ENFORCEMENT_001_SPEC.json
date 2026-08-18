@@ -1,0 +1,14 @@
+{
+  "spec_id":"GOV-VERTICAL-ENFORCEMENT-001",
+  "version":"1.0.0",
+  "status":"VALIDATED_FACTORY_ENFORCEMENT",
+  "historical_authority":"EARLY-007",
+  "constitutional_authorities":["AEC-000024","AEC-000049","AEC-000050","ASDD-000002"],
+  "objective":"Prevent disconnected module growth by requiring a complete specification-to-consumer vertical before capability validation and release.",
+  "base_evidence":["specification","architecture","implementation","consumer","tests","documentation","installer","traceability","reference_case"],
+  "conditional_evidence":{"user_facing":["interface","rendered_review"],"regulated":["normative_boundary","professional_review_boundary"]},
+  "enforcement_point":"CapabilityFactory.materialize before registry approval and production execution",
+  "scope_boundary":"This gate is mandatory for new capabilities produced through CAPABILITY-FACTORY-001. Legacy packages remain historical evidence and are not retroactively represented as assessed by this gate.",
+  "evidence":{"implementation":"src/aias_capability_factory/vertical.py","factory_integration":"src/aias_capability_factory/factory.py","policy":"engineering/aias/capability_factory/CAPABILITY_FACTORY_POLICY.json","tests":["tests/test_gov_vertical_enforcement001.py","tests/test_capability_factory001.py"],"installer":"AIAS_GOV_VERTICAL_ENFORCEMENT001_COMPLETE_DELIVERY_GATE_INSTALLER"},
+  "next":"ROADMAP-RECONCILIATION-002 Remaining Historical Decisions Evidence Audit"
+}

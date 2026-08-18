@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-999601",
+  "title": "AIAS Level 5 Longitudinal Evidence Campaign",
+  "version": "1.0.0",
+  "purpose": "Capture authentic production observations over time without fabricating organizational maturity.",
+  "scope": "Authenticated hash-chained ledger, project events, criteria, metrics, professional reviews, recovery, incidents, improvements, audit attestations, CLI and dashboard status.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-999601",
+      "title": "Tamper-evident ledger",
+      "statement": "Every production record shall be sequenced, hash chained and authenticated with an externally supplied key.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve longitudinal evidence integrity.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/ledger.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_evidence_campaign001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999602",
+      "title": "Real observation controls",
+      "statement": "The campaign shall reject future observations, duplicates, missing sources and invalid normative dimensions.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent fabricated or ambiguous maturity evidence.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/ledger.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_evidence_campaign001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999603",
+      "title": "Honest progress",
+      "statement": "Campaign status shall derive window, unique completed projects, criteria and threshold metrics without prematurely claiming Level 5.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep capability and maturity claims separate.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/ledger.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_evidence_campaign001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999604",
+      "title": "Assessor interoperability",
+      "statement": "Verified criterion observations shall project into production evidence accepted by the Level 5 assessor.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Connect collection to formal assessment.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/ledger.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_evidence_campaign001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999605",
+      "title": "Secure operation",
+      "statement": "The CLI shall obtain its signing key externally and shall not embed production secrets.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect evidence authenticity and deployability.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_level5_assurance/cli.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_evidence_campaign001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999606",
+      "title": "Reproducible delivery",
+      "statement": "The campaign shall include specification, traceability, tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep evidence collection maintainable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_level5_evidence_campaign001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_level5_evidence_campaign001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-LEVEL5-EVIDENCE-CAMPAIGN-001"
+  ],
+  "adr_refs": [
+    "ADR-LEVEL5-EVIDENCE-CAMPAIGN-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

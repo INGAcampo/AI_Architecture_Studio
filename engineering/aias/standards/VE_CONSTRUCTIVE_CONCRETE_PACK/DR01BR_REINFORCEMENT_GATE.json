@@ -1,0 +1,9 @@
+{
+  "beam": "INSUFFICIENT_EVIDENCE",
+  "column": "INSUFFICIENT_EVIDENCE",
+  "slab": "INSUFFICIENT_EVIDENCE",
+  "foundation": "INSUFFICIENT_EVIDENCE",
+  "wall": "OUT_OF_STRUCTURAL_SCOPE_PENDING",
+  "reason": "Pilot dataset lacks explicit ND classification and required geometry/actions; fail-closed preserved",
+  "verdict": "DR01B_RESIDUAL_PROJECT_INPUT_AND_CONNECTOR_BLOCKERS"
+}

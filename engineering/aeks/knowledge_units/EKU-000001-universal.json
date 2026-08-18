@@ -1,0 +1,54 @@
+{
+  "eku_id": "EKU-000001",
+  "title": "Universal Engineering Knowledge Unit",
+  "discipline": "Enterprise Engineering",
+  "category": "Knowledge Schema",
+  "source": "AIAS Internal Engineering",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "jurisdiction": "GLOBAL",
+  "language": "en",
+  "keywords": [
+    "knowledge",
+    "schema",
+    "engineering",
+    "traceability"
+  ],
+  "relationships": [
+    {
+      "type": "governed_by",
+      "target": "ASEC-000001"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "REQ-AEKS-001",
+      "statement": "Every knowledge unit shall be identifiable and traceable."
+    }
+  ],
+  "calculations": [],
+  "deliverables": [
+    "JSON",
+    "MARKDOWN",
+    "TRACEABILITY",
+    "REGISTRY"
+  ],
+  "traceability": {
+    "specification": "ASDD-000008",
+    "adr": "ADR-000011"
+  },
+  "validation_rules": [
+    "valid_id",
+    "valid_semver",
+    "source_required",
+    "traceability_required"
+  ],
+  "human_review_required": true,
+  "content": {
+    "standards": [
+      "ASEC",
+      "ASDD"
+    ],
+    "description": "Canonical schema for AIAS engineering knowledge."
+  }
+}

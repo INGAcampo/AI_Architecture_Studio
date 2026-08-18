@@ -1,0 +1,50 @@
+{
+  "REQ-980101": {
+    "implemented_by": [
+      "engineering/aias/university/AIAS_UNIVERSITY_CATALOG.json"
+    ],
+    "tested_by": [
+      "tests/test_university_foundation001.py"
+    ]
+  },
+  "REQ-980102": {
+    "implemented_by": [
+      "src/aias_university/catalog.py"
+    ],
+    "tested_by": [
+      "tests/test_university_foundation001.py"
+    ]
+  },
+  "REQ-980103": {
+    "implemented_by": [
+      "src/aias_university/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_university_foundation001.py"
+    ]
+  },
+  "REQ-980104": {
+    "implemented_by": [
+      "src/aias_university/credentials.py"
+    ],
+    "tested_by": [
+      "tests/test_university_foundation001.py"
+    ]
+  },
+  "REQ-980105": {
+    "implemented_by": [
+      "engineering/aias/university/AIAS_UNIVERSITY_CATALOG.json"
+    ],
+    "tested_by": [
+      "tests/test_university_foundation001.py"
+    ]
+  },
+  "REQ-980106": {
+    "implemented_by": [
+      "scripts/build_university_foundation001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_university_foundation001.py"
+    ]
+  }
+}

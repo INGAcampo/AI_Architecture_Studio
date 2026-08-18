@@ -1,0 +1,1 @@
+{"id":"AIAS-NEXT-032","title":"Approval decision evidence record","status":"VALIDATED","default_decision":"PENDING","required_fields":["authority_id","scope","decided_at","evidence_sha256"],"automatic_approval":false}

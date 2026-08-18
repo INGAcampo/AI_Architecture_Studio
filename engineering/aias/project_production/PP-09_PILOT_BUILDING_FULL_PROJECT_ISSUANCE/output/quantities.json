@@ -1,0 +1,56 @@
+{
+  "project_id": "PILOT-BUILDING-001",
+  "items": [
+    {
+      "element_id": "wall-90ce7dd56933",
+      "category": "wall",
+      "rule": "wall.measurement.v1",
+      "measurement": 0.6000000000000001,
+      "waste_factor": 0.0,
+      "quantity": 0.6000000000000001,
+      "unit": "m3",
+      "material": "masonry"
+    },
+    {
+      "element_id": "door-da1afa13700b",
+      "category": "door",
+      "rule": "door.measurement.v1",
+      "measurement": 1.0,
+      "waste_factor": 0.0,
+      "quantity": 1.0,
+      "unit": "unit",
+      "material": "door"
+    },
+    {
+      "element_id": "window-9d770e2eefff",
+      "category": "window",
+      "rule": "window.measurement.v1",
+      "measurement": 1.0,
+      "waste_factor": 0.0,
+      "quantity": 1.0,
+      "unit": "unit",
+      "material": "window"
+    },
+    {
+      "element_id": "slab-a869da461aef",
+      "category": "slab",
+      "rule": "slab.measurement.v1",
+      "measurement": 3.75,
+      "waste_factor": 0.0,
+      "quantity": 3.75,
+      "unit": "m3",
+      "material": "concrete"
+    },
+    {
+      "element_id": "foundation-e8b38ad4fbed",
+      "category": "foundation",
+      "rule": "foundation.measurement.v1",
+      "measurement": 1.0,
+      "waste_factor": 0.0,
+      "quantity": 1.0,
+      "unit": "m3",
+      "material": "concrete"
+    }
+  ],
+  "schema": "aias.quantity_package.v1"
+}

@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.007.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-007",
+    "dependency":  "AEC-ORCHESTRATOR-006",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed reconciliation execution envelope requiring exact canonical head, dry-run, tests, and explicit integration authorization.",
+    "external_vendor_runtime_launched":  false,
+    "external_write_authorized":  false,
+    "integration_authorized":  false
+}

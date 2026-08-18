@@ -1,0 +1,14 @@
+{
+  "id": "AES-REGISTRY-000001",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "required_fields": ["id", "title", "version", "status", "owner", "scope", "normative_rules", "verification", "review_cycle_days"],
+  "allowed_statuses": ["DRAFT", "APPROVED", "SUPERSEDED", "RETIRED"],
+  "standards": [
+    {"id":"AES-001","title":"Specification and Traceability","version":"1.0.0","status":"APPROVED","owner":"ARCHITECTURE_OFFICE","scope":"ALL_ASSETS","normative_rules":["Specification precedes implementation","Every requirement links to acceptance evidence"],"verification":"constitutional_quality_gates","review_cycle_days":180},
+    {"id":"AES-002","title":"Engineering Verification","version":"1.0.0","status":"APPROVED","owner":"ENGINEERING_OFFICE","scope":"ENGINEERING_OUTPUTS","normative_rules":["Units and assumptions are explicit","Independent checking is required for regulated output"],"verification":"engineering_validation_report","review_cycle_days":180},
+    {"id":"AES-003","title":"Software Quality and Release","version":"1.0.0","status":"APPROVED","owner":"QUALITY_OFFICE","scope":"SOFTWARE","normative_rules":["Automated tests pass","Release is reproducible and checksum protected"],"verification":"test_and_release_evidence","review_cycle_days":90},
+    {"id":"AES-004","title":"Security and Data Governance","version":"1.0.0","status":"APPROVED","owner":"SECURITY_OFFICE","scope":"ALL_ASSETS","normative_rules":["Least privilege applies","Sensitive data and dependencies are controlled"],"verification":"security_review","review_cycle_days":90},
+    {"id":"AES-005","title":"Lifecycle and Deprecation","version":"1.0.0","status":"APPROVED","owner":"PMO","scope":"ALL_ASSETS","normative_rules":["Lifecycle state is explicit","Breaking changes include migration and rollback"],"verification":"portfolio_review","review_cycle_days":180}
+  ]
+}

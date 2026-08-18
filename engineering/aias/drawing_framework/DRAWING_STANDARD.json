@@ -1,0 +1,1 @@
+{"standard_id":"DRAWING-FRAMEWORK-001","version":"1.0.0","canonical_units":"millimetres","coordinates":"paper_space_bottom_left_origin","formats":["JSON","SVG","DXF-R12-compatible-entities","PDF-1.4"],"mandatory":["stable_entity_ids","named_layers","positive_view_scale","sheet_bounds","source_provenance","professional_review_required"],"legal_status":"REFERENCE_FRAMEWORK"}

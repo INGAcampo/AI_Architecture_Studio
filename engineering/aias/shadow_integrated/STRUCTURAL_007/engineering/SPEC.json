@@ -1,0 +1,18 @@
+﻿{
+    "schema":  "aias.shadow.structural.007.spec.v1",
+    "megablock":  "STRUCTURAL-007",
+    "dependency":  "STRUCTURAL-006",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic equilibrium and structural-result quality audit contracts.",
+    "scope":  [
+                  "Force-equilibrium residual",
+                  "Explicit tolerance",
+                  "Nonfinite result detection",
+                  "Missing unit/case/object detection"
+              ],
+    "exclusions":  [
+                       "No code-compliance claim",
+                       "No canonical integration"
+                   ],
+    "integration_authorized":  false
+}

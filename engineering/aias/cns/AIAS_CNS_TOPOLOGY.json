@@ -1,0 +1,13 @@
+{
+  "topology_id":"CNS-000001","version":"1.0.0","status":"APPROVED",
+  "nodes":[
+    {"node_id":"ACE","role":"CONTEXT_AND_CONTINUITY","consumes":["delivery.completed","roadmap.selected"],"produces":["context.updated"]},
+    {"node_id":"AIPD","role":"PRODUCTIVITY_DASHBOARD","consumes":["delivery.completed","quality.measured","maturity.measured"],"produces":["dashboard.updated"]},
+    {"node_id":"ATO","role":"TECHNOLOGY_OBSERVATORY","consumes":["observation.cycle.requested"],"produces":["observation.admitted","recommendation.proposed"]},
+    {"node_id":"ASSET_REGISTRY","role":"ASSET_IDENTITY","consumes":["asset.registered","asset.transition.requested"],"produces":["asset.state.changed"]},
+    {"node_id":"UNIVERSITY","role":"KNOWLEDGE_TRANSFER","consumes":["capability.released"],"produces":["curriculum.review.requested","credential.issued"]},
+    {"node_id":"PMO","role":"PORTFOLIO_CONTROL","consumes":["recommendation.proposed","risk.raised"],"produces":["roadmap.selected","decision.recorded"]}
+  ],
+  "event_contract":{"required_fields":["event_id","event_type","source","occurred_at","correlation_id","schema_version","payload"],"maximum_payload_bytes":1000000,"immutable":true},
+  "delivery":{"ordering":"GLOBAL_SEQUENCE","durability":"ATOMIC_JSON_JOURNAL","semantics":"AT_LEAST_ONCE_WITH_IDEMPOTENT_EVENT_ID","consumer_cursor":true,"dead_letter_required":true}
+}

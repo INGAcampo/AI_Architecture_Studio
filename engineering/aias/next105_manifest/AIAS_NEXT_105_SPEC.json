@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-105",
+  "title": "Release evidence manifest",
+  "status": "VALIDATED",
+  "scope": "List release evidence artifacts with deterministic SHA-256 digests",
+  "safety": ["Manifest is local traceability metadata", "No external publication occurs"]
+}

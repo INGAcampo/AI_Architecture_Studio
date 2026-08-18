@@ -1,0 +1,9 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.009.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-009",
+    "dependency":  "AEC-ORCHESTRATOR-008",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Checkpoint token contract for a future deliberate canonical reconciliation pause.",
+    "external_vendor_runtime_launched":  false,
+    "integration_authorized":  false
+}

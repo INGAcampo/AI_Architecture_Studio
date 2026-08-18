@@ -1,0 +1,56 @@
+{
+  "verdict": "NOT_READY",
+  "critical_blockers": 2,
+  "artifacts": [
+    {
+      "output": "Native DWG",
+      "status": "BLOCKED",
+      "evidence": {
+        "status": "BLOCKED_BACKEND_UNAVAILABLE",
+        "backend": null
+      },
+      "action": "Install or authorize a verifiable native DWG backend"
+    },
+    {
+      "output": "Professional PDF",
+      "status": "V0_LIMITED",
+      "evidence": "PRO03 PDF",
+      "action": "Adopt a validated professional rendering/layout backend"
+    },
+    {
+      "output": "Constructive Standards Pack",
+      "status": "BLOCKED",
+      "evidence": "No authenticated rule evidence in canonical registry",
+      "action": "Acquire and register authoritative licensed standard evidence"
+    },
+    {
+      "output": "Reinforcement detailing",
+      "status": "PRELIMINARY",
+      "evidence": "PRO04",
+      "action": "Re-run only after constructive standards evidence"
+    },
+    {
+      "output": "Incremental XLSX",
+      "status": "V0_LIMITED",
+      "evidence": {
+        "status": "REFRESHED",
+        "graph_fingerprint": "PRO06-GRAPH-C30-37",
+        "sha256": "e35570e63ea3e5ee743c08500724fae59f51e1d511eafb78f354d3432f3b59e6"
+      },
+      "action": "Bind a workbook service to canonical artifact graph"
+    },
+    {
+      "output": "BIM/Analysis/Reports",
+      "status": "PRODUCTION_READY",
+      "evidence": "PRO06",
+      "action": ""
+    }
+  ],
+  "sha256": "71b3e7d34ced526e939b83b134098131ee18b7d2d20caabac6e409112409d4a1",
+  "xlsx_refresh": {
+    "status": "REFRESHED",
+    "graph_fingerprint": "PRO06-GRAPH-C30-37",
+    "sha256": "e35570e63ea3e5ee743c08500724fae59f51e1d511eafb78f354d3432f3b59e6"
+  },
+  "project_graph_fingerprint": "PRO06-GRAPH-C30-37"
+}

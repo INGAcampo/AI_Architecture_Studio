@@ -1,0 +1,10 @@
+id: ASDD-000010
+title: AIAS Enterprise Calculation Framework
+version: 1.0.0
+status: ACTIVE
+domain_independent_kernel: true
+knowledge_source: AEKS
+minimum_time_reduction: 0.45
+reference_cases_required: true
+dimensional_validation_required: true
+human_review_for_professional_use: true

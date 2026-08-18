@@ -1,0 +1,28 @@
+{
+  "strategy_id": "AIAS-NEXT-001",
+  "version": "1.0.0",
+  "status": "ACTIVE_GOVERNED_STRATEGY",
+  "title": "Industrialized AEC Platform Development",
+  "authority": ["AEC-000049", "ASDD-000002"],
+  "objective": "Accelerate AIAS through a governed development factory and parallel capability megablocks without sacrificing semantic ownership, normative responsibility, traceability or professional safety.",
+  "principles": [
+    "AIAS retains semantic kernel, project graph, orchestration, standards, intelligence and UX ownership.",
+    "Specialized external technologies are adapters or workers, never uncontrolled replacements for AIAS governance.",
+    "The deterministic kernel calculates and validates; AI plans and orchestrates.",
+    "Every megablock requires SDD, Constitution traceability, tests, documentation, installer, release evidence, Dashboard and ACE updates.",
+    "No normative compliance, license, certification or professional approval is inferred without external evidence."
+  ],
+  "phases": [
+    {"id":"G0","name":"Current Golden Baseline","status":"CANDIDATE_PENDING_FREEZE_GATE","gate":"clean reproducible source state, canonical tests, manifests, dependencies and ownership map"},
+    {"id":"G1","name":"AIAS Development Factory","status":"FOUNDATION_EXISTS_NEXT_EXPANSION","gate":"dependency graph, targeted tests, parallel work packages, safe integration and release evidence"},
+    {"id":"G2","name":"Geometry 2.0","status":"PLANNED","gate":"semantic geometry contract plus verified kernel adapter"},
+    {"id":"G3","name":"BIM Native 2.0","status":"PLANNED","gate":"bidirectional semantic IFC contract and validation"},
+    {"id":"G4","name":"Structural Platform","status":"PLANNED","gate":"separated analysis, solver, design, standards and documentation contracts"},
+    {"id":"G5","name":"Standards Engine","status":"PLANNED","gate":"versioned jurisdictional packages with licensed-source evidence"},
+    {"id":"G6","name":"AEC Orchestrator","status":"PLANNED","gate":"uniform worker lifecycle and vendor-runtime evidence"},
+    {"id":"G7","name":"Engineering Agents","status":"PLANNED","gate":"deterministic service contracts and validation-first agent workflows"}
+  ],
+  "parallel_workstreams": ["factory", "geometry", "bim", "structural", "standards", "integration", "tests", "documentation", "release"],
+  "deferred": ["EXP-COMMS-001", "W2-07 live usability until runtime restoration is resolved", "cloud collaboration until desktop contracts are consolidated"],
+  "next_action": "Materialize ADF-002 factory dependency graph and baseline freeze gate."
+}

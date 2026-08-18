@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.005.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-005",
+    "dependency":  "TEST-FACTORY-SHADOW-004",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Read-only canonical overlap classification for future reconciliation.",
+    "integration_authorized":  false
+}

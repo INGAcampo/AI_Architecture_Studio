@@ -1,0 +1,50 @@
+{
+  "REQ-930001": {
+    "implemented_by": [
+      "src/aias_lighthouse_project/brief.py"
+    ],
+    "tested_by": [
+      "tests/test_lighthouse000001_reference_building.py"
+    ]
+  },
+  "REQ-930002": {
+    "implemented_by": [
+      "src/aias_lighthouse_project/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_lighthouse000001_reference_building.py"
+    ]
+  },
+  "REQ-930003": {
+    "implemented_by": [
+      "src/aias_lighthouse_project/reporting.py"
+    ],
+    "tested_by": [
+      "tests/test_lighthouse000001_reference_building.py"
+    ]
+  },
+  "REQ-930004": {
+    "implemented_by": [
+      "src/aias_lighthouse_project/traceability.py"
+    ],
+    "tested_by": [
+      "tests/test_lighthouse000001_reference_building.py"
+    ]
+  },
+  "REQ-930005": {
+    "implemented_by": [
+      "src/aias_lighthouse_project/validation.py"
+    ],
+    "tested_by": [
+      "tests/test_lighthouse000001_reference_building.py"
+    ]
+  },
+  "REQ-930006": {
+    "implemented_by": [
+      "src/aias_lighthouse_project/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_lighthouse000001_reference_building.py"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema":"aias.production_capability_registry.v1",
+  "capabilities":[
+    {"id":"ARCHITECTURAL_PROJECT_GRAPH","adapter":"aias_project_intake.builders.ParametricProjectGraphBuilder","provider":"aias_building_design_core.ProjectGraph","contract_version":"1.0","status":"SYNTHETIC_CERTIFIED_REAL_REQUIRES_AUTHENTICATED_BASELINE"},
+    {"id":"ARCHITECTURAL_PRODUCTION_CORE","adapter":"aias_project_production.orchestrator.AIASProjectProductionOrchestrator","provider":"aias_building_design_core.ArchitecturalProductionCore","contract_version":"1.0","status":"SYNTHETIC_CERTIFIED"},
+    {"id":"BIM_ANALYSIS_DRAWINGS_QUANTITIES_COHERENCE","adapter":"aias_building_design_core.ArchitecturalProductionCore.verify_coherence","provider":"ProjectGraph","contract_version":"1.0","status":"AVAILABLE_FAIL_CLOSED"},
+    {"id":"PROJECT_SELECTIVE_REGENERATION","adapter":"aias_project_production.factory.ProjectProductionFactory.plan_selective_regeneration","provider":"aias_building_design_core.ArchitecturalProductionCore","contract_version":"1.0","status":"AVAILABLE_PROJECT_ISOLATED"},
+    {"id":"STRUCTURAL_PROJECT_GRAPH_PROJECTION","adapter":"aias_structural_core.ProjectGraphStructuralAdapter","provider":"aias_building_design_core.ProjectGraph","contract_version":"1.0","status":"SYNTHETIC_CERTIFIED_REAL_REQUIRES_AUTHENTICATED_BASELINE"},
+    {"id":"ANALYSIS_PRODUCTION_CORE","adapter":"aias_project_production.certification.certify_analysis_production_core","provider":"aias_structural_professional.ProfessionalStructuralEngine","contract_version":"1.0","status":"SYNTHETIC_CERTIFIED_REAL_REQUIRES_AUTHENTICATED_BASELINE"},
+    {"id":"DESIGN_PRODUCTION_CORE","adapter":"aias_project_production.certification.certify_design_production_core","provider":"aias_reinforcement_detailing.ReinforcementEngine","contract_version":"1.0","status":"SYNTHETIC_CERTIFIED_PRELIMINARY_NOT_FOR_CONSTRUCTION"},
+    {"id":"DRAWINGS_PRODUCTION_CORE","adapter":"aias_project_production.certification.certify_drawings_production_core","provider":"aias_drawing_core.DrawingCore","contract_version":"2.0","status":"SYNTHETIC_CERTIFIED_PRELIMINARY_NOT_FOR_CONSTRUCTION"},
+    {"id":"V5_DRAWING_PDF","adapter":"aias_project_production.adapters.DrawingProductionAdapter","provider":"aias_drawing_core.DrawingCore","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V5_CAD_DOCUMENT","adapter":"aias_project_production.adapters.DrawingModelToCADDocumentAdapter","provider":"aias_cad_professional.CADEngine","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V5_NATIVE_DWG","adapter":"aias_project_production.adapters.NativeDWGProductionAdapter","provider":"scripts/run_dr01a_executive_dwg_closure.py","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V6_QUANTITIES","adapter":"aias_project_production.adapters.QuantityWorkbookAdapter","provider":"aias_quantities_core.QuantityTakeoffEngine","contract_version":"1.1","status":"AVAILABLE_CSV_XLSX"},
+    {"id":"V6_XLSX","adapter":"aias_project_production.adapters.XLSXProductionAdapter","provider":"aias_project_production.adapters.XLSXProductionAdapter","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V6_REPORTS","adapter":"aias_project_production.adapters.ReportProductionAdapter","provider":"aias_reports_core.ReportCore","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V7_QA","adapter":"aias_project_production.adapters.ProfessionalQAAdapter","provider":"aias_professional_qa.ProfessionalQAGate","contract_version":"1.0","status":"AVAILABLE"},
+    {"id":"V8_ISSUANCE","adapter":"aias_project_production.adapters.ExecutiveIssuanceAdapter","provider":"aias_project_production.adapters","contract_version":"1.0","status":"SYNTHETIC_ONLY"}
+  ],
+  "protected_paths":["src/core/history/history_manager.py"]
+}

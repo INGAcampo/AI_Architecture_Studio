@@ -1,0 +1,11 @@
+{
+  "specification_id": "GEO-02",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+  "capabilities": ["PILE_TIP_CAPACITY", "PILE_SHAFT_CAPACITY", "PILE_GROUP_EFFICIENCY", "ALLOWABLE_GROUP_CAPACITY", "DIAPHRAGM_WALL_EARTH_PRESSURE", "BASE_OVERTURNING_MOMENT"],
+  "requirements": ["Every soil resistance references investigation evidence", "Pile identities are unique", "Group effects and safety factors are explicit", "Capacity exceedance fails closed", "Wall soil and surcharge actions remain separately traceable"],
+  "implementation": "src/aias_structural_codes_program/geo02.py",
+  "verification": "tests/test_deep_foundations_geo02.py",
+  "external_completion_conditions": ["Project soil parameters", "Installation method", "Load-test benchmark", "Jurisdictional code pack", "Qualified geotechnical approval"],
+  "construction_claim": false
+}

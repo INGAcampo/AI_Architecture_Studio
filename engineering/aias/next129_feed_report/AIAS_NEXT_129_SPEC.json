@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-129",
+  "title": "Feed bundle readiness report",
+  "status": "VALIDATED",
+  "scope": "Report local feed bundle readiness with separate publication authorization",
+  "safety": ["Readiness is not publication approval", "Authorization remains false"]
+}

@@ -1,0 +1,18 @@
+{
+  "project_id": "PILOT-BUILDING-001",
+  "findings": [],
+  "score": {
+    "total_checks": 8,
+    "findings": 0,
+    "critical_blockers": 0,
+    "percent": 100.0
+  },
+  "gate": "READY_FOR_PILOT_ISSUANCE",
+  "audit_trail": [
+    {
+      "event": "validation",
+      "finding_count": 0,
+      "gate": "READY_FOR_PILOT_ISSUANCE"
+    }
+  ]
+}

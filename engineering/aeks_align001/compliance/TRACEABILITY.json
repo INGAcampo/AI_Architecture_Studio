@@ -1,0 +1,50 @@
+{
+  "REQ-992101": {
+    "implemented_by": [
+      "src/aias_executable_knowledge/admission.py"
+    ],
+    "tested_by": [
+      "tests/test_aeks_align001.py"
+    ]
+  },
+  "REQ-992102": {
+    "implemented_by": [
+      "src/aias_executable_knowledge/executor.py"
+    ],
+    "tested_by": [
+      "tests/test_aeks_align001.py"
+    ]
+  },
+  "REQ-992103": {
+    "implemented_by": [
+      "src/aias_executable_knowledge/executor.py"
+    ],
+    "tested_by": [
+      "tests/test_aeks_align001.py"
+    ]
+  },
+  "REQ-992104": {
+    "implemented_by": [
+      "src/aias_executable_knowledge/executor.py"
+    ],
+    "tested_by": [
+      "tests/test_aeks_align001.py"
+    ]
+  },
+  "REQ-992105": {
+    "implemented_by": [
+      "engineering/aias/aeks/EKU-000002-bearing-pressure.json"
+    ],
+    "tested_by": [
+      "tests/test_aeks_align001.py"
+    ]
+  },
+  "REQ-992106": {
+    "implemented_by": [
+      "scripts/build_aeks_align001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_aeks_align001.py"
+    ]
+  }
+}

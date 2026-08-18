@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-930001",
+  "title": "Project Lighthouse 001 Minimum Vertical Slice",
+  "version": "1.0.0",
+  "purpose": "Demonstrate immediate end-to-end engineering value on a reference building while AIAS continues maturing toward organizational Level 5.",
+  "scope": "Reference brief, assumptions, conceptual model, foundation chain, calculations, drawings, quantities, descriptive report, golden-thread traceability and review-controlled technical dossier.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-930001",
+      "title": "Project brief",
+      "statement": "The slice shall define project purpose, scope, assumptions, units and professional boundaries.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Establish a reproducible engineering problem.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_lighthouse_project/brief.py"
+      ],
+      "tested_by": [
+        "tests/test_lighthouse000001_reference_building.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-930002",
+      "title": "Real engine consumption",
+      "statement": "The slice shall consume the validated ECP foundation calculation, checking, documentation, delivery and handover chain.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Ensure infrastructure has an immediate engineering consumer.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_lighthouse_project/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_lighthouse000001_reference_building.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-930003",
+      "title": "Technical deliverables",
+      "statement": "The slice shall produce calculations, vector drawings, quantities, descriptive report and technical dossier evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize design value before Level 5.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_lighthouse_project/reporting.py"
+      ],
+      "tested_by": [
+        "tests/test_lighthouse000001_reference_building.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-930004",
+      "title": "Golden thread",
+      "statement": "Every delivered artifact shall link need, requirement, assumption, knowledge, calculation, result, drawing, document and review state.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide end-to-end engineering traceability.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_lighthouse_project/traceability.py"
+      ],
+      "tested_by": [
+        "tests/test_lighthouse000001_reference_building.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-930005",
+      "title": "Maturity and legal status",
+      "statement": "The slice shall distinguish reference capability from construction approval and require professional review.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsafe use and unsupported maturity claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_lighthouse_project/validation.py"
+      ],
+      "tested_by": [
+        "tests/test_lighthouse000001_reference_building.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-930006",
+      "title": "Reproducible release",
+      "statement": "The slice shall provide tests, CLI, documentation, installer, manifest, checksums and versioned release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the project a permanent regression consumer.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_lighthouse_project/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_lighthouse000001_reference_building.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-LIGHTHOUSE-000001"
+  ],
+  "adr_refs": [
+    "ADR-LIGHTHOUSE-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

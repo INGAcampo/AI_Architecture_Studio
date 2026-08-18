@@ -1,0 +1,81 @@
+{
+  "NOT_FOR_CONSTRUCTION": true,
+  "SYNTHETIC_TEST_DATA": true,
+  "distinct_graphs_verified": true,
+  "factory": "aias_project_production.ProjectProductionFactory",
+  "generated_at": "2026-08-15T05:47:51.485859+00:00",
+  "isolation_verified": true,
+  "program": "PRODUCCION_DE_PROYECTOS_AIAS",
+  "projects": [
+    {
+      "NOT_FOR_CONSTRUCTION": true,
+      "SYNTHETIC_TEST_DATA": true,
+      "artifact_root": "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-A/artifacts/NOMINAL_CASE_001",
+      "artifact_sha256": {
+        "architecture": "571e30b90f3467290694a144a9d8e444d843e51c4ab16ad7f008f053a009c497",
+        "coherence": "9945919443f515b517e60bb0002339a9559a06fe5a39f3bf7ec29b02f9bc7a7c",
+        "native_bim": "64d6f7541768bfbca07c62505d638941d71a6502806f557bb9809bc113e39a0b",
+        "project_graph": "1a479c94a04cb4db126da6b276e0af493a4daab813c1401c1772e3e61ccdd806"
+      },
+      "coherence_checks": {
+        "analysis_geometry_binding": true,
+        "analysis_graph_binding": true,
+        "analysis_members": true,
+        "drawing_coverage": true,
+        "drawing_geometry_binding": true,
+        "drawing_graph_binding": true,
+        "geometry_traceability": true,
+        "project_identity": true,
+        "quantity_coverage": true,
+        "quantity_geometry_binding": true,
+        "quantity_graph_binding": true
+      },
+      "coherence_verdict": "ARCHITECTURAL_PIPELINE_COHERENT",
+      "geometry_count": 44,
+      "level_count": 2,
+      "mode": "PILOT_SYNTHETIC",
+      "project_id": "ARCH-CORE-CERT-A",
+      "source_graph_sha256": "42f76bfd1445e9fa123e5eb1f1fb37dd0338c2b64c07c5ef5b0933c70e9d5585"
+    },
+    {
+      "NOT_FOR_CONSTRUCTION": true,
+      "SYNTHETIC_TEST_DATA": true,
+      "artifact_root": "engineering/aias/architectural_core_certification/runtime/projects/ARCH-CORE-CERT-B/artifacts/NOMINAL_CASE_001",
+      "artifact_sha256": {
+        "architecture": "877b0ab859c076456cfc5ee97c6e02ec186fbe462de199d41c1c83566cf56d11",
+        "coherence": "6af9a71d1c8e1aa4100df55afbf98311b33e8383c9faa57c4fa95238e6a89cbb",
+        "native_bim": "20a24deb0785184ae9df7ff1ce7185a14c91f7a9e6c2d56fde91d0ff42e13b32",
+        "project_graph": "50137f45485cf7cfd4b8482f08bf31eaa4f47ad37bfa8d8cebdd4ca25dc4138d"
+      },
+      "coherence_checks": {
+        "analysis_geometry_binding": true,
+        "analysis_graph_binding": true,
+        "analysis_members": true,
+        "drawing_coverage": true,
+        "drawing_geometry_binding": true,
+        "drawing_graph_binding": true,
+        "geometry_traceability": true,
+        "project_identity": true,
+        "quantity_coverage": true,
+        "quantity_geometry_binding": true,
+        "quantity_graph_binding": true
+      },
+      "coherence_verdict": "ARCHITECTURAL_PIPELINE_COHERENT",
+      "geometry_count": 61,
+      "level_count": 3,
+      "mode": "PILOT_SYNTHETIC",
+      "project_id": "ARCH-CORE-CERT-B",
+      "source_graph_sha256": "ba92f2a8ec7f98b7012cca3330a444f554262bfef9b9ba57b43e442cc189fa49"
+    }
+  ],
+  "provider": "aias_building_design_core.ArchitecturalProductionCore",
+  "real_project_policy": "AUTHENTICATED_EXTERNAL_INPUT_REQUIRED",
+  "same_core_verified": true,
+  "schema": "aias.architectural_production_core.certification.v1",
+  "target": "ARCHITECTURAL_PRODUCTION_CORE_READY",
+  "tests": [
+    "python -m pytest tests/project_production tests/project_intake tests/automation/test_autonomous_supervisor.py -q",
+    "python -m pytest tests/project_production/test_architectural_production_core.py -q"
+  ],
+  "verdict": "ARCHITECTURAL_PRODUCTION_CORE_READY"
+}

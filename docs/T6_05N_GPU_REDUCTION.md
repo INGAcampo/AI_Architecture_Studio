@@ -1,0 +1,1 @@
+# T6.05N — GPU_REDUCTION

@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.006.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-006",
+    "dependency":  "TEST-FACTORY-SHADOW-005",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Audit full Shadow queue dependency closure before any canonical reconciliation.",
+    "integration_authorized":  false
+}

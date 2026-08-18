@@ -1,0 +1,1 @@
+{"id":"AIAS-NEXT-013","title":"Usability evidence review gate","status":"INFRASTRUCTURE_READY","minimum_sessions":5,"completion_rule":"five valid, consented, hash-verifiable real sessions","synthetic_evidence_allowed":false}

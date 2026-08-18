@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-009","status":"CONFORMANT","specification":"engineering/aias/governance_campaign/AIAS_NEXT_009_SPEC.json","implementation":"src/aias_governance_dashboard/campaign.py","tests":"tests/test_aias_next009_campaign.py"}

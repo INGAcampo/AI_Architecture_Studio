@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-200001",
+  "title": "Foundation Detailing and Documentation",
+  "version": "1.0.0",
+  "purpose": "Transform validated foundation objects, calculations and checks into traceable technical documentation.",
+  "scope": "SVG drawings, reinforcement schedule, quantities, technical reports, QA evidence and release packaging.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-200001",
+      "title": "Chain consumption",
+      "statement": "ECP-000001D shall consume outputs from ECP-000001A, ECP-000001B and ECP-000001C.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Maintain a real vertical engineering workflow.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_documentation/engine.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001d_foundation_documentation.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200002",
+      "title": "Foundation drawings",
+      "statement": "The system shall generate a foundation plan and section as vector drawings.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Produce immediate technical artifacts.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_documentation/drawings.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001d_foundation_documentation.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200003",
+      "title": "Reinforcement schedule",
+      "statement": "The system shall generate a traceable reinforcement bar schedule.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support detailing and quantity workflows.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_documentation/detailing.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001d_foundation_documentation.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200004",
+      "title": "Quantities",
+      "statement": "The system shall calculate concrete, formwork, excavation and reinforcement quantities.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enable downstream delivery and estimating consumers.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_documentation/quantities.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001d_foundation_documentation.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200005",
+      "title": "Technical package",
+      "statement": "The system shall generate JSON, CSV, Markdown and release artifacts with checksum evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide a reproducible professional package.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_documentation/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001d_foundation_documentation.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-200006",
+      "title": "Regulatory controls",
+      "statement": "The system shall preserve legal status and require professional review for construction use.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent reference equations from being misrepresented as approved design documents.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_foundation_documentation/engine.py"
+      ],
+      "tested_by": [
+        "tests/test_ecp000001d_foundation_documentation.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-ECP-000001D"
+  ],
+  "adr_refs": [
+    "ADR-ECP-000001D"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

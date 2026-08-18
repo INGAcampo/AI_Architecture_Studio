@@ -1,0 +1,7 @@
+{
+  "schema_id": "AIAS-EKG-1.0.0",
+  "node_required": ["node_id", "node_type", "name", "version", "provenance"],
+  "edge_required": ["edge_id", "source", "relation", "target", "version", "provenance"],
+  "constraints": ["unique_stable_identifiers", "known_endpoints", "attributable_provenance", "controlled_inference_only"],
+  "professional_boundary": "Graph relationships support traceability and discovery; they do not replace licensed professional judgment."
+}

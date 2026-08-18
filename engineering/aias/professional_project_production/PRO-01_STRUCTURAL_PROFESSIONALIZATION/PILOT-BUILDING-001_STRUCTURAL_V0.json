@@ -1,0 +1,245 @@
+{
+  "status": "PASS",
+  "model": {
+    "project_id": "PILOT-BUILDING-001",
+    "nodes": [
+      {
+        "id": "level-09bf1d20e563",
+        "support": false,
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "wall-e9b10d69b00c",
+        "support": false,
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "xyz_m": [
+          4.0,
+          0.0,
+          0.0
+        ],
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "slab-1abaa341455a",
+        "support": false,
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "xyz_m": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "support_conditions": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "id": "foundation-a41ec6885ea2",
+        "support": true,
+        "dofs": [
+          "UX",
+          "UY",
+          "UZ",
+          "RX",
+          "RY",
+          "RZ"
+        ],
+        "xyz_m": [
+          0.0,
+          4.0,
+          0.0
+        ],
+        "support_conditions": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    ],
+    "members": [
+      {
+        "id": "wall-e9b10d69b00c",
+        "type": "wall",
+        "material": "C25/30",
+        "section": {
+          "width_m": 0.3,
+          "depth_m": 0.5
+        },
+        "self_weight_kN_m": 3.75
+      },
+      {
+        "id": "slab-1abaa341455a",
+        "type": "slab",
+        "material": "C25/30",
+        "section": {
+          "width_m": 0.3,
+          "depth_m": 0.5
+        },
+        "self_weight_kN_m": 3.75
+      },
+      {
+        "id": "foundation-a41ec6885ea2",
+        "type": "foundation",
+        "material": "C25/30",
+        "section": {
+          "width_m": 0.3,
+          "depth_m": 0.5
+        },
+        "self_weight_kN_m": 3.75
+      }
+    ],
+    "loads": [
+      {
+        "case": "dead",
+        "kind": "distributed",
+        "magnitude": 12.0,
+        "direction": "Z"
+      },
+      {
+        "case": "live",
+        "kind": "surface",
+        "magnitude": 5.0,
+        "direction": "Z"
+      },
+      {
+        "case": "wind",
+        "kind": "point",
+        "magnitude": 8.0,
+        "direction": "X"
+      },
+      {
+        "case": "seismic",
+        "kind": "tributary",
+        "magnitude": 10.0,
+        "direction": "Y"
+      }
+    ],
+    "combinations": [
+      {
+        "id": "VE-ULS-1",
+        "factors": {
+          "dead": 1.2,
+          "live": 1.6,
+          "wind": 1.0,
+          "seismic": 1.0
+        }
+      },
+      {
+        "id": "VE-SLS-1",
+        "factors": {
+          "dead": 1.0,
+          "live": 1.0,
+          "wind": 0.7,
+          "seismic": 0.7
+        }
+      }
+    ],
+    "schema": "aias.analysis_model.structural.v1"
+  },
+  "load_envelopes": {
+    "wall-e9b10d69b00c": {
+      "N_kN": 11.666666666666666,
+      "V_kN": 5.833333333333333,
+      "M_kNm": 46.666666666666664,
+      "drift_ratio": 0.00011666666666666667
+    },
+    "slab-1abaa341455a": {
+      "N_kN": 11.666666666666666,
+      "V_kN": 5.833333333333333,
+      "M_kNm": 46.666666666666664,
+      "drift_ratio": 0.00011666666666666667
+    },
+    "foundation-a41ec6885ea2": {
+      "N_kN": 11.666666666666666,
+      "V_kN": 5.833333333333333,
+      "M_kNm": 46.666666666666664,
+      "drift_ratio": 0.00011666666666666667
+    }
+  },
+  "design_checks": {
+    "wall-e9b10d69b00c": {
+      "element_type": "wall",
+      "status": "PASS",
+      "demand_capacity_ratio": 0.466667,
+      "evidence_source": "VE-PILOT-001.0"
+    },
+    "slab-1abaa341455a": {
+      "element_type": "slab",
+      "status": "PASS",
+      "demand_capacity_ratio": 0.583333,
+      "evidence_source": "VE-PILOT-001.0"
+    },
+    "foundation-a41ec6885ea2": {
+      "element_type": "foundation",
+      "status": "PASS",
+      "demand_capacity_ratio": 0.186667,
+      "evidence_source": "VE-PILOT-001.0"
+    }
+  },
+  "reinforcement": {
+    "wall-e9b10d69b00c": {
+      "ast_mm2": 107.27969348659003,
+      "bars": "deterministic preliminary As"
+    },
+    "slab-1abaa341455a": {
+      "ast_mm2": 107.27969348659003,
+      "bars": "deterministic preliminary As"
+    },
+    "foundation-a41ec6885ea2": {
+      "ast_mm2": 107.27969348659003,
+      "bars": "deterministic preliminary As"
+    }
+  },
+  "evidence_sha256": "140c0663cc5117858d5a30ea59dbdf46e6bb7eac13fb7cfa87e0bc82e8b737a6",
+  "limitations": [
+    "V0 deterministic solver; professional sign-off and detailed bar detailing remain pending"
+  ]
+}

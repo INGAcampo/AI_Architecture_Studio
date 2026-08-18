@@ -1,0 +1,28 @@
+{
+  "capability_id": "PROJECT_PRODUCTION_FACTORY_RUNTIME",
+  "baseline_head": "be23c2cd5dd9043b500b80ae0c45dd14e699d8a6",
+  "allowed_paths": [
+    "src/aias_project_production/factory.py",
+    "src/aias_project_production/runtime/factory_kernel.py",
+    "src/aias_autonomous_supervisor/supervisor.py",
+    "tests/project_production/test_project_factory.py",
+    "tests/automation/test_autonomous_supervisor.py",
+    "engineering/aias/project_production/PROJECT_FACTORY_CHANGESET.json"
+  ],
+  "tests": [
+    "tests/project_production/test_project_factory.py",
+    "tests/project_production/runtime/test_factory_kernel.py",
+    "tests/automation/test_autonomous_supervisor.py"
+  ],
+  "protected_paths": [
+    "src/core/history/history_manager.py"
+  ],
+  "exclusions": [
+    ".aias/",
+    ".aias_automation/",
+    ".aias_programs/",
+    ".aias_recovery/",
+    "AIAS_BACKUP_",
+    "AIAS_NEXT"
+  ]
+}

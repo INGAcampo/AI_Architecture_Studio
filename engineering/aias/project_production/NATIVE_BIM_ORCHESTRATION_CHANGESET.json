@@ -1,0 +1,18 @@
+{
+  "capability_id": "NATIVE_BIM_ORCHESTRATION",
+  "baseline_head": "2728dedaed2c5e47449c92bdfc6c8a2bb5bee99f",
+  "allowed_paths": [
+    "src/aias_building_design_core/core.py",
+    "src/aias_building_design_core/native_bim.py",
+    "src/aias_project_production/orchestrator.py",
+    "tests/project_production/test_building_design_core.py",
+    "engineering/aias/project_production/NATIVE_BIM_ORCHESTRATION_CHANGESET.json"
+  ],
+  "tests": [
+    "tests/project_production/test_building_design_core.py",
+    "tests/project_intake/test_project_intake.py",
+    "tests/project_production/test_project_factory.py"
+  ],
+  "protected_paths": ["src/core/history/history_manager.py"],
+  "artifact": "native_bim_projection.json"
+}

@@ -1,0 +1,197 @@
+{
+  "components": [
+    {
+      "component": "ace000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "aeks_align001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "aeos000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ai_office001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "aipd000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "amir000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "asset_registry001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ato000002",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "autonomous_cloud001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "cad_bim_integration001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "capability_factory001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "certification_ims_foundation001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "certification_master_plan001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "cns000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "dev_platform001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "doc_align002",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "drawing_framework001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ecp000001d",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ecp000001e",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ecp000001f",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ecp000001g",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "ekg000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "end_to_end001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "engineering_wave12_001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "foundation_align001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "foundation_align002",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "gov000049",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "gov_continuity001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "intelligence_core001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "level5_assurance001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "level5_evidence_campaign001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "lighthouse000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "offices_foundation001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "pmo000001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "security_recovery001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "technical_file001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "university_foundation001",
+      "complete": true,
+      "missing": []
+    },
+    {
+      "component": "virtual_org001",
+      "complete": true,
+      "missing": []
+    }
+  ],
+  "complete_count": 38,
+  "component_count": 38,
+  "all_complete": true
+}

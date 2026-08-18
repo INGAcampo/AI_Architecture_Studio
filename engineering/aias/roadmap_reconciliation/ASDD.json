@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-007","status":"CONFORMANT","specification":"engineering/aias/roadmap_reconciliation/AIAS_NEXT_007_SPEC.json","implementation":"src/aias_roadmap_reconciliation/reconcile.py","tests":"tests/test_aias_next007_reconciliation.py"}

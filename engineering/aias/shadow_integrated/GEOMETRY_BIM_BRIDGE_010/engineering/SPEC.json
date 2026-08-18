@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.010.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-010",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-009",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic dependency-safe ordering for incremental geometry/BIM patch operations.",
+    "integration_authorized":  false
+}

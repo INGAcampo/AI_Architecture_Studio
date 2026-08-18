@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-995801",
+  "title": "Canonical AIAS CAD/BIM Integration",
+  "version": "1.0.0",
+  "purpose": "Bridge stable BIM elements into the Enterprise Drawing Framework with explicit units, mappings and semantic-loss evidence.",
+  "scope": "Neutral interchange model, footprint projection, element-to-entity maps, loss reporting, JSON integrity, allowlisted property synchronization and Lighthouse consumer.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-995801",
+      "title": "Neutral contract",
+      "statement": "Interchange models shall use stable BIM identity, versions, millimetres and source provenance.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create a controlled cross-domain boundary.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_cad_bim_integration/models.py"
+      ],
+      "tested_by": [
+        "tests/test_cad_bim_integration001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995802",
+      "title": "Drawing projection",
+      "statement": "Supported BIM footprints shall map deterministically to canonical drawing entities.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Connect BIM semantics to portable drawings.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_cad_bim_integration/bridge.py"
+      ],
+      "tested_by": [
+        "tests/test_cad_bim_integration001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995803",
+      "title": "Loss disclosure",
+      "statement": "Every unsupported semantic element shall appear in an explicit loss report.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent silent interoperability loss.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_cad_bim_integration/bridge.py"
+      ],
+      "tested_by": [
+        "tests/test_cad_bim_integration001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995804",
+      "title": "Controlled synchronization",
+      "statement": "Property updates shall be allowlisted, non-mutating and require transaction commit and professional review.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect BIM model authority.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_cad_bim_integration/bridge.py"
+      ],
+      "tested_by": [
+        "tests/test_cad_bim_integration001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995805",
+      "title": "Immediate consumer",
+      "statement": "The Lighthouse BIM reference shall produce JSON, SVG, DXF and PDF drawings without undisclosed losses.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize integration value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_cad_bim_integration/reference.py"
+      ],
+      "tested_by": [
+        "tests/test_cad_bim_integration001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995806",
+      "title": "Reproducible delivery",
+      "statement": "CAD/BIM integration shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep interoperability deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_cad_bim_integration001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_cad_bim_integration001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-CAD-BIM-INTEGRATION-001"
+  ],
+  "adr_refs": [
+    "ADR-CAD-BIM-INTEGRATION-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

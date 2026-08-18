@@ -1,0 +1,18 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.004.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-004",
+    "dependency":  "AEC-ORCHESTRATOR-003",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Fail-closed capability-token policy for vendor-worker operations.",
+    "scope":  [
+                  "Application-scoped capabilities",
+                  "Operation allowlist",
+                  "Explicit destructive authorization",
+                  "Explicit publish authorization",
+                  "Cross-application isolation"
+              ],
+    "external_vendor_runtime_launched":  false,
+    "publish_authorized":  false,
+    "destructive_vendor_write_authorized":  false,
+    "integration_authorized":  false
+}

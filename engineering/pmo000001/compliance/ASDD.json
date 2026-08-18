@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-991001",
+  "title": "AIAS Portfolio Management Office",
+  "version": "1.0.0",
+  "purpose": "Select dependency-ready macro-deliveries and govern their evidence, benefits and closure.",
+  "scope": "Portfolio records, scoring, dependencies, sequential stage gates, evidence, master-inventory ingestion and classified benefits realization.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-991101",
+      "title": "Portfolio policy",
+      "statement": "PMO shall define stages, gate evidence, scoring weights and the acceleration target.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create one executable portfolio authority.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/pmo/PMO_POLICY.json"
+      ],
+      "tested_by": [
+        "tests/test_pmo000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-991102",
+      "title": "Dependency selection",
+      "statement": "Only proposed items with completed dependencies shall be selectable.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve roadmap order and architectural prerequisites.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_pmo/portfolio.py"
+      ],
+      "tested_by": [
+        "tests/test_pmo000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-991103",
+      "title": "Value prioritization",
+      "statement": "Candidates shall be scored by strategic value, urgency, reuse, acceleration, compliance, risk and effort.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Choose the greatest governed next step.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_pmo/portfolio.py"
+      ],
+      "tested_by": [
+        "tests/test_pmo000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-991104",
+      "title": "Evidence gates",
+      "statement": "Portfolio stages shall advance sequentially only with target-stage evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent premature completion claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_pmo/portfolio.py"
+      ],
+      "tested_by": [
+        "tests/test_pmo000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-991105",
+      "title": "Benefits realization",
+      "statement": "Time reduction shall be classified and checked against 45 percent.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Measure sustainable value honestly.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_pmo/portfolio.py"
+      ],
+      "tested_by": [
+        "tests/test_pmo000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-991106",
+      "title": "Reproducible delivery",
+      "statement": "PMO shall include tests, documentation, installer, manifest, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the office deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_pmo000001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_pmo000001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-PMO-000001"
+  ],
+  "adr_refs": [
+    "ADR-PMO-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

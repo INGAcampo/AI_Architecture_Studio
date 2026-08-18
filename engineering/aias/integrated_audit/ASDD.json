@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-011","status":"CONFORMANT","specification":"engineering/aias/integrated_audit/AIAS_NEXT_011_SPEC.json","implementation":"src/aias_integrated_audit/audit.py","tests":"tests/test_aias_next011_integrated_audit.py"}

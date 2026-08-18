@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-117",
+  "title": "Feed release package",
+  "status": "VALIDATED",
+  "scope": "Build reproducible local release metadata for Dashboard feed artifacts",
+  "safety": ["External publication is disabled", "Artifacts are normalized deterministically"]
+}

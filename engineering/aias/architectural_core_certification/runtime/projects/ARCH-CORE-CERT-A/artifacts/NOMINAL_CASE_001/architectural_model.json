@@ -1,0 +1,1027 @@
+{
+  "envelope": {
+    "gross_wall_area_m2": 204.0,
+    "net_wall_area_m2": 197.34,
+    "opening_area_m2": 6.66,
+    "roof_area_m2": 72.0,
+    "roof_ids": [
+      "roof-001"
+    ],
+    "wall_ids": [
+      "wall-01-east",
+      "wall-01-north",
+      "wall-01-south",
+      "wall-01-west",
+      "wall-02-east",
+      "wall-02-north",
+      "wall-02-south",
+      "wall-02-west"
+    ]
+  },
+  "geometry_index": {
+    "beam-01-1": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          8.0,
+          0.0,
+          3.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "f27baceb9b99c9d816698f193d9e3629aa015d5f523242b6a446e64ac79853e6",
+      "source_node_id": "beam-01-1"
+    },
+    "beam-01-2": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          8.0,
+          9.0,
+          3.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          0.0,
+          9.0,
+          3.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "0c5587ea9bced3e19980e844bb54e0ba29af58af584b222f6f33c316f77537b2",
+      "source_node_id": "beam-01-2"
+    },
+    "beam-01-A": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          0.0,
+          9.0,
+          3.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "0c5f30914a93982fb8b687647544aaba9936d209c18dab4ff6be7f52bbc7ad34",
+      "source_node_id": "beam-01-A"
+    },
+    "beam-01-B": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          8.0,
+          9.0,
+          3.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          8.0,
+          0.0,
+          3.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "3b85a6a6917cd7da6d9db667cfa02afe7dc98390359691d93ad0b09bda5b8c3c",
+      "source_node_id": "beam-01-B"
+    },
+    "beam-02-1": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          8.0,
+          0.0,
+          6.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          0.0,
+          0.0,
+          6.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "85a5f9d08539d69f935b6e6059898a63363d04a4a3b56c761590dd40cc2436aa",
+      "source_node_id": "beam-02-1"
+    },
+    "beam-02-2": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          8.0,
+          9.0,
+          6.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          0.0,
+          9.0,
+          6.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "487c9d96cf2c4c5cf27c1e165034fb4e06ff885855ee1ac42de7d418bd2f0dd5",
+      "source_node_id": "beam-02-2"
+    },
+    "beam-02-A": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          0.0,
+          9.0,
+          6.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          0.0,
+          0.0,
+          6.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "50187bd2ef7f0c486036d92378a22f987bdf560419fd85a8ca672d01f861c4a1",
+      "source_node_id": "beam-02-A"
+    },
+    "beam-02-B": {
+      "element_type": "beam",
+      "geometry": {
+        "depth_m": 0.5,
+        "end_m": [
+          8.0,
+          9.0,
+          6.0
+        ],
+        "kind": "linear_prism",
+        "start_m": [
+          8.0,
+          0.0,
+          6.0
+        ],
+        "width_m": 0.3
+      },
+      "geometry_sha256": "bc624423a1b59872d962be1f63bb50f69128276b07ba4484c7239a52e7cf3a61",
+      "source_node_id": "beam-02-B"
+    },
+    "column-01-A1": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "fb9b9e6893a54c05f7b63c8583008276f6c00b2bc28d3c7319b0dfa83a16aa3f",
+      "source_node_id": "column-01-A1"
+    },
+    "column-01-A2": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          0.0,
+          9.0,
+          0.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "0ad9e3de96df41f16d1677c483ecee4d5305b3523990b506e54a8f7cb78e9b82",
+      "source_node_id": "column-01-A2"
+    },
+    "column-01-B1": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "8e7d126169ed36f5742a54c081e721f78654b9d751a74a746b68349b6a9dc4a1",
+      "source_node_id": "column-01-B1"
+    },
+    "column-01-B2": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          8.0,
+          9.0,
+          0.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "1fa87c3efa8b64e06844ace697d2fcd29e30c8ad4a1df1e97548695768f17464",
+      "source_node_id": "column-01-B2"
+    },
+    "column-02-A1": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "47a9e365701ee7719ae193c14c9cd194eeb0ddfe24b499107aefd0634f08b422",
+      "source_node_id": "column-02-A1"
+    },
+    "column-02-A2": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          0.0,
+          9.0,
+          3.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "ca2a4b2c06328b04b91f64190a3abb2d37359ade5c867f65aa0b508e9200dd0f",
+      "source_node_id": "column-02-A2"
+    },
+    "column-02-B1": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          8.0,
+          0.0,
+          3.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "77af37a4dd29b3be41d209da7e0c57b28cde20a529360001bf7081a1dfa6c89f",
+      "source_node_id": "column-02-B1"
+    },
+    "column-02-B2": {
+      "element_type": "column",
+      "geometry": {
+        "base_point_m": [
+          8.0,
+          9.0,
+          3.0
+        ],
+        "depth_m": 0.3,
+        "height_m": 3.0,
+        "kind": "vertical_prism",
+        "width_m": 0.3
+      },
+      "geometry_sha256": "f56b22d3af71939fb28e7f637b38a92fbf64775d631d4165a56ce55bbd3aed51",
+      "source_node_id": "column-02-B2"
+    },
+    "door-01-01": {
+      "element_type": "door",
+      "geometry": {
+        "height_m": 2.1,
+        "host_wall_id": "wall-01-south",
+        "kind": "hosted_opening",
+        "offset_m": 0.5,
+        "sill_height_m": 0.0,
+        "width_m": 0.9
+      },
+      "geometry_sha256": "5e93d61c58deb459043358de78e2f4f56cb275267614e98f5400b5f14f423299",
+      "source_node_id": "door-01-01"
+    },
+    "door-02-01": {
+      "element_type": "door",
+      "geometry": {
+        "height_m": 2.1,
+        "host_wall_id": "wall-02-south",
+        "kind": "hosted_opening",
+        "offset_m": 0.5,
+        "sill_height_m": 0.0,
+        "width_m": 0.9
+      },
+      "geometry_sha256": "d5b1d16a1d2fb2a70b45ef7692c30d11f9de5ad227156082217f4781624eabba",
+      "source_node_id": "door-02-01"
+    },
+    "foundation-A1": {
+      "element_type": "foundation",
+      "geometry": {
+        "center_m": [
+          0.0,
+          0.0,
+          -0.4
+        ],
+        "depth_m": 0.4,
+        "kind": "footing_prism",
+        "length_m": 1.2,
+        "width_m": 1.2
+      },
+      "geometry_sha256": "98a367f6a20a67cf601e5d1f99cda0284f9469012578afebe6397df4532e7d17",
+      "source_node_id": "foundation-A1"
+    },
+    "foundation-A2": {
+      "element_type": "foundation",
+      "geometry": {
+        "center_m": [
+          0.0,
+          9.0,
+          -0.4
+        ],
+        "depth_m": 0.4,
+        "kind": "footing_prism",
+        "length_m": 1.2,
+        "width_m": 1.2
+      },
+      "geometry_sha256": "3269de20d09faf1cd0a24b50708b2b7d96b3f50c0f4438871f2be930a4a2476f",
+      "source_node_id": "foundation-A2"
+    },
+    "foundation-B1": {
+      "element_type": "foundation",
+      "geometry": {
+        "center_m": [
+          8.0,
+          0.0,
+          -0.4
+        ],
+        "depth_m": 0.4,
+        "kind": "footing_prism",
+        "length_m": 1.2,
+        "width_m": 1.2
+      },
+      "geometry_sha256": "13e08d762c4627515929ffa6b5ddea6395f24537397ceef59ac6e204690e9dc6",
+      "source_node_id": "foundation-B1"
+    },
+    "foundation-B2": {
+      "element_type": "foundation",
+      "geometry": {
+        "center_m": [
+          8.0,
+          9.0,
+          -0.4
+        ],
+        "depth_m": 0.4,
+        "kind": "footing_prism",
+        "length_m": 1.2,
+        "width_m": 1.2
+      },
+      "geometry_sha256": "ecaac6efcd8f61a5eecf093ccc2ebf1c5b22cba13863b77118168c4b2520abfc",
+      "source_node_id": "foundation-B2"
+    },
+    "grid-1": {
+      "element_type": "grid",
+      "geometry": {
+        "end_m": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "kind": "line",
+        "start_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry_sha256": "4c1a19d88f82f0f9025b3d70c62a17e08de4f41d28956cb5a314da2c5d3bfc64",
+      "source_node_id": "grid-1"
+    },
+    "grid-2": {
+      "element_type": "grid",
+      "geometry": {
+        "end_m": [
+          8.0,
+          9.0,
+          0.0
+        ],
+        "kind": "line",
+        "start_m": [
+          0.0,
+          9.0,
+          0.0
+        ]
+      },
+      "geometry_sha256": "680bf4bed058c6966e58bc91760c9b64988f63b929f0a3cb73fb51f6b4e88a2d",
+      "source_node_id": "grid-2"
+    },
+    "grid-A": {
+      "element_type": "grid",
+      "geometry": {
+        "end_m": [
+          0.0,
+          9.0,
+          0.0
+        ],
+        "kind": "line",
+        "start_m": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry_sha256": "ff957feba15d243234da1c94015c71f0a8428fe74042b9f3271b0e2c5ec9e7e8",
+      "source_node_id": "grid-A"
+    },
+    "grid-B": {
+      "element_type": "grid",
+      "geometry": {
+        "end_m": [
+          8.0,
+          9.0,
+          0.0
+        ],
+        "kind": "line",
+        "start_m": [
+          8.0,
+          0.0,
+          0.0
+        ]
+      },
+      "geometry_sha256": "57949ee0a5a42eae5f4f2d3fcf350e60afa08b55836ad3c7ebec9f5917ca59ce",
+      "source_node_id": "grid-B"
+    },
+    "level-01": {
+      "element_type": "level",
+      "geometry": {
+        "elevation_m": 0.0,
+        "kind": "datum_plane",
+        "outline_m": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            9.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0
+          ]
+        ]
+      },
+      "geometry_sha256": "9d1526ae2ba5a93a107640863b03b363275b72fd093b0fea71ebc9d56e00fa1c",
+      "source_node_id": "level-01"
+    },
+    "level-02": {
+      "element_type": "level",
+      "geometry": {
+        "elevation_m": 3.0,
+        "kind": "datum_plane",
+        "outline_m": [
+          [
+            0.0,
+            0.0,
+            3.0
+          ],
+          [
+            8.0,
+            0.0,
+            3.0
+          ],
+          [
+            8.0,
+            9.0,
+            3.0
+          ],
+          [
+            0.0,
+            9.0,
+            3.0
+          ]
+        ]
+      },
+      "geometry_sha256": "be502f26b8906793ec7d32596fe482d7731d5d13163f417182abec0ab0c92b42",
+      "source_node_id": "level-02"
+    },
+    "roof-001": {
+      "element_type": "roof",
+      "geometry": {
+        "elevation_m": 6.0,
+        "kind": "roof_plane",
+        "outline_m": [
+          [
+            0.0,
+            0.0,
+            6.0
+          ],
+          [
+            8.0,
+            0.0,
+            6.0
+          ],
+          [
+            8.0,
+            9.0,
+            6.0
+          ],
+          [
+            0.0,
+            9.0,
+            6.0
+          ]
+        ]
+      },
+      "geometry_sha256": "cdb2c4186aa0131aed45ff7b79c6f8f803f1d64b4a96227bbd90eca5b3a16688",
+      "source_node_id": "roof-001"
+    },
+    "site-001": {
+      "element_type": "site",
+      "geometry": {
+        "kind": "planar_rectangle",
+        "vertices_m": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            9.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0
+          ]
+        ]
+      },
+      "geometry_sha256": "a9349945ff142516bb79096af1d169552b4369414cbe37b4af35cacd011a42f4",
+      "source_node_id": "site-001"
+    },
+    "slab-01": {
+      "element_type": "slab",
+      "geometry": {
+        "footprint_m": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            9.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0
+          ]
+        ],
+        "kind": "slab_extrusion",
+        "thickness_m": 0.15
+      },
+      "geometry_sha256": "f79b702d86e1213530c318f580a9dbca48612e905e615fc212fb91cb9c83bb4f",
+      "source_node_id": "slab-01"
+    },
+    "slab-02": {
+      "element_type": "slab",
+      "geometry": {
+        "footprint_m": [
+          [
+            0.0,
+            0.0,
+            3.0
+          ],
+          [
+            8.0,
+            0.0,
+            3.0
+          ],
+          [
+            8.0,
+            9.0,
+            3.0
+          ],
+          [
+            0.0,
+            9.0,
+            3.0
+          ]
+        ],
+        "kind": "slab_extrusion",
+        "thickness_m": 0.15
+      },
+      "geometry_sha256": "091d5dd4e771f1940cb2439f3996043442f560633ecdbf41b21726925a3ac818",
+      "source_node_id": "slab-02"
+    },
+    "space-01": {
+      "element_type": "space",
+      "geometry": {
+        "footprint_m": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            0.0,
+            0.0
+          ],
+          [
+            8.0,
+            9.0,
+            0.0
+          ],
+          [
+            0.0,
+            9.0,
+            0.0
+          ]
+        ],
+        "height_m": 3.0,
+        "kind": "extruded_polygon"
+      },
+      "geometry_sha256": "857f48bfccae98c8371e8dd7883330de235a38bda4c90994c638d2545bbc268b",
+      "source_node_id": "space-01"
+    },
+    "space-02": {
+      "element_type": "space",
+      "geometry": {
+        "footprint_m": [
+          [
+            0.0,
+            0.0,
+            3.0
+          ],
+          [
+            8.0,
+            0.0,
+            3.0
+          ],
+          [
+            8.0,
+            9.0,
+            3.0
+          ],
+          [
+            0.0,
+            9.0,
+            3.0
+          ]
+        ],
+        "height_m": 3.0,
+        "kind": "extruded_polygon"
+      },
+      "geometry_sha256": "04b2722d2d7bd83383e5d222075017e954f93f4ad5d328a40ff8fe7a93656985",
+      "source_node_id": "space-02"
+    },
+    "wall-01-east": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          8.0,
+          9.0,
+          0.0
+        ],
+        "baseline_start_m": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "fb84b3655355d1dd3e2e2613e61bf6299934aa7390d173f40b8267cd5a43529d",
+      "source_node_id": "wall-01-east"
+    },
+    "wall-01-north": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          8.0,
+          9.0,
+          0.0
+        ],
+        "baseline_start_m": [
+          0.0,
+          9.0,
+          0.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "cd7dceeec22fe9d6c3ed365218cf6fe0f5be3b3e44c8a5b2126427263489ab34",
+      "source_node_id": "wall-01-north"
+    },
+    "wall-01-south": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          8.0,
+          0.0,
+          0.0
+        ],
+        "baseline_start_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "9111ffab7f083058dfc6d88bcfbc2a25a211daea5d5de71a3bb4c4f964850e05",
+      "source_node_id": "wall-01-south"
+    },
+    "wall-01-west": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          0.0,
+          9.0,
+          0.0
+        ],
+        "baseline_start_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "30e35e9b251395d0d9c201e11b9c2659dbd3b784e2894827536e861969d0ba38",
+      "source_node_id": "wall-01-west"
+    },
+    "wall-02-east": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          8.0,
+          9.0,
+          3.0
+        ],
+        "baseline_start_m": [
+          8.0,
+          0.0,
+          3.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "792976d16d454fd0949a3e5b6c922a38fc9742a532c7d662b39b7d66aa36a358",
+      "source_node_id": "wall-02-east"
+    },
+    "wall-02-north": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          8.0,
+          9.0,
+          3.0
+        ],
+        "baseline_start_m": [
+          0.0,
+          9.0,
+          3.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "748a8769dd38c53b742f7c3c9f41c5a1366b483b586d1e4cb29e31fc36085c7e",
+      "source_node_id": "wall-02-north"
+    },
+    "wall-02-south": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          8.0,
+          0.0,
+          3.0
+        ],
+        "baseline_start_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "54e6543384f61e97f48d285415a66b648bfe83c19d90c4ab178549d23cf19d66",
+      "source_node_id": "wall-02-south"
+    },
+    "wall-02-west": {
+      "element_type": "wall",
+      "geometry": {
+        "baseline_end_m": [
+          0.0,
+          9.0,
+          3.0
+        ],
+        "baseline_start_m": [
+          0.0,
+          0.0,
+          3.0
+        ],
+        "height_m": 3.0,
+        "kind": "wall_extrusion",
+        "thickness_m": 0.2
+      },
+      "geometry_sha256": "64be7af72c3a036ed98482d175ecc9c51e4143cd00e0991d2d0651a561795d80",
+      "source_node_id": "wall-02-west"
+    },
+    "window-01-01": {
+      "element_type": "window",
+      "geometry": {
+        "height_m": 1.2,
+        "host_wall_id": "wall-01-north",
+        "kind": "hosted_opening",
+        "offset_m": 3.4,
+        "sill_height_m": 0.9,
+        "width_m": 1.2
+      },
+      "geometry_sha256": "1bcd58c084750ae5a9c9bdfaa7ae6b97049f6381d5a357c0abb351f392ae5f6d",
+      "source_node_id": "window-01-01"
+    },
+    "window-02-01": {
+      "element_type": "window",
+      "geometry": {
+        "height_m": 1.2,
+        "host_wall_id": "wall-02-north",
+        "kind": "hosted_opening",
+        "offset_m": 3.4,
+        "sill_height_m": 0.9,
+        "width_m": 1.2
+      },
+      "geometry_sha256": "e71e13777772ebcb7adf16e10d4785708b922e64d2e43eaf277b22b02165e643",
+      "source_node_id": "window-02-01"
+    }
+  },
+  "grids": [
+    "grid-1",
+    "grid-2",
+    "grid-A",
+    "grid-B"
+  ],
+  "levels": [
+    {
+      "elevation_m": 0.0,
+      "envelope_walls": [
+        "wall-01-east",
+        "wall-01-north",
+        "wall-01-south",
+        "wall-01-west"
+      ],
+      "height_m": 3.0,
+      "level_id": "level-01",
+      "openings": [
+        "door-01-01",
+        "window-01-01"
+      ],
+      "spaces": [
+        "space-01"
+      ]
+    },
+    {
+      "elevation_m": 3.0,
+      "envelope_walls": [
+        "wall-02-east",
+        "wall-02-north",
+        "wall-02-south",
+        "wall-02-west"
+      ],
+      "height_m": 3.0,
+      "level_id": "level-02",
+      "openings": [
+        "door-02-01",
+        "window-02-01"
+      ],
+      "spaces": [
+        "space-02"
+      ]
+    }
+  ],
+  "openings": {
+    "door-01-01": {
+      "geometry_sha256": "5e93d61c58deb459043358de78e2f4f56cb275267614e98f5400b5f14f423299",
+      "host_wall_id": "wall-01-south"
+    },
+    "door-02-01": {
+      "geometry_sha256": "d5b1d16a1d2fb2a70b45ef7692c30d11f9de5ad227156082217f4781624eabba",
+      "host_wall_id": "wall-02-south"
+    },
+    "window-01-01": {
+      "geometry_sha256": "1bcd58c084750ae5a9c9bdfaa7ae6b97049f6381d5a357c0abb351f392ae5f6d",
+      "host_wall_id": "wall-01-north"
+    },
+    "window-02-01": {
+      "geometry_sha256": "e71e13777772ebcb7adf16e10d4785708b922e64d2e43eaf277b22b02165e643",
+      "host_wall_id": "wall-02-north"
+    }
+  },
+  "project_id": "ARCH-CORE-CERT-A",
+  "relationship_sha256": "692bcb621b4a505d88d7e87908b2fdf29bc141d8b860c9e58d3fd2dc5b246eec",
+  "schema": "aias.architectural_production_core.v1",
+  "source": "ProjectGraph",
+  "source_graph_sha256": "42f76bfd1445e9fa123e5eb1f1fb37dd0338c2b64c07c5ef5b0933c70e9d5585",
+  "spaces": [
+    "space-01",
+    "space-02"
+  ],
+  "traceability": {
+    "authoring_source": "ProjectGraph",
+    "node_ids": [
+      "beam-01-1",
+      "beam-01-2",
+      "beam-01-A",
+      "beam-01-B",
+      "beam-02-1",
+      "beam-02-2",
+      "beam-02-A",
+      "beam-02-B",
+      "column-01-A1",
+      "column-01-A2",
+      "column-01-B1",
+      "column-01-B2",
+      "column-02-A1",
+      "column-02-A2",
+      "column-02-B1",
+      "column-02-B2",
+      "door-01-01",
+      "door-02-01",
+      "foundation-A1",
+      "foundation-A2",
+      "foundation-B1",
+      "foundation-B2",
+      "grid-1",
+      "grid-2",
+      "grid-A",
+      "grid-B",
+      "level-01",
+      "level-02",
+      "material-concrete",
+      "roof-001",
+      "site-001",
+      "slab-01",
+      "slab-02",
+      "space-01",
+      "space-02",
+      "wall-01-east",
+      "wall-01-north",
+      "wall-01-south",
+      "wall-01-west",
+      "wall-02-east",
+      "wall-02-north",
+      "wall-02-south",
+      "wall-02-west",
+      "window-01-01",
+      "window-02-01"
+    ]
+  }
+}

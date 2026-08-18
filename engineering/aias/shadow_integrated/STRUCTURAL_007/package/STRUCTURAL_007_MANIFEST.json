@@ -1,0 +1,85 @@
+﻿{
+    "schema":  "aias.shadow.wave7.package_manifest.v1",
+    "run_id":  "7e61772616ab4e9f84a8628318328d2d",
+    "generated_utc":  "2026-08-13T22:01:22.9090489Z",
+    "megablock":  "STRUCTURAL-007",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  14,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  327,
+                      "sha256":  "7b0acd9318d78e9db15d441b385d940d63a043d48ee82087c0d5e4c6246d337f"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  294,
+                      "sha256":  "d51ad97aaff1f9a655ee776b78dd2c7ea4e5c11bfc679c6536a1734b247fb27f"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  690,
+                      "sha256":  "751d1cbcc3bb91a646bdf4a527c8f957adb15bca2b6d107894941982cbdbc36d"
+                  },
+                  {
+                      "path":  "src/structural_platform_audit/__init__.py",
+                      "bytes":  262,
+                      "sha256":  "8aeb489732173a27ed29d0ae8818e1bbe762534459d49fb93d2bd3e36f0168b0"
+                  },
+                  {
+                      "path":  "src/structural_platform_audit/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  478,
+                      "sha256":  "06f3bc51a86e5803a6d3cefd91e43d815ce2025cc04ec29a798d3d558910a3d0"
+                  },
+                  {
+                      "path":  "src/structural_platform_audit/__pycache__/equilibrium.cpython-311.pyc",
+                      "bytes":  1568,
+                      "sha256":  "fa0460e8ede0784fe6e66d56e16f303666b4b19202e552e2d024712dedd0feaa"
+                  },
+                  {
+                      "path":  "src/structural_platform_audit/__pycache__/quality.cpython-311.pyc",
+                      "bytes":  2291,
+                      "sha256":  "2bca891e0f38c84f8d80c2210352d092355887de6ab866715a9cddfef7d4240b"
+                  },
+                  {
+                      "path":  "src/structural_platform_audit/equilibrium.py",
+                      "bytes":  744,
+                      "sha256":  "1aff3437fb8060fa05f7616014ea9ac027cb43cbba322436ef59bd7813f28058"
+                  },
+                  {
+                      "path":  "src/structural_platform_audit/quality.py",
+                      "bytes":  1054,
+                      "sha256":  "c875bfd4a83b8fb47bf5b4978c9120e1940ee1d3467fc66282208c2d74896e01"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_structural_audit.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  7347,
+                      "sha256":  "f8b5ac98b4cb38b5b202ee6326f16fc2a88f0377ac3ff41b1468e786275ed12d"
+                  },
+                  {
+                      "path":  "tests/test_structural_audit.py",
+                      "bytes":  1049,
+                      "sha256":  "1b3ad2cf8c7c0a532e9b0c003f478c84441a6a6834e72c537e60f1cccbab6392"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

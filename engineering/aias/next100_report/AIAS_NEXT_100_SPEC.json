@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-100",
+  "title": "Release readiness report",
+  "status": "VALIDATED",
+  "scope": "Report local release readiness while preserving separate publication authorization",
+  "safety": ["Readiness is not publication approval", "External authorization remains false"]
+}

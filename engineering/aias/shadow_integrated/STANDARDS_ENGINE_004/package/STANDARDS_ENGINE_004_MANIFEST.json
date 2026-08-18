@@ -1,0 +1,68 @@
+﻿{
+    "schema":  "aias.shadow.wave9.package_manifest.v1",
+    "run_id":  "a3deded9a98748808787911677dba432",
+    "megablock":  "STANDARDS-ENGINE-004",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  204,
+                      "sha256":  "71f619000afa703220f14d50e1d92588fada0121a6176790e0d3e2015223be3f"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  634,
+                      "sha256":  "8d6dd8cd055ebd9346b39849f79c531b2bd984b9cc4cf1ef41f15185ba6a0cf9"
+                  },
+                  {
+                      "path":  "src/standards_engine_gate/__init__.py",
+                      "bytes":  127,
+                      "sha256":  "48d8624fb423abb35efea276ca1e37377ec896b0fba3066049c1790e285c4041"
+                  },
+                  {
+                      "path":  "src/standards_engine_gate/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  363,
+                      "sha256":  "2ba2e3a6fff3943b688d83a827027da866e6017b31eee41a9f8e3a7d2cc40d99"
+                  },
+                  {
+                      "path":  "src/standards_engine_gate/__pycache__/gate.cpython-311.pyc",
+                      "bytes":  1282,
+                      "sha256":  "ce7ecc6ec651271e86f4a357b96976a33decd38632eb5264779380fa98afa45a"
+                  },
+                  {
+                      "path":  "src/standards_engine_gate/gate.py",
+                      "bytes":  609,
+                      "sha256":  "80c97bec9b8f2f77e822f27ad8b4a70c267c4d553112b701a32362caf1e92e76"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_gate.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  4965,
+                      "sha256":  "9a3c000281f69b3ad87174ba90210541f6a96a64c5a677703f034f9e1917e791"
+                  },
+                  {
+                      "path":  "tests/test_gate.py",
+                      "bytes":  613,
+                      "sha256":  "e6f168a4a6fbe96b6bc7170f0521d30d60b3767664c62e28b5b817da294706ed"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

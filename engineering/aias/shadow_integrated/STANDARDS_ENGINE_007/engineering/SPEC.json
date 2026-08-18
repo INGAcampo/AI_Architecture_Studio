@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "aias.shadow.standards_engine.007.spec.v1",
+    "megablock":  "STANDARDS-ENGINE-007",
+    "dependency":  "STANDARDS-ENGINE-006",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Monotonic trace chain for standards-source and rule-pack admission decisions.",
+    "critical_boundary":  [
+                              "No real standards text is embedded.",
+                              "No compliance claim is made."
+                          ],
+    "integration_authorized":  false
+}

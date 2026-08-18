@@ -1,0 +1,52 @@
+{
+  "component_id": "ECP-000001E",
+  "constitution": "AEC-000002",
+  "articles": [
+    "AEC-ART-000001",
+    "AEC-ART-000002",
+    "AEC-ART-000003",
+    "AEC-ART-000004",
+    "AEC-000049",
+    "AEC-000050",
+    "AEC-000051"
+  ],
+  "gates": [
+    {
+      "gate_id": "QG-SPEC",
+      "passed": true,
+      "message": "Specification valid"
+    },
+    {
+      "gate_id": "QG-TRACE",
+      "passed": true,
+      "message": "Traceability coverage=100.00%"
+    },
+    {
+      "gate_id": "QG-ADR",
+      "passed": true,
+      "message": "ADR linked"
+    },
+    {
+      "gate_id": "QG-ARCH",
+      "passed": true,
+      "message": "Architecture linked"
+    },
+    {
+      "gate_id": "QG-VALUE",
+      "passed": true,
+      "message": "Immediate value path linked"
+    }
+  ],
+  "all_passed": true,
+  "kpi": {
+    "classification": "REFERENCE_ENGINEERING_ESTIMATE",
+    "baseline_hours": 3.0,
+    "actual_hours": 0.3,
+    "time_reduction": 0.9,
+    "automation_ratio": 0.8333333333333334,
+    "reuse_ratio": 0.8,
+    "meets_45_percent_target": true,
+    "warning": "Post-validation reference productivity estimate; not an independently audited labor study."
+  },
+  "validator_issues": []
+}

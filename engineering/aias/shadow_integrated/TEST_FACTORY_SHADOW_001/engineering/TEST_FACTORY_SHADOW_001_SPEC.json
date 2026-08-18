@@ -1,0 +1,27 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.001.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Reusable deterministic validation infrastructure for shadow megablocks before future canonical reconciliation.",
+    "scope":  [
+                  "Golden-case runner",
+                  "Structured evidence records",
+                  "Deterministic SHA256 manifests",
+                  "Integration-queue classification",
+                  "Reproducible numeric fuzz harness",
+                  "Micro-benchmark harness",
+                  "Fail-closed authority checks"
+              ],
+    "exclusions":  [
+                       "No canonical test execution is triggered by this block",
+                       "No global regression is triggered by this block",
+                       "No integration authorization is granted",
+                       "No canonical files are modified"
+                   ],
+    "intended_future_roots":  [
+                                  "tools/dev_factory/shadow_test_factory/",
+                                  "tests/devfactory/shadow_test_factory/",
+                                  "engineering/aias/dev_factory/shadow_test_factory/"
+                              ],
+    "integration_authorized":  false
+}

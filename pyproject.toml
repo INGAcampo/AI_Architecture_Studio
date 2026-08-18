@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aias"
+version = "0.5.1-alpha"
+description = "AI Architecture Studio - Integrated Engineering Platform"
+readme = "README.md"
+requires-python = ">=3.11"
+
+authors = [
+    { name = "AIAS Development Team" }
+]
+
+dependencies = [
+    "PySide6"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = [
+    "--strict-config",
+    "--strict-markers",
+]
+norecursedirs = [
+    ".git",
+    ".venv",
+    ".pytest_cache",
+    "__pycache__",
+    "backup",
+    "backups",
+    "build",
+    "dist",
+    "releases",
+]

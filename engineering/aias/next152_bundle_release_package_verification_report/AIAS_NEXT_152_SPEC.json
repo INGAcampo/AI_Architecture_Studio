@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-152",
+  "title": "Bundle release package verification report",
+  "status": "VALIDATED",
+  "scope": "Expose local package verification evidence for downstream traceability.",
+  "safety": {
+    "local_only": true,
+    "certification_claim": false
+  }
+}

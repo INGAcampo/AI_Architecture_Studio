@@ -1,0 +1,17 @@
+id: ASDD-ECP-000001A
+title: Foundation Object Library
+version: 1.0.0
+status: ACTIVE
+foundation_types:
+  - isolated
+  - combined
+  - strip
+  - mat
+  - pedestal
+  - foundation_beam
+integrates:
+  - Engineering Object Kernel
+  - Geometry Kernel
+  - ECF
+immediate_consumer: ECP-000001B-FOUNDATION-CALCULATION-ENGINE
+human_review_required: true

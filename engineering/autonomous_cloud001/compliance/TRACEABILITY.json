@@ -1,0 +1,50 @@
+{
+  "REQ-998501": {
+    "implemented_by": [
+      "src/aias_autonomous_cloud/control_plane.py"
+    ],
+    "tested_by": [
+      "tests/test_autonomous_cloud001.py"
+    ]
+  },
+  "REQ-998502": {
+    "implemented_by": [
+      "src/aias_autonomous_cloud/models.py"
+    ],
+    "tested_by": [
+      "tests/test_autonomous_cloud001.py"
+    ]
+  },
+  "REQ-998503": {
+    "implemented_by": [
+      "src/aias_autonomous_cloud/control_plane.py"
+    ],
+    "tested_by": [
+      "tests/test_autonomous_cloud001.py"
+    ]
+  },
+  "REQ-998504": {
+    "implemented_by": [
+      "src/aias_autonomous_cloud/artifacts.py"
+    ],
+    "tested_by": [
+      "tests/test_autonomous_cloud001.py"
+    ]
+  },
+  "REQ-998505": {
+    "implemented_by": [
+      "tests/test_autonomous_cloud001.py"
+    ],
+    "tested_by": [
+      "tests/test_autonomous_cloud001.py"
+    ]
+  },
+  "REQ-998506": {
+    "implemented_by": [
+      "scripts/build_autonomous_cloud001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_autonomous_cloud001.py"
+    ]
+  }
+}

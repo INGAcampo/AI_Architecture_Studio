@@ -1,0 +1,29 @@
+{
+  "policy_id": "AEC-000051",
+  "title": "Continuidad Verificable de Conversaciones",
+  "status": "ACTIVE",
+  "trigger": [
+    "migrate primary AIAS conversation",
+    "replace primary AIAS conversation",
+    "fork work that becomes the new primary conversation",
+    "anticipated context or product limit"
+  ],
+  "mandatory_before_transition": [
+    "regenerate ACE from the current repository",
+    "validate MASTER_CONTEXT.json",
+    "create a checksum-protected continuity package",
+    "verify every package checksum",
+    "record current and next program"
+  ],
+  "minimum_contents": [
+    "MASTER_CONTEXT.json",
+    "PROJECT_STATE.json",
+    "NEXT_TASK.yaml",
+    "CONTINUE_PROMPT.md",
+    "EXECUTIVE_ORDERS.md",
+    "MANIFEST.json",
+    "checksums.sha256"
+  ],
+  "prohibition": "A new primary conversation shall not rely exclusively on screenshots, memory or an unvalidated narrative summary when repository evidence is available.",
+  "owner": "AIAS Context and Continuity Office"
+}

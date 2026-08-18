@@ -1,0 +1,1 @@
+# T6.06F — NORMAL_VECTOR

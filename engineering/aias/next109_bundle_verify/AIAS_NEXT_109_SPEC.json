@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-109",
+  "title": "Bundle verification",
+  "status": "VALIDATED",
+  "scope": "Verify evidence bundle report identifier uniqueness",
+  "safety": ["Duplicates are flagged", "Verification is not certification"]
+}

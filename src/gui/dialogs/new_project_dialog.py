@@ -14,16 +14,18 @@ from PySide6.QtWidgets import (
     QPushButton,
     QMessageBox,
 )
+from aias_i18n import get_translator
 
 
 class NewProjectDialog(QDialog):
 
-    def __init__(self, project_manager, parent=None):
+    def __init__(self, project_manager, parent=None, translator=None):
         super().__init__(parent)
 
         self.project_manager = project_manager
+        self.translator = translator or get_translator()
 
-        self.setWindowTitle("Nuevo Proyecto AIAS")
+        self.setWindowTitle(self.translator.translate("new_project.title"))
         self.resize(450, 300)
 
         layout = QVBoxLayout(self)
@@ -45,12 +47,12 @@ class NewProjectDialog(QDialog):
             "NTC",
         ])
 
-        form.addRow("Nombre del proyecto:", self.name_input)
-        form.addRow("Cliente:", self.client_input)
-        form.addRow("Ubicación:", self.location_input)
-        form.addRow("Norma:", self.standard_input)
+        form.addRow(self.translator.translate("new_project.name"), self.name_input)
+        form.addRow(self.translator.translate("new_project.client"), self.client_input)
+        form.addRow(self.translator.translate("new_project.location"), self.location_input)
+        form.addRow(self.translator.translate("new_project.standard"), self.standard_input)
 
-        self.create_button = QPushButton("Crear Proyecto")
+        self.create_button = QPushButton(self.translator.translate("new_project.create"))
         self.create_button.clicked.connect(self.create_project)
 
         layout.addLayout(form)
@@ -62,8 +64,8 @@ class NewProjectDialog(QDialog):
         if not name:
             QMessageBox.warning(
                 self,
-                "Dato faltante",
-                "Debes escribir el nombre del proyecto."
+                self.translator.translate("new_project.missing_title"),
+                self.translator.translate("new_project.missing_name")
             )
             return
 
@@ -80,8 +82,8 @@ class NewProjectDialog(QDialog):
 
         QMessageBox.information(
             self,
-            "Proyecto creado",
-            f"Proyecto creado correctamente:\n{project_file}"
+            self.translator.translate("new_project.created_title"),
+            self.translator.translate("new_project.created_message",project_file=project_file)
         )
 
         self.accept()

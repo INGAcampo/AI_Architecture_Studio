@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-094",
+  "title": "Export integrity verification",
+  "status": "VALIDATED",
+  "scope": "Compare exported artifact SHA-256 against an expected digest",
+  "safety": ["Verification is not certification", "Artifact remains unmodified"]
+}

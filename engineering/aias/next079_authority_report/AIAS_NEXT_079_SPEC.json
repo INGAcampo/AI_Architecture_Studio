@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-079",
+  "title": "Authority alignment report",
+  "status": "VALIDATED",
+  "scope": "Generate a stable report from evidence-authority alignment",
+  "safety": ["Certification remains false", "Unmatched items remain visible"]
+}

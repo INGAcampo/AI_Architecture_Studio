@@ -1,0 +1,85 @@
+﻿{
+    "schema":  "aias.shadow.wave6.package_manifest.v1",
+    "run_id":  "f7ba76670d8f496b800f01b4f3ab058b",
+    "generated_utc":  "2026-08-13T21:55:11.9254241Z",
+    "megablock":  "STRUCTURAL-006",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  14,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  205,
+                      "sha256":  "641004ecd11d249d8533c98ae05536cf802c26f85876eb23b92721d266924278"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  294,
+                      "sha256":  "c2ab8fc7cbb0f94c9d49b2ecae94a3eff75ec7bd8a8260f3c881fd305f720243"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  726,
+                      "sha256":  "6bee2f1a23682e63e5414ab0f63a133b25f60d8a382198ea6dacefd7bd0333d1"
+                  },
+                  {
+                      "path":  "src/structural_platform_exchange/__init__.py",
+                      "bytes":  321,
+                      "sha256":  "6167bc80a2179e31400ede4017f5e80356522b5c192b62bcb891f08876bba9e2"
+                  },
+                  {
+                      "path":  "src/structural_platform_exchange/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  525,
+                      "sha256":  "ccee7a024eed1d40b5ffe67f0ce2f3205a54ddfaaae34ad1aac27feb6dbfd4fb"
+                  },
+                  {
+                      "path":  "src/structural_platform_exchange/__pycache__/codec.cpython-311.pyc",
+                      "bytes":  3089,
+                      "sha256":  "a4583d7ea0cfbd1883fb6b492eb2ef661ae7a024ff0926ae29554129482cd712"
+                  },
+                  {
+                      "path":  "src/structural_platform_exchange/__pycache__/contracts.cpython-311.pyc",
+                      "bytes":  2842,
+                      "sha256":  "b27cc3d6b99df9df8b5738663e2bb43cf1168a072463edbe53d97042546f1a62"
+                  },
+                  {
+                      "path":  "src/structural_platform_exchange/codec.py",
+                      "bytes":  1734,
+                      "sha256":  "d0a4e180c5779f380cba4bb079e225faf428caaedf021cb9b202d4c592d44ca5"
+                  },
+                  {
+                      "path":  "src/structural_platform_exchange/contracts.py",
+                      "bytes":  1261,
+                      "sha256":  "9f65827c7d5f6627f94cdb36b6e39db2b8d9903b475ecc48a88b5a905e976e9f"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_exchange.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  6385,
+                      "sha256":  "aa961cce413d84f0673e4fed22605f05b678c1a5fba7347284ff3bf137f42198"
+                  },
+                  {
+                      "path":  "tests/test_exchange.py",
+                      "bytes":  1128,
+                      "sha256":  "4b7558a0f43ae33c206656d9ad47cca1c2d743e2aabeb98c0dfbbe0254e0b050"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

@@ -1,0 +1,13 @@
+{
+  "record_id": "EXP-COMMS-001-DEFERRAL-001",
+  "macrodelivery": "EXP-COMMS-001",
+  "status": "DEFERRED_BY_PROJECT_DIRECTOR",
+  "effective_on": "2026-08-04",
+  "reason": "The Project Director requested that this macrodelivery be performed later.",
+  "completed": false,
+  "external_accounts_created": false,
+  "external_content_published": false,
+  "reentry_condition": "Explicit Project Director instruction to resume EXP-COMMS-001",
+  "selected_independent_successor": "EXP-PLATFORM-GUI-001 Application-visible Platform Services and Capability Center",
+  "authority_evidence": "Current AIAS project conversation"
+}

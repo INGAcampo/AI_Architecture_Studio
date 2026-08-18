@@ -1,0 +1,6 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_R1_VALID_DXF_WRITER/output/r2/REOPEN_SENTINEL.txt" "w"))
+(write-line (strcat "DWGNAME|" (getvar "DWGNAME")) f)
+(write-line (strcat "ACADVER|" (getvar "ACADVER")) f)
+(close f)
+(princ)
+_.QUIT

@@ -1,0 +1,14 @@
+"""Registry of legitimately required normative and appraisal assets."""
+from __future__ import annotations
+
+
+def normative_assets() -> tuple[dict, ...]:
+    """Return official acquisition targets without embedding protected normative content."""
+    return (
+        {"asset_id":"NORM-ISO-9001","reference":"ISO 9001:2015/Amd 1:2024","publisher":"ISO or authorized national member","purpose":"Quality management clause-level implementation","status":"NOT_ACQUIRED","official_url":"https://www.iso.org/standard/62085.html","version_watch":"ISO 9001:2026 transition required after publication"},
+        {"asset_id":"NORM-ISO-27001","reference":"ISO/IEC 27001:2022/Amd 1:2024","publisher":"ISO/IEC or authorized national member","purpose":"Information security management clause and control mapping","status":"NOT_ACQUIRED","official_url":"https://www.iso.org/standard/27001","version_watch":"Monitor amendments and transition guidance"},
+        {"asset_id":"NORM-ISO-42001","reference":"ISO/IEC 42001:2023","publisher":"ISO/IEC or authorized national member","purpose":"AI management system clause and annex mapping","status":"NOT_ACQUIRED","official_url":"https://www.iso.org/standard/42001","version_watch":"Monitor ISO/IEC JTC 1/SC 42 revisions"},
+        {"asset_id":"NORM-ISO-22301","reference":"ISO 22301:2019/Amd 1:2024","publisher":"ISO or authorized national member","purpose":"Business continuity management clause-level implementation","status":"NOT_ACQUIRED","official_url":"https://www.iso.org/standard/75106.html","version_watch":"Next edition under development"},
+        {"asset_id":"NORM-CMMI-V3","reference":"CMMI V3.0 Model Viewer","publisher":"CMMI Institute / ISACA","purpose":"CMMI-DEV institutionalization and appraisal preparation","status":"NOT_ACQUIRED","official_url":"https://www.cmmiinstitute.com/cmmi/model-viewer","version_watch":"Maintain active licensed access"},
+        {"asset_id":"NORM-CMMI-AIM","reference":"CMMI Model Viewer Plus with AIM","publisher":"CMMI Institute / ISACA","purpose":"AI maturity crosswalk and appraisal preparation","status":"NOT_ACQUIRED","official_url":"https://www.cmmiinstitute.com/cmmi/model-viewer","version_watch":"AIM content released in 2026; monitor appraisal policy"},
+    )

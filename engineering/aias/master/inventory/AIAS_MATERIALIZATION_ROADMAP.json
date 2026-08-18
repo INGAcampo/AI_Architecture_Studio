@@ -1,0 +1,449 @@
+{
+  "waves": [
+    {
+      "wave": 0,
+      "items": [
+        {
+          "id": "RULE-000001",
+          "name": "Specification is source of truth",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000002",
+          "name": "Constitution-driven engineering",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000003",
+          "name": "Mandatory traceability",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000004",
+          "name": "Reusable-first platform capability",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000005",
+          "name": "Sustainable acceleration at least 45 percent",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000006",
+          "name": "AEC-000024 Anti-Bureaucracy",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000007",
+          "name": "AEC-000049 Immediate Value",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000008",
+          "name": "AEC-000050 Strategic Recommendation",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000009",
+          "name": "Executable Definition of Done",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000010",
+          "name": "Build More Discuss Enough",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000011",
+          "name": "No premature completion claims",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000012",
+          "name": "Professional and legal review boundaries",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "RULE-000013",
+          "name": "AEC-000051 Verifiable Conversation Continuity",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "items": [
+        {
+          "id": "FOUND-000001",
+          "name": "AIAS Charter",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000002",
+          "name": "AIAS Constitution",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000003",
+          "name": "AIAS Engineering System",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000004",
+          "name": "AIAS SDD",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000005",
+          "name": "Architecture Handbook",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000006",
+          "name": "Engineering Standards AES",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "items": [
+        {
+          "id": "FOUND-000007",
+          "name": "Universal Engineering Object Model",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000008",
+          "name": "Stable Identifier System",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000009",
+          "name": "Engineering Asset Registry",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FOUND-000010",
+          "name": "Knowledge versioning and lifecycle states",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "items": [
+        {
+          "id": "FOUND-000011",
+          "name": "Risk-Prioritized Documentation Alignment",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "items": [
+        {
+          "id": "SYS-000001",
+          "name": "AIAS Master Development Plan",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000012",
+          "name": "PMO",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 5,
+      "items": [
+        {
+          "id": "SYS-000002",
+          "name": "AIAS Productivity Dashboard",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 6,
+      "items": [
+        {
+          "id": "SYS-000003",
+          "name": "AIAS Context Engine",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "SYS-000004",
+          "name": "AIAS Central Nervous System",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 7,
+      "items": [
+        {
+          "id": "SYS-000005",
+          "name": "AEKS Executable Knowledge System",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 8,
+      "items": [
+        {
+          "id": "SYS-000006",
+          "name": "Enterprise Knowledge Graph",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 9,
+      "items": [
+        {
+          "id": "SYS-000007",
+          "name": "AIAS Development Platform",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "SYS-000008",
+          "name": "Capability Factory",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 10,
+      "items": [
+        {
+          "id": "SYS-000009",
+          "name": "Security and Recovery System",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 11,
+      "items": [
+        {
+          "id": "OFFICE-000001",
+          "name": "Architecture Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000002",
+          "name": "Engineering Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000003",
+          "name": "Quality Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000004",
+          "name": "Productivity Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000005",
+          "name": "AI Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000006",
+          "name": "Risk Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000007",
+          "name": "Resource Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000008",
+          "name": "Technology Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000009",
+          "name": "Automation Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000010",
+          "name": "Roadmap Office",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "OFFICE-000011",
+          "name": "Security Office",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 12,
+      "items": [
+        {
+          "id": "ENG-000004",
+          "name": "Foundation Professional Engine",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "ENG-000005",
+          "name": "CAD/BIM Integration",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "ENG-000007",
+          "name": "Jurisdiction Packs",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "ENG-000008",
+          "name": "Engineering Evidence Ledger",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "ENG-000009",
+          "name": "Differential Validation",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "ENG-000010",
+          "name": "Project Reference Library",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 13,
+      "items": [
+        {
+          "id": "ENG-000001",
+          "name": "Enterprise Calculation Framework",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 14,
+      "items": [
+        {
+          "id": "ENG-000002",
+          "name": "Enterprise Drawing Framework",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 15,
+      "items": [
+        {
+          "id": "ENG-000003",
+          "name": "Enterprise Technical File Generator",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 16,
+      "items": [
+        {
+          "id": "ENG-000006",
+          "name": "Virtual Engineering Organization",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 17,
+      "items": [
+        {
+          "id": "SYS-000010",
+          "name": "AIAS Technology Observatory",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 18,
+      "items": [
+        {
+          "id": "SYS-000011",
+          "name": "AIAS University",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 19,
+      "items": [
+        {
+          "id": "SYS-000012",
+          "name": "Engineering Intelligence Core",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 20,
+      "items": [
+        {
+          "id": "SYS-000013",
+          "name": "AIAS Engineering Operating System",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FUTURE-000001",
+          "name": "Autonomous Engineering Cloud",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 21,
+      "items": [
+        {
+          "id": "SYS-000014",
+          "name": "AIAS Certification Master Program",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "SYS-000015",
+          "name": "AIAS Integrated Management System Foundation",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "SYS-000016",
+          "name": "AIAS Normative Access and External Assessment Readiness",
+          "state": "OPERATIONAL"
+        },
+        {
+          "id": "FUTURE-000002",
+          "name": "AIAS Level 5 Mature Organization",
+          "state": "SPECIFIED"
+        },
+        {
+          "id": "FUTURE-000003",
+          "name": "End-to-End Project Production",
+          "state": "OPERATIONAL"
+        }
+      ]
+    },
+    {
+      "wave": 22,
+      "items": [
+        {
+          "id": "SYS-000017",
+          "name": "AIAS Structural Codes Program",
+          "state": "OPERATIONAL"
+        }
+      ]
+    }
+  ]
+}

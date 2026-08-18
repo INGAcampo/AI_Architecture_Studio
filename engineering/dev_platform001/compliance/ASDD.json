@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-993501",
+  "title": "Unified AIAS Development Platform",
+  "version": "1.0.0",
+  "purpose": "Expose verified AEPS generations through one governed, specification-driven and evidence-producing production boundary.",
+  "scope": "Stable job/result contracts, isolated workspaces, least-complex engine selection, V3/V4/V5 adapters, normalized evidence, lifecycle events and tamper-evident records.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-993501",
+      "title": "Unified contract",
+      "statement": "Development jobs and results shall remain stable across AEPS engine generations.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Decouple consumers from production-engine evolution.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_development_platform/contracts.py"
+      ],
+      "tested_by": [
+        "tests/test_dev_platform001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993502",
+      "title": "Governed selection",
+      "statement": "The platform shall select the least complex capable engine or honor an explicit supported mode.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Control complexity and preserve explainability.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_development_platform/policy.py"
+      ],
+      "tested_by": [
+        "tests/test_dev_platform001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993503",
+      "title": "Safety boundary",
+      "statement": "Every run shall require specification identity, correlation and a workspace below the allowed root.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent ambiguous or unsafe production runs.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_development_platform/policy.py"
+      ],
+      "tested_by": [
+        "tests/test_dev_platform001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993504",
+      "title": "Evidence normalization",
+      "statement": "Every engine result shall expose certification, artifacts and tamper-evident normalized evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Maintain a comparable development golden thread.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_development_platform/platform.py"
+      ],
+      "tested_by": [
+        "tests/test_dev_platform001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993505",
+      "title": "Immediate consumer",
+      "statement": "The real AEPS V3 engine shall execute and certify a specification through the unified platform.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_development_platform/adapters.py"
+      ],
+      "tested_by": [
+        "tests/test_dev_platform001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993506",
+      "title": "Reproducible delivery",
+      "statement": "The platform shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the development control plane deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_dev_platform001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_dev_platform001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-DEV-PLATFORM-001"
+  ],
+  "adr_refs": [
+    "ADR-DEV-PLATFORM-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "architecture_id": "AIAS-WORKSPACE-2.0",
+  "version": "0.1.0",
+  "status": "TARGET_APPROVED_FOR_INCREMENTAL_IMPLEMENTATION",
+  "shell_regions": {
+    "top": ["global command and search", "project identity", "jurisdiction and review status"],
+    "left": ["discipline navigator", "project and BIM browser"],
+    "center": ["multi-document tabs", "2D/3D/calculation/report viewers", "transaction preview"],
+    "right": ["typed properties", "results and evidence", "contextual knowledge"],
+    "bottom": ["command line", "coordinates and units", "jobs and notifications"],
+    "overlay": ["AI engineering assistant", "quick switcher", "recoverable error guidance"]
+  },
+  "workspace_profiles": ["Architecture", "Structure", "Geotechnics", "Civil and Survey", "MEP", "Coordination", "Construction", "Learning"],
+  "integration_contracts": [
+    "single WorkspaceManager state authority",
+    "semantic design tokens only",
+    "selection synchronized across canvas browser and inspector",
+    "all mutations previewable undoable and attributable",
+    "calculations expose inputs standard version assumptions results and evidence",
+    "layout and interrupted tasks are recoverable",
+    "capability status distinguishes implemented validated certified and unavailable"
+  ],
+  "migration_order": [
+    "W2-01 semantic shell and theme adapter",
+    "W2-02 unified document and panel orchestration",
+    "W2-03 project/BIM browser plus property inspector integration",
+    "W2-04 professional command/search and status model",
+    "W2-05 structural lighthouse journey",
+    "W2-06 coordination evidence and contextual learning",
+    "W2-07 rendered accessibility performance and usability validation"
+  ]
+}

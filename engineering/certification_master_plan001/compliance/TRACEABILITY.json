@@ -1,0 +1,50 @@
+{
+  "REQ-999701": {
+    "implemented_by": [
+      "src/aias_certification_program/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_master_plan001.py"
+    ]
+  },
+  "REQ-999702": {
+    "implemented_by": [
+      "engineering/aias/certification/AIAS_CERTIFICATION_MASTER_PLAN.json"
+    ],
+    "tested_by": [
+      "tests/test_certification_master_plan001.py"
+    ]
+  },
+  "REQ-999703": {
+    "implemented_by": [
+      "src/aias_certification_program/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_master_plan001.py"
+    ]
+  },
+  "REQ-999704": {
+    "implemented_by": [
+      "engineering/aias/certification/AIAS_CERTIFICATION_MASTER_PLAN.json"
+    ],
+    "tested_by": [
+      "tests/test_certification_master_plan001.py"
+    ]
+  },
+  "REQ-999705": {
+    "implemented_by": [
+      "src/aias_certification_program/assessment.py"
+    ],
+    "tested_by": [
+      "tests/test_certification_master_plan001.py"
+    ]
+  },
+  "REQ-999706": {
+    "implemented_by": [
+      "docs/CERTIFICATION_MASTER_PLAN001.md"
+    ],
+    "tested_by": [
+      "tests/test_certification_master_plan001.py"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-083",
+  "title": "Queue status report",
+  "status": "VALIDATED",
+  "scope": "Summarize queued evidence and pending review count",
+  "safety": ["Approved count is never inferred", "Report is read-only"]
+}

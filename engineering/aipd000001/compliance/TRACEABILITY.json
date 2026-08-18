@@ -1,0 +1,50 @@
+{
+  "REQ-910001": {
+    "implemented_by": [
+      "src/aias_productivity_dashboard/collector.py"
+    ],
+    "tested_by": [
+      "tests/test_aipd000001_productivity_dashboard.py"
+    ]
+  },
+  "REQ-910002": {
+    "implemented_by": [
+      "src/aias_productivity_dashboard/model.py"
+    ],
+    "tested_by": [
+      "tests/test_aipd000001_productivity_dashboard.py"
+    ]
+  },
+  "REQ-910003": {
+    "implemented_by": [
+      "src/aias_productivity_dashboard/collector.py"
+    ],
+    "tested_by": [
+      "tests/test_aipd000001_productivity_dashboard.py"
+    ]
+  },
+  "REQ-910004": {
+    "implemented_by": [
+      "src/aias_productivity_dashboard/model.py"
+    ],
+    "tested_by": [
+      "tests/test_aipd000001_productivity_dashboard.py"
+    ]
+  },
+  "REQ-910005": {
+    "implemented_by": [
+      "src/aias_productivity_dashboard/renderer.py"
+    ],
+    "tested_by": [
+      "tests/test_aipd000001_productivity_dashboard.py"
+    ]
+  },
+  "REQ-910006": {
+    "implemented_by": [
+      "src/aias_productivity_dashboard/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_aipd000001_productivity_dashboard.py"
+    ]
+  }
+}

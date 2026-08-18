@@ -1,0 +1,29 @@
+{
+  "code_id": "AIAS-GENERIC-RC-FOUNDATION-1.0",
+  "title": "AIAS Generic Reinforced Concrete Foundation Reference Pack",
+  "jurisdiction": "NONE",
+  "edition": "1.0",
+  "legal_status": "REFERENCE_ONLY",
+  "parameters": {
+    "phi_flexure": 0.9,
+    "phi_one_way_shear": 0.75,
+    "phi_punching": 0.75,
+    "min_reinforcement_ratio": 0.0018,
+    "max_bar_spacing_mm": 300.0,
+    "one_way_shear_coefficient": 0.17,
+    "punching_shear_coefficient": 0.33,
+    "steel_stress_limit_factor": 1.0,
+    "minimum_cover_mm": 75.0,
+    "minimum_thickness_mm": 300.0
+  },
+  "applicability": [
+    "ISOLATED_FOOTING",
+    "COMBINED_FOOTING",
+    "STRIP_FOOTING",
+    "MAT_FOUNDATION"
+  ],
+  "source_metadata": {
+    "status": "NON_NORMATIVE_REFERENCE",
+    "warning": "Not a legal design standard."
+  }
+}

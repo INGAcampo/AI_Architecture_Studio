@@ -1,0 +1,50 @@
+{
+  "REQ-994501": {
+    "implemented_by": [
+      "engineering/aias/offices/ENTERPRISE_OFFICE_CHARTERS.json"
+    ],
+    "tested_by": [
+      "tests/test_offices_foundation001.py"
+    ]
+  },
+  "REQ-994502": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/bootstrap.py"
+    ],
+    "tested_by": [
+      "tests/test_offices_foundation001.py"
+    ]
+  },
+  "REQ-994503": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_offices_foundation001.py"
+    ]
+  },
+  "REQ-994504": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_offices_foundation001.py"
+    ]
+  },
+  "REQ-994505": {
+    "implemented_by": [
+      "src/aias_enterprise_offices/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_offices_foundation001.py"
+    ]
+  },
+  "REQ-994506": {
+    "implemented_by": [
+      "scripts/build_offices_foundation001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_offices_foundation001.py"
+    ]
+  }
+}

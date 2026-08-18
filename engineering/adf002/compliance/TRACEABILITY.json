@@ -1,0 +1,1 @@
+{"delivery":"ADF-002","strategy":"AIAS-NEXT-001","requirements":["AEC-000049","ASDD-000002"],"gates":["dependency_graph","parallel_wave_planning","cycle_rejection","integration_gate"]}

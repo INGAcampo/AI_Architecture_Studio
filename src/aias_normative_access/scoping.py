@@ -1,0 +1,16 @@
+"""External certification and appraisal scope definition."""
+from __future__ import annotations
+
+
+def certification_scope() -> dict:
+    """Return one consistent organizational scope for quotations and external gap assessments."""
+    return {
+        "scope_id":"AIAS-CERT-SCOPE-001",
+        "organization":"AIAS Digital Engineering Company",
+        "included_products_services":["AIAS engineering platform","AI-assisted engineering production","technical-file generation","cloud-neutral engineering operations"],
+        "included_functions":["governance","quality","security","AI management","business continuity","engineering delivery","knowledge","training","supplier management"],
+        "included_locations":"All controlled AIAS physical and virtual operating locations in the final legal entity scope",
+        "excluded_claims":["licensed professional engineering approval","government permit approval","product safety certification","current ISO certification","current CMMI maturity rating"],
+        "finalization_gates":["legal entity confirmed","headcount and sites confirmed","products and services confirmed","applicable jurisdictions confirmed","certification body accepts scope"],
+        "status":"DRAFT_FOR_EXTERNAL_SCOPING",
+    }

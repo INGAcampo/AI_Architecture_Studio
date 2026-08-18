@@ -1,0 +1,50 @@
+{
+  "REQ-999501": {
+    "implemented_by": [
+      "src/aias_end_to_end/producer.py"
+    ],
+    "tested_by": [
+      "tests/test_end_to_end001.py"
+    ]
+  },
+  "REQ-999502": {
+    "implemented_by": [
+      "src/aias_end_to_end/producer.py"
+    ],
+    "tested_by": [
+      "tests/test_end_to_end001.py"
+    ]
+  },
+  "REQ-999503": {
+    "implemented_by": [
+      "src/aias_end_to_end/producer.py"
+    ],
+    "tested_by": [
+      "tests/test_end_to_end001.py"
+    ]
+  },
+  "REQ-999504": {
+    "implemented_by": [
+      "src/aias_end_to_end/producer.py"
+    ],
+    "tested_by": [
+      "tests/test_end_to_end001.py"
+    ]
+  },
+  "REQ-999505": {
+    "implemented_by": [
+      "engineering/aias/end_to_end/END_TO_END_CONTRACT.json"
+    ],
+    "tested_by": [
+      "tests/test_end_to_end001.py"
+    ]
+  },
+  "REQ-999506": {
+    "implemented_by": [
+      "scripts/build_end_to_end001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_end_to_end001.py"
+    ]
+  }
+}

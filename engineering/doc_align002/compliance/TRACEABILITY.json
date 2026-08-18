@@ -1,0 +1,50 @@
+{
+  "REQ-960201": {
+    "implemented_by": [
+      "src/aias_governance_assurance/documentation.py"
+    ],
+    "tested_by": [
+      "tests/test_gov000049_governance_assurance.py"
+    ]
+  },
+  "REQ-960202": {
+    "implemented_by": [
+      "src/aias_documentation_program/planner.py"
+    ],
+    "tested_by": [
+      "tests/test_doc_align002.py"
+    ]
+  },
+  "REQ-960203": {
+    "implemented_by": [
+      "src"
+    ],
+    "tested_by": [
+      "tests/test_doc_align002.py"
+    ]
+  },
+  "REQ-960204": {
+    "implemented_by": [
+      "tests/test_doc_align002.py"
+    ],
+    "tested_by": [
+      "tests/test_doc_align002.py"
+    ]
+  },
+  "REQ-960205": {
+    "implemented_by": [
+      "docs/DOC_ALIGN_002_COMPLETE_PUBLIC_API.md"
+    ],
+    "tested_by": [
+      "tests/test_doc_align002.py"
+    ]
+  },
+  "REQ-960206": {
+    "implemented_by": [
+      "scripts/build_doc_align002_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_doc_align002.py"
+    ]
+  }
+}

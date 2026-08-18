@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-137",
+  "title": "Bundle readiness report",
+  "status": "VALIDATED",
+  "scope": "Assess local readiness after the bundle release gate.",
+  "safety": {
+    "external_release": false,
+    "certification_claim": false
+  }
+}

@@ -1,0 +1,1 @@
+(defun aias-log () (setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_NATIVE_DWG_ROUNDTRIP/output/A-101_reopen.log" "w")) (setq e (entnext) n 0) (while e (setq d (entget e)) (write-line (strcat (cdr (assoc 0 d)) "|" (cdr (assoc 8 d)) "|" (cdr (assoc 5 d))) f) (setq n (+ n 1)) (setq e (entnext e))) (close f) (princ))

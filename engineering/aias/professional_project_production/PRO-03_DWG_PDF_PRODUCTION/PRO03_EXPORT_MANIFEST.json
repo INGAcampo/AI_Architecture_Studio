@@ -1,0 +1,64 @@
+{
+  "pilot": "PILOT-BUILDING-001",
+  "backend_dwg": "NONE_AVAILABLE",
+  "dxf_compatibility": "ASCII DXF exchange writer",
+  "dwg_real_outputs": 0,
+  "pdf": {
+    "format": "PDF",
+    "pages": 5,
+    "sha256": "d978b03fde7c706f8392cba6c08c9940073bf513b61b6844e05b250740d73e57"
+  },
+  "artifacts": [
+    {
+      "path": "A-101.dxf",
+      "format": "DXF_ASCII",
+      "entities": 36,
+      "sha256": "ea293bef1666199e7d522fe624859056c3684bdc1d90b59e14590dffaa90234e",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "S-101.dxf",
+      "format": "DXF_ASCII",
+      "entities": 36,
+      "sha256": "ea293bef1666199e7d522fe624859056c3684bdc1d90b59e14590dffaa90234e",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "S-201.dxf",
+      "format": "DXF_ASCII",
+      "entities": 36,
+      "sha256": "ea293bef1666199e7d522fe624859056c3684bdc1d90b59e14590dffaa90234e",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "A-301.dxf",
+      "format": "DXF_ASCII",
+      "entities": 36,
+      "sha256": "ea293bef1666199e7d522fe624859056c3684bdc1d90b59e14590dffaa90234e",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "A-401.dxf",
+      "format": "DXF_ASCII",
+      "entities": 36,
+      "sha256": "ea293bef1666199e7d522fe624859056c3684bdc1d90b59e14590dffaa90234e",
+      "classification": "V0_LIMITED"
+    },
+    {
+      "path": "PILOT-BUILDING-001_PLAN_SET.pdf",
+      "format": "PDF",
+      "pages": 5,
+      "sha256": "d978b03fde7c706f8392cba6c08c9940073bf513b61b6844e05b250740d73e57",
+      "classification": "V0_LIMITED"
+    }
+  ],
+  "roundtrip": "DXF textual re-open/count validated; native DWG roundtrip BLOCKED",
+  "losses": [
+    "native DWG unavailable",
+    "advanced typography/rendering not preserved"
+  ],
+  "blocked": [
+    "DWG real writer",
+    "professional PDF composition/signing"
+  ]
+}

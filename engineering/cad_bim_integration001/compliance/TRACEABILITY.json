@@ -1,0 +1,50 @@
+{
+  "REQ-995801": {
+    "implemented_by": [
+      "src/aias_cad_bim_integration/models.py"
+    ],
+    "tested_by": [
+      "tests/test_cad_bim_integration001.py"
+    ]
+  },
+  "REQ-995802": {
+    "implemented_by": [
+      "src/aias_cad_bim_integration/bridge.py"
+    ],
+    "tested_by": [
+      "tests/test_cad_bim_integration001.py"
+    ]
+  },
+  "REQ-995803": {
+    "implemented_by": [
+      "src/aias_cad_bim_integration/bridge.py"
+    ],
+    "tested_by": [
+      "tests/test_cad_bim_integration001.py"
+    ]
+  },
+  "REQ-995804": {
+    "implemented_by": [
+      "src/aias_cad_bim_integration/bridge.py"
+    ],
+    "tested_by": [
+      "tests/test_cad_bim_integration001.py"
+    ]
+  },
+  "REQ-995805": {
+    "implemented_by": [
+      "src/aias_cad_bim_integration/reference.py"
+    ],
+    "tested_by": [
+      "tests/test_cad_bim_integration001.py"
+    ]
+  },
+  "REQ-995806": {
+    "implemented_by": [
+      "scripts/build_cad_bim_integration001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_cad_bim_integration001.py"
+    ]
+  }
+}

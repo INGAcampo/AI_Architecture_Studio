@@ -1,0 +1,1 @@
+{"delivery":"AEC-ORCHESTRATOR-001","status":"CONFORMANT","specification":"engineering/aias/aec_orchestrator/AEC_ORCHESTRATOR_001_SPEC.json","implementation":"src/aias_aec_orchestrator/contracts.py","tests":"tests/test_aec_orchestrator001.py"}

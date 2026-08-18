@@ -1,0 +1,1 @@
+{"delivery":"STANDARDS-ENGINE-001","status":"CONFORMANT","specification":"engineering/aias/standards_engine/STANDARDS_ENGINE_001_SPEC.json","implementation":"src/aias_standards_engine/engine.py","tests":"tests/test_standards_engine001.py"}

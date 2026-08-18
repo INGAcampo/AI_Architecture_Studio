@@ -1,0 +1,85 @@
+﻿{
+    "schema":  "aias.shadow.wave8.package_manifest.v1",
+    "run_id":  "78723cf51fac45f9baafa22be6e92a6f",
+    "generated_utc":  "2026-08-13T22:27:47.8749931Z",
+    "megablock":  "STANDARDS-ENGINE-003",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  14,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  273,
+                      "sha256":  "f888b0e0ed040a9bca6d0751175b745ae04c7e84821dc953ec59686a775e5ca1"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  300,
+                      "sha256":  "039dad674ec35bdc97c4751a41a8582294e40995baedc2b876bdfa0a5ee9bd7e"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  615,
+                      "sha256":  "4810a04aef820dcdbd91bb48eda42b16d8e168f1bdf0bd32040134c27792de92"
+                  },
+                  {
+                      "path":  "src/standards_engine_report/__init__.py",
+                      "bytes":  324,
+                      "sha256":  "61c065ff1093c7df52c71a3f2e39e4f52ad1d273406cf88998035e532e3b6222"
+                  },
+                  {
+                      "path":  "src/standards_engine_report/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  536,
+                      "sha256":  "c44cc43d4597f3a6592b917644ab844e3ccb3c9f20e7858fa261cf8a45a05bbf"
+                  },
+                  {
+                      "path":  "src/standards_engine_report/__pycache__/applicability.cpython-311.pyc",
+                      "bytes":  2107,
+                      "sha256":  "0c686e815bfa4959d8292410a665671d1cf2973b2a9bc03dc94450fc3ef719ae"
+                  },
+                  {
+                      "path":  "src/standards_engine_report/__pycache__/report.cpython-311.pyc",
+                      "bytes":  2730,
+                      "sha256":  "8d84e4949b0dbb7653138415c130c1b7c85773e3ff466304e10c7ac2c55ad3a7"
+                  },
+                  {
+                      "path":  "src/standards_engine_report/applicability.py",
+                      "bytes":  1048,
+                      "sha256":  "b9915f33abbd16250313baeff5f27d8759ecdaf4822e8388400ee071656fa30d"
+                  },
+                  {
+                      "path":  "src/standards_engine_report/report.py",
+                      "bytes":  1007,
+                      "sha256":  "9756595de514eb0c60f310550fa28452b4adc3861a4b049af2db80398e233fc3"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_applicability_report.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  7963,
+                      "sha256":  "330423036d71ffa9d72b30e74b602a1c40be3542137416a5e230138a605ff1cc"
+                  },
+                  {
+                      "path":  "tests/test_applicability_report.py",
+                      "bytes":  1799,
+                      "sha256":  "00defa12af53d77cfd12a795e8221eee49ef42f48304601d7b36c644ae7978a0"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

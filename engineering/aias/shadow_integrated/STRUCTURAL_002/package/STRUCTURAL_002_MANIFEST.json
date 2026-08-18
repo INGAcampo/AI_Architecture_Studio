@@ -1,0 +1,75 @@
+﻿{
+    "schema":  "aias.shadow.package_manifest.v2",
+    "run_id":  "9b75d989715f4c5297da81931472aa7f",
+    "megablock":  "STRUCTURAL-002",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "base_tests_pass":  true,
+    "isolated_runtime_tests_pass":  false,
+    "file_count":  12,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  164,
+                      "sha256":  "a9bb00ec837b06544e4ae1a4fe517eaa7aa8571470e8624e4846d0f6ad30f373"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  294,
+                      "sha256":  "ae4b8dfb337444362437acfceae3a5f78cac9ce1ca5a7af2895405af5c25a4b3"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  500,
+                      "sha256":  "dd612a8332974b228dd83ee4521ba612219b73436ff69ce48efad3df8608fafb"
+                  },
+                  {
+                      "path":  "src/structural_platform_ext/__init__.py",
+                      "bytes":  92,
+                      "sha256":  "0a4680559e92195ff87b254587790556af235281a6fa9fa727e371bea2101b13"
+                  },
+                  {
+                      "path":  "src/structural_platform_ext/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  408,
+                      "sha256":  "667abef5784b2bf947b74601a8bea8436faa9605ec55b45891d82998868491a4"
+                  },
+                  {
+                      "path":  "src/structural_platform_ext/__pycache__/truss2d.cpython-311.pyc",
+                      "bytes":  10958,
+                      "sha256":  "faa112dfbd3b4cda81825ce7e2a5574e2800286dda917999abf3e6341a5caf6d"
+                  },
+                  {
+                      "path":  "src/structural_platform_ext/truss2d.py",
+                      "bytes":  3079,
+                      "sha256":  "ea55e9f74db74d44188e718c64c917c59e4ee3728a26ff12a9c96d6ca24bda9b"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_truss2d.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  9937,
+                      "sha256":  "719ca05cd82af88dffba85eb8087efd984874729bd2668334142899ada922637"
+                  },
+                  {
+                      "path":  "tests/test_truss2d.py",
+                      "bytes":  1228,
+                      "sha256":  "a4713fd8cd9d982207b7edd6621fef8da04454682b4e281d8486630dba7aabf4"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

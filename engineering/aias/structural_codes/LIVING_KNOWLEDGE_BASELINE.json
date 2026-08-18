@@ -1,0 +1,39 @@
+{
+  "catalog_id": "AIAS-LIVING-KNOWLEDGE-001",
+  "version": "1.0.0",
+  "groups": [
+    {
+      "kind": "architecture",
+      "path": "docs",
+      "file_count": 1832,
+      "sha256": "284ee9af18a86819b9d4a41dbc97cae4b80c080be2b92e1ba66f5a0402bc2e76"
+    },
+    {
+      "kind": "decisions",
+      "path": "engineering",
+      "file_count": 314,
+      "sha256": "a8840d3704f2e758124b1a20f89ff44e57efae0d763f0584121ca403e47123ca"
+    },
+    {
+      "kind": "modules",
+      "path": "src",
+      "file_count": 6209,
+      "sha256": "7819cd37b9eee10187d8d1869624b27c855e5e67e3c292ab0dde2271fc30fa10"
+    },
+    {
+      "kind": "tests",
+      "path": "tests",
+      "file_count": 3687,
+      "sha256": "80f85546204ea5820d26107bf02f8f8c52129e853be3274860216bd029baa19d"
+    },
+    {
+      "kind": "standards",
+      "path": "engineering/aias/foundation",
+      "file_count": 5,
+      "sha256": "15b53fba40fbba5ba0b12a6d2550c356a2365d8e1412bac3443428b2a1bf4cad"
+    }
+  ],
+  "authority": "repository_evidence",
+  "normative_warning": "Presence does not establish legal applicability, licensed content or professional approval.",
+  "root_sha256": "9ee4e7c907fc98afc9cfbdb84cbe643fb1f10ad6972b7defbae631e36864a2f1"
+}

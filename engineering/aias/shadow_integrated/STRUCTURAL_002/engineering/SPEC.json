@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.structural.002.spec.v1",
+    "megablock":  "STRUCTURAL-002",
+    "dependency":  "STRUCTURAL-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Dependency-free deterministic 2D truss direct-stiffness solver.",
+    "exclusions":  [
+                       "No code compliance claim",
+                       "No nonlinear analysis",
+                       "No canonical integration"
+                   ],
+    "integration_authorized":  false
+}

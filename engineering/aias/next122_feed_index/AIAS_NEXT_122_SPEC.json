@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-122",
+  "title": "Feed release artifact index",
+  "status": "VALIDATED",
+  "scope": "Build sorted unique index of Dashboard feed release artifacts",
+  "safety": ["Index is local metadata", "No external publication occurs"]
+}

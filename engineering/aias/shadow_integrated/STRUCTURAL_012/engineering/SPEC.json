@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.structural.012.spec.v1",
+    "megablock":  "STRUCTURAL-012",
+    "dependency":  "STRUCTURAL-011",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic evidence bundle and fingerprint for structural result comparison.",
+    "integration_authorized":  false
+}

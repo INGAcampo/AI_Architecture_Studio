@@ -1,0 +1,36 @@
+{
+  "spec_id": "EXP-WEB-001",
+  "version": "1.0.0",
+  "status": "LOCAL_BUILD_VALIDATED_DEPLOYMENT_APPROVAL_PENDING",
+  "title": "Official Web Information Architecture and Truthful Capability Registry",
+  "objectives": [
+    "Present AIAS as an integrated digital engineering company and platform",
+    "Publish only capability claims backed by versioned evidence",
+    "Provide stable paths for product, disciplines, Trust Center and AIAS University",
+    "Share the AIAS Design System across web, applications, learning and communication"
+  ],
+  "public_truth_rules": [
+    "Reference workflows are not represented as jurisdictional compliance",
+    "Venezuela normative compliance remains unavailable until the licensed package is acquired and validated",
+    "Construction approval is never represented as an AIAS authorization",
+    "Organizational maturity and external certifications require independent evidence",
+    "Unsigned internal distribution is not represented as a public signed installer"
+  ],
+  "information_architecture": [
+    "Inicio",
+    "Plataforma",
+    "Disciplinas",
+    "Trust Center",
+    "AIAS University"
+  ],
+  "evidence": {
+    "site_root": "sites/aias-official",
+    "public_registry": "sites/aias-official/public/capabilities.json",
+    "social_preview": "sites/aias-official/public/og.png",
+    "local_url": "http://localhost:3000/",
+    "production_build_passed": true,
+    "external_deployment_performed": false
+  },
+  "authorization_boundary": "Public hosting, domain configuration, analytics, accounts and external publication require explicit Project Director approval.",
+  "next": "EXP-APPS-001 Application Portfolio and Shared Platform Contracts"
+}

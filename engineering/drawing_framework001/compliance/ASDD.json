@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-995501",
+  "title": "AIAS Enterprise Drawing Framework",
+  "version": "1.0.0",
+  "purpose": "Provide a canonical UI-independent engineering drawing model and deterministic portable vector outputs.",
+  "scope": "Sheets, layers, lines, text, dimensions, views, scales, bounds, revisions, provenance, JSON, SVG, DXF, PDF, manifests and reference foundation sheet.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-995501",
+      "title": "Canonical drawing model",
+      "statement": "Drawings shall use stable entities, named layers, millimetre paper space, sheets, views, scales and provenance.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enable interoperable engineering documentation.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_drawing_framework/models.py"
+      ],
+      "tested_by": [
+        "tests/test_drawing_framework001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995502",
+      "title": "Drawing validation",
+      "statement": "The framework shall reject duplicate identity, unknown layers, unsafe text, invalid scales, out-of-bounds geometry and absent review boundaries.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent malformed drawing releases.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_drawing_framework/validation.py"
+      ],
+      "tested_by": [
+        "tests/test_drawing_framework001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995503",
+      "title": "Portable export",
+      "statement": "Validated drawings shall export deterministically to JSON, SVG, DXF and vector PDF.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support CAD, browser, archive and printable consumers.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_drawing_framework/exporters.py"
+      ],
+      "tested_by": [
+        "tests/test_drawing_framework001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995504",
+      "title": "Release evidence",
+      "statement": "Every exported format shall carry path, byte count and SHA-256 digest.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make document artifacts auditable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_drawing_framework/exporters.py"
+      ],
+      "tested_by": [
+        "tests/test_drawing_framework001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995505",
+      "title": "Immediate consumer",
+      "statement": "A traceable A3 foundation plan shall render and preserve professional review status.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize drawing value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_drawing_framework/reference.py"
+      ],
+      "tested_by": [
+        "tests/test_drawing_framework001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995506",
+      "title": "Reproducible delivery",
+      "statement": "The framework shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep drawing production deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_drawing_framework001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_drawing_framework001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-DRAWING-FRAMEWORK-001"
+  ],
+  "adr_refs": [
+    "ADR-DRAWING-FRAMEWORK-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

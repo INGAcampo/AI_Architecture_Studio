@@ -1,0 +1,50 @@
+{
+  "REQ-997001": {
+    "implemented_by": [
+      "src/aias_engineering_intelligence/models.py"
+    ],
+    "tested_by": [
+      "tests/test_intelligence_core001.py"
+    ]
+  },
+  "REQ-997002": {
+    "implemented_by": [
+      "src/aias_engineering_intelligence/policy.py"
+    ],
+    "tested_by": [
+      "tests/test_intelligence_core001.py"
+    ]
+  },
+  "REQ-997003": {
+    "implemented_by": [
+      "src/aias_engineering_intelligence/core.py"
+    ],
+    "tested_by": [
+      "tests/test_intelligence_core001.py"
+    ]
+  },
+  "REQ-997004": {
+    "implemented_by": [
+      "src/aias_engineering_intelligence/core.py"
+    ],
+    "tested_by": [
+      "tests/test_intelligence_core001.py"
+    ]
+  },
+  "REQ-997005": {
+    "implemented_by": [
+      "src/aias_engineering_intelligence/reference.py"
+    ],
+    "tested_by": [
+      "tests/test_intelligence_core001.py"
+    ]
+  },
+  "REQ-997006": {
+    "implemented_by": [
+      "scripts/build_intelligence_core001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_intelligence_core001.py"
+    ]
+  }
+}

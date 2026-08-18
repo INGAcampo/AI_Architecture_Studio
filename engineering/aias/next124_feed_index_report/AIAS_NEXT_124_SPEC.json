@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-124",
+  "title": "Feed index integrity report",
+  "status": "VALIDATED",
+  "scope": "Report feed artifact index integrity and canonical digest",
+  "safety": ["Internal integrity is not external validity", "Digest state remains visible"]
+}

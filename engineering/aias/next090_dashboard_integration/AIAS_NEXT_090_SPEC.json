@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-090",
+  "title": "Evidence review dashboard integration",
+  "status": "VALIDATED",
+  "scope": "Integrate operational review metrics into a Dashboard component",
+  "safety": ["Non-operational feeds are rejected", "Integration does not claim audit"]
+}

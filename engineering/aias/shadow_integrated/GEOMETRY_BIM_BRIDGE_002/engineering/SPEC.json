@@ -1,0 +1,9 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.002.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-002",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-001",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Stable semantic/geometry identity plus renderer-neutral tessellation payload.",
+    "canvas_rule":  "Canvas consumes tessellation contracts and never requires direct OCCT objects.",
+    "integration_authorized":  false
+}

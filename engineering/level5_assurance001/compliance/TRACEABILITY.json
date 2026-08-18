@@ -1,0 +1,50 @@
+{
+  "REQ-999001": {
+    "implemented_by": [
+      "src/aias_level5_assurance/models.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_assurance001.py"
+    ]
+  },
+  "REQ-999002": {
+    "implemented_by": [
+      "src/aias_level5_assurance/assessment.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_assurance001.py"
+    ]
+  },
+  "REQ-999003": {
+    "implemented_by": [
+      "src/aias_level5_assurance/policy.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_assurance001.py"
+    ]
+  },
+  "REQ-999004": {
+    "implemented_by": [
+      "src/aias_level5_assurance/models.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_assurance001.py"
+    ]
+  },
+  "REQ-999005": {
+    "implemented_by": [
+      "src/aias_level5_assurance/reference.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_assurance001.py"
+    ]
+  },
+  "REQ-999006": {
+    "implemented_by": [
+      "scripts/build_level5_assurance001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_level5_assurance001.py"
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-993001",
+  "title": "AIAS Enterprise Knowledge Graph",
+  "version": "1.0.0",
+  "purpose": "Materialize the persistent, attributable and queryable golden thread for all AIAS enterprise knowledge.",
+  "scope": "Typed nodes and edges, stable identity, versions, temporal metadata, atomic persistence, traversal, impact analysis, controlled inference and AMIR ingestion.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-993101",
+      "title": "Canonical schema",
+      "statement": "Nodes and edges shall use stable typed identities, versions and source provenance.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep enterprise knowledge attributable and interoperable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/ekg/EKG_SCHEMA.json"
+      ],
+      "tested_by": [
+        "tests/test_ekg000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993102",
+      "title": "Durable integrity",
+      "statement": "Persistence shall be atomic and reject identity conflicts and unknown endpoints.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect the enterprise golden thread.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_knowledge_graph/graph.py"
+      ],
+      "tested_by": [
+        "tests/test_ekg000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993103",
+      "title": "Graph queries",
+      "statement": "EKG shall expose adjacency, directed paths and transitive impact.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support dependency and change reasoning.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_knowledge_graph/graph.py"
+      ],
+      "tested_by": [
+        "tests/test_ekg000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993104",
+      "title": "Controlled inference",
+      "statement": "Only explicitly approved rules may infer edges and every result shall retain supporting provenance.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unaudited semantic conclusions.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_knowledge_graph/rules.py"
+      ],
+      "tested_by": [
+        "tests/test_ekg000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993105",
+      "title": "Immediate consumer",
+      "statement": "The complete AMIR inventory and dependency network shall import through EKG.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_enterprise_knowledge_graph/bootstrap.py"
+      ],
+      "tested_by": [
+        "tests/test_ekg000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993106",
+      "title": "Reproducible delivery",
+      "statement": "EKG shall include tests, documentation, installer, manifest, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the graph deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_ekg000001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_ekg000001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-EKG-000001"
+  ],
+  "adr_refs": [
+    "ADR-EKG-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

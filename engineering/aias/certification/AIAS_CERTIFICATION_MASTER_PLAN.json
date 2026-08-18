@@ -1,0 +1,56 @@
+{
+  "plan_id": "CERTIFICATION-MASTER-PLAN-001",
+  "version": "1.0.0",
+  "approved_on": "2026-08-03",
+  "status": "ACTIVE_IMPLEMENTATION",
+  "official_maturity_objective": "CMMI Development V3.0 Maturity Level 5",
+  "mandatory_ai_extension": "CMMI Artificial Intelligence Maturity benchmark view",
+  "integrated_management_system_targets": [
+    "ISO 9001 quality management",
+    "ISO/IEC 27001 information security management",
+    "ISO/IEC 42001 artificial intelligence management",
+    "ISO 22301 business continuity management"
+  ],
+  "decision_boundaries": {
+    "aias_self_certification_permitted": false,
+    "cmmi_result": "External benchmark appraisal rating",
+    "iso_result": "Certificate issued by an independent competent certification body, preferably accredited",
+    "engineering_approval": "Separate licensed-professional and jurisdictional authority"
+  },
+  "internal_readiness_gate": {
+    "minimum_observation_days": 365,
+    "minimum_real_completed_projects": 10,
+    "classification": "AIAS_INTERNAL_PRUDENTIAL_GATE_NOT_AN_OFFICIAL_CMMI_REQUIREMENT"
+  },
+  "execution_sequence": [
+    {
+      "wave": 1,
+      "objective": "Integrated management-system foundation",
+      "targets": ["ISO 9001", "ISO/IEC 27001", "ISO/IEC 42001"],
+      "external_certificate_claim": false
+    },
+    {
+      "wave": 2,
+      "objective": "Independent readiness and Stage 1/Stage 2 certification audits",
+      "targets": ["ISO 9001", "ISO/IEC 27001", "ISO/IEC 42001"],
+      "external_certificate_claim": "ONLY_AFTER_SUCCESSFUL_EXTERNAL_AUDIT"
+    },
+    {
+      "wave": 3,
+      "objective": "Business continuity certification",
+      "targets": ["ISO 22301"],
+      "external_certificate_claim": "ONLY_AFTER_SUCCESSFUL_EXTERNAL_AUDIT"
+    },
+    {
+      "wave": 4,
+      "objective": "CMMI institutionalization and benchmark progression",
+      "targets": ["CMMI-DEV V3.0 ML3 readiness", "CMMI-DEV V3.0 high maturity ML4/ML5", "CMMI AIM appraisal"],
+      "external_rating_claim": "ONLY_AFTER_ACCEPTED_BENCHMARK_APPRAISAL"
+    }
+  ],
+  "version_monitoring": {
+    "ISO_9001": "ISO 9001:2015/Amd 1:2024 remains current on approval date; migrate under the official transition period when ISO 9001:2026 is published.",
+    "ISO_22301": "ISO 22301:2019/Amd 1:2024 remains the published target while the next edition is under development."
+  },
+  "licensed_content_policy": "AIAS stores mappings and evidence references, not unauthorized copies of copyrighted standards or CMMI model content."
+}

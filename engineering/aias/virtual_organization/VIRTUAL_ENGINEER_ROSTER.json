@@ -1,0 +1,11 @@
+{
+  "roster_id":"VIRTUAL-ORG-001","version":"1.0.0","legal_status":"AIAS_INTERNAL_NON_LICENSED_VIRTUAL_WORKFORCE",
+  "engineers":[
+    {"engineer_id":"VE-ARCH-001","name":"Atria","role":"Virtual Architecture Engineer","office_id":"OFFICE-000001","competencies":["architecture","specification"],"authorized_actions":["author","analyze"],"credential_refs":["AIAS-UNIVERSITY-ARCH-FOUNDATION"],"status":"AVAILABLE","licensed_professional":false},
+    {"engineer_id":"VE-STRUCT-001","name":"Tecton","role":"Virtual Structural Engineer","office_id":"OFFICE-000002","competencies":["structural_foundations","technical_file"],"authorized_actions":["calculate","author","analyze"],"credential_refs":["AIAS-UNIVERSITY-STRUCT-FOUNDATION"],"status":"AVAILABLE","licensed_professional":false},
+    {"engineer_id":"VE-QA-001","name":"Veritas","role":"Virtual Quality Engineer","office_id":"OFFICE-000003","competencies":["structural_review","quality","traceability"],"authorized_actions":["review","validate"],"credential_refs":["AIAS-UNIVERSITY-SDD-QUALITY"],"status":"AVAILABLE","licensed_professional":false},
+    {"engineer_id":"VE-BIM-001","name":"Nexus","role":"Virtual BIM Coordinator","office_id":"OFFICE-000002","competencies":["bim","cad_bim_coordination"],"authorized_actions":["coordinate","author"],"credential_refs":["AIAS-UNIVERSITY-BIM-FOUNDATION"],"status":"AVAILABLE","licensed_professional":false},
+    {"engineer_id":"VE-SEC-001","name":"Aegis","role":"Virtual Security Engineer","office_id":"OFFICE-000011","competencies":["security","recovery"],"authorized_actions":["analyze","validate"],"credential_refs":["AIAS-UNIVERSITY-SECURITY-FOUNDATION"],"status":"AVAILABLE","licensed_professional":false},
+    {"engineer_id":"VE-AUTO-001","name":"Forge","role":"Virtual Automation Engineer","office_id":"OFFICE-000009","competencies":["automation","capability_factory"],"authorized_actions":["author","automate"],"credential_refs":["AIAS-UNIVERSITY-AUTOMATION-FOUNDATION"],"status":"AVAILABLE","licensed_professional":false}
+  ]
+}

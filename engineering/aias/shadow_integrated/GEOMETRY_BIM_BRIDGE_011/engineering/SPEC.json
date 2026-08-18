@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.011.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-011",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-010",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic rollback planning for incremental BIM/geometry patch sequences.",
+    "integration_authorized":  false
+}

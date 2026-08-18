@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-993801",
+  "title": "Governed AIAS Capability Factory",
+  "version": "1.0.0",
+  "purpose": "Turn approved blueprints into registered, certified and reusable AIAS capabilities through the unified Development Platform.",
+  "scope": "Blueprint contracts, atomic registry, immutable identity, sequential evidence gates, specification compilation, development delegation, validation, releases and lifecycle events.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-993801",
+      "title": "Blueprint contract",
+      "statement": "Capabilities shall declare identity, owner, approval, requirements, architecture and ADR references.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make capability intent complete and reviewable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_capability_factory/models.py"
+      ],
+      "tested_by": [
+        "tests/test_capability_factory001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993802",
+      "title": "Lifecycle gates",
+      "statement": "Only sequential DRAFT through RELEASED transitions with target evidence shall be accepted.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent premature capability claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_capability_factory/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_capability_factory001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993803",
+      "title": "Immutable registry",
+      "statement": "Stable capability identities shall reject conflicting blueprint replacement and persist atomically.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect reusable capability history.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_capability_factory/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_capability_factory001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993804",
+      "title": "Governed production",
+      "statement": "The factory shall compile a specification and delegate production to DEV-PLATFORM-001.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Reuse the certified production control plane.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_capability_factory/factory.py"
+      ],
+      "tested_by": [
+        "tests/test_capability_factory001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993805",
+      "title": "Immediate consumer",
+      "statement": "A reference BIM wall-schedule capability shall reach RELEASED through the real Development Platform.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_capability_factory/factory.py"
+      ],
+      "tested_by": [
+        "tests/test_capability_factory001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-993806",
+      "title": "Reproducible delivery",
+      "statement": "The factory shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the capability lifecycle deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_capability_factory001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_capability_factory001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-CAPABILITY-FACTORY-001"
+  ],
+  "adr_refs": [
+    "ADR-CAPABILITY-FACTORY-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

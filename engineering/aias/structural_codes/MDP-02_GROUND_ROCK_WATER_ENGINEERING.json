@@ -1,0 +1,17 @@
+{
+  "specification_id": "MDP-02",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+  "disciplines": ["GEOTECHNICS", "ROCK_MECHANICS", "HYDROLOGY", "WATER_NETWORK", "SANITARY_STORMWATER"],
+  "reference_methods": ["TOTAL_VERTICAL_STRESS", "MOHR_COULOMB_REFERENCE", "RATIONAL_METHOD_REFERENCE", "HAZEN_WILLIAMS_SI_REFERENCE", "MANNING_REFERENCE"],
+  "requirements": [
+    "Every calculation must reference a governed study source.",
+    "Only SI units are accepted by this version.",
+    "Invalid geometry, material data and unknown sources fail closed.",
+    "Normative claims require authorized sources, a normative pack and accepted independent review.",
+    "No calculation result independently authorizes construction."
+  ],
+  "implementation": "src/aias_structural_codes_program/mdp02.py",
+  "verification": "tests/test_ground_water_engineering_mdp02.py",
+  "external_completion_conditions": ["Site investigation data", "Authorized rainfall and network criteria", "Licensed jurisdictional packs", "Independent professional review"]
+}

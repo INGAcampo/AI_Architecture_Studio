@@ -1,0 +1,1082 @@
+{
+  "backend": "AutoCAD 2027 accoreconsole.exe",
+  "version": "ACADVER 26.0",
+  "verdict": "BLOCKER_DWG_ROUNDTRIP_CERTIFICATION_FAILED",
+  "drawings": [
+    {
+      "filename": "A-101.dwg",
+      "dwg_bytes": 21137,
+      "dwg_sha256": "49fd36f809b281252b7c3aa496421e9a52896bd79b05e48943c9a4c478134233",
+      "source_entity_count": 13,
+      "reopened_entity_count": 13,
+      "source_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "reopened_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "aias_ids_source": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "aias_ids_recovered": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "handles": [
+        "7C",
+        "7D",
+        "7E",
+        "7F",
+        "80",
+        "81",
+        "88",
+        "89",
+        "8A",
+        "8E",
+        "92",
+        "93",
+        "94"
+      ],
+      "mapping": [
+        {
+          "aias_id": "cad-0001",
+          "handle": "7C"
+        },
+        {
+          "aias_id": "cad-0002",
+          "handle": "7D"
+        },
+        {
+          "aias_id": "cad-0003",
+          "handle": "7E"
+        },
+        {
+          "aias_id": "cad-0004",
+          "handle": "7F"
+        },
+        {
+          "aias_id": "cad-0005",
+          "handle": "80"
+        },
+        {
+          "aias_id": "cad-0006",
+          "handle": "81"
+        },
+        {
+          "aias_id": "cad-0007",
+          "handle": "88"
+        },
+        {
+          "aias_id": "cad-0008",
+          "handle": "89"
+        },
+        {
+          "aias_id": "cad-0009",
+          "handle": "8A"
+        },
+        {
+          "aias_id": "cad-0010",
+          "handle": "8E"
+        },
+        {
+          "aias_id": "cad-0011",
+          "handle": "92"
+        },
+        {
+          "aias_id": "cad-0012",
+          "handle": "93"
+        },
+        {
+          "aias_id": "cad-0013",
+          "handle": "94"
+        }
+      ],
+      "duplicate_ids": [],
+      "missing_ids": [],
+      "unexpected_ids": [],
+      "critical_loss": true,
+      "degradations": [
+        "EXPECTED_MAPPING: blocks/dimensions are explicit TEXT/LINE equivalents; rectangles are polylines"
+      ],
+      "save": {
+        "pid": 32224,
+        "duration_seconds": 45.072,
+        "timeout_seconds": 45,
+        "timed_out": true,
+        "exit_code": 1,
+        "stdout_tail": "n\u0000d\u0000o\u0000 \u0000S\u0000U\u0000P\u0000E\u0000R\u0000V\u0000I\u0000S\u0000A\u0000R\u0000V\u0000A\u0000R\u0000S\u0000I\u0000S\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000v\u0000e\u0000r\u0000 \u0000l\u0000o\u0000s\u0000 \u0000c\u0000a\u0000m\u0000b\u0000i\u0000o\u0000s\u0000.\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000U\u0000t\u0000i\u0000l\u0000i\u0000d\u0000a\u0000d\u0000e\u0000s\u0000 \u0000d\u0000e\u0000 \u0000m\u0000e\u0000n\u0000\u00fa\u0000 \u0000d\u0000e\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u0000c\u0000a\u0000r\u0000g\u0000a\u0000d\u0000a\u0000s\u0000.\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000S\u0000A\u0000V\u0000E\u0000A\u0000S\u0000\n\u0000\n\u0000\n\u0000\n\u0000F\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000a\u0000c\u0000t\u0000u\u0000a\u0000l\u0000:\u0000 \u0000D\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000I\u0000n\u0000t\u0000r\u0000o\u0000d\u0000u\u0000z\u0000c\u0000a\u0000 \u0000e\u0000l\u0000 \u0000f\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000[\u0000R\u00001\u00004\u0000(\u0000L\u0000T\u00009\u00008\u0000&\u0000L\u0000T\u00009\u00007\u0000)\u0000/\u00002\u00000\u00000\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00000\u0000)\u0000/\u00002\u00000\u00000\u00004\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00004\u0000)\u0000/\u00002\u00000\u00000\u00007\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00007\u0000)\u0000/\u00002\u00000\u00001\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00000\u0000)\u0000/\u00002\u00000\u00001\u00003\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00003\u0000)\u0000/\u00002\u00000\u00001\u00008\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00008\u0000)\u0000/\u0000E\u0000s\u0000t\u0000\u00e1\u0000n\u0000d\u0000a\u0000r\u0000e\u0000s\u0000/\u0000D\u0000X\u0000F\u0000/\u0000P\u0000l\u0000a\u0000n\u0000t\u0000i\u0000l\u0000l\u0000a\u0000]\u0000 \u0000<\u00002\u00000\u00001\u00008\u0000>\u0000:\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000G\u0000u\u0000a\u0000r\u0000d\u0000a\u0000r\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000m\u0000o\u0000 \u0000<\u0000C\u0000:\u0000\\\u0000A\u0000I\u0000A\u0000S\u0000\\\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000\\\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000\\\u0000a\u0000i\u0000a\u0000s\u0000\\\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000\\\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000\\\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000\\\u0000s\u0000o\u0000u\u0000r\u0000c\u0000e\u0000\\\u0000A\u0000-\u00001\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000>\u0000:\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00001\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000\"\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000\u00bf\u0000D\u0000e\u0000s\u0000e\u0000a\u0000 \u0000r\u0000e\u0000e\u0000m\u0000p\u0000l\u0000a\u0000z\u0000a\u0000r\u0000l\u0000o\u0000?\u0000 \u0000<\u0000N\u0000>\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000S\u0000\u00ed\u0000 \u0000o\u0000 \u0000N\u0000o\u0000.\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "reopen": {
+        "pid": 40856,
+        "duration_seconds": 2.408,
+        "timeout_seconds": 45,
+        "timed_out": false,
+        "exit_code": 0,
+        "stdout_tail": "o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000f\u0000 \u0000(\u0000o\u0000p\u0000e\u0000n\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00001\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000 \u0000\"\u0000w\u0000\"\u0000)\u0000)\u0000\n\u0000\n\u0000#\u0000<\u0000f\u0000i\u0000l\u0000e\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00001\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000)\u0000)\u0000\n\u0000\n\u0000<\u0000N\u0000o\u0000m\u0000b\u0000r\u0000e\u0000 \u0000e\u0000n\u0000t\u0000i\u0000d\u0000a\u0000d\u0000:\u0000 \u00001\u00002\u00004\u00005\u0000b\u00007\u00008\u0000e\u00008\u00004\u00000\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000e\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000d\u0000 \u0000(\u0000e\u0000n\u0000t\u0000g\u0000e\u0000t\u0000 \u0000e\u0000 \u0000(\u0000l\u0000i\u0000s\u0000t\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000)\u0000)\u0000 \u0000x\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000-\u00003\u0000 \u0000d\u0000)\u0000)\u0000 \u0000a\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000 \u0000x\u0000)\u0000 \u0000i\u0000 \u0000(\u0000i\u0000f\u0000 \u0000a\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00001\u00000\u00000\u00000\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000a\u0000)\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000)\u0000 \u0000(\u0000w\u0000r\u0000i\u0000t\u0000e\u0000-\u0000l\u0000i\u0000n\u0000e\u0000 \u0000(\u0000s\u0000t\u0000r\u0000c\u0000a\u0000t\u0000 \u0000\"\u0000E\u0000|\u0000\"\u0000 \u0000i\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00000\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000i\u0000f\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00005\u0000 \u0000d\u0000)\u0000)\u0000)\u0000 \u0000f\u0000)\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000 \u0000e\u0000)\u0000)\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000c\u0000l\u0000o\u0000s\u0000e\u0000 \u0000f\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000p\u0000r\u0000i\u0000n\u0000c\u0000)\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000L\u0000o\u0000g\u0000F\u0000i\u0000l\u0000e\u0000P\u0000a\u0000t\u0000h\u0000 \u0000h\u0000a\u0000s\u0000 \u0000b\u0000e\u0000e\u0000n\u0000 \u0000r\u0000e\u0000s\u0000t\u0000o\u0000r\u0000e\u0000d\u0000 \u0000t\u0000o\u0000 \u0000'\u0000'\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "source_dxf_sha256": "86ad34840958a6fe744ffa3357f64b9d8539386ca7bff2bb7cd5d795dfe40aaa",
+      "dxf_mapping": [
+        {
+          "aias_id": "cad-0001",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0002",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0003",
+          "dxf_representation": "line",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0004",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0005",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0006",
+          "dxf_representation": "polyline",
+          "layer": "A-WALL"
+        },
+        {
+          "aias_id": "cad-0007",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0008",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0009",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0010",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0011",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0012",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0013",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        }
+      ]
+    },
+    {
+      "filename": "S-101.dwg",
+      "dwg_bytes": 21137,
+      "dwg_sha256": "c9e8ff1074379c4ad75b42c3dc56867f3263c0bcfda20ed415af2321f4ea9331",
+      "source_entity_count": 13,
+      "reopened_entity_count": 13,
+      "source_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "reopened_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "aias_ids_source": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "aias_ids_recovered": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "handles": [
+        "7C",
+        "7D",
+        "7E",
+        "7F",
+        "80",
+        "81",
+        "88",
+        "89",
+        "8A",
+        "8E",
+        "92",
+        "93",
+        "94"
+      ],
+      "mapping": [
+        {
+          "aias_id": "cad-0001",
+          "handle": "7C"
+        },
+        {
+          "aias_id": "cad-0002",
+          "handle": "7D"
+        },
+        {
+          "aias_id": "cad-0003",
+          "handle": "7E"
+        },
+        {
+          "aias_id": "cad-0004",
+          "handle": "7F"
+        },
+        {
+          "aias_id": "cad-0005",
+          "handle": "80"
+        },
+        {
+          "aias_id": "cad-0006",
+          "handle": "81"
+        },
+        {
+          "aias_id": "cad-0007",
+          "handle": "88"
+        },
+        {
+          "aias_id": "cad-0008",
+          "handle": "89"
+        },
+        {
+          "aias_id": "cad-0009",
+          "handle": "8A"
+        },
+        {
+          "aias_id": "cad-0010",
+          "handle": "8E"
+        },
+        {
+          "aias_id": "cad-0011",
+          "handle": "92"
+        },
+        {
+          "aias_id": "cad-0012",
+          "handle": "93"
+        },
+        {
+          "aias_id": "cad-0013",
+          "handle": "94"
+        }
+      ],
+      "duplicate_ids": [],
+      "missing_ids": [],
+      "unexpected_ids": [],
+      "critical_loss": true,
+      "degradations": [
+        "EXPECTED_MAPPING: blocks/dimensions are explicit TEXT/LINE equivalents; rectangles are polylines"
+      ],
+      "save": {
+        "pid": 35776,
+        "duration_seconds": 45.051,
+        "timeout_seconds": 45,
+        "timed_out": true,
+        "exit_code": 1,
+        "stdout_tail": "n\u0000d\u0000o\u0000 \u0000S\u0000U\u0000P\u0000E\u0000R\u0000V\u0000I\u0000S\u0000A\u0000R\u0000V\u0000A\u0000R\u0000S\u0000I\u0000S\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000v\u0000e\u0000r\u0000 \u0000l\u0000o\u0000s\u0000 \u0000c\u0000a\u0000m\u0000b\u0000i\u0000o\u0000s\u0000.\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000U\u0000t\u0000i\u0000l\u0000i\u0000d\u0000a\u0000d\u0000e\u0000s\u0000 \u0000d\u0000e\u0000 \u0000m\u0000e\u0000n\u0000\u00fa\u0000 \u0000d\u0000e\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u0000c\u0000a\u0000r\u0000g\u0000a\u0000d\u0000a\u0000s\u0000.\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000S\u0000A\u0000V\u0000E\u0000A\u0000S\u0000\n\u0000\n\u0000\n\u0000\n\u0000F\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000a\u0000c\u0000t\u0000u\u0000a\u0000l\u0000:\u0000 \u0000D\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000I\u0000n\u0000t\u0000r\u0000o\u0000d\u0000u\u0000z\u0000c\u0000a\u0000 \u0000e\u0000l\u0000 \u0000f\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000[\u0000R\u00001\u00004\u0000(\u0000L\u0000T\u00009\u00008\u0000&\u0000L\u0000T\u00009\u00007\u0000)\u0000/\u00002\u00000\u00000\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00000\u0000)\u0000/\u00002\u00000\u00000\u00004\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00004\u0000)\u0000/\u00002\u00000\u00000\u00007\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00007\u0000)\u0000/\u00002\u00000\u00001\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00000\u0000)\u0000/\u00002\u00000\u00001\u00003\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00003\u0000)\u0000/\u00002\u00000\u00001\u00008\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00008\u0000)\u0000/\u0000E\u0000s\u0000t\u0000\u00e1\u0000n\u0000d\u0000a\u0000r\u0000e\u0000s\u0000/\u0000D\u0000X\u0000F\u0000/\u0000P\u0000l\u0000a\u0000n\u0000t\u0000i\u0000l\u0000l\u0000a\u0000]\u0000 \u0000<\u00002\u00000\u00001\u00008\u0000>\u0000:\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000G\u0000u\u0000a\u0000r\u0000d\u0000a\u0000r\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000m\u0000o\u0000 \u0000<\u0000C\u0000:\u0000\\\u0000A\u0000I\u0000A\u0000S\u0000\\\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000\\\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000\\\u0000a\u0000i\u0000a\u0000s\u0000\\\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000\\\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000\\\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000\\\u0000s\u0000o\u0000u\u0000r\u0000c\u0000e\u0000\\\u0000S\u0000-\u00001\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000>\u0000:\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000S\u0000-\u00001\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000\"\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000\u00bf\u0000D\u0000e\u0000s\u0000e\u0000a\u0000 \u0000r\u0000e\u0000e\u0000m\u0000p\u0000l\u0000a\u0000z\u0000a\u0000r\u0000l\u0000o\u0000?\u0000 \u0000<\u0000N\u0000>\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000S\u0000\u00ed\u0000 \u0000o\u0000 \u0000N\u0000o\u0000.\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "reopen": {
+        "pid": 15828,
+        "duration_seconds": 2.165,
+        "timeout_seconds": 45,
+        "timed_out": false,
+        "exit_code": 0,
+        "stdout_tail": "o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000f\u0000 \u0000(\u0000o\u0000p\u0000e\u0000n\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000S\u0000-\u00001\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000 \u0000\"\u0000w\u0000\"\u0000)\u0000)\u0000\n\u0000\n\u0000#\u0000<\u0000f\u0000i\u0000l\u0000e\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000S\u0000-\u00001\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000)\u0000)\u0000\n\u0000\n\u0000<\u0000N\u0000o\u0000m\u0000b\u0000r\u0000e\u0000 \u0000e\u0000n\u0000t\u0000i\u0000d\u0000a\u0000d\u0000:\u0000 \u00002\u00003\u0000b\u00002\u0000f\u0000b\u00001\u0000a\u00008\u00004\u00000\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000e\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000d\u0000 \u0000(\u0000e\u0000n\u0000t\u0000g\u0000e\u0000t\u0000 \u0000e\u0000 \u0000(\u0000l\u0000i\u0000s\u0000t\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000)\u0000)\u0000 \u0000x\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000-\u00003\u0000 \u0000d\u0000)\u0000)\u0000 \u0000a\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000 \u0000x\u0000)\u0000 \u0000i\u0000 \u0000(\u0000i\u0000f\u0000 \u0000a\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00001\u00000\u00000\u00000\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000a\u0000)\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000)\u0000 \u0000(\u0000w\u0000r\u0000i\u0000t\u0000e\u0000-\u0000l\u0000i\u0000n\u0000e\u0000 \u0000(\u0000s\u0000t\u0000r\u0000c\u0000a\u0000t\u0000 \u0000\"\u0000E\u0000|\u0000\"\u0000 \u0000i\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00000\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000i\u0000f\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00005\u0000 \u0000d\u0000)\u0000)\u0000)\u0000 \u0000f\u0000)\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000 \u0000e\u0000)\u0000)\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000c\u0000l\u0000o\u0000s\u0000e\u0000 \u0000f\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000p\u0000r\u0000i\u0000n\u0000c\u0000)\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000L\u0000o\u0000g\u0000F\u0000i\u0000l\u0000e\u0000P\u0000a\u0000t\u0000h\u0000 \u0000h\u0000a\u0000s\u0000 \u0000b\u0000e\u0000e\u0000n\u0000 \u0000r\u0000e\u0000s\u0000t\u0000o\u0000r\u0000e\u0000d\u0000 \u0000t\u0000o\u0000 \u0000'\u0000'\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "source_dxf_sha256": "86ad34840958a6fe744ffa3357f64b9d8539386ca7bff2bb7cd5d795dfe40aaa",
+      "dxf_mapping": [
+        {
+          "aias_id": "cad-0001",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0002",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0003",
+          "dxf_representation": "line",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0004",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0005",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0006",
+          "dxf_representation": "polyline",
+          "layer": "A-WALL"
+        },
+        {
+          "aias_id": "cad-0007",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0008",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0009",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0010",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0011",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0012",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0013",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        }
+      ]
+    },
+    {
+      "filename": "S-201.dwg",
+      "dwg_bytes": 21137,
+      "dwg_sha256": "58ba305a24a6e01d877210efd22913142e888279835b3d1802b10e6580be459f",
+      "source_entity_count": 13,
+      "reopened_entity_count": 13,
+      "source_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "reopened_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "aias_ids_source": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "aias_ids_recovered": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "handles": [
+        "7C",
+        "7D",
+        "7E",
+        "7F",
+        "80",
+        "81",
+        "88",
+        "89",
+        "8A",
+        "8E",
+        "92",
+        "93",
+        "94"
+      ],
+      "mapping": [
+        {
+          "aias_id": "cad-0001",
+          "handle": "7C"
+        },
+        {
+          "aias_id": "cad-0002",
+          "handle": "7D"
+        },
+        {
+          "aias_id": "cad-0003",
+          "handle": "7E"
+        },
+        {
+          "aias_id": "cad-0004",
+          "handle": "7F"
+        },
+        {
+          "aias_id": "cad-0005",
+          "handle": "80"
+        },
+        {
+          "aias_id": "cad-0006",
+          "handle": "81"
+        },
+        {
+          "aias_id": "cad-0007",
+          "handle": "88"
+        },
+        {
+          "aias_id": "cad-0008",
+          "handle": "89"
+        },
+        {
+          "aias_id": "cad-0009",
+          "handle": "8A"
+        },
+        {
+          "aias_id": "cad-0010",
+          "handle": "8E"
+        },
+        {
+          "aias_id": "cad-0011",
+          "handle": "92"
+        },
+        {
+          "aias_id": "cad-0012",
+          "handle": "93"
+        },
+        {
+          "aias_id": "cad-0013",
+          "handle": "94"
+        }
+      ],
+      "duplicate_ids": [],
+      "missing_ids": [],
+      "unexpected_ids": [],
+      "critical_loss": true,
+      "degradations": [
+        "EXPECTED_MAPPING: blocks/dimensions are explicit TEXT/LINE equivalents; rectangles are polylines"
+      ],
+      "save": {
+        "pid": 44152,
+        "duration_seconds": 45.052,
+        "timeout_seconds": 45,
+        "timed_out": true,
+        "exit_code": 1,
+        "stdout_tail": "n\u0000d\u0000o\u0000 \u0000S\u0000U\u0000P\u0000E\u0000R\u0000V\u0000I\u0000S\u0000A\u0000R\u0000V\u0000A\u0000R\u0000S\u0000I\u0000S\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000v\u0000e\u0000r\u0000 \u0000l\u0000o\u0000s\u0000 \u0000c\u0000a\u0000m\u0000b\u0000i\u0000o\u0000s\u0000.\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000U\u0000t\u0000i\u0000l\u0000i\u0000d\u0000a\u0000d\u0000e\u0000s\u0000 \u0000d\u0000e\u0000 \u0000m\u0000e\u0000n\u0000\u00fa\u0000 \u0000d\u0000e\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u0000c\u0000a\u0000r\u0000g\u0000a\u0000d\u0000a\u0000s\u0000.\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000S\u0000A\u0000V\u0000E\u0000A\u0000S\u0000\n\u0000\n\u0000\n\u0000\n\u0000F\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000a\u0000c\u0000t\u0000u\u0000a\u0000l\u0000:\u0000 \u0000D\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000I\u0000n\u0000t\u0000r\u0000o\u0000d\u0000u\u0000z\u0000c\u0000a\u0000 \u0000e\u0000l\u0000 \u0000f\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000[\u0000R\u00001\u00004\u0000(\u0000L\u0000T\u00009\u00008\u0000&\u0000L\u0000T\u00009\u00007\u0000)\u0000/\u00002\u00000\u00000\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00000\u0000)\u0000/\u00002\u00000\u00000\u00004\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00004\u0000)\u0000/\u00002\u00000\u00000\u00007\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00007\u0000)\u0000/\u00002\u00000\u00001\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00000\u0000)\u0000/\u00002\u00000\u00001\u00003\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00003\u0000)\u0000/\u00002\u00000\u00001\u00008\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00008\u0000)\u0000/\u0000E\u0000s\u0000t\u0000\u00e1\u0000n\u0000d\u0000a\u0000r\u0000e\u0000s\u0000/\u0000D\u0000X\u0000F\u0000/\u0000P\u0000l\u0000a\u0000n\u0000t\u0000i\u0000l\u0000l\u0000a\u0000]\u0000 \u0000<\u00002\u00000\u00001\u00008\u0000>\u0000:\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000G\u0000u\u0000a\u0000r\u0000d\u0000a\u0000r\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000m\u0000o\u0000 \u0000<\u0000C\u0000:\u0000\\\u0000A\u0000I\u0000A\u0000S\u0000\\\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000\\\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000\\\u0000a\u0000i\u0000a\u0000s\u0000\\\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000\\\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000\\\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000\\\u0000s\u0000o\u0000u\u0000r\u0000c\u0000e\u0000\\\u0000S\u0000-\u00002\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000>\u0000:\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000S\u0000-\u00002\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000\"\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000\u00bf\u0000D\u0000e\u0000s\u0000e\u0000a\u0000 \u0000r\u0000e\u0000e\u0000m\u0000p\u0000l\u0000a\u0000z\u0000a\u0000r\u0000l\u0000o\u0000?\u0000 \u0000<\u0000N\u0000>\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000S\u0000\u00ed\u0000 \u0000o\u0000 \u0000N\u0000o\u0000.\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "reopen": {
+        "pid": 8008,
+        "duration_seconds": 2.478,
+        "timeout_seconds": 45,
+        "timed_out": false,
+        "exit_code": 0,
+        "stdout_tail": "o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000f\u0000 \u0000(\u0000o\u0000p\u0000e\u0000n\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000S\u0000-\u00002\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000 \u0000\"\u0000w\u0000\"\u0000)\u0000)\u0000\n\u0000\n\u0000#\u0000<\u0000f\u0000i\u0000l\u0000e\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000S\u0000-\u00002\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000)\u0000)\u0000\n\u0000\n\u0000<\u0000N\u0000o\u0000m\u0000b\u0000r\u0000e\u0000 \u0000e\u0000n\u0000t\u0000i\u0000d\u0000a\u0000d\u0000:\u0000 \u00001\u0000b\u00002\u0000f\u00005\u00009\u00005\u00000\u00000\u00004\u00000\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000e\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000d\u0000 \u0000(\u0000e\u0000n\u0000t\u0000g\u0000e\u0000t\u0000 \u0000e\u0000 \u0000(\u0000l\u0000i\u0000s\u0000t\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000)\u0000)\u0000 \u0000x\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000-\u00003\u0000 \u0000d\u0000)\u0000)\u0000 \u0000a\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000 \u0000x\u0000)\u0000 \u0000i\u0000 \u0000(\u0000i\u0000f\u0000 \u0000a\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00001\u00000\u00000\u00000\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000a\u0000)\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000)\u0000 \u0000(\u0000w\u0000r\u0000i\u0000t\u0000e\u0000-\u0000l\u0000i\u0000n\u0000e\u0000 \u0000(\u0000s\u0000t\u0000r\u0000c\u0000a\u0000t\u0000 \u0000\"\u0000E\u0000|\u0000\"\u0000 \u0000i\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00000\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000i\u0000f\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00005\u0000 \u0000d\u0000)\u0000)\u0000)\u0000 \u0000f\u0000)\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000 \u0000e\u0000)\u0000)\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000c\u0000l\u0000o\u0000s\u0000e\u0000 \u0000f\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000p\u0000r\u0000i\u0000n\u0000c\u0000)\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000L\u0000o\u0000g\u0000F\u0000i\u0000l\u0000e\u0000P\u0000a\u0000t\u0000h\u0000 \u0000h\u0000a\u0000s\u0000 \u0000b\u0000e\u0000e\u0000n\u0000 \u0000r\u0000e\u0000s\u0000t\u0000o\u0000r\u0000e\u0000d\u0000 \u0000t\u0000o\u0000 \u0000'\u0000'\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "source_dxf_sha256": "86ad34840958a6fe744ffa3357f64b9d8539386ca7bff2bb7cd5d795dfe40aaa",
+      "dxf_mapping": [
+        {
+          "aias_id": "cad-0001",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0002",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0003",
+          "dxf_representation": "line",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0004",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0005",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0006",
+          "dxf_representation": "polyline",
+          "layer": "A-WALL"
+        },
+        {
+          "aias_id": "cad-0007",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0008",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0009",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0010",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0011",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0012",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0013",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        }
+      ]
+    },
+    {
+      "filename": "A-301.dwg",
+      "dwg_bytes": 21105,
+      "dwg_sha256": "3312ec5de7564cbe89e93512de13e8c2a0fdf7a0c2b91b87a93fd3a838589aa1",
+      "source_entity_count": 13,
+      "reopened_entity_count": 13,
+      "source_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "reopened_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "aias_ids_source": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "aias_ids_recovered": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "handles": [
+        "7C",
+        "7D",
+        "7E",
+        "7F",
+        "80",
+        "81",
+        "88",
+        "89",
+        "8A",
+        "8E",
+        "92",
+        "93",
+        "94"
+      ],
+      "mapping": [
+        {
+          "aias_id": "cad-0001",
+          "handle": "7C"
+        },
+        {
+          "aias_id": "cad-0002",
+          "handle": "7D"
+        },
+        {
+          "aias_id": "cad-0003",
+          "handle": "7E"
+        },
+        {
+          "aias_id": "cad-0004",
+          "handle": "7F"
+        },
+        {
+          "aias_id": "cad-0005",
+          "handle": "80"
+        },
+        {
+          "aias_id": "cad-0006",
+          "handle": "81"
+        },
+        {
+          "aias_id": "cad-0007",
+          "handle": "88"
+        },
+        {
+          "aias_id": "cad-0008",
+          "handle": "89"
+        },
+        {
+          "aias_id": "cad-0009",
+          "handle": "8A"
+        },
+        {
+          "aias_id": "cad-0010",
+          "handle": "8E"
+        },
+        {
+          "aias_id": "cad-0011",
+          "handle": "92"
+        },
+        {
+          "aias_id": "cad-0012",
+          "handle": "93"
+        },
+        {
+          "aias_id": "cad-0013",
+          "handle": "94"
+        }
+      ],
+      "duplicate_ids": [],
+      "missing_ids": [],
+      "unexpected_ids": [],
+      "critical_loss": true,
+      "degradations": [
+        "EXPECTED_MAPPING: blocks/dimensions are explicit TEXT/LINE equivalents; rectangles are polylines"
+      ],
+      "save": {
+        "pid": 30264,
+        "duration_seconds": 45.065,
+        "timeout_seconds": 45,
+        "timed_out": true,
+        "exit_code": 1,
+        "stdout_tail": "n\u0000d\u0000o\u0000 \u0000S\u0000U\u0000P\u0000E\u0000R\u0000V\u0000I\u0000S\u0000A\u0000R\u0000V\u0000A\u0000R\u0000S\u0000I\u0000S\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000v\u0000e\u0000r\u0000 \u0000l\u0000o\u0000s\u0000 \u0000c\u0000a\u0000m\u0000b\u0000i\u0000o\u0000s\u0000.\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000U\u0000t\u0000i\u0000l\u0000i\u0000d\u0000a\u0000d\u0000e\u0000s\u0000 \u0000d\u0000e\u0000 \u0000m\u0000e\u0000n\u0000\u00fa\u0000 \u0000d\u0000e\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u0000c\u0000a\u0000r\u0000g\u0000a\u0000d\u0000a\u0000s\u0000.\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000S\u0000A\u0000V\u0000E\u0000A\u0000S\u0000\n\u0000\n\u0000\n\u0000\n\u0000F\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000a\u0000c\u0000t\u0000u\u0000a\u0000l\u0000:\u0000 \u0000D\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000I\u0000n\u0000t\u0000r\u0000o\u0000d\u0000u\u0000z\u0000c\u0000a\u0000 \u0000e\u0000l\u0000 \u0000f\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000[\u0000R\u00001\u00004\u0000(\u0000L\u0000T\u00009\u00008\u0000&\u0000L\u0000T\u00009\u00007\u0000)\u0000/\u00002\u00000\u00000\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00000\u0000)\u0000/\u00002\u00000\u00000\u00004\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00004\u0000)\u0000/\u00002\u00000\u00000\u00007\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00007\u0000)\u0000/\u00002\u00000\u00001\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00000\u0000)\u0000/\u00002\u00000\u00001\u00003\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00003\u0000)\u0000/\u00002\u00000\u00001\u00008\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00008\u0000)\u0000/\u0000E\u0000s\u0000t\u0000\u00e1\u0000n\u0000d\u0000a\u0000r\u0000e\u0000s\u0000/\u0000D\u0000X\u0000F\u0000/\u0000P\u0000l\u0000a\u0000n\u0000t\u0000i\u0000l\u0000l\u0000a\u0000]\u0000 \u0000<\u00002\u00000\u00001\u00008\u0000>\u0000:\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000G\u0000u\u0000a\u0000r\u0000d\u0000a\u0000r\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000m\u0000o\u0000 \u0000<\u0000C\u0000:\u0000\\\u0000A\u0000I\u0000A\u0000S\u0000\\\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000\\\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000\\\u0000a\u0000i\u0000a\u0000s\u0000\\\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000\\\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000\\\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000\\\u0000s\u0000o\u0000u\u0000r\u0000c\u0000e\u0000\\\u0000A\u0000-\u00003\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000>\u0000:\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00003\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000\"\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000\u00bf\u0000D\u0000e\u0000s\u0000e\u0000a\u0000 \u0000r\u0000e\u0000e\u0000m\u0000p\u0000l\u0000a\u0000z\u0000a\u0000r\u0000l\u0000o\u0000?\u0000 \u0000<\u0000N\u0000>\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000S\u0000\u00ed\u0000 \u0000o\u0000 \u0000N\u0000o\u0000.\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "reopen": {
+        "pid": 12292,
+        "duration_seconds": 2.295,
+        "timeout_seconds": 45,
+        "timed_out": false,
+        "exit_code": 0,
+        "stdout_tail": "o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000f\u0000 \u0000(\u0000o\u0000p\u0000e\u0000n\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00003\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000 \u0000\"\u0000w\u0000\"\u0000)\u0000)\u0000\n\u0000\n\u0000#\u0000<\u0000f\u0000i\u0000l\u0000e\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00003\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000)\u0000)\u0000\n\u0000\n\u0000<\u0000N\u0000o\u0000m\u0000b\u0000r\u0000e\u0000 \u0000e\u0000n\u0000t\u0000i\u0000d\u0000a\u0000d\u0000:\u0000 \u00001\u00007\u00008\u0000c\u0000e\u00000\u0000f\u00005\u00000\u00004\u00000\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000e\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000d\u0000 \u0000(\u0000e\u0000n\u0000t\u0000g\u0000e\u0000t\u0000 \u0000e\u0000 \u0000(\u0000l\u0000i\u0000s\u0000t\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000)\u0000)\u0000 \u0000x\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000-\u00003\u0000 \u0000d\u0000)\u0000)\u0000 \u0000a\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000 \u0000x\u0000)\u0000 \u0000i\u0000 \u0000(\u0000i\u0000f\u0000 \u0000a\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00001\u00000\u00000\u00000\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000a\u0000)\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000)\u0000 \u0000(\u0000w\u0000r\u0000i\u0000t\u0000e\u0000-\u0000l\u0000i\u0000n\u0000e\u0000 \u0000(\u0000s\u0000t\u0000r\u0000c\u0000a\u0000t\u0000 \u0000\"\u0000E\u0000|\u0000\"\u0000 \u0000i\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00000\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000i\u0000f\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00005\u0000 \u0000d\u0000)\u0000)\u0000)\u0000 \u0000f\u0000)\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000 \u0000e\u0000)\u0000)\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000c\u0000l\u0000o\u0000s\u0000e\u0000 \u0000f\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000p\u0000r\u0000i\u0000n\u0000c\u0000)\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000L\u0000o\u0000g\u0000F\u0000i\u0000l\u0000e\u0000P\u0000a\u0000t\u0000h\u0000 \u0000h\u0000a\u0000s\u0000 \u0000b\u0000e\u0000e\u0000n\u0000 \u0000r\u0000e\u0000s\u0000t\u0000o\u0000r\u0000e\u0000d\u0000 \u0000t\u0000o\u0000 \u0000'\u0000'\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "source_dxf_sha256": "86ad34840958a6fe744ffa3357f64b9d8539386ca7bff2bb7cd5d795dfe40aaa",
+      "dxf_mapping": [
+        {
+          "aias_id": "cad-0001",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0002",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0003",
+          "dxf_representation": "line",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0004",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0005",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0006",
+          "dxf_representation": "polyline",
+          "layer": "A-WALL"
+        },
+        {
+          "aias_id": "cad-0007",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0008",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0009",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0010",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0011",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0012",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0013",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        }
+      ]
+    },
+    {
+      "filename": "A-401.dwg",
+      "dwg_bytes": 21137,
+      "dwg_sha256": "6d3e1c28c130c119cd73673100a09d8e878448d9d97340c4dbcd1eaa0fa80a80",
+      "source_entity_count": 13,
+      "reopened_entity_count": 13,
+      "source_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "reopened_layers": [
+        "A-DIMS",
+        "A-DOOR",
+        "A-GRID",
+        "A-TEXT",
+        "A-WALL",
+        "S-STRUCT"
+      ],
+      "aias_ids_source": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "aias_ids_recovered": [
+        "cad-0001",
+        "cad-0002",
+        "cad-0003",
+        "cad-0004",
+        "cad-0005",
+        "cad-0006",
+        "cad-0007",
+        "cad-0008",
+        "cad-0009",
+        "cad-0010",
+        "cad-0011",
+        "cad-0012",
+        "cad-0013"
+      ],
+      "handles": [
+        "7C",
+        "7D",
+        "7E",
+        "7F",
+        "80",
+        "81",
+        "88",
+        "89",
+        "8A",
+        "8E",
+        "92",
+        "93",
+        "94"
+      ],
+      "mapping": [
+        {
+          "aias_id": "cad-0001",
+          "handle": "7C"
+        },
+        {
+          "aias_id": "cad-0002",
+          "handle": "7D"
+        },
+        {
+          "aias_id": "cad-0003",
+          "handle": "7E"
+        },
+        {
+          "aias_id": "cad-0004",
+          "handle": "7F"
+        },
+        {
+          "aias_id": "cad-0005",
+          "handle": "80"
+        },
+        {
+          "aias_id": "cad-0006",
+          "handle": "81"
+        },
+        {
+          "aias_id": "cad-0007",
+          "handle": "88"
+        },
+        {
+          "aias_id": "cad-0008",
+          "handle": "89"
+        },
+        {
+          "aias_id": "cad-0009",
+          "handle": "8A"
+        },
+        {
+          "aias_id": "cad-0010",
+          "handle": "8E"
+        },
+        {
+          "aias_id": "cad-0011",
+          "handle": "92"
+        },
+        {
+          "aias_id": "cad-0012",
+          "handle": "93"
+        },
+        {
+          "aias_id": "cad-0013",
+          "handle": "94"
+        }
+      ],
+      "duplicate_ids": [],
+      "missing_ids": [],
+      "unexpected_ids": [],
+      "critical_loss": true,
+      "degradations": [
+        "EXPECTED_MAPPING: blocks/dimensions are explicit TEXT/LINE equivalents; rectangles are polylines"
+      ],
+      "save": {
+        "pid": 44088,
+        "duration_seconds": 22.14,
+        "timeout_seconds": 45,
+        "timed_out": false,
+        "exit_code": 4294967295,
+        "stdout_tail": "n\u0000d\u0000o\u0000 \u0000S\u0000U\u0000P\u0000E\u0000R\u0000V\u0000I\u0000S\u0000A\u0000R\u0000V\u0000A\u0000R\u0000S\u0000I\u0000S\u0000 \u0000p\u0000a\u0000r\u0000a\u0000 \u0000v\u0000e\u0000r\u0000 \u0000l\u0000o\u0000s\u0000 \u0000c\u0000a\u0000m\u0000b\u0000i\u0000o\u0000s\u0000.\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000\n\u0000U\u0000t\u0000i\u0000l\u0000i\u0000d\u0000a\u0000d\u0000e\u0000s\u0000 \u0000d\u0000e\u0000 \u0000m\u0000e\u0000n\u0000\u00fa\u0000 \u0000d\u0000e\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u0000c\u0000a\u0000r\u0000g\u0000a\u0000d\u0000a\u0000s\u0000.\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000S\u0000A\u0000V\u0000E\u0000A\u0000S\u0000\n\u0000\n\u0000\n\u0000\n\u0000F\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000a\u0000c\u0000t\u0000u\u0000a\u0000l\u0000:\u0000 \u0000D\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000A\u0000u\u0000t\u0000o\u0000C\u0000A\u0000D\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000I\u0000n\u0000t\u0000r\u0000o\u0000d\u0000u\u0000z\u0000c\u0000a\u0000 \u0000e\u0000l\u0000 \u0000f\u0000o\u0000r\u0000m\u0000a\u0000t\u0000o\u0000 \u0000d\u0000e\u0000 \u0000a\u0000r\u0000c\u0000h\u0000i\u0000v\u0000o\u0000 \u0000[\u0000R\u00001\u00004\u0000(\u0000L\u0000T\u00009\u00008\u0000&\u0000L\u0000T\u00009\u00007\u0000)\u0000/\u00002\u00000\u00000\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00000\u0000)\u0000/\u00002\u00000\u00000\u00004\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00004\u0000)\u0000/\u00002\u00000\u00000\u00007\u0000(\u0000L\u0000T\u00002\u00000\u00000\u00007\u0000)\u0000/\u00002\u00000\u00001\u00000\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00000\u0000)\u0000/\u00002\u00000\u00001\u00003\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00003\u0000)\u0000/\u00002\u00000\u00001\u00008\u0000(\u0000L\u0000T\u00002\u00000\u00001\u00008\u0000)\u0000/\u0000E\u0000s\u0000t\u0000\u00e1\u0000n\u0000d\u0000a\u0000r\u0000e\u0000s\u0000/\u0000D\u0000X\u0000F\u0000/\u0000P\u0000l\u0000a\u0000n\u0000t\u0000i\u0000l\u0000l\u0000a\u0000]\u0000 \u0000<\u00002\u00000\u00001\u00008\u0000>\u0000:\u0000 \u00002\u00000\u00001\u00008\u0000\n\u0000\n\u0000G\u0000u\u0000a\u0000r\u0000d\u0000a\u0000r\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000m\u0000o\u0000 \u0000<\u0000C\u0000:\u0000\\\u0000A\u0000I\u0000A\u0000S\u0000\\\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000\\\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000\\\u0000a\u0000i\u0000a\u0000s\u0000\\\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000\\\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000\\\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000\\\u0000s\u0000o\u0000u\u0000r\u0000c\u0000e\u0000\\\u0000A\u0000-\u00004\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000>\u0000:\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00004\u00000\u00001\u0000.\u0000d\u0000w\u0000g\u0000\"\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000\u00bf\u0000D\u0000e\u0000s\u0000e\u0000a\u0000 \u0000r\u0000e\u0000e\u0000m\u0000p\u0000l\u0000a\u0000z\u0000a\u0000r\u0000l\u0000o\u0000?\u0000 \u0000<\u0000N\u0000>\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000S\u0000\u00ed\u0000 \u0000o\u0000 \u0000N\u0000o\u0000.\u0000\n\u0000\n\u0000Y\u0000a\u0000 \u0000e\u0000x\u0000i\u0000s\u0000t\u0000e\u0000 \u0000u\u0000n\u0000 \u0000d\u0000i\u0000b\u0000u\u0000j\u0000o\u0000 \u0000c\u0000o\u0000n\u0000 \u0000e\u0000s\u0000t\u0000e\u0000 \u0000n\u0000o\u0000m\u0000b\u0000r\u0000e\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "reopen": {
+        "pid": 28152,
+        "duration_seconds": 2.406,
+        "timeout_seconds": 45,
+        "timed_out": false,
+        "exit_code": 0,
+        "stdout_tail": "o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000f\u0000 \u0000(\u0000o\u0000p\u0000e\u0000n\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00004\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000 \u0000\"\u0000w\u0000\"\u0000)\u0000)\u0000\n\u0000\n\u0000#\u0000<\u0000f\u0000i\u0000l\u0000e\u0000 \u0000\"\u0000C\u0000:\u0000/\u0000A\u0000I\u0000A\u0000S\u0000/\u0000A\u0000I\u0000_\u0000A\u0000r\u0000c\u0000h\u0000i\u0000t\u0000e\u0000c\u0000t\u0000u\u0000r\u0000e\u0000_\u0000S\u0000t\u0000u\u0000d\u0000i\u0000o\u0000/\u0000e\u0000n\u0000g\u0000i\u0000n\u0000e\u0000e\u0000r\u0000i\u0000n\u0000g\u0000/\u0000a\u0000i\u0000a\u0000s\u0000/\u0000d\u0000e\u0000p\u0000e\u0000n\u0000d\u0000e\u0000n\u0000c\u0000y\u0000_\u0000r\u0000e\u0000s\u0000o\u0000l\u0000u\u0000t\u0000i\u0000o\u0000n\u0000/\u0000D\u0000R\u0000-\u00000\u00001\u0000A\u0000_\u0000E\u0000X\u0000E\u0000C\u0000U\u0000T\u0000I\u0000V\u0000E\u0000_\u0000D\u0000W\u0000G\u0000_\u0000C\u0000L\u0000O\u0000S\u0000U\u0000R\u0000E\u0000/\u0000o\u0000u\u0000t\u0000p\u0000u\u0000t\u0000/\u0000n\u0000a\u0000t\u0000i\u0000v\u0000e\u0000/\u0000A\u0000-\u00004\u00000\u00001\u0000_\u0000i\u0000n\u0000s\u0000p\u0000e\u0000c\u0000t\u0000.\u0000t\u0000x\u0000t\u0000\"\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000)\u0000)\u0000\n\u0000\n\u0000<\u0000N\u0000o\u0000m\u0000b\u0000r\u0000e\u0000 \u0000e\u0000n\u0000t\u0000i\u0000d\u0000a\u0000d\u0000:\u0000 \u00001\u0000d\u0000b\u00006\u0000c\u00006\u00002\u00003\u00008\u00004\u00000\u0000>\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000w\u0000h\u0000i\u0000l\u0000e\u0000 \u0000e\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000d\u0000 \u0000(\u0000e\u0000n\u0000t\u0000g\u0000e\u0000t\u0000 \u0000e\u0000 \u0000(\u0000l\u0000i\u0000s\u0000t\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000)\u0000)\u0000 \u0000x\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000-\u00003\u0000 \u0000d\u0000)\u0000)\u0000 \u0000a\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u0000\"\u0000A\u0000I\u0000A\u0000S\u0000\"\u0000 \u0000x\u0000)\u0000 \u0000i\u0000 \u0000(\u0000i\u0000f\u0000 \u0000a\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00001\u00000\u00000\u00000\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000a\u0000)\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000)\u0000 \u0000(\u0000w\u0000r\u0000i\u0000t\u0000e\u0000-\u0000l\u0000i\u0000n\u0000e\u0000 \u0000(\u0000s\u0000t\u0000r\u0000c\u0000a\u0000t\u0000 \u0000\"\u0000E\u0000|\u0000\"\u0000 \u0000i\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00000\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000i\u0000f\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00008\u0000 \u0000d\u0000)\u0000)\u0000 \u0000\"\u0000\"\u0000)\u0000 \u0000\"\u0000|\u0000\"\u0000 \u0000(\u0000c\u0000d\u0000r\u0000 \u0000(\u0000a\u0000s\u0000s\u0000o\u0000c\u0000 \u00005\u0000 \u0000d\u0000)\u0000)\u0000)\u0000 \u0000f\u0000)\u0000 \u0000(\u0000s\u0000e\u0000t\u0000q\u0000 \u0000e\u0000 \u0000(\u0000e\u0000n\u0000t\u0000n\u0000e\u0000x\u0000t\u0000 \u0000e\u0000)\u0000)\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000c\u0000l\u0000o\u0000s\u0000e\u0000 \u0000f\u0000)\u0000\n\u0000\n\u0000n\u0000i\u0000l\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000(\u0000p\u0000r\u0000i\u0000n\u0000c\u0000)\u0000\n\u0000\n\u0000\n\u0000\n\u0000C\u0000o\u0000m\u0000a\u0000n\u0000d\u0000o\u0000:\u0000 \u0000_\u0000.\u0000Q\u0000U\u0000I\u0000T\u0000\n\u0000\n\u0000\n\u0000\n\u0000L\u0000o\u0000g\u0000F\u0000i\u0000l\u0000e\u0000P\u0000a\u0000t\u0000h\u0000 \u0000h\u0000a\u0000s\u0000 \u0000b\u0000e\u0000e\u0000n\u0000 \u0000r\u0000e\u0000s\u0000t\u0000o\u0000r\u0000e\u0000d\u0000 \u0000t\u0000o\u0000 \u0000'\u0000'\u0000.\u0000\n\u0000\n\u0000",
+        "stderr_tail": ""
+      },
+      "source_dxf_sha256": "86ad34840958a6fe744ffa3357f64b9d8539386ca7bff2bb7cd5d795dfe40aaa",
+      "dxf_mapping": [
+        {
+          "aias_id": "cad-0001",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0002",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0003",
+          "dxf_representation": "line",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0004",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-GRID"
+        },
+        {
+          "aias_id": "cad-0005",
+          "dxf_representation": "text",
+          "layer": "A-TEXT"
+        },
+        {
+          "aias_id": "cad-0006",
+          "dxf_representation": "polyline",
+          "layer": "A-WALL"
+        },
+        {
+          "aias_id": "cad-0007",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0008",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DOOR"
+        },
+        {
+          "aias_id": "cad-0009",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0010",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "S-STRUCT"
+        },
+        {
+          "aias_id": "cad-0011",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0012",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        },
+        {
+          "aias_id": "cad-0013",
+          "dxf_representation": "equivalent_primitives",
+          "layer": "A-DIMS"
+        }
+      ]
+    }
+  ]
+}

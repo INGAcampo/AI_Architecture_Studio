@@ -1,0 +1,26 @@
+{
+  "NOT_FOR_CONSTRUCTION": true,
+  "SYNTHETIC_TEST_DATA": true,
+  "checks": {
+    "all_rules_bound": true,
+    "synthetic_isolation": true,
+    "two_isolated_projects": true
+  },
+  "projects": [
+    {
+      "evidence_file": "STANDARDS-CORE-CERT-A_STANDARDS_EVIDENCE.json",
+      "pass_count": 6,
+      "project_id": "STANDARDS-CORE-CERT-A",
+      "sha256": "39563f9a53f78e14b752d71f0a0fe2a6de747696de90a4bf23751d9f1361c501"
+    },
+    {
+      "evidence_file": "STANDARDS-CORE-CERT-B_STANDARDS_EVIDENCE.json",
+      "pass_count": 6,
+      "project_id": "STANDARDS-CORE-CERT-B",
+      "sha256": "6bf9391663fa138cc81f767b0f5fdf214198f77b5c5760b21401711808b83f41"
+    }
+  ],
+  "schema": "aias.standards_production_core_certification.v1",
+  "target": "STANDARDS_PRODUCTION_CORE_READY",
+  "verdict": "STANDARDS_PRODUCTION_CORE_READY"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "EC-000001",
+  "name": "Engineering Hello World",
+  "discipline": "Enterprise Engineering",
+  "version": "1.0.0",
+  "purpose": "Validate the complete AIAS enterprise capability lifecycle.",
+  "inputs": [
+    "operator_request"
+  ],
+  "outputs": [
+    "verified_result"
+  ],
+  "standards": [
+    "ASEC",
+    "ASDD",
+    "AEPS"
+  ],
+  "requirements": [
+    {
+      "id": "REQ-010001",
+      "statement": "The capability shall generate tangible assets.",
+      "acceptance_criteria": [
+        "Generated tests pass."
+      ]
+    }
+  ],
+  "deliverables": [
+    "PDF",
+    "TECHNICAL_FILE",
+    "TRACEABILITY",
+    "QA_REPORT"
+  ],
+  "metadata": {
+    "actual_hours": 40
+  }
+}

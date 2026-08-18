@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-010","status":"CONFORMANT","specification":"engineering/aias/continuity_watch/AIAS_NEXT_010_SPEC.json","implementation":"src/aias_continuity_watch/watch.py","tests":"tests/test_aias_next010_watch.py"}

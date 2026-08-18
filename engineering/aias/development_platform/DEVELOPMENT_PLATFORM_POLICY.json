@@ -1,0 +1,13 @@
+{
+  "policy_id": "DEV-PLATFORM-001",
+  "version": "1.0.0",
+  "strategy": "least_complex_capable_engine",
+  "engines": {
+    "v3": "repeatable specification compilation and generation",
+    "v4": "transactional template production and productivity certification",
+    "v5": "autonomous multidomain, incremental and observable production"
+  },
+  "mandatory_controls": ["specification_identity", "isolated_workspace", "normalized_evidence", "correlation_id", "certification_status", "tamper_evident_digest"],
+  "integration": ["EKG golden thread", "CNS event envelope compatible sink", "ACE continuity"],
+  "professional_boundary": "Generated engineering capabilities and outputs remain subject to applicable validation and licensed professional review."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-154",
+  "title": "Bundle package readiness report",
+  "status": "VALIDATED",
+  "scope": "Summarize internal readiness after package gating.",
+  "safety": {
+    "external_release": false,
+    "certification_claim": false
+  }
+}

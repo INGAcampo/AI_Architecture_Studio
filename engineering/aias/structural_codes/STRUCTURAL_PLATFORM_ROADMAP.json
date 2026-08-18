@@ -1,0 +1,172 @@
+{
+  "program_id": "STRUCTURAL-CODES-PROGRAM-001",
+  "version": "1.0.0",
+  "objective": "Open one complete structural building and produce governed analysis, beam design, column design, system optimization and a consolidated technical report.",
+  "stages": [
+    {
+      "id": "SCP-01",
+      "title": "Living engineering knowledge",
+      "status": "IMPLEMENTED",
+      "depends_on": []
+    },
+    {
+      "id": "SCP-02",
+      "title": "Structural building canonical model",
+      "status": "IMPLEMENTED",
+      "depends_on": [
+        "SCP-01"
+      ]
+    },
+    {
+      "id": "SCP-03",
+      "title": "Whole-building analysis contract",
+      "status": "IMPLEMENTED",
+      "depends_on": [
+        "SCP-02"
+      ]
+    },
+    {
+      "id": "SCP-04",
+      "title": "Beam and column batch design",
+      "status": "IMPLEMENTED",
+      "depends_on": [
+        "SCP-03"
+      ]
+    },
+    {
+      "id": "SCP-05",
+      "title": "System optimization and consolidated report",
+      "status": "IMPLEMENTED",
+      "depends_on": [
+        "SCP-04"
+      ]
+    },
+    {
+      "id": "SCP-06",
+      "title": "Licensed load and seismic code-pack framework",
+      "status": "IMPLEMENTED_EXTERNAL_CONTENT_REQUIRED",
+      "depends_on": [
+        "SCP-03"
+      ]
+    },
+    {
+      "id": "SCP-07",
+      "title": "Licensed concrete, steel and foundation pack framework",
+      "status": "IMPLEMENTED_EXTERNAL_CONTENT_REQUIRED",
+      "depends_on": [
+        "SCP-04",
+        "SCP-06"
+      ]
+    },
+    {
+      "id": "SCP-08",
+      "title": "Independent benchmark validation framework",
+      "status": "IMPLEMENTED_EXTERNAL_EVIDENCE_REQUIRED",
+      "depends_on": [
+        "SCP-05",
+        "SCP-07"
+      ]
+    },
+    {
+      "id": "SCP-09",
+      "title": "Professional structural production release",
+      "status": "IMPLEMENTED_EXTERNAL_APPROVAL_REQUIRED",
+      "depends_on": [
+        "SCP-08"
+      ]
+    },
+    {
+      "id": "MDP-01",
+      "title": "Timber, masonry and advanced foundations",
+      "status": "IMPLEMENTED_EXTERNAL_CONTENT_REQUIRED",
+      "depends_on": [
+        "SCP-09"
+      ]
+    },
+    {
+      "id": "MDP-02",
+      "title": "Geotechnics, rock, hydrology and hydraulic networks",
+      "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+      "depends_on": [
+        "MDP-01"
+      ]
+    },
+    {
+      "id": "MDP-03",
+      "title": "GIS, roads, earthworks and urban infrastructure",
+      "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+      "depends_on": [
+        "MDP-02"
+      ]
+    },
+    {
+      "id": "GEO-01",
+      "title": "Advanced geotechnics and soil-structure interaction",
+      "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+      "depends_on": [
+        "SCP-02"
+      ]
+    },
+    {
+      "id": "GEO-02",
+      "title": "Deep foundations, piles and diaphragm walls",
+      "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+      "depends_on": [
+        "GEO-01"
+      ]
+    },
+    {
+      "id": "HYD-01",
+      "title": "Hydraulic, sanitary and stormwater networks",
+      "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+      "depends_on": [
+        "MDP-02"
+      ]
+    },
+    {
+      "id": "COORD-01",
+      "title": "Executive and multidisciplinary coordination dashboards",
+      "status": "IMPLEMENTED",
+      "depends_on": [
+        "INT-01",
+        "PLT-01"
+      ]
+    },
+    {
+      "id": "INT-01",
+      "title": "BIM/IFC neutral synchronization",
+      "status": "IMPLEMENTED_NEUTRAL_EXCHANGE",
+      "depends_on": [
+        "SCP-02"
+      ]
+    },
+    {
+      "id": "INT-02",
+      "title": "SAP2000, ETABS and Robot governed adapters",
+      "status": "IMPLEMENTED_VENDOR_RUNTIME_REQUIRED",
+      "depends_on": [
+        "INT-01",
+        "SCP-03"
+      ]
+    },
+    {
+      "id": "INT-03",
+      "title": "AutoCAD, Revit and Civil 3D governed adapters",
+      "status": "IMPLEMENTED_VENDOR_RUNTIME_REQUIRED",
+      "depends_on": [
+        "INT-01",
+        "MDP-03"
+      ]
+    },
+    {
+      "id": "PLT-01",
+      "title": "AI optimization, document automation and distributed compute",
+      "status": "IMPLEMENTED",
+      "depends_on": [
+        "SCP-05"
+      ]
+    }
+  ],
+  "construction_claim": false,
+  "professional_review_required": true
+}

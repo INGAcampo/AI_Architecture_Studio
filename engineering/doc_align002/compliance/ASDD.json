@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-960002",
+  "title": "Complete Risk-Prioritized Public API Documentation",
+  "version": "1.0.0",
+  "purpose": "Eliminate measured documentation debt across all AIAS Python packages and prevent future drift.",
+  "scope": "Modules, public functions, public classes, public methods, risk prioritization, semantic alignment, regression validation and executable coverage gate.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-960201",
+      "title": "Complete API scope",
+      "statement": "The audit shall include modules, public functions, classes and methods.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent false coverage claims that omit methods.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_governance_assurance/documentation.py"
+      ],
+      "tested_by": [
+        "tests/test_gov000049_governance_assurance.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-960202",
+      "title": "Risk prioritization",
+      "statement": "Documentation shall be completed in deterministic risk-first order.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect engineering-critical packages first.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_documentation_program/planner.py"
+      ],
+      "tested_by": [
+        "tests/test_doc_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-960203",
+      "title": "Zero measured debt",
+      "statement": "Every current AIAS module and public symbol shall contain semantic documentation.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Close the recovered documentation decision fully.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src"
+      ],
+      "tested_by": [
+        "tests/test_doc_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-960204",
+      "title": "Drift prevention",
+      "statement": "Repository validation shall fail when a new undocumented public API appears.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep documentation complete as AIAS grows.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "tests/test_doc_align002.py"
+      ],
+      "tested_by": [
+        "tests/test_doc_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-960205",
+      "title": "Behavior preservation",
+      "statement": "Affected packages shall pass their functional regression suites.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Ensure documentation changes do not alter engineering behavior.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "docs/DOC_ALIGN_002_COMPLETE_PUBLIC_API.md"
+      ],
+      "tested_by": [
+        "tests/test_doc_align002.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-960206",
+      "title": "Reproducible delivery",
+      "statement": "The alignment shall include documentation, tests, installer, manifest, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the completed baseline deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_doc_align002_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_doc_align002.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-DOC-ALIGN-002"
+  ],
+  "adr_refs": [
+    "ADR-DOC-ALIGN-002"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

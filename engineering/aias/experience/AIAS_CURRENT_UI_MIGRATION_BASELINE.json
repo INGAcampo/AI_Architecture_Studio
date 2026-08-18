@@ -1,0 +1,15 @@
+{
+  "schema": "AIAS-DESIGN-MIGRATION-AUDIT-1.0",
+  "generated_on": "2026-08-04",
+  "files_scanned": 41,
+  "hardcoded_color_files": [
+    {"file":"command_line.py","colors":["#111111","#202020","#2f6ea5","#2f9be8","#555555"]},
+    {"file":"main_window.py","colors":["#1e1e1e","#202020","#2b2b2b","#3a3a3a"]},
+    {"file":"project_session.py","colors":["#FFFFFF"]},
+    {"file":"ribbon.py","colors":["#252525","#333333","#444444","#555555"]}
+  ],
+  "inline_stylesheet_files": ["command_line.py","main_window.py","ribbon.py"],
+  "migration_required": true,
+  "target": "aias_design_system.render_qss plus semantic component roles",
+  "next": "Audit complete user journeys before migrating controlled interface slices"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-076",
+  "title": "Evidence ledger reconciliation",
+  "status": "VALIDATED",
+  "scope": "Read-only reconciliation of evidence identifiers and duplicate detection",
+  "safety": ["No ledger records are mutated", "Reconciliation is not external certification"]
+}

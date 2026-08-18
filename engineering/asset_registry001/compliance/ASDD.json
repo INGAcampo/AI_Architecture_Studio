@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-950001",
+  "title": "Universal Engineering Asset Registry",
+  "version": "1.0.0",
+  "purpose": "Provide the canonical persistent identity, lifecycle and evidence registry for every AIAS engineering asset.",
+  "scope": "Stable IDs, semantic versions, lifecycle transitions, dependencies, requirements, evidence, legal status, atomic persistence, audit events and queries.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-950001",
+      "title": "Universal asset contract",
+      "statement": "Every asset shall expose canonical identity, ownership, purpose, scope, source, requirements, evidence, dependencies and legal status.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Create one governable asset language.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/foundation/ENGINEERING_ASSET_SCHEMA.json"
+      ],
+      "tested_by": [
+        "tests/test_asset_registry001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-950002",
+      "title": "Persistent registry",
+      "statement": "The registry shall persist assets atomically and reject duplicate identities.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect registry consistency.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_asset_registry/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_asset_registry001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-950003",
+      "title": "Dependency integrity",
+      "statement": "The registry shall reject references to unknown dependencies.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve a valid asset graph.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_asset_registry/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_asset_registry001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-950004",
+      "title": "Controlled lifecycle",
+      "statement": "Lifecycle transitions shall be sequential and auditable.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsupported maturity claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_asset_registry/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_asset_registry001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-950005",
+      "title": "Evidence queries",
+      "statement": "Consumers shall query assets by type and lifecycle state.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enable ACE, Dashboard and PMO consumers.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_asset_registry/registry.py"
+      ],
+      "tested_by": [
+        "tests/test_asset_registry001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-950006",
+      "title": "Reproducible delivery",
+      "statement": "The capability shall include tests, documentation, installer and checksum release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the registry deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_asset_registry001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_asset_registry001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-ASSET-REGISTRY-001"
+  ],
+  "adr_refs": [
+    "ADR-ASSET-REGISTRY-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

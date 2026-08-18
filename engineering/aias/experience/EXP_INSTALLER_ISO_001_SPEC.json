@@ -1,0 +1,8 @@
+{
+  "spec_id":"EXP-INSTALLER-ISO-001","version":"1.0.0","status":"INTEGRITY_VALIDATED_UNSIGNED_INTERNAL_MEDIA",
+  "title":"Installer, Updater, Recovery and Offline Media Architecture",
+  "requirements":["all source installers pass their own SHA-256 manifests","offline media is deterministic and independently verifiable","archive traversal fails closed","installation occurs through a sibling staging directory","destination must be a child of an explicit allowed root","previous release remains recoverable","updates reject unverified integrity unsigned publisher same version and implicit downgrade","offline ZIP is not labeled as ISO","publisher signing remains external until credentials and authority exist"],
+  "validation_evidence":{"tests_passed_with_security_recovery":10,"offline_installers":7,"offline_files":90,"media":"exp_installer_iso001_outputs/AIAS_INTERNAL_OFFLINE_MEDIA_1.0.0.zip","sha256":"37a392c35d97a05ded64276fb1ad1c8007dc0984a9a18974262a23ab53017c6d","reproducible_build_verified":true,"publisher_signed":false,"iso_image_created":false},
+  "distribution_boundary":"No public publisher signature or ISO image is claimed. Current media is an integrity-verified internal offline ZIP.",
+  "next":"EXP-WEB-001 Official Web Information Architecture and Truthful Capability Registry"
+}

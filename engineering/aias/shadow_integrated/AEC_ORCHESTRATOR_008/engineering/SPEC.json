@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.008.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-008",
+    "dependency":  "AEC-ORCHESTRATOR-007",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Idempotent reconciliation journal preventing duplicate completion of integration operations.",
+    "external_vendor_runtime_launched":  false,
+    "external_write_authorized":  false,
+    "integration_authorized":  false
+}

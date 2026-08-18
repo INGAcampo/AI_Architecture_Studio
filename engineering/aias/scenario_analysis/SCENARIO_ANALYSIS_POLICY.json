@@ -1,0 +1,1 @@
+{"schema":"aias.scenario_analysis_policy.v1","rule":"Synthetic Scenario != Authenticated Project Input","real_project":"requires authenticated geotechnical/project baseline","pilot_synthetic":"requires SYNTHETIC_TEST_DATA and NOT_FOR_CONSTRUCTION","outputs":"alternatives and resilience evidence; never construction authorization"}

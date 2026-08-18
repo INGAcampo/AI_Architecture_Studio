@@ -1,0 +1,3 @@
+(load "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_NATIVE_DWG_ROUNDTRIP/output/inspect.lsp")
+(aias-log)
+_.QUIT

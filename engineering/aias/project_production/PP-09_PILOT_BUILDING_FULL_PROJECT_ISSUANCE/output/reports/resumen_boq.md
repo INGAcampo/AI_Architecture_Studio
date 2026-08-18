@@ -1,0 +1,72 @@
+# Resumen de cantidades/BOQ
+
+```json
+{
+  "document": {
+    "evidence_sha256": "ea7d52bcd2a2f9974503734662648e5680f3c73b4371927356f70a4ff5c65f06",
+    "sections": {
+      "evidence_sha256": "1ad622bce711854ac115ef0630bb65b4090b47727e9f2c9a511ab8da81123996",
+      "items": [
+        {
+          "category": "wall",
+          "element_id": "wall-90ce7dd56933",
+          "material": "masonry",
+          "measurement": 0.6000000000000001,
+          "quantity": 0.6000000000000001,
+          "rule": "wall.measurement.v1",
+          "unit": "m3",
+          "waste_factor": 0.0
+        },
+        {
+          "category": "door",
+          "element_id": "door-da1afa13700b",
+          "material": "door",
+          "measurement": 1.0,
+          "quantity": 1.0,
+          "rule": "door.measurement.v1",
+          "unit": "unit",
+          "waste_factor": 0.0
+        },
+        {
+          "category": "window",
+          "element_id": "window-9d770e2eefff",
+          "material": "window",
+          "measurement": 1.0,
+          "quantity": 1.0,
+          "rule": "window.measurement.v1",
+          "unit": "unit",
+          "waste_factor": 0.0
+        },
+        {
+          "category": "slab",
+          "element_id": "slab-a869da461aef",
+          "material": "concrete",
+          "measurement": 3.75,
+          "quantity": 3.75,
+          "rule": "slab.measurement.v1",
+          "unit": "m3",
+          "waste_factor": 0.0
+        },
+        {
+          "category": "foundation",
+          "element_id": "foundation-e8b38ad4fbed",
+          "material": "concrete",
+          "measurement": 1.0,
+          "quantity": 1.0,
+          "rule": "foundation.measurement.v1",
+          "unit": "m3",
+          "waste_factor": 0.0
+        }
+      ]
+    },
+    "title": "Resumen de cantidades/BOQ"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}
+```

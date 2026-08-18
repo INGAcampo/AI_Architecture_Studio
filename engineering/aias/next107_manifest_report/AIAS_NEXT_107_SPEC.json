@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-107",
+  "title": "Manifest verification report",
+  "status": "VALIDATED",
+  "scope": "Report manifest digest verification results",
+  "safety": ["Report does not certify evidence", "Mismatch information remains visible"]
+}

@@ -1,0 +1,68 @@
+{
+  "VE-ARCH-DIM-001": {
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-ARCH-DIM-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb"
+    ],
+    "evidence_sha256": "e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb",
+    "rule_id": "VE-ARCH-DIM-001",
+    "status": "PASS"
+  },
+  "VE-CONCRETE-001": {
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-CONCRETE-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb"
+    ],
+    "evidence_sha256": "e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb",
+    "rule_id": "VE-CONCRETE-001",
+    "status": "PASS"
+  },
+  "VE-FOUNDATION-001": {
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-FOUNDATION-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb"
+    ],
+    "evidence_sha256": "e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb",
+    "rule_id": "VE-FOUNDATION-001",
+    "status": "PASS"
+  },
+  "VE-LOAD-001": {
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-LOAD-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb"
+    ],
+    "evidence_sha256": "e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb",
+    "rule_id": "VE-LOAD-001",
+    "status": "PASS"
+  },
+  "VE-SEISMIC-001": {
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-SEISMIC-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb"
+    ],
+    "evidence_sha256": "e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb",
+    "rule_id": "VE-SEISMIC-001",
+    "status": "PASS"
+  },
+  "VE-WIND-001": {
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-WIND-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb"
+    ],
+    "evidence_sha256": "e679d5a35f18a94df371459b99c0aa103f8153df17cfe0d90e22ecd2c48303eb",
+    "rule_id": "VE-WIND-001",
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-999801",
+  "title": "AEC-000051 Verifiable Conversation Continuity",
+  "version": "1.0.0",
+  "purpose": "Guarantee repository-derived project resumption before replacing the primary AIAS conversation.",
+  "scope": "Constitutional rule, ACE regeneration, mandatory evidence set, checksum-protected archive, tamper detection, CLI, policy and executive order.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-999801",
+      "title": "Constitutional mandate",
+      "statement": "AEC-000051 shall require a validated continuity package before primary-conversation migration or replacement.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make continuity durable and mandatory.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml"
+      ],
+      "tested_by": [
+        "tests/test_aec000051_continuity_rule.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999802",
+      "title": "Minimum evidence",
+      "statement": "The package shall contain master context, project state, next task, continuation prompt and executive orders.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve sufficient restart authority.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_context_engine/continuity.py"
+      ],
+      "tested_by": [
+        "tests/test_aec000051_continuity_rule.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999803",
+      "title": "Integrity",
+      "statement": "Every content file and the archive shall have SHA-256 verification evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Detect incomplete or altered handoffs.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_context_engine/continuity.py"
+      ],
+      "tested_by": [
+        "tests/test_aec000051_continuity_rule.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999804",
+      "title": "Repository authority",
+      "statement": "The handoff shall derive from validated ACE state rather than screenshots or narrative memory alone.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent continuity loss after context compaction.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/master/CONVERSATION_CONTINUITY_POLICY.json"
+      ],
+      "tested_by": [
+        "tests/test_aec000051_continuity_rule.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999805",
+      "title": "Operational CLI",
+      "statement": "Operators shall be able to create and independently verify the handoff package through ACE CLI commands.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the rule executable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_context_engine/cli.py"
+      ],
+      "tested_by": [
+        "tests/test_aec000051_continuity_rule.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-999806",
+      "title": "Reproducible delivery",
+      "statement": "The rule shall include tests, policy, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep continuity deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_gov_continuity001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_aec000051_continuity_rule.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-GOV-CONTINUITY-001"
+  ],
+  "adr_refs": [
+    "ADR-GOV-CONTINUITY-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

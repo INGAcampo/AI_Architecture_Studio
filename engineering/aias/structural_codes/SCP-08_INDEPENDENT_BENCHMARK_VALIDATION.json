@@ -1,0 +1,23 @@
+{
+  "specification_id": "SCP-08",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_EVIDENCE_REQUIRED",
+  "objective": "Compare AIAS structural outputs against independent, reviewed and integrity-protected reference evidence before professional release consideration.",
+  "requirements": [
+    "Every benchmark records identity, version, domain, source organization, source locator and method.",
+    "Independence from the AIAS implementation must be explicitly established.",
+    "Every metric declares units and absolute and relative tolerances.",
+    "Missing, non-finite, unexpected or out-of-tolerance results fail closed.",
+    "Benchmark and validation evidence have deterministic SHA-256 identities.",
+    "Passing SCP-08 never independently authorizes construction or professional release."
+  ],
+  "implementation": "src/aias_structural_codes_program/benchmarking.py",
+  "verification": "tests/test_structural_benchmarking_scp08.py",
+  "external_completion_conditions": [
+    "Obtain authorized independent benchmark datasets for each normative material and analysis domain.",
+    "Record qualified reviewer acceptance and evidence locator.",
+    "Execute the governed validation campaign using the exact production solver and code-pack versions."
+  ],
+  "construction_claim": false,
+  "professional_review_required": true
+}

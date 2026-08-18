@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.geometry_bim_bridge.008.spec.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-008",
+    "dependency":  "GEOMETRY-BIM-BRIDGE-007",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Compile incremental sync plans into explicit patch-operation contracts.",
+    "integration_authorized":  false
+}

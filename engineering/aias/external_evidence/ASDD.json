@@ -1,0 +1,1 @@
+{"delivery":"AIAS-NEXT-005","status":"CONFORMANT","specification":"engineering/aias/external_evidence/AIAS_NEXT_005_SPEC.json","implementation":"src/aias_external_evidence/intake.py","tests":"tests/test_aias_next005_external_evidence.py"}

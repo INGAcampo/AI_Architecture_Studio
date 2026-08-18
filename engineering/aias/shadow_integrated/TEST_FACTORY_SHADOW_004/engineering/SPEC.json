@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.004.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-004",
+    "dependency":  "TEST-FACTORY-SHADOW-003",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Reconciliation-readiness audit for Shadow integration queue.",
+    "scope":  [
+                  "Manifest existence",
+                  "Integration-authority invariant",
+                  "READY state invariant",
+                  "Duplicate megablock detection"
+              ],
+    "integration_authorized":  false
+}

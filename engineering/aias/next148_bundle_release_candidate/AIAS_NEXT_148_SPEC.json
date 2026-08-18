@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-148",
+  "title": "Bundle release candidate",
+  "status": "VALIDATED",
+  "scope": "Create an internal candidate descriptor from readiness evidence.",
+  "safety": {
+    "published": false,
+    "certification_claim": false
+  }
+}

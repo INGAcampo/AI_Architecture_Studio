@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-153",
+  "title": "Bundle release package gate",
+  "status": "VALIDATED",
+  "scope": "Gate local progression on a valid release package verification.",
+  "safety": {
+    "external_approval": false,
+    "certification_claim": false
+  }
+}

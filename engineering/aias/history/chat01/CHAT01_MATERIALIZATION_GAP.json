@@ -1,0 +1,33 @@
+{
+  "assessment_id": "AIAS-GENESIS-CHAT01-GAP-001",
+  "assessed_on": "2026-08-04",
+  "status_scale": ["EVIDENCED", "PARTIAL", "NOT_EVIDENCED", "EXTERNAL_DEPENDENCY"],
+  "items": [
+    {"decision_id":"GEN-001","status":"EVIDENCED","evidence":["engineering/aias/master/GIANT_STEPS_WORK_PLAN.json","src/aias_master_inventory"]},
+    {"decision_id":"GEN-002","status":"EVIDENCED","evidence":["engineering/aeps/02_CONSTITUTION","engineering/aias/master/CONVERSATION_CONTINUITY_POLICY.json"]},
+    {"decision_id":"GEN-003","status":"EVIDENCED","evidence":["src/aias_geometry_kernel","src/engines/geometry","src/aias_cad_bim_integration"]},
+    {"decision_id":"GEN-004","status":"PARTIAL","evidence":["src/aias_structural_codes_program/normative.py","src/aias_engineering_wave12/jurisdictions.py","engineering/aias/structural_codes/VE-001_VENEZUELA_JURISDICTION_PROFILE.json"],"gap":"Licensed executable Venezuela rules remain external"},
+    {"decision_id":"GEN-005","status":"EVIDENCED","evidence":["src/aias_structural_codes_program/release.py","engineering/aias/roadmap/EXTERNAL_GATE_ACTION_PORTFOLIO.json"]},
+    {"decision_id":"GEN-006","status":"EVIDENCED","evidence":["src/aias_aeps_governance_sdd","engineering/ace000001/compliance/QUALITY_GATES.json"]},
+    {"decision_id":"GEN-007","status":"EVIDENCED","evidence":["engineering/aias/sdd","engineering/aias/master/SDD_ASSURANCE.json","ACKC/MASTER_CONTEXT.json"]},
+    {"decision_id":"GEN-008","status":"EVIDENCED","evidence":["engineering/aeps/02_CONSTITUTION/AEC-000002-executable-constitution.yaml","src/aias_productivity_dashboard"]},
+    {"decision_id":"GEN-009","status":"PARTIAL","evidence":["src/aias_i18n","resources/i18n","engineering/aias/internationalization/I18N_CORE_001_COVERAGE.json","engineering/aias/internationalization/I18N_CORE_003_SPEC.json"],"gap":"Main window and project dialog localized; 163 hard-coded GUI candidates remain before full coverage can be claimed"},
+    {"decision_id":"GEN-010","status":"PARTIAL","evidence":["src/aias_executable_knowledge","src/aias_enterprise_knowledge_graph"],"gap":"Dynamic country manuals and offline multi-format generation are not proven end-to-end"},
+    {"decision_id":"GEN-011","status":"EVIDENCED","evidence":["src/aias_university","engineering/aias/university/AIAS_UNIVERSITY_CATALOG.json"]},
+    {"decision_id":"GEN-012","status":"PARTIAL","evidence":["src/engines/civil/terrain","src/aias_structural_codes_program/mdp03.py"],"gap":"Professional survey ingestion, CRS workflows, TIN, contours, profiles and field-data validation need one integrated reference consumer"},
+    {"decision_id":"GEN-013","status":"PARTIAL","evidence":["src/aias_cad_bim_integration","src/aias_structural_codes_program"],"gap":"Cross-discipline shared terrain/project object identity needs integral validation"},
+    {"decision_id":"GEN-014","status":"PARTIAL","evidence":["src/ai_kernel","src/aias_engineering_intelligence","src/aias_executable_knowledge"],"gap":"One user intent to fully governed multi-discipline production remains a staged capability"},
+    {"decision_id":"GEN-015","status":"PARTIAL","evidence":["src/engines/structural","src/engines/civil","src/engines/mep"],"gap":"Several domains remain frameworks or reference engines rather than validated production systems"},
+    {"decision_id":"GEN-016","status":"EVIDENCED","evidence":["src/aias_aeps_governance_sdd","engineering/aeps/05_SDD"]},
+    {"decision_id":"GEN-017","status":"PARTIAL","evidence":["src/models/digital_twin","src/engines/digital_twin"],"gap":"Production sensor, asset and lifecycle integrations require external systems and evidence"},
+    {"decision_id":"GEN-018","status":"PARTIAL","evidence":["docs","src/gui"],"gap":"A formally approved brand kit and comprehensive icon system are not evidenced"},
+    {"decision_id":"GEN-019","status":"NOT_EVIDENCED","evidence":[],"gap":"Installable, signed and updateable country Knowledge Packs require a governed package specification and reference pack"}
+  ],
+  "priority_recommendations": [
+    "GEN-009 Internationalization coverage audit and executable acceptance suite",
+    "GEN-019 Country Knowledge Pack specification with Venezuela reference pack metadata",
+    "GEN-012 Survey/Terrain vertical reference project",
+    "GEN-010 Dynamic country manual generator",
+    "GEN-018 Formal AIAS brand-system decision"
+  ]
+}

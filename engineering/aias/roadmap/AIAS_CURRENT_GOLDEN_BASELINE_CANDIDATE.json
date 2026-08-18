@@ -1,0 +1,20 @@
+{
+  "baseline_id": "AIAS-GOLDEN-CANDIDATE-001",
+  "status": "CANDIDATE_NOT_FROZEN",
+  "reason": "Working tree contains pending modifications and untracked artifacts; freezing now would misrepresent repository authority.",
+  "authority": "C:\\AIAS\\AI_Architecture_Studio",
+  "required_freeze_gates": [
+    "Review and classify pending changes",
+    "Reproducible canonical regression run",
+    "Installer checksum audit",
+    "ACE validation",
+    "Dashboard validation",
+    "Architecture and module ownership map",
+    "Explicit release tag or equivalent immutable reference"
+  ],
+  "current_evidence": {
+    "roadmap_audit": "engineering/aias/roadmap/ROADMAP_COMPLETION_AUDIT.json",
+    "master_context": "ACKC/MASTER_CONTEXT.json",
+    "dashboard_snapshot": "aias_productivity_dashboard_outputs/AIAS_PRODUCTIVITY_SNAPSHOT.json"
+  }
+}

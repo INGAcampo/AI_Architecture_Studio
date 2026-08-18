@@ -1,0 +1,20 @@
+id: ADP-000003
+title: AIAS AEPS Autonomous Engineering Factory V5 Enterprise
+type: DevelopmentPlatform
+version: 5.0.0
+status: IMPLEMENTED
+owner: AIAS Core Engineering
+purpose: Orchestrate reusable, incremental, observable and certified engineering production.
+scope: Entire AIAS Development Platform.
+capabilities:
+  - Persistent Engineering Asset Catalog
+  - Automatic Asset Reuse
+  - Intelligent Template Selection
+  - Pipeline Planning
+  - Incremental Execution
+  - Compilation Cache
+  - Parallel Execution
+  - Observability
+  - Security Policy Enforcement
+  - Multidomain Program Generation
+  - Autonomous Certification

@@ -1,0 +1,85 @@
+﻿{
+    "schema":  "aias.shadow.wave6.package_manifest.v1",
+    "run_id":  "f7ba76670d8f496b800f01b4f3ab058b",
+    "generated_utc":  "2026-08-13T21:55:15.2037551Z",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-005",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "targeted_tests_pass":  true,
+    "file_count":  14,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  217,
+                      "sha256":  "19fed5851a435b3015ffb88f573b41e6b554e6f49fa44646b8785f3e8c322b95"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  303,
+                      "sha256":  "61529b23c95d0bd8ef082a3a2c377926f55b8e3dba87324b1dd58d606388b6a3"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  585,
+                      "sha256":  "e8205a890520821fc008b183c1ade5fb582278e315a2bc0a5521bc15a73dc0f8"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_batch/__init__.py",
+                      "bytes":  275,
+                      "sha256":  "10da20b9eceb71d820b39f1b5bb57d3ccbfce35a2fff76273e48cceeb2c0c816"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_batch/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  517,
+                      "sha256":  "908305fa397e61928d5d398e78f30ea96a17f2cba4dfa4a890dad86b30c16fbb"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_batch/__pycache__/batch.cpython-311.pyc",
+                      "bytes":  2595,
+                      "sha256":  "e1e9af0c777c4908c4a7ff9c9f96d9577defee0366ada0b2c25686f13c5c63f9"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_batch/__pycache__/filtering.cpython-311.pyc",
+                      "bytes":  1270,
+                      "sha256":  "b665d97cd9515476b11c7deafe6002858e45f6bd5ff2e2423c11e50624c69386"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_batch/batch.py",
+                      "bytes":  944,
+                      "sha256":  "7a2cd38c9e3795aa9b923d419fa201f4018c1277f9eb17dc37dda28541e7d9f6"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_batch/filtering.py",
+                      "bytes":  556,
+                      "sha256":  "11048d56aea6fe5f61eee9ff324819346a670e2e96ad95863c169b2cc19360a5"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_batch_filtering.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  9156,
+                      "sha256":  "adb1abf39ee3d694179ff788bd0446e76fe574ba61a84a6a4656f388623cc40c"
+                  },
+                  {
+                      "path":  "tests/test_batch_filtering.py",
+                      "bytes":  1638,
+                      "sha256":  "95a5a4d9a2f3298930ada0251a045926eb6981b60696f1f2b9206bd51dd40372"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

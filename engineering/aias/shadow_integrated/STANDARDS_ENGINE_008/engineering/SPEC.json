@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "aias.shadow.standards_engine.008.spec.v1",
+    "megablock":  "STANDARDS-ENGINE-008",
+    "dependency":  "STANDARDS-ENGINE-007",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Deterministic SHA256 fingerprint for standards admission decision traces.",
+    "critical_boundary":  [
+                              "No real standards text is embedded.",
+                              "No compliance claim is made."
+                          ],
+    "integration_authorized":  false
+}

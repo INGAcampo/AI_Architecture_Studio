@@ -1,0 +1,37 @@
+{
+  "project_id": "LIGHTHOUSE-000001",
+  "title": "Venezuela Reference Building End-to-End",
+  "status": "OPERATING_REFERENCE_FOR_REVIEW",
+  "jurisdiction": "Venezuela",
+  "jurisdiction_code": "VE",
+  "jurisdiction_profile_id": "VE-001",
+  "normative_pack_status": "PENDING_OFFICIAL_EDITION_VERIFICATION_AND_LICENSED_ACQUISITION",
+  "reference_release_version": "1.4.0",
+  "whole_building_reference": {"storeys": 3, "bays": 2, "nodes": 12, "members": 15},
+  "neutral_bim_reference": {"schema": "IFC4.3 neutral JSON", "entities": 21, "losses": 0, "native_ifc_claimed": false},
+  "coordinated_documentation": {"drawings": 2, "schedules": 3, "quantity_records": 3, "source_revision": "R01"},
+  "principle": "Every platform capability must improve a real engineering flow.",
+  "deliverables": [
+    "architectural_program",
+    "conceptual_model",
+    "foundation_design",
+    "structural_calculations",
+    "CAD_BIM_model",
+    "drawings",
+    "calculation_report",
+    "descriptive_report",
+    "quantities",
+    "technical_specifications",
+    "preliminary_budget",
+    "technical_dossier",
+    "professional_review_evidence"
+  ],
+  "golden_thread": "need->requirement->knowledge->decision->model->calculation->result->drawing->document->approval",
+  "evidence": [
+    "technical_file001_reference/release/LIGHTHOUSE-001_TECHNICAL_FILE_R00.zip",
+    "src/aias_end_to_end/producer.py",
+    "engineering/end_to_end001/compliance/QUALITY_GATES.json"
+  ],
+  "maturity_policy": "Deliver verified value immediately; do not wait for organizational Level 5.",
+  "professional_boundary": "Construction approval requires applicable official rules and licensed professional evidence."
+}

@@ -1,0 +1,55 @@
+{
+  "NOT_FOR_CONSTRUCTION": true,
+  "SYNTHETIC_TEST_DATA": true,
+  "analysis_provider": "aias_structural_professional.ProfessionalStructuralEngine",
+  "automated_touchpoints": 2,
+  "checks": {
+    "analysis_pass": true,
+    "combination_results_materialized": true,
+    "deterministic_reproduction": true,
+    "equilibrium_verified": true,
+    "factory_reused": true,
+    "fail_closed_without_standards": true,
+    "geometry_sensitive": true,
+    "project_graph_bound": true,
+    "standards_evidence_bound": true,
+    "two_isolated_projects": true
+  },
+  "estimated_time_reduction_percent": 66.67,
+  "factory_provider": "aias_project_production.factory.ProjectProductionFactory",
+  "manual_touchpoint_baseline": 6,
+  "prerequisite_gate": "STRUCTURAL_PRODUCTION_CORE_READY",
+  "program": "PRODUCCION DE PROYECTOS AIAS",
+  "projects": [
+    {
+      "analysis_evidence_sha256": "59d134fb2921b4526626115e171c6ad3faa33a54ce88ac8fd3e7220ab83a1e88",
+      "analysis_model_sha256": "4ad455ea60616a5859822fb2843dcee8d8881a36297c6390e594f620b94919b3",
+      "analysis_status": "PASS",
+      "equilibrium_status": "PASS",
+      "evidence_file": "ANALYSIS-CORE-CERT-A_ANALYSIS_EVIDENCE.json",
+      "evidence_sha256": "ad8140dbce2f47746cb8a458a09e7185c96f9f2d20026715a51fb44c755aaee0",
+      "governing_combination": "VE-ULS-1",
+      "governing_total_kN": 1202.4,
+      "project_id": "ANALYSIS-CORE-CERT-A",
+      "source_graph_sha256": "f139964a1e7e188bb935e62aee67a5f11d1399128fbf41bcbbef985706f9757f",
+      "standards_evidence_sha256": "d7500a512a8ff9aeeddd6604c8edd0cdabbcd9ed3c1a85290deb03694b32f801"
+    },
+    {
+      "analysis_evidence_sha256": "94b94e31782e123ced63599808749a884abc1d37dd6ed80adc51b7fc6cd2fc65",
+      "analysis_model_sha256": "09c5cb033297ef027ede196113c46e6b91b01ab2897eeb0d60ac7546e7293967",
+      "analysis_status": "PASS",
+      "equilibrium_status": "PASS",
+      "evidence_file": "ANALYSIS-CORE-CERT-B_ANALYSIS_EVIDENCE.json",
+      "evidence_sha256": "eca75599644ef904f3c3a1df90a64a3b3eb2455cf101707bb98bc2cee3e3dd47",
+      "governing_combination": "VE-ULS-1",
+      "governing_total_kN": 1928.85,
+      "project_id": "ANALYSIS-CORE-CERT-B",
+      "source_graph_sha256": "7e43ddad1aa769c259eead250ed1e1966f85bcc0803e8206e60dc4dc81d5f0cc",
+      "standards_evidence_sha256": "d7500a512a8ff9aeeddd6604c8edd0cdabbcd9ed3c1a85290deb03694b32f801"
+    }
+  ],
+  "real_project_policy": "FAIL_CLOSED_WITHOUT_AUTHENTICATED_BASELINE",
+  "schema": "aias.analysis_production_core_certification.v1",
+  "target": "ANALYSIS_PRODUCTION_CORE_READY",
+  "verdict": "ANALYSIS_PRODUCTION_CORE_READY"
+}

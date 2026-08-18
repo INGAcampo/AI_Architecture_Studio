@@ -1,0 +1,35 @@
+{
+  "record_id": "AIAS-GENESIS-CHAT01",
+  "version": "1.0.0",
+  "ingested_on": "2026-08-04",
+  "source": {
+    "path": "C:/Users/deivi/OneDrive/Pictures/Screenshots/Captura de pantalla (CHAT 01).zip",
+    "sha256": "13e8224afc9c4fb90d16a4c17f54699f18d44dc490faf50ece2ce120e30c3068",
+    "image_count": 155,
+    "format": "PNG screenshots inside ZIP",
+    "observed_numbering": ["2589-2719", "0001-0024", "00"],
+    "ordering_policy": "Filesystem timestamp first, filename and textual continuity as secondary evidence"
+  },
+  "derived_corpus": {
+    "path": "tmp/chat01_analysis/OCR_CORPUS.json",
+    "sha256": "f4a64adac1d35dae7e99a2dc818a1fffd1680f574c53b40552de684c4eb5ac56",
+    "method": "RapidOCR batch extraction with original-image SHA-256 per record",
+    "limitations": [
+      "OCR contains accent, spelling and rotation errors",
+      "Screenshot timestamps reflect capture order and may differ from conversational order",
+      "Repeated or overlapping screenshots exist",
+      "Critical statements require visual confirmation before legal or normative use"
+    ]
+  },
+  "visual_spot_checks": [
+    {"file":"Captura de pantalla (2647).png","confirmed":"Official AI Architecture Studio identity, abbreviation AIAS, descriptor and mission"},
+    {"file":"Captura de pantalla (2687).png","confirmed":"Time as the professional's most valuable resource and tangible weekly value"},
+    {"file":"Captura de pantalla (2673).png","confirmed":"Interdisciplinary platform, Knowledge Engine and Geospatial/Survey Engine direction"}
+  ],
+  "authority_policy": {
+    "user_approval_is_authoritative_for_project_direction": true,
+    "assistant_proposals_are_not_automatically_approved": true,
+    "historical_claims_of_completed installation_require_repository_evidence": true,
+    "technical_and_normative_claims_require_current_verification": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-086",
+  "title": "Evidence review workflow",
+  "status": "VALIDATED",
+  "scope": "Enforce ordered intake, validation, and decision stages",
+  "safety": ["Unsupported stages are rejected", "Workflow never approves automatically"]
+}

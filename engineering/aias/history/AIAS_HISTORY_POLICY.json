@@ -1,0 +1,37 @@
+{
+  "policy_id": "AIAS-HISTORY-001",
+  "title": "Preservación del Nacimiento y Evolución de AIAS",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "purpose": "Preservar la historia intelectual, técnica y organizacional de AIAS con procedencia verificable y sin alterar retrospectivamente los hechos.",
+  "principles": [
+    "Cada afirmación histórica identifica su fuente y rango temporal o de capturas.",
+    "Las conversaciones prueban intención y decisiones; el repositorio prueba materialización.",
+    "Las propuestas se distinguen de las decisiones aprobadas y de las capacidades verificadas.",
+    "Las contradicciones históricas se conservan y explican; no se borran.",
+    "Las cifras de pruebas, versiones y entregas se consideran históricas hasta verificarse reproduciblemente.",
+    "Cada nueva recopilación se incorpora como una fuente inmutable con checksum.",
+    "La cronología histórica no sustituye ACE, SDD, el inventario ni el roadmap operativo."
+  ],
+  "evidence_classes": [
+    "ORIGIN_TESTIMONY",
+    "VISION_PROPOSAL",
+    "APPROVED_DECISION",
+    "IMPLEMENTATION_CLAIM",
+    "REPOSITORY_VERIFIED_MILESTONE",
+    "SUPERSEDED_DIRECTION",
+    "CONTEXTUAL_EVIDENCE"
+  ],
+  "required_fields": [
+    "event_id",
+    "title",
+    "source_id",
+    "source_locator",
+    "evidence_class",
+    "summary",
+    "decision_or_impact",
+    "repository_evidence",
+    "verification_status"
+  ],
+  "pending_foundational_source": "Recopilación del primer chat donde nació AIAS"
+}

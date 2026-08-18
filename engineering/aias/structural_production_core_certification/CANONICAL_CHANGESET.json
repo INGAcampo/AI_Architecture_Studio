@@ -1,0 +1,32 @@
+{
+  "capability_id": "STRUCTURAL_PRODUCTION_CORE_READY",
+  "baseline_head": "b612fcd6eb96b25358039b4c56176128f93110b1",
+  "allowed_paths": [
+    "src/aias_structural_core/project_graph_adapter.py",
+    "src/aias_structural_core/analysis.py",
+    "src/aias_structural_core/__init__.py",
+    "src/aias_structural_professional/engine.py",
+    "src/aias_project_production/orchestrator.py",
+    "src/aias_project_production/certification.py",
+    "tests/project_production/test_project_graph_structural_adapter.py",
+    "engineering/aias/professional_project_production/AIAS_PRODUCTION_CAPABILITY_REGISTRY.json",
+    "engineering/aias/structural_production_core_certification"
+  ],
+  "protected_paths": ["src/core/history/history_manager.py"],
+  "tests": [
+    "tests/project_production/test_structural_core.py",
+    "tests/project_production/test_structural_professional.py",
+    "tests/project_production/test_project_graph_structural_adapter.py",
+    "tests/project_production/test_architectural_production_core.py",
+    "tests/project_production/test_project_factory.py"
+  ],
+  "evidence": "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json",
+  "reconciled_head": "d1e3892324c072368637aa2912a13e0c8727dc66",
+  "reconciliation_reason": "Regenerated legacy structural evidence with the certified combination-driven analysis and standards-bound production path.",
+  "evidence_sha256": {
+    "STRUCTURAL_PRODUCTION_CORE_MANIFEST.json": "18460f4bcfd879fb69a9eef1973ed5851d00a52281f74ec91c332c85f2063f89",
+    "STRUCT-CORE-CERT-A_STRUCTURAL_EVIDENCE.json": "11ba72310a84e5ac27853f1c320ca5dba18eb574d55043597cb12d249e9a61e4",
+    "STRUCT-CORE-CERT-B_STRUCTURAL_EVIDENCE.json": "82fa21ba6c92c42a1c612fd5f10297896486a56147f05b443933de298a4ab554"
+  },
+  "staging": "EXPLICIT_ALLOWLIST_ONLY"
+}

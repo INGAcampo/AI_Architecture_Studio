@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-081",
+  "title": "Intake validation report",
+  "status": "VALIDATED",
+  "scope": "Report evidence intake completeness before any review decision",
+  "safety": ["Incomplete intake remains invalid", "No approval is inferred"]
+}

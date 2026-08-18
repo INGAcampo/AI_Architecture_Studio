@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "aias.shadow.test_factory.008.spec.v1",
+    "megablock":  "TEST-FACTORY-SHADOW-008",
+    "dependency":  "TEST-FACTORY-SHADOW-007",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Aggregate checkpoint-readiness gate for future controlled canonical reconciliation.",
+    "integration_authorized":  false
+}

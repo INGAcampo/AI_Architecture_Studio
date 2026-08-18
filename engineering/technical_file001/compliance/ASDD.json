@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-996001",
+  "title": "AIAS Enterprise Technical File Generator",
+  "version": "1.0.0",
+  "purpose": "Assemble calculations, checks, drawings, narrative, coordination, custody and integrity evidence into one reviewable engineering dossier.",
+  "scope": "Project brief, descriptive memory, professional foundation workflow, vector drawings, detailed documentation, transmittal, handover, integrity manifest, completeness and release.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-996001",
+      "title": "Technical dossier",
+      "statement": "The generator shall assemble all seven required dossier sections from operational engines.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Deliver a complete engineering technical file.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technical_file/generator.py"
+      ],
+      "tested_by": [
+        "tests/test_technical_file001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996002",
+      "title": "Descriptive memory",
+      "statement": "A structured descriptive memory shall be produced as JSON, Markdown and renderable PDF.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Provide human-readable project narrative.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technical_file/memory.py"
+      ],
+      "tested_by": [
+        "tests/test_technical_file001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996003",
+      "title": "Golden thread",
+      "statement": "Calculations, checks, drawings, documentation, revision, transmittal and custody shall remain linked in the package.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve end-to-end traceability.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technical_file/generator.py"
+      ],
+      "tested_by": [
+        "tests/test_technical_file001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996004",
+      "title": "Integrity and completeness",
+      "statement": "Every file shall carry SHA-256 evidence and every required section shall be checked.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the dossier independently verifiable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_technical_file/generator.py"
+      ],
+      "tested_by": [
+        "tests/test_technical_file001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996005",
+      "title": "Professional boundary",
+      "statement": "The reference dossier shall remain FOR_REVIEW until official jurisdiction and licensed professional approvals exist.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unauthorized construction use.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/technical_file/TECHNICAL_FILE_SCHEMA.json"
+      ],
+      "tested_by": [
+        "tests/test_technical_file001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996006",
+      "title": "Reproducible delivery",
+      "statement": "Technical file generation shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep dossier production deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_technical_file001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_technical_file001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-TECHNICAL-FILE-001"
+  ],
+  "adr_refs": [
+    "ADR-TECHNICAL-FILE-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

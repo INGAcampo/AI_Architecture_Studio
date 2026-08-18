@@ -1,0 +1,50 @@
+{
+  "REQ-950001": {
+    "implemented_by": [
+      "engineering/aias/foundation/ENGINEERING_ASSET_SCHEMA.json"
+    ],
+    "tested_by": [
+      "tests/test_asset_registry001.py"
+    ]
+  },
+  "REQ-950002": {
+    "implemented_by": [
+      "src/aias_asset_registry/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_asset_registry001.py"
+    ]
+  },
+  "REQ-950003": {
+    "implemented_by": [
+      "src/aias_asset_registry/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_asset_registry001.py"
+    ]
+  },
+  "REQ-950004": {
+    "implemented_by": [
+      "src/aias_asset_registry/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_asset_registry001.py"
+    ]
+  },
+  "REQ-950005": {
+    "implemented_by": [
+      "src/aias_asset_registry/registry.py"
+    ],
+    "tested_by": [
+      "tests/test_asset_registry001.py"
+    ]
+  },
+  "REQ-950006": {
+    "implemented_by": [
+      "scripts/build_asset_registry001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_asset_registry001.py"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "specification_id": "SCP-09",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_APPROVAL_REQUIRED",
+  "objective": "Prevent structural production release unless normative, benchmark, deliverable and responsible-professional evidence is complete.",
+  "required_deliverables": ["ANALYSIS_MODEL", "CALCULATION_REPORT", "DESIGN_SCHEDULES", "STRUCTURAL_DRAWINGS", "SPECIFICATIONS", "REVISION_REGISTER"],
+  "implementation": "src/aias_structural_codes_program/release.py",
+  "verification": "tests/test_structural_release_scp09.py",
+  "external_boundary": "AIAS cannot fabricate licenses, benchmark acceptance, professional registration or jurisdictional approval.",
+  "default_decision": "BLOCKED"
+}

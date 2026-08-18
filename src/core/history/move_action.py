@@ -1,36 +1,46 @@
 """
 AI Architecture Studio
-History - Move Action
+History Action - Move
 
-Foundation 3.5
+Dynamic Input Universal - Package 3.3
 """
 
-from core.history.history_action import HistoryAction
 from engines.transform.transform_manager import TransformManager
 
 
-class MoveAction(HistoryAction):
+class MoveAction:
+    """
+    Acción reversible para MOVE.
 
-    def __init__(self, elements, dx, dy, dz=0.0):
-        self.elements = list(elements)
-        self.dx = dx
-        self.dy = dy
-        self.dz = dz
+    Los objetos ya están desplazados cuando la acción entra
+    al HistoryManager. undo() aplica el vector contrario y
+    redo() vuelve a aplicar el vector original.
+    """
+
+    def __init__(
+        self,
+        elements,
+        dx,
+        dy,
+        dz=0.0,
+    ):
+        self.elements = list(elements or [])
+        self.dx = float(dx)
+        self.dy = float(dy)
+        self.dz = float(dz)
 
     def undo(self):
-        for element in self.elements:
-            TransformManager.move_element(
-                element,
-                -self.dx,
-                -self.dy,
-                -self.dz,
-            )
+        TransformManager.move_elements(
+            self.elements,
+            -self.dx,
+            -self.dy,
+            -self.dz,
+        )
 
     def redo(self):
-        for element in self.elements:
-            TransformManager.move_element(
-                element,
-                self.dx,
-                self.dy,
-                self.dz,
-            )
+        TransformManager.move_elements(
+            self.elements,
+            self.dx,
+            self.dy,
+            self.dz,
+        )

@@ -1,0 +1,2361 @@
+{
+  "audit_id": "I18N-CORE-001",
+  "status": "GAPS_RECORDED",
+  "files_scanned": 51,
+  "catalog_locales": [
+    "en-US",
+    "es-VE"
+  ],
+  "catalog_keys": 166,
+  "hardcoded_candidates": 113,
+  "translation_key_references": 166,
+  "referenced_keys": [
+    "ai.placeholder",
+    "app.title",
+    "browser.collapse",
+    "browser.error_delete_root",
+    "browser.error_duplicate_node",
+    "browser.error_move_root",
+    "browser.error_move_self",
+    "browser.error_unknown_node",
+    "browser.expand",
+    "browser.search",
+    "browser.select",
+    "cad.chamfer.active",
+    "cad.chamfer.prompt",
+    "cad.circle.active",
+    "cad.copy.active",
+    "cad.extend.active",
+    "cad.extend.prompt",
+    "cad.fillet.active",
+    "cad.fillet.prompt",
+    "cad.join.active",
+    "cad.join.prompt",
+    "cad.line.active",
+    "cad.line.prompt",
+    "cad.mirror.active",
+    "cad.mirror.prompt",
+    "cad.move.active",
+    "cad.offset.active",
+    "cad.offset.prompt",
+    "cad.pline.active",
+    "cad.rectangle.active",
+    "cad.rotate.active",
+    "cad.scale.active",
+    "cad.trim.active",
+    "cad.trim.prompt",
+    "cad.wall.active",
+    "cad.wall.prompt",
+    "command.capability_center",
+    "command.line",
+    "command.revit_sync",
+    "command.room",
+    "command.search",
+    "command.slab",
+    "command.standards",
+    "command.structural_design",
+    "command.structural_report",
+    "command.wall",
+    "common.no",
+    "common.yes",
+    "document.untitled",
+    "element.default",
+    "error.boolean_not_integer",
+    "error.boolean_not_number",
+    "error.custom_validation",
+    "error.duplicate_property",
+    "error.empty_category",
+    "error.empty_family_id",
+    "error.empty_material_id",
+    "error.empty_name",
+    "error.empty_node_id",
+    "error.empty_property_id",
+    "error.empty_property_label",
+    "error.empty_title",
+    "error.empty_type_id",
+    "error.enum_values_required",
+    "error.family_duplicate",
+    "error.family_type_mismatch",
+    "error.family_unknown",
+    "error.invalid_boolean",
+    "error.material_duplicate",
+    "error.material_unknown",
+    "error.maximum",
+    "error.minimum",
+    "error.minimum_above_maximum",
+    "error.negative_density",
+    "error.qt_project_browser",
+    "error.read_only_property",
+    "error.type_duplicate",
+    "error.type_not_in_family",
+    "error.unknown_property",
+    "error.value_not_allowed",
+    "inspector.empty",
+    "inspector.no_editor",
+    "inspector.none",
+    "inspector.read_only",
+    "inspector.search",
+    "layer.activate",
+    "layer.lock",
+    "layer.new",
+    "layer.visibility",
+    "menu.ai",
+    "menu.architecture",
+    "menu.bim",
+    "menu.costs",
+    "menu.edit",
+    "menu.exit",
+    "menu.file",
+    "menu.geotechnics",
+    "menu.help",
+    "menu.new_project",
+    "menu.open_project",
+    "menu.recent_projects",
+    "menu.save_as",
+    "menu.save_project",
+    "menu.structure",
+    "menu.view",
+    "new_project.client",
+    "new_project.create",
+    "new_project.created_message",
+    "new_project.created_title",
+    "new_project.location",
+    "new_project.missing_name",
+    "new_project.missing_title",
+    "new_project.name",
+    "new_project.standard",
+    "new_project.title",
+    "panel.ai_assistant",
+    "panel.bim_inspector",
+    "panel.layers",
+    "panel.project_explorer",
+    "project.created",
+    "project.created_success",
+    "project.filter",
+    "project.open",
+    "project.open_failed",
+    "project.opened",
+    "project.save",
+    "project.save_failed",
+    "project.saved",
+    "project.unsaved_question",
+    "project.unsaved_title",
+    "property.area",
+    "property.base_elevation",
+    "property.group.constraints",
+    "property.group.dimensions",
+    "property.group.general",
+    "property.group.identity",
+    "property.group.quantities",
+    "property.height",
+    "property.ifc_class",
+    "property.length",
+    "property.mixed",
+    "property.name",
+    "property.schema_duplicate",
+    "property.schema_duplicate_properties",
+    "property.schema_unknown",
+    "property.thickness",
+    "property.volume",
+    "recent.none",
+    "status.command_cancelled",
+    "status.dynamic_input",
+    "status.no_canvas",
+    "status.no_selection",
+    "status.numeric_input_unsupported",
+    "status.professional",
+    "status.ready",
+    "status.selected",
+    "status.unknown_command",
+    "workspace.error_content_widget",
+    "workspace.error_geometry",
+    "workspace.error_main_window",
+    "workspace.error_panel_inactive",
+    "workspace.error_panel_registered",
+    "workspace.error_panel_unknown",
+    "workspace.error_qt_unavailable",
+    "workspace.error_visual_registered",
+    "workspace.error_visual_unknown"
+  ],
+  "translation_keys": [
+    {
+      "file": "src/gui/bim_workspace/catalogs.py",
+      "line": 18,
+      "key": "error.material_duplicate",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/catalogs.py",
+      "line": 62,
+      "key": "error.family_duplicate",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/catalogs.py",
+      "line": 81,
+      "key": "error.type_not_in_family",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/catalogs.py",
+      "line": 83,
+      "key": "error.type_duplicate",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/catalogs.py",
+      "line": 26,
+      "key": "error.material_unknown",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/catalogs.py",
+      "line": 70,
+      "key": "error.family_unknown",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 33,
+      "key": "error.empty_node_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 35,
+      "key": "error.empty_title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 60,
+      "key": "error.empty_material_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 62,
+      "key": "error.empty_name",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 64,
+      "key": "error.negative_density",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 76,
+      "key": "error.empty_type_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 80,
+      "key": "error.empty_family_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 93,
+      "key": "error.empty_family_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 95,
+      "key": "error.empty_name",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 97,
+      "key": "error.empty_category",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 100,
+      "key": "error.family_type_mismatch",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 28,
+      "key": "new_project.title"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 50,
+      "key": "new_project.name"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 51,
+      "key": "new_project.client"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 52,
+      "key": "new_project.location"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 53,
+      "key": "new_project.standard"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 55,
+      "key": "new_project.create"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 85,
+      "key": "new_project.created_title"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 86,
+      "key": "new_project.created_message"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 28,
+      "key": "new_project.title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 50,
+      "key": "new_project.name",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 51,
+      "key": "new_project.client",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 52,
+      "key": "new_project.location",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 53,
+      "key": "new_project.standard",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 55,
+      "key": "new_project.create",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 67,
+      "key": "new_project.missing_title"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 68,
+      "key": "new_project.missing_name"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 85,
+      "key": "new_project.created_title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 86,
+      "key": "new_project.created_message",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 67,
+      "key": "new_project.missing_title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 68,
+      "key": "new_project.missing_name",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 20,
+      "key": "inspector.read_only",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 21,
+      "key": "inspector.no_editor",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/panel.py",
+      "line": 11,
+      "key": "inspector.none",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/panel.py",
+      "line": 12,
+      "key": "inspector.search",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/panel.py",
+      "line": 16,
+      "key": "inspector.none",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/panel.py",
+      "line": 22,
+      "key": "inspector.empty",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/panel.py",
+      "line": 15,
+      "key": "inspector.none",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/inspector/panel.py",
+      "line": 15,
+      "key": "element.default",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 74,
+      "key": "app.title"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 101,
+      "key": "menu.file"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 104,
+      "key": "menu.new_project"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 108,
+      "key": "menu.open_project"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 112,
+      "key": "menu.save_project"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 116,
+      "key": "menu.save_as"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 120,
+      "key": "menu.recent_projects"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 122,
+      "key": "menu.exit"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 124,
+      "key": "menu.edit"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 125,
+      "key": "menu.view"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 126,
+      "key": "menu.architecture"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 127,
+      "key": "menu.structure"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 128,
+      "key": "menu.bim"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 129,
+      "key": "menu.geotechnics"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 130,
+      "key": "menu.costs"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 131,
+      "key": "menu.ai"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 132,
+      "key": "menu.help"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 843,
+      "key": "status.command_cancelled"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 874,
+      "key": "status.dynamic_input"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 959,
+      "key": "panel.project_explorer"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1023,
+      "key": "panel.bim_inspector"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1054,
+      "key": "status.selected"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1063,
+      "key": "panel.layers"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1074,
+      "key": "layer.new"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1075,
+      "key": "layer.activate"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1076,
+      "key": "layer.visibility"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1077,
+      "key": "layer.lock"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1253,
+      "key": "panel.ai_assistant"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1260,
+      "key": "ai.placeholder"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1278,
+      "key": "status.ready"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 74,
+      "key": "app.title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 101,
+      "key": "menu.file",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 104,
+      "key": "menu.new_project",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 108,
+      "key": "menu.open_project",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 112,
+      "key": "menu.save_project",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 116,
+      "key": "menu.save_as",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 120,
+      "key": "menu.recent_projects",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 122,
+      "key": "menu.exit",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 124,
+      "key": "menu.edit",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 125,
+      "key": "menu.view",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 126,
+      "key": "menu.architecture",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 127,
+      "key": "menu.structure",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 128,
+      "key": "menu.bim",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 129,
+      "key": "menu.geotechnics",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 130,
+      "key": "menu.costs",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 131,
+      "key": "menu.ai",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 132,
+      "key": "menu.help",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 271,
+      "key": "cad.line.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 275,
+      "key": "cad.line.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 290,
+      "key": "cad.pline.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 304,
+      "key": "cad.rectangle.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 318,
+      "key": "cad.circle.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 332,
+      "key": "cad.move.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 346,
+      "key": "cad.copy.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 360,
+      "key": "cad.rotate.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 374,
+      "key": "cad.scale.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 388,
+      "key": "cad.mirror.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 392,
+      "key": "cad.mirror.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 407,
+      "key": "cad.offset.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 411,
+      "key": "cad.offset.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 426,
+      "key": "cad.trim.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 430,
+      "key": "cad.trim.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 446,
+      "key": "cad.extend.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 450,
+      "key": "cad.extend.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 466,
+      "key": "cad.fillet.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 470,
+      "key": "cad.fillet.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 485,
+      "key": "cad.chamfer.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 489,
+      "key": "cad.chamfer.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 509,
+      "key": "cad.join.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 513,
+      "key": "cad.join.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 533,
+      "key": "cad.wall.active"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 537,
+      "key": "cad.wall.prompt"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 785,
+      "key": "status.no_canvas"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 798,
+      "key": "status.unknown_command"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 810,
+      "key": "status.numeric_input_unsupported"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 843,
+      "key": "status.command_cancelled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 874,
+      "key": "status.dynamic_input",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 885,
+      "key": "document.untitled"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 908,
+      "key": "recent.none"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 948,
+      "key": "project.created_success"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 959,
+      "key": "panel.project_explorer",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1023,
+      "key": "panel.bim_inspector",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1050,
+      "key": "status.no_selection"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1054,
+      "key": "status.selected",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1063,
+      "key": "panel.layers",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1074,
+      "key": "layer.new",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1075,
+      "key": "layer.activate",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1076,
+      "key": "layer.visibility",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1077,
+      "key": "layer.lock",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1253,
+      "key": "panel.ai_assistant",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1260,
+      "key": "ai.placeholder",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1278,
+      "key": "status.ready",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 271,
+      "key": "cad.line.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 275,
+      "key": "cad.line.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 290,
+      "key": "cad.pline.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 304,
+      "key": "cad.rectangle.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 318,
+      "key": "cad.circle.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 332,
+      "key": "cad.move.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 346,
+      "key": "cad.copy.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 360,
+      "key": "cad.rotate.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 374,
+      "key": "cad.scale.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 388,
+      "key": "cad.mirror.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 392,
+      "key": "cad.mirror.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 407,
+      "key": "cad.offset.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 411,
+      "key": "cad.offset.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 426,
+      "key": "cad.trim.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 430,
+      "key": "cad.trim.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 446,
+      "key": "cad.extend.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 450,
+      "key": "cad.extend.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 466,
+      "key": "cad.fillet.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 470,
+      "key": "cad.fillet.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 485,
+      "key": "cad.chamfer.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 489,
+      "key": "cad.chamfer.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 509,
+      "key": "cad.join.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 513,
+      "key": "cad.join.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 533,
+      "key": "cad.wall.active",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 537,
+      "key": "cad.wall.prompt",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 785,
+      "key": "status.no_canvas",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 798,
+      "key": "status.unknown_command",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 810,
+      "key": "status.numeric_input_unsupported",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 885,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 908,
+      "key": "recent.none",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 948,
+      "key": "project.created_success",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1050,
+      "key": "status.no_selection",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1054,
+      "key": "element.default"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1054,
+      "key": "element.default",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 31,
+      "key": "error.empty_node_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 33,
+      "key": "error.empty_title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 66,
+      "key": "browser.error_duplicate_node",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 96,
+      "key": "browser.error_delete_root",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 115,
+      "key": "browser.error_move_root",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 122,
+      "key": "browser.error_move_self",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/model.py",
+      "line": 137,
+      "key": "browser.error_unknown_node",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 32,
+      "key": "error.qt_project_browser"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 51,
+      "key": "browser.search"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 193,
+      "key": "browser.select"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 200,
+      "key": "browser.expand"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 204,
+      "key": "browser.collapse"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 32,
+      "key": "error.qt_project_browser",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 51,
+      "key": "browser.search",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 193,
+      "key": "browser.select",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 200,
+      "key": "browser.expand",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_browser/qt_widget.py",
+      "line": 204,
+      "key": "browser.collapse",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 22,
+      "key": "project.filter"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 22,
+      "key": "project.filter",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 26,
+      "key": "document.untitled"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 53,
+      "key": "project.created"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 60,
+      "key": "project.open"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 103,
+      "key": "project.save"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 222,
+      "key": "project.unsaved_title"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 223,
+      "key": "project.unsaved_question"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 234,
+      "key": "document.untitled"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 26,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 46,
+      "key": "document.untitled"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 53,
+      "key": "project.created",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 60,
+      "key": "project.open",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 85,
+      "key": "project.opened"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 103,
+      "key": "project.save",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 118,
+      "key": "project.saved"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 222,
+      "key": "project.unsaved_title",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 223,
+      "key": "project.unsaved_question",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 234,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 46,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 85,
+      "key": "project.opened",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 88,
+      "key": "project.open_failed"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 118,
+      "key": "project.saved",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 121,
+      "key": "project.save_failed"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 88,
+      "key": "project.open_failed",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 121,
+      "key": "project.save_failed",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 131,
+      "key": "property.name",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 137,
+      "key": "property.ifc_class",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 144,
+      "key": "property.height",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 152,
+      "key": "property.thickness",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 160,
+      "key": "property.base_elevation",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 167,
+      "key": "property.length",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 175,
+      "key": "property.area",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 183,
+      "key": "property.volume",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 64,
+      "key": "property.schema_duplicate",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 68,
+      "key": "property.schema_duplicate_properties",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 132,
+      "key": "property.group.identity",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 138,
+      "key": "property.group.identity",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 145,
+      "key": "property.group.dimensions",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 153,
+      "key": "property.group.dimensions",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 161,
+      "key": "property.group.constraints",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 168,
+      "key": "property.group.quantities",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 176,
+      "key": "property.group.quantities",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 184,
+      "key": "property.group.quantities",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/adapter.py",
+      "line": 75,
+      "key": "property.schema_unknown",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 62,
+      "key": "property.mixed",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 28,
+      "key": "property.group.general",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 40,
+      "key": "error.empty_property_id",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 42,
+      "key": "error.empty_property_label",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 44,
+      "key": "error.enum_values_required",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 50,
+      "key": "error.minimum_above_maximum",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 66,
+      "key": "common.yes",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 66,
+      "key": "common.no",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 134,
+      "key": "error.read_only_property",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 181,
+      "key": "error.value_not_allowed",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 87,
+      "key": "error.duplicate_property",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 105,
+      "key": "error.unknown_property",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 162,
+      "key": "error.invalid_boolean",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 166,
+      "key": "error.boolean_not_integer",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 175,
+      "key": "error.boolean_not_number",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 185,
+      "key": "error.minimum",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 187,
+      "key": "error.maximum",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/property_palette/model.py",
+      "line": 192,
+      "key": "error.custom_validation",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/model.py",
+      "line": 74,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/model.py",
+      "line": 81,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/model.py",
+      "line": 102,
+      "key": "document.untitled",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/panels.py",
+      "line": 16,
+      "key": "workspace.error_panel_registered",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/panels.py",
+      "line": 105,
+      "key": "workspace.error_geometry",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/panels.py",
+      "line": 23,
+      "key": "workspace.error_panel_unknown",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/panels.py",
+      "line": 29,
+      "key": "workspace.error_panel_unknown",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/panels.py",
+      "line": 66,
+      "key": "workspace.error_panel_inactive",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/panels.py",
+      "line": 72,
+      "key": "workspace.error_panel_inactive",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 29,
+      "key": "workspace.error_qt_unavailable",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 75,
+      "key": "workspace.error_content_widget",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 111,
+      "key": "workspace.error_main_window",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 125,
+      "key": "workspace.error_visual_registered",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 158,
+      "key": "workspace.error_visual_unknown",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 114,
+      "key": "command.line",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 115,
+      "key": "command.wall",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 116,
+      "key": "command.room",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 117,
+      "key": "command.slab",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 118,
+      "key": "command.standards",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 119,
+      "key": "command.capability_center",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 120,
+      "key": "command.structural_design",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 121,
+      "key": "command.structural_report",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 122,
+      "key": "command.revit_sync",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/qt_command_palette.py",
+      "line": 20,
+      "key": "command.search"
+    },
+    {
+      "file": "src/gui/workspace2/qt_command_palette.py",
+      "line": 26,
+      "key": "status.professional"
+    },
+    {
+      "file": "src/gui/workspace2/qt_command_palette.py",
+      "line": 20,
+      "key": "command.search",
+      "reference": "CATALOG_KEY_LITERAL"
+    },
+    {
+      "file": "src/gui/workspace2/qt_command_palette.py",
+      "line": 26,
+      "key": "status.professional",
+      "reference": "CATALOG_KEY_LITERAL"
+    }
+  ],
+  "candidate_samples": [
+    {
+      "file": "src/gui/bim_workspace/builder.py",
+      "line": 31,
+      "text_sha256": "74b4b0ade6c9cc68138da9f7d706d0f0445a212b0e7b5a8c0adfafc8ad9c9330",
+      "preview": "BIM Workspace"
+    },
+    {
+      "file": "src/gui/bim_workspace/builder.py",
+      "line": 47,
+      "text_sha256": "c1f8da86c7c3cc124454fdcdf86b7d2a9302026cc18f5bb801f2251e84c7ec08",
+      "preview": "Nivel 0"
+    },
+    {
+      "file": "src/gui/bim_workspace/builder.py",
+      "line": 52,
+      "text_sha256": "12dee5b314e9a056996fa86000a0b75b1393b34bc6b723c58bb6a1e24db3977c",
+      "preview": "New Construction"
+    },
+    {
+      "file": "src/gui/bim_workspace/builder.py",
+      "line": 90,
+      "text_sha256": "12dee5b314e9a056996fa86000a0b75b1393b34bc6b723c58bb6a1e24db3977c",
+      "preview": "New Construction"
+    },
+    {
+      "file": "src/gui/bim_workspace/entities.py",
+      "line": 78,
+      "text_sha256": "5bd6bd0d23c7ca8ecf9d7e0e9065b625145d4947a0696024b43ead739625eb45",
+      "preview": "name no puede estar vacío"
+    },
+    {
+      "file": "src/gui/bim_workspace/qt_widget.py",
+      "line": 32,
+      "text_sha256": "98f6cc70fa71b549e7e1ddc1540347bc1d27f2276fd7cd0266253d029593dacc",
+      "preview": "PySide6 no está disponible para BIM Workspace Suite."
+    },
+    {
+      "file": "src/gui/bim_workspace/qt_widget.py",
+      "line": 56,
+      "text_sha256": "d02020134dfc7c78b116359de2564ea7e16eb18aee34472a8c4e1382eda60124",
+      "preview": "Buscar en el modelo BIM…"
+    },
+    {
+      "file": "src/gui/bim_workspace/tree.py",
+      "line": 11,
+      "text_sha256": "74b4b0ade6c9cc68138da9f7d706d0f0445a212b0e7b5a8c0adfafc8ad9c9330",
+      "preview": "BIM Workspace"
+    },
+    {
+      "file": "src/gui/bim_workspace/tree.py",
+      "line": 44,
+      "text_sha256": "5a8f26149b54a7b11be13f70427f3e94f30183253dfcf18f328f4ee94ec91628",
+      "preview": "No se puede eliminar la raíz"
+    },
+    {
+      "file": "src/gui/bim_workspace/tree.py",
+      "line": 27,
+      "text_sha256": "4b69513ef9615f7bb7c02137d4e9c63c7b60ad5d5630037c25bddef323eea481",
+      "preview": "Nodo ya existente: "
+    },
+    {
+      "file": "src/gui/bim_workspace/tree.py",
+      "line": 40,
+      "text_sha256": "67f68278ae7297de3ea59796da24adfb06e8f75557cee3d099e6a82c0213e1fd",
+      "preview": "Nodo desconocido: "
+    },
+    {
+      "file": "src/gui/command_line.py",
+      "line": 1,
+      "text_sha256": "6ea4b8614d30d0462d8b159d23adfd27d72cb38dded6a9523ca88521a57ca62d",
+      "preview": "\nAI Architecture Studio\nCommand Line\n\nDynamic Input v1\n"
+    },
+    {
+      "file": "src/gui/command_line.py",
+      "line": 63,
+      "text_sha256": "2c70870dd6d51dca1555a53e91bf8267ef86f020f263a232760c99ac5d8f350c",
+      "preview": "LINE, 10,5, @10,0, @5<45 o distancia"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 1,
+      "text_sha256": "238f0c9ea7c4afdf3d64b2ca46cc275c7de88c9d5696ac1ad95a7d73f9239525",
+      "preview": "\nAI Architecture Studio\nNew Project Dialog\n\nVersión: Alpha 0.2\n"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 40,
+      "text_sha256": "96393ba3bb98745c76f11382306d6410a45e570569903185614c831e2f5a9cb9",
+      "preview": "ACI 318"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 41,
+      "text_sha256": "7de38349ec4d6e2d1790d9458387c0d1ca44752f9f31aa3b3f23088b74fdb18c",
+      "preview": "AISC 360"
+    },
+    {
+      "file": "src/gui/dialogs/new_project_dialog.py",
+      "line": 42,
+      "text_sha256": "ba8ab3e12180f679592085bf493b435f353eda2ffe300f66f4fe569d694d33b7",
+      "preview": "ASCE 7"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 96,
+      "text_sha256": "558bb20a82ede5a6d1a8acbf8a26b98b1204686cd84c488380ee8620d612b9b4",
+      "preview": "Categoría"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 83,
+      "text_sha256": "558bb20a82ede5a6d1a8acbf8a26b98b1204686cd84c488380ee8620d612b9b4",
+      "preview": "Categoría"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 113,
+      "text_sha256": "cef1c19e724fb9d491f79f2c767118ea11740c7d1b3412f84989832cf1b406dc",
+      "preview": "área"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 113,
+      "text_sha256": "a50d706a380c6492b50feed6b75838895111eabf12787454a45faf070e0bda1c",
+      "preview": "categoría"
+    },
+    {
+      "file": "src/gui/inspector/controller.py",
+      "line": 113,
+      "text_sha256": "08e5bbe206a2b8389350829cf919a908b4bdd770e1f5a1358fc410003f435ad0",
+      "preview": "restricción"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1,
+      "text_sha256": "b2e96ed16cf6af7dbe33ac003bc2f28de1bfdb817d79de63f58b256e655553b7",
+      "preview": "\nAI Architecture Studio\nMain Window\n\nDynamic Input v1 / JOIN Professional 4.3\n"
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1288,
+      "text_sha256": "fcd65adabad88cdea439372722ec5f221f9c7da890e3552d4195a86e56b320e7",
+      "preview": "Apply the governed semantic theme to the complete application shell."
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 1293,
+      "text_sha256": "8f2ce3a6282e3d227c74c54e38eb7888d36a84cc5b01332bc49c3472315eecdf",
+      "preview": "Compatibility entry point retained for existing launchers."
+    },
+    {
+      "file": "src/gui/main_window.py",
+      "line": 870,
+      "text_sha256": "111ffe8a139abc589fe47ddf664f15ceee10d0545f8c4d2071bd4190b9034022",
+      "preview": "DYNAMIC INPUT MODE: "
+    },
+    {
+      "file": "src/gui/project_browser/builder.py",
+      "line": 16,
+      "text_sha256": "83547d50643d05a460e19517dadc8dd72841619d3cd315f38332dc293169aaff",
+      "preview": "Construye una jerarquía estable a partir de objetos BIM."
+    },
+    {
+      "file": "src/gui/project_browser/builder.py",
+      "line": 49,
+      "text_sha256": "c1f8da86c7c3cc124454fdcdf86b7d2a9302026cc18f5bb801f2251e84c7ec08",
+      "preview": "Nivel 0"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 1,
+      "text_sha256": "ba785d3fcfd04f0228abaab083795752c30e282686b820e284427515e07606b2",
+      "preview": "Controlador de documentos .aias para la ventana principal."
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 17,
+      "text_sha256": "23837f5e55ff12d913ca373a5bf39fad977babd13e2c8925ed5369a93cc4d088",
+      "preview": "AI Architecture Studio"
+    },
+    {
+      "file": "src/gui/project_session.py",
+      "line": 28,
+      "text_sha256": "23837f5e55ff12d913ca373a5bf39fad977babd13e2c8925ed5369a93cc4d088",
+      "preview": "AI Architecture Studio"
+    },
+    {
+      "file": "src/gui/property_palette/controller.py",
+      "line": 49,
+      "text_sha256": "bb729d7af8da31031537ce1e10d37a8686968b27629d23ba87e30c10a1d1126b",
+      "preview": "No hay objetos seleccionados"
+    },
+    {
+      "file": "src/gui/property_palette/history.py",
+      "line": 15,
+      "text_sha256": "ff0608c47163b27ac7403c0a7c5e485f71043b8c6afebd5ede9c39032983c25b",
+      "preview": "Editar propiedad"
+    },
+    {
+      "file": "src/gui/property_palette/qt_widget.py",
+      "line": 39,
+      "text_sha256": "1c6e2c8826ed5142d87dc3581b78459aa60e6d9127e65e84bd673b93076f03ba",
+      "preview": "PySide6 no está disponible para PropertyPaletteWidget."
+    },
+    {
+      "file": "src/gui/property_palette/qt_widget.py",
+      "line": 56,
+      "text_sha256": "373356797e65241205c5f52436f5eaafcf6bea0c80ce3e9ceed29111c3b6e980",
+      "preview": "Buscar propiedades…"
+    },
+    {
+      "file": "src/gui/property_palette/qt_widget.py",
+      "line": 57,
+      "text_sha256": "ee018d7e1c8988a7673075f384236dd35a58315888a3db92d880679d7c477ce6",
+      "preview": "Seleccione un objeto BIM"
+    },
+    {
+      "file": "src/gui/ribbon.py",
+      "line": 1,
+      "text_sha256": "1f49d03eddcf75d88b21259c632faffbd9292777d57f0970d963a7e51c013a4f",
+      "preview": "\nAI Architecture Studio\nRibbon\n\nFoundation 4.3 / JOIN Professional 4.3\n"
+    },
+    {
+      "file": "src/gui/ribbon.py",
+      "line": 24,
+      "text_sha256": "baaaa1843fdef7801bef408bcb2e9f744788cd47319f193071b6189f752c0a8f",
+      "preview": "Herramientas AIAS"
+    },
+    {
+      "file": "src/gui/ribbon.py",
+      "line": 26,
+      "text_sha256": "01d07c447458140bafc256b0f50e2e658ec3084dddeb4ac601176a2d2a7dbe2b",
+      "preview": "color: white; font-weight: bold;"
+    },
+    {
+      "file": "src/gui/ribbon.py",
+      "line": 31,
+      "text_sha256": "668fa7c30c23b979007109aa92a92550de0be046aed38b3f4ee1ae13bf86bac5",
+      "preview": "Nuevo Proyecto"
+    },
+    {
+      "file": "src/gui/workspace/events.py",
+      "line": 16,
+      "text_sha256": "443c6ad5bcbf4385ada5a03988a9e4ebe973293f8020b90f8f3528aeb3293016",
+      "preview": "Adaptador mínimo compatible con dispatch(event), emit(name, payload) o callable."
+    },
+    {
+      "file": "src/gui/workspace/layout.py",
+      "line": 16,
+      "text_sha256": "4ec50f7cc37ce89f24d5b2997fdf7f6a2eea681eb059a22eba3edd6defba8b52",
+      "preview": "El layout debe ser un objeto JSON"
+    },
+    {
+      "file": "src/gui/workspace/layout.py",
+      "line": 39,
+      "text_sha256": "7a20a13a4e22e3844c090d25231f519e4f27a5e14655ad78770f912fe0ccd1b2",
+      "preview": "Nombre de layout no válido"
+    },
+    {
+      "file": "src/gui/workspace/manager.py",
+      "line": 53,
+      "text_sha256": "30d1a8cd45b235e9f92d4403d9282926f5a558c6c8012d3c692af236c5c93cc7",
+      "preview": "Sin título"
+    },
+    {
+      "file": "src/gui/workspace/manager.py",
+      "line": 65,
+      "text_sha256": "25512581a81d7926f38a1a13c57c95b10352dde0040997cea5c7e59c0d75e3f9",
+      "preview": "El documento contiene cambios sin guardar"
+    },
+    {
+      "file": "src/gui/workspace/manager.py",
+      "line": 83,
+      "text_sha256": "c80fa87045c23412f9d3ea1869e22eb1852d799a6b1c4922d2d883f15e668392",
+      "preview": "Documento desconocido: "
+    },
+    {
+      "file": "src/gui/workspace/model.py",
+      "line": 31,
+      "text_sha256": "b72e7800c6be9ad07b6bc7f8e8cc318a81f3ea4ad0408e97e4fcf135917c7d24",
+      "preview": "panel_id no puede estar vacío"
+    },
+    {
+      "file": "src/gui/workspace/model.py",
+      "line": 33,
+      "text_sha256": "0eb825e958fbee5d482ca316c8c49e60ffb8937dd67ccdbdbf3a499de4a5bdc1",
+      "preview": "title no puede estar vacío"
+    },
+    {
+      "file": "src/gui/workspace/model.py",
+      "line": 144,
+      "text_sha256": "34420f2802691e5f9b011150d8eb7d7f75c44534e5d5028e3b39338eb231ad2d",
+      "preview": "Versión de WorkspaceState no soportada"
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 65,
+      "text_sha256": "7fb0a060f032014b54a46e8faa0d27666b43c7e87df1bb7c84d49c1474ce8d6e",
+      "preview": "Crea QDockWidget consistentes para todos los paneles de AIAS."
+    },
+    {
+      "file": "src/gui/workspace/qt_docking.py",
+      "line": 95,
+      "text_sha256": "bf109e9c4e5987f1aadf35770be917f00e9e469f0b50a697f2edcd11382837f1",
+      "preview": "\n    Adaptador visual entre WorkspaceManager y QMainWindow/QDockWidget.\n\n    Wor"
+    },
+    {
+      "file": "src/gui/workspace.py",
+      "line": 1,
+      "text_sha256": "b9d037f2ba9b1f184abec9e9e910159ef63fa148b2f4b3f575284150046b1a8a",
+      "preview": "\nAI Architecture Studio\nWorkspace Profesional\n\nVersión: Foundation 1.1\n"
+    },
+    {
+      "file": "src/gui/workspace2/__init__.py",
+      "line": 1,
+      "text_sha256": "7c8b3cd1a9b5b1053b5c5901b387895ccb6fcda1fbc42278b5a5f49fffa0ee16",
+      "preview": "Workspace 2.0 shell contracts."
+    },
+    {
+      "file": "src/gui/workspace2/bim_inspector.py",
+      "line": 1,
+      "text_sha256": "7511dd8f2e19f3c5268a8dad719ddbf4f9e5b77a6e47ededdbdeb8210d621039",
+      "preview": "Selection bridge joining project/BIM navigation, canvas and property inspection."
+    },
+    {
+      "file": "src/gui/workspace2/bim_inspector.py",
+      "line": 20,
+      "text_sha256": "39d16973f0e71d890e36c0e7b2fa23494e9a735fd310ad8cf51119b4caf73721",
+      "preview": "One deterministic selection path for browser, canvas and inspector."
+    },
+    {
+      "file": "src/gui/workspace2/bim_inspector.py",
+      "line": 45,
+      "text_sha256": "b4074c2408539096be60e861c1cf729af53c00c04a3c6e72b48fd58b5e359ec2",
+      "preview": "Project / BIM"
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 1,
+      "text_sha256": "c2e1b781066ab12cba48796fec26af58ede23f9968e2cb1e978614e6ff859c5a",
+      "preview": "Application-visible, read-only authority over AIAS platform delivery evidence."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 15,
+      "text_sha256": "5b7e0b50ae6adeaa6c754e6e8e7598068a5671e6e9f4fe2b646e9332143df53e",
+      "preview": "Summarize one installer without executing or modifying it."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 27,
+      "text_sha256": "416dcf27cf3cf2a245db2e0e2bccb0decaa9c2273c865a5321fa0a297fba5f27",
+      "preview": "Collect repository evidence for a Workspace panel and governed commands."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 118,
+      "text_sha256": "b809ef5e5a3c6d1d502e5e9bd5e6a634ebe6cbd880c5771947247b2b8deaa527",
+      "preview": "Register the panel once through the canonical Workspace manager."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 126,
+      "text_sha256": "081ceb37d53b61756992331eaeaa314de79d7336819aa87b899940665d59550e",
+      "preview": "Render a standalone, accessible evidence view for visual validation."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 37,
+      "text_sha256": "432a98348bffc7a58dfc7f0032a5d8c90800ea6bc981da399549abac3a445a19",
+      "preview": "Return the stable Workspace panel contract."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 47,
+      "text_sha256": "7c5eb175c1d73efd64c79aeb34e2abf5d8c2af67ed576cb084c6958ddc72355c",
+      "preview": "Build a truthful product snapshot from canonical repository evidence."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 76,
+      "text_sha256": "d3480f246ef57c37fa51cca64bcbd69a647bf0d6adfe56b2e290d67fc7d93fda",
+      "preview": "Expose safe plans; never execute installation or updates from the snapshot."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 136,
+      "text_sha256": "705bf38ddf8af759a6adbe214700806d2b9da00df50588682b1bfa33b94755a1",
+      "preview": "Firma editorial pendiente: instalación pública bloqueada."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 136,
+      "text_sha256": "45920b0f206745ef9ce462f690a7f67af748c65e0895a34c4b6202c43aa94f46",
+      "preview": "Firma editorial verificada."
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 137,
+      "text_sha256": "e54e646cb832b9c83cafb4ad993a4cbfb7dfcd09c06dce7311093b946add8353",
+      "preview": "</section><aside role='status'><strong>Estado de distribución</strong><p>"
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 40,
+      "text_sha256": "75740f1939ab0ef3c5fd5584c3989f9e0bbfc18958f496a0c5d9f0a75ff27f6c",
+      "preview": "AIAS Capability Center"
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 131,
+      "text_sha256": "f1ad16616a3eac97265f66b9385673d49d1352966e8be8c3e1c483968ac8ebad",
+      "preview": "Paquetes fuente"
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 132,
+      "text_sha256": "4f683809b4f4440c8f32dee639f4e50b5ebb2a59f4c17bb6cb7ce45af382b6ea",
+      "preview": "Instaladores íntegros"
+    },
+    {
+      "file": "src/gui/workspace2/capability_center.py",
+      "line": 133,
+      "text_sha256": "baa5e6ec9debf790459cd325bfa8ccc1a6d75ac1ec89d1de823722bd626cc713",
+      "preview": "Calidad conforme"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 1,
+      "text_sha256": "8aa2e291ad55417a511a092efe6751e3101dc05086c0b408a25cd4bfbb8cd1e6",
+      "preview": "Professional command search, capability gating and status truth for Workspace 2."
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 116,
+      "text_sha256": "e77008bdd1538b038a8ce95bdc7eab4bb965f219e5c98e7041b066db87e2f9f9",
+      "preview": "Room / Space"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 118,
+      "text_sha256": "4205fe112d52f006957955a2c9ddb2c5197848f05cf81a0ebe0f2a950bb5fd45",
+      "preview": "Project Standards"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 119,
+      "text_sha256": "75740f1939ab0ef3c5fd5584c3989f9e0bbfc18958f496a0c5d9f0a75ff27f6c",
+      "preview": "AIAS Capability Center"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 120,
+      "text_sha256": "050df6d348571c9623e64e9e2aa8db50b18a11fde3e2fc2816316d09f077561d",
+      "preview": "Structural Design"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 121,
+      "text_sha256": "61b9fb6636aa1ffdb1feca2b63b3e1d7926ae45b11791dc37170753be5b2a1d6",
+      "preview": "Structural Calculation Report"
+    },
+    {
+      "file": "src/gui/workspace2/commanding.py",
+      "line": 122,
+      "text_sha256": "4fd9ecdf4fd78a5d2b9ea4a0eaa10bf05273b511b95cd0299865c210c88ae6df",
+      "preview": "Revit Synchronization"
+    },
+    {
+      "file": "src/gui/workspace2/coordination_learning.py",
+      "line": 1,
+      "text_sha256": "e51c2fccd1ab53aa583930ed4118c2d95e20ea69179cdc965473968165c852c9",
+      "preview": "Coordination evidence joined to contextual AIAS University learning."
+    },
+    {
+      "file": "src/gui/workspace2/coordination_learning.py",
+      "line": 91,
+      "text_sha256": "b4658e768ecfe401a28451570d8526fb6c6de1af29918c5fdf4b69a123bbab50",
+      "preview": "</p></header><main><div class=\"gate\">La formación contextual ayuda a resolver el"
+    },
+    {
+      "file": "src/gui/workspace2/coordination_learning.py",
+      "line": 91,
+      "text_sha256": "a2d95109b5cb638a582dcc7234ff0142b161810c856055cb3bc30f03110fcc52",
+      "preview": "</section><section><h2>Aprendizaje recomendado</h2>"
+    },
+    {
+      "file": "src/gui/workspace2/coordination_learning.py",
+      "line": 62,
+      "text_sha256": "c798b5dd8e43c2ae2146168d106531c05b3ae9b9a101887506518f2cfc2839f4",
+      "preview": "Licensed Venezuelan normative pack and professional approval are pending."
+    },
+    {
+      "file": "src/gui/workspace2/coordination_learning.py",
+      "line": 63,
+      "text_sha256": "7ddef7be7124b473c1c470dc61727a287eafd4012533f1cc213616e55a5d744a",
+      "preview": "Site-specific geotechnical investigation is absent."
+    },
+    {
+      "file": "src/gui/workspace2/coordination_learning.py",
+      "line": 90,
+      "text_sha256": "491753ac81c833c21dff629327820065413d668ce7b88ed7c882f55527a2bc33",
+      "preview": "</b><span>AIAS University · internal competency</span><p>"
+    },
+    {
+      "file": "src/gui/workspace2/experience_validation.py",
+      "line": 1,
+      "text_sha256": "1f782a33414942fc7ea4b1a1bc6dd97ad972f688d90e9269afb7557372890532",
+      "preview": "Automated accessibility/performance gates and honest human-session evidence."
+    },
+    {
+      "file": "src/gui/workspace2/experience_validation.py",
+      "line": 38,
+      "text_sha256": "fe26c59e91ac8de694b2531dc3bdc1b7faf471d3d7e4e00870af60f5f22897cb",
+      "preview": "<!doctype html>"
+    },
+    {
+      "file": "src/gui/workspace2/experience_validation.py",
+      "line": 45,
+      "text_sha256": "07b976d456c3583eff1b88142bb62c4b17011b10854f28b73fa35bbe524ef6c3",
+      "preview": "construction approval"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 1,
+      "text_sha256": "854ce976132019a5ade0e787ec9fc32c9d97d358b8ed52848b3e41fd7c7968b5",
+      "preview": "Evidence-backed Workspace 2.0 journey for the Venezuelan lighthouse building."
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 108,
+      "text_sha256": "53c1a3ec6a910f07e507835f1ed834b2efc67406356312e92858fd780a674c22",
+      "preview": "</h1><p>Evidence-backed reference workflow. No normative compliance or construct"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 108,
+      "text_sha256": "62fb72c2dad94cfe365e73e10f9d3891bbd1a317734f4e1412b0881bf41586da",
+      "preview": "</b></div><section class=\"grid\">"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 108,
+      "text_sha256": "4e19b581ceb7fefaffbc1b1fa1ab1d7f3a59ca082961182c52a7dc45c706fd3a",
+      "preview": "</section><section class=\"warning\"><h2>External authority gates remain visible</"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 68,
+      "text_sha256": "b4c74599046f23551bc98fe006317b624db495d22d28b045c81ed09ecea4db64",
+      "preview": "Project and jurisdiction"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 69,
+      "text_sha256": "66b203e1b61bf2350084a00b71cc176bb0053979fbf0f8ecdb07698d83b92719",
+      "preview": "BIM / IFC neutral model"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 70,
+      "text_sha256": "42a608d468fef45a0d1de2618bc3f5ea90c498f9337caaf638cfff9b61823ea2",
+      "preview": "Structural analysis"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 71,
+      "text_sha256": "cb84f3dd3feff63c157021493b205ebdd8c562701ea8e7384b145dbab8f8b0bc",
+      "preview": "Member design and optimization"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 72,
+      "text_sha256": "8edbb25226494a6cc43db07f35570ccf1c33f92c12be92480ae7b8101dea218b",
+      "preview": "Drawings, schedules and quantities"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 73,
+      "text_sha256": "214d64261e001ebbabb617e93c87207ea3defef0a67867cffa098cd8a94383a9",
+      "preview": "Normative and professional release"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 106,
+      "text_sha256": "dfa7bd14f9819eb583dd0c8d3c72fbe9d4d50899a2445a26561724be98c2d3d4",
+      "preview": "<article class=\""
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 106,
+      "text_sha256": "825c6e01b37b60f72ae7bcd764968debf361d7e6206cdce3052f28bc63ea2a46",
+      "preview": " evidence files</span></article>"
+    },
+    {
+      "file": "src/gui/workspace2/lighthouse_journey.py",
+      "line": 69,
+      "text_sha256": "6f29f312fa79b56371ac7b6d01d65f0f099002ebf40d3f38b129299c99665b63",
+      "preview": " storeys · "
+    }
+  ],
+  "full_gui_translation_claimed": false,
+  "sha256": "e561075274f266869ebd70b7b8fc4eb838c5271c3118697bba4d5ecf792edbcd"
+}

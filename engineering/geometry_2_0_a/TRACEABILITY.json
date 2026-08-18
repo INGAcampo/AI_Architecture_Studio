@@ -1,0 +1,1 @@
+{"delivery":"MEGABLOCK-GEOMETRY-2.0-A","requirements":["AEC-000049","ASDD-000002"],"successors":["MEGABLOCK-BIM-NATIVE-2","GEOMETRY-BIM-BRIDGE-001"],"verification":["tests/test_geometry_2_0_a_spec.py"]}

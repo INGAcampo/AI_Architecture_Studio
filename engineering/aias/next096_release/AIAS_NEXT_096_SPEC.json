@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-096",
+  "title": "Evidence export release package",
+  "status": "VALIDATED",
+  "scope": "Build reproducible local release metadata for Dashboard evidence exports",
+  "safety": ["No external publication occurs", "Artifacts are normalized deterministically"]
+}

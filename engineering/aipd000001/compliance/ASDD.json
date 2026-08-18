@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-910001",
+  "title": "AIAS Productivity Dashboard",
+  "version": "1.0.0",
+  "purpose": "Provide a permanent evidence-based command panel for AIAS technological capital, productivity, maturity, governance, departments, risk and delivery flow.",
+  "scope": "Repository metric aggregation, constitutional status, SDD coverage, documentation, testing, maturity, 45 percent KPI, digital-company capability map, risks, backlog and static interactive dashboard generation.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-910001",
+      "title": "Evidence aggregation",
+      "statement": "The dashboard shall derive metrics from ACE, compliance, documentation, test and roadmap evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent manually invented executive status.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_productivity_dashboard/collector.py"
+      ],
+      "tested_by": [
+        "tests/test_aipd000001_productivity_dashboard.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-910002",
+      "title": "Maturity distinction",
+      "statement": "The dashboard shall distinguish reference-case capability from audited organizational maturity.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsupported Level 5 claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_productivity_dashboard/model.py"
+      ],
+      "tested_by": [
+        "tests/test_aipd000001_productivity_dashboard.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-910003",
+      "title": "Digital company map",
+      "statement": "The dashboard shall expose Constitution, standards, departments, virtual engineers, operating system, university, security, PMO, nervous system, SDD and knowledge system states.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Manage AIAS as a digital engineering company.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_productivity_dashboard/collector.py"
+      ],
+      "tested_by": [
+        "tests/test_aipd000001_productivity_dashboard.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-910004",
+      "title": "Sustainable acceleration",
+      "statement": "The dashboard shall display classified KPI evidence and flag results below the constitutional 45 percent target.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep acceleration measurable and honest.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_productivity_dashboard/model.py"
+      ],
+      "tested_by": [
+        "tests/test_aipd000001_productivity_dashboard.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-910005",
+      "title": "Permanent panel",
+      "statement": "The system shall generate a self-contained interactive HTML panel and machine-readable snapshot.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Deliver immediate value without requiring a server.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_productivity_dashboard/renderer.py"
+      ],
+      "tested_by": [
+        "tests/test_aipd000001_productivity_dashboard.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-910006",
+      "title": "Reproducible release",
+      "statement": "The system shall provide CLI, tests, documentation, installer and checksum-protected release evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the dashboard maintainable and deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_productivity_dashboard/orchestrator.py"
+      ],
+      "tested_by": [
+        "tests/test_aipd000001_productivity_dashboard.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-AIPD-000001"
+  ],
+  "adr_refs": [
+    "ADR-AIPD-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-995001",
+  "title": "Dependency-Ready Engineering Capability Foundations",
+  "version": "1.0.0",
+  "purpose": "Close every roadmap-wave-12 engineering capability whose approved dependencies are operational while preserving regulated-use boundaries.",
+  "scope": "Professional foundation workflow, jurisdiction registry, evidence ledger, differential validation, project reference library and explicit CAD/BIM deferral.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-995001",
+      "title": "Professional foundation workflow",
+      "statement": "The workflow shall execute validated calculation and code-check engines and join their releases in one evidence chain.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Deliver immediate professional engineering value.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_wave12/workflow.py"
+      ],
+      "tested_by": [
+        "tests/test_engineering_wave12_001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995002",
+      "title": "Jurisdiction governance",
+      "statement": "Jurisdiction packs shall be licensed, attributable, effective-date-aware and explicit about legal status and review.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unauthorized regulatory claims.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_wave12/jurisdictions.py"
+      ],
+      "tested_by": [
+        "tests/test_engineering_wave12_001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995003",
+      "title": "Evidence ledger",
+      "statement": "Engineering evidence shall be unique, attributable and linked through verifiable record hashes.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect the engineering golden thread.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_wave12/evidence.py"
+      ],
+      "tested_by": [
+        "tests/test_engineering_wave12_001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995004",
+      "title": "Differential validation",
+      "statement": "Results shall compare exact contracts with matching units, provenance and explicit tolerances.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Detect controlled numerical regressions.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_wave12/differential.py"
+      ],
+      "tested_by": [
+        "tests/test_engineering_wave12_001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995005",
+      "title": "Reference library",
+      "statement": "Reference cases shall be licensed, attributable, anonymized and identity-stable.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enable reusable lawful validation.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_wave12/references.py"
+      ],
+      "tested_by": [
+        "tests/test_engineering_wave12_001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-995006",
+      "title": "Reproducible delivery",
+      "statement": "Wave 12 foundations shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep engineering assurance deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_engineering_wave12_001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_engineering_wave12_001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-ENGINEERING-WAVE12-001"
+  ],
+  "adr_refs": [
+    "ADR-ENGINEERING-WAVE12-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

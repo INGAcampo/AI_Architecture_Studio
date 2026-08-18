@@ -1,0 +1,7 @@
+{
+  "program": "DOC-ALIGN-002",
+  "policy": "criticality_then_debt",
+  "package_count": 0,
+  "total_debt": 0,
+  "priority_queue": []
+}

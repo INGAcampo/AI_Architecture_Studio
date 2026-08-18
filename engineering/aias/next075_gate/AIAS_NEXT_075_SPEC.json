@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-075",
+  "title": "Publication evidence gate",
+  "status": "VALIDATED",
+  "scope": "Explicitly classify external evidence authorization without inferring approval",
+  "safety": ["Approval remains false", "Authority is caller-supplied and auditable"]
+}

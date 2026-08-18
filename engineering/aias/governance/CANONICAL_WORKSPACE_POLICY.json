@@ -1,0 +1,1 @@
+{"canonical_roots":["src/","tests/","scripts/","tools/","engineering/aias/"],"local_only_prefixes":[".aias/",".tmp_","tmp/","AIAS_BACKUP_","AIAS_NEXT"],"protected_drifts":["src/core/history/history_manager.py"],"forbidden_integration":["git add .","git add -A"],"fail_closed":["untracked_canonical_candidate","unexpected_staged"]}

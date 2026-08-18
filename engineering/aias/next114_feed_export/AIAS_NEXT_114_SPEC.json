@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-114",
+  "title": "Dashboard feed export",
+  "status": "VALIDATED",
+  "scope": "Export operational Dashboard feed as deterministic JSON with SHA-256",
+  "safety": ["Export is not certification", "Feed source is not mutated"]
+}

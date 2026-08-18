@@ -1,0 +1,1 @@
+{"delivery":"MEGABLOCK-CONTRACT-WAVE-001","requirements":["AEC-000049","ASDD-000002"],"packages":["MEGABLOCK-GEOMETRY-2","MEGABLOCK-BIM-NATIVE-2","MEGABLOCK-STRUCTURAL-1"],"verification":["tests/test_megablock_contract_wave001.py"]}

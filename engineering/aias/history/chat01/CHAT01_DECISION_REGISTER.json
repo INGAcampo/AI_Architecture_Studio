@@ -1,0 +1,26 @@
+{
+  "register_id": "AIAS-GENESIS-CHAT01-DECISIONS",
+  "version": "1.0.0",
+  "decisions": [
+    {"id":"GEN-001","decision":"AIAS is a professional digital-engineering platform, not merely CAD","status":"APPROVED","evidence_sequences":[48,54,85,101,125]},
+    {"id":"GEN-002","decision":"The user is Project Director and domain approver; technical implementation must minimize programming burden on the user","status":"APPROVED","evidence_sequences":[148,149,150,152]},
+    {"id":"GEN-003","decision":"AIAS owns its geometry, graphics and intelligent-object core; commercial applications are connectors","status":"APPROVED","evidence_sequences":[127,128,129,130,131]},
+    {"id":"GEN-004","decision":"Standards are jurisdiction-aware independent packs, not formulas embedded in commands","status":"APPROVED","evidence_sequences":[1,2,3,4,5]},
+    {"id":"GEN-005","decision":"No normative or construction claim without verified editions, licensed content and professional responsibility","status":"APPROVED","evidence_sequences":[3,5,10,42,84]},
+    {"id":"GEN-006","decision":"Every major capability is specified, tested, documented, integrated and usable before closure","status":"APPROVED","evidence_sequences":[46,47,93,94,102,106,113]},
+    {"id":"GEN-007","decision":"Architecture and engineering documentation evolve with code and preserve decision rationale","status":"APPROVED","evidence_sequences":[53,54,55,56,57,103,104,105,126]},
+    {"id":"GEN-008","decision":"Value and professional time saved are primary progress measures","status":"APPROVED","evidence_sequences":[99,100,101,106]},
+    {"id":"GEN-009","decision":"Internationalization, Unicode, locale and country profiles are designed into the core","status":"APPROVED","evidence_sequences":[65,66,67,68,69,70,71,72]},
+    {"id":"GEN-010","decision":"Knowledge Center provides contextual, downloadable, country-aware and offline knowledge","status":"APPROVED","evidence_sequences":[72,73,74,75,76,77,78,79,80]},
+    {"id":"GEN-011","decision":"AIAS University provides structured professional learning integrated with tools","status":"APPROVED","evidence_sequences":[81,84,91,92,93]},
+    {"id":"GEN-012","decision":"Survey, terrain, coordinate, contour, profile and earthworks capabilities are first-class platform domains","status":"APPROVED","evidence_sequences":[81,82,83,84]},
+    {"id":"GEN-013","decision":"All disciplines share attributable project and terrain models","status":"APPROVED","evidence_sequences":[83,84,87,88,89,90,91]},
+    {"id":"GEN-014","decision":"AI is an engineering engine grounded in project data and authorized knowledge, not a generic chatbot","status":"APPROVED","evidence_sequences":[51,70,79,93,114,115]},
+    {"id":"GEN-015","decision":"AIAS supports multidisciplinary building, infrastructure, MEP, healthcare and construction workflows","status":"APPROVED","evidence_sequences":[5,6,7,8,9,87,88,89,90,91]},
+    {"id":"GEN-016","decision":"Important architectural choices require durable RFC/ADR/SDD-style records","status":"APPROVED","evidence_sequences":[53,54,94,103,104]},
+    {"id":"GEN-017","decision":"Digital Twin and lifecycle data are architectural targets","status":"APPROVED","evidence_sequences":[128]},
+    {"id":"GEN-018","decision":"Visual identity and consistent technical documentation are developed alongside the product","status":"APPROVED_WITH_DESIGN_DETAILS_PENDING","evidence_sequences":[58,59,60,61,62,63,64]},
+    {"id":"GEN-019","decision":"Country Knowledge Packs are independently installable and updateable","status":"APPROVED","evidence_sequences":[79,80]},
+    {"id":"GEN-020","decision":"Historical schedules and version numbers are planning context, not binding delivery dates","status":"INTERPRETATION","evidence_sequences":[94,95,96,97,98,112,118]}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "REQ-995501": {
+    "implemented_by": [
+      "src/aias_drawing_framework/models.py"
+    ],
+    "tested_by": [
+      "tests/test_drawing_framework001.py"
+    ]
+  },
+  "REQ-995502": {
+    "implemented_by": [
+      "src/aias_drawing_framework/validation.py"
+    ],
+    "tested_by": [
+      "tests/test_drawing_framework001.py"
+    ]
+  },
+  "REQ-995503": {
+    "implemented_by": [
+      "src/aias_drawing_framework/exporters.py"
+    ],
+    "tested_by": [
+      "tests/test_drawing_framework001.py"
+    ]
+  },
+  "REQ-995504": {
+    "implemented_by": [
+      "src/aias_drawing_framework/exporters.py"
+    ],
+    "tested_by": [
+      "tests/test_drawing_framework001.py"
+    ]
+  },
+  "REQ-995505": {
+    "implemented_by": [
+      "src/aias_drawing_framework/reference.py"
+    ],
+    "tested_by": [
+      "tests/test_drawing_framework001.py"
+    ]
+  },
+  "REQ-995506": {
+    "implemented_by": [
+      "scripts/build_drawing_framework001_installer.py"
+    ],
+    "tested_by": [
+      "tests/test_drawing_framework001.py"
+    ]
+  }
+}

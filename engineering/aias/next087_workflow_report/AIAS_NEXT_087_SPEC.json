@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-087",
+  "title": "Workflow execution report",
+  "status": "VALIDATED",
+  "scope": "Report ordered completion of evidence review workflow stages",
+  "safety": ["Out-of-order stages are incomplete", "Approval is never inferred"]
+}

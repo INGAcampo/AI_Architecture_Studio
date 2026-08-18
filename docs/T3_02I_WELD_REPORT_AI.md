@@ -1,0 +1,1 @@
+# T3.02I — WELD_REPORT_AI

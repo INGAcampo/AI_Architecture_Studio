@@ -1,0 +1,11 @@
+{
+  "spec_id": "I18N-CORE-004",
+  "version": "1.0.0",
+  "status": "BIM_INSPECTOR_AND_WORKSPACE_LOCALIZED_REMAINING_GAPS",
+  "authority": "GEN-009",
+  "localized_surfaces": ["BIM entities and catalogs", "Inspector messages", "Project browser model", "Workspace panel management", "Qt docking validation", "Wall property labels and groups"],
+  "metrics": {"baseline_candidates": 163, "current_candidates": 113, "reduction": 50, "baseline_referenced_keys": 117, "current_referenced_keys": 166, "full_gui_translation_claimed": false},
+  "invariants": ["BIM identifiers and object IDs remain unchanged", "Engineering values and geometry remain unchanged", "Qt behavior and workspace lifecycle remain unchanged", "Official structural-standard designations remain untranslated"],
+  "evidence": {"implementation": ["src/gui/bim_workspace/entities.py", "src/gui/bim_workspace/catalogs.py", "src/gui/inspector", "src/gui/project_browser/model.py", "src/gui/workspace", "src/gui/property_palette/adapter.py", "resources/i18n"], "coverage": "engineering/aias/internationalization/I18N_CORE_001_COVERAGE.json", "tests": "tests/test_i18n_core004.py", "installer": "AIAS_I18N_CORE004_WORKSPACE_LOCALIZATION_INSTALLER"},
+  "next": "I18N-CORE-005 BIM browser tree and remaining workspace controls localization"
+}

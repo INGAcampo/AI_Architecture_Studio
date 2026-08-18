@@ -1,0 +1,50 @@
+{
+  "gate_id": "EXT-GATE-LEVEL5-001",
+  "as_of": "2026-08-03",
+  "status": "BLOCKED_BY_EXTERNAL_EVIDENCE",
+  "consecutive_goal_turns_confirmed": 3,
+  "remaining_roadmap_item": "FUTURE-000002",
+  "technical_readiness": {
+    "reference_capability_level": 5,
+    "evidence_ledger": "OPERATIONAL",
+    "technical_macrodeliveries": "COMPLETE",
+    "documentation_alignment_backlog": 0,
+    "sdd_alignment_backlog": 0,
+    "constitutional_definitions_passing": 39,
+    "installers_verified": 70,
+    "installer_integrity_errors": 0,
+    "ace_valid": true,
+    "ace_components": 118,
+    "ace_packages": 130,
+    "installer_checksum_entries_verified": 1776,
+    "integral_roadmap_audit_sha256": "a529044208834e931a2194851f03c06c9973b42f9f2fd45d837bd724b49731c6",
+    "external_gate_portfolio_sha256": "0c28467a74a7ef05f74a3d8edd87742de750289701b9b86af250c80ab7087d87",
+    "dashboard_valid": true
+  },
+  "external_conditions": [
+    {
+      "condition": "At least 365 days of real production observation",
+      "current": 0,
+      "required": 365,
+      "cannot_be_synthesized": true
+    },
+    {
+      "condition": "At least 10 completed real production projects",
+      "current": 0,
+      "required": 10,
+      "cannot_be_synthesized": true
+    },
+    {
+      "condition": "Verified professional and jurisdictional production evidence",
+      "current": "NOT_YET_AVAILABLE",
+      "cannot_be_self_issued": true
+    },
+    {
+      "condition": "Independent conformant organizational audit",
+      "current": "NOT_YET_COMMISSIONED",
+      "cannot_be_self_certified": true
+    }
+  ],
+  "resume_trigger": "Ingest the first authenticated real production observation or provide an independently verifiable external-state change.",
+  "prohibition": "Do not fabricate elapsed time, production projects, professional approvals, jurisdictional acceptance or independent audit evidence."
+}

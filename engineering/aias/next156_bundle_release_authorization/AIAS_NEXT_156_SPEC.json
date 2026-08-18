@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-156",
+  "title": "Bundle release authorization record",
+  "status": "VALIDATED",
+  "scope": "Record an internal engineering authorization derived from readiness.",
+  "safety": {
+    "external_authorization": false,
+    "certification_claim": false
+  }
+}

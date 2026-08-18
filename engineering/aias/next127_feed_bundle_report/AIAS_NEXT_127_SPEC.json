@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-127",
+  "title": "Feed bundle verification report",
+  "status": "VALIDATED",
+  "scope": "Report feed evidence bundle verification results",
+  "safety": ["Bundle status is not certification", "External validity remains false"]
+}

@@ -1,0 +1,9 @@
+id: AEC-000001
+title: Constitution Structure
+type: ConstitutionSpecification
+version: 0.1.0
+status: DRAFT
+owner: AIAS Core Engineering
+purpose: Definir la Constitución.
+scope: Gobierno.
+history: []

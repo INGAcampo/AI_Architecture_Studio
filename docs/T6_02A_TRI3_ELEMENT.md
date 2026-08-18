@@ -1,0 +1,1 @@
+# T6.02A — TRI3_ELEMENT

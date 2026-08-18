@@ -1,0 +1,18 @@
+{
+  "specification_id": "MDP-03",
+  "version": "1.0.0",
+  "status": "IMPLEMENTED_EXTERNAL_DATA_REQUIRED",
+  "domains": ["GIS", "ROAD_CORRIDORS", "EARTHWORKS", "URBAN_INFRASTRUCTURE"],
+  "requirements": [
+    "Every model declares horizontal CRS, vertical datum and SI spatial units.",
+    "Survey points and urban assets reference governed evidence sources.",
+    "Road stations and earthwork sections are strictly increasing.",
+    "Cut and fill use the reproducible average-end-area method.",
+    "Model exchanges carry deterministic SHA-256 integrity.",
+    "Normative claims require authorized sources, a jurisdictional pack and accepted review."
+  ],
+  "implementation": "src/aias_structural_codes_program/mdp03.py",
+  "verification": "tests/test_civil_spatial_infrastructure_mdp03.py",
+  "external_completion_conditions": ["Certified survey", "Authorized geodetic definition", "Jurisdictional road and urban criteria", "Independent professional review"],
+  "construction_claim": false
+}

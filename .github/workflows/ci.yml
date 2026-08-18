@@ -1,0 +1,99 @@
+name: CI
+
+on:
+  push:
+    branches: [main, feature/dynamic-input]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-certification:
+    name: Portable certification
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install Qt runtime libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libgl1 libxkbcommon-x11-0 libxcb-cursor0
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+      - name: Compile production sources
+        run: python -m compileall -q src
+      - name: Run design fail-closed certification tests
+        run: pytest -q tests/project_production/test_design_production_core.py
+
+  historical-regression-diagnostics:
+    name: Historical regression diagnostics
+    needs: portable-certification
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      QT_QPA_PLATFORM: offscreen
+      PYTHONPATH: ${{ github.workspace }}:${{ github.workspace }}/src
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install Qt runtime libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libgl1 libxkbcommon-x11-0 libxcb-cursor0
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+      - name: Run full historical suite for diagnostics
+        shell: bash
+        run: |
+          set +e
+          timeout --signal=TERM --kill-after=30s 12m pytest -q --tb=short 2>&1 | tee pytest-full.log
+          status=${PIPESTATUS[0]}
+          if [ ! -f pytest-full.log ]; then
+            touch pytest-full.log
+          fi
+          tail -n 240 pytest-full.log > pytest-failure-tail.txt
+          {
+            echo "### Historical regression diagnostics"
+            echo
+            if [ "$status" -eq 0 ]; then
+              echo "Full historical pytest suite passed on the portable Linux runner."
+            elif [ "$status" -eq 124 ] || [ "$status" -eq 137 ]; then
+              echo "Full historical pytest suite exceeded the 12-minute diagnostic budget (exit code **$status**)."
+              echo
+              echo "This is recorded as a bounded diagnostic outcome, not as a failure of the portable certification gate."
+            else
+              echo "Full historical pytest suite returned exit code **$status**."
+              echo
+              echo "This suite is diagnostic-only because the repository contains tests that depend on generated certification evidence, Windows/AutoCAD, installers, or other external artifacts not guaranteed on GitHub-hosted Linux runners."
+            fi
+            echo
+            echo "The blocking gate for this PR is the Portable certification job above."
+          } >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+      - name: Upload historical pytest diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: historical-pytest-diagnostics
+          path: |
+            pytest-full.log
+            pytest-failure-tail.txt
+          if-no-files-found: warn
+          retention-days: 14

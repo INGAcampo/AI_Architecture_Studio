@@ -1,0 +1,9 @@
+{
+  "policy_id":"PMO-000001","version":"1.0.0","status":"APPROVED","owner":"PMO",
+  "stages":["PROPOSED","SPECIFIED","APPROVED","IN_DELIVERY","VALIDATED","REALIZING_BENEFITS","CLOSED"],
+  "required_gate_evidence":{
+    "SPECIFIED":["specification"],"APPROVED":["architecture","adr","value_path"],"IN_DELIVERY":["approved_scope"],"VALIDATED":["tests","quality_gates","documentation","installer","release"],"REALIZING_BENEFITS":["benefit_baseline","measurement_owner"],"CLOSED":["benefit_result","lessons_learned"]
+  },
+  "priority_weights":{"strategic_value":0.25,"urgency":0.15,"reuse":0.15,"acceleration":0.20,"compliance":0.15,"risk_penalty":0.05,"effort_penalty":0.05},
+  "constitutional_target_time_reduction":0.45
+}

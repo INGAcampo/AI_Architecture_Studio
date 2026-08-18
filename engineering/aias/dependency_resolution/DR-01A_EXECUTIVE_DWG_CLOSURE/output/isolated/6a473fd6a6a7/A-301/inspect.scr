@@ -1,0 +1,6 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_EXECUTIVE_DWG_CLOSURE/output/isolated/6a473fd6a6a7/A-301/inspection.txt" "w"))
+(setq e (entnext))
+(while e (setq d (entget e (list "AIAS")) x (cdr (assoc -3 d)) a (assoc "AIAS" x) i (if a (cdr (assoc 1000 (cdr a))) "")) (write-line (strcat "E|" i "|" (cdr (assoc 0 d)) "|" (if (assoc 8 d) (cdr (assoc 8 d)) "") "|" (cdr (assoc 5 d))) f) (setq e (entnext e)))
+(close f)
+(princ)
+_.QUIT

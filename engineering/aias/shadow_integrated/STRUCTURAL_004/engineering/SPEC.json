@@ -1,0 +1,19 @@
+﻿{
+    "schema":  "aias.shadow.structural.004.spec.v1",
+    "megablock":  "STRUCTURAL-004",
+    "dependency":  "STRUCTURAL-003",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Add deterministic local member-load contracts and frame end-force recovery.",
+    "scope":  [
+                  "Uniform transverse member load",
+                  "Fixed-end force vector",
+                  "Local end-force recovery",
+                  "Closed-form fixed-fixed golden case"
+              ],
+    "exclusions":  [
+                       "No nonlinear analysis",
+                       "No code-compliance claim",
+                       "No canonical integration"
+                   ],
+    "integration_authorized":  false
+}

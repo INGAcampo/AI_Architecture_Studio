@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-104",
+  "title": "Index integrity report",
+  "status": "VALIDATED",
+  "scope": "Report artifact index integrity results and digest",
+  "safety": ["Internal integrity is not external validity", "Digest state remains visible"]
+}

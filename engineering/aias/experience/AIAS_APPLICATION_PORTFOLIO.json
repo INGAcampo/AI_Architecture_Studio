@@ -1,0 +1,16 @@
+{
+  "portfolio_id": "EXP-APPS-001",
+  "version": "1.0.0",
+  "status": "SHARED_CONTRACT_FOUNDATION_VALIDATED",
+  "source_of_truth": "AIAS canonical project and evidence services; no application owns an independent engineering truth",
+  "applications": [
+    {"app_id":"AIAS-APP-DESKTOP","surface":"Professional desktop workspace","state":"VALIDATED_REFERENCE","deployment":"LOCAL","purpose":"Authoring, engineering coordination and evidence-rich workflows"},
+    {"app_id":"AIAS-APP-WEB","surface":"Official information website","state":"LOCAL_BUILD_VALIDATED","deployment":"NOT_PUBLICLY_DEPLOYED","purpose":"Truthful product, trust and learning information"},
+    {"app_id":"AIAS-APP-COMPANION","surface":"Project companion","state":"PROPOSED","deployment":"NOT_CREATED","purpose":"Governed review, notifications and field evidence without full authoring"},
+    {"app_id":"AIAS-APP-SERVICES","surface":"Internal platform services","state":"CONTRACT_FOUNDATION_VALIDATED","deployment":"LOCAL_REFERENCE","purpose":"Identity, projects, capabilities, evidence and synchronization contracts"}
+  ],
+  "shared_contracts": ["application identity","canonical project envelope","capability references","scoped access","optimistic revision control","offline declaration","trust-zone separation","audit decision"],
+  "prohibited_claims": ["public deployment without evidence","account service availability without implementation","regulated project exposure at public edge","independent app source of engineering truth","professional approval by software"],
+  "next": "EXP-PLATFORM-GUI-001 Application-visible Platform Services and Capability Center",
+  "deferred": ["EXP-COMMS-001"]
+}

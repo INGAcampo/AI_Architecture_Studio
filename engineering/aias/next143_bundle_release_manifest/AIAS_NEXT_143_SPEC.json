@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-143",
+  "title": "Bundle release manifest",
+  "status": "VALIDATED",
+  "scope": "Build a sorted local manifest of bundle artifacts and supplied hashes.",
+  "safety": {
+    "local_only": true,
+    "certification_claim": false
+  }
+}

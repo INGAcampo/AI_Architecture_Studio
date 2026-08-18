@@ -1,0 +1,95 @@
+﻿{
+    "schema":  "aias.shadow.package_manifest.v2",
+    "run_id":  "9b75d989715f4c5297da81931472aa7f",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-002",
+    "status":  "SHADOW_VALIDATED_READY_FOR_RECONCILIATION",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "base_tests_pass":  true,
+    "isolated_runtime_tests_pass":  true,
+    "file_count":  16,
+    "files":  [
+                  {
+                      "path":  ".pytest_cache/.gitignore",
+                      "bytes":  37,
+                      "sha256":  "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+                  },
+                  {
+                      "path":  ".pytest_cache/CACHEDIR.TAG",
+                      "bytes":  191,
+                      "sha256":  "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+                  },
+                  {
+                      "path":  ".pytest_cache/README.md",
+                      "bytes":  302,
+                      "sha256":  "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+                  },
+                  {
+                      "path":  ".pytest_cache/v/cache/nodeids",
+                      "bytes":  198,
+                      "sha256":  "5c5ef56dbfb4fdc7f1b0a2d4737034f8f40a3647eef824d88dca9abc7acf4e15"
+                  },
+                  {
+                      "path":  "engineering/COLLISION_MAP.json",
+                      "bytes":  303,
+                      "sha256":  "07dfc20cab4df0cc89093e807cda67841d728073a28192c30a1f7652e5d39dea"
+                  },
+                  {
+                      "path":  "engineering/SPEC.json",
+                      "bytes":  447,
+                      "sha256":  "3f3f5480095d4cdd92158913de65f825437048df374b0de22f261451ee1f9411"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_ext/__init__.py",
+                      "bytes":  162,
+                      "sha256":  "1c9fc5ea03dafb3d345bdf6d970380ccb103cd057399d7ba9b19c6140444ea4c"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_ext/__pycache__/__init__.cpython-311.pyc",
+                      "bytes":  486,
+                      "sha256":  "a87f069e2bb7efad3215f62abdec8eac5a4071080d3b74ab3d8fd6435d98b4db"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_ext/__pycache__/identity.cpython-311.pyc",
+                      "bytes":  1933,
+                      "sha256":  "c6d61bb9c76d9e8fb9f7a5dc6253d46ea3c1e41d2c5401220b98eed748c32a34"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_ext/__pycache__/render_payload.cpython-311.pyc",
+                      "bytes":  4019,
+                      "sha256":  "2b16c6cd94fd974fae6816891b10f0424d770372c590d593665162dcb6779219"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_ext/identity.py",
+                      "bytes":  791,
+                      "sha256":  "3dff0cd24089920cc19ffb63654f830992102738bb6bde0dff9bb761e8f6c5b9"
+                  },
+                  {
+                      "path":  "src/geometry_bim_bridge_ext/render_payload.py",
+                      "bytes":  1322,
+                      "sha256":  "c19616a075b38b33fe7be87aa0071482d1ac67b69c526d005c61d8fdffcf5013"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_render_identity.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  6464,
+                      "sha256":  "c3da54d942d721a52f4c5aa4df427f416da29f5c6c1c37b4697d9bf02a159402"
+                  },
+                  {
+                      "path":  "tests/__pycache__/test_runtime.cpython-311-pytest-9.1.1.pyc",
+                      "bytes":  4985,
+                      "sha256":  "e95c77dd3fa844a041b337d435b8eddcf10cb1b78c7be637b3d5dfaec5d834a6"
+                  },
+                  {
+                      "path":  "tests/test_render_identity.py",
+                      "bytes":  932,
+                      "sha256":  "216b21601b92379dca2aa4f62aefc65be7ea963313a7dffceacfe09971efe895"
+                  },
+                  {
+                      "path":  "tests/test_runtime.py",
+                      "bytes":  732,
+                      "sha256":  "cfd41b99570dfabd6a9fd550a5cf8c03a78e5b5a8459061a275563b0e27b68b5"
+                  }
+              ],
+    "canonical_write_performed":  false,
+    "canonical_git_mutation_performed":  false,
+    "integration_authorized":  false
+}

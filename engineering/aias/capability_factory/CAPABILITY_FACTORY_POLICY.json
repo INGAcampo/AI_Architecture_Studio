@@ -1,0 +1,12 @@
+{
+  "policy_id": "CAPABILITY-FACTORY-001",
+  "states": ["DRAFT", "APPROVED", "MATERIALIZED", "VALIDATED", "RELEASED"],
+  "gate_evidence": {"APPROVED": "approval_id", "MATERIALIZED": "development_result", "VALIDATED": "validation", "RELEASED": "release"},
+  "principles": ["specification_driven", "one_way_state_progression", "immutable_blueprint_identity", "complete_vertical_before_validation", "certification_before_release", "reusable_registry", "professional_review_boundary"],
+  "complete_vertical_gate": {
+    "required": ["specification", "architecture", "implementation", "consumer", "tests", "documentation", "installer", "traceability", "reference_case"],
+    "user_facing_additional": ["interface", "rendered_review"],
+    "regulated_additional": ["normative_boundary", "professional_review_boundary"],
+    "prohibited_placeholders": ["NONE", "N/A", "FUTURE", "PLANNED"]
+  }
+}

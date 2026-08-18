@@ -1,0 +1,19 @@
+{
+  "id": "CHARTER-000001",
+  "version": "1.0.0",
+  "status": "APPROVED",
+  "name": "AI Architecture Studio",
+  "identity": "Digital engineering company, professional platform and evolving engineering ecosystem",
+  "mission": "Transform requirements and verified knowledge into traceable engineering designs, calculations, models, drawings and technical dossiers while increasing reusable technological capital.",
+  "horizon_years": 30,
+  "stakeholders": ["project director", "engineers", "architects", "reviewers", "clients", "regulators", "operators", "learners"],
+  "values": ["engineering rigor", "traceability", "immediate value", "reuse", "safety", "maintainability", "anti-bureaucracy", "continuous improvement"],
+  "strategic_targets": {"maturity": "LEVEL_5_MATURE", "minimum_sustainable_time_reduction": 0.45},
+  "scope": ["architecture", "engineering", "CAD", "BIM", "calculation", "drawings", "technical documentation", "knowledge", "education", "governance", "digital organization"],
+  "professional_boundary": {
+    "ai_role": "assist, automate, verify and preserve evidence",
+    "licensed_professional_role": "exercise regulated judgment, assume responsibility and approve where legally required",
+    "construction_rule": "No generated artifact is approved for construction without applicable official rules and authorized professional evidence."
+  },
+  "authority": ["AIAS Charter", "AIAS Constitution", "AIAS SDD", "Architecture Handbook", "Program Specification", "Generated Evidence"]
+}

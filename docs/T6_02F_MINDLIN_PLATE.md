@@ -1,0 +1,1 @@
+# T6.02F — MINDLIN_PLATE

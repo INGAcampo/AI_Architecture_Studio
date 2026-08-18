@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-085",
+  "title": "Decision audit report",
+  "status": "VALIDATED",
+  "scope": "Validate decision record structure and allowed states",
+  "safety": ["Audit is not certification", "Invalid records remain invalid"]
+}

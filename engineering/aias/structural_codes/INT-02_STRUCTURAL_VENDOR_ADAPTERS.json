@@ -1,0 +1,1 @@
+{"specification_id":"INT-02","version":"1.0.0","status":"IMPLEMENTED_VENDOR_RUNTIME_REQUIRED","vendors":["SAP2000","ETABS","ROBOT"],"implementation":"src/aias_structural_codes_program/int02.py","verification":"tests/test_vendor_adapters_int02.py","boundary":"Actual execution requires licensed vendor runtimes and compatible APIs; AIAS does not fabricate them."}

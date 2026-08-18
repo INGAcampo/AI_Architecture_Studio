@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-990001",
+  "title": "AIAS Central Nervous System",
+  "version": "1.0.0",
+  "purpose": "Provide durable, traceable and failure-aware circulation between the digital engineering company's core systems.",
+  "scope": "Topology, immutable events, global sequence, atomic journal, event identity idempotency, subscriptions, cursors, dead letters and executive projections.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-990101",
+      "title": "CNS topology",
+      "statement": "The system shall define producers, consumers and event contracts for core AIAS nodes.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make company-system relationships explicit.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/cns/AIAS_CNS_TOPOLOGY.json"
+      ],
+      "tested_by": [
+        "tests/test_cns000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-990102",
+      "title": "Durable event envelope",
+      "statement": "Accepted events shall be immutable, validated, sequenced and persisted before delivery.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent lost or ambiguous state changes.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_central_nervous_system/models.py"
+      ],
+      "tested_by": [
+        "tests/test_cns000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-990103",
+      "title": "Idempotency and ordering",
+      "statement": "Repeated event identities shall not duplicate journal entries and consumers shall receive sequence order.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Support reliable at-least-once circulation.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_central_nervous_system/journal.py"
+      ],
+      "tested_by": [
+        "tests/test_cns000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-990104",
+      "title": "Consumer recovery",
+      "statement": "Consumers shall retain monotonic cursors and failed delivery evidence.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Enable replay and fault diagnosis.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_central_nervous_system/bus.py"
+      ],
+      "tested_by": [
+        "tests/test_cns000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-990105",
+      "title": "Company projection",
+      "statement": "The system shall project delivery, recommendation, risk and credential state.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Give Dashboard and PMO an immediate CNS consumer.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_central_nervous_system/projection.py"
+      ],
+      "tested_by": [
+        "tests/test_cns000001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-990106",
+      "title": "Reproducible delivery",
+      "statement": "CNS shall include tests, documentation, installer, manifest, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep the nervous system deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_cns000001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_cns000001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-CNS-000001"
+  ],
+  "adr_refs": [
+    "ADR-CNS-000001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

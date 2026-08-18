@@ -1,0 +1,30 @@
+{
+  "policy_id": "AEC-000050",
+  "title": "Comunicación Inmediata de Recomendaciones Estratégicas",
+  "status": "ACTIVE",
+  "report_when": [
+    "material opportunity",
+    "constitutional or legal risk",
+    "safety or professional responsibility risk",
+    "reusable giant-step opportunity",
+    "material roadmap or architecture change",
+    "credible acceleration improvement"
+  ],
+  "required_content": [
+    "observation",
+    "evidence",
+    "expected benefit",
+    "cost and tradeoffs",
+    "risk",
+    "recommended action",
+    "urgency"
+  ],
+  "suppress_when": [
+    "minor style preference",
+    "duplicate observation",
+    "non-actionable speculation",
+    "no material project impact"
+  ],
+  "owner": "AIAS Chief Architect",
+  "recipient": "AIAS Project Director"
+}

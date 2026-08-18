@@ -2,9 +2,10 @@
 AI Architecture Studio
 CAD Circle Object
 
-Foundation 3.3
+Foundation 4.1
 """
 
+from engines.geometry.point import Point
 from models.base_object import BaseObject
 
 
@@ -17,19 +18,40 @@ class CadCircle(BaseObject):
         )
 
         self.center = center
-        self.radius = radius
+        self.radius = float(radius)
+
+        self._update_properties()
+
+    def _update_properties(self):
+        self.properties.clear()
 
         self.set_property(
             "Centro",
-            f"({center.x:.2f}, {center.y:.2f})"
+            (
+                round(self.center.x, 3),
+                round(self.center.y, 3),
+                round(self.center.z, 3),
+            )
         )
 
         self.set_property(
             "Radio",
-            round(radius, 3)
+            round(self.radius, 3)
         )
 
         self.set_property(
             "Diámetro",
-            round(radius * 2, 3)
+            round(self.radius * 2, 3)
+        )
+
+    def clone(self):
+        cloned_center = Point(
+            self.center.x,
+            self.center.y,
+            self.center.z,
+        )
+
+        return CadCircle(
+            center=cloned_center,
+            radius=self.radius,
         )

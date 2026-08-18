@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-149",
+  "title": "Bundle release candidate report",
+  "status": "VALIDATED",
+  "scope": "Expose an internal report for the local release candidate.",
+  "safety": {
+    "published": false,
+    "certification_claim": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "plan_id": "AIAS-GIANT-STEPS-001",
+  "version": "1.0.0",
+  "status": "ACTIVE",
+  "strategy": "Complete high-value vertical products first, then reuse their contracts across disciplines.",
+  "acceleration_target_percent": 45,
+  "definition_of_macrodelivery": ["specification", "architecture", "implementation", "integration", "reference consumer", "tests", "documentation", "installer", "release", "dashboard", "ACE continuity"],
+  "macrodeliveries": [
+    {"id":"G1","title":"Complete structural building","outputs":["canonical building", "global analysis", "beam design", "column design", "optimization", "consolidated report"],"current":"SCP-03"},
+    {"id":"G2","title":"Normative structural system","outputs":["loads", "seismic", "concrete", "steel", "foundations", "jurisdiction packs"]},
+    {"id":"G3","title":"Professional validation","outputs":["benchmarks", "differential validation", "independent review evidence"]},
+    {"id":"G4","title":"Unified BIM/CAE","outputs":["IFC", "neutral exchange", "governed SAP2000/ETABS/Robot/Revit/AutoCAD/Civil 3D adapters"]},
+    {"id":"G5","title":"Advanced geotechnics","outputs":["soil-structure interaction", "deep foundations", "piles", "diaphragm walls"]},
+    {"id":"G6","title":"Civil and hydraulic platform","outputs":["water", "sanitary", "stormwater", "hydrology", "GIS", "terrain", "roads", "earthworks"]},
+    {"id":"G7","title":"Engineering Brain","outputs":["evidence-grounded reasoning", "alternatives", "optimization", "explainable recommendations"]},
+    {"id":"G8","title":"Professional product experience","outputs":["integrated workspace", "document automation", "executive and coordination dashboards"],"current":"W2-07","completed":["AIAS-DESIGN-SYSTEM-001", "AIAS-UX-AUDIT-001", "W2-01 semantic shell and theme adapter", "W2-02 unified document and panel orchestration", "W2-03 project/BIM browser and property inspector integration", "W2-04 professional command search and status model", "W2-05 Venezuelan structural lighthouse journey", "W2-06 coordination evidence and contextual learning"]},
+    {"id":"G9","title":"Enterprise scale","outputs":["distributed compute", "collaboration", "security", "longitudinal maturity evidence"]}
+  ],
+  "prohibitions": ["isolated engines without a consumer", "module-count inflation", "unverified normative claims", "vendor conformance claims without production evidence", "construction approval without professional and jurisdictional authority"]
+}

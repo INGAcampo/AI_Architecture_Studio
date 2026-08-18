@@ -1,0 +1,13 @@
+﻿{
+    "schema":  "aias.shadow.collision_map.v1",
+    "megablock":  "GEOMETRY-BIM-BRIDGE-001",
+    "canonical_observed_head":  "de6a4c4e6a5f6458bf8e7983b31d14d74e50dbd5",
+    "observation_only":  true,
+    "intended_additive_roots":  [
+                                    "src/engines/geometry_bim_bridge/",
+                                    "tests/devfactory/geometry_bim_bridge/",
+                                    "engineering/aias/dev_factory/geometry_bim_bridge/"
+                                ],
+    "direct_canonical_collisions_detected":  false,
+    "note":  "No canonical files were written. Collision status must be recalculated against the then-current canonical HEAD before integration."
+}

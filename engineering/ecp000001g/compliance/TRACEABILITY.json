@@ -1,0 +1,50 @@
+{
+  "REQ-200301": {
+    "implemented_by": [
+      "src/aias_technology_observatory/sources.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001g_technology_observatory.py"
+    ]
+  },
+  "REQ-200302": {
+    "implemented_by": [
+      "src/aias_technology_observatory/governance.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001g_technology_observatory.py"
+    ]
+  },
+  "REQ-200303": {
+    "implemented_by": [
+      "src/aias_technology_observatory/scoring.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001g_technology_observatory.py"
+    ]
+  },
+  "REQ-200304": {
+    "implemented_by": [
+      "src/aias_technology_observatory/engine.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001g_technology_observatory.py"
+    ]
+  },
+  "REQ-200305": {
+    "implemented_by": [
+      "src/aias_technology_observatory/materialization.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001g_technology_observatory.py"
+    ]
+  },
+  "REQ-200306": {
+    "implemented_by": [
+      "src/aias_technology_observatory/orchestrator.py"
+    ],
+    "tested_by": [
+      "tests/test_ecp000001g_technology_observatory.py"
+    ]
+  }
+}

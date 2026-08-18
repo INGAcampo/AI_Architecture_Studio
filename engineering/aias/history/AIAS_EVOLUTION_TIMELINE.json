@@ -1,0 +1,54 @@
+{
+  "timeline_id": "AIAS-EVOLUTION-001",
+  "version": "1.0.0",
+  "status": "OPEN_FOR_VERIFIABLE_ENRICHMENT",
+  "origin_chapter": {
+    "status": "PENDING_PRIMARY_SOURCE",
+    "title": "Nacimiento de AIAS",
+    "required_source": "Primer chat completo o recopilación verificable"
+  },
+  "known_chapters": [
+    {
+      "chapter_id": "CH-001",
+      "title": "Nacimiento de AIAS",
+      "status": "PENDING_PRIMARY_SOURCE",
+      "scope": "Motivación inicial, nombre, propósito, primeras decisiones y arquitectura original"
+    },
+    {
+      "chapter_id": "CH-002",
+      "title": "De editor CAD/BIM a plataforma AEC",
+      "status": "SOURCE_ANALYZED",
+      "source": "Captura de pantalla (6).zip, capturas 6-300"
+    },
+    {
+      "chapter_id": "CH-003",
+      "title": "Expansión estructural, geotécnica, civil e interoperable",
+      "status": "SOURCE_ANALYZED",
+      "source": "Captura de pantalla (6).zip, capturas 301-1112"
+    },
+    {
+      "chapter_id": "CH-004",
+      "title": "Conocimiento vivo, fábrica de capacidades y producto integrado",
+      "status": "SOURCE_ANALYZED",
+      "source": "Captura de pantalla (6).zip, capturas 1113-1635"
+    },
+    {
+      "chapter_id": "CH-005",
+      "title": "Constitución ejecutable y desarrollo guiado por especificaciones",
+      "status": "SOURCE_ANALYZED",
+      "source": "Captura de pantalla (6).zip, capturas 1636-1699"
+    },
+    {
+      "chapter_id": "CH-006",
+      "title": "Institucionalización y materialización integral",
+      "status": "SOURCE_ANALYZED_AND_REPOSITORY_RECONCILED",
+      "source": "Captura de pantalla (6).zip, capturas 1700-2588 y repositorio AIAS"
+    },
+    {
+      "chapter_id": "CH-007",
+      "title": "Programa profesional BIM/CAE y códigos estructurales",
+      "status": "ACTIVE",
+      "source": "STRUCTURAL-CODES-PROGRAM-001"
+    }
+  ]
+}

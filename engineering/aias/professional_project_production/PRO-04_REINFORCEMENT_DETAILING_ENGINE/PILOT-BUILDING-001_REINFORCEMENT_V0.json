@@ -1,0 +1,286 @@
+{
+  "reinforcement": {
+    "project_id": "PILOT-BUILDING-001",
+    "bar_sets": [
+      {
+        "bar_mark": "slab-ab4f4f28bb1c-LONG",
+        "role": "longitudinal",
+        "quantity": 2,
+        "length_m": 4.0,
+        "spacing_mm": 0,
+        "shape": "straight",
+        "position": "longitudinal",
+        "element_id": "slab-ab4f4f28bb1c",
+        "element_type": "slab",
+        "status": "PRELIMINARY",
+        "diameter_mm": 10,
+        "cover_mm": 40,
+        "development_length_mm": 400,
+        "lap_length_mm": 500,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "8c48ba882e42672dfc7a0a9a9cac3cce69c9163dd57c3e0ae7654e30d5c6e6e9"
+      },
+      {
+        "bar_mark": "slab-ab4f4f28bb1c-TOP",
+        "role": "top",
+        "quantity": 2,
+        "length_m": 4.0,
+        "spacing_mm": 200,
+        "shape": "straight",
+        "position": "top",
+        "element_id": "slab-ab4f4f28bb1c",
+        "element_type": "slab",
+        "status": "PRELIMINARY",
+        "diameter_mm": 10,
+        "cover_mm": 40,
+        "development_length_mm": 400,
+        "lap_length_mm": 500,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "2e45966ace8d3b8d0d8e8db80dd21d8b6cc418b2dbb4c679212b62067399b37d"
+      },
+      {
+        "bar_mark": "foundation-57cc3b07f396-LONG",
+        "role": "longitudinal",
+        "quantity": 2,
+        "length_m": 2.0,
+        "spacing_mm": 0,
+        "shape": "straight",
+        "position": "longitudinal",
+        "element_id": "foundation-57cc3b07f396",
+        "element_type": "foundation",
+        "status": "PRELIMINARY",
+        "diameter_mm": 16,
+        "cover_mm": 40,
+        "development_length_mm": 640,
+        "lap_length_mm": 800,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "b7f88cfbabd3172078651694e83651e7752bcdf9388a042ab17d051909908581"
+      },
+      {
+        "bar_mark": "beam-51ecef6d55f3-LONG",
+        "role": "longitudinal",
+        "quantity": 2,
+        "length_m": 4.0,
+        "spacing_mm": 0,
+        "shape": "straight",
+        "position": "longitudinal",
+        "element_id": "beam-51ecef6d55f3",
+        "element_type": "beam",
+        "status": "PRELIMINARY",
+        "diameter_mm": 16,
+        "cover_mm": 40,
+        "development_length_mm": 640,
+        "lap_length_mm": 800,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "3970b5e44726a968ada80760c8bf3a31343fdf57d4816fff44c1b5d92cc45788"
+      },
+      {
+        "bar_mark": "beam-51ecef6d55f3-TIES",
+        "role": "transverse",
+        "quantity": 27,
+        "length_m": 1.2,
+        "spacing_mm": 150,
+        "shape": "straight",
+        "position": "transverse",
+        "element_id": "beam-51ecef6d55f3",
+        "element_type": "beam",
+        "status": "PRELIMINARY",
+        "diameter_mm": 16,
+        "cover_mm": 40,
+        "development_length_mm": 640,
+        "lap_length_mm": 800,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "729a4c6cd77370f50abf8289ae51e0dd8d81189a68a2442a55b5bca03847b012"
+      },
+      {
+        "bar_mark": "column-feb945994c90-LONG",
+        "role": "longitudinal",
+        "quantity": 2,
+        "length_m": 4.0,
+        "spacing_mm": 0,
+        "shape": "straight",
+        "position": "longitudinal",
+        "element_id": "column-feb945994c90",
+        "element_type": "column",
+        "status": "PRELIMINARY",
+        "diameter_mm": 16,
+        "cover_mm": 40,
+        "development_length_mm": 640,
+        "lap_length_mm": 800,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "1697e0430e85bd6cc13b1a28632fc78bac352d662047e38ebea46b4548190f86"
+      },
+      {
+        "bar_mark": "column-feb945994c90-TIES",
+        "role": "transverse",
+        "quantity": 27,
+        "length_m": 1.2,
+        "spacing_mm": 150,
+        "shape": "straight",
+        "position": "transverse",
+        "element_id": "column-feb945994c90",
+        "element_type": "column",
+        "status": "PRELIMINARY",
+        "diameter_mm": 16,
+        "cover_mm": 40,
+        "development_length_mm": 640,
+        "lap_length_mm": 800,
+        "hook": "90deg",
+        "rule": "VE-PILOT-001.0",
+        "calculated_as_mm2": 64.36781609195403,
+        "sha256": "d2bf800d62ad882ea686b951401f077a01db1c0728cc42a503d96bbe2520e193"
+      }
+    ],
+    "schedules": [
+      {
+        "bar_mark": "slab-ab4f4f28bb1c-LONG",
+        "element_id": "slab-ab4f4f28bb1c",
+        "diameter_mm": 10,
+        "quantity": 2,
+        "length_m": 4.0,
+        "weight_kg": 4.938,
+        "status": "PRELIMINARY",
+        "sha256": "8c48ba882e42672dfc7a0a9a9cac3cce69c9163dd57c3e0ae7654e30d5c6e6e9"
+      },
+      {
+        "bar_mark": "slab-ab4f4f28bb1c-TOP",
+        "element_id": "slab-ab4f4f28bb1c",
+        "diameter_mm": 10,
+        "quantity": 2,
+        "length_m": 4.0,
+        "weight_kg": 4.938,
+        "status": "PRELIMINARY",
+        "sha256": "2e45966ace8d3b8d0d8e8db80dd21d8b6cc418b2dbb4c679212b62067399b37d"
+      },
+      {
+        "bar_mark": "foundation-57cc3b07f396-LONG",
+        "element_id": "foundation-57cc3b07f396",
+        "diameter_mm": 16,
+        "quantity": 2,
+        "length_m": 2.0,
+        "weight_kg": 6.321,
+        "status": "PRELIMINARY",
+        "sha256": "b7f88cfbabd3172078651694e83651e7752bcdf9388a042ab17d051909908581"
+      },
+      {
+        "bar_mark": "beam-51ecef6d55f3-LONG",
+        "element_id": "beam-51ecef6d55f3",
+        "diameter_mm": 16,
+        "quantity": 2,
+        "length_m": 4.0,
+        "weight_kg": 12.642,
+        "status": "PRELIMINARY",
+        "sha256": "3970b5e44726a968ada80760c8bf3a31343fdf57d4816fff44c1b5d92cc45788"
+      },
+      {
+        "bar_mark": "beam-51ecef6d55f3-TIES",
+        "element_id": "beam-51ecef6d55f3",
+        "diameter_mm": 16,
+        "quantity": 27,
+        "length_m": 1.2,
+        "weight_kg": 51.2,
+        "status": "PRELIMINARY",
+        "sha256": "729a4c6cd77370f50abf8289ae51e0dd8d81189a68a2442a55b5bca03847b012"
+      },
+      {
+        "bar_mark": "column-feb945994c90-LONG",
+        "element_id": "column-feb945994c90",
+        "diameter_mm": 16,
+        "quantity": 2,
+        "length_m": 4.0,
+        "weight_kg": 12.642,
+        "status": "PRELIMINARY",
+        "sha256": "1697e0430e85bd6cc13b1a28632fc78bac352d662047e38ebea46b4548190f86"
+      },
+      {
+        "bar_mark": "column-feb945994c90-TIES",
+        "element_id": "column-feb945994c90",
+        "diameter_mm": 16,
+        "quantity": 27,
+        "length_m": 1.2,
+        "weight_kg": 51.2,
+        "status": "PRELIMINARY",
+        "sha256": "d2bf800d62ad882ea686b951401f077a01db1c0728cc42a503d96bbe2520e193"
+      }
+    ],
+    "findings": [
+      {
+        "element_id": "wall-82a54134d5ef",
+        "status": "BLOCKED",
+        "message": "detail rule unavailable for wall"
+      }
+    ],
+    "schema": "aias.reinforcement_model.v1"
+  },
+  "cad_details": [
+    {
+      "id": "detail-slab-ab4f4f28bb1c-LONG",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "slab-ab4f4f28bb1c-LONG",
+      "element_id": "slab-ab4f4f28bb1c",
+      "status": "PRELIMINARY",
+      "sha256": "8c48ba882e42672dfc7a0a9a9cac3cce69c9163dd57c3e0ae7654e30d5c6e6e9"
+    },
+    {
+      "id": "detail-slab-ab4f4f28bb1c-TOP",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "slab-ab4f4f28bb1c-TOP",
+      "element_id": "slab-ab4f4f28bb1c",
+      "status": "PRELIMINARY",
+      "sha256": "2e45966ace8d3b8d0d8e8db80dd21d8b6cc418b2dbb4c679212b62067399b37d"
+    },
+    {
+      "id": "detail-foundation-57cc3b07f396-LONG",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "foundation-57cc3b07f396-LONG",
+      "element_id": "foundation-57cc3b07f396",
+      "status": "PRELIMINARY",
+      "sha256": "b7f88cfbabd3172078651694e83651e7752bcdf9388a042ab17d051909908581"
+    },
+    {
+      "id": "detail-beam-51ecef6d55f3-LONG",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "beam-51ecef6d55f3-LONG",
+      "element_id": "beam-51ecef6d55f3",
+      "status": "PRELIMINARY",
+      "sha256": "3970b5e44726a968ada80760c8bf3a31343fdf57d4816fff44c1b5d92cc45788"
+    },
+    {
+      "id": "detail-beam-51ecef6d55f3-TIES",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "beam-51ecef6d55f3-TIES",
+      "element_id": "beam-51ecef6d55f3",
+      "status": "PRELIMINARY",
+      "sha256": "729a4c6cd77370f50abf8289ae51e0dd8d81189a68a2442a55b5bca03847b012"
+    },
+    {
+      "id": "detail-column-feb945994c90-LONG",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "column-feb945994c90-LONG",
+      "element_id": "column-feb945994c90",
+      "status": "PRELIMINARY",
+      "sha256": "1697e0430e85bd6cc13b1a28632fc78bac352d662047e38ebea46b4548190f86"
+    },
+    {
+      "id": "detail-column-feb945994c90-TIES",
+      "kind": "reinforcement_annotation",
+      "bar_mark": "column-feb945994c90-TIES",
+      "element_id": "column-feb945994c90",
+      "status": "PRELIMINARY",
+      "sha256": "d2bf800d62ad882ea686b951401f077a01db1c0728cc42a503d96bbe2520e193"
+    }
+  ],
+  "total_steel_kg": 143.881
+}

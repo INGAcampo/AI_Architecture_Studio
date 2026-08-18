@@ -1,0 +1,18 @@
+{
+  "spec_id": "AIAS-WORKSPACE-2.0-W2-05",
+  "version": "0.5.0",
+  "status": "IMPLEMENTED_VALIDATED_BROWSER_VISUAL_APPROVAL_PENDING",
+  "title": "Venezuelan Structural Lighthouse Journey",
+  "stages": ["project and jurisdiction", "BIM neutral model", "reference analysis", "reference design and optimization", "drawings schedules quantities and memory", "normative and professional release"],
+  "requirements": [
+    "every stage links to existing repository evidence",
+    "evidence is SHA-256 fingerprinted",
+    "stage documents open through WorkspaceManager",
+    "normative and construction claims fail closed",
+    "external activation dependencies remain visible",
+    "the consolidated journey is rendered as a responsive workspace artifact"
+  ],
+  "validation_evidence": {"tests_passed_with_lighthouse_and_workspace_suites": 27, "html": "workspace2_w2_05_outputs/LIGHTHOUSE_JOURNEY.html", "machine_snapshot": "workspace2_w2_05_outputs/LIGHTHOUSE_JOURNEY.json", "browser_visual_status": "PENDING_LOCAL_FILE_URL_BLOCKED_BY_BROWSER_POLICY", "installer": "AIAS_WORKSPACE2_W2_05_LIGHTHOUSE_JOURNEY_INSTALLER"},
+  "professional_boundary": "W2-05 is a complete controlled reference journey, not Venezuelan code compliance or construction authorization.",
+  "next_increment": "W2-06 Coordination Evidence and Contextual Learning"
+}

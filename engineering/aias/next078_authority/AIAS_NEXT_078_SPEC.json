@@ -1,0 +1,7 @@
+{
+  "id": "AIAS-NEXT-078",
+  "title": "Evidence authority registry alignment",
+  "status": "VALIDATED",
+  "scope": "Read-only matching of evidence identifiers to supplied authority records",
+  "safety": ["Unmatched evidence remains pending", "No authority is fabricated"]
+}

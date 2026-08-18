@@ -1,0 +1,7 @@
+{
+  "project_id":"PILOT-BUILDING-001",
+  "SYNTHETIC_TEST_DATA":true,
+  "NOT_FOR_CONSTRUCTION":true,
+  "provenance":{"source":"AIAS synthetic test scenario","source_sha256":"synthetic-pilot-baseline-v1"},
+  "values":{"GEO-001":150.0,"GEO-002":"synthetic granular profile","GEO-003":3.0,"GEO-004":25.0,"PROJ-001":"reinforced-concrete-moment-frame","PROJ-002":"one-way conventional slabs; synthetic supports","PROJ-003":{"dead_kPa":5.0,"live_kPa":2.0},"DOC-001":"synthetic-pilot-baseline-v1"}
+}

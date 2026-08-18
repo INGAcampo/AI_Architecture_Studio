@@ -1,0 +1,104 @@
+{
+  "verdict": "NOT_READY",
+  "score": 40.0,
+  "matrix": [
+    {
+      "output": "Project Graph/BIM",
+      "status": "PRODUCTION_READY",
+      "evidence_sha256": "668668eb65c1fa449907e29cee8e51c5aaf981b6d97ef176e2f46d2d1ce8dfa7",
+      "dependency": "PP-02/PRO-06",
+      "action_to_elevate": ""
+    },
+    {
+      "output": "Standards/Analysis",
+      "status": "PRODUCTION_READY",
+      "evidence_sha256": "2cf0d89e768cd4e4453a53fb41afe3627fbe5d150dd5c29b343940f00213915a",
+      "dependency": "PP-03/PRO-01",
+      "action_to_elevate": ""
+    },
+    {
+      "output": "Reinforcement Model",
+      "status": "PRELIMINARY",
+      "evidence_sha256": "3afae23c70f1b790c8fad65bb3c0f6654dd8a0b565b919460158da1be9af2aa9",
+      "dependency": "PRO-04",
+      "action_to_elevate": "Verify constructive detailing standards"
+    },
+    {
+      "output": "CAD Intermediate",
+      "status": "PRODUCTION_READY",
+      "evidence_sha256": "6a1f35b271ff261431ea3f5aa56fb27d50540edb7a02d5a19b4b3ae1d066446b",
+      "dependency": "PRO-02",
+      "action_to_elevate": ""
+    },
+    {
+      "output": "DXF Exchange Set",
+      "status": "V0_LIMITED",
+      "evidence_sha256": "0d54a9819f056aec5f2e95f7bc784518e3ac0a9c99752a0d1f1df0efbc0f0914",
+      "dependency": "PRO-03",
+      "action_to_elevate": "Adopt validated native DWG backend"
+    },
+    {
+      "output": "PDF Plan Set",
+      "status": "V0_LIMITED",
+      "evidence_sha256": "0d54a9819f056aec5f2e95f7bc784518e3ac0a9c99752a0d1f1df0efbc0f0914",
+      "dependency": "PRO-03",
+      "action_to_elevate": "Implement professional PDF composition"
+    },
+    {
+      "output": "Native DWG",
+      "status": "BLOCKED",
+      "evidence_sha256": "5b7c80440e5906ce539f54ede90b960b5d0fe78d43fa6ee507d039dec3090c3c",
+      "dependency": "PRO-03",
+      "action_to_elevate": "Install/integrate native DWG writer and roundtrip validation"
+    },
+    {
+      "output": "XLSX BOQ",
+      "status": "V0_LIMITED",
+      "evidence_sha256": "0f0d954318aabe9ca80a7375ba49e0480bca2879699472a32a1f2be436ca6c92",
+      "dependency": "PRO-05",
+      "action_to_elevate": "Implement in-process incremental refresh service"
+    },
+    {
+      "output": "Reports",
+      "status": "PRODUCTION_READY",
+      "evidence_sha256": "7702ed6207f7ab756035cb2651741dcc66ca30f15ae4249f91a11f05bf4362ca",
+      "dependency": "PP-07",
+      "action_to_elevate": ""
+    },
+    {
+      "output": "Issuance/Regeneration",
+      "status": "PRODUCTION_READY",
+      "evidence_sha256": "f110a2a720e30093beacb39a6df6a08f2c265cf8eb72f8eead0670a698be6f8d",
+      "dependency": "PRO-06",
+      "action_to_elevate": ""
+    }
+  ],
+  "findings": [
+    {
+      "severity": "CRITICAL",
+      "output": "Native DWG",
+      "message": "Install/integrate native DWG writer and roundtrip validation"
+    },
+    {
+      "severity": "MAJOR",
+      "output": "Reinforcement Model",
+      "message": "Verify constructive detailing standards"
+    },
+    {
+      "severity": "MAJOR",
+      "output": "DXF Exchange Set",
+      "message": "Adopt validated native DWG backend"
+    },
+    {
+      "severity": "MAJOR",
+      "output": "PDF Plan Set",
+      "message": "Implement professional PDF composition"
+    },
+    {
+      "severity": "MAJOR",
+      "output": "XLSX BOQ",
+      "message": "Implement in-process incremental refresh service"
+    }
+  ],
+  "hash": "2b02f3a6bc31621a460740acc4ae3ace0321f6ec32e16bedddfc4e6de99bff6e"
+}

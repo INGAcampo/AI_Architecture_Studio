@@ -1,0 +1,14 @@
+{
+  "schema": "aias.canonical_changeset.v1",
+  "capability_id": "DESIGN_PRODUCTION_CORE_READY",
+  "head_before": "87af6bbcfcbf28e2d127d9508313df59c156dcda",
+  "SYNTHETIC_TEST_DATA": true,
+  "NOT_FOR_CONSTRUCTION": true,
+  "classification": "PRELIMINARY_NOT_FOR_CONSTRUCTION",
+  "evidence_sha256": {
+    "DESIGN_PRODUCTION_CORE_MANIFEST.json": "a8111ba99360873ef4536eef689fbb2af7a0e77c285236fbdd2d42fad70f5495",
+    "DESIGN-CORE-CERT-A_DESIGN_EVIDENCE.json": "f897abea4d4e65b6c521b780862413287c43cc5ac1999b37d87cf57106b0540e",
+    "DESIGN-CORE-CERT-B_DESIGN_EVIDENCE.json": "235421b5c1994263179607ebbe055095d0e8922894b64b62c953d9a25c46e025"
+  },
+  "next_target": "DRAWINGS_PRODUCTION_CORE_READY"
+}

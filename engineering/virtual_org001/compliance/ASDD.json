@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-996501",
+  "title": "AIAS Virtual Engineering Organization",
+  "version": "1.0.0",
+  "purpose": "Operate a bounded, competent and auditable virtual engineering workforce without misrepresenting professional licensure.",
+  "scope": "Roster, roles, offices, competencies, credentials, action authorization, work routing, evidence submission, independent review and human professional escalation.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-996501",
+      "title": "Governed roster",
+      "statement": "Every virtual engineer shall have stable identity, office, role, competency, authorized actions and credential references.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make the virtual workforce accountable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "engineering/aias/virtual_organization/VIRTUAL_ENGINEER_ROSTER.json"
+      ],
+      "tested_by": [
+        "tests/test_virtual_org001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996502",
+      "title": "No license claim",
+      "statement": "Virtual engineers shall never claim licensed-professional status.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Protect legal and ethical boundaries.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_virtual_organization/models.py"
+      ],
+      "tested_by": [
+        "tests/test_virtual_org001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996503",
+      "title": "Qualified routing",
+      "statement": "Work shall route only to available engineers with all required competencies and action authority.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unqualified autonomous execution.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_virtual_organization/organization.py"
+      ],
+      "tested_by": [
+        "tests/test_virtual_org001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996504",
+      "title": "Segregation of duties",
+      "statement": "The producing engineer and independent reviewer shall be different identities.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve maker-checker control.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_virtual_organization/organization.py"
+      ],
+      "tested_by": [
+        "tests/test_virtual_org001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996505",
+      "title": "Human final authority",
+      "statement": "High-risk or regulated work shall retain final authority with a licensed human professional.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unauthorized regulated approvals.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_virtual_organization/organization.py"
+      ],
+      "tested_by": [
+        "tests/test_virtual_org001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-996506",
+      "title": "Reproducible delivery",
+      "statement": "Virtual organization shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep workforce governance deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_virtual_org001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_virtual_org001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-VIRTUAL-ORG-001"
+  ],
+  "adr_refs": [
+    "ADR-VIRTUAL-ORG-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

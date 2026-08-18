@@ -1,0 +1,5 @@
+(setq f (open "C:/AIAS/AI_Architecture_Studio/engineering/aias/dependency_resolution/DR-01A_EXECUTIVE_DWG_CLOSURE/output/xdata_atomic/STEP_03_HANDLE.txt" "w"))
+(setq e (entnext) d (entget e)) (write-line (cdr (assoc 5 d)) f)
+(close f)
+(princ)
+_.QUIT

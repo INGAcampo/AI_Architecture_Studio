@@ -1,0 +1,20 @@
+﻿{
+    "schema":  "aias.shadow.aec_orchestrator.006.spec.v1",
+    "megablock":  "AEC-ORCHESTRATOR-006",
+    "dependency":  "AEC-ORCHESTRATOR-005",
+    "status":  "IMPLEMENTED_IN_SHADOW",
+    "objective":  "Dry-run execution contract that blocks external writes by default.",
+    "scope":  [
+                  "Read-only dry-run acceptance",
+                  "External-write detection",
+                  "Reversibility annotation",
+                  "Explicit dry-run override flag"
+              ],
+    "critical_boundary":  [
+                              "No vendor runtime is launched.",
+                              "No external state is written.",
+                              "No publish action is authorized.",
+                              "The override flag changes only the in-memory dry-run decision."
+                          ],
+    "integration_authorized":  false
+}

@@ -1,0 +1,22 @@
+{
+  "rfp_id": "AIAS-RFP-CERT-001",
+  "status": "DRAFT_NOT_ISSUED",
+  "lots": [
+    {"lot":"A","service":"ISO integrated management system gap assessment","targets":["ISO 9001","ISO/IEC 27001","ISO/IEC 42001","ISO 22301"]},
+    {"lot":"B","service":"CMMI adoption and benchmark appraisal readiness","targets":["CMMI-DEV V3.0 ML5","CMMI AIM"]}
+  ],
+  "mandatory_response": [
+    "legal identity and jurisdictions",
+    "accreditation scope or CMMI partner status with public verification",
+    "named qualified auditors or appraisers",
+    "independence and conflict declaration",
+    "scope assumptions and exclusions",
+    "method, deliverables and evidence requirements",
+    "schedule, price, taxes, travel and recurring surveillance costs",
+    "data protection and confidentiality terms",
+    "certificate or appraisal-result verification mechanism",
+    "validity, surveillance, sustainment and transition obligations"
+  ],
+  "evaluation_dimensions": ["verified competence","independence","scope fit","method quality","total lifecycle cost","schedule","data protection","reference quality"],
+  "commercial_action_authorized": false
+}

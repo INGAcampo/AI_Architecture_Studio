@@ -1,0 +1,68 @@
+[
+  {
+    "rule_id": "VE-ARCH-DIM-001",
+    "status": "PASS",
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-ARCH-DIM-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=1c8a2b65da8cfec12f9262961ef1c3e3690bc1a0e6e18c311383aac835b4dc35"
+    ],
+    "evidence_sha256": "1c8a2b65da8cfec12f9262961ef1c3e3690bc1a0e6e18c311383aac835b4dc35"
+  },
+  {
+    "rule_id": "VE-LOAD-001",
+    "status": "PASS",
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-LOAD-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=d4b67a0be1d04873fb83b8c8a4629e69a9d742d3986299427f21719bb39d8006"
+    ],
+    "evidence_sha256": "d4b67a0be1d04873fb83b8c8a4629e69a9d742d3986299427f21719bb39d8006"
+  },
+  {
+    "rule_id": "VE-SEISMIC-001",
+    "status": "PASS",
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-SEISMIC-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=1c8a2b65da8cfec12f9262961ef1c3e3690bc1a0e6e18c311383aac835b4dc35"
+    ],
+    "evidence_sha256": "1c8a2b65da8cfec12f9262961ef1c3e3690bc1a0e6e18c311383aac835b4dc35"
+  },
+  {
+    "rule_id": "VE-WIND-001",
+    "status": "PASS",
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-WIND-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=d4b67a0be1d04873fb83b8c8a4629e69a9d742d3986299427f21719bb39d8006"
+    ],
+    "evidence_sha256": "d4b67a0be1d04873fb83b8c8a4629e69a9d742d3986299427f21719bb39d8006"
+  },
+  {
+    "rule_id": "VE-CONCRETE-001",
+    "status": "PASS",
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-CONCRETE-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=a5510bfe959f282b2818d63c9a701ea0ba8825456a3b1f51f0b55d1b1ab81afc"
+    ],
+    "evidence_sha256": "a5510bfe959f282b2818d63c9a701ea0ba8825456a3b1f51f0b55d1b1ab81afc"
+  },
+  {
+    "rule_id": "VE-FOUNDATION-001",
+    "status": "PASS",
+    "decision_trace": [
+      "pack=VE-PILOT-001.0",
+      "rule=VE-FOUNDATION-001",
+      "applicability=APPLICABLE",
+      "evidence_sha256=1c8a2b65da8cfec12f9262961ef1c3e3690bc1a0e6e18c311383aac835b4dc35"
+    ],
+    "evidence_sha256": "1c8a2b65da8cfec12f9262961ef1c3e3690bc1a0e6e18c311383aac835b4dc35"
+  }
+]

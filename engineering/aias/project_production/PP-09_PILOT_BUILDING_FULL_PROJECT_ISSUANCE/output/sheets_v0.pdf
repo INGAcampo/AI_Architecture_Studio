@@ -1,0 +1,171 @@
+%PDF-1.4
+% AIAS DRAWING INDEX
+{
+  "project_id": "PILOT-BUILDING-001",
+  "schema": "aias.drawing_model.v1",
+  "sheets": [
+    {
+      "id": "sheet-A-101",
+      "metadata": {
+        "project_id": "PILOT-BUILDING-001",
+        "source": "ProjectGraph/BIM"
+      },
+      "number": "A-101",
+      "title": "Architectural Plan",
+      "view_ids": [
+        "view-A-101"
+      ]
+    },
+    {
+      "id": "sheet-S-101",
+      "metadata": {
+        "project_id": "PILOT-BUILDING-001",
+        "source": "ProjectGraph/BIM"
+      },
+      "number": "S-101",
+      "title": "Structural Plan",
+      "view_ids": [
+        "view-S-101"
+      ]
+    },
+    {
+      "id": "sheet-S-201",
+      "metadata": {
+        "project_id": "PILOT-BUILDING-001",
+        "source": "ProjectGraph/BIM"
+      },
+      "number": "S-201",
+      "title": "Foundation Plan",
+      "view_ids": [
+        "view-S-201"
+      ]
+    },
+    {
+      "id": "sheet-A-301",
+      "metadata": {
+        "project_id": "PILOT-BUILDING-001",
+        "source": "ProjectGraph/BIM"
+      },
+      "number": "A-301",
+      "title": "Building Section",
+      "view_ids": [
+        "view-A-301"
+      ]
+    },
+    {
+      "id": "sheet-A-401",
+      "metadata": {
+        "project_id": "PILOT-BUILDING-001",
+        "source": "ProjectGraph/BIM"
+      },
+      "number": "A-401",
+      "title": "Building Elevation",
+      "view_ids": [
+        "view-A-401"
+      ]
+    }
+  ],
+  "views": [
+    {
+      "id": "view-A-101",
+      "kind": "plan",
+      "number": "A-101",
+      "scale": "1:100",
+      "source_node_ids": [
+        "site-b0566f7fb948",
+        "level-d08e888decc8",
+        "grid-42a86eeb2ae2",
+        "material-7a6eb947a177",
+        "space-e03b222fe372",
+        "wall-90ce7dd56933",
+        "door-da1afa13700b",
+        "window-9d770e2eefff",
+        "slab-a869da461aef",
+        "foundation-e8b38ad4fbed",
+        "level-75c2c51ceb80"
+      ],
+      "title": "Architectural Plan"
+    },
+    {
+      "id": "view-S-101",
+      "kind": "plan",
+      "number": "S-101",
+      "scale": "1:100",
+      "source_node_ids": [
+        "site-b0566f7fb948",
+        "level-d08e888decc8",
+        "grid-42a86eeb2ae2",
+        "material-7a6eb947a177",
+        "space-e03b222fe372",
+        "wall-90ce7dd56933",
+        "door-da1afa13700b",
+        "window-9d770e2eefff",
+        "slab-a869da461aef",
+        "foundation-e8b38ad4fbed",
+        "level-75c2c51ceb80"
+      ],
+      "title": "Structural Plan"
+    },
+    {
+      "id": "view-S-201",
+      "kind": "foundation",
+      "number": "S-201",
+      "scale": "1:100",
+      "source_node_ids": [
+        "site-b0566f7fb948",
+        "level-d08e888decc8",
+        "grid-42a86eeb2ae2",
+        "material-7a6eb947a177",
+        "space-e03b222fe372",
+        "wall-90ce7dd56933",
+        "door-da1afa13700b",
+        "window-9d770e2eefff",
+        "slab-a869da461aef",
+        "foundation-e8b38ad4fbed",
+        "level-75c2c51ceb80"
+      ],
+      "title": "Foundation Plan"
+    },
+    {
+      "id": "view-A-301",
+      "kind": "section",
+      "number": "A-301",
+      "scale": "1:100",
+      "source_node_ids": [
+        "site-b0566f7fb948",
+        "level-d08e888decc8",
+        "grid-42a86eeb2ae2",
+        "material-7a6eb947a177",
+        "space-e03b222fe372",
+        "wall-90ce7dd56933",
+        "door-da1afa13700b",
+        "window-9d770e2eefff",
+        "slab-a869da461aef",
+        "foundation-e8b38ad4fbed",
+        "level-75c2c51ceb80"
+      ],
+      "title": "Building Section"
+    },
+    {
+      "id": "view-A-401",
+      "kind": "elevation",
+      "number": "A-401",
+      "scale": "1:100",
+      "source_node_ids": [
+        "site-b0566f7fb948",
+        "level-d08e888decc8",
+        "grid-42a86eeb2ae2",
+        "material-7a6eb947a177",
+        "space-e03b222fe372",
+        "wall-90ce7dd56933",
+        "door-da1afa13700b",
+        "window-9d770e2eefff",
+        "slab-a869da461aef",
+        "foundation-e8b38ad4fbed",
+        "level-75c2c51ceb80"
+      ],
+      "title": "Building Elevation"
+    }
+  ]
+}
+%%EOF

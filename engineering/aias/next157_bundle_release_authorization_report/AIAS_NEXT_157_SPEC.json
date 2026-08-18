@@ -1,0 +1,10 @@
+{
+  "id": "AIAS-NEXT-157",
+  "title": "Bundle release authorization report",
+  "status": "VALIDATED",
+  "scope": "Expose internal authorization records for project traceability.",
+  "safety": {
+    "external_authority": false,
+    "certification_claim": false
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "specification_id": "SPEC-997001",
+  "title": "AIAS Engineering Intelligence Core",
+  "version": "1.0.0",
+  "purpose": "Produce bounded engineering recommendations from verified evidence with deterministic confidence, conflict detection and abstention.",
+  "scope": "Requests, evidence identity, trust, claim coverage, risk thresholds, conflicts, recommendations, abstention, audit records, AEKS execution, differential validation and EKG context.",
+  "requirements": [
+    {
+      "requirement_id": "REQ-997001",
+      "title": "Evidence contract",
+      "statement": "Every fact shall have identity, source, claim, value, trust, digest and legal status.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent unsupported reasoning inputs.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_intelligence/models.py"
+      ],
+      "tested_by": [
+        "tests/test_intelligence_core001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997002",
+      "title": "Deterministic confidence",
+      "statement": "Confidence shall derive from required-claim coverage, evidence trust, conflicts and risk threshold.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Make recommendation strength reproducible.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_intelligence/policy.py"
+      ],
+      "tested_by": [
+        "tests/test_intelligence_core001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997003",
+      "title": "Mandatory abstention",
+      "statement": "The core shall abstain when claims are missing, contradictory or below the risk threshold.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Prevent invented or weak conclusions.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_intelligence/core.py"
+      ],
+      "tested_by": [
+        "tests/test_intelligence_core001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997004",
+      "title": "Auditability",
+      "statement": "Every outcome shall retain evidence identifiers, reasons, assessment and record digest.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Preserve explainable decision lineage.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_intelligence/core.py"
+      ],
+      "tested_by": [
+        "tests/test_intelligence_core001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997005",
+      "title": "Immediate consumer",
+      "statement": "A real AEKS calculation shall be checked by differential validation and EKG context before recommendation.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Materialize intelligence value under AEC-000049.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "src/aias_engineering_intelligence/reference.py"
+      ],
+      "tested_by": [
+        "tests/test_intelligence_core001.py"
+      ]
+    },
+    {
+      "requirement_id": "REQ-997006",
+      "title": "Reproducible delivery",
+      "statement": "Intelligence core shall include tests, documentation, installer, checksums and release.",
+      "requirement_type": "FUNCTIONAL",
+      "status": "VALIDATED",
+      "rationale": "Keep evidence intelligence deployable.",
+      "acceptance_criteria": [
+        "Implementation exists or is formally planned.",
+        "Automated acceptance test is linked.",
+        "Traceability link is present."
+      ],
+      "implements": [
+        "scripts/build_intelligence_core001_installer.py"
+      ],
+      "tested_by": [
+        "tests/test_intelligence_core001.py"
+      ]
+    }
+  ],
+  "architecture_refs": [
+    "ARCH-INTELLIGENCE-CORE-001"
+  ],
+  "adr_refs": [
+    "ADR-INTELLIGENCE-CORE-001"
+  ],
+  "risks": [
+    "Generated engineering output requires human review."
+  ]
+}

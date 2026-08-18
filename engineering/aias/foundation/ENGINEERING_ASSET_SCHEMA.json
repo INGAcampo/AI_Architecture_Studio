@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AIAS-ASSET-SCHEMA-1.0.0",
+  "required": ["id", "title", "asset_type", "version", "status", "owner", "purpose", "scope", "source", "requirements", "evidence", "dependencies", "legal_status"],
+  "properties": {
+    "id": {"pattern": "^[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)+$"},
+    "version": {"pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"},
+    "status": {"enum": ["PROPOSED", "SPECIFIED", "IMPLEMENTED", "VALIDATED", "RELEASED", "OPERATED", "RETIRED"]}
+  }
+}

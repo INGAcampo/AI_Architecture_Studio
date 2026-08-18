@@ -1,0 +1,1 @@
+# T8.02B — LRFD_CORE

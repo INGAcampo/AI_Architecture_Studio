@@ -6,6 +6,9 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from engines.geometry.point import Point
 from engines.geometry.line import Line
+from engines.transform.transform_manager import TransformManager
+from models.cad_circle import CadCircle
+
 
 def test_geometry():
     p1 = Point(0, 0, 0)
@@ -22,6 +25,14 @@ def test_geometry():
     assert line.midpoint.to_tuple() == (1.5, 2.0, 0.0)
 
     print("Geometry Engine OK")
+
+
+def test_scale_circle():
+    circle = CadCircle(Point(0, 0, 0), 2)
+
+    TransformManager.scale_element(circle, 2.0, 0.0, 0.0, 0.0)
+
+    assert circle.radius == 4.0
 
 
 test_geometry()

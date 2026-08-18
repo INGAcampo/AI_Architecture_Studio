@@ -1,0 +1,20 @@
+# Cuadro de áreas
+
+```json
+{
+  "document": {
+    "evidence_sha256": "aa727745e92af13dc3ee51b524dd48dbcc241cf53e2fe95e85134dbbf914e206",
+    "sections": {
+      "Main Space": 25.0
+    },
+    "title": "Cuadro de áreas"
+  },
+  "metadata": {
+    "jurisdiction": "VE",
+    "project_id": "PILOT-BUILDING-001",
+    "project_name": "Edificación piloto AIAS Venezuela",
+    "revision": "V0",
+    "standards_pack": "VE-PILOT-001.0"
+  }
+}
+```
